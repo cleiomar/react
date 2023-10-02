@@ -1,23 +1,25 @@
 type BookProps = {
-    book: {
+    books: {
         title: string;
         author: string;
         year: number;
         genre: string;
         image: string;
-        isFavorite: boolean;
-    }
+    }[]
 }
 
-function Book({book}: BookProps) {
+function Book({books}: BookProps) {
   return (  
     <>
-    <h2 className="book-css">{book.title}</h2>
-    <p className="book-css">{book.author}</p>
-    <p className="book-css book-genre">{book.year}</p>
-    <p className="book-css">{book.genre}</p>
-    <img src={book.image} className="book-img"/>
-    {book.isFavorite && <span>✅</span>}
+        {books.map((book) => (
+          <div key={book.title} className='col-md-4'>
+              <h2>{book.title}</h2>
+              <p>{book.author}</p>
+              <p>{book.year}</p>
+              <p>{book.genre}</p>
+              <img src={book.image}/>
+          </div>
+        ))}
     </>
   )
 }

@@ -1,12 +1,12 @@
 import './App.css'
-import Header from './components/header'
-import Session from './components/Session'
+import Books from './components/Books'
 
 function App() {
   return (
     <>
-      <Header/>
-      <Session/>
+        <div className='container'>
+            <Books />
+        </div>
     </>
   )
 }

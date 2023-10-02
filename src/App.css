@@ -1,3 +1,13 @@
-.Header{
-  background-color: #FF0000;
+.book-img{
+  height: 150px;
+  width: 100px;
+}
+.book-css{
+  font-weight:bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: aquamarine;
+}
+
+.book-genre{
+  color:rgb(79, 5, 254);
 }

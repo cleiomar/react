@@ -12,7 +12,7 @@ function Book({books}: BookProps) {
   return (  
     <>
         {books.map((book) => (
-          <div key={book.title} className='col-md-4'>
+          <div key={book.title} className='col-md-4 p-5'>
               <h2>{book.title}</h2>
               <p>{book.author}</p>
               <p>{book.year}</p>

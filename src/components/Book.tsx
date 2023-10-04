@@ -20,7 +20,7 @@ function Book({ books }: BookProps) {
   const SwalDialog = (titulo: string, imagem: string) => {
     Swal.fire({
       title: 'Atenção',
-      html: "<img src='" + imagem + "' /><br>Deseja comprar o livro?",
+      html: "<b>Deseja comprar o livro?</b><br><img src='" + imagem + "' />",
       //icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#0d6efd',
@@ -53,7 +53,7 @@ function Book({ books }: BookProps) {
 
           <div className='p-5 d-grid gap-2'>
             <Botao
-              click={() => SwalDialog(book.title, book.image)} // book.year error
+              click={() => SwalDialog(book.title, book.image)}
               tipo='btn btn-primary'
             >
               <strong>COMPRAR</strong>

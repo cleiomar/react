@@ -1,5 +1,7 @@
 import Botao from "./Botao";
 import Swal from 'sweetalert2';
+import { useState } from 'react'
+
 
 type BookProps = {
   books: {
@@ -16,6 +18,20 @@ function Book({ books }: BookProps) {
   /*const handleClick2 = (text: string) => {
     alert(text);
   }*/
+
+  const [valor, setValor] = useState(0);
+
+  const handleClickPreview = () => {
+    if (valor > 0) {
+      setValor(valor - 1)
+    }
+  }
+
+  const handleClickNext = () => {
+    if (valor < 10) {
+      setValor(valor + 1)
+    }
+  }
 
   const SwalDialog = (titulo: string, imagem: string) => {
     Swal.fire({
@@ -51,7 +67,12 @@ function Book({ books }: BookProps) {
           <p>{book.genre}</p>
           <img src={book.image} />
 
-          <div className='p-5 d-grid gap-2'>
+          <div className='pb-3 pt-3 buttonClick gap-3'>
+            <button className='btn btn-primary btn-qnt' onClick={handleClickPreview}>-</button>
+            <span className="span-qnt"> {valor} </span>
+            <button className='btn btn-primary btn-qnt' onClick={handleClickNext}>+</button>
+          </div>
+          <div className='p-5 pt-0 d-grid gap-2'>
             <Botao
               click={() => SwalDialog(book.title, book.image)}
               tipo='btn btn-primary'

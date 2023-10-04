@@ -1,4 +1,25 @@
-img{
+img {
   width: 200px;
-  height:200px;
+  height: 200px;
+}
+
+.buttonClick {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: center;
+
+
+  .btn-qnt {
+    align-items: center;
+    font-size: 12px;
+    height: 40px;
+    width: 40px;
+    border-radius:0%;
+  }
+  .span-qnt{
+    margin-top: 3px;
+    width: 40px;
+  }
 }

@@ -1,8 +1,9 @@
 .Header {
   background-color: #FF0000;
-}
+}                                    
 .imgCenter{
   justify-content: center;
+  vertical-align: middle;
 }
 
 img {
@@ -10,11 +11,31 @@ img {
   height: 100%;
 }
 
+.imagesPreview {
+  margin-top: 50px;
+  margin-right: 200px;
+  display: block;
+  align-items: center;
+  height: 300px;
+  width:375px;
+}
+
 .images {
   display: block;
   align-items: center;
+  margin-top: -25px;
+  position: absolute;
   height: 400px;
   width:500px;
+}
+
+.imagesNext {
+  margin-top: 50px;
+  margin-left: 200px;
+  display: block;
+  align-items: center;
+  height: 300px;
+  width:375px;
 }
 
 .buttonClick {

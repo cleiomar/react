@@ -4,22 +4,36 @@ import './App.css'
 
 function App() {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [schooling, setSchooling] = useState('Médio');
-  const [resume, setResume] = useState('');
+  const [formInfo, setFormInfo] = useState({
+    name: '',
+    email: '',
+    schooling: 'Médio',
+    resume: ''
+  });
 
   const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert('Feito com sucesso!');
+    console.log(formInfo);
     clearForm();
   }
 
   const clearForm = () => {
-    setName('');
-    setEmail('');
-    setSchooling('Médio');
-    setResume('');
+    setFormInfo({
+      name: '',
+      email: '',
+      schooling: 'Médio',
+      resume: ''
+    });
+  }
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormInfo({
+      ...formInfo,
+      [name]: value,
+    });
   }
 
   return (
@@ -29,8 +43,9 @@ function App() {
         <label>
           nome:
           <input
-            value={name}
-            onChange={({ target }) => setName(target.value)}
+            value={formInfo.name}
+            name='name'
+            onChange={handleChange}
           />
         </label>
         <br></br>
@@ -38,15 +53,16 @@ function App() {
         <label>
           Email:
           <input
-            value={email}
-            onChange={({ target }) => setEmail(target.value)}
+            value={formInfo.email}            
+            name='email'
+            onChange={handleChange}
           />
         </label>
         <br></br>
 
         <label>
           Escolaridade:
-          <select value={schooling} onChange={({ target }) => setSchooling(target.value)}>
+          <select value={formInfo.schooling} name='schooling' onChange={handleChange}>
             <option value='Médio'>Médio</option>
             <option value='Superior'>Superior</option>
             <option value='Pós-Graduação'>Pós-Graduação</option>
@@ -57,8 +73,9 @@ function App() {
         <label>
           Resumo das suas experiencias:
           <textarea
-            value={resume}
-            onChange={({ target }) => setResume(target.value)}
+            value={formInfo.resume}
+            name='resume'
+            onChange={handleChange}
           />
           <br></br>
 

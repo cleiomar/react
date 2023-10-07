@@ -100,6 +100,11 @@ const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
 const Instagram = lazy(() => import('../pages/Instagram'));
+const InstaUsers = lazy(() => import('../pages/InstaUsers'));
+const InstaLogs = lazy(() => import('../pages/InstaLogs'));
+const AutoActivity = lazy(() => import('../pages/AutoActivity'));
+const AutoPost = lazy(() => import('../pages/AutoPost'));
+const AutoDirect = lazy(() => import('../pages/AutoDirect'));
 
 const routes = [
     // dashboard
@@ -546,6 +551,26 @@ const routes = [
     {
         path: '/Instagram',
         element: <Instagram />,
+    },
+    {
+        path: '/InstaUsers',
+        element: <InstaUsers />,
+    },
+    {
+        path: '/InstaLogs',
+        element: <InstaLogs />,
+    },
+    {
+        path: '/AutoActivity',
+        element: <AutoActivity />,
+    },
+    {
+        path: '/AutoPost',
+        element: <AutoPost />,
+    },
+    {
+        path: '/AutoDirect',
+        element: <AutoDirect />,
     },
 ];
 

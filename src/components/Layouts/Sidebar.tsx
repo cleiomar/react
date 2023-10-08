@@ -101,10 +101,10 @@ const Sidebar = () => {
                         <ul className="relative font-semibold space-y-0.5 p-3 py-0 ml--10">
 
                             <li className="nav-item">
-                                <NavLink to="/Instagram" className="group">
+                                <NavLink to="/Dashboard" className="group">
                                     <div className="flex items-center">
                                         <IconMenuDashboard className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('instagram')}</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('dashboard')}</span>
                                     </div>
                                 </NavLink>
                             </li>

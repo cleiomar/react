@@ -99,7 +99,7 @@ const QuillEditor = lazy(() => import('../pages/Forms/QuillEditor'));
 const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
-const Instagram = lazy(() => import('../pages/Instagram'));
+const Dashboard = lazy(() => import('../pages/Dashboard'));
 const InstaUsers = lazy(() => import('../pages/InstaUsers'));
 const InstaLogs = lazy(() => import('../pages/InstaLogs'));
 const AutoActivity = lazy(() => import('../pages/AutoActivity'));
@@ -549,8 +549,8 @@ const routes = [
         layout: 'blank',
     },
     {
-        path: '/Instagram',
-        element: <Instagram />,
+        path: '/Dashboard',
+        element: <Dashboard />,
     },
     {
         path: '/InstaUsers',

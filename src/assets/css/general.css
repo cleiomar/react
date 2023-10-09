@@ -1,28 +1,40 @@
 @media (min-width: 1250px) {
 
-    .font-general{
+    .font-general {
         font-size: 22px;
     }
 
-    .font-num{
+    .font-num {
         font-size: 20px;
     }
-    
-    .ft{
+
+    .ft {
         font-size: 25px;
     }
+    .btn-lg-config{
+        width: 160px;
+    }
 }
 
-@media (max-width: 1249px) {    
-    .ft{
+@media (max-width: 1249px) {
+    .ft {
         font-size: 18px;
+    }
+    .btn-lg-config{
+        width: 100px;
     }
 }
 
 
-.text-m{
+.text-m {
     font-size: 16px;
 }
-.titulo{
+
+.titulo {
     text-transform: uppercase;
 }
+
+.bg-primary-light {
+    background: rgb(247, 247, 247);
+}
+

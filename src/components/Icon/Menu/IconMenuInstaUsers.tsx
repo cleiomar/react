@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 interface IconMenuInstaUsersProps {
     className?: string;
-    opValor: number;
-    width: number;
-    height: number;
+    opValor: string;
+    width: string;
+    height: string;
 }
 
 

@@ -65,11 +65,11 @@ const Dashboard = () => {
                                     quantActions={35}
                                 />
                                 <DashBox
-                                    nameAction={'Unfollow'}
+                                    nameAction={'Unfollows'}
                                     quantActions={314}
                                 />
                                 <DashBox
-                                    nameAction={'Report'}
+                                    nameAction={'Repost'}
                                     quantActions={307}
                                 />
                                 <DashBox
@@ -77,7 +77,7 @@ const Dashboard = () => {
                                     quantActions={10}
                                 />
                                 <DashBox
-                                    nameAction={'Comments'}
+                                    nameAction={'Views'}
                                     quantActions={274}
                                 />
                                 <DashBox
@@ -97,11 +97,19 @@ const Dashboard = () => {
                             <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
 
                                 <DashBox
-                                    nameAction={'Likes'}
+                                    nameAction={'Total Process'}
                                     quantActions={2874}
                                 />
                                 <DashBox
-                                    nameAction={'Comments'}
+                                    nameAction={'Total Sucess'}
+                                    quantActions={274}
+                                />
+                                <DashBox
+                                    nameAction={'Total Failure'}
+                                    quantActions={274}
+                                />
+                                <DashBox
+                                    nameAction={'Total Processing'}
                                     quantActions={274}
                                 />
                             </div>

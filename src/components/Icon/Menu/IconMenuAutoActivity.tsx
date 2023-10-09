@@ -3,9 +3,9 @@ import Sidebar from '../../Layouts/Sidebar';
 
 interface IconMenuAutoActivityProps {
     className?: string;
-    opValor: number;
-    width: number;
-    height: number;
+    opValor: string;
+    width: string;
+    height: string;
 }
 
 const IconMenuAutoActivity: FC<IconMenuAutoActivityProps> = ({ className, opValor, width, height }) => {

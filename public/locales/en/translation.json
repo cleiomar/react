@@ -1,7 +1,6 @@
 {
     "dashboard": "Dashboard",
     "sales": "Sales",
-    "instagram": "Instagram",
     "analytics": "Analytics",
     "apps": "Apps",
     "components": "Components",
@@ -125,5 +124,12 @@
     "coming_soon_boxed": "Coming Soon Boxed",
     "coming_soon_cover": "Coming Soon Cover",
     "contact_us_boxed": "Contact Us Boxed",
-    "contact_us_cover": "Contact Us Cover"
+    "contact_us_cover": "Contact Us Cover",    
+    "activity_report": "Activity Report",
+    "post_report": "Post Report",
+    "instagram": "Accounts",
+    "auto_post": "Auto Post",
+    "auto_activity": "Auto Activity",
+    "auto_direct": "Auto Direct",
+    "logs": "Logs"
 }

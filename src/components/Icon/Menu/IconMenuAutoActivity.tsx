@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Sidebar from '../../Layouts/Sidebar';
 
 interface IconMenuAutoActivityProps {
     className?: string;
@@ -6,7 +7,6 @@ interface IconMenuAutoActivityProps {
     width: number;
     height: number;
 }
-
 
 const IconMenuAutoActivity: FC<IconMenuAutoActivityProps> = ({ className, opValor, width, height }) => {
     return (

@@ -112,8 +112,10 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <NavLink to="/InstaUsers" className="group">
                                     <div className="flex items-center">
-                                        <IconMenuInstaUsers className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('instagram2')}</span>
+                                        <IconMenuInstaUsers
+                                        opValor="0.5"
+                                        className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('instagram')}</span>
                                     </div>
                                 </NavLink>
                             </li>
@@ -130,8 +132,10 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <NavLink to="/Instagram" className="group">
                                     <div className="flex items-center">
-                                        <IconMenuAutoActivity className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('autoactivity')}</span>
+                                        <IconMenuAutoActivity
+                                        opValor="0.5"
+                                        className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_activity')}</span>
                                     </div>
                                 </NavLink>
                             </li>
@@ -140,7 +144,7 @@ const Sidebar = () => {
                                 <NavLink to="/autopost" className="group">
                                     <div className="flex items-center">
                                         <IconMenuAutoPost className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('autopost')}</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_post')}</span>
                                     </div>
                                 </NavLink>
                             </li>
@@ -149,7 +153,7 @@ const Sidebar = () => {
                                 <NavLink to="/Instagram" className="group">
                                     <div className="flex items-center">
                                         <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('autodirect')}</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_direct')}</span>
                                     </div>
                                 </NavLink>
                             </li>

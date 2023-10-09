@@ -1,5 +1,28 @@
 @media (min-width: 1250px) {
+
     .font-general{
         font-size: 22px;
     }
-  }
+
+    .font-num{
+        font-size: 20px;
+    }
+    
+    .ft{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1249px) {    
+    .ft{
+        font-size: 18px;
+    }
+}
+
+
+.text-m{
+    font-size: 16px;
+}
+.titulo{
+    text-transform: uppercase;
+}

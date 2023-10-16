@@ -1,4 +1,3 @@
-import DashBox from '../components/Dashboard/DashBox';
 import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
 import IconSettings from '../components/Icon/IconSettings';
 import { Link } from 'react-router-dom';
@@ -6,8 +5,6 @@ import { useTranslation } from 'react-i18next';
 import Account from '../components/Account';
 import { useState, Fragment, useEffect } from 'react';
 import IconSearch from '../components/Icon/IconSearch';
-
-
 
 
 const InstaUsers = () => {

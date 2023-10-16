@@ -22,7 +22,7 @@ const Dashboard = () => {
                     <div className="panel flex-1 overflow-auto h-full">
                         <div className="sm:min-h-[300px] min-h-[400px] p-5">
 
-                            <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5">
+                            <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
                                 <div className="panel pb-4 bg-primary-light shadow-primary">
                                     <div className="min-h-[40px]">
                                         <div className="flex justify-center">
@@ -46,7 +46,7 @@ const Dashboard = () => {
                                     {t('activity_report')}
                                 </li>
                             </ul>
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
 
                                 <DashBox
                                     nameAction={'Likes'}
@@ -94,22 +94,22 @@ const Dashboard = () => {
                                     {t('post_report')}
                                 </li>
                             </ul>
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-14">
 
                                 <DashBox
-                                    nameAction={'Total Process'}
+                                    nameAction={'Process'}
                                     quantActions={2874}
                                 />
                                 <DashBox
-                                    nameAction={'Total Sucess'}
+                                    nameAction={'Sucess'}
                                     quantActions={274}
                                 />
                                 <DashBox
-                                    nameAction={'Total Failure'}
+                                    nameAction={'Failure'}
                                     quantActions={274}
                                 />
                                 <DashBox
-                                    nameAction={'Total Processing'}
+                                    nameAction={'Processing'}
                                     quantActions={274}
                                 />
                             </div>

@@ -14,6 +14,7 @@
     .btn-lg-config{
         width: 160px;
     }
+
 }
 
 @media (max-width: 1249px) {
@@ -38,3 +39,6 @@
     background: rgb(247, 247, 247);
 }
 
+.bg-white-search{
+    background-color: #FFFFFF;
+}

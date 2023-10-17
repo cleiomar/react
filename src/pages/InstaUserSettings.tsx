@@ -3,12 +3,14 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import InstaOptions from './InstaOptions';
+import { TagsInput } from "react-tag-input-component";
+import { useState, Fragment, useEffect } from 'react';
 
 const ReceberProps: React.FC = () => {
 
     const location = useLocation();
     const textoRecebido = location.state?.texto || "Nenhum texto recebido";
-
+    const [selected, setSelected] = useState(["papaya"]);
     const { t } = useTranslation();
     const options = [];
     options.push({
@@ -29,6 +31,15 @@ const ReceberProps: React.FC = () => {
         name: "Post"
     }, {
         name: "Repost"
+    });
+
+    const target = [];
+    target.push({
+        name: "Hashtag"
+    }, {
+        name: "Location"
+    }, {
+        name: "Username"
     });
 
     return (
@@ -71,13 +82,20 @@ const ReceberProps: React.FC = () => {
                             </li>
                         </ul>
                         <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pb-5 gap-8">
-                        {options.map((option, index) => (
+                        {target.map((targets, indexs) => (
                                     <InstaOptions
-                                        key={index}
-                                        name={option.name}
+                                        key={indexs}
+                                        name={targets.name}
                                     />
                                 ))}
                         </div>
+                        <div>
+                    <TagsInput
+                        value={selected}
+                        onChange={setSelected}
+                        name="fruits"
+                    />
+                </div>
 
 
                     </div>

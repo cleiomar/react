@@ -8,8 +8,6 @@ import { useState, Fragment, useEffect } from 'react';
 import IconSearch from '../components/Icon/IconSearch';
 
 
-
-
 const InstaUsers = () => {
     const { t } = useTranslation();
 
@@ -77,7 +75,7 @@ const InstaUsers = () => {
                 <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
                     <li>
                         <Link to="/" className="text-primary hover:underline">
-                            {t('accounts')}
+                            {t('Accounts')}
                         </Link>
                     </li>
                     <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">

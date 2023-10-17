@@ -105,6 +105,7 @@ const InstaLogs = lazy(() => import('../pages/InstaLogs'));
 const AutoActivity = lazy(() => import('../pages/AutoActivity'));
 const AutoPost = lazy(() => import('../pages/AutoPost'));
 const AutoDirect = lazy(() => import('../pages/AutoDirect'));
+const InstaUserSettings = lazy(() => import('../pages/InstaUserSettings'));
 
 const routes = [
     // dashboard
@@ -571,6 +572,10 @@ const routes = [
     {
         path: '/AutoDirect',
         element: <AutoDirect />,
+    },
+    {
+        path: '/InstaUserSettings',
+        element: <InstaUserSettings />,
     },
 ];
 

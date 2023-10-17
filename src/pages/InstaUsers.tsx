@@ -106,7 +106,7 @@ const InstaUsers = () => {
                                 <div className="panel pb-4 bg-primary-light justify-between shadow-primary">
                                     <div className="min-h-[40px]">
                                     <div className="relative mt-2">
-                                        <input type="text" placeholder="Search Contacts" className="form-input py-2 ltr:pr-11 rtl:pl-11 peer"/>
+                                        <input type="text" placeholder="Search Profile" className="form-input py-2 ltr:pr-11 rtl:pl-11 peer"/>
                                         <button type="button" className="absolute ltr:right-[11px] rtl:left-[11px] top-1/2 -translate-y-1/2 peer-focus:text-primary">
                                             <IconSearch className="mx-auto" />
                                         </button>

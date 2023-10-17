@@ -51,3 +51,9 @@
     box-shadow: 0px 1px 1px 1px #b9b9b9;
     padding: 10px;
 }
+.w-100{
+    width: 100px;
+}
+.rti--container{
+    height: 60px;
+}

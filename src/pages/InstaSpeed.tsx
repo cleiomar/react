@@ -20,9 +20,9 @@ function InstaSpeed({ name, options }: InstaSpeedProps) {
                 </div>
             </div>
             <div>
-                <select className="form-select form-select-sm text-white-dark">
+                <select className="form-select form-select-sm text-white-dark w-100">
                     {options.map((option, index) => (
-                        <option key={index} value={option}>
+                        <option key={index} value={index}>
                             {option}
                         </option>
                     ))}

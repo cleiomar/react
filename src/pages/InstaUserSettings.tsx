@@ -121,19 +121,44 @@ const ReceberProps: React.FC = () => {
                             <TagsInput
                                 value={selected}
                                 onChange={setSelected}
-                                name="fruits"
+                                name="hashtags"
                             />
                         </div>
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
                             <li>
-                                {t('Location')}
+                                {t('Locations')}
                             </li>
                         </ul>
                         <div>
                             <TagsInput
                                 value={selected}
                                 onChange={setSelected}
-                                name="fruits"
+                                name="location"
+                            />
+                        </div>
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Username')}
+                            </li>
+                        </ul>
+                        <div>
+                            <TagsInput
+                                value={selected}
+                                onChange={setSelected}
+                                name="Username"
+                            />
+                        </div>
+                        
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Comments')}
+                            </li>
+                        </ul>
+                        <div>
+                            <TagsInput
+                                value={selected}
+                                onChange={setSelected}
+                                name="comments"
                             />
                         </div>
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
@@ -150,18 +175,6 @@ const ReceberProps: React.FC = () => {
                                 />
                             ))}
                         </div>
-
-
-                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
-                            <li>
-                                {t('Comments')}
-                            </li>
-                        </ul>
-                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
-                            <li>
-                                {t('Speed')}
-                            </li>
-                        </ul>
 
 
                     </div>

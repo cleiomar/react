@@ -2,9 +2,8 @@ import DashBox from '../components/Dashboard/DashBox';
 import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Search from '../components/General/Search'
 
-const InstaLogs = () => {
+const Dashboard = () => {
     const { t } = useTranslation();
     return (
         <>
@@ -12,7 +11,7 @@ const InstaLogs = () => {
                 <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
                     <li>
                         <Link to="/" className="text-primary hover:underline">
-                            {t('InstaLogs')}
+                            {t('dashboard')}
                         </Link>
                     </li>
                     <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
@@ -26,39 +25,21 @@ const InstaLogs = () => {
                             <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
                                 <div className="panel pb-4 bg-primary-light shadow-primary">
                                     <div className="min-h-[40px]">
-                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8'>
-
-                                            <div className='flex justify-around'>
-                                                <div className="ltr:ml-2 rtl:mr-2">
-                                                    <IconMenuInstaUsers
-                                                        opValor='0.3'
-                                                        width='60'
-                                                        height='60'
-                                                    />
-                                                </div>
-                                                <div className="ltr:ml-2 rtl:mr-2 w-[150px] mt-2 text-center">
-                                                    <div className="font-bold text-lg font-general text-gray-500">Accounts</div>
-                                                    <div className="font-num font-semibold text-gray-500 ">35</div>
-                                                </div>
+                                        <div className="flex justify-center">
+                                            <div className="ltr:ml-2 rtl:mr-2">
+                                                <IconMenuInstaUsers
+                                                    opValor='0.3'
+                                                    width='60'
+                                                    height='60'
+                                                />
                                             </div>
-                                            <Search
-                                                profile='cleiomar'
-                                                profileID='123142'
-                                            />
+                                            <div className="ltr:ml-2 rtl:mr-2 w-[150px] self-end-baseline">
+                                                <div className="font-bold text-lg font-general text-gray-500">Accounts</div>
+                                                <div className="font-num font-semibold text-gray-500 ">35</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='grid 2xl:grid-cols-8 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8'>
-
-                                <button type="button" className="btn btn-outline-primary btn-sm">All</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Follows</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Unfollows</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Likes</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Views</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Comments</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Posts</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Delete Media</button>
                             </div>
                             <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
                                 <li>
@@ -99,6 +80,14 @@ const InstaLogs = () => {
                                     nameAction={'Views'}
                                     quantActions={274}
                                 />
+                                <DashBox
+                                    nameAction={'Comments'}
+                                    quantActions={274}
+                                />
+                                <DashBox
+                                    nameAction={'Comments'}
+                                    quantActions={274}
+                                />
                             </div>
                             <ul className="font-bold ft titulo text-gray-500 pb-10 mt-20">
                                 <li>
@@ -132,4 +121,4 @@ const InstaLogs = () => {
     );
 };
 
-export default InstaLogs;
+export default Dashboard;

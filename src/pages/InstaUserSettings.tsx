@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import InstaOptions from './InstaOptions';
+import InstaSpeed from './InstaSpeed';
 import { TagsInput } from "react-tag-input-component";
 import { useState, Fragment, useEffect } from 'react';
 
@@ -42,6 +43,28 @@ const ReceberProps: React.FC = () => {
         name: "Username"
     });
 
+
+    const speed = [];
+    speed.push({
+        name: "Activity Speed",
+        options: ["Slow", "Normal", "Fast"]
+    }, {
+        name: "Likes per Hour",
+        options: ["5-10", "10-20", "20-30"]
+    }, {
+        name: "Comments per Hour",
+        options: ["2-4", "4-6", "6-8"]
+    }, {
+        name: "Follow per Hour",
+        options: ["5-10", "10-15", "15-20"]
+    }, {
+        name: "Delete Media per Hour",
+        options: ["2-3", "3-4", "4-5"]
+    }, {
+        name: "Follow Back per Hour",
+        options: ["5-10", "10-15", "15-20"]
+    });
+
     return (
         <div className="container">
             <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
@@ -69,12 +92,12 @@ const ReceberProps: React.FC = () => {
                             </li>
                         </ul>
                         <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pb-5 gap-8">
-                        {options.map((option, index) => (
-                                    <InstaOptions
-                                        key={index}
-                                        name={option.name}
-                                    />
-                                ))}
+                            {options.map((option, index) => (
+                                <InstaOptions
+                                    key={index}
+                                    name={option.name}
+                                />
+                            ))}
                         </div>
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
                             <li>
@@ -82,20 +105,63 @@ const ReceberProps: React.FC = () => {
                             </li>
                         </ul>
                         <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pb-5 gap-8">
-                        {target.map((targets, indexs) => (
-                                    <InstaOptions
-                                        key={indexs}
-                                        name={targets.name}
-                                    />
-                                ))}
+                            {target.map((targets, indexs) => (
+                                <InstaOptions
+                                    key={indexs}
+                                    name={targets.name}
+                                />
+                            ))}
                         </div>
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Hashtags')}
+                            </li>
+                        </ul>
                         <div>
-                    <TagsInput
-                        value={selected}
-                        onChange={setSelected}
-                        name="fruits"
-                    />
-                </div>
+                            <TagsInput
+                                value={selected}
+                                onChange={setSelected}
+                                name="fruits"
+                            />
+                        </div>
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Location')}
+                            </li>
+                        </ul>
+                        <div>
+                            <TagsInput
+                                value={selected}
+                                onChange={setSelected}
+                                name="fruits"
+                            />
+                        </div>
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Speed')}
+                            </li>
+                        </ul>
+                        <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pb-5 gap-8">
+                            {speed.map((speeds, indexSpeed) => (
+                                <InstaSpeed
+                                    key={indexSpeed}
+                                    name={speeds.name}
+                                    options={speeds.options}
+                                />
+                            ))}
+                        </div>
+
+
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Comments')}
+                            </li>
+                        </ul>
+                        <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
+                            <li>
+                                {t('Speed')}
+                            </li>
+                        </ul>
 
 
                     </div>

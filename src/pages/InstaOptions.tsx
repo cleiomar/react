@@ -14,7 +14,7 @@ function InstaOptions({ name }: InstaOptionsProps) {
                             <div className="panel pb-4 bg-primary-light flex justify-between shadow-primary">
                                 <div className="min-h-[10px]">
                                     <div className="flex justify-center">
-                                        <div className="ltr:ml-2 rtl:mr-2 text-base pt-1">{name}
+                                        <div className="ltr:ml-2 rtl:mr-2 text-base">{name}
                                         </div>
                                     </div>
                                 </div>

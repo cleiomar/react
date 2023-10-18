@@ -1,10 +1,34 @@
-import DashBox from '../components/Dashboard/DashBox';
+import LogsBox from '../components/Dashboard/LogsBox';
 import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Search from '../components/General/Search'
+import React, { useState, useRef } from 'react';
+import Select from 'react-select';
 
 const InstaLogs = () => {
+    const buttons = ['All', 'Follows', 'Likes', 'Comments', 'Views', 'Follows Back', 'Posts', 'Directs', 'Unfollows'];
+
+    const [activeButton, setActiveButton] = useState<number | null>(null);
+
+
+    const handleClick = (index: number) => {
+        setActiveButton(index);
+    };
+
+    const options = [
+        { value: '0', label: 'All' },
+        { value: '1', label: 'Follows' },
+        { value: '2', label: 'Likes' },
+        { value: '3', label: 'Comments' },
+        { value: '4', label: 'Views' },
+        { value: '5', label: 'Follow Back' },
+        { value: '6', label: 'Posts' },
+        { value: '7', label: 'Directs' },
+        { value: '8', label: 'Unfollows' }
+    ];
+
+
     const { t } = useTranslation();
     return (
         <>
@@ -26,7 +50,7 @@ const InstaLogs = () => {
                             <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
                                 <div className="panel pb-4 bg-primary-light shadow-primary">
                                     <div className="min-h-[40px]">
-                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8'>
+                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 grid-cols-1 gap-8'>
 
                                             <div className='flex justify-around'>
                                                 <div className="ltr:ml-2 rtl:mr-2">
@@ -45,91 +69,85 @@ const InstaLogs = () => {
                                                 profile='cleiomar'
                                                 profileID='123142'
                                             />
+
+                                            <Select defaultValue={options[0]} className='mt-2 selectHidden' options={options} isSearchable={false} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid 2xl:grid-cols-8 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8'>
-
-                                <button type="button" className="btn btn-outline-primary btn-sm">All</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Follows</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Unfollows</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Likes</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Views</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Comments</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Posts</button>
-                                <button type="button" className="btn btn-outline-primary btn-sm">Delete Media</button>
+                            <div className='grid 2xl:grid-cols-9 lg:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-8 '>
+                                {buttons.map((button, index) => (
+                                    <button
+                                        key={index}
+                                        className={`button ${activeButton === index ? 'btn btn-primary buttonHidden' : 'btn btn-outline-primary buttonHidden'}`}
+                                        onClick={() => handleClick(index)}
+                                    >
+                                        {button}
+                                    </button>
+                                ))}
                             </div>
                             <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
                                 <li>
-                                    {t('activity_report')}
+                                    {t('logs')}
                                 </li>
                             </ul>
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+                            <div>
+                                <div className="grid 1xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
 
-                                <DashBox
-                                    nameAction={'Likes'}
-                                    quantActions={2874}
-                                />
-                                <DashBox
-                                    nameAction={'Comments'}
-                                    quantActions={274}
-                                />
-                                <DashBox
-                                    nameAction={'Follows'}
-                                    quantActions={165}
-                                />
-                                <DashBox
-                                    nameAction={'Follow Back'}
-                                    quantActions={35}
-                                />
-                                <DashBox
-                                    nameAction={'Unfollows'}
-                                    quantActions={314}
-                                />
-                                <DashBox
-                                    nameAction={'Repost'}
-                                    quantActions={307}
-                                />
-                                <DashBox
-                                    nameAction={'Delete Media'}
-                                    quantActions={10}
-                                />
-                                <DashBox
-                                    nameAction={'Views'}
-                                    quantActions={274}
-                                />
-                            </div>
-                            <ul className="font-bold ft titulo text-gray-500 pb-10 mt-20">
-                                <li>
-                                    {t('post_report')}
-                                </li>
-                            </ul>
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-14">
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
 
-                                <DashBox
-                                    nameAction={'Process'}
-                                    quantActions={2874}
-                                />
-                                <DashBox
-                                    nameAction={'Sucess'}
-                                    quantActions={274}
-                                />
-                                <DashBox
-                                    nameAction={'Failure'}
-                                    quantActions={274}
-                                />
-                                <DashBox
-                                    nameAction={'Processing'}
-                                    quantActions={274}
-                                />
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+
+                                    <LogsBox
+                                        nameAction={'Likes'}
+                                        quantActions={2874}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </>
+
     );
+
 };
 
 export default InstaLogs;

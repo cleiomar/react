@@ -15,7 +15,6 @@
     .btn-lg-config {
         width: 160px;
     }
-
 }
 
 @media (max-width: 1249px) {
@@ -26,6 +25,59 @@
     .btn-lg-config {
         width: 100px;
     }
+}
+
+
+.fitting-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selectHidden {
+    display: none;
+}
+
+.pos-icon {
+    margin-left: 35px;
+    width: 80px;
+    height: 80px;
+    opacity: 75%;
+    color: #FFF;
+    position: absolute;
+}
+
+.buttonHidden {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .selectHidden {
+        display: block;
+    }
+
+    .buttonHidden {
+        display: none;
+    }
+}
+
+@media (max-width:  768px) {
+    .pos-icon {
+        margin-left: 25px;
+        width: 60px;
+        height: 60px;
+        opacity: 75%;
+        color: #FFF;
+        position: absolute;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .search-icon {
+        margin-bottom: 15px;
+    }
+
 }
 
 
@@ -51,9 +103,26 @@
     box-shadow: 0px 1px 1px 1px #b9b9b9;
     padding: 10px;
 }
-.w-100{
+
+.action-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Isso coloca o conteúdo em uma coluna */
+    justify-content: flex-end; /* Isso alinha o conteúdo na parte inferior */
+  }
+
+  .text-xsm{
+    font-size: 11px;
+  }
+
+.w-100 {
     width: 100px;
 }
-.rti--container{
+
+.rti--container {
     height: 60px;
+}
+
+.btn-outline-primary-active {
+    background-color: #f7f7f7;
 }

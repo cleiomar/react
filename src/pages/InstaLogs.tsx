@@ -50,27 +50,15 @@ const InstaLogs = () => {
                             <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
                                 <div className="panel pb-4 bg-primary-light shadow-primary">
                                     <div className="min-h-[40px]">
-                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 grid-cols-1 gap-8'>
-
-                                            <div className='flex justify-around'>
-                                                <div className="ltr:ml-2 rtl:mr-2">
-                                                    <IconMenuInstaUsers
-                                                        opValor='0.3'
-                                                        width='60'
-                                                        height='60'
-                                                    />
-                                                </div>
-                                                <div className="ltr:ml-2 rtl:mr-2 w-[150px] mt-2 text-center">
-                                                    <div className="font-bold text-lg font-general text-gray-500">Accounts</div>
-                                                    <div className="font-num font-semibold text-gray-500 ">35</div>
-                                                </div>
-                                            </div>
+                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 grid-cols-1 justify-around gap-8'>
                                             <Search
                                                 profile='cleiomar'
                                                 profileID='123142'
                                             />
-
                                             <Select defaultValue={options[0]} className='mt-2 selectHidden' options={options} isSearchable={false} />
+                                        
+                                        <div className="font-bold text-lg font-general text-gray-500">35 Accounts
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

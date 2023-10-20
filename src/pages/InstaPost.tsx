@@ -20,10 +20,7 @@ import IconCircleCheck from '../components/Icon/IconCircleCheck';
 import IconSettings from '../components/Icon/IconSettings';
 
 const Tabs = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setPageTitle('Tabs'));
-  });
+
   const [tabs, setTabs] = useState<string[]>([]);
   const toggleCode = (name: string) => {
     if (tabs.includes(name)) {
@@ -39,10 +36,10 @@ const Tabs = () => {
     console.log("enter", text);
   }
 
-  const dispatch2 = useDispatch();
+  /*const dispatch2 = useDispatch();
   useEffect(() => {
     dispatch(setPageTitle('Date & Range Picker'));
-  });
+  });*/
   const [codeArr, setCodeArr] = useState<string[]>([]);
 
   const toggleCode2 = (name: string) => {
@@ -109,6 +106,126 @@ const Tabs = () => {
       progress: '23%',
       position: 'Designer',
       office: 'New York',
+    },
+    {
+      id: 3,
+      name: 'Alma Clarke',
+      email: 'alma@gmail.com',
+      date: '12/02/2020',
+      sale: 310,
+      status: 'In Progress',
+      register: '1 hour ago',
+      progress: '80%',
+      position: 'Accountant',
+      office: 'Amazon',
+    },
+    {
+      id: 4,
+      name: 'Vincent Carpenter',
+      email: 'vincent@gmail.com',
+      date: '13/08/2020',
+      sale: 100,
+      status: 'Canceled',
+      register: '1 day ago',
+      progress: '60%',
+      position: 'Data Scientist',
+      office: 'Canada',
+    },
+    {
+      id: 3,
+      name: 'Alma Clarke',
+      email: 'alma@gmail.com',
+      date: '12/02/2020',
+      sale: 310,
+      status: 'In Progress',
+      register: '1 hour ago',
+      progress: '80%',
+      position: 'Accountant',
+      office: 'Amazon',
+    },
+    {
+      id: 4,
+      name: 'Vincent Carpenter',
+      email: 'vincent@gmail.com',
+      date: '13/08/2020',
+      sale: 100,
+      status: 'Canceled',
+      register: '1 day ago',
+      progress: '60%',
+      position: 'Data Scientist',
+      office: 'Canada',
+    },
+    {
+      id: 3,
+      name: 'Alma Clarke',
+      email: 'alma@gmail.com',
+      date: '12/02/2020',
+      sale: 310,
+      status: 'In Progress',
+      register: '1 hour ago',
+      progress: '80%',
+      position: 'Accountant',
+      office: 'Amazon',
+    },
+    {
+      id: 4,
+      name: 'Vincent Carpenter',
+      email: 'vincent@gmail.com',
+      date: '13/08/2020',
+      sale: 100,
+      status: 'Canceled',
+      register: '1 day ago',
+      progress: '60%',
+      position: 'Data Scientist',
+      office: 'Canada',
+    },
+    {
+      id: 3,
+      name: 'Alma Clarke',
+      email: 'alma@gmail.com',
+      date: '12/02/2020',
+      sale: 310,
+      status: 'In Progress',
+      register: '1 hour ago',
+      progress: '80%',
+      position: 'Accountant',
+      office: 'Amazon',
+    },
+    {
+      id: 4,
+      name: 'Vincent Carpenter',
+      email: 'vincent@gmail.com',
+      date: '13/08/2020',
+      sale: 100,
+      status: 'Canceled',
+      register: '1 day ago',
+      progress: '60%',
+      position: 'Data Scientist',
+      office: 'Canada',
+    },
+    {
+      id: 3,
+      name: 'Alma Clarke',
+      email: 'alma@gmail.com',
+      date: '12/02/2020',
+      sale: 310,
+      status: 'In Progress',
+      register: '1 hour ago',
+      progress: '80%',
+      position: 'Accountant',
+      office: 'Amazon',
+    },
+    {
+      id: 4,
+      name: 'Vincent Carpenter',
+      email: 'vincent@gmail.com',
+      date: '13/08/2020',
+      sale: 100,
+      status: 'Canceled',
+      register: '1 day ago',
+      progress: '60%',
+      position: 'Data Scientist',
+      office: 'Canada',
     },
     {
       id: 3,
@@ -206,13 +323,11 @@ const Tabs = () => {
                           dateFormat: 'Y-m-d H:i',
                         }}
                         value={date2}
-                        className="form-input ml-2"
+                        className="form-input ml-2 mt-2"
                         onChange={(date2) => setDate2(date2)}
                       />
                     </div>
-                  </Tab.Panel>
-                  <Tab.Panel>
-                    <div className="table-responsive mb-5">
+                    <div className="table-responsive mb-5 ml-2">
                       <table className='table-hover'>
                         <thead>
                           <tr>
@@ -282,6 +397,9 @@ const Tabs = () => {
                     </div>
                   </Tab.Panel>
                   <Tab.Panel>
+                    
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <div className="pt-5">
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -294,95 +412,12 @@ const Tabs = () => {
                 </Tab.Panels>
               </Tab.Group>
             </div>
-            {tabs.includes('code9') && (
-              <CodeHighlight>
-                <pre className="language-typescript">
-                  {`import { Tab } from '@headlessui/react';
-import { Fragment } from 'react';
-
-<Tab.Group>
-    <Tab.List className="mt-3 flex flex-wrap">
-        <Tab as={Fragment}>
-            {({ selected }) => (
-                <button
-                    className={\`\${selected ? 'text-secondary !outline-none before:!w-full' : ''} relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:inline-block before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full\`}
-                >
-                    <svg>...</svg>
-                    Home
-                </button>
-            )}
-        </Tab>
-        <Tab as={Fragment}>
-            {({ selected }) => (
-                <button
-                    className={\`\${selected ? 'text-secondary !outline-none before:!w-full' : ''} relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:inline-block before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full\`}
-                >
-                    <svg>...</svg>
-                    Profile
-                </button>
-            )}
-        </Tab>
-        <Tab as={Fragment}>
-            {({ selected }) => (
-                <button
-                    className={\`\${selected ? 'text-secondary !outline-none before:!w-full' : ''} relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:inline-block before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full\`}
-                >
-                    <svg>...</svg>
-                    Contact
-                </button>
-            )}
-        </Tab>
-    </Tab.List>
-</Tab.Group>
-<Tab.Panels>
-    <Tab.Panel>
-        <div className="active pt-5">
-            <h4 className="mb-4 text-2xl font-semibold">We move your world!</h4>
-            <p className="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </div>
-    </Tab.Panel>
-    <Tab.Panel>
-        <div>
-            <div className="flex items-start pt-5">
-                <div className="h-20 w-20 flex-none ltr:mr-4 rtl:ml-4">
-                    <img
-                        src="/assets/images/profile-34.jpeg"
-                        alt="img"
-                        className="m-0 h-20 w-20 rounded-full object-cover ring-2 ring-[#ebedf2] dark:ring-white-dark"
-                    />
-                </div>
-                <div className="flex-auto">
-                    <h5 className="mb-4 text-xl font-medium">Media heading</h5>
-                    <p className="text-white-dark">
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </Tab.Panel>
-    <Tab.Panel>
-        <div className="pt-5">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-            </p>
-        </div>
-    </Tab.Panel>
-</Tab.Panels>
-`}
-                </pre>
-              </CodeHighlight>
-            )}
+            
+          </div>
+          <div className="panel" id="simple">
+          <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Preview</b></div>
+          <div className="mt-3 p-3 flex flex-wrap border-b justify-start border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><img className="w-20 h-20 rounded-full overflow-hidden object-cover" src="/assets/images/profile-12.jpeg" alt="img" />
+<div className='p-3'>Username</div></div>
           </div>
         </div>
       </div>

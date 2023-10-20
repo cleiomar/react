@@ -104,6 +104,10 @@
     padding: 10px;
 }
 
+.grey-css{
+    color: #b9b9b9;
+}
+
 .action-bottom {
     flex: 1;
     display: flex;

@@ -50,15 +50,16 @@ const InstaLogs = () => {
                             <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
                                 <div className="panel pb-4 bg-primary-light shadow-primary">
                                     <div className="min-h-[40px]">
-                                        <div className='grid 2xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 grid-cols-1 justify-around gap-8'>
+                                        <div className='grid 2xl:grid-cols-3 lg:grid-cols-3 pb-3 sm:grid-cols-1 grid-cols-1 justify-around gap-8'>
                                             <Search
                                                 profile='cleiomar'
                                                 profileID='123142'
                                             />
-                                            <Select defaultValue={options[0]} className='mt-2 selectHidden' options={options} isSearchable={false} />
-                                        
-                                        <div className="font-bold text-lg font-general text-gray-500">35 Accounts
-                                        </div>
+                                            <div>
+                                                <Select defaultValue={options[0]} className='mt-2 selectHidden' options={options} isSearchable={false} />
+                                            </div>
+                                            <div className="font-bold text-lg justify-self-end pt-3 text-gray-500">35 Accounts
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

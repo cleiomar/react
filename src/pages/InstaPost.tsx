@@ -25,9 +25,29 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import IconBell from '../components/Icon/IconBell';
 import IconCaretDown from '../components/Icon/IconCaretDown';
+import ImageUploading, { ImageListType } from 'react-images-uploading';
 
 const Tabs = () => {
 
+  const toggleCode3 = (name: string) => {
+      if (codeArr.includes(name)) {
+          setCodeArr((value) => value.filter((d) => d !== name));
+      } else {
+          setCodeArr([...codeArr, name]);
+      }
+  };
+
+  const [images, setImages] = useState<any>([]);
+  const [images2, setImages2] = useState<any>([]);
+  const maxNumber = 69;
+
+  const onChange = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
+      setImages(imageList as never[]);
+  };
+
+  const onChange2 = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
+      setImages2(imageList as never[]);
+  };
   const [tabs, setTabs] = useState<string[]>([]);
   const toggleCode = (name: string) => {
     if (tabs.includes(name)) {
@@ -92,6 +112,22 @@ const Tabs = () => {
 
   const items = ['carousel1.jpeg', 'carousel2.jpeg', 'carousel3.jpeg'];
 
+ useEffect(() => {
+    // Função para alterar elementos com a mesma classe
+    const changeElementsWithClass = () => {
+      const elements = document.querySelectorAll('.react-input-emoji--input'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      elements.forEach((element) => {
+        element.style.height = '250px'; // Exemplo de estilo a ser aplicado
+      });
+    };
+
+    // Chame a função quando o componente for montado
+    changeElementsWithClass();
+  }, []);
+
+
+
+
 
   const tableData = [
     {
@@ -143,7 +179,7 @@ const Tabs = () => {
       office: 'Canada',
     },
     {
-      id: 3,
+      id: 5,
       name: 'Alma Clarke',
       email: 'alma@gmail.com',
       date: '12/02/2020',
@@ -155,7 +191,7 @@ const Tabs = () => {
       office: 'Amazon',
     },
     {
-      id: 4,
+      id: 6,
       name: 'Vincent Carpenter',
       email: 'vincent@gmail.com',
       date: '13/08/2020',
@@ -167,7 +203,7 @@ const Tabs = () => {
       office: 'Canada',
     },
     {
-      id: 3,
+      id: 7,
       name: 'Alma Clarke',
       email: 'alma@gmail.com',
       date: '12/02/2020',
@@ -179,7 +215,7 @@ const Tabs = () => {
       office: 'Amazon',
     },
     {
-      id: 4,
+      id: 8,
       name: 'Vincent Carpenter',
       email: 'vincent@gmail.com',
       date: '13/08/2020',
@@ -191,7 +227,7 @@ const Tabs = () => {
       office: 'Canada',
     },
     {
-      id: 3,
+      id: 9,
       name: 'Alma Clarke',
       email: 'alma@gmail.com',
       date: '12/02/2020',
@@ -203,7 +239,7 @@ const Tabs = () => {
       office: 'Amazon',
     },
     {
-      id: 4,
+      id: 10,
       name: 'Vincent Carpenter',
       email: 'vincent@gmail.com',
       date: '13/08/2020',
@@ -215,7 +251,7 @@ const Tabs = () => {
       office: 'Canada',
     },
     {
-      id: 3,
+      id: 11,
       name: 'Alma Clarke',
       email: 'alma@gmail.com',
       date: '12/02/2020',
@@ -227,7 +263,7 @@ const Tabs = () => {
       office: 'Amazon',
     },
     {
-      id: 4,
+      id: 12,
       name: 'Vincent Carpenter',
       email: 'vincent@gmail.com',
       date: '13/08/2020',
@@ -239,7 +275,7 @@ const Tabs = () => {
       office: 'Canada',
     },
     {
-      id: 3,
+      id: 13,
       name: 'Alma Clarke',
       email: 'alma@gmail.com',
       date: '12/02/2020',
@@ -251,7 +287,7 @@ const Tabs = () => {
       office: 'Amazon',
     },
     {
-      id: 4,
+      id: 14,
       name: 'Vincent Carpenter',
       email: 'vincent@gmail.com',
       date: '13/08/2020',
@@ -277,7 +313,88 @@ const Tabs = () => {
         </li>
       </ul>
       <div className="space-y-8 pt-5">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        
+          <div className="panel" id="simple">
+            
+            <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Preview</b></div>
+            <div className="mt-3 p-3 flex flex-wrap border-b justify-start border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><img className="w-20 h-20 rounded-full overflow-hidden object-cover" src="/assets/images/profile-12.jpeg" alt="img" />
+              <div className='p-6'>Username</div></div>
+              <div className="multiple-file-upload panel p-2">
+                        <div className="mb-5">
+                            <div className="custom-file-container" data-upload-id="mySecondImage">
+                                <div className="label-container">
+                                    <label>Upload </label>
+                                    <button
+                                        type="button"
+                                        className="custom-file-container__image-clear"
+                                        title="Clear Image"
+                                        onClick={() => {
+                                            setImages2([]);
+                                        }}
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+                                <label className="custom-file-container__custom-file"></label>
+                                <input type="file" className="custom-file-container__custom-file__custom-file-input" accept="image/*" />
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                <ImageUploading multiple value={images2} onChange={onChange2} maxNumber={maxNumber}>
+                                    {({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
+                                        <div className="upload__image-wrapper">
+                                            <button className="custom-file-container__custom-file__custom-file-control" onClick={onImageUpload}>
+                                                Choose File...
+                                            </button>
+                                            &nbsp;
+                                            <div className="grid gap-1 sm:grid-cols-1 grid-cols-1">
+                                                {imageList.map((image, index) => (
+                                                    <div key={index} className="custom-file-container__image-preview relative">
+                                                        <button
+                                                            type="button"
+                                                            className="custom-file-container__image-clear bg-dark-light dark:bg-dark dark:text-white-dark rounded-full block w-fit p-0.5 absolute top-0 left-0"
+                                                            title="Clear Image"
+                                                            onClick={() => onImageRemove(index)}
+                                                        >
+                                                        </button>
+                                                        <img src={image.dataURL} alt="img" className="object-cover shadow rounded w-full !max-h-48" />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </ImageUploading>
+                                {images2.length === 0 ? <img src="/assets/images/file-preview.svg" className="max-w-md w-full m-auto" alt="" /> : ''}
+                            </div>
+                        </div>
+                        </div>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation={{ nextEl: '.swiper-button-next-ex1', prevEl: '.swiper-button-prev-ex1' }}
+              pagination={{ clickable: true }}
+              className="swiper max-w-3xl mx-auto mb-5"
+              id="slider1"
+              dir={themeConfig.rtlClass}
+              key={themeConfig.rtlClass === 'rtl' ? 'true' : 'false'}
+            >
+              <div className="swiper-wrapper">
+                {items.map((item, i) => {
+                  return (
+                    <SwiperSlide key={i}>
+                      <img src={`/assets/images/${item}`} className="w-full max-h-80 object-cover" alt="itemImage" />
+                    </SwiperSlide>
+                  );
+                })}
+              </div>
+              <button className="swiper-button-prev-ex1 grid place-content-center ltr:left-2 rtl:right-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
+                <IconCaretDown className="w-5 h-5 rtl:-rotate-90 rotate-90" />
+              </button>
+              <button className="swiper-button-next-ex1 grid place-content-center ltr:right-2 rtl:left-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
+                <IconCaretDown className="w-5 h-5 rtl:rotate-90 -rotate-90" />
+              </button>
+            </Swiper>
+          </div>
           {/* Simple Tabs */}
           <div className="panel" id="simple">
             <div className="mb-5">
@@ -316,37 +433,7 @@ const Tabs = () => {
                 </Tab.List>
                 <Tab.Panels>
                   <Tab.Panel>
-                    <div className="panel" id="simple">
-                      <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Preview</b></div>
-                      <div className="mt-3 p-3 flex flex-wrap border-b justify-start border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><img className="w-20 h-20 rounded-full overflow-hidden object-cover" src="/assets/images/profile-12.jpeg" alt="img" />
-                        <div className='p-3'>Username</div></div>
 
-                        <Swiper
-                          modules={[Navigation, Pagination]}
-                          navigation={{ nextEl: '.swiper-button-next-ex1', prevEl: '.swiper-button-prev-ex1' }}
-                          pagination={{ clickable: true }}
-                          className="swiper max-w-3xl mx-auto mb-5"
-                          id="slider1"
-                          dir={themeConfig.rtlClass}
-                          key={themeConfig.rtlClass === 'rtl' ? 'true' : 'false'}
-                        >
-                          <div className="swiper-wrapper">
-                            {items.map((item, i) => {
-                              return (
-                                <SwiperSlide key={i}>
-                                  <img src={`/assets/images/${item}`} className="w-full max-h-80 object-cover" alt="itemImage" />
-                                </SwiperSlide>
-                              );
-                            })}
-                          </div>
-                          <button className="swiper-button-prev-ex1 grid place-content-center ltr:left-2 rtl:right-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
-                            <IconCaretDown className="w-5 h-5 rtl:-rotate-90 rotate-90" />
-                          </button>
-                          <button className="swiper-button-next-ex1 grid place-content-center ltr:right-2 rtl:left-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
-                            <IconCaretDown className="w-5 h-5 rtl:rotate-90 -rotate-90" />
-                          </button>
-                        </Swiper>
-                      </div>
                     <div className="active pt-5">
                       <InputEmoji
                         value={text}
@@ -369,10 +456,15 @@ const Tabs = () => {
                         onChange={(date2) => setDate2(date2)}
                       />
                     </div>
+                    
+
+
+
+
                   </Tab.Panel>
                   <Tab.Panel>
-                    
-                    
+
+
                   </Tab.Panel>
                   <Tab.Panel>
                     <div className="pt-5">
@@ -389,78 +481,118 @@ const Tabs = () => {
             </div>
 
           </div>
-           
+                        </div>
           <div className="panel p-14">
             <div className="table-responsive mb-5 ml-2">
-                      <table className='table-hover'>
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Sale</th>
-                            <th>Status</th>
-                            <th className="text-center">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {tableData.map((data) => {
-                            return (
-                              <tr key={data.id}>
-                                <td>
-                                  <div className="whitespace-nowrap">{data.name}</div>
-                                </td>
-                                <td>{data.date}</td>
-                                <td>{data.sale}</td>
-                                <td>
-                                  <span
-                                    className={`badge whitespace-nowrap ${data.status === 'completed'
-                                      ? 'bg-primary   '
-                                      : data.status === 'Pending'
-                                        ? 'bg-secondary'
-                                        : data.status === 'In Progress'
-                                          ? 'bg-success'
-                                          : data.status === 'Canceled'
-                                            ? 'bg-danger'
-                                            : 'bg-primary'
-                                      }`}
-                                  >
-                                    {data.status}
-                                  </span>
-                                </td>
-                                <td className="text-center">
-                                  <div className="dropdown">
-                                    <Dropdown
-                                      offset={[0, 5]}
-                                      placement={'bottom-end'}
-                                      button={
-                                        <svg xmlns="http://www.w3.org/2000/svg" className='grey-css ml-4' fill="currentColor" viewBox="0 0 50 50" width="15px" height="15px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" /></svg>
-                                      }
-                                    >
-                                      <ul>
-                                        <li>
-                                          <button type="button">Canceled</button>
-                                        </li>
-                                        <li>
-                                          <button type="button">Pending</button>
-                                        </li>
-                                        <li>
-                                          <button type="button">Completed</button>
-                                        </li>
-                                        <li>
-                                          <button type="button">Delete</button>
-                                        </li>
-                                      </ul>
-                                    </Dropdown>
-                                  </div>
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-
+              <table className='table-hover'>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Sale</th>
+                    <th>Status</th>
+                    <th className="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((data) => {
+                    return (
+                      <tr key={data.id}>
+                        <td>
+                          <div className="whitespace-nowrap">{data.name}</div>
+                        </td>
+                        <td>{data.date}</td>
+                        <td>{data.sale}</td>
+                        <td>
+                          <span
+                            className={`badge whitespace-nowrap ${data.status === 'completed'
+                              ? 'bg-primary   '
+                              : data.status === 'Pending'
+                                ? 'bg-secondary'
+                                : data.status === 'In Progress'
+                                  ? 'bg-success'
+                                  : data.status === 'Canceled'
+                                    ? 'bg-danger'
+                                    : 'bg-primary'
+                              }`}
+                          >
+                            {data.status}
+                          </span>
+                        </td>
+                        <td className="text-center">
+                          <div className="dropdown">
+                            <Dropdown
+                              offset={[0, 5]}
+                              placement={'bottom-end'}
+                              button={
+                                <svg xmlns="http://www.w3.org/2000/svg" className='grey-css ml-4' fill="currentColor" viewBox="0 0 50 50" width="15px" height="15px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" /></svg>
+                              }
+                            >
+                              <ul>
+                                <li>
+                                  <button type="button">Canceled</button>
+                                </li>
+                                <li>
+                                  <button type="button">Pending</button>
+                                </li>
+                                <li>
+                                  <button type="button">Completed</button>
+                                </li>
+                                <li>
+                                  <button type="button">Delete</button>
+                                </li>
+                              </ul>
+                            </Dropdown>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table><div className='flex justify-center pt-10'>
+                <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
+                  <li>
+                    <button
+                      type="button"
+                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                    >
+                      Prev
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                    >
+                      1
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-primary text-white dark:text-white-light dark:bg-primary">
+                      2
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                    >
+                      3
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                    >
+                      Next
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
+
 
         </div>
       </div>

@@ -1,33 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import InputEmoji from "react-input-emoji";
-import Flatpickr from "react-flatpickr";
 import 'flatpickr/dist/flatpickr.css';
 import 'nouislider/distribute/nouislider.css';
 import Dropdown from '../components/Dropdown';
-import Select from 'react-select';
-import { TagsInput } from "react-tag-input-component";
-import IconMapPin from '../components/Icon/IconMapPin';
 import axios from 'axios';
+import InstaSearch from '../components/General/InstaSearch';
 
 const Tabs = () => {
 
-  const options = [
-    { value: '1', label: 'Feed' },
-    { value: '2', label: 'Stories' },
-    { value: '3', label: 'Reels' },
-  ];
-
-  const [text, setText] = useState("");
-
-  function handleOnEnter(text) {
-    console.log("enter", text);
-  }
-
-  const [selected, setSelected] = useState(["cleiomar"]);
-
-
-  const [date2, setDate2] = useState<any>('2022-07-05 12:00');
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
@@ -91,7 +71,9 @@ const Tabs = () => {
       <div className="space-y-8 pt-5">
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-1">
-          
+          <div className="grid 1xl:grid-cols-4 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 gap-5 pb-5 ">
+            <InstaSearch />
+          </div>
           <div className="panel p-14">
             <div className='h-70 overflow-auto'>
               <div className="table-responsive mb-5 ml-2">
@@ -101,6 +83,7 @@ const Tabs = () => {
                       <th>Name</th>
                       <th>Date</th>
                       <th>Sale</th>
+                      <th>Billing</th>
                       <th>Status</th>
                       <th className="text-center">Action</th>
                     </tr>
@@ -115,6 +98,7 @@ const Tabs = () => {
                           </td>
                           <td>{data.ID}</td>
                           <td>{data.sale}</td>
+                          <td>{data.Billing}</td>
                           <td>
                             <span
                               className={`badge whitespace-nowrap ${data.status === 'completed'

@@ -1,61 +1,22 @@
 import { Link } from 'react-router-dom';
-import { Tab } from '@headlessui/react';
-import { Fragment, useEffect, useState } from 'react';
-import CodeHighlight from '../components/Highlight';
-import { setPageTitle } from '../store/themeConfigSlice';
+import { useEffect, useState } from 'react';
 import InputEmoji from "react-input-emoji";
 import Flatpickr from "react-flatpickr";
-import Tippy from '@tippyjs/react';
 import 'flatpickr/dist/flatpickr.css';
 import 'nouislider/distribute/nouislider.css';
 import Dropdown from '../components/Dropdown';
-import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
-import IconCode from '../components/Icon/IconCode';
-import IconTrashLines from '../components/Icon/IconTrashLines';
-import IconXCircle from '../components/Icon/IconXCircle';
-import IconPencil from '../components/Icon/IconPencil';
-import IconHorizontalDots from '../components/Icon/IconHorizontalDots';
-import IconCircleCheck from '../components/Icon/IconCircleCheck';
-import IconSettings from '../components/Icon/IconSettings';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useDispatch, useSelector } from 'react-redux';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination, Autoplay } from 'swiper';
-import IconBell from '../components/Icon/IconBell';
-import IconCaretDown from '../components/Icon/IconCaretDown';
-import ImageUploading, { ImageListType } from 'react-images-uploading';
+import Select from 'react-select';
+import { TagsInput } from "react-tag-input-component";
+import IconMapPin from '../components/Icon/IconMapPin';
+import axios from 'axios';
 
 const Tabs = () => {
 
-  const toggleCode3 = (name: string) => {
-      if (codeArr.includes(name)) {
-          setCodeArr((value) => value.filter((d) => d !== name));
-      } else {
-          setCodeArr([...codeArr, name]);
-      }
-  };
-
-  const [images, setImages] = useState<any>([]);
-  const [images2, setImages2] = useState<any>([]);
-  const maxNumber = 69;
-
-  const onChange = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
-      setImages(imageList as never[]);
-  };
-
-  const onChange2 = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
-      setImages2(imageList as never[]);
-  };
-  const [tabs, setTabs] = useState<string[]>([]);
-  const toggleCode = (name: string) => {
-    if (tabs.includes(name)) {
-      setTabs((value) => value.filter((d) => d !== name));
-    } else {
-      setTabs([...tabs, name]);
-    }
-  };
+  const options = [
+    { value: '1', label: 'Feed' },
+    { value: '2', label: 'Stories' },
+    { value: '3', label: 'Reels' },
+  ];
 
   const [text, setText] = useState("");
 
@@ -63,62 +24,29 @@ const Tabs = () => {
     console.log("enter", text);
   }
 
-  /*const dispatch2 = useDispatch();
-  useEffect(() => {
-    dispatch(setPageTitle('Date & Range Picker'));
-  });*/
-  const [codeArr, setCodeArr] = useState<string[]>([]);
+  const [selected, setSelected] = useState(["cleiomar"]);
+  let newItems = ["item1", "item2", "item3"];
 
-  const toggleCode2 = (name: string) => {
-    if (codeArr.includes(name)) {
-      setCodeArr((value) => value.filter((d) => d !== name));
-    } else {
-      setCodeArr([...codeArr, name]);
-    }
+  const addNewItems = () => {
+    // Mapeia os novos itens e adiciona-os à array 'selected'
+    const updatedSelected = [...selected, ...newItems];
+    setSelected(updatedSelected);
+    //console.log(updatedSelected);
   };
 
-  const [inputStart, setInputStart] = useState<any>(20);
-  const [inputEnd, setInputEnd] = useState<any>(40);
-  const [slider2, setSlider2] = useState<any>([500, 4000]);
-  const [percent2, setPercent2] = useState<any>([5, 40]);
 
-  const [disabled, setDisabled] = useState<any>(false);
-  const [skippingValue, setSkippingValue] = useState<any>(40);
-  const [skippingValue1, setSkippingValue1] = useState<any>(40);
 
-  const changeValue = () => {
-    setDisabled(!disabled);
-  };
-
-  const slider1Update = (range: any) => {
-    setInputStart(range[0]);
-    setInputEnd(range[1]);
-  };
-
-  const onSide = (render: any, handle: any, value: any, un: any, percent: any) => {
-    setSlider2(value);
-    setPercent2(percent);
-  };
-
-  const [date1, setDate1] = useState<any>('2022-07-05');
   const [date2, setDate2] = useState<any>('2022-07-05 12:00');
-  const [date3, setDate3] = useState<any>('2022-07-05 to 2022-07-10');
-  const [date4, setDate4] = useState<any>('13:45');
-  const [range1, setRange1] = useState<any>('0');
-  const [range2, setRange2] = useState<any>('0');
-  const [range3, setRange3] = useState<any>('0');
-  const [range4, setRange4] = useState<any>('0');
-  const themeConfig = useSelector((state: IRootState) => state.themeConfig);
+  //const [tableData, setTableData] = useState([]);
 
-  const items = ['carousel1.jpeg', 'carousel2.jpeg', 'carousel3.jpeg'];
-
- useEffect(() => {
+  useEffect(() => {
     // Função para alterar elementos com a mesma classe
     const changeElementsWithClass = () => {
       const elements = document.querySelectorAll('.react-input-emoji--input'); // Substitua 'sua-classe' pela classe que deseja selecionar
       elements.forEach((element) => {
         element.style.height = '250px'; // Exemplo de estilo a ser aplicado
       });
+      
     };
 
     // Chame a função quando o componente for montado
@@ -126,8 +54,36 @@ const Tabs = () => {
   }, []);
 
 
+  useEffect(() => {
+    // Função para alterar elementos com a mesma classe
+    const changeElementsWithClass = () => {
+      const elements = document.querySelectorAll('.rti--container'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      elements.forEach((element) => {
+        element.style.height = '150px'; // Exemplo de estilo a ser aplicado
+        element.style.overflowY = 'scroll'; // Exemplo de estilo a ser aplicado
+      });
+    };
 
+    // Chame a função quando o componente for montado
+    changeElementsWithClass();
 
+   
+  }, []);
+
+  useEffect(() => {
+    // Função para buscar os dados dos usuários
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/users');
+        setTableData(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar dados dos usuários:', error);
+      }
+    };
+
+    // Chamada da função ao montar o componente
+    fetchUsers();
+  }, []);
 
   const tableData = [
     {
@@ -286,18 +242,6 @@ const Tabs = () => {
       position: 'Accountant',
       office: 'Amazon',
     },
-    {
-      id: 14,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
   ];
 
   return (
@@ -314,175 +258,87 @@ const Tabs = () => {
       </ul>
       <div className="space-y-8 pt-5">
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        
-          <div className="panel" id="simple">
-            
-            <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Preview</b></div>
-            <div className="mt-3 p-3 flex flex-wrap border-b justify-start border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><img className="w-20 h-20 rounded-full overflow-hidden object-cover" src="/assets/images/profile-12.jpeg" alt="img" />
-              <div className='p-6'>Username</div></div>
-              <div className="multiple-file-upload panel p-2">
-                        <div className="mb-5">
-                            <div className="custom-file-container" data-upload-id="mySecondImage">
-                                <div className="label-container">
-                                    <label>Upload </label>
-                                    <button
-                                        type="button"
-                                        className="custom-file-container__image-clear"
-                                        title="Clear Image"
-                                        onClick={() => {
-                                            setImages2([]);
-                                        }}
-                                    >
-                                        ×
-                                    </button>
-                                </div>
-                                <label className="custom-file-container__custom-file"></label>
-                                <input type="file" className="custom-file-container__custom-file__custom-file-input" accept="image/*" />
-                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                <ImageUploading multiple value={images2} onChange={onChange2} maxNumber={maxNumber}>
-                                    {({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
-                                        <div className="upload__image-wrapper">
-                                            <button className="custom-file-container__custom-file__custom-file-control" onClick={onImageUpload}>
-                                                Choose File...
-                                            </button>
-                                            &nbsp;
-                                            <div className="grid gap-1 sm:grid-cols-1 grid-cols-1">
-                                                {imageList.map((image, index) => (
-                                                    <div key={index} className="custom-file-container__image-preview relative">
-                                                        <button
-                                                            type="button"
-                                                            className="custom-file-container__image-clear bg-dark-light dark:bg-dark dark:text-white-dark rounded-full block w-fit p-0.5 absolute top-0 left-0"
-                                                            title="Clear Image"
-                                                            onClick={() => onImageRemove(index)}
-                                                        >
-                                                        </button>
-                                                        <img src={image.dataURL} alt="img" className="object-cover shadow rounded w-full !max-h-48" />
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
-                                </ImageUploading>
-                                {images2.length === 0 ? <img src="/assets/images/file-preview.svg" className="max-w-md w-full m-auto" alt="" /> : ''}
-                            </div>
-                        </div>
-                        </div>
-            <Swiper
-              modules={[Navigation, Pagination]}
-              navigation={{ nextEl: '.swiper-button-next-ex1', prevEl: '.swiper-button-prev-ex1' }}
-              pagination={{ clickable: true }}
-              className="swiper max-w-3xl mx-auto mb-5"
-              id="slider1"
-              dir={themeConfig.rtlClass}
-              key={themeConfig.rtlClass === 'rtl' ? 'true' : 'false'}
-            >
-              <div className="swiper-wrapper">
-                {items.map((item, i) => {
-                  return (
-                    <SwiperSlide key={i}>
-                      <img src={`/assets/images/${item}`} className="w-full max-h-80 object-cover" alt="itemImage" />
-                    </SwiperSlide>
-                  );
-                })}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+
+            <div className="panel" id="simple">
+
+              <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Preview</b></div>
+              <div className="mt-3 p-3 flex flex-wrap border-b justify-start border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><img className="w-20 h-20 rounded-full overflow-hidden object-cover" src="/assets/images/profile-12.jpeg" alt="img" />
+                <div className='p-6'>Username</div>
               </div>
-              <button className="swiper-button-prev-ex1 grid place-content-center ltr:left-2 rtl:right-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
-                <IconCaretDown className="w-5 h-5 rtl:-rotate-90 rotate-90" />
-              </button>
-              <button className="swiper-button-next-ex1 grid place-content-center ltr:right-2 rtl:left-2 p-1 transition text-primary hover:text-white border border-primary  hover:border-primary hover:bg-primary rounded-full absolute z-[999] top-1/2 -translate-y-1/2">
-                <IconCaretDown className="w-5 h-5 rtl:rotate-90 -rotate-90" />
-              </button>
-            </Swiper>
-          </div>
-          {/* Simple Tabs */}
-          <div className="panel" id="simple">
-            <div className="mb-5">
-              <Tab.Group>
-                <Tab.List className="mt-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]">
-                  <Tab as={Fragment}>
-                    {({ selected }) => (
-                      <button
-                        className={`${selected ? 'text-secondary !outline-none before:!w-full' : ''}
-                                                    before:inline-block' relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full`}
-                      >
-                        Feed
-                      </button>
-                    )}
-                  </Tab>
-                  <Tab as={Fragment}>
-                    {({ selected }) => (
-                      <button
-                        className={`${selected ? 'text-secondary !outline-none before:!w-full' : ''}
-                                                before:inline-block' relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full`}
-                      >
-                        Story
-                      </button>
-                    )}
-                  </Tab>
-                  <Tab as={Fragment}>
-                    {({ selected }) => (
-                      <button
-                        className={`${selected ? 'text-secondary !outline-none before:!w-full' : ''}
-                                                before:inline-block' relative -mb-[1px] flex items-center p-5 py-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-[1px] before:w-0 before:bg-secondary before:transition-all before:duration-700 hover:text-secondary hover:before:w-full`}
-                      >
-                        Reels
-                      </button>
-                    )}
-                  </Tab>
-                </Tab.List>
-                <Tab.Panels>
-                  <Tab.Panel>
+              <div className="panel h-50" id="simple"></div>
+              
+              <div className="grid grid-cols-2 gap-6 lg:grid-cols-2 ml-2 mt-14 ">
+                <button type="button" className="btn btn-outline-primary btn-sm">Prev</button>
+                <button type="button" className="btn btn-outline-primary btn-sm">Next</button>
+              </div>
+            </div>
 
-                    <div className="active pt-5">
-                      <InputEmoji
-                        value={text}
-                        onChange={setText}
-                        cleanOnEnter
-                        borderRadius={5}
-                        onEnter={handleOnEnter}
-                        placeholder="Type a message"
-                      />
+
+
+            <div className="panel" id="simple">
+
+              <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Options</b>
+              </div>
+
+
+              <div className="active pt-5">
+                <label className='ml-2' htmlFor="iconRight">Text</label>
+                <InputEmoji
+                  value={text}
+                  onChange={setText}
+                  cleanOnEnter
+                  borderRadius={5}
+                  onEnter={handleOnEnter}
+                  placeholder="Type a message"
+                />
+              </div>
+              <div className="mb-5 p-2 mt-3">
+                <label htmlFor="iconRight">Action</label>
+                <Select defaultValue={options[0]} options={options} isSearchable={false} />
+              </div>
+              <div className="mb-5 p-2 mt-3">
+                <label htmlFor="iconRight">Data & Time</label>
+                <Flatpickr
+                  data-enable-time
+                  options={{
+                    enableTime: true,
+                    dateFormat: 'Y-m-d H:i',
+                  }}
+                  value={date2}
+                  className="form-input"
+                  onChange={(date2) => setDate2(date2)}
+                />
+              </div>
+              <div className='ml-2 pr-2'>
+                <label htmlFor="iconRight">Usernames</label>
+                <TagsInput
+                  value={selected}
+                  onChange={setSelected}
+                  name="hashtags" />
+              </div>
+              <div className="mb-5 pr-2">
+                <div className='mt-5 ml-2'>
+                  <label htmlFor="iconRight">Localization</label>
+                  <div className="flex">
+                    <input id="iconRight" type="text" placeholder="Notification" className="form-input ltr:rounded-r-none rtl:rounded-l-none" />
+                    <div className="bg-[#eee] flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border ltr:border-l-0 rtl:border-r-0 border-white-light dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                      <IconMapPin className="text-white-dark" />
                     </div>
-                    <div className="mb-5">
-                      <Flatpickr
-                        data-enable-time
-                        options={{
-                          enableTime: true,
-                          dateFormat: 'Y-m-d H:i',
-                        }}
-                        value={date2}
-                        className="form-input ml-2 mt-2"
-                        onChange={(date2) => setDate2(date2)}
-                      />
-                    </div>
-                    
-
-
-
-
-                  </Tab.Panel>
-                  <Tab.Panel>
-
-
-                  </Tab.Panel>
-                  <Tab.Panel>
-                    <div className="pt-5">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </p>
-                    </div>
-                  </Tab.Panel>
-                  <Tab.Panel>Disabled</Tab.Panel>
-                </Tab.Panels>
-              </Tab.Group>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-6 lg:grid-cols-3 ml-2 mt-14 ">
+                <button type="button" className="btn btn-outline-primary btn-sm" onClick={addNewItems}>Save Post</button>
+                <button type="button" className="btn btn-outline-primary btn-sm">Post Now</button>
+                <button type="button" className="btn btn-outline-primary btn-sm">Schedule</button>
+              </div>
             </div>
 
           </div>
-                        </div>
           <div className="panel p-14">
+            <div className='h-70'>
             <div className="table-responsive mb-5 ml-2">
               <table className='table-hover'>
                 <thead>
@@ -549,12 +405,17 @@ const Tabs = () => {
                     );
                   })}
                 </tbody>
-              </table><div className='flex justify-center pt-10'>
+              </table>
+            </div>
+            </div>
+
+            
+            <div className='flex justify-center pt-10'>
                 <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
                   <li>
                     <button
                       type="button"
-                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                      className="btn btn-outline-primary btn-sm"
                     >
                       Prev
                     </button>
@@ -562,20 +423,21 @@ const Tabs = () => {
                   <li>
                     <button
                       type="button"
-                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                      className="btn btn-outline-primary btn-sm"
                     >
                       1
                     </button>
                   </li>
                   <li>
-                    <button type="button" className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-primary text-white dark:text-white-light dark:bg-primary">
+                    <button type="button"
+                    className="btn btn-outline-primary btn-sm">
                       2
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
-                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                      className="btn btn-outline-primary btn-sm"
                     >
                       3
                     </button>
@@ -583,20 +445,20 @@ const Tabs = () => {
                   <li>
                     <button
                       type="button"
-                      className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
+                      className="btn btn-outline-primary btn-sm"
                     >
                       Next
                     </button>
                   </li>
                 </ul>
               </div>
-            </div>
+
           </div>
 
 
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

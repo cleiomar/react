@@ -119,8 +119,12 @@
     font-size: 11px;
   }
 
-.w-100 {
+  .w-100 {
     width: 100px;
+}
+
+.overflow-auto {
+    overflow: auto;
 }
 
 .rti--container {
@@ -131,3 +135,10 @@
     background-color: #f7f7f7;
 }
 
+.h-50{
+    height: 510px;
+}
+
+.h-70{
+    height: 660px;
+}

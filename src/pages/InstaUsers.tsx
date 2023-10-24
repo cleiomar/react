@@ -1,186 +1,221 @@
-import DashBox from '../components/Dashboard/DashBox';
-import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
-import IconSettings from '../components/Icon/IconSettings';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import Account from '../components/Account';
-import { useState, Fragment, useEffect } from 'react';
-import IconSearch from '../components/Icon/IconSearch';
+import { useEffect, useState } from 'react';
+import InputEmoji from "react-input-emoji";
+import Flatpickr from "react-flatpickr";
+import 'flatpickr/dist/flatpickr.css';
+import 'nouislider/distribute/nouislider.css';
+import Dropdown from '../components/Dropdown';
+import Select from 'react-select';
+import { TagsInput } from "react-tag-input-component";
+import IconMapPin from '../components/Icon/IconMapPin';
+import axios from 'axios';
+
+const Tabs = () => {
+
+  const options = [
+    { value: '1', label: 'Feed' },
+    { value: '2', label: 'Stories' },
+    { value: '3', label: 'Reels' },
+  ];
+
+  const [text, setText] = useState("");
+
+  function handleOnEnter(text) {
+    console.log("enter", text);
+  }
+
+  const [selected, setSelected] = useState(["cleiomar"]);
 
 
-const InstaUsers = () => {
-    const { t } = useTranslation();
+  const [date2, setDate2] = useState<any>('2022-07-05 12:00');
+  const [tableData, setTableData] = useState([]);
 
-    const [selectedTask, setSelectedTask] = useState<any>(null);
-    const [isAddProjectModal, setIsAddProjectModal] = useState(false);
+  useEffect(() => {
+    // Função para alterar elementos com a mesma classe
+    const changeElementsWithClass = () => {
+      const elements = document.querySelectorAll('.react-input-emoji--input'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      elements.forEach((element) => {
+        element.style.height = '250px'; // Exemplo de estilo a ser aplicado
+      });
+
+    };
+
+    // Chame a função quando o componente for montado
+    changeElementsWithClass();
+  }, []);
 
 
-    /*const Dashboard = () => {
-        const [accounts, setAccounts] = useState([
-          {
-            profile: "Cleiomar",
-            profileId: 78475,
-          },
-        ]);
-      
-        const handleAddAccount = () => {
-          // Adiciona uma nova conta ao array
-        };*/
+  useEffect(() => {
+    // Função para alterar elementos com a mesma classe
+    const changeElementsWithClass = () => {
+      const elements = document.querySelectorAll('.rti--container'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      elements.forEach((element) => {
+        element.style.height = '150px'; // Exemplo de estilo a ser aplicado
+        element.style.overflowY = 'scroll'; // Exemplo de estilo a ser aplicado
+      });
+    };
 
-    // Declarando uma variável como array
-    const accounts = [];
+    // Chame a função quando o componente for montado
+    changeElementsWithClass();
 
-    // Adicionando conteúdo ao array
-    accounts.push({
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    });
 
-    return (
-        <>
-            <div className="container">
-                <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
-                    <li>
-                        <Link to="/" className="text-primary hover:underline">
-                            {t('Accounts')}
-                        </Link>
-                    </li>
-                    <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                        <span>Instagram</span>
-                    </li>
-                </ul>
-                <div className="flex gap-5 relative sm:h-[calc(100vh_-_150px)] h-full">
-                    <div className="panel flex-1 overflow-auto h-full">
-                        <div className="sm:min-h-[300px] min-h-[400px] p-5">
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pb-5 gap-8">
-                            <div className="panel pb-4 bg-primary-light flex justify-between shadow-primary">
-                                    <div className="min-h-[40px]">
-                                        <div className="flex justify-center">
-                                            <div className="ltr:ml-2 rtl:mr-2">
-                                                <IconMenuInstaUsers
-                                                    opValor='0.3'
-                                                    width='60'
-                                                    height='60'
-                                                />
-                                            </div>
-                                            <div className="ltr:ml-1 rtl:mr-1 w-[250px] self-end-baseline">
-                                                <div className="font-bold text-lg font-general text-gray-500">Accounts</div>
-                                                <div className="font-num font-semibold text-gray-500 ">35</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="panel pb-4 bg-primary-light justify-between shadow-primary">
-                                    <div className="min-h-[40px]">
-                                    <div className="relative mt-2">
-                                        <input type="text" placeholder="Search Profile" className="form-input py-2 ltr:pr-11 rtl:pl-11 peer"/>
-                                        <button type="button" className="absolute ltr:right-[11px] rtl:left-[11px] top-1/2 -translate-y-1/2 peer-focus:text-primary">
-                                            <IconSearch className="mx-auto" />
-                                        </button>
-                                    </div>
-                                    </div>
-                                </div>
+  }, []);
+
+  useEffect(() => {
+    // Função para buscar os dados dos usuários
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/users');
+        setTableData(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar dados dos usuários:', error);
+      }
+    };
+
+    // Chamada da função ao montar o componente
+    fetchUsers();
+  }, []);
+
+  return (
+    <div>
+      <ul className="flex space-x-2 rtl:space-x-reverse">
+        <li>
+          <Link to="/components/tabs" className="text-primary hover:underline">
+            Components
+          </Link>
+        </li>
+        <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
+          <span>Tabs</span>
+        </li>
+      </ul>
+      <div className="space-y-8 pt-5">
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-1">
+          
+          <div className="panel p-14">
+            <div className='h-70 overflow-auto'>
+              <div className="table-responsive mb-5 ml-2">
+                <table className='table-hover'>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date</th>
+                      <th>Sale</th>
+                      <th>Status</th>
+                      <th className="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tableData.map((data) => {
+                      return (
+
+                        <tr key={data.ID}>
+                          <td>
+                            <div className="whitespace-nowrap">{data.Login}</div>
+                          </td>
+                          <td>{data.ID}</td>
+                          <td>{data.sale}</td>
+                          <td>
+                            <span
+                              className={`badge whitespace-nowrap ${data.status === 'completed'
+                                ? 'bg-primary   '
+                                : data.status === 'Pending'
+                                  ? 'bg-secondary'
+                                  : data.status === 'In Progress'
+                                    ? 'bg-success'
+                                    : data.status === 'Canceled'
+                                      ? 'bg-danger'
+                                      : 'bg-primary'
+                                }`}
+                            >
+                              {data.status}
+                            </span>
+                          </td>
+                          <td className="text-center">
+                            <div className="dropdown">
+                              <Dropdown
+                                offset={[0, 5]}
+                                placement={'bottom-end'}
+                                button={
+                                  <svg xmlns="http://www.w3.org/2000/svg" className='grey-css ml-4' fill="currentColor" viewBox="0 0 50 50" width="15px" height="15px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" /></svg>
+                                }
+                              >
+                                <ul>
+                                  <li>
+                                    <button type="button">Canceled</button>
+                                  </li>
+                                  <li>
+                                    <button type="button">Pending</button>
+                                  </li>
+                                  <li>
+                                    <button type="button">Completed</button>
+                                  </li>
+                                  <li>
+                                    <button type="button">Delete</button>
+                                  </li>
+                                </ul>
+                              </Dropdown>
                             </div>
-                            <ul className="font-bold ft titulo text-gray-500 pb-10 pt-0">
-                                <li>
-                                    {t('accounts')}
-                                </li>
-                            </ul>
-                            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-                                {accounts.map((account, index) => (
-                                    <Account
-                                        key={index}
-                                        profile={account.profile}
-                                        profileID={account.profileId}
-                                    />
-                                ))}
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className='flex justify-center pt-10'>
-                    <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
-                        <li>
-                            <button
-                                type="button"
-                                className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
-                            >
-                                Prev
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                type="button"
-                                className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
-                            >
-                                1
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-primary text-white dark:text-white-light dark:bg-primary">
-                                2
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                type="button"
-                                className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
-                            >
-                                3
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                type="button"
-                                className="flex justify-center font-semibold px-3.5 py-2 rounded transition bg-white-light text-dark hover:text-white hover:bg-primary dark:text-white-light dark:bg-[#191e3a] dark:hover:bg-primary"
-                            >
-                                Next
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
 
-        </>
-    );
+            <div className='flex justify-center pt-10'>
+              <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
+                <li>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    Prev
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    1
+                  </button>
+                </li>
+                <li>
+                  <button type="button"
+                    className="btn btn-outline-primary btn-sm">
+                    2
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    3
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div >
+  );
 };
 
-export default InstaUsers;
+export default Tabs;

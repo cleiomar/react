@@ -130,7 +130,7 @@ const Sidebar = () => {
                             </li>
 
                             <li className="nav-item">
-                                <NavLink to="/Instagram" className="group">
+                                <NavLink to="/InstaActivity" className="group">
                                     <div className="flex items-center">
                                         <IconMenuAutoActivity
                                         opValor="0.5"

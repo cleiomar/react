@@ -15,6 +15,17 @@
     .btn-lg-config {
         width: 160px;
     }
+
+    .w-200 {
+        width: 200px;
+    }
+    .w-100p{
+        width: 100%;
+    }
+    .w-800 {
+        width: 800px ;
+    }
+    
 }
 
 @media (max-width: 1249px) {
@@ -59,9 +70,17 @@
     .buttonHidden {
         display: none;
     }
+    
+@media (orientation: landscape) {
+    .h-25 {
+        height: 250px;
+    }
+    }
 }
 
-@media (max-width:  768px) {
+
+
+@media (max-width: 768px) {
     .pos-icon {
         margin-left: 25px;
         width: 60px;
@@ -104,22 +123,24 @@
     padding: 10px;
 }
 
-.grey-css{
+.grey-css {
     color: #b9b9b9;
 }
 
 .action-bottom {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Isso coloca o conteúdo em uma coluna */
-    justify-content: flex-end; /* Isso alinha o conteúdo na parte inferior */
-  }
+    flex-direction: column;
+    /* Isso coloca o conteúdo em uma coluna */
+    justify-content: flex-end;
+    /* Isso alinha o conteúdo na parte inferior */
+}
 
-  .text-xsm{
+.text-xsm {
     font-size: 11px;
-  }
+}
 
-  .w-100 {
+.w-100 {
     width: 100px;
 }
 
@@ -135,10 +156,10 @@
     background-color: #f7f7f7;
 }
 
-.h-50{
+.h-50 {
     height: 510px;
 }
 
-.h-70{
+.h-70 {
     height: 660px;
 }

@@ -803,7 +803,7 @@ const Tabs = () => {
                         <label htmlFor="Email">Email</label>
                         <input id="Email" type="text" placeholder="Email" defaultValue="" className="form-input mb-5" />
 
-                        <label htmlFor="Password">Born</label>
+                        <label htmlFor="Password">birth date</label>
                         <input id="Password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
 
                       </div>

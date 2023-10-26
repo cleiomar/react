@@ -2,13 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import { realizarConsulta1 } from './src/api/credentials';
 import { credentials } from './src/api/users';
-import { dados } from './src/api/data';
+import { newUser } from './src/api/data';
+import multer from 'multer';
 
 const app = express();
 const port = 3000;
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 
 app.get('/api/users', async (req, res) => {
   try {
@@ -21,7 +24,7 @@ app.get('/api/users', async (req, res) => {
 
 
 app.get('/api/credentials', async (req, res) => {
-  const limit = req.query.limit || 10; // Pode ser lido dos parâmetros da solicitação
+  const limit = req.query.limit || 10;
 
   try {
     const results = await credentials(limit);
@@ -31,16 +34,14 @@ app.get('/api/credentials', async (req, res) => {
   }
 });
 
-
-app.post('/api/dados', async (req, res) => {
+app.post('/api/new_user', upload.none(), async (req, res) => {
   const data = req.body;
-  console.log(data);
-  /*try {
-    const results = await dados(data); // Passar os dados para a função 'dados'
-    res.json(results);
+  try {
+    const results = await newUser(data);
+    res.json({message: 'Cadastrado com Sucesso!', status: 'success'});
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
-  }*/
+  }
 });
 
 app.listen(port, () => {

@@ -11,6 +11,10 @@ import { Dialog, Transition } from '@headlessui/react';
 import IconCode from '../components/Icon/IconCode';
 import IconX from '../components/Icon/IconX';
 import Select from 'react-select';
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/flatpickr.css';
+import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 
 
@@ -636,6 +640,18 @@ const Tabs = () => {
     return status[random];
   };
 
+  const showAlert = async (data: string) => {
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Feito!',
+            text: data,
+            padding: '2em',
+            customClass: 'sweet-alerts', 
+            timer: 3000,
+            showConfirmButton: false
+        });
+}
 
   function AddNew() {
     // Obtenha uma referência ao formulário pelo ID
@@ -645,7 +661,7 @@ const Tabs = () => {
     const formData = new FormData(form);
 
     // Configurar a URL do servidor
-    const url = 'http://localhost:3000/api/dados'; // Substitua pela URL do seu servidor
+    const url = 'http://localhost:3000/api/new_user'; // Substitua pela URL do seu servidor
 
     // Configurar as opções da solicitação POST
     const options: RequestInit = {
@@ -664,12 +680,21 @@ const Tabs = () => {
       })
       .then((data) => {
         console.log('Resposta do servidor:', data);
+        showAlert(data.message)
         // Faça o que você precisa com a resposta do servidor
       })
       .catch((error) => {
         console.error('Erro ao enviar a solicitação POST:', error);
       });
   }
+
+
+  const dispatch = useDispatch();
+  const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
+  const [date1, setDate1] = useState<any>('2022-07-05');
+
+
+
 
   return (
     <div>
@@ -841,24 +866,25 @@ const Tabs = () => {
                           <input name="email" type="text" placeholder="Email" defaultValue="" className="form-input mb-5" />
 
                           <label htmlFor="birth date">birth date</label>
-                          <input name="birth_date" type="birth_date" placeholder="birth_date" defaultValue="" className="form-input mb-5" />
-
+                          <Flatpickr  name="birth_date" value={date1} options={{ dateFormat: 'd/m/Y', position: isRtl ? 'auto right' : 'auto left' }} className="form-input" onChange={(date) => setDate1(date)} />
+                          
                         </div>
                         <div className='panel'>
+                          <label htmlFor="fullname">Plan</label>
+                          <Select name="plan" className="mb-5" defaultValue={options[0]} options={options} isSearchable={false} />
+                          
                           <label htmlFor="Username">Username</label>
                           <input name="username" type="text" placeholder="Username" defaultValue="" className="form-input mb-5" />
 
                           <label htmlFor="Password">Password</label>
                           <input name="password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
 
-                          <label htmlFor="fullname">Plan</label>
-                          <Select name="plan" defaultValue={options[0]} options={options} isSearchable={false} />
 
                           <div className="mt-8 flex items-center justify-end">
-                            <button onClick={() => setModal4(false)} type="button" className="btn btn-outline-danger">
-                              Discard
+                            <button onClick={() => setModal4(false)} type="button" className="btn btn-outline-primary">
+                              Cancel
                             </button>
-                            <button type="button" onClick={() => { setModal4(false); AddNew(); }} className="btn btn-primary ltr:ml-4 rtl:mr-4">
+                            <button type="button" onClick={() => { setModal4(false); AddNew(); }} className="btn btn-outline-success ltr:ml-4 rtl:mr-4">
                               Save
                             </button>
                           </div>

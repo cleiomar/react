@@ -636,6 +636,41 @@ const Tabs = () => {
     return status[random];
   };
 
+
+  function AddNew() {
+    // Obtenha uma referência ao formulário pelo ID
+    const form = document.getElementById('instaUserNewUser') as HTMLFormElement;
+
+    // Crie um objeto FormData a partir do formulário
+    const formData = new FormData(form);
+
+    // Configurar a URL do servidor
+    const url = 'http://localhost:3000/api/dados'; // Substitua pela URL do seu servidor
+
+    // Configurar as opções da solicitação POST
+    const options: RequestInit = {
+      method: 'POST',
+      body: formData, // Use o objeto FormData como corpo da solicitação
+    };
+
+    // Enviar a solicitação POST
+    fetch(url, options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json(); // Se a resposta estiver OK, analise a resposta como JSON
+        } else {
+          throw new Error('Erro na solicitação POST');
+        }
+      })
+      .then((data) => {
+        console.log('Resposta do servidor:', data);
+        // Faça o que você precisa com a resposta do servidor
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar a solicitação POST:', error);
+      });
+  }
+
   return (
     <div>
       <ul className="flex space-x-2 rtl:space-x-reverse mb-5">
@@ -795,38 +830,41 @@ const Tabs = () => {
                         <IconX />
                       </button>
                     </div>
-                    <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 p-5 h-25">
-                      <div className='panel'>
-                        <label htmlFor="Name">Full Name</label>
-                        <input id="Full Name" type="text" placeholder="Full Name" defaultValue="" className="form-input mb-5" />
+                    <form id='instaUserNewUser' action='http://localhost:3000/api/dados' method="POST">
+                      <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 p-5 h-25">
 
-                        <label htmlFor="Email">Email</label>
-                        <input id="Email" type="text" placeholder="Email" defaultValue="" className="form-input mb-5" />
+                        <div className='panel'>
+                          <label htmlFor="Name">Full Name</label>
+                          <input name="full_name" type="text" placeholder="Full Name" defaultValue="" className="form-input mb-5" />
 
-                        <label htmlFor="Password">birth date</label>
-                        <input id="Password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
+                          <label htmlFor="Email">Email</label>
+                          <input name="email" type="text" placeholder="Email" defaultValue="" className="form-input mb-5" />
 
-                      </div>
-                      <div className='panel'>
-                        <label htmlFor="Username">Username</label>
-                        <input id="Username" type="text" placeholder="Username" defaultValue="" className="form-input mb-5" />
+                          <label htmlFor="birth date">birth date</label>
+                          <input name="birth_date" type="birth_date" placeholder="birth_date" defaultValue="" className="form-input mb-5" />
 
-                        <label htmlFor="Password">Password</label>
-                        <input id="Password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
+                        </div>
+                        <div className='panel'>
+                          <label htmlFor="Username">Username</label>
+                          <input name="username" type="text" placeholder="Username" defaultValue="" className="form-input mb-5" />
 
-                        <label htmlFor="fullname">Plan</label>
-                        <Select className="" defaultValue={options[0]} options={options} isSearchable={false} />
+                          <label htmlFor="Password">Password</label>
+                          <input name="password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
 
-                        <div className="mt-8 flex items-center justify-end">
-                          <button onClick={() => setModal4(false)} type="button" className="btn btn-outline-danger">
-                            Discard
-                          </button>
-                          <button type="button" onClick={() => setModal4(false)} className="btn btn-primary ltr:ml-4 rtl:mr-4">
-                            Save
-                          </button>
+                          <label htmlFor="fullname">Plan</label>
+                          <Select name="plan" defaultValue={options[0]} options={options} isSearchable={false} />
+
+                          <div className="mt-8 flex items-center justify-end">
+                            <button onClick={() => setModal4(false)} type="button" className="btn btn-outline-danger">
+                              Discard
+                            </button>
+                            <button type="button" onClick={() => { setModal4(false); AddNew(); }} className="btn btn-primary ltr:ml-4 rtl:mr-4">
+                              Save
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </Dialog.Panel>
                 </div>
               </div>

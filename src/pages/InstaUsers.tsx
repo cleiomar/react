@@ -9,6 +9,7 @@ import IconPlus from '../components/Icon/IconPlus';
 import { Dialog, Transition } from '@headlessui/react';
 import IconX from '../components/Icon/IconX';
 import Select from 'react-select';
+import Async, { useAsync } from 'react-select/async';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,25 +56,25 @@ const Tabs = () => {
     const data = await fetch('http://localhost:3000/api/plans')
     const response = await data.json()
     setOptions(response)
-}
+  }
 
-useEffect(() => {
-  fetchApiOption();
-}, []);
+  useEffect(() => {
+    fetchApiOption();
+  }, []);
 
-function capitalizeFirstLetter(name: string): string {
-  const words = name.split(' ');
-  const capitalizedWords = words.map((word) => {
-    word = word.toLowerCase();
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
-  return capitalizedWords.join(' ');
-}
+  function capitalizeFirstLetter(name: string): string {
+    const words = name.split(' ');
+    const capitalizedWords = words.map((word) => {
+      word = word.toLowerCase();
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return capitalizedWords.join(' ');
+  }
 
 
-useEffect(() => {
-  setPage(1);
-}, [pageSize]);
+  useEffect(() => {
+    setPage(1);
+  }, [pageSize]);
 
   useEffect(() => {
     const from = (page - 1) * pageSize;
@@ -159,9 +160,98 @@ useEffect(() => {
   }
 
 
-  const dispatch = useDispatch();
+  const [selectedOption, setSelectedOption] = useState([]);
+
+  const SelectChange = (selectedOption) => {
+    console.log(selectedOption)
+  };
+
+  useEffect(() => {
+    document.addEventListener('DOMContentLoaded', function() {
+      const selectElement = document.querySelector('select[name="plan"]');
+      
+      if (selectElement) {
+        const selectedValue = selectElement.value;
+        console.log(selectedValue);
+      } else {
+        console.error('O elemento select não foi encontrado no DOM.');
+      }
+    });
+  }, []);
+  
+  const [DateOption, setDateOption] = useState(null);
+
+  const DateChange = (DateOption) => {
+    setDateOption(DateOption);
+  };
+
+
+  useEffect(() => {
+    if (modal4) {
+
+    } else {
+      setSelectedOption({ value: undefined, label: 'Select...' })
+      setFormData({
+        full_name: "",
+        email: "",
+        phone: "",
+        birth_date: "",
+        plan: undefined,
+        username: "",
+        password: ""
+      })
+    }
+  }, [modal4]);
+
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    phone: "",
+    birth_date: "",
+    plan: "",
+    username: "",
+    password: ""
+  });
+
+  const fetchApiUserid = async (id: number) => {
+    try {
+      const data = await fetch('http://localhost:3000/api/userid?id='+id);
+      if (data.ok) {
+        const response = await data.json();
+
+        const updatedFormData: [] = response.map((item) => {
+          setFormData({
+            ...formData,
+            ['full_name']: item.full_name,
+            ['email']: item.email,
+            ['phone']: item.phone,
+            ['birth_date']: item.birth_date,
+            ['username']: item.username,
+            ['plan']: item.planid
+          });
+          setSelectedOption({ value: item.planid, label: item.plan })
+          setModal4(true)
+
+        })
+
+      } else {
+        console.error('Erro na requisição à API');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados da API:', error);
+    }
+  };
+
+  const formHandleChange = (e) => {
+    const { name, value } = e.target;
+    console.log(formData)
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
-  const [date1, setDate1] = useState<any>('2022-07-05');
 
 
   return (
@@ -250,10 +340,10 @@ useEffect(() => {
                 title: 'Status',
                 sortable: true,
                 render: ({ Status }) => (
-                  Status === '1' ? (
+                  Status === 1 ? (
                     <span className={`badge bg-success`}>Active</span>
-                  ) : 
-                    Status === '2' ? (
+                  ) :
+                    Status === 2 ? (
                       <span className={`badge bg-danger`}>Blocked</span>
                     ) : <span className={`badge bg-dark`}>Canceled</span>
                 ),
@@ -262,7 +352,7 @@ useEffect(() => {
                 accessor: 'Action',
                 title: 'Action',
                 titleClassName: '!text-center',
-                render: () => (
+                render: ({ id }) => (
                   <div className="flex items-center w-max mx-auto">
                     <div className="dropdown">
                       <Dropdown
@@ -274,16 +364,16 @@ useEffect(() => {
                       >
                         <ul>
                           <li>
-                            <button type="button">Canceled</button>
+                            <button type="button" onClick={() => fetchApiUserid(id)}>Edit</button>
                           </li>
                           <li>
-                            <button type="button">Pending</button>
+                            <button type="button">Cancel</button>
                           </li>
                           <li>
-                            <button type="button">Completed</button>
+                            <button type="button">Configs</button>
                           </li>
                           <li>
-                            <button type="button">Delete</button>
+                            <button type="button">Renew</button>
                           </li>
                         </ul>
                       </Dropdown>
@@ -333,34 +423,46 @@ useEffect(() => {
                     </div>
                     <form id='instaUserNewUser' action='http://localhost:3000/api/dados' method="POST">
                       <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 p-5 h-25">
-
                         <div className='panel'>
                           <label htmlFor="Name">Full Name</label>
-                          <input name="full_name" type="text" placeholder="Full Name" defaultValue="" className="form-input mb-5" />
+                          <input name="full_name" value={formData.full_name || ''} onChange={formHandleChange} type="text" placeholder="Full Name" className="form-input mb-5" />
 
                           <label htmlFor="Email">Email</label>
-                          <input name="email" type="text" placeholder="Email" defaultValue="" className="form-input mb-5" />
+                          <input name="email" value={formData.email || ''} onChange={formHandleChange} type="text" placeholder="Email" className="form-input mb-5" />
 
                           <label htmlFor="Phone">Phone</label>
-                          <input name="phone" type="text" placeholder="Phone" defaultValue="" className="form-input mb-5" />
+                          <input name="phone" value={formData.phone || ''} onChange={formHandleChange} type="text" placeholder="Phone" className="form-input mb-5" />
 
                           <label htmlFor="birth date">birth date</label>
-                          <Flatpickr name="birth_date" value={date1} options={{ dateFormat: 'd/m/Y', position: isRtl ? 'auto right' : 'auto left' }} className="form-input" onChange={(date) => setDate1(date)} />
-
+                          <Flatpickr
+                            name="birth_date"
+                            value={formData.birth_date || DateOption}
+                            onChange={(e) => {
+                              DateChange(e);
+                            }}
+                            options={{ dateFormat: 'd/m/Y', position: isRtl ? 'auto right' : 'auto left' }}
+                            className="form-input"
+                          />
                         </div>
                         <div className='panel'>
                           <label htmlFor="fullname">Plan</label>
-                          <Select name="plan" className="mb-5" defaultValue={options[0]} options={options} isSearchable={false} />
+                          <Select
+                            name="plan"
+                            value={selectedOption}
+                            onChange={SelectChange}
+                            className="mb-5"
+                            options={options}
+                            isSearchable={false}
+                          />
 
                           <label htmlFor="Username">Username</label>
-                          <input name="username" type="text" placeholder="Username" defaultValue="" className="form-input mb-5" />
+                          <input name="username" value={formData.username || ''} onChange={formHandleChange} type="text" placeholder="Username" className="form-input mb-5" />
 
                           <label htmlFor="Password">Password</label>
-                          <input name="password" type="password" placeholder="Password" defaultValue="" className="form-input mb-5" />
-
+                          <input name="password" value={formData.password || ''} onChange={formHandleChange} type="password" placeholder="Password" className="form-input mb-5" />
 
                           <div className="mt-8 flex items-center justify-end">
-                            <button onClick={() => setModal4(false)} type="button" className="btn btn-outline-primary">
+                            <button onClick={() => setModal4(false)} onChange={formHandleChange} type="button" className="btn btn-outline-primary">
                               Cancel
                             </button>
                             <button type="button" onClick={() => { setModal4(false); AddNew(); }} className="btn btn-outline-success ltr:ml-4 rtl:mr-4">

@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { credentials } from './src/api/credentials';
 import { users } from './src/api/users';
+import { userid } from './src/api/userid';
 import { newUser } from './src/api/data';
 import { plans } from './src/api/plans';
 import multer from 'multer';
@@ -19,6 +20,16 @@ app.get('/api/users', async (req, res) => {
 
   try {
     const results = await users(limit);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/userid', async (req, res) => {  
+  const id = req.query.id;
+  try {
+    const results = await userid(id);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

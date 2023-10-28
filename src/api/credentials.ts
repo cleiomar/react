@@ -1,6 +1,6 @@
 import db from './db';
 
-export function realizarConsulta1() {
+export function credentials() {
   return new Promise((resolve, reject) => {
     db.query('SELECT * FROM credentials LIMIT 10', (err, results) => {
       if (err) {

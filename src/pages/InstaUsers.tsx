@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { DataTable, DataTableSortStatus } from 'mantine-datatable';
 import { useEffect, Fragment, useState } from 'react';
 import 'flatpickr/dist/flatpickr.css';
@@ -161,35 +161,28 @@ const Tabs = () => {
 
 
   const [selectedOption, setSelectedOption] = useState([]);
+  const [edit, setEdit] = useState(0);
 
   const SelectChange = (selectedOption) => {
-    console.log(selectedOption)
+    setSelectedOption(selectedOption)
   };
 
-  useEffect(() => {
-    document.addEventListener('DOMContentLoaded', function() {
-      const selectElement = document.querySelector('select[name="plan"]');
-      
-      if (selectElement) {
-        const selectedValue = selectElement.value;
-        console.log(selectedValue);
-      } else {
-        console.error('O elemento select não foi encontrado no DOM.');
-      }
-    });
-  }, []);
-  
   const [DateOption, setDateOption] = useState(null);
 
   const DateChange = (DateOption) => {
     setDateOption(DateOption);
   };
 
-
+  const [title, setTitle] = useState('New User');
   useEffect(() => {
     if (modal4) {
-
+      console.log(edit)
     } else {
+      
+      console.log(edit)
+      setTitle('New User')
+      setEdit(0)
+      setDateOption(null)
       setSelectedOption({ value: undefined, label: 'Select...' })
       setFormData({
         full_name: "",
@@ -222,7 +215,7 @@ const Tabs = () => {
         const updatedFormData: [] = response.map((item) => {
           setFormData({
             ...formData,
-            ['full_name']: item.full_name,
+            ['full_name']: capitalizeFirstLetter(item.full_name),
             ['email']: item.email,
             ['phone']: item.phone,
             ['birth_date']: item.birth_date,
@@ -230,6 +223,8 @@ const Tabs = () => {
             ['plan']: item.planid
           });
           setSelectedOption({ value: item.planid, label: item.plan })
+          setTitle('Edit User')
+          setEdit(item.id)
           setModal4(true)
 
         })
@@ -240,6 +235,11 @@ const Tabs = () => {
     } catch (error) {
       console.error('Erro ao buscar dados da API:', error);
     }
+  };
+
+  const navigate = useNavigate();
+  const userSettings = (username) => {
+    navigate('/InstaUserSettings', { state: { texto: username } });
   };
 
   const formHandleChange = (e) => {
@@ -352,7 +352,7 @@ const Tabs = () => {
                 accessor: 'Action',
                 title: 'Action',
                 titleClassName: '!text-center',
-                render: ({ id }) => (
+                render: ({ id, Login }) => (
                   <div className="flex items-center w-max mx-auto">
                     <div className="dropdown">
                       <Dropdown
@@ -370,7 +370,7 @@ const Tabs = () => {
                             <button type="button">Cancel</button>
                           </li>
                           <li>
-                            <button type="button">Configs</button>
+                            <button type="button" onClick={() => userSettings(Login)}>Configs</button>
                           </li>
                           <li>
                             <button type="button">Renew</button>
@@ -416,7 +416,7 @@ const Tabs = () => {
                 <div className="flex min-h-screen items-start justify-center px-4">
                   <Dialog.Panel className="panel my-8 w-full overflow-hidden overflow-auto w-800 rounded-lg border-0 p-0 text-black dark:text-white-dark">
                     <div className="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
-                      <h5 className="text-lg font-bold">New User</h5>
+                      <h5 className="text-lg font-bold">{title}</h5>
                       <button type="button" onClick={() => setModal4(false)} className="text-white-dark hover:text-dark">
                         <IconX />
                       </button>
@@ -425,7 +425,7 @@ const Tabs = () => {
                       <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 p-5 h-25">
                         <div className='panel'>
                           <label htmlFor="Name">Full Name</label>
-                          <input name="full_name" value={formData.full_name || ''} onChange={formHandleChange} type="text" placeholder="Full Name" className="form-input mb-5" />
+                          <input name="full_name" autoFocus value={formData.full_name || ''} onChange={formHandleChange} type="text" placeholder="Full Name" className="form-input mb-5" />
 
                           <label htmlFor="Email">Email</label>
                           <input name="email" value={formData.email || ''} onChange={formHandleChange} type="text" placeholder="Email" className="form-input mb-5" />

@@ -19,8 +19,6 @@ const ReceberProps: React.FC = () => {
     }, {
         name: "Follow"
     }, {
-        name: "Comment"
-    }, {
         name: "View"
     }, {
         name: "Unfollow"
@@ -41,6 +39,8 @@ const ReceberProps: React.FC = () => {
         name: "Location"
     }, {
         name: "Username"
+    }, {
+        name: "Comment"
     });
 
 

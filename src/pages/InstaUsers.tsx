@@ -14,6 +14,10 @@ import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import IconSettings from '../components/Icon/IconSettings';
+import IconEdit from '../components/Icon/IconEdit';
+import IconXCircle from '../components/Icon/IconXCircle';
+import IconCashBanknotes from '../components/Icon/IconCashBanknotes';
 
 const Tabs = () => {
 
@@ -91,8 +95,8 @@ const Tabs = () => {
           item.Login.toLowerCase().includes(search.toLowerCase()) ||
           item.NextBilling.toLowerCase().includes(search.toLowerCase()) ||
           item.Email.toLowerCase().includes(search.toLowerCase()) ||
-          item.Status.toLowerCase().includes(search.toLowerCase()) ||
-          item.Phone.toLowerCase().includes(search.toLowerCase())
+          item.Phone.toLowerCase().includes(search.toLowerCase()) ||
+          item.Status.toLowerCase().includes(search.toLowerCase())
         );
       });
     });
@@ -120,7 +124,7 @@ const Tabs = () => {
 
     Swal.fire({
       icon: 'success',
-      title: 'Feito!',
+      title: 'Done!',
       text: data,
       padding: '2em',
       customClass: 'sweet-alerts',
@@ -129,12 +133,22 @@ const Tabs = () => {
     });
   }
 
+
+  const [userID, setUserID] = useState(0);
+
   function AddNew() {
     const form = document.getElementById('instaUserNewUser') as HTMLFormElement;
 
     const formData = new FormData(form);
 
-    const url = 'http://localhost:3000/api/new_user';
+    formData.append('id', userID);
+    let url;
+    if (userID === 0) {
+      url = 'http://localhost:3000/api/new_user';
+    }
+    else {
+      url = 'http://localhost:3000/api/update_user';
+    }
 
     const options: RequestInit = {
       method: 'POST',
@@ -150,7 +164,6 @@ const Tabs = () => {
         }
       })
       .then((data) => {
-        console.log('Resposta do servidor:', data);
         showAlert(data.message)
         getUserList();
       })
@@ -159,10 +172,25 @@ const Tabs = () => {
       });
   }
 
+  const [statusOptions, setStatusOptions] = useState([]);
+  const statusOption = async () => {
+    const data = await fetch('http://localhost:3000/api/status')
+    const response = await data.json()
+    setStatusOptions(response)
+  }
 
-  const [selectedOption, setSelectedOption] = useState([]);
+  useEffect(() => {
+    statusOption();
+  }, []);
+
+  const [selectedStatusOption, setSelectedStatusOption] = useState([]);
+  const SelectStatusChange = (selectedStatusOption) => {
+    setSelectedStatusOption(selectedStatusOption)
+  };
+
   const [edit, setEdit] = useState(0);
 
+  const [selectedOption, setSelectedOption] = useState([]);
   const SelectChange = (selectedOption) => {
     setSelectedOption(selectedOption)
   };
@@ -176,20 +204,19 @@ const Tabs = () => {
   const [title, setTitle] = useState('New User');
   useEffect(() => {
     if (modal4) {
-      console.log(edit)
     } else {
-      
-      console.log(edit)
+
       setTitle('New User')
       setEdit(0)
       setDateOption(null)
-      setSelectedOption({ value: undefined, label: 'Select...' })
+      setSelectedOption({ value: '', label: 'Select...' })
+      setSelectedStatusOption({ value: '', label: 'Select...' })
       setFormData({
         full_name: "",
         email: "",
         phone: "",
         birth_date: "",
-        plan: undefined,
+        plan: null,
         username: "",
         password: ""
       })
@@ -208,7 +235,7 @@ const Tabs = () => {
 
   const fetchApiUserid = async (id: number) => {
     try {
-      const data = await fetch('http://localhost:3000/api/userid?id='+id);
+      const data = await fetch('http://localhost:3000/api/userid?id=' + id);
       if (data.ok) {
         const response = await data.json();
 
@@ -221,8 +248,10 @@ const Tabs = () => {
             ['birth_date']: item.birth_date,
             ['username']: item.username,
             ['plan']: item.planid
-          });
+          })
+          setUserID(item.id)
           setSelectedOption({ value: item.planid, label: item.plan })
+          setSelectedStatusOption({ value: item.statusid, label: item.status })
           setTitle('Edit User')
           setEdit(item.id)
           setModal4(true)
@@ -237,6 +266,46 @@ const Tabs = () => {
     }
   };
 
+
+  const cancelId = async (id: number) => {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      showCancelButton: true,
+      confirmButtonText: 'Cancel',
+      cancelButtonText: 'Back',
+      padding: '2em',
+      customClass: 'sweet-alerts',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+
+          const data = await fetch('http://localhost:3000/api/cancelid?id=' + id);
+          if (data.ok) {
+            const response = await data.json();
+            getUserList();
+            Swal.fire({
+              icon: 'success',
+              title: 'Done!',
+              text: response.message,
+              padding: '2em',
+              customClass: 'sweet-alerts',
+              timer: 3000,
+              showConfirmButton: false
+            });
+
+          } else {
+            console.error('Erro na requisição à API');
+          }
+        } catch (error) {
+          console.error('Erro ao buscar dados da API:', error);
+        }
+      }
+
+    })
+  };
+
   const navigate = useNavigate();
   const userSettings = (username) => {
     navigate('/InstaUserSettings', { state: { texto: username } });
@@ -244,7 +313,6 @@ const Tabs = () => {
 
   const formHandleChange = (e) => {
     const { name, value } = e.target;
-    console.log(formData)
     setFormData({
       ...formData,
       [name]: value
@@ -340,10 +408,10 @@ const Tabs = () => {
                 title: 'Status',
                 sortable: true,
                 render: ({ Status }) => (
-                  Status === 1 ? (
+                  Status == 'Active' ? (
                     <span className={`badge bg-success`}>Active</span>
                   ) :
-                    Status === 2 ? (
+                    Status === 'Blocked' ? (
                       <span className={`badge bg-danger`}>Blocked</span>
                     ) : <span className={`badge bg-dark`}>Canceled</span>
                 ),
@@ -364,16 +432,16 @@ const Tabs = () => {
                       >
                         <ul>
                           <li>
-                            <button type="button" onClick={() => fetchApiUserid(id)}>Edit</button>
+                            <button type="button" onClick={() => fetchApiUserid(id)}><IconEdit className='pr-1 mr-5' />Edit</button>
                           </li>
                           <li>
-                            <button type="button">Cancel</button>
+                            <button type="button" onClick={() => cancelId(id)}><IconXCircle className='pr-1 mr-5' /> Cancel</button>
                           </li>
                           <li>
-                            <button type="button" onClick={() => userSettings(Login)}>Configs</button>
+                            <button type="button" onClick={() => userSettings(Login)}><IconSettings className='pr-2 mr-4' />Configs</button>
                           </li>
                           <li>
-                            <button type="button">Renew</button>
+                            <button type="button"><IconCashBanknotes className='pr-2 mr-4' />Renew</button>
                           </li>
                         </ul>
                       </Dropdown>
@@ -421,7 +489,7 @@ const Tabs = () => {
                         <IconX />
                       </button>
                     </div>
-                    <form id='instaUserNewUser' action='http://localhost:3000/api/dados' method="POST">
+                    <form id='instaUserNewUser' className='height-60' action='http://localhost:3000/api/dados' method="POST">
                       <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 p-5 h-25">
                         <div className='panel'>
                           <label htmlFor="Name">Full Name</label>
@@ -455,11 +523,22 @@ const Tabs = () => {
                             isSearchable={false}
                           />
 
+                          <label htmlFor="Status">Status</label>
+                          <Select
+                            name="status"
+                            value={selectedStatusOption}
+                            onChange={SelectStatusChange}
+                            className="mb-5"
+                            options={statusOptions}
+                            isSearchable={false}
+                          />
+
                           <label htmlFor="Username">Username</label>
                           <input name="username" value={formData.username || ''} onChange={formHandleChange} type="text" placeholder="Username" className="form-input mb-5" />
 
                           <label htmlFor="Password">Password</label>
                           <input name="password" value={formData.password || ''} onChange={formHandleChange} type="password" placeholder="Password" className="form-input mb-5" />
+
 
                           <div className="mt-8 flex items-center justify-end">
                             <button onClick={() => setModal4(false)} onChange={formHandleChange} type="button" className="btn btn-outline-primary">

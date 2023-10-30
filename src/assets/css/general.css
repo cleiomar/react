@@ -19,13 +19,15 @@
     .w-200 {
         width: 200px;
     }
-    .w-100p{
+
+    .w-100p {
         width: 100%;
     }
+
     .w-800 {
-        width: 800px ;
+        width: 800px;
     }
-    
+
 }
 
 @media (max-width: 1249px) {
@@ -70,11 +72,18 @@
     .buttonHidden {
         display: none;
     }
-    
-@media (orientation: landscape) {
-    .h-25 {
-        height: 250px;
+
+    @media (orientation: landscape) {
+        .h-25 {
+            height: 250px;
+        }
     }
+    
+    @media (orientation: portrait) {
+
+        .height-60 {
+            height: 600px;
+        }
     }
 }
 

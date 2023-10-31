@@ -11,36 +11,104 @@ const ReceberProps: React.FC = () => {
 
     const location = useLocation();
     const textoRecebido = location.state?.texto || "Nenhum texto recebido";
+    const userid = location.state?.id || "Nenhum texto recebido";
     const [selected, setSelected] = useState(["papaya"]);
     const { t } = useTranslation();
+
+    const [DoLike, setDoLike] = useState(false);
+    const [DoFollow, setDoFollow] = useState(false);
+    const [DoView, setDoView] = useState(false);
+    const [DoUnfollow, setDoUnfollow] = useState(false);
+    const [DoFollowBack, setDoFollowBack] = useState(false);
+    const [DoDirect, setDoDirect] = useState(false);
+    const [DoPost, setDoPost] = useState(false);
+    const [DoHashtag, setDoHashtag] = useState(false);
+    const [DoLocation, setDoLocation] = useState(false);
+    const [DoUsername, setDoUsername] = useState(false);
+    const [DoRepost, setDoRepost] = useState(false);
+    const [DoComment, setDoComment] = useState(false);
+
+
+    
+    const ToDo = async (id) => {
+        const data = await fetch('http://localhost:3000/api/todoconfig?id=' + id)
+        const response = await data.json()
+        response.map((item) => {
+
+            setDoLike(item.DoLike)
+            setDoFollow(item.DoFollow)
+            setDoView(item.DoView)
+            setDoUnfollow(item.DoUnfollow)
+            setDoFollowBack(item.DoFollowBack)
+            setDoDirect(item.DoDirect)
+            setDoPost(item.DoPost)
+            setDoHashtag(item.DoHashtag)
+            setDoLocation(item.DoLocation)
+            setDoUsername(item.DoUsername)
+            setDoRepost(item.DoRepost)
+            setDoComment(item.DoComment)
+
+        })
+    }
+
+    useEffect(() => {
+        ToDo(userid);
+    }, []);
+
+
+
     const options = [];
     options.push({
-        name: "Like"
+        name: "Like",
+        id: "DoLike",
+        status: DoLike
     }, {
-        name: "Follow"
+        name: "Follow",
+        id: "DoFollow",
+        status: DoFollow
     }, {
-        name: "View"
+        name: "View",
+        id: "DoView",
+        status: DoView
     }, {
-        name: "Unfollow"
+        name: "Unfollow",
+        id: "DoUnfollow",
+        status: DoUnfollow
     }, {
-        name: "Follow Back"
+        name: "Follow Back",
+        id: "DoFollowBack",
+        status: DoFollowBack
     }, {
-        name: "Direct"
+        name: "Direct",
+        id: "DoDirect",
+        status: DoDirect
     }, {
-        name: "Post"
+        name: "Post",
+        id: "DoPost",
+        status: DoPost
     }, {
-        name: "Repost"
+        name: "Repost",
+        id: "DoRepost",
+        status: DoRepost
     });
 
     const target = [];
     target.push({
-        name: "Hashtag"
+        name: "Hashtag",
+        id: "DoHashtag",
+        status: DoHashtag
     }, {
-        name: "Location"
+        name: "Location",
+        id: "DoLocation",
+        status: DoLocation
     }, {
-        name: "Username"
+        name: "Username",
+        id: "DoUsername",
+        status: DoUsername
     }, {
-        name: "Comment"
+        name: "Comment",
+        id: "DoComment",
+        status: DoComment
     });
 
 
@@ -96,6 +164,9 @@ const ReceberProps: React.FC = () => {
                                 <InstaOptions
                                     key={index}
                                     name={option.name}
+                                    userid={userid}
+                                    status={option.status}
+                                    id={option.id}
                                 />
                             ))}
                         </div>
@@ -109,6 +180,9 @@ const ReceberProps: React.FC = () => {
                                 <InstaOptions
                                     key={indexs}
                                     name={targets.name}
+                                    userid={userid}
+                                    status={targets.status}
+                                    id={targets.id}
                                 />
                             ))}
                         </div>
@@ -148,7 +222,7 @@ const ReceberProps: React.FC = () => {
                                 name="Username"
                             />
                         </div>
-                        
+
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
                             <li>
                                 {t('Comments')}

@@ -5,9 +5,11 @@ import { users } from './src/api/users';
 import { userid } from './src/api/userid';
 import { cancelId } from './src/api/cancelid';
 import { statusUser } from './src/api/status';
-import { newUser } from './src/api/newuser';
+import { newUser, newConfigUser, newConfigSpeedUser } from './src/api/newuser';
 import { updateUser } from './src/api/updateUser';
 import { plans } from './src/api/plans';
+import { todoconfig } from './src/api/todo';
+import { changestatus } from './src/api/changestatus';
 import multer from 'multer';
 
 const app = express();
@@ -33,6 +35,18 @@ app.get('/api/userid', async (req, res) => {
   const id = req.query.id;
   try {
     const results = await userid(id);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/changestatus', async (req, res) => {
+  const id = req.query.id;
+  const status = req.query.status;
+  const todo = req.query.todo;
+  try {
+    const results = await changestatus(id, status, todo);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
@@ -76,6 +90,16 @@ app.get('/api/plans', async (req, res) => {
   }
 });
 
+app.get('/api/todoconfig', async (req, res) => {
+  const id = req.query.id;
+  try {
+    const results = await todoconfig(id);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
 app.get('/api/status', async (req, res) => {
   const limit = req.query.limit || 10;
   try {
@@ -89,7 +113,9 @@ app.get('/api/status', async (req, res) => {
 app.post('/api/new_user', upload.none(), async (req, res) => {
   const data = req.body;
   try {
-    const results = await newUser(data);
+    const result = await newUser(data);
+    const result2 = await newConfigUser(result.insertId);
+    const result3 = await newConfigSpeedUser(result.insertId);
     res.json({ message: 'Cadastrado com Sucesso!', status: 'success' });
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

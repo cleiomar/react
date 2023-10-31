@@ -307,8 +307,8 @@ const Tabs = () => {
   };
 
   const navigate = useNavigate();
-  const userSettings = (username) => {
-    navigate('/InstaUserSettings', { state: { texto: username } });
+  const userSettings = (username, id) => {
+    navigate('/InstaUserSettings', { state: { texto: username, id: id } });
   };
 
   const formHandleChange = (e) => {
@@ -438,7 +438,7 @@ const Tabs = () => {
                             <button type="button" onClick={() => cancelId(id)}><IconXCircle className='pr-1 mr-5' /> Cancel</button>
                           </li>
                           <li>
-                            <button type="button" onClick={() => userSettings(Login)}><IconSettings className='pr-2 mr-4' />Configs</button>
+                            <button type="button" onClick={() => userSettings(Login, id)}><IconSettings className='pr-2 mr-4' />Configs</button>
                           </li>
                           <li>
                             <button type="button"><IconCashBanknotes className='pr-2 mr-4' />Renew</button>

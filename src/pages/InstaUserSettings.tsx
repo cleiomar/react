@@ -5,14 +5,25 @@ import { Link } from 'react-router-dom';
 import InstaOptions from './InstaOptions';
 import InstaSpeed from './InstaSpeed';
 import { TagsInput } from "react-tag-input-component";
-import { useState, Fragment, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const ReceberProps: React.FC = () => {
 
     const location = useLocation();
     const textoRecebido = location.state?.texto || "Nenhum texto recebido";
     const userid = location.state?.id || "Nenhum texto recebido";
-    const [selected, setSelected] = useState(["papaya"]);
+
+    const [selectedHashtag, setSelectedHashtag] = useState([]);
+    const [selectedLocation, setSelectedLocation] = useState([]);
+    const [selectedUsername, setSelectedUsername] = useState([]);
+    const [selectedComment, setSelectedComment] = useState([]);
+
+
+    const [selectedHashtagDisabled, setSelectedHashtagDisabled] = useState([]);
+    const [selectedLocationDisabled, setSelectedLocationDisabled] = useState([]);
+    const [selectedUsernameDisabled, setSelectedUsernameDisabled] = useState([]);
+    const [selectedCommentDisabled, setSelectedCommentDisabled] = useState([]);
+
     const { t } = useTranslation();
 
     const [DoLike, setDoLike] = useState(false);
@@ -29,7 +40,7 @@ const ReceberProps: React.FC = () => {
     const [DoComment, setDoComment] = useState(false);
 
 
-    
+
     const ToDo = async (id) => {
         const data = await fetch('http://localhost:3000/api/todoconfig?id=' + id)
         const response = await data.json()
@@ -48,12 +59,25 @@ const ReceberProps: React.FC = () => {
             setDoRepost(item.DoRepost)
             setDoComment(item.DoComment)
 
+
+            setSelectedHashtagDisabled(!item.DoHashtag)
+            setSelectedLocationDisabled(!item.DoLocation)
+            setSelectedUsernameDisabled(!item.DoUsername)
+            setSelectedCommentDisabled(!item.DoComment)
+            console.log(item.DoHashtag)
+
+
         })
     }
 
     useEffect(() => {
         ToDo(userid);
     }, []);
+
+
+    const handleCheckboxChange = (id) => {
+        alert(id);
+    };
 
 
 
@@ -133,6 +157,24 @@ const ReceberProps: React.FC = () => {
         options: ["5-10", "10-15", "15-20"]
     });
 
+    // Recebe variaveis do InstaOptions.tsx para ser utilizado nos campos Hashtag, Location, Username e Comment
+    const [var1, setVar1] = useState(0);//hashtag
+    const [var2, setVar2] = useState(0);//Location
+    const [var3, setVar3] = useState(0);//Username
+    const [var4, setVar4] = useState(0);//Comment
+
+    const updateVar1 = (value) => setVar1(value);
+    const updateVar2 = (value) => setVar2(value);
+    const updateVar3 = (value) => setVar3(value);
+    const updateVar4 = (value) => setVar4(value);
+
+    useEffect(() => {
+        setSelectedHashtagDisabled(!var1)
+        setSelectedLocationDisabled(!var2)
+        setSelectedUsernameDisabled(!var3)
+        setSelectedCommentDisabled(!var4)
+    }, [var1, var2, var3, var4]);
+
     return (
         <div className="container">
             <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
@@ -166,6 +208,7 @@ const ReceberProps: React.FC = () => {
                                     name={option.name}
                                     userid={userid}
                                     status={option.status}
+                                    onChange={() => handleCheckboxChange(targets.id)}
                                     id={option.id}
                                 />
                             ))}
@@ -182,6 +225,11 @@ const ReceberProps: React.FC = () => {
                                     name={targets.name}
                                     userid={userid}
                                     status={targets.status}
+                                    onUpdateVar1={updateVar1}
+                                    onUpdateVar2={updateVar2}
+                                    onUpdateVar3={updateVar3}
+                                    onUpdateVar4={updateVar4}
+                                    onChange={() => handleCheckboxChange(targets.id)}
                                     id={targets.id}
                                 />
                             ))}
@@ -193,9 +241,10 @@ const ReceberProps: React.FC = () => {
                         </ul>
                         <div>
                             <TagsInput
-                                value={selected}
-                                onChange={setSelected}
-                                name="hashtags"
+                                value={selectedHashtag}
+                                onChange={setSelectedHashtag}
+                                disabled={selectedHashtagDisabled}
+                                name="hashtag"
                             />
                         </div>
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">
@@ -205,8 +254,9 @@ const ReceberProps: React.FC = () => {
                         </ul>
                         <div>
                             <TagsInput
-                                value={selected}
-                                onChange={setSelected}
+                                value={selectedLocation}
+                                onChange={setSelectedLocation}
+                                disabled={selectedLocationDisabled}
                                 name="location"
                             />
                         </div>
@@ -217,8 +267,9 @@ const ReceberProps: React.FC = () => {
                         </ul>
                         <div>
                             <TagsInput
-                                value={selected}
-                                onChange={setSelected}
+                                value={selectedUsername}
+                                onChange={setSelectedUsername}
+                                disabled={selectedUsernameDisabled}
                                 name="Username"
                             />
                         </div>
@@ -230,9 +281,10 @@ const ReceberProps: React.FC = () => {
                         </ul>
                         <div>
                             <TagsInput
-                                value={selected}
-                                onChange={setSelected}
-                                name="comments"
+                                value={selectedComment}
+                                onChange={setSelectedComment}
+                                disabled={selectedCommentDisabled}
+                                name="comment"
                             />
                         </div>
                         <ul className="font-bold ft titulo text-gray-500 pb-10 pt-16">

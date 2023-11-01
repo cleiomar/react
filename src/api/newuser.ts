@@ -25,7 +25,7 @@ export function newUser(data: []) { // Recebe 'data' como argumento
 
 export function newConfigUser(id: number) {
     return new Promise((resolve, reject) => {
-        db.query("INSERT INTO configstodo VALUES (null, ?, 'Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y')", [id], (err, results) => {
+        db.query("INSERT INTO configstodo VALUES (null, ?, '0','0','0','0','0','0','0','0','0','0','0','0')", [id], (err, results) => {
             if (err) {
                 reject(err);
             } else {

@@ -1,15 +1,18 @@
-import React from 'react';
-import { NavLink, useNavigate, Outlet } from 'react-router-dom';
-import { useState, Fragment, useEffect } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-
 interface InstaSpeedProps {
     name: string;
+    userid: number;
+    optionid: number;
+    id: number;
     options: string[];
 }
 
-function InstaSpeed({ name, options }: InstaSpeedProps) {
+function InstaSpeed({ name, options, userid, id }: InstaSpeedProps) {
 
+    const handleSelectChange = async (index) => {
+
+        const data = await fetch('http://localhost:3000/api/changespeed?id=' + userid + '&option=' + index + '&todo=' + id)
+        const response = await data.json()
+    }
     return (
 
         <div className="panel pb-4 bg-primary-light flex justify-between shadow-primary">
@@ -20,7 +23,10 @@ function InstaSpeed({ name, options }: InstaSpeedProps) {
                 </div>
             </div>
             <div>
-                <select className="form-select form-select-sm text-white-dark w-100">
+                <select name={id} selected={options[id]} onChange={(e) => {
+                    const selectedIndex = parseInt(e.target.value, 10);
+                    handleSelectChange(selectedIndex + 1);
+                    }} className="form-select form-select-sm text-white-dark w-100">
                     {options.map((option, index) => (
                         <option key={index} value={index}>
                             {option}

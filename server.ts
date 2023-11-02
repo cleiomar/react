@@ -9,7 +9,12 @@ import { newUser, newConfigUser, newConfigSpeedUser } from './src/api/newuser';
 import { updateUser } from './src/api/updateUser';
 import { plans } from './src/api/plans';
 import { todoconfig } from './src/api/todo';
+import { changespeed } from './src/api/changespeed';
+import { configspeed } from './src/api/configspeed';
+import { addtext } from './src/api/addtext';
+import { removetext } from './src/api/removetext';
 import { changestatus } from './src/api/changestatus';
+import { filltext } from './src/api/filltext';
 import multer from 'multer';
 
 const app = express();
@@ -47,6 +52,18 @@ app.get('/api/changestatus', async (req, res) => {
   const todo = req.query.todo;
   try {
     const results = await changestatus(id, status, todo);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/changespeed', async (req, res) => {
+  const id = req.query.id;
+  const option = req.query.option;
+  const todo = req.query.todo;
+  try {
+    const results = await changespeed(id, option, todo);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
@@ -100,6 +117,43 @@ app.get('/api/todoconfig', async (req, res) => {
   }
 });
 
+app.get('/api/configspeed', async (req, res) => {
+  const id = req.query.id;
+  try {
+    const results = await configspeed(id);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.post('/api/removetext', upload.none(), async (req, res) => {
+  const id = req.body.credentials_id;
+  const type = req.body.type;
+  const text = req.body.text;
+  try {
+    const result = await removetext(id, type, text);
+    res.json({ message: 'Removido com Sucesso!', status: 'success' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.post('/api/addtext', upload.none(), async (req, res) => {
+  const id = req.body.credentials_id;
+  const type = req.body.type;
+  const text = req.body.text;
+  try {
+    const result = await addtext(id, type, text);
+    res.json({ message: 'Adicionado com Sucesso!', status: 'success' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
 app.get('/api/status', async (req, res) => {
   const limit = req.query.limit || 10;
   try {
@@ -108,6 +162,15 @@ app.get('/api/status', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
   }
+});
+
+app.get('/api/filltext', async (req, res) => {
+try {
+  const results = await filltext();
+  res.json(results);
+} catch (error) {
+  res.status(500).json({ error: 'Erro na consulta 1' });
+}
 });
 
 app.post('/api/new_user', upload.none(), async (req, res) => {

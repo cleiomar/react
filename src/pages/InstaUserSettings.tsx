@@ -18,7 +18,6 @@ const ReceberProps: React.FC = () => {
     const [selectedUsername, setSelectedUsername] = useState([]);
     const [selectedComment, setSelectedComment] = useState([]);
 
-
     const [selectedHashtagDisabled, setSelectedHashtagDisabled] = useState([]);
     const [selectedLocationDisabled, setSelectedLocationDisabled] = useState([]);
     const [selectedUsernameDisabled, setSelectedUsernameDisabled] = useState([]);
@@ -64,7 +63,6 @@ const ReceberProps: React.FC = () => {
             setSelectedLocationDisabled(!item.DoLocation)
             setSelectedUsernameDisabled(!item.DoUsername)
             setSelectedCommentDisabled(!item.DoComment)
-            console.log(item.DoHashtag)
 
 
         })
@@ -73,11 +71,6 @@ const ReceberProps: React.FC = () => {
     useEffect(() => {
         ToDo(userid);
     }, []);
-
-
-    const handleCheckboxChange = (id) => {
-        alert(id);
-    };
 
 
 
@@ -139,23 +132,57 @@ const ReceberProps: React.FC = () => {
     const speed = [];
     speed.push({
         name: "Activity Speed",
-        options: ["Slow", "Normal", "Fast"]
+        options: ["Slow", "Normal", "Fast"],
+        id: "ActivitySpeed"
     }, {
         name: "Likes per Hour",
-        options: ["5-10", "10-20", "20-30"]
+        options: ["5-10", "10-20", "20-30"],
+        id: "LikesPerHour"
     }, {
         name: "Comments per Hour",
-        options: ["2-4", "4-6", "6-8"]
+        options: ["2-4", "4-6", "6-8"],
+        id: "CommentsPerHour"
     }, {
         name: "Follow per Hour",
-        options: ["5-10", "10-15", "15-20"]
+        options: ["5-10", "10-15", "15-20"],
+        id: "FollowPerHour"
     }, {
         name: "Delete Media per Hour",
-        options: ["2-3", "3-4", "4-5"]
+        options: ["2-3", "3-4", "4-5"],
+        id: "DeleteMediaPerHour"
     }, {
         name: "Follow Back per Hour",
-        options: ["5-10", "10-15", "15-20"]
+        options: ["5-10", "10-15", "15-20"],
+        id: "FollowBackPerHour"
     });
+
+
+
+    const [ActivitySpeed, setActivitySpeed] = useState({});
+    const [LikesPerHour, setLikesPerHour] = useState({});
+    const [CommentsPerHour, setCommentsPerHour] = useState({});
+    const [FollowPerHour, setFollowPerHour] = useState({});
+    const [DeleteMediaPerHour, setDeleteMediaPerHour] = useState({});
+    const [FollowBackPerHour, setFollowBackPerHour] = useState({});
+
+    const configspeed = async (id) => {
+        const data = await fetch('http://localhost:3000/api/configspeed?id=' + id)
+        const response = await data.json()
+        response.map((item) => {
+
+            setActivitySpeed(item.ActivitySpeed)
+            setLikesPerHour(item.LikesPerHour)
+            setCommentsPerHour(item.CommentsPerHour)
+            setFollowPerHour(item.FollowPerHour)
+            setDeleteMediaPerHour(item.DeleteMediaPerHour)
+            setFollowBackPerHour(item.FollowBackPerHour)
+        })
+    }
+
+    useEffect(() => {
+        configspeed(userid);
+    }, []);
+
 
     // Recebe variaveis do InstaOptions.tsx para ser utilizado nos campos Hashtag, Location, Username e Comment
     const [var1, setVar1] = useState(0);//hashtag
@@ -174,6 +201,77 @@ const ReceberProps: React.FC = () => {
         setSelectedUsernameDisabled(!var3)
         setSelectedCommentDisabled(!var4)
     }, [var1, var2, var3, var4]);
+
+
+
+
+
+    function actionText(action, id, type, text) {
+        const data = {
+            credentials_id: id,
+            type: type,
+            text: text
+        };
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        };
+        let url = '';
+        if (action == 'delete') {
+
+            url = 'http://localhost:3000/api/removetext';
+        }
+        else if (action == 'add') {
+
+            url = 'http://localhost:3000/api/addtext';
+        }
+        
+            fetch(url, requestOptions)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Erro na solicitação POST');
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+
+                    console.log('Dados enviados com sucesso:', data);
+                })
+                .catch((error) => {
+                    console.error('Erro ao enviar os dados:', error);
+                });
+    }
+
+
+    const filltext = async () => {
+        //const data = await fetch('http://localhost:3000/api/filltext')
+        //const response = await data.json()
+
+        const response = "teste123";
+        setSelectedHashtag((selectedHashtag) => [...selectedHashtag,response]);
+      }
+
+
+      useEffect(() => {
+        filltext()
+      },[])
+
+    const removetext = (word: string) => {
+        actionText('delete', 1, 1, word);
+    }
+
+
+    const addtext = (word: string) => {
+        actionText('add', 1, 1, word);
+        if (word.length < 3) {
+            return false;
+        }
+        return true;
+    }
 
     return (
         <div className="container">
@@ -208,7 +306,6 @@ const ReceberProps: React.FC = () => {
                                     name={option.name}
                                     userid={userid}
                                     status={option.status}
-                                    onChange={() => handleCheckboxChange(targets.id)}
                                     id={option.id}
                                 />
                             ))}
@@ -229,7 +326,6 @@ const ReceberProps: React.FC = () => {
                                     onUpdateVar2={updateVar2}
                                     onUpdateVar3={updateVar3}
                                     onUpdateVar4={updateVar4}
-                                    onChange={() => handleCheckboxChange(targets.id)}
                                     id={targets.id}
                                 />
                             ))}
@@ -244,6 +340,8 @@ const ReceberProps: React.FC = () => {
                                 value={selectedHashtag}
                                 onChange={setSelectedHashtag}
                                 disabled={selectedHashtagDisabled}
+                                onRemoved={removetext}
+                                beforeAddValidate={addtext}
                                 name="hashtag"
                             />
                         </div>
@@ -297,7 +395,9 @@ const ReceberProps: React.FC = () => {
                                 <InstaSpeed
                                     key={indexSpeed}
                                     name={speeds.name}
+                                    userid={userid}
                                     options={speeds.options}
+                                    id={speeds.id}
                                 />
                             ))}
                         </div>

@@ -11,9 +11,8 @@ const InstaUsers = () => {
     const { t } = useTranslation();
 
     const location = useLocation();
-    const { userid } = useParams<{ userid: string }>();
-    const [selectedTask, setSelectedTask] = useState<any>(null);
-    const [isAddProjectModal, setIsAddProjectModal] = useState(false);
+    const params = location.state;
+    const userid = params.userid;
     const [profiles, setProfiles] = useState([]);
 
     const get_profiles = async (id) => {

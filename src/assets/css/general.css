@@ -168,3 +168,21 @@
 .h-70 {
     height: 660px;
 }
+
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .centered-div {
+    text-align: center;
+  }
+  
+  .centered-div img {
+    max-width: 100%;
+    padding-left: 2%;
+    max-height: 100%;
+  }

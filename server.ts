@@ -5,7 +5,7 @@ import { users } from './src/api/users';
 import { userid } from './src/api/userid';
 import { cancelId } from './src/api/cancelid';
 import { statusUser } from './src/api/status';
-import { newUser, newConfigUser, newConfigSpeedUser } from './src/api/newuser';
+import { newUser, newConfigUser, newConfigSpeedUser, create_activity } from './src/api/newuser';
 import { updateUser } from './src/api/updateUser';
 import { plans } from './src/api/plans';
 import { todoconfig } from './src/api/todo';
@@ -204,6 +204,7 @@ app.post('/api/new_user', upload.none(), async (req, res) => {
     const result = await newUser(data);
     const result2 = await newConfigUser(result.insertId);
     const result3 = await newConfigSpeedUser(result.insertId);
+    const result4 = await create_activity(result.insertId);
     res.json({ message: 'Cadastrado com Sucesso!', status: 'success' });
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

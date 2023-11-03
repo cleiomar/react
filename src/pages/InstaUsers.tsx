@@ -18,10 +18,14 @@ import IconSettings from '../components/Icon/IconSettings';
 import IconEdit from '../components/Icon/IconEdit';
 import IconXCircle from '../components/Icon/IconXCircle';
 import IconCashBanknotes from '../components/Icon/IconCashBanknotes';
+import { useLocation } from 'react-router-dom';
 
 const Tabs = () => {
 
 
+  const location = useLocation();
+  const params = location.state;
+  const userid = params.userid;
   const [userList, setUserList] = useState([]);
 
   const getUserList = async () => {
@@ -141,6 +145,7 @@ const Tabs = () => {
 
     const formData = new FormData(form);
 
+    formData.append('userid', userid); //Logged user
     formData.append('id', userID);
     let url;
     if (userID === 0) {

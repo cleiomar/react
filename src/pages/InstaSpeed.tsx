@@ -2,11 +2,12 @@ interface InstaSpeedProps {
     name: string;
     userid: number;
     optionid: number;
+    selected: number;
     id: number;
     options: string[];
 }
 
-function InstaSpeed({ name, options, userid, id }: InstaSpeedProps) {
+function InstaSpeed({ name, options, userid, id, selected }: InstaSpeedProps) {
 
     const handleSelectChange = async (index) => {
 
@@ -28,7 +29,7 @@ function InstaSpeed({ name, options, userid, id }: InstaSpeedProps) {
                     handleSelectChange(selectedIndex + 1);
                     }} className="form-select form-select-sm text-white-dark w-100">
                     {options.map((option, index) => (
-                        <option key={index} value={index}>
+                        <option key={index} selected={index+1 === selected ? 'selected' : ''} value={index}>
                             {option}
                         </option>
                     ))}

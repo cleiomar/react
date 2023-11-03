@@ -6,6 +6,7 @@ import InstaOptions from './InstaOptions';
 import InstaSpeed from './InstaSpeed';
 import { TagsInput } from "react-tag-input-component";
 import { useState, useRef, useEffect } from 'react';
+import "/src/assets/css/instausersettings.css";
 
 const ReceberProps: React.FC = () => {
 
@@ -74,6 +75,34 @@ const ReceberProps: React.FC = () => {
 
 
 
+
+    
+
+    const [ActivitySpeed, setActivitySpeed] = useState({});
+    const [LikesPerHour, setLikesPerHour] = useState({});
+    const [CommentsPerHour, setCommentsPerHour] = useState({});
+    const [FollowPerHour, setFollowPerHour] = useState({});
+    const [DeleteMediaPerHour, setDeleteMediaPerHour] = useState({});
+    const [FollowBackPerHour, setFollowBackPerHour] = useState({});
+
+    const configspeed = async (id) => {
+        const data = await fetch('http://localhost:3000/api/configspeed?id=' + id)
+        const response = await data.json()
+        response.map((item) => {
+
+            setActivitySpeed(item.ActivitySpeed)
+            setLikesPerHour(item.LikesPerHour)
+            setCommentsPerHour(item.CommentsPerHour)
+            setFollowPerHour(item.FollowPerHour)
+            setDeleteMediaPerHour(item.DeleteMediaPerHour)
+            setFollowBackPerHour(item.FollowBackPerHour)
+        })
+    }
+
+    useEffect(() => {
+        configspeed(userid);
+    }, []);
+
     const options = [];
     options.push({
         name: "Like",
@@ -133,55 +162,36 @@ const ReceberProps: React.FC = () => {
     speed.push({
         name: "Activity Speed",
         options: ["Slow", "Normal", "Fast"],
+        value: ActivitySpeed,
         id: "ActivitySpeed"
     }, {
         name: "Likes per Hour",
         options: ["5-10", "10-20", "20-30"],
+        value: LikesPerHour,
         id: "LikesPerHour"
     }, {
         name: "Comments per Hour",
         options: ["2-4", "4-6", "6-8"],
+        value: CommentsPerHour,
         id: "CommentsPerHour"
     }, {
         name: "Follow per Hour",
         options: ["5-10", "10-15", "15-20"],
+        value: FollowPerHour,
         id: "FollowPerHour"
     }, {
         name: "Delete Media per Hour",
         options: ["2-3", "3-4", "4-5"],
+        value: DeleteMediaPerHour,
         id: "DeleteMediaPerHour"
     }, {
         name: "Follow Back per Hour",
         options: ["5-10", "10-15", "15-20"],
+        value: FollowBackPerHour,
         id: "FollowBackPerHour"
     });
 
 
-
-    const [ActivitySpeed, setActivitySpeed] = useState({});
-    const [LikesPerHour, setLikesPerHour] = useState({});
-    const [CommentsPerHour, setCommentsPerHour] = useState({});
-    const [FollowPerHour, setFollowPerHour] = useState({});
-    const [DeleteMediaPerHour, setDeleteMediaPerHour] = useState({});
-    const [FollowBackPerHour, setFollowBackPerHour] = useState({});
-
-    const configspeed = async (id) => {
-        const data = await fetch('http://localhost:3000/api/configspeed?id=' + id)
-        const response = await data.json()
-        response.map((item) => {
-
-            setActivitySpeed(item.ActivitySpeed)
-            setLikesPerHour(item.LikesPerHour)
-            setCommentsPerHour(item.CommentsPerHour)
-            setFollowPerHour(item.FollowPerHour)
-            setDeleteMediaPerHour(item.DeleteMediaPerHour)
-            setFollowBackPerHour(item.FollowBackPerHour)
-        })
-    }
-
-    useEffect(() => {
-        configspeed(userid);
-    }, []);
 
 
     // Recebe variaveis do InstaOptions.tsx para ser utilizado nos campos Hashtag, Location, Username e Comment
@@ -229,49 +239,145 @@ const ReceberProps: React.FC = () => {
 
             url = 'http://localhost:3000/api/addtext';
         }
-        
-            fetch(url, requestOptions)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error('Erro na solicitação POST');
-                    }
-                    return response.json();
-                })
-                .then((data) => {
 
-                    console.log('Dados enviados com sucesso:', data);
-                })
-                .catch((error) => {
-                    console.error('Erro ao enviar os dados:', error);
-                });
+        fetch(url, requestOptions)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Erro na solicitação POST');
+                }
+                return response.json();
+            })
+            .then((data) => {
+
+                //console.log('Dados enviados com sucesso:', data);
+            })
+            .catch((error) => {
+                //console.error('Erro ao enviar os dados:', error);
+            });
+    }
+
+    const filltext = async (type, id) => {
+        const data = await fetch('http://localhost:3000/api/filltext?type=' + type + '&id=' + id);
+        const response = await data.json();
+
+        if (type === 1) {
+            setSelectedHashtag((selectedHashtag) => {
+                // Mapeie os elementos e adicione os textos ao estado
+                const updatedSelectedHashtags = response.map((option, index) => option.text);
+
+                // Adicione os textos ao estado
+                return [...updatedSelectedHashtags];
+            });
+        }
+        else if (type === 2) {
+            setSelectedLocation((selectedLocation) => {
+                // Mapeie os elementos e adicione os textos ao estado
+                const updatedSelectedLocations = response.map((option, index) => option.text);
+
+                // Adicione os textos ao estado
+                return [...updatedSelectedLocations];
+            });
+        }
+        else if (type === 3) {
+            setSelectedUsername((selectedUsername) => {
+                // Mapeie os elementos e adicione os textos ao estado
+                const updatedSelectedUsername = response.map((option, index) => option.text);
+
+                // Adicione os textos ao estado
+                return [...updatedSelectedUsername];
+            });
+        }
+        else if (type === 4) {
+            setSelectedComment((selectedComment) => {
+                // Mapeie os elementos e adicione os textos ao estado
+                const updatedSelectedComments = response.map((option, index) => option.text);
+
+                // Adicione os textos ao estado
+                return [...updatedSelectedComments];
+            });
+        }
     }
 
 
-    const filltext = async () => {
-        //const data = await fetch('http://localhost:3000/api/filltext')
-        //const response = await data.json()
+        useEffect(() => {
+            filltext(1, userid);
+        }, [])
 
-        const response = "teste123";
-        setSelectedHashtag((selectedHashtag) => [...selectedHashtag,response]);
-      }
+    
+    useEffect(() => {
+        filltext(2, userid);
+    }, [])
 
+    
+    useEffect(() => {
+        filltext(3, userid);
+    }, [])
 
-      useEffect(() => {
-        filltext()
-      },[])
+    
+    useEffect(() => {
+        filltext(4, userid);
+    }, [])
 
-    const removetext = (word: string) => {
-        actionText('delete', 1, 1, word);
+    const removetextHashtag = (word: string) => {
+        actionText('delete', userid, 1, word);
     }
 
-
-    const addtext = (word: string) => {
-        actionText('add', 1, 1, word);
+    const addtextHashtag = (word: string) => {
+        actionText('add', userid, 1, word);
         if (word.length < 3) {
             return false;
         }
         return true;
     }
+
+
+    const removetextLocation = (word: string) => {
+        actionText('delete', userid, 2, word);
+    }
+
+    const addtextLocation = (word: string) => {
+        actionText('add', userid, 2, word);
+        if (word.length < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    const removetextUsername = (word: string) => {
+        actionText('delete', userid, 3, word);
+    }
+
+    const addtextUsername = (word: string) => {
+        actionText('add', userid, 3, word);
+        if (word.length < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    const removetextComment = (word: string) => {
+        actionText('delete', userid, 4, word);
+    }
+
+    const addtextComment = (word: string) => {
+        actionText('add', userid, 4, word);
+        if (word.length < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    useEffect(() => {
+        const elementsToRemove = document.querySelectorAll('.rti--tag');
+    
+        elementsToRemove.forEach((element) => {
+          if (element.parentNode) {
+            element.parentNode.removeChild(element);
+          }
+        });
+      }, [selectedComment]);
+
+
 
     return (
         <div className="container">
@@ -338,10 +444,9 @@ const ReceberProps: React.FC = () => {
                         <div>
                             <TagsInput
                                 value={selectedHashtag}
-                                onChange={setSelectedHashtag}
                                 disabled={selectedHashtagDisabled}
-                                onRemoved={removetext}
-                                beforeAddValidate={addtext}
+                                onRemoved={removetextHashtag}
+                                beforeAddValidate={addtextHashtag}
                                 name="hashtag"
                             />
                         </div>
@@ -353,8 +458,9 @@ const ReceberProps: React.FC = () => {
                         <div>
                             <TagsInput
                                 value={selectedLocation}
-                                onChange={setSelectedLocation}
                                 disabled={selectedLocationDisabled}
+                                onRemoved={removetextLocation}
+                                beforeAddValidate={addtextLocation}
                                 name="location"
                             />
                         </div>
@@ -366,8 +472,9 @@ const ReceberProps: React.FC = () => {
                         <div>
                             <TagsInput
                                 value={selectedUsername}
-                                onChange={setSelectedUsername}
                                 disabled={selectedUsernameDisabled}
+                                onRemoved={removetextUsername}
+                                beforeAddValidate={addtextUsername}
                                 name="Username"
                             />
                         </div>
@@ -380,8 +487,9 @@ const ReceberProps: React.FC = () => {
                         <div>
                             <TagsInput
                                 value={selectedComment}
-                                onChange={setSelectedComment}
                                 disabled={selectedCommentDisabled}
+                                onRemoved={removetextComment}
+                                beforeAddValidate={addtextComment}
                                 name="comment"
                             />
                         </div>
@@ -396,6 +504,7 @@ const ReceberProps: React.FC = () => {
                                     key={indexSpeed}
                                     name={speeds.name}
                                     userid={userid}
+                                    selected={speeds.value}
                                     options={speeds.options}
                                     id={speeds.id}
                                 />

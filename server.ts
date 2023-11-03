@@ -15,6 +15,8 @@ import { addtext } from './src/api/addtext';
 import { removetext } from './src/api/removetext';
 import { changestatus } from './src/api/changestatus';
 import { filltext } from './src/api/filltext';
+import { profiles } from './src/api/profiles';
+import { activity } from './src/api/activity_data';
 import multer from 'multer';
 
 const app = express();
@@ -40,6 +42,27 @@ app.get('/api/userid', async (req, res) => {
   const id = req.query.id;
   try {
     const results = await userid(id);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/activity_data', async (req, res) => {
+  const id = req.query.id;
+  try {
+    const results = await activity(id);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.get('/api/activity_profiles', async (req, res) => {
+  const id = req.query.id;
+  try {
+    const results = await profiles(id);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
@@ -166,7 +189,9 @@ app.get('/api/status', async (req, res) => {
 
 app.get('/api/filltext', async (req, res) => {
 try {
-  const results = await filltext();
+  const type = req.query.type;
+  const id = req.query.id;
+  const results = await filltext(type, id);
   res.json(results);
 } catch (error) {
   res.status(500).json({ error: 'Erro na consulta 1' });

@@ -585,7 +585,7 @@ const routes = [
         element: <InstaPost />,
     },
     {
-        path: '/InstaActivity',
+        path: '/InstaActivity/:userid',
         element: <InstaActivity />,
     },
     {

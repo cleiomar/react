@@ -1,73 +1,31 @@
-import DashBox from '../components/Dashboard/DashBox';
 import IconMenuInstaUsers from '../components/Icon/Menu/IconMenuInstaUsers';
-import IconSettings from '../components/Icon/IconSettings';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Account from '../components/Account';
-import { useState, Fragment, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import IconSearch from '../components/Icon/IconSearch';
-
+import { useParams } from 'react-router-dom';
 
 const InstaUsers = () => {
     const { t } = useTranslation();
 
+    const location = useLocation();
+    const { userid } = useParams<{ userid: string }>();
     const [selectedTask, setSelectedTask] = useState<any>(null);
     const [isAddProjectModal, setIsAddProjectModal] = useState(false);
+    const [profiles, setProfiles] = useState([]);
 
+    const get_profiles = async (id) => {
+        const data = await fetch('http://localhost:3000/api/activity_profiles?id=' + id);
+        const accounts = await data.json();
+        setProfiles(accounts);
+    }
+    
+    useEffect(() => {
+        get_profiles(userid);
+    }, [])
 
-    /*const Dashboard = () => {
-        const [accounts, setAccounts] = useState([
-          {
-            profile: "Cleiomar",
-            profileId: 78475,
-          },
-        ]);
-      
-        const handleAddAccount = () => {
-          // Adiciona uma nova conta ao array
-        };*/
-
-    // Declarando uma variável como array
-    const accounts = [];
-
-    // Adicionando conteúdo ao array
-    accounts.push({
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    }, {
-        profile: "Cleiomar",
-        profileId: "78475",
-    }, {
-        profile: "Cleiomar2",
-        profileId: "7823",
-    }, {
-        profile: "Cleiomar3",
-        profileId: "4142",
-    });
 
     return (
         <>
@@ -120,11 +78,11 @@ const InstaUsers = () => {
                                 </li>
                             </ul>
                             <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-                                {accounts.map((account, index) => (
+                                {profiles.map((account, index) => (
                                     <Account
                                         key={index}
-                                        profile={account.profile}
-                                        profileID={account.profileId}
+                                        profile={account.Login}
+                                        profileID={account.ID}
                                     />
                                 ))}
 

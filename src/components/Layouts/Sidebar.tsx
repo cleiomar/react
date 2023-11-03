@@ -40,6 +40,7 @@ import IconMenuAutoPost from '../Icon/Menu/IconMenuAutoPost';
 import IconMenuAutoDirect from '../Icon/Menu/IconMenuAutoDirect';
 
 const Sidebar = () => {
+    const userid = 1;
     const [currentMenu, setCurrentMenu] = useState<string>('');
     const [errorSubMenu, setErrorSubMenu] = useState(false);
     const themeConfig = useSelector((state: IRootState) => state.themeConfig);
@@ -130,7 +131,7 @@ const Sidebar = () => {
                             </li>
 
                             <li className="nav-item">
-                                <NavLink to="/InstaActivity" className="group">
+                                <NavLink to={`/InstaActivity/${userid}`} className="group">
                                     <div className="flex items-center">
                                         <IconMenuAutoActivity
                                         opValor="0.5"

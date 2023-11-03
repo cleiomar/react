@@ -10,39 +10,53 @@ interface AccountProps {
     profileID: string;
 }
 
-type InstaUserSettingsProps = {
-    name: string;
-};
-
 function Account({ profile, profileID }: AccountProps) {
+
+    const [data, setData] = useState([]);
+
+
+    const [getLike, setGetLike] = useState(0);
+    const [getFollow, setGetFollow] = useState(0);
+    const [getView, setGetView] = useState(0);
+    const [getUnfollow, setGetUnfollow] = useState(0);
+    const [getDirect, setGetDirect] = useState(0);
+    const [getPost, setGetPost] = useState(0);
+    const [getRepost, setGetRepost] = useState(0);
+    const [getComment, setGetComment] = useState(0);
+    const [sumActivity, setSumActivity] = useState(0);
+
+    const get_data = async (id) => {
+        const response = await fetch('http://localhost:3000/api/activity_data?id=' + id);
+        const accounts = await response.json();
+        accounts.map((item) => {
+
+            setGetLike(item.likes_today)
+            setGetFollow(item.follow_today)
+            setGetComment(item.comment_today)
+            setGetView(item.views_today)
+            setGetUnfollow(item.unfollow_today)
+            setGetDirect(item.direct_today)
+            setGetPost(item.post_today)
+            setGetRepost(item.repost_today)
+            
+        })
+    }
+
+    useEffect(() => {
+        get_data(profileID);
+    }, [])
+
+    useEffect(() => {
+        setSumActivity(getLike+getFollow+getComment+getView+getUnfollow+getDirect+getPost+getRepost)
+    }, [getRepost])
 
     const [isAddTaskModal, setIsAddTaskModal] = useState(false);
     const navigate = useNavigate();
 
     const handleClick = () => {
-      navigate('/InstaUserSettings', { state: { texto: 'Cleiomar' } });
+        navigate('/InstaUserSettings', { state: { texto: profile, id: profileID } });
     };
 
-    const addEditTask = (/*projectId: any, task: any = null*/) => {
-        setParamsTask({
-            //projectId: projectId,
-            id: null,
-            title: '',
-            description: '',
-            tags: '',
-            date: '',
-        });
-        setIsAddTaskModal(true);
-    };
-
-    const [paramsTask, setParamsTask] = useState<any>({
-        projectId: null,
-        id: null,
-        title: '',
-        description: '',
-        tags: '',
-        date: '',
-    });
 
     return (
         <>
@@ -59,7 +73,7 @@ function Account({ profile, profileID }: AccountProps) {
                     <div className="text-white flex justify-between items-center">
                         <p className="text-xl">Total Interactions</p>
                         <h5 className="ltr:ml-auto rtl:mr-auto text-2xl">
-                            <span className="text-xl text-white-light">{profileID}</span>
+                            <span className="text-xl text-white-light">{sumActivity}</span>
                         </h5>
                     </div>
                 </div>
@@ -69,14 +83,14 @@ function Account({ profile, profileID }: AccountProps) {
                             Today
                             <IconMenuInstaUsers className="w-4 h-4 text-success rotate-180" />
                         </span>
-                        <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">979</div>
+                        <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">{getLike}</div>
                     </div>
                     <div className="bg-white rounded-md shadow px-4 py-2.5 dark:bg-[#060818]">
                         <span className="flex justify-between items-center mb-4 dark:text-white">
                             Monthly
                             <IconMenuInstaUsers className="w-4 h-4 text-danger" />
                         </span>
-                        <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">530</div>
+                        <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">{sumActivity}</div>
                     </div>
                 </div>
                 <div className="p-5">
@@ -89,49 +103,49 @@ function Account({ profile, profileID }: AccountProps) {
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Likes</p>
                             <p className="">
-                                <span className="font-semibold">135</span>
+                                <span className="font-semibold">{getLike}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Follows</p>
                             <p className="">
-                                <span className="font-semibold ">114</span>
+                                <span className="font-semibold ">{getFollow}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Unfollows</p>
                             <p className="">
-                                <span className="font-semibold ">342</span>
+                                <span className="font-semibold ">{getUnfollow}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Views</p>
                             <p className="">
-                                <span className="font-semibold ">297</span>
+                                <span className="font-semibold ">{getView}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Comments</p>
                             <p className="">
-                                <span className="font-semibold ">236</span>
+                                <span className="font-semibold ">{getComment}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Directs</p>
                             <p className="">
-                                <span className="font-semibold ">751</span>
+                                <span className="font-semibold ">{getDirect}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Posts</p>
                             <p className="">
-                                <span className="font-semibold ">548</span>
+                                <span className="font-semibold ">{getPost}</span>
                             </p>
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#515365] text-base font-semibold">Reposts</p>
                             <p className="">
-                                <span className="font-semibold ">548</span>
+                                <span className="font-semibold ">{getRepost}</span>
                             </p>
                         </div>
                     </div>

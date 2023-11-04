@@ -17,6 +17,8 @@ import { changestatus } from './src/api/changestatus';
 import { filltext } from './src/api/filltext';
 import { profiles } from './src/api/profiles';
 import { activity } from './src/api/activity_data';
+import { history } from './src/api/history';
+import { monthlyhistory } from './src/api/monthlyhistory';
 import multer from 'multer';
 
 const app = express();
@@ -206,6 +208,28 @@ app.post('/api/new_user', upload.none(), async (req, res) => {
     const result3 = await newConfigSpeedUser(result.insertId);
     const result4 = await create_activity(result.insertId);
     res.json({ message: 'Cadastrado com Sucesso!', status: 'success' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.get('/api/history', async (req, res) => {
+  const data = req.query;
+  try {
+    const result = await history(data);
+    res.json({ message: 'Registro adicionado com Sucesso!', status: 'success' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.get('/api/monthlyhistory', async (req, res) => {
+  const data = req.query;
+  try {
+    const results = await monthlyhistory(data);
+    res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });
   }

@@ -25,6 +25,14 @@ function Account({ profile, profileID }: AccountProps) {
     const [getComment, setGetComment] = useState(0);
     const [sumActivity, setSumActivity] = useState(0);
 
+
+    const [montlhyData, setMontlhyData] = useState(0);
+    const get_monthlydata = async (id) => {
+        const response = await fetch('http://localhost:3000/api/monthlyhistory?id=' + id);
+        const all = await response.json();
+        setMontlhyData(all.length)
+    }
+
     const get_data = async (id) => {
         const response = await fetch('http://localhost:3000/api/activity_data?id=' + id);
         const accounts = await response.json();
@@ -43,6 +51,7 @@ function Account({ profile, profileID }: AccountProps) {
     }
 
     useEffect(() => {
+        get_monthlydata(profileID)
         get_data(profileID);
     }, [])
 
@@ -73,7 +82,7 @@ function Account({ profile, profileID }: AccountProps) {
                     <div className="text-white flex justify-between items-center">
                         <p className="text-xl">Total Interactions</p>
                         <h5 className="ltr:ml-auto rtl:mr-auto text-2xl">
-                            <span className="text-xl text-white-light">{sumActivity}</span>
+                            <span className="text-xl text-white-light">{montlhyData}</span>
                         </h5>
                     </div>
                 </div>

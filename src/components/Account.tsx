@@ -46,7 +46,17 @@ function Account({ profile, profileID }: AccountProps) {
             setGetDirect(item.direct_today)
             setGetPost(item.post_today)
             setGetRepost(item.repost_today)
-            
+            console.log(item.Status)
+
+            if (item.Status === 1) {
+                setStatus('Running');
+                setStatusColor('bg-success');
+            }
+            else if (item.Status === 2) {
+                setStatus('Stopped');
+                setStatusColor('bg-danger');
+            }
+
         })
     }
 
@@ -56,7 +66,7 @@ function Account({ profile, profileID }: AccountProps) {
     }, [])
 
     useEffect(() => {
-        setSumActivity(getLike+getFollow+getComment+getView+getUnfollow+getDirect+getPost+getRepost)
+        setSumActivity(getLike + getFollow + getComment + getView + getUnfollow + getDirect + getPost + getRepost)
     }, [getRepost])
 
     const [isAddTaskModal, setIsAddTaskModal] = useState(false);
@@ -66,16 +76,41 @@ function Account({ profile, profileID }: AccountProps) {
         navigate('/InstaUserSettings', { state: { texto: profile, id: profileID } });
     };
 
+    const changing = (stat, newstatus) => {
+        console.log(status)
+        if (stat.success === true && newstatus === 1 && status != 'Running') {
+            setStatus('Starting...');
+            setStatusColor('bg-[#3b3f5c]');
+            setTimeout(function () {
+                setStatus('Running');
+                setStatusColor('bg-success');
+            }, 3000)
+        }
+        else if (stat.success === true && newstatus === 2 && status != 'Stopped') {
+            setStatus('Stopping...');
+            setStatusColor('bg-[#3b3f5c]');
+            setTimeout(function () {
+                setStatus('Stopped');
+                setStatusColor('bg-danger');
+            }, 3000)
+        }
+    }
 
+
+    const [status, setStatus] = useState(0);
+    const [statusColor, setStatusColor] = useState('bg-[#0e1726]');
+    const setstatus = async (id, newstatus) => {
+        const response = await fetch('http://localhost:3000/api/newstatus?id=' + id + '&status=' + newstatus);
+        const stat = await response.json();
+        changing(stat, newstatus)
+
+    }
     return (
         <>
-
-
             <div className="panel h-full shadow-primary p-0 border-0 overflow-hidden">
                 <div className="p-6 bg-gradient-to-r from-[#ee43c7] to-[#8c05a1] min-h-[190px]">
                     <div className="flex justify-between items-center mb-6">
-                        <div className="bg-black/50 rounded-full p-1 ltr:pr-3 rtl:pl-3 flex items-center text-white font-semibold">
-                            <img className="w-8 h-8 rounded-full border-2 border-white/50 block object-cover ltr:mr-1 rtl:ml-1" src="/assets/images/profile-34.jpeg" alt="avatar" />
+                        <div className="bg-black/50 rounded-full p-1 ltr:pr-3 rtl:pl-3 flex items-center text-white font-semibold">                            <img className="w-8 h-8 rounded-full border-2 border-white/50 block object-cover ltr:mr-1 rtl:ml-1" src="/assets/images/profile-34.jpeg" alt="avatar" />
                             {profile}
                         </div>
                     </div>
@@ -88,25 +123,21 @@ function Account({ profile, profileID }: AccountProps) {
                 </div>
                 <div className="-mt-12 px-8 grid grid-cols-2 gap-2">
                     <div className="bg-white rounded-md shadow px-4 py-2.5 dark:bg-[#060818]">
-                        <span className="flex justify-between items-center mb-4 dark:text-white">
+                        <span className="flex justify-center items-center mb-4 dark:text-white">
                             Today
-                            <IconMenuInstaUsers className="w-4 h-4 text-success rotate-180" />
                         </span>
                         <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">{getLike}</div>
                     </div>
                     <div className="bg-white rounded-md shadow px-4 py-2.5 dark:bg-[#060818]">
-                        <span className="flex justify-between items-center mb-4 dark:text-white">
+                        <span className="flex justify-center items-center mb-4 dark:text-white">
                             Monthly
-                            <IconMenuInstaUsers className="w-4 h-4 text-danger" />
                         </span>
                         <div className="btn w-full  py-1 text-base shadow-none border-0 bg-[#ebedf2] dark:bg-black text-[#515365] dark:text-[#bfc9d4]">{sumActivity}</div>
                     </div>
                 </div>
                 <div className="p-5">
                     <div className="mb-5">
-                        <span className="bg-[#1b2e4b] text-white text-xs rounded-full px-4 py-1.5 before:bg-white before:w-1.5 before:h-1.5 before:rounded-full ltr:before:mr-2 rtl:before:ml-2 before:inline-block">
-                            Pending
-                        </span>
+                        <span className={`${statusColor} text-white text-xs rounded-full px-4 py-1.5 before:bg-white before:w-1.5 before:h-1.5 before:rounded-full ltr:before:mr-2 rtl:before:ml-2 before:inline-block`}>{status}</span>
                     </div>
                     <div className="mb-5 space-y-1">
                         <div className="flex items-center justify-between">
@@ -160,13 +191,13 @@ function Account({ profile, profileID }: AccountProps) {
                     </div>
 
                     <div className="text-center px-2 flex justify-around"><div className="relative inline-flex align-middle">
-                        <button type="button" className="btn btn-success ltr:rounded-r-none rtl:rounded-l-none">
+                        <button type="button" onClick={() => setstatus(profileID, 1)} className="btn btn-success ltr:rounded-r-none rtl:rounded-l-none">
                             Start
                         </button>
                         <button type="button" onClick={handleClick} className="btn btn-dark rounded-none btn-lg-config">
                             Settings
                         </button>
-                        <button type="button" className="btn btn-danger ltr:rounded-l-none rtl:rounded-r-none">
+                        <button type="button" onClick={() => setstatus(profileID, 2)} className="btn btn-danger ltr:rounded-l-none rtl:rounded-r-none">
                             Stop
                         </button>
                     </div>

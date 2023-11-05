@@ -19,6 +19,7 @@ import { profiles } from './src/api/profiles';
 import { activity } from './src/api/activity_data';
 import { history } from './src/api/history';
 import { monthlyhistory } from './src/api/monthlyhistory';
+import { changeStatusActivity } from './src/api/change_status_activity';
 import multer from 'multer';
 
 const app = express();
@@ -77,6 +78,17 @@ app.get('/api/changestatus', async (req, res) => {
   const todo = req.query.todo;
   try {
     const results = await changestatus(id, status, todo);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/newstatus', async (req, res) => {
+  const id = req.query.id;
+  const status = req.query.status;
+  try {
+    const results = await changeStatusActivity(id, status);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

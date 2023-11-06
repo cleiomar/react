@@ -165,10 +165,25 @@
     height: 510px;
 }
 
+.h-40 {
+    height: 40px;
+}
+
+.ml-70p{
+    margin-left: 70%;
+}
+
 .h-70 {
     height: 660px;
 }
 
+.ht-30{
+    height: 40px;
+}
+
+.w-100-p{
+    width: 100%;
+}
 
 .App {
     display: flex;

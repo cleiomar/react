@@ -66,20 +66,8 @@ const Tabs = () => {
     setOptions(response)
   }
 
-  const [active, setActive] = useState([]);
-  const [blocked, setBlocked] = useState([]);
-  const [canceled, setCanceled] = useState([]);
-  const fetchApiStatus = async () => {
-    const data = await fetch('http://localhost:3000/api/getcredentialsstatus')
-    const [response] = await data.json()
-    console.log(response)
-    setActive(response.active)
-    setBlocked(response.blocked)
-    setCanceled(response.canceled)
-  }
-
   useEffect(() => {
-    fetchApiStatus();
+    fetchApiOption();
   }, []);
 
   function capitalizeFirstLetter(name: string): string {
@@ -182,7 +170,6 @@ const Tabs = () => {
       })
       .then((data) => {
         showAlert(data.message)
-        fetchApiStatus();
         getUserList();
       })
       .catch((error) => {
@@ -292,7 +279,6 @@ const Tabs = () => {
       text: "You won't be able to revert this!",
       showCancelButton: true,
       confirmButtonText: 'Cancel',
-      confirmButtonColor: "#DD6B55",
       cancelButtonText: 'Back',
       padding: '2em',
       customClass: 'sweet-alerts',
@@ -313,7 +299,6 @@ const Tabs = () => {
               timer: 3000,
               showConfirmButton: false
             });
-            fetchApiStatus();
 
           } else {
             console.error('Erro na requisição à API');
@@ -359,45 +344,42 @@ const Tabs = () => {
 
       <div className="panel">
 
-        <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 mb-10 gap-6">
-          <div className="grid xl:grid-cols-3 gap-6">
-            <button type="button" onClick={() => setModal4(true)} className="btn btn-outline-secondary btn-sm"><IconPlus />Add New User</button>
-            <div className="xl:col-span-2">
-              <div className="ltr:ml-auto rtl:mr-auto gap-6">
-                <input type="text" className="form-input w-100p h-40" placeholder="Search User..." value={search} onChange={(e) => setSearch(e.target.value)} />
+        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-4 grid-cols-1 gap-6 mb-10">
+
+          <center>
+            <div className="grid 1xl:grid-cols-1 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 w-200 mt-1">
+              <button type="button" onClick={() => setModal4(true)} className="btn btn-outline-secondary btn-sm"><IconPlus />Add New User</button>
+              <div className="mt-2">
+                <div className="ltr:ml-auto rtl:mr-auto">
+                  <input type="text" className="form-input w-100p" placeholder="Search User..." value={search} onChange={(e) => setSearch(e.target.value)} />
+                </div>
               </div>
+            </div>
+          </center>
+          <div className="panel p-2.5 rounded-md flex items-center group">
+            <div className="w-20 h-[84px] -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-success"></div>
+            <div>
+              <h5 className="ft sm:text-base">Active</h5>
+              <span className="text-lg text-white-dark">1547</span>
             </div>
           </div>
-          <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:col-span-2 sm:col-span-2 gap-6">
-            <div className="panel p-2.5 ht-30 rounded-md flex items-center group">
-              <div className="w-10 ht-30 -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-success">
-              </div>
-              <div className="grid 1xl:grid-cols-5 lg:grid-cols-2 sm:grid-cols-2 grid-cols-2 w-100-p">
-                <h5 className="sm:text-base mt-1">Active</h5>
-                <span className="text-lg text-white-dark ml-100 text-end mt-1">{active}</span>
-              </div>
-            </div>
 
-
-            <div className="panel p-2.5 ht-30 rounded-md flex items-center group">
-              <div className="w-10 ht-30 -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-danger">
-              </div>
-              <div className="grid 1xl:grid-cols-5 lg:grid-cols-2 sm:grid-cols-2 grid-cols-2 w-100-p">
-                <h5 className="sm:text-base mt-1">Blocked</h5>
-                <span className="text-lg text-white-dark ml-100 text-end mt-1">{blocked}</span>
-              </div>
-            </div>
-
-
-            <div className="panel p-2.5 ht-30 rounded-md flex items-center group">
-              <div className="w-10 ht-30 -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-dark">
-              </div>
-              <div className="grid 1xl:grid-cols-5 lg:grid-cols-2 sm:grid-cols-2 grid-cols-2 w-100-p">
-                <h5 className="sm:text-base mt-1">Canceled</h5>
-                <span className="text-lg text-white-dark ml-100 text-end mt-1">{canceled}</span>
-              </div>
+          <div className="panel p-2.5 rounded-md flex items-center group">
+            <div className="w-20 h-[84px] -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-danger"></div>
+            <div>
+              <h5 className="ft sm:text-base">Inactive</h5>
+              <span className="text-lg text-white-dark">254</span>
             </div>
           </div>
+
+          <div className="panel p-2.5 rounded-md flex items-center group">
+            <div className="w-20 h-[84px] -m-2.5 ltr:mr-4 rtl:ml-4 ltr:rounded-l-md rtl:rounded-r-md transition-all duration-700 group-hover:scale-110 bg-secondary"></div>
+            <div>
+              <h5 className="ft sm:text-base">Balance</h5>
+              <span className="text-lg text-white-dark">R$ 350.00</span>
+            </div>
+          </div>
+
         </div>
         <div className="datatables">
           <DataTable

@@ -20,6 +20,8 @@ import { activity } from './src/api/activity_data';
 import { history } from './src/api/history';
 import { monthlyhistory } from './src/api/monthlyhistory';
 import { changeStatusActivity } from './src/api/change_status_activity';
+import { getCredentialsStatus } from './src/api/getcredentialsstatus';
+import { logs } from './src/api/logs';
 import multer from 'multer';
 
 const app = express();
@@ -138,6 +140,28 @@ app.get('/api/plans', async (req, res) => {
 
   try {
     const results = await plans(limit);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/logs', async (req, res) => {
+  const profile = req.query.limit;
+
+  try {
+    const results = await logs(profile);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.get('/api/getcredentialsstatus', async (req, res) => {
+
+  try {
+    const results = await getCredentialsStatus();
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

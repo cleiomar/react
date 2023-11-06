@@ -18,9 +18,12 @@ import { useState } from 'react';
 interface LogsBoxProps {
     nameAction: string;
     quantActions: number;
+    img: string;
+    link: string;
+    datantime: string;
 }
 
-function LogsBox({ nameAction, quantActions }: LogsBoxProps) {
+function LogsBox({ nameAction, quantActions, img, link, datantime }: LogsBoxProps) {
 
     return (
         <>
@@ -28,7 +31,7 @@ function LogsBox({ nameAction, quantActions }: LogsBoxProps) {
                 <div className="grid 2xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-2">
                     <div className="justify-self-start text-xsm w-28 h-28 sm:w-[200px] sm:h-[150px] grid dark:border-[#1b2e4b]">
                      <div className='p-2'>2 minutos atras</div>
-                     <div className='p-2 action-bottom'>Commented Media
+                     <div className='p-2 action-bottom'>{nameAction}
                      <div>U7MtQ2Fx9Yyj16</div></div>
                     </div>
                     <div className="justify-self-end w-28 h-28 sm:w-[150px] sm:h-[150px] shadow-[1px_2px_12px_0_rgba(31,45,61,0.10)] rounded border border-white-light dark:border-[#1b2e4b] flex justify-center flex-col">

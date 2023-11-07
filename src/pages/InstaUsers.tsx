@@ -80,6 +80,7 @@ const Tabs = () => {
 
   useEffect(() => {
     fetchApiStatus();
+    fetchApiOption();
   }, []);
 
   function capitalizeFirstLetter(name: string): string {

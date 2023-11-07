@@ -18,6 +18,7 @@ import { filltext } from './src/api/filltext';
 import { profiles } from './src/api/profiles';
 import { activity } from './src/api/activity_data';
 import { history } from './src/api/history';
+import { insertlog } from './src/api/insertlog';
 import { monthlyhistory } from './src/api/monthlyhistory';
 import { changeStatusActivity } from './src/api/change_status_activity';
 import { getCredentialsStatus } from './src/api/getcredentialsstatus';
@@ -109,6 +110,18 @@ app.get('/api/changespeed', async (req, res) => {
   }
 });
 
+app.get('/api/insertlog', async (req, res) => {
+  const id = req.query.id;
+  const option = req.query.option;
+  const todo = req.query.todo;
+  try {
+    const results = await insertlog(id, option, todo);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
 app.get('/api/cancelid', async (req, res) => {
   const id = req.query.id;
   try {
@@ -147,10 +160,10 @@ app.get('/api/plans', async (req, res) => {
 });
 
 app.get('/api/logs', async (req, res) => {
-  const profile = req.query.limit;
-
+  let type = req.query.type;
+  (type == '0')? type = '': type;
   try {
-    const results = await logs(profile);
+    const results = await logs(type);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

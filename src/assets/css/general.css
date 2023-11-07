@@ -52,7 +52,8 @@
 }
 
 .pos-icon {
-    margin-left: 35px;
+    margin-left: 40px;
+    margin-top: 10px;
     width: 80px;
     height: 80px;
     opacity: 75%;
@@ -77,6 +78,14 @@
         .h-25 {
             height: 250px;
         }
+        .pos-icon {
+            margin-left: 45px;
+            width: 60px;
+            height: 60px;
+            opacity: 75%;
+            color: #FFF;
+            position: absolute;
+        }
     }
     
     @media (orientation: portrait) {
@@ -84,23 +93,19 @@
         .height-60 {
             height: 600px;
         }
+
+        .pos-icon {
+            margin-left: 30px;
+            width: 60px;
+            height: 60px;
+            opacity: 75%;
+            color: #FFF;
+            position: absolute;
+        }
     }
 }
 
-
-
-@media (max-width: 768px) {
-    .pos-icon {
-        margin-left: 25px;
-        width: 60px;
-        height: 60px;
-        opacity: 75%;
-        color: #FFF;
-        position: absolute;
-    }
-}
-
-@media (min-width: 1024px) {
+    @media (min-width: 1024px) {
 
     .search-icon {
         margin-bottom: 15px;

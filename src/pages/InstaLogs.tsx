@@ -6,24 +6,27 @@ import React, { useState, useEffect, useRef } from 'react';
 import InstaSearch from '../components/General/InstaSearch';
 
 const InstaLogs = () => {
-    const buttons = ['All', 'Follows', 'Likes', 'Comments', 'Views', 'Follows Back', 'Posts', 'Directs', 'Unfollows'];
+    const buttons = ['All', 'Likes', 'Follows', 'Views', 'Comments', 'Unfollows', 'Directs', 'Posts', 'Reposts', 'Follows Back'];
 
     const [activeButton, setActiveButton] = useState<number | null>(null);
 
+    const updateType = (value) => setType(value);
     const [data, setData] = useState([]);
     const [type, setType] = useState([]);
-    const fetchApiActions = async () => {
-        const data = await fetch('http://localhost:3000/api/logs')
+    const [amount, setAmount] = useState([]);
+    const fetchApiActions = async (type) => {
+        const data = await fetch('http://localhost:3000/api/logs?type=' + type)
         const response = await data.json()
-        console.log(response)
         setData(response)
+        setAmount(response.length)
     }
 
     useEffect(() => {
-        fetchApiActions();
-    }, []);
+        fetchApiActions(type);
+    }, [type]);
 
     const handleClick = (index: number) => {
+        setType(index);
         setActiveButton(index);
     };
 
@@ -36,32 +39,32 @@ const InstaLogs = () => {
         { value: '5', label: 'Unfollows' },
         { value: '6', label: 'Directs' },
         { value: '7', label: 'Posts' },
-        { value: '8', label: 'Repost' },
-        { value: '9', label: 'Follow Back' }
+        { value: '8', label: 'Reposts' },
+        { value: '9', label: 'Follow Backs' }
     ];
 
     const actions = (selectedOption) => {
         switch (selectedOption) {
             case 0:
-                return 'All Content';
+                return 'All';
             case 1:
-                return 'Likes Content';
+                return 'Likes';
             case 2:
-                return 'Follows Content';
+                return 'Follows';
             case 3:
-                return 'Comments Content';
+                return 'Comments';
             case 4:
-                return 'Views Content';
+                return 'Views';
             case 5:
-                return 'Unfollows Content';
+                return 'Unfollows';
             case 6:
-                return 'Directs Content';
+                return 'Directs';
             case 7:
-                return 'Posts Content';
+                return 'Posts';
             case 8:
-                return 'Repost Content';
+                return 'Reposts';
             case 9:
-                return 'Follow Back Content';
+                return 'Follow Backs';
         }
     };
 
@@ -82,8 +85,11 @@ const InstaLogs = () => {
                 <div className="flex gap-5 relative sm:h-[calc(100vh_-_150px)] h-full">
                     <div className="panel flex-1 overflow-auto h-full">
                         <div className="sm:min-h-[300px] min-h-[400px] p-5">
-                            <InstaSearch />
-                            <div className='grid 2xl:grid-cols-9 lg:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-8 mt-5'>
+                            <InstaSearch
+                                onUpdateType={updateType}
+                                amount={amount}
+                            />
+                            <div className='grid 2xl:grid-cols-10 lg:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-8 mt-5'>
                                 {buttons.map((button, index) => (
                                     <button
                                         key={index}
@@ -105,10 +111,10 @@ const InstaLogs = () => {
                                         <LogsBox
                                             key={index}
                                             nameAction={actions(e.type_action)}
-                                            quantActions={2874}
-                                            img={''}
-                                            link={''}
-                                            datantime={''}
+                                            img={e.preview_img_link}
+                                            link={e.media_link}
+                                            onUpdateType={updateType}
+                                            datantime={e.data_time}
 
                                         />
                                     ))}

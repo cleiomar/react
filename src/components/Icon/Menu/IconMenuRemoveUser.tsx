@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Sidebar from '../../Layouts/Sidebar';
 
 interface IconMenuRemoveUserProps {
     className?: string;

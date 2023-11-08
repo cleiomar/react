@@ -74,6 +74,11 @@
         display: none;
     }
 
+    .center {
+        text-align: center;
+        width: 100%;
+    }
+
     @media (orientation: landscape) {
         .h-25 {
             height: 250px;

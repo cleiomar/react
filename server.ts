@@ -22,7 +22,7 @@ import { insertlog } from './src/api/insertlog';
 import { monthlyhistory } from './src/api/monthlyhistory';
 import { changeStatusActivity } from './src/api/change_status_activity';
 import { getCredentialsStatus } from './src/api/getcredentialsstatus';
-import { logs } from './src/api/logs';
+import { logs, totallogs } from './src/api/logs';
 import multer from 'multer';
 
 const app = express();
@@ -159,11 +159,27 @@ app.get('/api/plans', async (req, res) => {
   }
 });
 
-app.get('/api/logs', async (req, res) => {
-  let type = req.query.type;
+app.post('/api/logs', upload.none(), async (req, res) => {
+  let type = req.body.type;
+  let profiles = req.body.profiles;
+  let limit = req.body.limit;
   (type == '0')? type = '': type;
   try {
-    const results = await logs(type);
+    const results = await logs(type, profiles, limit);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+
+app.post('/api/totallogs', upload.none(), async (req, res) => {
+  let type = req.body.type;
+  let profiles = req.body.profiles;
+  let limit = req.body.limit;
+  (type == '0')? type = '': type;
+  try {
+    const results = await totallogs(type, profiles, limit);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

@@ -4,26 +4,101 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect, useRef } from 'react';
 import InstaSearch from '../components/General/InstaSearch';
-
+import { useLocation } from 'react-router-dom';
 const InstaLogs = () => {
+
+    const location = useLocation();
+    const params = location.state;
+    const userid = params.userid;
     const buttons = ['All', 'Likes', 'Follows', 'Views', 'Comments', 'Unfollows', 'Directs', 'Posts', 'Reposts', 'Follows Back'];
 
-    const [activeButton, setActiveButton] = useState<number | null>(null);
+    const [activeButton, setActiveButton] = useState<number | null>(0);
 
     const updateType = (value) => setType(value);
+    const updateProfiles = (value) => setProfiles(value);
     const [data, setData] = useState([]);
-    const [type, setType] = useState([]);
-    const [amount, setAmount] = useState([]);
-    const fetchApiActions = async (type) => {
-        const data = await fetch('http://localhost:3000/api/logs?type=' + type)
-        const response = await data.json()
-        setData(response)
-        setAmount(response.length)
-    }
+    const [type, setType] = useState('');
+    const [amount, setAmount] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
+    const [profiles, setProfiles] = useState([]);
+    let profilesv = '';
+    let typev = 0;
+    let limit = 0;
+
+    const fetchApiActions = async (type, profiles, limit) => {
+        try {
+            const dados = new FormData();
+
+            dados.append('type', type);
+            dados.append('profiles', profiles);
+            dados.append('limit', limit);
+
+            const url = 'http://localhost:3000/api/logs';
+
+            const options: RequestInit = {
+                method: 'POST',
+                body: dados,
+            };
+
+            const response = await fetch(url, options);
+
+            if (response.ok) {
+                const responseData = await response.json();
+                setData(prevData => [...prevData, ...responseData]);
+                setAmount(prevAmount => prevAmount + responseData.length)
+                typev = type;
+                profilesv = profiles;
+
+
+            } else {
+                throw new Error('Erro na solicitação POST');
+            }
+        } catch (error) {
+            console.error('Erro ao enviar a solicitação POST:', error);
+            throw error;
+        }
+    };
+
+
+
+    const fetchApiTotallogs = async (type, profiles) => {
+        try {
+            const dados = new FormData();
+
+            dados.append('type', type);
+            dados.append('profiles', profiles);
+
+            const url = 'http://localhost:3000/api/totallogs';
+
+            const options: RequestInit = {
+                method: 'POST',
+                body: dados,
+            };
+
+            const response = await fetch(url, options);
+
+            if (response.ok) {
+                const responseData = await response.json();
+                setTotalAmount(responseData.length)
+            } else {
+                throw new Error('Erro na solicitação POST');
+            }
+        } catch (error) {
+            console.error('Erro ao enviar a solicitação POST:', error);
+            throw error;
+        }
+    };
+
 
     useEffect(() => {
-        fetchApiActions(type);
-    }, [type]);
+        profilesv = profiles;
+        typev = type;
+        setData([]);
+        setAmount(0)
+        fetchApiActions(type, profiles, 0);
+        fetchApiTotallogs(type, profiles)
+        console.log(type+profiles)
+    }, [type, profiles]);
 
     const handleClick = (index: number) => {
         setType(index);
@@ -68,6 +143,42 @@ const InstaLogs = () => {
         }
     };
 
+
+
+
+
+    const containerRef = useRef(null);
+
+
+    const handleScroll = () => {
+        const container = containerRef.current;
+        if (container) {
+            const scrollTop = container.scrollTop;
+            const scrollHeight = container.scrollHeight;
+            const clientHeight = container.clientHeight;
+
+            if (scrollTop + clientHeight >= scrollHeight) {
+                limit = limit + 24;
+                fetchApiActions(typev, profilesv, limit);
+                console.log(profilesv)
+            }
+        }
+    }
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (container) {
+            container.addEventListener('scroll', handleScroll);
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, []);
+
+
     const { t } = useTranslation();
     return (
         <>
@@ -75,24 +186,28 @@ const InstaLogs = () => {
                 <ul className="flex space-x-2 rtl:space-x-reverse pb-5">
                     <li>
                         <Link to="/" className="text-primary hover:underline">
-                            {t('InstaLogs')}
+                            {t('Instagram')}
                         </Link>
                     </li>
                     <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                        <span>Sales</span>
+                        <span>Logs</span>
                     </li>
                 </ul>
                 <div className="flex gap-5 relative sm:h-[calc(100vh_-_150px)] h-full">
-                    <div className="panel flex-1 overflow-auto h-full">
+                    <div ref={containerRef} className="panel flex-1 overflow-auto h-full">
                         <div className="sm:min-h-[300px] min-h-[400px] p-5">
                             <InstaSearch
                                 onUpdateType={updateType}
+                                onUpdateProfiles={updateProfiles}
                                 amount={amount}
+                                totalAmount={totalAmount}
+                                userid={userid}
                             />
                             <div className='grid 2xl:grid-cols-10 lg:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-8 mt-5'>
                                 {buttons.map((button, index) => (
                                     <button
                                         key={index}
+                                        name={button}
                                         className={`button ${activeButton === index ? 'btn btn-primary buttonHidden' : 'btn btn-outline-primary buttonHidden'}`}
                                         onClick={() => handleClick(index)}
                                     >

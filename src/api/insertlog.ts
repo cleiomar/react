@@ -71,6 +71,19 @@ function generateRandomProfileID() {
     return randomString;
 }
 
+function generateRandomCredID() {
+    const characters = '3';
+    let randomString = '';
+
+    for (let i = 0; i < 1; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomString += characters.charAt(randomIndex);
+    }
+
+    return randomString;
+}
+
+const randomCredID = generateRandomCredID();
 const randomString = generateRandomString();
 const randomID = generateRandomID();
 const randomProfileID = generateRandomProfileID();
@@ -78,8 +91,8 @@ const insert = () => {
     const numeroAleatorio = gerarNumeroAleatorio(1, 9);
     const nomeAleatorio = obterNomeAleatorio(names);
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO history (credentials_id, profile_name, profile_id, media_id, media_link, preview_img_link, type_action) VALUES (1, ?, ?, ?, ?, ?, ?)';
-        db.query(query, [nomeAleatorio, randomProfileID, randomID, randomString, imagemAleatoria, numeroAleatorio], (err, results) => {
+        const query = 'INSERT INTO history (credentials_id, profile_name, profile_id, media_id, media_link, preview_img_link, type_action) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        db.query(query, [randomCredID, nomeAleatorio, randomProfileID, randomID, randomString, imagemAleatoria, numeroAleatorio], (err, results) => {
             if (err) {
                 reject(err);
             } else {

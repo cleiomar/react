@@ -23,6 +23,8 @@ import { monthlyhistory } from './src/api/monthlyhistory';
 import { changeStatusActivity } from './src/api/change_status_activity';
 import { getCredentialsStatus } from './src/api/getcredentialsstatus';
 import { logs, totallogs } from './src/api/logs';
+import { insertPost} from './src/api/insertpost';
+import { posts} from './src/api/posts';
 import multer from 'multer';
 
 const app = express();
@@ -172,6 +174,23 @@ app.post('/api/logs', upload.none(), async (req, res) => {
   }
 });
 
+app.post('/api/autopost', upload.none(), async (req, res) => {
+  let text = req.body.text;
+  let medias = req.body.medias;
+  let mentions = req.body.mentions;
+  let music = req.body.music;
+  let schedule_time = req.body.datatime;
+  let localization = req.body.localization;
+  let type = req.body.action;
+  
+  try {
+    const results = await insertPost(text, medias, mentions, music, schedule_time, localization, type);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
 
 app.post('/api/totallogs', upload.none(), async (req, res) => {
   let type = req.body.type;
@@ -248,6 +267,15 @@ app.get('/api/status', async (req, res) => {
   const limit = req.query.limit || 10;
   try {
     const results = await statusUser();
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro na consulta 1' });
+  }
+});
+
+app.get('/api/posts', async (req, res) => {
+  try {
+    const results = await posts();
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

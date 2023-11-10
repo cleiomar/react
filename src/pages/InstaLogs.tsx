@@ -17,13 +17,12 @@ const InstaLogs = () => {
     const updateType = (value) => setType(value);
     const updateProfiles = (value) => setProfiles(value);
     const [data, setData] = useState([]);
-    const [type, setType] = useState('');
+    const [type, setType] = useState(0);
     const [amount, setAmount] = useState(0);
     const [totalAmount, setTotalAmount] = useState(0);
-    const [profiles, setProfiles] = useState([]);
-    let profilesv = '';
-    let typev = 0;
-    let limit = 0;
+    const [limit, setLimit] = useState(0);
+    const [profiles, setProfiles] = useState('');
+    let updatedLimit = 0;
 
     const fetchApiActions = async (type, profiles, limit) => {
         try {
@@ -46,8 +45,6 @@ const InstaLogs = () => {
                 const responseData = await response.json();
                 setData(prevData => [...prevData, ...responseData]);
                 setAmount(prevAmount => prevAmount + responseData.length)
-                typev = type;
-                profilesv = profiles;
 
 
             } else {
@@ -58,8 +55,6 @@ const InstaLogs = () => {
             throw error;
         }
     };
-
-
 
     const fetchApiTotallogs = async (type, profiles) => {
         try {
@@ -91,14 +86,20 @@ const InstaLogs = () => {
 
 
     useEffect(() => {
-        profilesv = profiles;
-        typev = type;
+        setAmount(0);
+        setLimit(0);
         setData([]);
-        setAmount(0)
-        fetchApiActions(type, profiles, 0);
-        fetchApiTotallogs(type, profiles)
-        console.log(type+profiles)
     }, [type, profiles]);
+
+    useEffect(() => {
+        setTimeout(() => {
+
+            fetchApiActions(type, profiles, limit);
+            fetchApiTotallogs(type, profiles);
+
+        }, 100);
+    }, [type, profiles, limit]);
+
 
     const handleClick = (index: number) => {
         setType(index);
@@ -144,9 +145,6 @@ const InstaLogs = () => {
     };
 
 
-
-
-
     const containerRef = useRef(null);
 
 
@@ -158,9 +156,7 @@ const InstaLogs = () => {
             const clientHeight = container.clientHeight;
 
             if (scrollTop + clientHeight >= scrollHeight) {
-                limit = limit + 24;
-                fetchApiActions(typev, profilesv, limit);
-                console.log(profilesv)
+                setLimit(prevAmount => prevAmount + 24);
             }
         }
     }

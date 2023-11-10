@@ -12,238 +12,129 @@ import axios from 'axios';
 
 const Tabs = () => {
 
+  function formatData(data) {
+
+    var date = new Date(data);
+
+    // Extraia os componentes da data e hora
+    var year = date.getFullYear();
+    var month = (date.getMonth() + 1).toString().padStart(2, '0'); // Adicione 1 ao mês, pois os meses são baseados em zero
+    var day = date.getDate().toString().padStart(2, '0');
+    var hours = date.getHours().toString().padStart(2, '0');
+    var minutes = date.getMinutes().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
+}
+
+
   const options = [
     { value: '1', label: 'Feed' },
     { value: '2', label: 'Stories' },
     { value: '3', label: 'Reels' },
   ];
 
-  const [text, setText] = useState("");
-
-  function handleOnEnter(text) {
-    console.log("enter", text);
-  }
-
-  const [selected, setSelected] = useState(["cleiomar"]);
-  let newItems = ["item1", "item2", "item3"];
-
-  const addNewItems = () => {
-    // Mapeia os novos itens e adiciona-os à array 'selected'
-    const updatedSelected = [...selected, ...newItems];
-    setSelected(updatedSelected);
-    //console.log(updatedSelected);
-  };
-
-
 
   const [date2, setDate2] = useState<any>('2022-07-05 12:00');
-  //const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
-    // Função para alterar elementos com a mesma classe
     const changeElementsWithClass = () => {
-      const elements = document.querySelectorAll('.react-input-emoji--input'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      const elements = document.querySelectorAll('.react-input-emoji--input');
       elements.forEach((element) => {
-        element.style.height = '250px'; // Exemplo de estilo a ser aplicado
+        element.style.height = '250px';
       });
       
     };
 
-    // Chame a função quando o componente for montado
     changeElementsWithClass();
   }, []);
 
 
   useEffect(() => {
-    // Função para alterar elementos com a mesma classe
     const changeElementsWithClass = () => {
-      const elements = document.querySelectorAll('.rti--container'); // Substitua 'sua-classe' pela classe que deseja selecionar
+      const elements = document.querySelectorAll('.rti--container');
       elements.forEach((element) => {
-        element.style.height = '150px'; // Exemplo de estilo a ser aplicado
-        element.style.overflowY = 'scroll'; // Exemplo de estilo a ser aplicado
+        element.style.height = '150px';
+        element.style.overflowY = 'scroll';
       });
     };
 
-    // Chame a função quando o componente for montado
     changeElementsWithClass();
 
    
   }, []);
 
+  const [tableData, setTableData] = useState([]);
   useEffect(() => {
-    // Função para buscar os dados dos usuários
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/users');
+        const response = await axios.get('http://localhost:3000/api/posts');
         setTableData(response.data);
       } catch (error) {
         console.error('Erro ao buscar dados dos usuários:', error);
       }
     };
 
-    // Chamada da função ao montar o componente
     fetchUsers();
   }, []);
 
-  const tableData = [
-    {
-      id: 1,
-      name: 'John Doe',
-      email: 'johndoe@yahoo.com',
-      date: '10/08/2020',
-      sale: 120,
-      status: 'Complete',
-      register: '5 min ago',
-      progress: '40%',
-      position: 'Developer',
-      office: 'London',
-    },
-    {
-      id: 2,
-      name: 'Shaun Park',
-      email: 'shaunpark@gmail.com',
-      date: '11/08/2020',
-      sale: 400,
-      status: 'Pending',
-      register: '11 min ago',
-      progress: '23%',
-      position: 'Designer',
-      office: 'New York',
-    },
-    {
-      id: 3,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-    {
-      id: 4,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
-    {
-      id: 5,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-    {
-      id: 6,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
-    {
-      id: 7,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-    {
-      id: 8,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
-    {
-      id: 9,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-    {
-      id: 10,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
-    {
-      id: 11,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-    {
-      id: 12,
-      name: 'Vincent Carpenter',
-      email: 'vincent@gmail.com',
-      date: '13/08/2020',
-      sale: 100,
-      status: 'Canceled',
-      register: '1 day ago',
-      progress: '60%',
-      position: 'Data Scientist',
-      office: 'Canada',
-    },
-    {
-      id: 13,
-      name: 'Alma Clarke',
-      email: 'alma@gmail.com',
-      date: '12/02/2020',
-      sale: 310,
-      status: 'In Progress',
-      register: '1 hour ago',
-      progress: '80%',
-      position: 'Accountant',
-      office: 'Amazon',
-    },
-  ];
+  const [text, setText] = useState("");
+  function onChangeText(value) {
+    setText(value);
+  }
 
+  const [action, setAction] = useState();
+  function onChangeAction(value) {
+    setAction(value);
+  }
+
+  const [datatime, setDatatime] = useState();
+  function onChangeDatatime(value) {
+    setDatatime(value);
+  }
+
+  const [mentions, setMentions] = useState([]);
+
+  const [localization, setLocalization] = useState();
+  function onChangeLocalization(value) {
+    setLocalization(value);
+  }
+  
+
+  const fetchApiPost = async () => {
+    try {
+        const dados = new FormData();
+
+        dados.append('text', text);
+        dados.append('action', action);
+        dados.append('datatime', datatime);
+        dados.append('mentions', mentions);
+        dados.append('localization', localization);
+
+        const url = 'http://localhost:3000/api/autopost';
+
+        const options: RequestInit = {
+            method: 'POST',
+            body: dados,
+        };
+
+        const response = await fetch(url, options);
+
+        if (response.ok) {
+            const responseData = await response.json();
+        } else {
+            throw new Error('Erro na solicitação POST');
+        }
+    } catch (error) {
+        console.error('Erro ao enviar a solicitação POST:', error);
+        throw error;
+    }
+};
+
+
+function converterArrayParaFormato(array) {
+  const meuArray = JSON.parse(array);
+  return meuArray.join(', ');
+}
   return (
     <div>
       <ul className="flex space-x-2 rtl:space-x-reverse">
@@ -287,16 +178,16 @@ const Tabs = () => {
                 <label className='ml-2' htmlFor="iconRight">Text</label>
                 <InputEmoji
                   value={text}
-                  onChange={setText}
-                  cleanOnEnter
+                  onChange={onChangeText}
                   borderRadius={5}
-                  onEnter={handleOnEnter}
                   placeholder="Type a message"
                 />
               </div>
               <div className="mb-5 p-2 mt-3">
                 <label htmlFor="iconRight">Action</label>
-                <Select defaultValue={options[0]} options={options} isSearchable={false} />
+                <Select defaultValue={options[0]} 
+                  onChange={(e) => onChangeAction(e.value)}
+                  options={options} isSearchable={false} />
               </div>
               <div className="mb-5 p-2 mt-3">
                 <label htmlFor="iconRight">Data & Time</label>
@@ -308,21 +199,21 @@ const Tabs = () => {
                   }}
                   value={date2}
                   className="form-input"
-                  onChange={(date2) => setDate2(date2)}
+                  onChange={(date2) => onChangeDatatime(date2)}
                 />
               </div>
               <div className='ml-2 pr-2'>
                 <label htmlFor="iconRight">Usernames</label>
                 <TagsInput
-                  value={selected}
-                  onChange={setSelected}
+                  value={mentions}
+                  onChange={setMentions}
                   name="hashtags" />
               </div>
               <div className="mb-5 pr-2">
                 <div className='mt-5 ml-2'>
                   <label htmlFor="iconRight">Localization</label>
                   <div className="flex">
-                    <input id="iconRight" type="text" placeholder="Notification" className="form-input ltr:rounded-r-none rtl:rounded-l-none" />
+                    <input id="iconRight" type="text" onChange={(e) => onChangeLocalization(e.target.value)} placeholder="Notification" className="form-input ltr:rounded-r-none rtl:rounded-l-none" />
                     <div className="bg-[#eee] flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border ltr:border-l-0 rtl:border-r-0 border-white-light dark:border-[#17263c] dark:bg-[#1b2e4b]">
                       <IconMapPin className="text-white-dark" />
                     </div>
@@ -330,51 +221,63 @@ const Tabs = () => {
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-6 lg:grid-cols-3 ml-2 mt-14 ">
-                <button type="button" className="btn btn-outline-primary btn-sm" onClick={addNewItems}>Save Post</button>
+                <button type="button" className="btn btn-outline-primary btn-sm" onClick={fetchApiPost}>Save Post</button>
                 <button type="button" className="btn btn-outline-primary btn-sm">Post Now</button>
                 <button type="button" className="btn btn-outline-primary btn-sm">Schedule</button>
               </div>
             </div>
 
           </div>
-          <div className="panel p-14">
-            <div className='h-70'>
-            <div className="table-responsive mb-5 ml-2">
+          <div className="panel">
+            <div className='h-71'>
+            <div className="table-responsive mb-5 ml-2 h-71">
               <table className='table-hover'>
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Sale</th>
-                    <th>Status</th>
-                    <th className="text-center">Action</th>
+                    <th></th>
+                    <th>Preview</th>
+                    <th><div className='w-300'>Text</div></th>
+                    <th><div className='w-300'>Mentions</div></th>
+                    <th><center className='w-150'>Scheduler</center></th>
+                    <th><center className='w-150'>Localization</center></th>
+                    <th><center className='w-150'>Status</center></th>
+                    <th><center className='w-150'>Action</center></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {tableData.map((data) => {
+                  {tableData.map((data, index) => {
                     return (
                       <tr key={data.id}>
                         <td>
-                          <div className="whitespace-nowrap">{data.name}</div>
+                          <div className="whitespace-nowrap">{index}</div>
                         </td>
-                        <td>{data.date}</td>
-                        <td>{data.sale}</td>
-                        <td>
+                        <td><img className="w-20 h-12 rounded-md overflow-hidden object-cover " src={data.preview}/></td>
+                        <td>{data.text}</td>
+                        <td>{converterArrayParaFormato('["qweweqw", "qweqweqe", "sdasdasd", "sdasdasd4", "qweqweqe4"]')}</td>
+                        <td><center className='w-150'>{formatData(data.schedule_time)}</center></td>
+                        <td><center className='w-150'>{data.localization}</center></td>
+                        <td><center className='w-150'>
                           <span
-                            className={`badge whitespace-nowrap ${data.status === 'completed'
-                              ? 'bg-primary   '
-                              : data.status === 'Pending'
+                            className={`badge whitespace-nowrap ${data.status === 1
+                              ? 'bg-success'
+                              : data.status === 2
                                 ? 'bg-secondary'
-                                : data.status === 'In Progress'
+                                : data.status === 3
                                   ? 'bg-success'
-                                  : data.status === 'Canceled'
+                                  : data.status === 4
                                     ? 'bg-danger'
                                     : 'bg-primary'
                               }`}
-                          >
-                            {data.status}
-                          </span>
+                          >{(data.status === 1) ? 'Programmed':
+                          (data.status === 2) ? 'Posted':
+                          (data.status === 3) ? 'Canceled':
+                          (data.status === 4) ? 'Error':''}
+                          </span></center>
                         </td>
+                        <td><center className='w-150'>{(data.type === 1) ? 'Feed':
+                        (data.type === 2) ? 'Stories':
+                        (data.type === 3) ? 'Reels':''}</center></td>
                         <td className="text-center">
                           <div className="dropdown">
                             <Dropdown

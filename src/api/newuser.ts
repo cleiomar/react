@@ -11,7 +11,6 @@ export function newUser(data: []) { // Recebe 'data' como argumento
     return new Promise((resolve, reject) => {
         const niver = converterDataParaAmericano(data.birth_date)
         const query = 'INSERT INTO credentials (user_id, Name, Email, BirthDate, Plan, Status, Login, Phone, Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        //const nascimento = converterDataParaAmericano(data.birth_date);
         db.query(query, [data.userid, data.full_name, data.email, niver, data.plan, data.status, data.username, data.phone, data.password], (err, results) => {
             if (err) {
                 reject(err);
@@ -25,7 +24,7 @@ export function newUser(data: []) { // Recebe 'data' como argumento
 
 export function newConfigUser(id: number) {
     return new Promise((resolve, reject) => {
-        db.query("INSERT INTO configstodo VALUES (null, ?, '0','0','0','0','0','0','0','0','0','0','0','0')", [id], (err, results) => {
+        db.query("INSERT INTO configstodo VALUES (null, ?, '0','0','0','0','0','0','0','0','0','0','0','0','0')", [id], (err, results) => {
             if (err) {
                 reject(err);
             } else {

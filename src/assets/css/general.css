@@ -159,6 +159,10 @@
     width: 100px;
 }
 
+.w-150 {
+    width: 150px;
+}
+
 .overflow-auto {
     overflow: auto;
 }
@@ -187,6 +191,10 @@
     height: 660px;
 }
 
+.h-71 {
+    height: 700px;
+}
+
 .ht-30{
     height: 40px;
 }
@@ -211,3 +219,7 @@
     padding-left: 2%;
     max-height: 100%;
   }
+
+  .w-300 {
+    width: 300px;
+}

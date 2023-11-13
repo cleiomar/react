@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import InputEmoji from "react-input-emoji";
 import Flatpickr from "react-flatpickr";
 import 'flatpickr/dist/flatpickr.css';
@@ -7,35 +8,10 @@ import Dropdown from '../components/Dropdown';
 import Select from 'react-select';
 import { TagsInput } from "react-tag-input-component";
 import IconMapPin from '../components/Icon/IconMapPin';
-import React, { useEffect, useState, ChangeEvent } from 'react';
 import axios from 'axios';
+import React from 'react';
 
 const Tabs = () => {
-
-  const [image, setImage] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setImage(e.target.files[0]);
-    }
-  };
-
-  const handleUpload = async () => {
-    if (image) {
-      const formData = new FormData();
-      formData.append('image', image);
-
-      try {
-        const response = await axios.post<{ imagePath: string }>('http://localhost:3000/api/upload', formData);
-        setImageUrl(response.data.imagePath);
-      } catch (error) {
-        console.error('Error uploading image:', error);
-      }
-    }
-  };
-
-
 
   function formatData(data) {
 
@@ -49,7 +25,7 @@ const Tabs = () => {
     var minutes = date.getMinutes().toString().padStart(2, '0');
 
     return `${year}-${month}-${day} ${hours}:${minutes}`;
-  }
+}
 
 
   const options = [
@@ -67,7 +43,7 @@ const Tabs = () => {
       elements.forEach((element) => {
         element.style.height = '250px';
       });
-
+      
     };
 
     changeElementsWithClass();
@@ -85,7 +61,7 @@ const Tabs = () => {
 
     changeElementsWithClass();
 
-
+   
   }, []);
 
   const [tableData, setTableData] = useState([]);
@@ -123,56 +99,56 @@ const Tabs = () => {
   function onChangeLocalization(value) {
     setLocalization(value);
   }
-
+  
 
   const fetchApiPost = async () => {
     try {
-      const dados = new FormData();
+        const dados = new FormData();
 
-      dados.append('text', text);
-      dados.append('action', action);
-      dados.append('datatime', datatime);
-      dados.append('mentions', mentions);
-      dados.append('localization', localization);
+        dados.append('text', text);
+        dados.append('action', action);
+        dados.append('datatime', datatime);
+        dados.append('mentions', mentions);
+        dados.append('localization', localization);
 
-      const url = 'http://localhost:3000/api/autopost';
+        const url = 'http://localhost:3000/api/autopost';
 
-      const options: RequestInit = {
-        method: 'POST',
-        body: dados,
-      };
+        const options: RequestInit = {
+            method: 'POST',
+            body: dados,
+        };
 
-      const response = await fetch(url, options);
+        const response = await fetch(url, options);
 
-      if (response.ok) {
-        const responseData = await response.json();
-      } else {
-        throw new Error('Erro na solicitação POST');
-      }
+        if (response.ok) {
+            const responseData = await response.json();
+        } else {
+            throw new Error('Erro na solicitação POST');
+        }
     } catch (error) {
-      console.error('Erro ao enviar a solicitação POST:', error);
-      throw error;
+        console.error('Erro ao enviar a solicitação POST:', error);
+        throw error;
     }
-  };
+};
 
 
-  function converterArrayParaFormato(array) {
-    const meuArray = JSON.parse(array);
-    let dados = meuArray.map((data, index) => (
-      <span key={index} className="badge badge-outline-primary rounded-full" style={{ display: 'inline-block', marginRight: '5px', marginBottom: '5px' }}>
-        {data}
-      </span>
-    ));
+function converterArrayParaFormato(array) {
+  const meuArray = JSON.parse(array);
+  let dados = meuArray.map((data, index) => (
+    <span key={index} className="badge badge-outline-primary rounded-full" style={{ display: 'inline-block', marginRight: '5px', marginBottom: '5px' }}>
+      {data}
+    </span>
+  ));
 
-    // Dividir os elementos em linhas de 10 itens
-    const linhas = [];
-    for (let i = 0; i < dados.length; i += 50) {
-      linhas.push(<div key={i}>{dados.slice(i, i + 50)}</div>);
-    }
-
-    // Agora, a variável 'linhas' contém divs com 10 elementos JSX cada.
-    return linhas;
+  // Dividir os elementos em linhas de 10 itens
+  const linhas = [];
+  for (let i = 0; i < dados.length; i += 50) {
+    linhas.push(<div key={i}>{dados.slice(i, i + 50)}</div>);
   }
+
+  // Agora, a variável 'linhas' contém divs com 10 elementos JSX cada.
+  return linhas;
+}
 
   return (
     <div>
@@ -188,8 +164,8 @@ const Tabs = () => {
       </ul>
       <div className="space-y-8 pt-5">
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-1">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
             <div className="panel" id="simple">
 
@@ -198,11 +174,7 @@ const Tabs = () => {
                 <div className='p-6'>Username</div>
               </div>
               <div className="panel h-50" id="simple"></div>
-              <div>
-                <input type="file" accept="image/*" onChange={handleImageChange} />
-                <button onClick={handleUpload}>Upload</button>
-                {imageUrl && <img src={imageUrl} alt="Uploaded" />}
-              </div>
+              
               <div className="grid grid-cols-2 gap-6 lg:grid-cols-2 ml-2 mt-14 ">
                 <button type="button" className="btn btn-outline-primary btn-sm">Prev</button>
                 <button type="button" className="btn btn-outline-primary btn-sm">Next</button>
@@ -211,84 +183,76 @@ const Tabs = () => {
 
 
 
-            <div className="panel xl:col-span-4 sm:col-span-4" id="simple">
+            <div className="panel" id="simple">
 
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 ml-2 ">
-                <div className="mt-3 p-3 flex flex-wrap xl:col-span-3 sm:col-span-3 border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Options</b>
-                </div>
+              <div className="mt-3 p-3 flex flex-wrap border-b border-white-light dark:border-[#191e3a]" role="tablist" aria-orientation="horizontal"><b>Options</b>
+              </div>
 
-                <div className="mb-5 p-2 mt-3">
-                  <label htmlFor="iconRight">Username</label>
-                  <Select defaultValue={options[0]}
-                    onChange={(e) => onChangeAction(e.value)}
-                    options={options} isSearchable={false} />
-                </div>
 
-                <div className="active pt-5">
-                  <label className='ml-2' htmlFor="iconRight">Text</label>
-                  <InputEmoji
-                    value={text}
-                    onChange={onChangeText}
-                    borderRadius={5}
-                    placeholder="Type a message"
-                  />
-                </div>
-                <div className="mb-5 p-2 mt-3">
-                  <label htmlFor="iconRight">Action</label>
-                  <Select defaultValue={options[0]}
-                    onChange={(e) => onChangeAction(e.value)}
-                    options={options} isSearchable={false} />
-                </div>
-                <div className='ml-2 pr-2'>
-                  <label htmlFor="iconRight">Mentions</label>
-                  <TagsInput
-                    value={mentions}
-                    onChange={setMentions}
-                    name="hashtags" />
-                </div>
-                <div className="mb-5 p-2 mt-3">
-                  <label htmlFor="iconRight">Data & Time</label>
-                  <Flatpickr
-                    data-enable-time
-                    options={{
-                      enableTime: true,
-                      dateFormat: 'Y-m-d H:i',
-                    }}
-                    value={date2}
-                    className="form-input"
-                    onChange={(date2) => onChangeDatatime(date2)}
-                  />
-                </div>
-                <div className="mb-5 pr-2">
-                  <div className='mt-5 ml-2'>
-                    <label htmlFor="iconRight">Localization</label>
-                    <div className="flex">
-                      <input id="iconRight" type="text" onChange={(e) => onChangeLocalization(e.target.value)} placeholder="Notification" className="form-input ltr:rounded-r-none rtl:rounded-l-none" />
-                      <div className="bg-[#eee] flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border ltr:border-l-0 rtl:border-r-0 border-white-light dark:border-[#17263c] dark:bg-[#1b2e4b]">
-                        <IconMapPin className="text-white-dark" />
-                      </div>
+              <div className="active pt-5">
+                <label className='ml-2' htmlFor="iconRight">Text</label>
+                <InputEmoji
+                  value={text}
+                  onChange={onChangeText}
+                  borderRadius={5}
+                  placeholder="Type a message"
+                />
+              </div>
+              <div className="mb-5 p-2 mt-3">
+                <label htmlFor="iconRight">Action</label>
+                <Select defaultValue={options[0]} 
+                  onChange={(e) => onChangeAction(e.value)}
+                  options={options} isSearchable={false} />
+              </div>
+              <div className="mb-5 p-2 mt-3">
+                <label htmlFor="iconRight">Data & Time</label>
+                <Flatpickr
+                  data-enable-time
+                  options={{
+                    enableTime: true,
+                    dateFormat: 'Y-m-d H:i',
+                  }}
+                  value={date2}
+                  className="form-input"
+                  onChange={(date2) => onChangeDatatime(date2)}
+                />
+              </div>
+              <div className='ml-2 pr-2'>
+                <label htmlFor="iconRight">Usernames</label>
+                <TagsInput
+                  value={mentions}
+                  onChange={setMentions}
+                  name="hashtags" />
+              </div>
+              <div className="mb-5 pr-2">
+                <div className='mt-5 ml-2'>
+                  <label htmlFor="iconRight">Localization</label>
+                  <div className="flex">
+                    <input id="iconRight" type="text" onChange={(e) => onChangeLocalization(e.target.value)} placeholder="Notification" className="form-input ltr:rounded-r-none rtl:rounded-l-none" />
+                    <div className="bg-[#eee] flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border ltr:border-l-0 rtl:border-r-0 border-white-light dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                      <IconMapPin className="text-white-dark" />
                     </div>
                   </div>
                 </div>
-                <div></div>
-                <div className="grid grid-cols-3 gap-6 lg:grid-cols-3 ml-2 mt-14 ">
-                  <button type="button" className="btn btn-outline-primary btn-sm" onClick={fetchApiPost}>Save Post</button>
-                  <button type="button" className="btn btn-outline-primary btn-sm">Post Now</button>
-                  <button type="button" className="btn btn-outline-primary btn-sm">Schedule</button>
-                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-6 lg:grid-cols-3 ml-2 mt-14 ">
+                <button type="button" className="btn btn-outline-primary btn-sm" onClick={fetchApiPost}>Save Post</button>
+                <button type="button" className="btn btn-outline-primary btn-sm">Post Now</button>
+                <button type="button" className="btn btn-outline-primary btn-sm">Schedule</button>
               </div>
             </div>
 
           </div>
           <div className="panel">
-            <div className="table-responsive mb-5 ml-2">
+            <div className='h-71'>
+            <div className="table-responsive mb-5 ml-2 h-71">
               <table className='table-hover table-striped'>
                 <thead>
                   <tr>
                     <th></th>
                     <th>Preview</th>
                     <th><div className='w-300'>Text</div></th>
-                    <th><div className='w-600'>Mentions</div></th>
+                    <th><div className='w-400'>Mentions</div></th>
                     <th><center className='w-150'>Scheduler</center></th>
                     <th><center className='w-150'>Localization</center></th>
                     <th><center className='w-150'>Status</center></th>
@@ -303,7 +267,7 @@ const Tabs = () => {
                         <td>
                           <div className="whitespace-nowrap">{index}</div>
                         </td>
-                        <td><img className="w-20 h-12 rounded-md overflow-hidden object-cover " src={data.preview} /></td>
+                        <td><img className="w-20 h-12 rounded-md overflow-hidden object-cover " src={data.preview}/></td>
                         <td>{data.text}</td>
                         <td><div className='h-100'>{converterArrayParaFormato(data.mentions)}</div></td>
                         <td><center className='w-150'>{formatData(data.schedule_time)}</center></td>
@@ -320,15 +284,15 @@ const Tabs = () => {
                                     ? 'bg-danger'
                                     : 'bg-primary'
                               }`}
-                          >{(data.status === 1) ? 'Programmed' :
-                            (data.status === 2) ? 'Posted' :
-                              (data.status === 3) ? 'Canceled' :
-                                (data.status === 4) ? 'Error' : ''}
+                          >{(data.status === 1) ? 'Programmed':
+                          (data.status === 2) ? 'Posted':
+                          (data.status === 3) ? 'Canceled':
+                          (data.status === 4) ? 'Error':''}
                           </span></center>
                         </td>
-                        <td><center className='w-150'>{(data.type === 1) ? 'Feed' :
-                          (data.type === 2) ? 'Stories' :
-                            (data.type === 3) ? 'Reels' : ''}</center></td>
+                        <td><center className='w-150'>{(data.type === 1) ? 'Feed':
+                        (data.type === 2) ? 'Stories':
+                        (data.type === 3) ? 'Reels':''}</center></td>
                         <td className="text-center">
                           <div className="dropdown">
                             <Dropdown
@@ -361,50 +325,51 @@ const Tabs = () => {
                 </tbody>
               </table>
             </div>
-
-
-            <div className='flex justify-center pt-10'>
-              <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
-                <li>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    Prev
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    1
-                  </button>
-                </li>
-                <li>
-                  <button type="button"
-                    className="btn btn-outline-primary btn-sm">
-                    2
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    3
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    Next
-                  </button>
-                </li>
-              </ul>
             </div>
+
+            
+            <div className='flex justify-center pt-10'>
+                <ul className="inline-flex items-center space-x-1 rtl:space-x-reverse m-auto">
+                  <li>
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary btn-sm"
+                    >
+                      Prev
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary btn-sm"
+                    >
+                      1
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button"
+                    className="btn btn-outline-primary btn-sm">
+                      2
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary btn-sm"
+                    >
+                      3
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary btn-sm"
+                    >
+                      Next
+                    </button>
+                  </li>
+                </ul>
+              </div>
 
           </div>
 

@@ -34,7 +34,7 @@ function InstaSearch({ onUpdateType, onUpdateProfiles, amount, totalAmount, user
 
     const [profiles, setProfiles] = useState([]);
     const fetchApiProfiles = async (id) => {
-        const data = await fetch('http://localhost:3000/api/activity_profiles?id=' + id)
+        const data = await fetch('http://localhost:3000/api/activity_profiles?id=' + id + '&profile=' )
         const response = await data.json()
         setProfiles(response);
     }

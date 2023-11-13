@@ -14,15 +14,17 @@ const InstaUsers = () => {
     const params = location.state;
     const userid = params.userid;
     const [profiles, setProfiles] = useState([]);
+    const [totalAccounts, setTotalAccounts] = useState(0);
 
-    const get_profiles = async (id) => {
-        const data = await fetch('http://localhost:3000/api/activity_profiles?id=' + id);
+    const get_profiles = async (id, profile) => {
+        const data = await fetch('http://localhost:3000/api/activity_profiles?id=' + id + '&profile=' + profile);
         const accounts = await data.json();
+        setTotalAccounts(accounts.length)
         setProfiles(accounts);
     }
     
     useEffect(() => {
-        get_profiles(userid);
+        get_profiles(userid,'');
     }, [])
 
 
@@ -53,9 +55,9 @@ const InstaUsers = () => {
                                                     height='60'
                                                 />
                                             </div>
-                                            <div className="ltr:ml-1 rtl:mr-1 w-[250px] self-end-baseline">
+                                            <div className="ltr:ml-8 rtl:mr-1 w-[200px] self-end-baseline mt-2 ">
                                                 <div className="font-bold text-lg font-general text-gray-500">Accounts</div>
-                                                <div className="font-num font-semibold text-gray-500 ">35</div>
+                                                <div className="font-num font-semibold text-gray-500 ">{totalAccounts}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +65,7 @@ const InstaUsers = () => {
                                 <div className="panel pb-4 bg-primary-light justify-between shadow-primary">
                                     <div className="min-h-[40px]">
                                     <div className="relative mt-2">
-                                        <input type="text" placeholder="Search Profile" className="form-input py-2 ltr:pr-11 rtl:pl-11 peer"/>
+                                        <input type="text" onChange={(e) => get_profiles(userid, e.target.value)} placeholder="Search Profile" className="form-input py-2 ltr:pr-11 rtl:pl-11 peer"/>
                                         <button type="button" className="absolute ltr:right-[11px] rtl:left-[11px] top-1/2 -translate-y-1/2 peer-focus:text-primary">
                                             <IconSearch className="mx-auto" />
                                         </button>

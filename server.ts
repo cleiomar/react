@@ -26,6 +26,7 @@ import { logs, totallogs } from './src/api/logs';
 import { insertPost} from './src/api/insertpost';
 import { posts} from './src/api/posts';
 import multer from 'multer';
+import path from 'path';
 
 const app = express();
 const port = 3000;
@@ -34,6 +35,29 @@ app.use(express.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+
+const storageImage = multer.diskStorage({
+  destination: './uploads/',
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  },
+});
+
+const uploadImage = multer({ storageImage }).single('image');
+
+app.post('/api/upload', (req, res) => {
+  console.log(req);
+  uploadImage(req, res, (err) => {
+    if (err) {
+      // Tratar erro de upload
+      return res.status(500).json({ error: err.message });
+    }
+
+    // Aqui você deve ser capaz de acessar req.file.filename
+    const imagePath = '/uploads/' + (req.file as Express.Multer.File).filename;
+    res.json({ imagePath });
+  });
+});
 
 app.get('/api/users', async (req, res) => {
   const limit: number = req.query.limit || 10;
@@ -69,8 +93,9 @@ app.get('/api/activity_data', async (req, res) => {
 
 app.get('/api/activity_profiles', async (req, res) => {
   const id = req.query.id;
+  const profile = req.query.profile;
   try {
-    const results = await profiles(id);
+    const results = await profiles(id, profile);
     res.json(results);
   } catch (error) {
     res.status(500).json({ error: 'Erro na consulta 1' });

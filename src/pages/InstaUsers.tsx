@@ -72,7 +72,6 @@ const Tabs = () => {
   const fetchApiStatus = async () => {
     const data = await fetch('http://localhost:3000/api/getcredentialsstatus')
     const [response] = await data.json()
-    console.log(response)
     setActive(response.active)
     setBlocked(response.blocked)
     setCanceled(response.canceled)

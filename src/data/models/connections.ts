@@ -4,7 +4,10 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '12345678',
-    database: 'instagram',
+    database: 'nexus',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 connection.connect((err) => {

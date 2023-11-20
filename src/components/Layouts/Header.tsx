@@ -32,8 +32,66 @@ import IconMenuDatatables from '../Icon/Menu/IconMenuDatatables';
 import IconMenuForms from '../Icon/Menu/IconMenuForms';
 import IconMenuPages from '../Icon/Menu/IconMenuPages';
 import IconMenuMore from '../Icon/Menu/IconMenuMore';
+import IconMenuViews from '../Icon/Menu/IconMenuViews';
+import globalVars from '../../data/global'
+import { useSetState } from '@mantine/hooks';
 
 const Header = () => {
+    const updateConfigHideValue = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/update_config', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ hide_values: !globalVars.getVariable1() }),
+            });
+    
+            if (response.ok) {
+                const data = await response.json(); // Espera a Promise ser resolvida
+                if (data.changedRows === 1) {
+                    globalVars.setVariable1(!globalVars.getVariable1());
+                }
+            } else {
+                console.error('Falha ao atualizar configuração. Status:', response.status);
+            }
+        } catch (error) {
+            console.error('Erro ao enviar requisição de atualização:', error);
+        }
+    };
+
+    const fetchconfigHideValue = async () => {
+        try {
+            const data = await fetch('http://localhost:3000/configs');
+            const responseArray = await data.json();
+
+            if (responseArray && responseArray.length > 0) {
+                const firstConfig = responseArray[0];
+                const hideValues = firstConfig.hideValues;
+
+                if (hideValues !== undefined) {
+                    globalVars.setVariable1(hideValues)
+                } else {
+                    console.error('Chave hideValues não encontrada no objeto de configuração.');
+                }
+            } else {
+                console.error('Resposta vazia ou não no formato esperado.');
+            }
+        } catch (error) {
+            console.error('Erro ao buscar configHideValue:', error);
+        }
+    }
+
+    useEffect(() => {
+        fetchconfigHideValue();
+    }, []);
+
+    const ocultarValores = () => {
+        const newVariable1Value = globalVars.getVariable1();
+        globalVars.setVariable1(!newVariable1Value)
+        //updateConfigHideValue(!newVariable1Value)
+    };
+
     const location = useLocation();
     useEffect(() => {
         const selector = document.querySelector('ul.horizontal-menu a[href="' + window.location.pathname + '"]');
@@ -205,13 +263,26 @@ const Header = () => {
                                 <IconSearch className="w-4.5 h-4.5 mx-auto dark:text-[#d0d2d6]" />
                             </button>
                         </div>
+                        <div className="ltr:mr-2 rtl:ml-2 hidden sm:block">
+                            <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
+                                <li>
+                                    <button onClick={() => updateConfigHideValue(!globalVars.getVariable1())} className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
+                                        <IconMenuViews
+                                            height='21'
+                                            width='21'
+                                            opValor='50%'
+                                            className='iconView'
+                                        />
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                         <div>
                             {themeConfig.theme === 'light' ? (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'light' &&
+                                    className={`${themeConfig.theme === 'light' &&
                                         'flex items-center p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => {
                                         dispatch(toggleTheme('dark'));
                                     }}
@@ -223,10 +294,9 @@ const Header = () => {
                             )}
                             {themeConfig.theme === 'dark' && (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'dark' &&
+                                    className={`${themeConfig.theme === 'dark' &&
                                         'flex items-center p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => {
                                         dispatch(toggleTheme('system'));
                                     }}
@@ -236,10 +306,9 @@ const Header = () => {
                             )}
                             {themeConfig.theme === 'system' && (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'system' &&
+                                    className={`${themeConfig.theme === 'system' &&
                                         'flex items-center p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => {
                                         dispatch(toggleTheme('light'));
                                     }}

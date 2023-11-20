@@ -71,7 +71,7 @@ const Sidebar = () => {
                         <ul className="relative font-semibold space-y-0.5 p-3 py-0 ml--10">
 
                             <li className="nav-item">
-                                <NavLink to="/Dashboard" className="group">
+                                <NavLink to="/dashboard" className="group">
                                     <div className="flex items-center">
                                         <IconMenuDashboard className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('dashboard')}</span>
@@ -80,21 +80,21 @@ const Sidebar = () => {
                             </li>
 
                             <li className="nav-item">
-                                <Link to={"/InstaUsers"} state={{ userid: userid }} className="group">
+                                <Link to={"/transacoes"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
                                         <IconMenuInstaUsers
                                             opValor="0.5"
                                             className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('instagram')}</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Transações</span>
                                     </div>
                                 </Link>
                             </li>
 
                             <li className="nav-item">
-                            <Link to={"/InstaLogs"} state={{ userid: userid }} className="group">
+                            <Link to={"/Patrimonio"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
                                         <IconMenuInstaLogs className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('logs')}</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Patrimônio</span>
                                     </div>
                                 </Link>
                             </li>

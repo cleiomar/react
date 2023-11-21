@@ -59,8 +59,8 @@ const ControllerGetBrokers = async (req: Request, res: Response): Promise<void> 
 
 const ControllerInsertTransacao = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, userid, tipo  } = req.body;
-        const data = await serviceInsertTransacao(categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, userid, tipo);
+        const { categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, userid, tipo, moeda } = req.body;
+        const data = await serviceInsertTransacao(categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, userid, tipo, moeda);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);
@@ -142,8 +142,8 @@ const ControllerGetTransacaoId = async (req: Request, res: Response): Promise<vo
 
 const ControllerUpdateTransacao = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id, tipo } = req.body;
-        const data = await serviceUpdateTransacao(categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id, tipo);
+        const { categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id, tipo, moeda } = req.body;
+        const data = await serviceUpdateTransacao(categoria, corretora, ativo, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id, tipo, moeda);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);

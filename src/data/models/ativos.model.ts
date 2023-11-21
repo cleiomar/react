@@ -73,10 +73,10 @@ const modelGetBrokers = async () => {
     });
 }
 
-const modelInsertTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, userid: any, tipo: any) => {
+const modelInsertTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, userid: any, tipo: any, moeda: any) => {
     return new Promise((resolve, reject) => {
-        connection.query(`INSERT transacoes (transacao_id, categoria, ativo, tipo_ordem, broker, negociacao, quantidade, preco, corretagem, emolumentos,impostos,origem)
-                                    VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)`, [categoria, ativo, tipo, corretora, negociacao, quantidade, preco, corretagem, emolumentos, impostos], (err, results) => {
+        connection.query(`INSERT transacoes (transacao_id, categoria, ativo, tipo_ordem, broker, negociacao, quantidade, preco, corretagem, emolumentos,impostos,origem, tipo_moeda)
+                                    VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)`, [categoria, ativo, tipo, corretora, negociacao, quantidade, preco, corretagem, emolumentos, impostos, moeda], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -88,7 +88,7 @@ const modelInsertTransacao = async (categoria: string, corretora: string, ativo:
 
 const modelGetTransacoes = async () => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT categorias.categoria_prefixo, transacoes.*, brokers.broker_nome, tipo_ordem.tipo_ordem_nome, SUM(quantidade * preco) as total, transacao_id as id, lista_ativos.ativo_codigo, lista_ativos.ativo_moeda FROM transacoes, categorias, brokers, tipo_ordem, lista_ativos WHERE lista_ativos.lista_ativos_id=transacoes.ativo AND tipo_ordem.tipo_ordem_id=transacoes.tipo_ordem AND categorias.categoria_id = transacoes.categoria AND transacoes.broker = brokers.broker_id GROUP BY transacoes.transacao_id ORDER BY transacoes.negociacao DESC, transacoes.transacao_id DESC`, (err, results) => {
+        connection.query(`SELECT categorias.categoria_prefixo, transacoes.*, brokers.broker_nome, tipo_ordem.tipo_ordem_nome, SUM(quantidade * preco) as total, transacao_id as id, lista_ativos.ativo_codigo, lista_ativos.ativo_moeda, cotacao.moeda FROM transacoes, categorias, brokers, tipo_ordem, lista_ativos, cotacao WHERE cotacao.cotacao_id=lista_ativos.ativo_moeda AND lista_ativos.lista_ativos_id=transacoes.ativo AND tipo_ordem.tipo_ordem_id=transacoes.tipo_ordem AND categorias.categoria_id = transacoes.categoria AND transacoes.broker = brokers.broker_id GROUP BY transacoes.transacao_id ORDER BY transacoes.negociacao DESC, transacoes.transacao_id DESC`, (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -149,7 +149,7 @@ const modelDeleteTransacao = async (id: any) => {
 
 const modelGetTransacaoId = async (id: any) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT categorias.categoria_prefixo, transacoes.*, brokers.broker_nome, tipo_ordem.tipo_ordem_nome, SUM(quantidade * preco) as total, transacao_id as id, lista_ativos.ativo_codigo, lista_ativos.ativo_moeda FROM transacoes, categorias, brokers, tipo_ordem, lista_ativos WHERE lista_ativos.lista_ativos_id=transacoes.ativo AND tipo_ordem.tipo_ordem_id=transacoes.tipo_ordem AND categorias.categoria_id = transacoes.categoria AND transacoes.broker = brokers.broker_id and transacoes.transacao_id = ? GROUP BY transacoes.transacao_id`, [id], (err, results) => {
+        connection.query(`SELECT categorias.categoria_prefixo, transacoes.*, brokers.broker_nome, tipo_ordem.tipo_ordem_nome, SUM(quantidade * preco) as total, transacao_id as id, lista_ativos.ativo_codigo, transacoes.tipo_moeda, cotacao.moeda, cotacao.simbolo FROM transacoes, categorias, brokers, tipo_ordem, lista_ativos, cotacao WHERE transacoes.tipo_moeda=cotacao.cotacao_id AND lista_ativos.lista_ativos_id=transacoes.ativo AND tipo_ordem.tipo_ordem_id=transacoes.tipo_ordem AND categorias.categoria_id = transacoes.categoria AND transacoes.broker = brokers.broker_id and transacoes.transacao_id = ? GROUP BY transacoes.transacao_id`, [id], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -159,7 +159,7 @@ const modelGetTransacaoId = async (id: any) => {
     });
 }
 
-const modelUpdateTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, id: any, tipo: any) => {
+const modelUpdateTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, id: any, tipo: any, moeda: any) => {
     return new Promise((resolve, reject) => {
         connection.query(`UPDATE transacoes
         SET
@@ -173,9 +173,10 @@ const modelUpdateTransacao = async (categoria: string, corretora: string, ativo:
             corretagem = ?,
             emolumentos = ?,
             impostos = ?,
-            origem = 1
+            origem = 1,
+            tipo_moeda=?
         WHERE
-            transacao_id = ?;`, [categoria, ativo, tipo, corretora, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id], (err, results) => {
+            transacao_id = ?;`, [categoria, ativo, tipo, corretora, negociacao, quantidade, preco, corretagem, emolumentos, impostos, id, moeda], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -192,7 +193,7 @@ const ModelsTotalAtivos = async (type: string) => {
             new Promise((resolve, reject) => {
                 connection.query(`SELECT ativos.*, lista_ativos.* FROM ativos, lista_ativos, cotacao WHERE lista_ativos.ativo_moeda=cotacao.cotacao_id AND ativos.ticker=lista_ativos.lista_ativos_id AND ativos.type LIKE CONCAT('%', ?, '%') ${values}`, [type], (err, results) => {
                     if (err) reject(err);
-                    resolve(results,);
+                    resolve(results);
                 });
             }),
             new Promise((resolve, reject) => {

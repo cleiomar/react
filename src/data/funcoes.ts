@@ -35,7 +35,9 @@ function converterDataParaAmericano(dataBrasileira: string): string {
 
 function removeCurrency(value: string | undefined | null): number {
   if (typeof value === 'string' && value.trim() !== '') {
-    const withoutCurrencySymbol = value.replace('R$', '');
+    let withoutCurrencySymbol = value.replace('R$', '');
+    withoutCurrencySymbol = withoutCurrencySymbol.replace('US$', '');
+    withoutCurrencySymbol = withoutCurrencySymbol.replace('€', '');
     const cleanedValue = withoutCurrencySymbol.replace(/\./g, '').replace(',', '.');
     const parsedValue = parseFloat(cleanedValue);
     return isNaN(parsedValue) ? 0 : parsedValue;

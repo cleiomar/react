@@ -19,8 +19,9 @@ import IconEdit from '../components/Icon/IconEdit';
 import IconXCircle from '../components/Icon/IconXCircle';
 import IconCashBanknotes from '../components/Icon/IconCashBanknotes';
 import { useLocation } from 'react-router-dom';
-import { removeCurrency, removeTrailingZeros } from '../data/funcoes';
+import { caixa, removeCurrency, removeTrailingZeros } from '../data/funcoes';
 import globalVars from '../data/global'
+caixa
 import { log } from 'console';
 
 const Transacoes = () => {
@@ -79,13 +80,13 @@ const Transacoes = () => {
   useEffect(() => {
     setInitialRecords(sortBy(userList));
   }, [userList]);
-  
-  
+
+
   useEffect(() => {
     const data = sortBy(initialRecords, sortStatus.columnAccessor, sortStatus.direction);
     setPage(1);
   }, [sortStatus]);
-  
+
   const [configHideValue, setConfigHideValue] = useState(null);
 
   const fetchconfigHideValue = async () => {
@@ -180,8 +181,8 @@ const Transacoes = () => {
           item.broker_nome.toLowerCase().includes(search.toLowerCase()) ||
           formatDate(item.negociacao).toLowerCase().includes(search.toLowerCase()) ||
           item.quantidade.toLowerCase().includes(search.toLowerCase()) ||
-          formatCurrency(removeTrailingZeros(item.preco)).toLowerCase().includes(search.toLowerCase()) ||
-          formatCurrency(removeTrailingZeros(item.total)).toLowerCase().includes(search.toLowerCase())
+          formatCurrency(removeTrailingZeros(item.preco, selectedOptionMoeda)).toLowerCase().includes(search.toLowerCase()) ||
+          formatCurrency(removeTrailingZeros(item.total, selectedOptionMoeda)).toLowerCase().includes(search.toLowerCase())
         );
       });
     });
@@ -300,7 +301,15 @@ const Transacoes = () => {
     setSelectedOptionAtivos(selectedOptionAtivos)
   };
 
+  const [selectedOptionMoeda, setSelectedOptionMoeda] = useState([]);
+  const SelectChangeMoeda = (selectedOptionMoeda) => {
+    setPreco(formatCurrency('0.00', selectedOptionMoeda));
+    setEmolumentos(formatCurrency('0.00', selectedOptionMoeda));
+    setImpostos(formatCurrency('0.00', selectedOptionMoeda));
+    setCorretagem(formatCurrency('0.00', selectedOptionMoeda));
 
+    setSelectedOptionMoeda(selectedOptionMoeda)
+  };
 
 
   useEffect(() => {
@@ -326,6 +335,7 @@ const Transacoes = () => {
       setID(0)
       setDateOption(null)
       setSelectedOptionAtivos({ value: '', label: 'Selecionar...' })
+      setSelectedOptionMoeda({ value: 1, label: 'R$ Real' })
       setSelectedOption({ value: '', label: 'Selecionar...' })
       setSelectedCategoriaOption({ value: '', label: 'Selecionar...' })
       setSelectedTipoOption({ value: '', label: 'Selecionar...' })
@@ -372,7 +382,7 @@ const Transacoes = () => {
 
           setFormData({
             ...formData,
-            ['ativo']: capitalizeLetters(item.ativo),
+            ['ativo']: item.ativo,
             ['negociacao']: item.negociacao,
             ['quantidade']: removeTrailingZeros(item.quantidade)
           })
@@ -380,6 +390,7 @@ const Transacoes = () => {
           setID(item.id)
           setSelectedOptionAtivos({ value: item.ativo, label: item.ativo_codigo })
           setSelectedOption({ value: item.broker, label: item.broker_nome })
+          setSelectedOptionMoeda({ value: item.ativo_moeda, label: item.simbolo+ ' '+item.moeda })
           setSelectedCategoriaOption({ value: item.categoria, label: item.categoria_prefixo })
           setSelectedTipoOption({ value: item.tipo_ordem, label: item.tipo_ordem_nome })
           setTitle('Editar Transação')
@@ -474,7 +485,7 @@ const Transacoes = () => {
     valor = valor.toFixed(2);
     valor = valor.toString();
     if (!isNaN(valor) && valor >= 0) {
-      setValorTotal(formatCurrency(valor));
+      setValorTotal(formatCurrency(valor, selectedOptionMoeda));
     }
   }
 
@@ -534,45 +545,58 @@ const Transacoes = () => {
     }
   };
 
-  const formatCurrency = (value: string | undefined | null): string => {
+  const formatCurrency = (value: string | undefined | null, moeda: number): string => {
     // Verifica se value é uma string e não é undefined ou null
     if (typeof value === 'string' && value !== undefined && value !== null) {
       const numericValue = value.replace(/[^0-9]/g, '');
+      let currencyCode = 'BRL'; // Moeda padrão: Real
+
+      // Verifica a moeda escolhida e atualiza o código da moeda
+      switch (moeda.value) {
+        case 1:
+          currencyCode = 'BRL'; // Real
+          break;
+        case 2:
+          currencyCode = 'USD'; // Dólar
+          break;
+        case 3:
+          currencyCode = 'EUR'; // Euro
+          break;
+        // Adicione mais casos conforme necessário para outras moedas
+        default:
+          currencyCode = 'BRL'; // Moeda padrão: Real
+      }
+
       const formattedValue = Number(Number(numericValue) / 100).toLocaleString('pt-BR', {
         style: 'currency',
-        currency: 'BRL',
+        currency: currencyCode,
       });
 
       return formattedValue;
-    } else {
-      // Retorna uma string padrão ou faz algo apropriado se value não for uma string
-      return 'Valor Inválido';
     }
+
+    return ''; // Retorna uma string vazia se o valor não for uma string válida
   };
+
 
   const handlePrecoChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const inputValue = event.target.value;
-    setPreco(formatCurrency(inputValue));
+    setPreco(formatCurrency(inputValue, selectedOptionMoeda));
   };
 
   const handleCorretagemChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const inputValue = event.target.value;
-    setCorretagem(formatCurrency(inputValue));
-  };
-
-  const handleQuantidadeChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    const inputValue = event.target.value;
-    setCorretagem(formatCurrency(inputValue));
+    setCorretagem(formatCurrency(inputValue, selectedOptionMoeda));
   };
 
   const handleEmolumentosChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const inputValue = event.target.value;
-    setEmolumentos(formatCurrency(inputValue));
+    setEmolumentos(formatCurrency(inputValue, selectedOptionMoeda));
   };
 
   const handleImpostosChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const inputValue = event.target.value;
-    setImpostos(formatCurrency(inputValue));
+    setImpostos(formatCurrency(inputValue, selectedOptionMoeda));
   };
 
 
@@ -715,7 +739,7 @@ const Transacoes = () => {
                     ) : <span className={`badge bg-dark`}>Outro</span>
                 )
               },
-              { accessor: 'broker_nome', title: 'Broker'},
+              { accessor: 'broker_nome', title: 'Broker' },
               {
                 accessor: 'negociacao',
                 title: 'Negociação',
@@ -738,8 +762,10 @@ const Transacoes = () => {
               {
                 accessor: 'total',
                 title: 'Total',
-                render: ({ total, ativo_moeda }) => (
-                  <><div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
+                render: ({ total, ativo_moeda, tipo_ordem }) => (
+
+                  <><div className='sensitivy-field'>{(tipo_ordem === 8 || tipo_ordem === 5) ?
+                    renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda)) : renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
                 ),
               },
               {
@@ -868,17 +894,33 @@ const Transacoes = () => {
                               </div>
                             </div>
 
-                            <div className="p-2">
-                              <label htmlFor="Corretora">Corretora</label>
-                              <Select
-                                className='text-sm'
-                                name="corretora"
-                                value={selectedOption}
-                                onChange={SelectChange}
-                                options={options}
-                                isSearchable={false}
-                              />
+
+                            <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1">
+                              <div className="p-2">
+                                <label htmlFor="Corretora">Corretora</label>
+                                <Select
+                                  className='text-sm'
+                                  name="corretora"
+                                  value={selectedOption}
+                                  onChange={SelectChange}
+                                  options={options}
+                                  isSearchable={false}
+                                />
+                              </div>
+
+                              <div className="p-2">
+                                <label htmlFor="Moeda">Moeda</label>
+                                <Select
+                                  className='text-sm'
+                                  name="moeda"
+                                  value={selectedOptionMoeda}
+                                  onChange={SelectChangeMoeda}
+                                  options={[{ value: 1, label: 'R$ Real' }, { value: 2, label: '$ Dólar' }, { value: 3, label: '€ Euro' }]}
+                                  isSearchable={false}
+                                />
+                              </div>
                             </div>
+
 
                             <div className="p-2">
                               <label htmlFor="Ativo">Ativo</label>
@@ -968,12 +1010,12 @@ const Transacoes = () => {
                               </div>
                             </div>
                           </div>
-                              <div className='totalBox xl:col-span-2'>
-                                <div className="grid xl:grid-cols-4 sm:grid-cols-4 grid-cols-4 gap-6">
-                                  <div className='text-total'>Total:</div>
-                                  <div className='text-total col-span-3 text-right pad-total'>{valorTotal}</div>
-                                </div>
-                              </div>
+                          <div className='totalBox xl:col-span-2'>
+                            <div className="grid xl:grid-cols-4 sm:grid-cols-4 grid-cols-4 gap-6">
+                              <div className='text-total'>Total:</div>
+                              <div className='text-total col-span-3 text-right pad-total'>{valorTotal}</div>
+                            </div>
+                          </div>
                         </div>
 
                       </div><div className="mt-7 pb-2 flex items-center justify-around">

@@ -1,5 +1,7 @@
 import express from 'express';
 import {
+  ControllerValorTotalPatrimonio,
+  ControllerTotalAtivos,
   ControllerUpdateTransacao,
   ControllerGetTransacaoId,
   ControllerDeleteTransacao,
@@ -22,6 +24,8 @@ const upload = multer({ storage: storage });
 
 router.get('/type', getGroupAtivos);
 router.get('/ativos/:type', getAllAtivos);
+router.get('/valor_total_patrimonio/', ControllerValorTotalPatrimonio);
+router.get('/get_total_ativos/:type', ControllerTotalAtivos);
 router.get('/categorias', ControllerGetCategorias);
 router.get('/brokers', ControllerGetBrokers);
 router.get('/transacoes', ControllerGetTransacoes);

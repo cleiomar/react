@@ -36,7 +36,7 @@ table tr .mantine-Checkbox-root {
 } */
 .datatables .mantine-gzzjso,
 .datatables .mantine-lrzwoq {
-    @apply border-t-0 !p-0 !pt-5 !bg-transparent;
+    @apply border-t-0 !p-8 !pt-10 !bg-transparent;
 }
 .datatables.pagination-padding .mantine-gzzjso {
     @apply !px-5;

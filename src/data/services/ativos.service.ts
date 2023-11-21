@@ -2,6 +2,8 @@ import { converterDataParaAmericano, removeCurrency } from '../funcoes';
 
 
 import {
+    ModelsValorTotalPatrimonio,
+    ModelsTotalAtivos,
     modelUpdateTransacao,
     modelGetTransacaoId,
     modelDeleteTransacao,
@@ -203,7 +205,33 @@ const serviceUpdateTransacao = async (categoria: string, corretora: string, ativ
     }
 };
 
+const serviceGetTotalAtivos = async (type: string) => {
+    if (type === undefined) {
+        type = '';
+    }
+    try {
+        const data = await ModelsTotalAtivos(type);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetValorTotalPatrimonio = async (type: string) => {
+    if (type === undefined) {
+        type = '';
+    }
+    try {
+        const data = await ModelsValorTotalPatrimonio(type);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetValorTotalPatrimonio,
+    serviceGetTotalAtivos,
     serviceUpdateTransacao,
     serviceGetTransacaoId,
     serviceDeleteTransacao,

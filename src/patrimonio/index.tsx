@@ -16,6 +16,8 @@ import Posicao from '../components/patrimonio';
 
 const Transacoes = () => {
 
+
+  
   const location = useLocation();
   const params = location.state;
   const userid = params.userid;
@@ -24,6 +26,18 @@ const Transacoes = () => {
   const SelectChange = (selectedOption) => {
     setSelectedOption(selectedOption)
   };
+
+  
+  const [valorTotal, setValorTotal] = useState([]);
+  const getValorTotal = async () => {
+    try {
+      const data = await fetch('http://localhost:3000/valor_total_patrimonio/');
+      const response = await data.json();
+      setValorTotal(response.total_valor);
+    } catch (error) {
+      console.error('Erro ao obter a lista de usuários:', error);
+    }
+  }
 
   const [options, setOptions] = useState([]);
   const fetchApiOption = async () => {
@@ -39,6 +53,7 @@ const Transacoes = () => {
   }
 
   useEffect(() => {
+    getValorTotal();
     fetchApiOption();
     catOptions();
   }, []);
@@ -46,32 +61,49 @@ const Transacoes = () => {
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
 
   const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
-    const fetchconfigHideValue = async () => {
-        try {
-          const data = await fetch('http://localhost:3000/configs');
-          const responseArray = await data.json();
-    
-          if (responseArray && responseArray.length > 0) {
-            const firstConfig = responseArray[0];
-            const hideValues = firstConfig.hideValues;
-    
-            if (hideValues !== undefined) {
-              setOcultarDados(hideValues)
-            } else {
-              console.error('Chave hideValues não encontrada no objeto de configuração.');
-            }
-          } else {
-            console.error('Resposta vazia ou não no formato esperado.');
-          }
-        } catch (error) {
-          console.error('Erro ao buscar configHideValue:', error);
-        }
+
+  const renderizarConteudo = (className: string, texto: string) => {
+      if (ocultarDados && className === 'sensitivy-field') {
+          return texto.replace(/./g, '*'); // Substitui cada letra por um asterisco
       }
-    
-      useEffect(() => {
-        fetchconfigHideValue(); // Chama a função assíncrona aqui
-      }, []); // Sem dependências para garantir que seja chamado apenas uma vez
-    
+      return texto;
+  };
+  const fetchconfigHideValue = async () => {
+    try {
+      const data = await fetch('http://localhost:3000/configs');
+      const responseArray = await data.json();
+
+      if (responseArray && responseArray.length > 0) {
+        const firstConfig = responseArray[0];
+        const hideValues = firstConfig.hideValues;
+
+        if (hideValues !== undefined) {
+          setOcultarDados(hideValues)
+        } else {
+          console.error('Chave hideValues não encontrada no objeto de configuração.');
+        }
+      } else {
+        console.error('Resposta vazia ou não no formato esperado.');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar configHideValue:', error);
+    }
+  }
+
+  useEffect(() => {
+    const handleVariable1Change = () => {
+        setOcultarDados((prevState) => !prevState); // Usando uma função no setOcultarDados
+    };
+    globalVars.addListener(handleVariable1Change);
+    return () => {
+        globalVars.removeListener(handleVariable1Change);
+    };
+}, []);
+
+  useEffect(() => {
+    fetchconfigHideValue(); // Chama a função assíncrona aqui
+  }, []); // Sem dependências para garantir que seja chamado apenas uma vez
+
 
   return (
     <div><div className='titulo-page'>PATRIMÔNIO</div>
@@ -89,7 +121,7 @@ const Transacoes = () => {
       <div className="panel">
         <div className="grid 1xl:grid-cols-7 lg:grid-cols-7 sm:grid-cols-1 grid-cols-1">
           <div className="grid 1xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 mb-3 xl:col-span-4">
-            <span className="badge bg-warning p-3 text-center mrt-3"><div className='subtitulo-page'>PATRIMÔNIO</div><div className='subtitulo-valor mt-2'>R$ 8.712.000,00</div></span>
+            <span className="badge bg-warning p-3 text-center mrt-3"><div className='subtitulo-page'>PATRIMÔNIO</div><div className='subtitulo-valor mt-2'>{renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros(valorTotal)))}</div></span>
             <div className="panel rounded-md items-center group xl:col-span-1 col-span-3 p-1 mrtop-3">
               <div className='ml-4'><b>CRESCIMENTO</b></div>
               <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3 ml-4">
@@ -132,10 +164,11 @@ const Transacoes = () => {
         <div className="space-y-2 font-semibold">
           {categoriaOptions.map((option, index) => (
             <Posicao
-            key={index}
-            hide={ocultarDados}
-            categoria={option.value}
-            categoria_nome={option.label}
+              key={index}
+              hide={ocultarDados}
+              categoria={option.value}
+              categoria_nome={option.label}
+              valor_total_patrimonio={valorTotal}
             />
           ))}
         </div>

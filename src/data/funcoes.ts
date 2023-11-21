@@ -89,6 +89,32 @@ const formatCurrency2 = (value: string | undefined | null, moeda: number): strin
   }
 };
 
+const caixa = (value: string | undefined | null, moeda: number): string => {
+  // Verifica se value é uma string e não é undefined ou null
+  if (typeof value === 'string' && value !== undefined && value !== null) {
+    const numericValue = parseFloat(value);
+
+    let currencyCode;
+    switch (moeda) {
+      default:
+        currencyCode = 'BRL'; // Real (padrão)
+        break;
+    }
+
+    const formattedValue = numericValue.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: currencyCode,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    return formattedValue;
+  } else {
+    // Retorna uma string padrão ou faz algo apropriado se value não for uma string
+    return 'Valor Inválido';
+  }
+};
+
 const formatCurrency = (value: string | undefined | null): string => {
   // Verifica se value é uma string e não é undefined ou null
   if (typeof value === 'string' && value !== undefined && value !== null) {
@@ -148,4 +174,13 @@ function categoria_color(categoria) {
   }
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color }
+function calcularPorcentagem(parte, total) {
+  if (typeof parte !== 'number' || typeof total !== 'number' || total === 0) {
+      return 'Entrada inválida. Certifique-se de que os valores são números e que o denominador não é zero.';
+  }
+
+  const porcentagem = (parte / total) * 100;
+  return porcentagem.toFixed(2) + '%';
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa }

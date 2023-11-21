@@ -6,12 +6,13 @@ import { useState, useEffect } from 'react';
 import sortBy from 'lodash/sortBy';
 import globalVars from '../../data/global';
 import Swal from 'sweetalert2';
-import { removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, categoria_color } from '../../data/funcoes';
+import { removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa } from '../../data/funcoes';
 
 interface PosicaoProps {
     categoria: number;
     categoria_nome: string;
     hide: boolean;
+    valor_total_patrimonio: number;
 }
 
 type User = {
@@ -21,39 +22,43 @@ type User = {
     tipo_ordem_nome: string;
     broker_nome: string;
     negociacao: string;
-    quantidade: any;
-    preco: number;
+    amount: any;
+    price: number;
     total: number;
     ativo_codigo: string;
     ativo_moeda: any;
-  };
+};
 
-function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
-    
-  const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
+function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: PosicaoProps) {
 
-  const renderizarConteudo = (className: string, texto: string) => {
-    if (ocultarDados && className === 'sensitivy-field') {
-      return texto.replace(/./g, '*'); // Substitui cada letra por um asterisco
-    }
-    return texto;
-  };
+    const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
+
+    const renderizarConteudo = (className: string, texto: string) => {
+        if (ocultarDados && className === 'sensitivy-field') {
+            return texto.replace(/./g, '*'); // Substitui cada letra por um asterisco
+        }
+        return texto;
+    };
 
     const [userList, setUserList] = useState<User[]>([]);
+    const [totalAtivos, setTotalAtivos] = useState(0);
+    const [valorTotal, setValorTotal] = useState(0);
+    const [totalHoje, setTotalHoje] = useState(0);
 
-    const getUserList = async () => {
-        try {
-            const data = await fetch('http://localhost:3000/transacoes');
-            const response = await data.json();
-            setUserList(response);
-        } catch (error) {
-            console.error('Erro ao obter a lista de usuários:', error);
-        }
-    }
+    // const getUserList = async () => {
+    //     try {
+    //         const data = await fetch('http://localhost:3000/transacoes');
+    //         const response = await data.json();
+    //         setUserList(response);
+    //     } catch (error) {
+    //         console.error('Erro ao obter a lista de usuários:', error);
+    //     }
+    // }
 
     useEffect(() => {
+        getAtivos(categoria);
         setOcultarDados(hide);
-        getUserList();
+        //getUserList();
     }, []);
 
 
@@ -102,24 +107,37 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                     item.tipo_ordem_nome.toLowerCase().includes(search.toLowerCase()) ||
                     item.broker_nome.toLowerCase().includes(search.toLowerCase()) ||
                     formatDate(item.negociacao).toLowerCase().includes(search.toLowerCase()) ||
-                    item.quantidade.toLowerCase().includes(search.toLowerCase()) ||
-                    formatCurrency(removeTrailingZeros(item.preco)).toLowerCase().includes(search.toLowerCase()) ||
+                    item.amount.toLowerCase().includes(search.toLowerCase()) ||
+                    formatCurrency(removeTrailingZeros(item.price)).toLowerCase().includes(search.toLowerCase()) ||
                     formatCurrency(removeTrailingZeros(item.total)).toLowerCase().includes(search.toLowerCase())
                 );
             });
         });
     }, [search]);
 
+    const getAtivos = async (categoria) => {
+        try {
+            const data = await fetch('http://localhost:3000/get_total_ativos/' + categoria);
+            const response = await data.json();
+            setTotalAtivos(response.total_ativos);
+            setValorTotal(response.total_valor);
+            setUserList(response.data);
+            console.log(response.data.length);
+        } catch (error) {
+            console.error('Erro ao obter a lista de usuários:', error);
+        }
+    }
+
     useEffect(() => {
         const handleVariable1Change = () => {
-          setOcultarDados((prevState) => !prevState); // Usando uma função no setOcultarDados
+            setOcultarDados((prevState) => !prevState); // Usando uma função no setOcultarDados
         };
         globalVars.addListener(handleVariable1Change);
         return () => {
-          globalVars.removeListener(handleVariable1Change);
+            globalVars.removeListener(handleVariable1Change);
         };
-      }, []);
-    
+    }, []);
+
     return (
         <>
             <div className="border border-[#d3d3d3] rounded dark:border-[#1b2e4b]">
@@ -133,7 +151,7 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                             <div className={`${categoria_color(categoria)}`}></div>
                             <div className='ml-8'>
                                 <div className='subtitulo-page'>{categoria_nome}</div>
-                                <div className='subtitulo-valor3 text-left'>8 ATIVOS</div>
+                                <div className='subtitulo-valor3 text-left'>{totalAtivos} ATIVOS</div>
                             </div>
                         </div>
                         <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-6 w-50p">
@@ -143,7 +161,7 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
-                                    <div className='subtitulo-valor3 w--50p'>R$ -24.441,00</div>
+                                    <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
                                     <div className='pl-5 percentoal-positivo'>-0,79%</div>
                                 </div>
                             </div>
@@ -153,12 +171,12 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
-                                    <div className='subtitulo-valor3 w--50p'>R$ -24.441,00</div>
+                                    <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
                                     <div className='pl-5 percentoal-positivo'>-0,79%</div>
                                 </div>
                             </div>
                             <div className=' mt-2'>
-                                <div className='titulo-page float-left'>35,50%</div><span className='ft-total float-right'>R$ 355.048,77
+                                <div className='titulo-page float-left'>{calcularPorcentagem(valorTotal, valor_total_patrimonio)}</div><span className='ft-total float-right'>{renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros(valorTotal)))}
                                 </span>
                             </div>
                         </div>
@@ -202,21 +220,9 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                                             title: 'Ativo',
                                             render: ({ ativo_codigo, id }) => (
                                                 <div className="flex items-center w-max">
-                                                    {/* <img className="w-9 h-9 rounded-full ltr:mr-2 rtl:ml-2 object-cover" src={`/assets/images/profile-${id}.jpeg`} alt="" /> */}
                                                     <div>{capitalizeLetters(ativo_codigo)}</div>
                                                 </div>
                                             ),
-                                        },
-                                        {
-                                            accessor: 'tipo_ordem', title: 'Ordem',
-                                            render: ({ tipo_ordem_nome }) => (
-                                                tipo_ordem_nome === 'Compra' ? (
-                                                    <span className={`badge bg-success`}>Compra</span>
-                                                ) :
-                                                    tipo_ordem_nome === 'Venda' ? (
-                                                        <span className={`badge bg-danger`}>Venda</span>
-                                                    ) : <span className={`badge bg-dark`}>Outro</span>
-                                            )
                                         },
                                         { accessor: 'broker_nome', title: 'Broker' },
                                         {
@@ -225,18 +231,24 @@ function Posicao({ categoria, categoria_nome, hide }: PosicaoProps) {
                                             render: ({ negociacao }) => <div>{formatDate(negociacao)}</div>,
                                         },
                                         {
-                                            accessor: 'quantidade', title: 'Quantidade',
-                                            render: ({ quantidade }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', removeTrailingZeros(quantidade))}</div>,
+                                            accessor: 'amount', title: 'Quantidade',
+                                            render: ({ amount }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', removeTrailingZeros(amount))}</div>,
                                         },
                                         {
-                                            accessor: 'preco', title: 'Preço',
-                                            render: ({ preco, ativo_moeda }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(preco), ativo_moeda))}</div>,
+                                            accessor: 'price', title: 'Preço',
+                                            render: ({ price, ativo_moeda }) => <div className='sensitivy-field'>{
+                                                renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(price), ativo_moeda))
+                                                
+                                                
+                                                }</div>,
                                         },
                                         {
                                             accessor: 'total',
                                             title: 'Total',
-                                            render: ({ total, ativo_moeda }) => (
-                                                <><div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
+                                            render: ({ total, ativo_moeda, type }) => (
+                                                <><div className='sensitivy-field'>{
+                                                    (type === 8 || type === 5) ?
+                                                renderizarConteudo('sensitivy-field', caixa(removeTrailingZeros(total), ativo_moeda)):renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
                                             ),
                                         },
                                     ]}

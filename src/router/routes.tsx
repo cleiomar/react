@@ -3,9 +3,15 @@ const Dashboard = lazy(() => import('../dashboard'));
 const Nexus = lazy(() => import('../dashboard/'));
 const Transacoes = lazy(() => import('../transacoes'));
 const Patrimonio = lazy(() => import('../patrimonio'));
+const Error = lazy(() => import('../components/Error'));
 
 const routes = [
     // dashboard
+    {
+        path: '*',
+        element: <Error />,
+        layout: 'blank',
+    },
     {
         path: '/',
         element: <Dashboard />,

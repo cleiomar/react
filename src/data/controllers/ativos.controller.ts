@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetValorTotalPatrimonio,
+    serviceGetTotalAtivos,
     serviceUpdateTransacao,
     serviceGetTransacaoId,
     serviceDeleteTransacao,
@@ -149,7 +151,32 @@ const ControllerUpdateTransacao = async (req: Request, res: Response): Promise<v
     }
 };
 
+const ControllerTotalAtivos = async (req: Request, res: Response): Promise<void> => {
+    const { type } = req.params;
+    try {
+        const data = await serviceGetTotalAtivos(type);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerValorTotalPatrimonio = async (req: Request, res: Response): Promise<void> => {
+    const { type } = req.params;
+    try {
+        const data = await serviceGetValorTotalPatrimonio(type);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
 export {
+    ControllerValorTotalPatrimonio,
+    ControllerTotalAtivos,
     ControllerUpdateTransacao,
     ControllerGetTransacaoId,
     ControllerDeleteTransacao,

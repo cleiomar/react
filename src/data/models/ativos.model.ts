@@ -185,7 +185,73 @@ const modelUpdateTransacao = async (categoria: string, corretora: string, ativo:
     });
 }
 
+const ModelsTotalAtivos = async (type: string) => {
+    return new Promise(async (resolve, reject) => {
+        let values = '';
+        const results = await Promise.all([
+            new Promise((resolve, reject) => {
+                connection.query(`SELECT ativos.*, lista_ativos.* FROM ativos, lista_ativos, cotacao WHERE lista_ativos.ativo_moeda=cotacao.cotacao_id AND ativos.ticker=lista_ativos.lista_ativos_id AND ativos.type LIKE CONCAT('%', ?, '%') ${values}`, [type], (err, results) => {
+                    if (err) reject(err);
+                    resolve(results,);
+                });
+            }),
+            new Promise((resolve, reject) => {
+                connection.query(`SELECT lista_ativos.*, ativos.amount, ativos.*, categorias.categoria_prefixo, brokers.broker_nome, SUM(lista_ativos.ativo_valor * ativos.amount * cotacao.valor) AS total FROM lista_ativos, ativos, transacoes, categorias, cotacao, brokers WHERE lista_ativos.ativo_moeda = cotacao.cotacao_id AND ativos.ticker = lista_ativos.lista_ativos_id AND categorias.categoria_id = ativos.type AND transacoes.ativo = ativos.ticker AND brokers.broker_id = transacoes.broker AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY lista_ativos.lista_ativos_id, ativos.ativos_id, categorias.categoria_prefixo, brokers.broker_nome ORDER BY lista_ativos.lista_ativos_id ASC;`, [type], (err, results) => {
+                    if (err) reject(err);
+                    resolve(results);
+                });
+            })
+        ]);
+
+        const total = results[1];
+
+        const valoresTotais = total.map(row => {
+            const totalMultiplicado = row.total;
+            return parseFloat(totalMultiplicado);
+        });
+        const totalSoma = valoresTotais.reduce((acc, valor) => acc + valor, 0);
+
+        const resultWithTotalAtivos = {
+            total_ativos: results[0].length,
+            total_valor: totalSoma,
+            data: results[1]
+        };
+
+        resolve(resultWithTotalAtivos);
+    });
+};
+
+const ModelsValorTotalPatrimonio = async (type: string) => {
+    return new Promise(async (resolve, reject) => {
+        let values = '';
+        const results = await Promise.all([
+            new Promise((resolve, reject) => {
+                connection.query(`SELECT ativos.*, lista_ativos.*, SUM(lista_ativos.ativo_valor*ativos.amount*cotacao.valor) AS total FROM cotacao, ativos JOIN lista_ativos ON ativos.ticker = lista_ativos.lista_ativos_id WHERE lista_ativos.ativo_moeda=cotacao.cotacao_id AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY ativos.type, ativos.ativos_id ORDER BY ativos.type DESC;`, [type], (err, results) => {
+                    if (err) reject(err);
+                    resolve(results);
+                });
+            })
+        ]);
+
+        const total = results[0];
+
+        const valoresTotais = total.map(row => {
+            const totalMultiplicado = row.total;
+            return parseFloat(totalMultiplicado);
+        });
+        const totalSoma = valoresTotais.reduce((acc, valor) => acc + valor, 0);
+
+        const resultWithTotalAtivos = {
+            total_valor: totalSoma
+        };
+
+        resolve(resultWithTotalAtivos);
+    });
+};
+
 export {
+    ModelsValorTotalPatrimonio,
+    ModelsTotalAtivos,
     modelUpdateTransacao,
     modelGetTransacaoId,
     modelDeleteTransacao,
@@ -198,4 +264,4 @@ export {
     modelGetCategorias,
     getGroupModelsAtivos,
     getAllModelsAtivos,
-  };
+};

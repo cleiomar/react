@@ -30,7 +30,6 @@ type User = {
 };
 
 function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: PosicaoProps) {
-
     const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
 
     const renderizarConteudo = (className: string, texto: string) => {
@@ -57,7 +56,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
 
     useEffect(() => {
         getAtivos(categoria);
-        setOcultarDados(hide);
+        setOcultarDados(globalVars.getVariable1()   );
         //getUserList();
     }, []);
 
@@ -98,22 +97,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
         setRecordsData([...initialRecords.slice(from, to)]);
     }, [page, pageSize, initialRecords]);
 
-    useEffect(() => {
-        setInitialRecords(() => {
-            return userList.filter((item) => {
-                return (
-                    item.ativo.toLowerCase().includes(search.toLowerCase()) ||
-                    item.categoria_prefixo.toLowerCase().includes(search.toLowerCase()) ||
-                    item.tipo_ordem_nome.toLowerCase().includes(search.toLowerCase()) ||
-                    item.broker_nome.toLowerCase().includes(search.toLowerCase()) ||
-                    formatDate(item.negociacao).toLowerCase().includes(search.toLowerCase()) ||
-                    item.amount.toLowerCase().includes(search.toLowerCase()) ||
-                    formatCurrency(removeTrailingZeros(item.price)).toLowerCase().includes(search.toLowerCase()) ||
-                    formatCurrency(removeTrailingZeros(item.total)).toLowerCase().includes(search.toLowerCase())
-                );
-            });
-        });
-    }, [search]);
+    
 
     const getAtivos = async (categoria) => {
         try {
@@ -122,7 +106,6 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
             setTotalAtivos(response.total_ativos);
             setValorTotal(response.total_valor);
             setUserList(response.data);
-            console.log(response.data.length);
         } catch (error) {
             console.error('Erro ao obter a lista de usuários:', error);
         }
@@ -162,7 +145,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
                                     <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
-                                    <div className='pl-5 percentoal-positivo'>-0,79%</div>
+                                    <div className='pl-5 percentual-positivo'>-0,79%</div>
                                 </div>
                             </div>
                             <div>
@@ -172,7 +155,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
                                     <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
-                                    <div className='pl-5 percentoal-positivo'>-0,79%</div>
+                                    <div className='pl-5 percentual-positivo'>-0,79%</div>
                                 </div>
                             </div>
                             <div className=' mt-2'>

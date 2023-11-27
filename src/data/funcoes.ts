@@ -1,4 +1,4 @@
-import { format, parse } from 'date-fns';
+import { differenceInCalendarDays, format, parse } from 'date-fns';
 
 function formatData(data: any) {
 
@@ -54,7 +54,6 @@ function removeTrailingZeros(number: number): string {
 
   return stringWithoutTrailingZerosCleaned;
 }
-
 
 const formatCurrency2 = (value: string | undefined | null, moeda: number): string => {
   // Verifica se value é uma string e não é undefined ou null
@@ -182,7 +181,22 @@ function calcularPorcentagem(parte, total) {
   }
 
   const porcentagem = (parte / total) * 100;
-  return porcentagem.toFixed(2) + '%';
+  return porcentagem.toFixed(2) ;
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa }
+function calcularResto(dividendo: number, divisor: number): number | string {
+   return dividendo - divisor;
+}
+
+
+function difference(valorMenor, valorMaior) {
+  // Calcula a diferença entre os dois valores
+  const diferenca = valorMaior - valorMenor;
+
+  // Calcula a porcentagem em relação ao valor menor
+  const percentual = (diferenca / valorMenor) * 100;
+
+  return percentual.toFixed(2); // Arredonda para duas casas decimais
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference }

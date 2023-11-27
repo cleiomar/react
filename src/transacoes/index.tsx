@@ -139,19 +139,26 @@ const Transacoes = () => {
     }
   };
 
+  const [optionsMoeda, setOptionsMoeda] = useState([]);
+  const fetchApiOptionMoeda = async (id) => {
+    try {
+      const data = await fetch('http://localhost:3000/ativo_moeda?id=' + id);
+      const [response] = await data.json();
+      setOptionsMoeda(response.ativo_moeda);
+      SelectChangeMoeda(response.ativo_moeda);
+      return response; // Adicione esta linha para retornar a resposta como uma Promise
+    } catch (error) {
+      console.error('Erro ao buscar dados da API:', error);
+      throw error; // Se ocorrer um erro, propague-o para quem chama a função
+    }
+  };
+
   const [active, setActive] = useState([]);
   const [blocked, setBlocked] = useState([]);
   const [canceled, setCanceled] = useState([]);
-  // const fetchApiStatus = async () => {
-  //   const data = await fetch('http://localhost:3000/api/getcredentialsstatus')
-  //   const [response] = await data.json()
-  //   setActive(response.active)
-  //   setBlocked(response.blocked)
-  //   setCanceled(response.canceled)
-  // }
+
 
   useEffect(() => {
-    //fetchApiStatus();
     fetchApiOption();
     fetchconfigHideValue();
   }, []);
@@ -298,18 +305,10 @@ const Transacoes = () => {
 
   const [selectedOptionAtivos, setSelectedOptionAtivos] = useState([]);
   const SelectChangeAtivos = (selectedOptionAtivos) => {
+    fetchApiOptionMoeda(selectedOptionAtivos.value);
     setSelectedOptionAtivos(selectedOptionAtivos)
   };
 
-  const [selectedOptionMoeda, setSelectedOptionMoeda] = useState([]);
-  const SelectChangeMoeda = (selectedOptionMoeda) => {
-    setPreco(formatCurrency('0.00', selectedOptionMoeda));
-    setEmolumentos(formatCurrency('0.00', selectedOptionMoeda));
-    setImpostos(formatCurrency('0.00', selectedOptionMoeda));
-    setCorretagem(formatCurrency('0.00', selectedOptionMoeda));
-
-    setSelectedOptionMoeda(selectedOptionMoeda)
-  };
 
 
   useEffect(() => {
@@ -335,7 +334,6 @@ const Transacoes = () => {
       setID(0)
       setDateOption(null)
       setSelectedOptionAtivos({ value: '', label: 'Selecionar...' })
-      setSelectedOptionMoeda({ value: 1, label: 'R$ Real' })
       setSelectedOption({ value: '', label: 'Selecionar...' })
       setSelectedCategoriaOption({ value: '', label: 'Selecionar...' })
       setSelectedTipoOption({ value: '', label: 'Selecionar...' })
@@ -390,7 +388,6 @@ const Transacoes = () => {
           setID(item.id)
           setSelectedOptionAtivos({ value: item.ativo, label: item.ativo_codigo })
           setSelectedOption({ value: item.broker, label: item.broker_nome })
-          setSelectedOptionMoeda({ value: item.ativo_moeda, label: item.simbolo+ ' '+item.moeda })
           setSelectedCategoriaOption({ value: item.categoria, label: item.categoria_prefixo })
           setSelectedTipoOption({ value: item.tipo_ordem, label: item.tipo_ordem_nome })
           setTitle('Editar Transação')
@@ -552,7 +549,7 @@ const Transacoes = () => {
       let currencyCode = 'BRL'; // Moeda padrão: Real
 
       // Verifica a moeda escolhida e atualiza o código da moeda
-      switch (moeda.value) {
+      switch (moeda) {
         case 1:
           currencyCode = 'BRL'; // Real
           break;
@@ -632,6 +629,16 @@ const Transacoes = () => {
   };
 
 
+  const [selectedOptionMoeda, setSelectedOptionMoeda] = useState([]);
+  const SelectChangeMoeda = (moeda) => {
+    console.log(formatCurrency('0.00', moeda))
+    setPreco(formatCurrency('0.00', moeda));
+    setEmolumentos(formatCurrency('0.00', moeda));
+    setImpostos(formatCurrency('0.00', moeda));
+    setCorretagem(formatCurrency('0.00', moeda));
+
+    setSelectedOptionMoeda(moeda)
+  };
 
   return (
     <div><div className='titulo-page'>TRANSAÇÕES</div>
@@ -895,7 +902,6 @@ const Transacoes = () => {
                             </div>
 
 
-                            <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1">
                               <div className="p-2">
                                 <label htmlFor="Corretora">Corretora</label>
                                 <Select
@@ -907,19 +913,6 @@ const Transacoes = () => {
                                   isSearchable={false}
                                 />
                               </div>
-
-                              <div className="p-2">
-                                <label htmlFor="Moeda">Moeda</label>
-                                <Select
-                                  className='text-sm'
-                                  name="moeda"
-                                  value={selectedOptionMoeda}
-                                  onChange={SelectChangeMoeda}
-                                  options={[{ value: 1, label: 'R$ Real' }, { value: 2, label: '$ Dólar' }, { value: 3, label: '€ Euro' }]}
-                                  isSearchable={false}
-                                />
-                              </div>
-                            </div>
 
 
                             <div className="p-2">

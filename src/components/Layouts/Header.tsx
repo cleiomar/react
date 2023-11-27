@@ -33,10 +33,14 @@ import IconMenuForms from '../Icon/Menu/IconMenuForms';
 import IconMenuPages from '../Icon/Menu/IconMenuPages';
 import IconMenuMore from '../Icon/Menu/IconMenuMore';
 import IconMenuViews from '../Icon/Menu/IconMenuViews';
+import IconMenuViewsClosed from '../Icon/Menu/IconMenuViewsClosed';
 import globalVars from '../../data/global'
 import { useSetState } from '@mantine/hooks';
 
 const Header = () => {
+
+    const [ocultarDados, setOcultarDados] = useState<boolean>(globalVars.getVariable1());
+console.log(ocultarDados)
     const updateConfigHideValue = async () => {
         try {
             const response = await fetch('http://localhost:3000/update_config', {
@@ -85,12 +89,6 @@ const Header = () => {
     useEffect(() => {
         fetchconfigHideValue();
     }, []);
-
-    const ocultarValores = () => {
-        const newVariable1Value = globalVars.getVariable1();
-        globalVars.setVariable1(!newVariable1Value)
-        //updateConfigHideValue(!newVariable1Value)
-    };
 
     const location = useLocation();
     useEffect(() => {
@@ -266,13 +264,22 @@ const Header = () => {
                         <div className="ltr:mr-2 rtl:ml-2 hidden sm:block">
                             <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
                                 <li>
-                                    <button onClick={() => updateConfigHideValue(!globalVars.getVariable1())} className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
+                                    <button onClick={() => {updateConfigHideValue(!globalVars.getVariable1()); setOcultarDados((prevState) => !prevState) }} className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
+                                        {
+                                        
+                                        (ocultarDados === false) ?
                                         <IconMenuViews
                                             height='21'
                                             width='21'
                                             opValor='50%'
                                             className='iconView'
-                                        />
+                                        />: <IconMenuViewsClosed
+                                        height='21'
+                                        width='21'
+                                        opValor='50%'
+                                        className='iconView'
+                                    />
+                                        }
                                     </button>
                                 </li>
                             </ul>

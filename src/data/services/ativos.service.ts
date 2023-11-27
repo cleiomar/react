@@ -2,6 +2,14 @@ import { converterDataParaAmericano, removeCurrency } from '../funcoes';
 
 
 import {
+    modelConfigPercentual,
+    modelGetPercentualCategorias,
+    modelGetListaAtivosCliente,
+    modelAdicionarHistoricoCliente,
+    modelAdicionarHistorico,
+    modelUpdateDadosB3,
+    ModelsDadosB3,
+    ModelsAtivoMoeda,
     ModelsValorTotalPatrimonio,
     ModelsTotalAtivos,
     modelUpdateTransacao,
@@ -18,12 +26,12 @@ import {
     getAllModelsAtivos,
   } from '../models/ativos.model';
 
-const serviceGetAll = async (type: string) => {
+const serviceGetAll = async (type: string, graph: string) => {
     if (type === undefined) {
         type = '';
     }
     try {
-        const data = await getAllModelsAtivos(type);
+        const data = await getAllModelsAtivos(type, graph);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador
@@ -49,6 +57,15 @@ const serviceGetCategoria = async () => {
     }
 };
 
+const serviceGetPercentualCategoria = async (soma:string) => {
+    try {
+        const data = await modelGetPercentualCategorias(soma);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 const serviceGetBrokers = async () => {
     try {
         const data = await modelGetBrokers();
@@ -58,17 +75,17 @@ const serviceGetBrokers = async () => {
     }
 };
 
-const serviceInsertTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, userid: any, tipo: any, moeda: any) => { 
+const serviceInsertTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, userid: any, tipo: any) => { 
     if(  !quantidade || quantidade == '0' || quantidade == 'undefined'){ return {success: false, message:'Preencha a quantidade.' }; }
     if(  !preco || parseFloat(preco) <= 0 || preco == 'undefined' ){ return {success: false, message:'Preencha o preço.' }; }
     if(  !categoria || categoria == '' || categoria == 'undefined'){ return {success: false, message:'Escolha a categoria.' }; }
     if(  !corretora || corretora == '' || corretora == 'undefined'){ return {success: false, message:'Escolha a corretora.' }; }
-    if(  !moeda || moeda == '' || moeda == 'undefined'){ return {success: false, message:'Escolha a moeda.' }; }
+    if(  !negociacao || negociacao == '' || negociacao == 'undefined'){ return {success: false, message:'Preencha a data de negociação.' }; }
     if(  !tipo || tipo == '' || tipo == 'undefined'){ return {success: false, message:'Escolha o tipo da transação.' }; }
     if(  !ativo || ativo == '' || ativo == 'undefined'){ return {success: false, message:'Escolha a ativo.' }; }
     negociacao = converterDataParaAmericano(negociacao);   
     try {
-        const data: any = await modelInsertTransacao(categoria, corretora, ativo, negociacao, quantidade, removeCurrency(preco), removeCurrency(corretagem), removeCurrency(emolumentos), removeCurrency(impostos), userid, tipo, moeda);
+        const data: any = await modelInsertTransacao(categoria, corretora, ativo, negociacao, quantidade, removeCurrency(preco), removeCurrency(corretagem), removeCurrency(emolumentos), removeCurrency(impostos), userid, tipo);
         if(data.affectedRows === 1){
             return {success: true, message:'Transação inserida com sucesso!' };                    
         }
@@ -104,13 +121,13 @@ const serviceGetTransacoes = async () => {
     }
 };
 
-const serviceGetListaAtivos = async (id: string) => {
+const serviceGetListaAtivos = async (id: string, b3: string) => {
     try {
         if(id === undefined)
         {
             id = '';
         }
-        const data = await modelGetListaAtivos(id);
+        const data = await modelGetListaAtivos(id, b3);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador
@@ -179,12 +196,11 @@ const serviceGetTransacaoId = async (id: any) => {
     }
 };
 
-const serviceUpdateTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, id: any, tipo: any, moeda: any) => {
+const serviceUpdateTransacao = async (categoria: string, corretora: string, ativo: string, negociacao: any, quantidade: string, preco: any, corretagem: any, emolumentos: any, impostos: any, id: any, tipo: any) => {
     if(  !quantidade || quantidade == '0' || quantidade == 'undefined'){ return {success: false, message:'Preencha a quantidade.' }; }
     if(  !preco || parseFloat(preco) <= 0 || preco == 'undefined' ){ return {success: false, message:'Preencha o preço.' }; }
     if(  !categoria || categoria == '' || categoria == 'undefined'){ return {success: false, message:'Escolha a categoria.' }; }
     if(  !corretora || corretora == '' || corretora == 'undefined'){ return {success: false, message:'Escolha a corretora.' }; }
-    if(  !moeda || moeda == '' || moeda == 'undefined'){ return {success: false, message:'Escolha a moeda.' }; }
     if(  !negociacao || negociacao == '' || negociacao == 'undefined'){ return {success: false, message:'Preencha a data de negociação.' }; }
     if(  !tipo || tipo == '' || tipo == 'undefined'){ return {success: false, message:'Escolha o tipo da transação.' }; }
     if(  !ativo || ativo == '' || ativo == 'undefined'){ return {success: false, message:'Escolha a ativo.' }; }
@@ -192,7 +208,7 @@ const serviceUpdateTransacao = async (categoria: string, corretora: string, ativ
     negociacao = converterDataParaAmericano(negociacao);
     if(  !quantidade || quantidade == '0' || quantidade == 'undefined'){ return {success: false, message:'Preencha a quantidade.' }; }
     try {
-        const data: any = await modelUpdateTransacao(categoria, corretora, ativo, negociacao, quantidade, removeCurrency(preco), removeCurrency(corretagem), removeCurrency(emolumentos), removeCurrency(impostos), id, tipo, moeda);
+        const data: any = await modelUpdateTransacao(categoria, corretora, ativo, negociacao, quantidade, removeCurrency(preco), removeCurrency(corretagem), removeCurrency(emolumentos), removeCurrency(impostos), id, tipo);
         if(data.affectedRows === 1){
             return {success: true, message:'Transação inserida com sucesso!' };                    
         }
@@ -230,7 +246,118 @@ const serviceGetValorTotalPatrimonio = async (type: string) => {
     }
 };
 
+const serviceGetAtivoMoeda = async (id: string) => {
+    if (id === undefined) {
+        id = '';
+    }
+    try {
+        const data = await ModelsAtivoMoeda(id);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceDadosB3 = async (id: string) => {
+    if (id === undefined) {
+        id = '';
+    }
+    try {
+        const data = await ModelsDadosB3(id);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceUpdateDadosB3 = async (ticker: string, valor: number) => {
+     try {
+        const data: any = await modelUpdateDadosB3(ticker, valor);
+        if(data.affectedRows === 1){
+            return {success: true, message:'Transação inserida com sucesso!' };                    
+        }
+        else
+        {
+            return data;
+        }
+
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceAdicionarHistorico = async (lista_ativo_id: number, valor: number) => {
+    try {
+       const data: any = await modelAdicionarHistorico(lista_ativo_id, valor);
+       if(data.affectedRows === 1){
+           return {success: true, message:'Transação inserida com sucesso!' };                    
+       }
+       else
+       {
+           return data;
+       }
+
+   } catch (error) {
+       throw error; // Propagar o erro para ser tratado no controlador
+   }
+};
+
+const serviceAdicionarHistoricoCliente = async (lista_ativo_id: number, quantidade: number) => {
+    try {
+       const data: any = await modelAdicionarHistoricoCliente(lista_ativo_id, quantidade);
+       if(data.affectedRows === 1){
+           return {success: true, message:'Transação inserida com sucesso!' };                    
+       }
+       else
+       {
+           return data;
+       }
+
+   } catch (error) {
+       throw error; // Propagar o erro para ser tratado no controlador
+   }
+};
+
+
+const serviceGetListaAtivosCliente = async (id: string, b3: string) => {
+    try {
+        if(id === undefined)
+        {
+            id = '';
+        }
+        const data = await modelGetListaAtivosCliente(id, b3);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceConfigPercentual = async (porcentagemAcao: number ,porcentagemFII: number ,porcentagemFIAgro: number ,porcentagemETFN: number ,porcentagemETFI: number ,porcentagemCriptomoedas: number ,porcentagemFixa: number ,porcentagemCaixa: number, limit: number ) => { 
+    
+    try {
+        const data: any = await modelConfigPercentual(porcentagemAcao, porcentagemFII, porcentagemFIAgro, porcentagemETFN, porcentagemETFI, porcentagemCriptomoedas, porcentagemFixa, porcentagemCaixa, limit);
+        if(data.affectedRows === 1){
+            return {success: true, message:'Atualizado com sucesso!' };                    
+        }
+        else
+        {
+            return data;
+        }
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceConfigPercentual,
+    serviceGetPercentualCategoria,
+    serviceGetListaAtivosCliente,
+    serviceAdicionarHistoricoCliente,
+    serviceAdicionarHistorico,
+    serviceUpdateDadosB3,
+    serviceDadosB3,
+    serviceGetAtivoMoeda,
     serviceGetValorTotalPatrimonio,
     serviceGetTotalAtivos,
     serviceUpdateTransacao,

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetRelatorio,
     serviceConfigPercentual,
     serviceGetPercentualCategoria,
     serviceGetListaAtivosCliente,
@@ -248,8 +249,9 @@ const ControllerAdicionarHistoricoCliente = async (req: Request, res: Response):
     try {
         const lista_ativo_id : any = req.body.lista_ativo_id;
         const quantidade : any = req.body.quantidade;
+        const ticker : any = req.body.ticker;
         
-        const data = await serviceAdicionarHistoricoCliente(lista_ativo_id, quantidade);
+        const data = await serviceAdicionarHistoricoCliente(lista_ativo_id, quantidade, ticker);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);
@@ -290,7 +292,22 @@ const ControllerConfigPercentual = async (req: Request, res: Response): Promise<
     }
 };
 
+
+const ControllerGetRelatorio = async (req: Request, res: Response): Promise<void> => {
+    const { period } = req.params;
+    const { mode } = req.params;
+    try {
+        const data = await serviceGetRelatorio(period, mode);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
 export {
+    ControllerGetRelatorio,
     ControllerConfigPercentual,
     ControllerGetPercentualCategorias,
     ControllerGetListaAtivosCliente,

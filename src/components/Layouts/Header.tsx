@@ -39,8 +39,7 @@ import { useSetState } from '@mantine/hooks';
 
 const Header = () => {
 
-    const [ocultarDados, setOcultarDados] = useState<boolean>(globalVars.getVariable1());
-console.log(ocultarDados)
+    const [ocultarDados, setOcultarDados] = useState<boolean>();
     const updateConfigHideValue = async () => {
         try {
             const response = await fetch('http://localhost:3000/update_config', {
@@ -74,6 +73,7 @@ console.log(ocultarDados)
                 const hideValues = firstConfig.hideValues;
 
                 if (hideValues !== undefined) {
+                    setOcultarDados(hideValues)
                     globalVars.setVariable1(hideValues)
                 } else {
                     console.error('Chave hideValues não encontrada no objeto de configuração.');

@@ -1,7 +1,7 @@
-import { converterDataParaAmericano, removeCurrency } from '../funcoes';
-
+import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetRelatorio,
     modelConfigPercentual,
     modelGetPercentualCategorias,
     modelGetListaAtivosCliente,
@@ -303,9 +303,9 @@ const serviceAdicionarHistorico = async (lista_ativo_id: number, valor: number) 
    }
 };
 
-const serviceAdicionarHistoricoCliente = async (lista_ativo_id: number, quantidade: number) => {
+const serviceAdicionarHistoricoCliente = async (lista_ativo_id: number, quantidade: number, ticker: number) => {
     try {
-       const data: any = await modelAdicionarHistoricoCliente(lista_ativo_id, quantidade);
+       const data: any = await modelAdicionarHistoricoCliente(lista_ativo_id, quantidade, ticker);
        if(data.affectedRows === 1){
            return {success: true, message:'Transação inserida com sucesso!' };                    
        }
@@ -334,7 +334,15 @@ const serviceGetListaAtivosCliente = async (id: string, b3: string) => {
 };
 
 const serviceConfigPercentual = async (porcentagemAcao: number ,porcentagemFII: number ,porcentagemFIAgro: number ,porcentagemETFN: number ,porcentagemETFI: number ,porcentagemCriptomoedas: number ,porcentagemFixa: number ,porcentagemCaixa: number, limit: number ) => { 
-    
+    if(  !porcentagemAcao || porcentagemAcao == '' || porcentagemAcao == 'undefined'){ return {success: false, message:'Preencha a porcentagem das ações.' }; }
+    if(  !porcentagemFII || porcentagemFII == '' || porcentagemFII == 'undefined'){ return {success: false, message:'Preencha a porcentagem dos FII.' }; }
+    if(  !porcentagemFIAgro || porcentagemFIAgro == '' || porcentagemFIAgro == 'undefined'){ return {success: false, message:'Preencha a porcentagem dos FIAgros.' }; }
+    if(  !porcentagemETFN || porcentagemETFN == '' || porcentagemETFN == 'undefined'){ return {success: false, message:'Preencha a porcentagem dos ETFs Nacionais.' }; }
+    if(  !porcentagemETFI || porcentagemETFI == '' || porcentagemETFI == 'undefined'){ return {success: false, message:'Preencha a porcentagem dos ETFs Internacionais.' }; }
+    if(  !porcentagemCriptomoedas || porcentagemCriptomoedas == '' || porcentagemCriptomoedas == 'undefined'){ return {success: false, message:'Preencha a porcentagem das criptomoedas.' }; }
+    if(  !porcentagemFixa || porcentagemFixa == '' || porcentagemFixa == 'undefined'){ return {success: false, message:'Preencha a porcentagem da renda fixa.' }; }
+    if(  !porcentagemCaixa || porcentagemCaixa == '' || porcentagemCaixa == 'undefined'){ return {success: false, message:'Preencha a porcentagem em caixa.' }; }
+   
     try {
         const data: any = await modelConfigPercentual(porcentagemAcao, porcentagemFII, porcentagemFIAgro, porcentagemETFN, porcentagemETFI, porcentagemCriptomoedas, porcentagemFixa, porcentagemCaixa, limit);
         if(data.affectedRows === 1){
@@ -349,7 +357,22 @@ const serviceConfigPercentual = async (porcentagemAcao: number ,porcentagemFII: 
     }
 };
 
+const serviceGetRelatorio = async (period: number, mode: any) => {
+    if (period === undefined) {
+        period = 1;
+    }
+    
+    const months = getLastDayMonths(period*1);
+    try {
+        const data = await ModelsGetRelatorio(period, months, mode);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetRelatorio,
     serviceConfigPercentual,
     serviceGetPercentualCategoria,
     serviceGetListaAtivosCliente,

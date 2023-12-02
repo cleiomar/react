@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import connection from './connections';
 
+
 const getAllModelsAtivos = async (type: string, graph: string) => {
     return new Promise((resolve, reject) => {
         let values = '';
@@ -218,7 +219,10 @@ const ModelsTotalAtivos = async (type: string) => {
                 });
             }),
             new Promise((resolve, reject) => {
-                connection.query(`SELECT lista_ativos.*, ativos.ativos_id as id, ativos.amount, ativos.*, categorias.categoria_prefixo, brokers.broker_nome, SUM(lista_ativos.ativo_valor * ativos.amount * cotacao.valor) AS total FROM lista_ativos, ativos, transacoes, categorias, cotacao, brokers WHERE lista_ativos.ativo_moeda = cotacao.cotacao_id AND ativos.ticker = lista_ativos.lista_ativos_id AND categorias.categoria_id = ativos.type AND transacoes.ativo = ativos.ticker AND brokers.broker_id = transacoes.broker AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY lista_ativos.lista_ativos_id, ativos.ativos_id, categorias.categoria_prefixo, brokers.broker_nome ORDER BY lista_ativos.lista_ativos_id ASC;`, [type], (err, results) => {
+                connection.query(`SELECT lista_ativos.*, ativos.ativos_id as id, ativos.amount, ativos.*, categorias.categoria_prefixo, brokers.broker_nome, SUM(lista_ativos.ativo_valor * ativos.amount * cotacao.valor) AS total, SUM(ativos.preco_medio * ativos.amount * cotacao.valor) AS valor_custo,(SELECT historico_ativos_valor 
+                    FROM historico_ativos 
+                    WHERE historico_ativos.lista_ativos_id = lista_ativos.lista_ativos_id                
+               ORDER BY historico_ativos.historico_ativos_id DESC LIMIT 1) as historico_ativos_valor FROM lista_ativos, ativos, transacoes, categorias, cotacao, brokers WHERE lista_ativos.ativo_moeda = cotacao.cotacao_id AND ativos.ticker = lista_ativos.lista_ativos_id AND categorias.categoria_id = ativos.type AND transacoes.ativo = ativos.ticker AND brokers.broker_id = transacoes.broker AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY lista_ativos.lista_ativos_id, ativos.ativos_id, categorias.categoria_prefixo, brokers.broker_nome ORDER BY lista_ativos.lista_ativos_id ASC;`, [type], (err, results) => {
                     if (err) reject(err);
                     resolve(results);
                 });
@@ -231,11 +235,22 @@ const ModelsTotalAtivos = async (type: string) => {
             const totalMultiplicado = row.total;
             return parseFloat(totalMultiplicado);
         });
+
         const totalSoma = valoresTotais.reduce((acc, valor) => acc + valor, 0);
+
+        const valor_custo = results[1];
+
+        let valoresCustoTotais = valor_custo.map(row => {
+            const totalCustoMultiplicado = row.valor_custo;
+            return parseFloat(totalCustoMultiplicado);
+        });
+
+        valoresCustoTotais = valoresCustoTotais.reduce((acc, valor_custo) => acc + valor_custo, 0);
 
         const resultWithTotalAtivos = {
             total_ativos: results[0].length,
             total_valor: totalSoma,
+            total_custo: valoresCustoTotais,
             data: results[1]
         };
 
@@ -297,19 +312,50 @@ const ModelsDadosB3 = async (id: any) => {
 
 const modelUpdateDadosB3 = async (ticker: string, valor: number) => {
     return new Promise((resolve, reject) => {
-        connection.query(`UPDATE lista_ativos
-        SET
-            ativo_valor = ?
-        WHERE
-            ativo_codigo = ?;`, [valor, ticker], (err, results) => {
+        connection.beginTransaction((err) => {
             if (err) {
                 reject(err);
-            } else {
-                resolve(results);
-            };
+                return;
+            }
+
+            // Primeiro UPDATE
+            connection.query(
+                'UPDATE lista_ativos SET ativo_valor = ? WHERE ativo_codigo = ?',
+                [valor, ticker],
+                (err, results) => {
+                    if (err) {
+                        connection.rollback(() => {
+                            reject(err);
+                        });
+                    } else {
+                        // Segundo UPDATE
+                        connection.query(
+                            'UPDATE lista_ativos JOIN ativos ON lista_ativos.lista_ativos_id = ativos.ticker SET ativos.price = ? WHERE lista_ativos.ativo_codigo = ?',
+                            [valor, ticker],
+                            (err, results) => {
+                                if (err) {
+                                    connection.rollback(() => {
+                                        reject(err);
+                                    });
+                                } else {
+                                    connection.commit((err) => {
+                                        if (err) {
+                                            connection.rollback(() => {
+                                                reject(err);
+                                            });
+                                        } else {
+                                            resolve(results);
+                                        }
+                                    });
+                                }
+                            }
+                        );
+                    }
+                }
+            );
         });
     });
-}
+};
 
 const modelAdicionarHistorico = async (lista_ativo_id: number, valor: number) => {
     return new Promise((resolve, reject) => {
@@ -325,13 +371,11 @@ const modelAdicionarHistorico = async (lista_ativo_id: number, valor: number) =>
     });
 }
 
-const modelAdicionarHistoricoCliente = async (lista_ativo_id: number, quantidade: number) => {
-    console.log(lista_ativo_id)
-    console.log(quantidade)
+const modelAdicionarHistoricoCliente = async (lista_ativo_id: number, quantidade: number, ticker: number) => {
     return new Promise((resolve, reject) => {
         let dt = new Date();
         dt = format(dt, 'yyyy-MM-dd');
-        connection.query(`INSERT historico_clientes (historico_clientes_ativo_id, historico_clientes_quantidade, historico_clientes_data) VALUES (?, ?, ?)`, [lista_ativo_id, quantidade, dt], (err, results) => {
+        connection.query(`INSERT historico_clientes (historico_clientes_ativo_id, historico_ativo_ticker, historico_clientes_quantidade, historico_clientes_data) VALUES (?, ?, ?, ?)`, [lista_ativo_id, ticker, quantidade, dt], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -350,7 +394,7 @@ const modelGetListaAtivosCliente = async (id: string, b3: string) => {
         values = '';
     }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT ativos_id as id, amount FROM ativos WHERE type IN (1, 2, 3, 4)${values}`, (err, results) => {
+        connection.query(`SELECT ativos_id as id, ticker, amount FROM ativos WHERE type IN (1, 2, 3, 4)${values}`, (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -360,7 +404,7 @@ const modelGetListaAtivosCliente = async (id: string, b3: string) => {
     });
 }
 
-const modelConfigPercentual = async (porcentagemAcao: number ,porcentagemFII: number ,porcentagemFIAgro: number ,porcentagemETFN: number ,porcentagemETFI: number ,porcentagemCriptomoedas: number ,porcentagemFixa: number ,porcentagemCaixa: number, limit: number ) => {
+const modelConfigPercentual = async (porcentagemAcao: number, porcentagemFII: number, porcentagemFIAgro: number, porcentagemETFN: number, porcentagemETFI: number, porcentagemCriptomoedas: number, porcentagemFixa: number, porcentagemCaixa: number, limit: number) => {
     return new Promise((resolve, reject) => {
         connection.query(`UPDATE configs SET percentual_acao=?, percentual_fii=?, percentual_fiagro=?, percentual_etfn=?, percentual_etfi=?, percentual_criptomoeda=?, percentual_fixa=?, percentual_caixa=?, porcentagem_limite=? WHERE configs_id=1`, [porcentagemAcao, porcentagemFII, porcentagemFIAgro, porcentagemETFN, porcentagemETFI, porcentagemCriptomoedas, porcentagemFixa, porcentagemCaixa, limit], (err, results) => {
             if (err) {
@@ -372,7 +416,45 @@ const modelConfigPercentual = async (porcentagemAcao: number ,porcentagemFII: nu
     });
 }
 
+const ModelsGetRelatorio = async (period: number, months: Array<any>, mode: any) => {
+    return new Promise((resolve, reject) => {
+        let var1='';
+        let var2='';
+        if(mode==1)
+        {
+            var1 = ' categorias.categoria_nome, ';
+        }
+        else
+        {
+            var2 = " 'Ações' AS categoria_nome, ";
+        }
+        console.log(months)
+        connection.query(`SELECT 
+        ${var1} ${var2} 
+        historico_clientes.historico_clientes_data,
+        SUM(historico_clientes.historico_clientes_quantidade * historico_ativos.historico_ativos_valor) AS total_valor
+    FROM 
+        historico_clientes, historico_ativos, lista_ativos, categorias
+    WHERE    
+        historico_ativos.lista_ativos_id=historico_clientes.historico_ativo_ticker AND 
+        historico_ativos.lista_ativos_id = lista_ativos.lista_ativos_id AND
+        categorias.categoria_id = lista_ativos.ativo_categoria AND
+        historico_ativos.historico_ativos_data=historico_clientes.historico_clientes_data AND 
+        historico_clientes.historico_clientes_data IN (${months})
+    GROUP BY 
+        ${var1} historico_clientes.historico_clientes_data
+    ORDER BY historico_clientes.historico_clientes_data ASC`,[months], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsGetRelatorio,
     modelConfigPercentual,
     modelGetPercentualCategorias,
     modelGetListaAtivosCliente,

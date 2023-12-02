@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import sortBy from 'lodash/sortBy';
 import globalVars from '../../data/global';
 import Swal from 'sweetalert2';
-import { removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa } from '../../data/funcoes';
+import { removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, difference } from '../../data/funcoes';
 
 interface PosicaoProps {
     categoria: number;
@@ -27,6 +27,8 @@ type User = {
     total: number;
     ativo_codigo: string;
     ativo_moeda: any;
+    historico_ativos_valor: number;
+    ativo_valor: number;
 };
 
 function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: PosicaoProps) {
@@ -42,7 +44,10 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
     const [userList, setUserList] = useState<User[]>([]);
     const [totalAtivos, setTotalAtivos] = useState(0);
     const [valorTotal, setValorTotal] = useState(0);
+    const [custoTotal, setCustoTotal] = useState(0);
     const [totalHoje, setTotalHoje] = useState(0);
+    const [valorTotalHoje, setValorTotalHoje] = useState(0);
+    const [valorTotalOntem, setValorTotalOntem] = useState(0);
 
     // const getUserList = async () => {
     //     try {
@@ -97,7 +102,6 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
         setRecordsData([...initialRecords.slice(from, to)]);
     }, [page, pageSize, initialRecords]);
 
-    
 
     const getAtivos = async (categoria) => {
         try {
@@ -105,7 +109,16 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
             const response = await data.json();
             setTotalAtivos(response.total_ativos);
             setValorTotal(response.total_valor);
+            setCustoTotal(response.total_custo);
             setUserList(response.data);
+
+            const total = response.data;
+            const valoresTotais = total.map(row => {
+                const totalMultiplicado = (row.ativo_valor-row.historico_ativos_valor)*row.amount;
+                return parseFloat(totalMultiplicado);
+            });
+            const totalSoma = valoresTotais.reduce((acc, historico_ativos_valor) => acc + historico_ativos_valor, 0);
+            setValorTotalHoje(totalSoma)
         } catch (error) {
             console.error('Erro ao obter a lista de usuários:', error);
         }
@@ -144,8 +157,9 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
-                                    <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
-                                    <div className='pl-5 percentual-positivo'>-0,79%</div>
+                                    <div className='subtitulo-valor3 w--50p'>{
+                                    renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros((parseFloat(valorTotalHoje) - parseFloat(valorTotalOntem))),1))}</div>
+                                    <div className={`pl-5 ${calcularPorcentagem(valorTotalHoje,valorTotal) >= 0 ? 'percentual-positivo' : 'percentual-negativo'}`}>{calcularPorcentagem(valorTotalHoje,valorTotal)}%</div>
                                 </div>
                             </div>
                             <div>
@@ -154,12 +168,13 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
                                     <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
-                                    <div className='subtitulo-valor3 w--50p'>{renderizarConteudo('sensitivy-field','R$ -24.441,00')}</div>
-                                    <div className='pl-5 percentual-positivo'>-0,79%</div>
+                                    <div className='subtitulo-valor3 w--50p'>{
+                                    renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros((parseFloat(valorTotal) - parseFloat(custoTotal))),1))}</div>
+                                    <div className={`pl-5 ${difference(custoTotal, valorTotal) >= 0 ? 'percentual-positivo' : 'percentual-negativo'}`}>{difference(custoTotal, valorTotal)}%</div>
                                 </div>
                             </div>
                             <div className=' mt-2'>
-                                <div className='titulo-page float-left'>{calcularPorcentagem(valorTotal, valor_total_patrimonio)}</div><span className='ft-total float-right'>{renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros(valorTotal)))}
+                                <div className='titulo-page float-left'>{calcularPorcentagem(valorTotal, valor_total_patrimonio)}%</div><span className='ft-total float-right'>{renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros(valorTotal)))}
                                 </span>
                             </div>
                         </div>
@@ -209,21 +224,62 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                         },
                                         { accessor: 'broker_nome', title: 'Broker' },
                                         {
-                                            accessor: 'negociacao',
-                                            title: 'Negociação',
-                                            render: ({ negociacao }) => <div>{formatDate(negociacao)}</div>,
-                                        },
-                                        {
                                             accessor: 'amount', title: 'Quantidade',
                                             render: ({ amount }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', removeTrailingZeros(amount))}</div>,
                                         },
                                         {
-                                            accessor: 'price', title: 'Preço',
+                                            accessor: 'preco_medio', title: 'Preço Médio',
+                                            render: ({ preco_medio, ativo_moeda }) => <div className='sensitivy-field'>{
+                                                renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(preco_medio), ativo_moeda))
+                                                
+                                                
+                                                }</div>,
+                                        },
+                                        {
+                                            accessor: 'price', title: 'Preço Hoje',
                                             render: ({ price, ativo_moeda }) => <div className='sensitivy-field'>{
                                                 renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(price), ativo_moeda))
                                                 
                                                 
                                                 }</div>,
+                                        },
+                                        {
+                                            accessor: 'variacao_hoje',
+                                            title: 'Variação Hoje',
+                                            render: ({ historico_ativos_valor, ativo_valor, amount }) => {
+                                                const diff = parseFloat(ativo_valor)-parseFloat(historico_ativos_valor);
+                                                const porcentagem = diff >= 0 ? 'percentual-positivo' : 'percentual-negativo';
+                                                const mult = diff < 0 ? '-' : '';
+                                                return (
+                                                    <div>
+                                                        <span className='subtitulo-valor3'>
+                                                            {mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2))}
+                                                        </span>
+                                                        <span className={porcentagem + ' ml-4 subtitulo-valor3'}>
+                                                            {`${difference(historico_ativos_valor,ativo_valor)}%`}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            },
+                                        },
+                                        {
+                                            accessor: 'variacao_total',
+                                            title: 'Variação Total',
+                                            render: ({ ativo_valor, amount, preco_medio }) => {
+                                                const diff = parseFloat(ativo_valor)-parseFloat(preco_medio);
+                                                const porcentagem = diff >= 0 ? 'percentual-positivo' : 'percentual-negativo';
+                                                const mult = diff < 0 ? '-' : '';
+                                                return (
+                                                    <div>
+                                                        <span className='subtitulo-valor3'>
+                                                            {mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2))}
+                                                        </span>
+                                                        <span className={porcentagem + ' ml-4 subtitulo-valor3'}>
+                                                            {`${difference(preco_medio, ativo_valor)}%`}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            },
                                         },
                                         {
                                             accessor: 'total',

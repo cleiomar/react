@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  ControllerGetRelatorio,
   ControllerConfigPercentual,
   ControllerGetPercentualCategorias,
   ControllerGetListaAtivosCliente,
@@ -33,6 +34,7 @@ const upload = multer({ storage: storage });
 router.get('/type', getGroupAtivos);
 router.get('/ativos/:type/:graph', getAllAtivos);
 router.get('/valor_total_patrimonio/', ControllerValorTotalPatrimonio);
+router.get('/get_relatorio/:period/:mode', ControllerGetRelatorio);
 router.get('/get_total_ativos/:type', ControllerTotalAtivos);
 router.get('/categorias', ControllerGetCategorias);
 router.get('/percentual_categorias', ControllerGetPercentualCategorias);

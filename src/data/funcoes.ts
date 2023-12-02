@@ -176,6 +176,10 @@ function categoria_color(categoria) {
 }
 
 function calcularPorcentagem(parte, total) {
+  if(total === 0 || parte === 0)
+  {
+    return '0.00';
+  }
   if (typeof parte !== 'number' || typeof total !== 'number' || total === 0) {
       return 'Entrada inválida. Certifique-se de que os valores são números e que o denominador não é zero.';
   }
@@ -190,13 +194,52 @@ function calcularResto(dividendo: number, divisor: number): number | string {
 
 
 function difference(valorMenor, valorMaior) {
-  // Calcula a diferença entre os dois valores
+  if(valorMenor === 0 || valorMaior === 0)
+  {
+    return '0.00';
+  }
   const diferenca = valorMaior - valorMenor;
 
-  // Calcula a porcentagem em relação ao valor menor
   const percentual = (diferenca / valorMenor) * 100;
 
-  return percentual.toFixed(2); // Arredonda para duas casas decimais
+  return percentual.toFixed(2);
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference }
+function getLastDayMonths(quantidade) {
+  const dataAtual = new Date();
+  let meses = '';
+
+  for (let i = 0; i < quantidade; i++) {
+    const mes = dataAtual.getMonth(); // Os meses em JavaScript são baseados em zero
+    const anoAtual = dataAtual.getFullYear();
+
+    const mesFormatado = mes < 10 ? `0${mes}` : mes;
+    const anoFormatado = anoAtual;
+    const data = new Date(anoFormatado, mesFormatado, 0);
+  
+    // Adiciona um dia à data
+    data.setDate(data.getDate() + 1);
+    // Formata a data como "YYYY-MM-DD" e remove o primeiro e último caractere
+    const ultimoDia = data.toISOString().split('T')[0];
+    meses += `'${ultimoDia}',`;
+
+    dataAtual.setMonth(dataAtual.getMonth() - 1);
+  }
+
+  // Remove a vírgula extra no final, se existir
+  meses = meses.slice(0, -1);
+
+  return meses;
+}
+
+function obterArrayMesesAbreviados(quantidadeMeses: number): string[] {
+  const hoje = new Date();
+  const arrayMesesAbreviados = Array.from({ length: quantidadeMeses }, (_, index) => {
+    const data = new Date(hoje.getFullYear(), hoje.getMonth() - index, 1);
+    return data.toLocaleDateString('en-US', { month: 'short' });
+  }).reverse();
+
+  return arrayMesesAbreviados;
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados}

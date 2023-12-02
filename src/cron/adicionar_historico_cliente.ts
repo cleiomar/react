@@ -1,4 +1,4 @@
-async function fetchHistoricoCliente(lista_ativo_id: any, quantidade: any): Promise<any> {
+async function fetchHistoricoCliente(lista_ativo_id: any, ticker: any, quantidade: any): Promise<any> {
     try {
         const response = await fetch('http://localhost:3000/adicionar_historico_cliente', {
             method: 'PUT',
@@ -6,7 +6,7 @@ async function fetchHistoricoCliente(lista_ativo_id: any, quantidade: any): Prom
                 'Content-Type': 'application/json', // Certifique-se de ajustar o tipo de conteúdo conforme necessário
                 // Adicione outros cabeçalhos conforme necessário
             },
-            body: JSON.stringify({ lista_ativo_id: lista_ativo_id, quantidade: quantidade }), // Converte os dados para o formato JSON
+            body: JSON.stringify({ lista_ativo_id: lista_ativo_id, quantidade: quantidade, ticker: ticker }), // Converte os dados para o formato JSON
         });
 
         if (!response.ok) {
@@ -14,7 +14,6 @@ async function fetchHistoricoCliente(lista_ativo_id: any, quantidade: any): Prom
         }
 
         const responseData = await response.json();
-        console.log(response);
         return responseData;
     } catch (error) {
         console.error('Erro na requisição PUT:', error);
@@ -29,8 +28,7 @@ const fetchApiOptionAtivos = async () => {
         const data = await fetch('http://localhost:3000/lista_ativos_cliente');
         const response = await data.json();
         response.map(async (item: any) => {
-            console.log(item.amount)
-            await fetchHistoricoCliente( item.id, item.amount)
+            await fetchHistoricoCliente( item.id,  item.ticker, item.amount)
         });
         //return response; // Adicione esta linha para retornar a resposta como uma Promise
     } catch (error) {

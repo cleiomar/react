@@ -253,7 +253,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                                 return (
                                                     <div>
                                                         <span className='subtitulo-valor3'>
-                                                            {mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2))}
+                                                            {renderizarConteudo('sensitivy-field', mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2)))}
                                                         </span>
                                                         <span className={porcentagem + ' ml-4 subtitulo-valor3'}>
                                                             {`${difference(historico_ativos_valor,ativo_valor)}%`}
@@ -272,7 +272,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                                 return (
                                                     <div>
                                                         <span className='subtitulo-valor3'>
-                                                            {mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2))}
+                                                            {renderizarConteudo('sensitivy-field', mult + formatCurrency(((diff * parseFloat(amount))).toFixed(2)))}
                                                         </span>
                                                         <span className={porcentagem + ' ml-4 subtitulo-valor3'}>
                                                             {`${difference(preco_medio, ativo_valor)}%`}

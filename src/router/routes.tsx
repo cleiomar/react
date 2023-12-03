@@ -1,9 +1,11 @@
 import { lazy } from 'react';
+const Previsao = lazy(() => import('../previsao'));
 const Dashboard = lazy(() => import('../dashboard'));
 const Nexus = lazy(() => import('../dashboard/'));
 const Transacoes = lazy(() => import('../transacoes'));
 const Patrimonio = lazy(() => import('../patrimonio'));
 const Metas = lazy(() => import('../metas'));
+
 const Error = lazy(() => import('../components/Error'));
 
 const routes = [
@@ -36,6 +38,10 @@ const routes = [
     {
         path: '/metas',
         element: <Metas />
+    },,
+    {
+        path: '/previsao',
+        element: <Previsao />
     },
 ];
 

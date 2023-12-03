@@ -127,8 +127,14 @@ const formatCurrency = (value: string | undefined | null): string => {
 
     return formattedValue;
   } else {
-    // Retorna uma string padrão ou faz algo apropriado se value não for uma string
-    return 'Valor Inválido';
+    value = parseFloat(value).toFixed(2)
+    const numericValue = value.replace(/[^0-9]/g, '');
+    const formattedValue = Number(Number(numericValue) / 100).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+
+    return formattedValue;
   }
 };
 
@@ -242,4 +248,93 @@ function obterArrayMesesAbreviados(quantidadeMeses: number): string[] {
   return arrayMesesAbreviados;
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados}
+const formatoRealSemCifrao = (value: string): string => {
+  // Remove caracteres não numéricos
+  const numericValue = value.replace(/[^0-9]/g, '');
+
+  // Converte para número e formata como número decimal com duas casas decimais
+  const formattedValue = new Intl.NumberFormat('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+  }).format(Number(numericValue) / 100);
+
+  return formattedValue;
+};
+
+function converterBRLParaNumero(valorBRL) {
+  return parseFloat(valorBRL.replace(/\./g, '').replace(',', '.'));
+}
+
+function calcularJurosCompostos(aporteInicialBRL, aporteMensalBRL, taxaJuros, tempoMeses) {
+  // Convertendo os valores BRL para números
+  const aporteInicial = converterBRLParaNumero(aporteInicialBRL);
+  const aporteMensal = converterBRLParaNumero(aporteMensalBRL);
+
+  const taxaJurosDecimal = (taxaJuros / 100); // Convertendo a taxa de porcentagem para decimal
+  let valorTotal = aporteInicial;
+  let aporteMeses;
+  for (let i = 0; i < tempoMeses; i++) {
+
+      valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
+  }
+
+  const valorJuros = valorTotal - (aporteInicial + aporteMensal * tempoMeses);
+  const valorTotalInvestido = aporteInicial + aporteMensal * tempoMeses;
+
+  return {
+      valorTotal: valorTotal.toFixed(2),
+      valorJuros: valorJuros.toFixed(2),
+      valorTotalInvestido: valorTotalInvestido.toFixed(2),
+  };
+}
+
+function calcularJurosCompostosTabela(aporteInicialBRL, aporteMensalBRL, taxaJuros, tempoMeses) {
+  const aporteInicial = converterBRLParaNumero(aporteInicialBRL);
+  const aporteMensal = converterBRLParaNumero(aporteMensalBRL);
+  const taxaJurosDecimal = taxaJuros / 100; //
+
+  let resultados = [];
+  resultados.push({
+    mes: 0,
+    juros: 0,
+    totalInvestido: aporteInicial,
+    totalJuros: 0,
+    totalAcumulado: aporteInicial,
+});
+  let valorTotal = aporteInicial;
+  let valorTotalInvestido = aporteInicial;
+  let valorTotalJuros = 0;
+
+  for (let i = 1; i <= tempoMeses; i++) {
+      const valorJuros = valorTotal * taxaJurosDecimal;
+      valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
+
+      valorTotalJuros += valorJuros;
+      valorTotalInvestido += aporteMensal;
+
+      resultados.push({
+          mes: i,
+          juros: valorJuros.toFixed(2),
+          totalInvestido: valorTotalInvestido.toFixed(2),
+          totalJuros: valorTotalJuros.toFixed(2),
+          totalAcumulado: valorTotal.toFixed(2),
+      });
+  }
+
+  return resultados;
+}
+
+function imprimirTabela(resultados) {
+  console.log("Mês\tJuros\tTotal Investido\tTotal Juros\tTotal Acumulado");
+  resultados.forEach((resultado) => {
+      
+          `${resultado.mes}\tR$${resultado.juros}\tR$${resultado.totalInvestido}\tR$${resultado.totalJuros}\tR$${resultado.totalAcumulado}`
+      
+  });
+}
+
+function removerFormatacaoNumero(valorFormatado) {
+  return parseFloat(valorFormatado.replace(/\./g, '').replace(',', '.'));
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero}

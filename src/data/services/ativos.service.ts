@@ -362,7 +362,7 @@ const serviceGetRelatorio = async (period: number, mode: any) => {
         period = 1;
     }
     
-    const months = getLastDayMonths(period*1);
+    const months = getLastDayMonths(period*12);
     try {
         const data = await ModelsGetRelatorio(period, months, mode);
         return data;

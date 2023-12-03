@@ -23,7 +23,7 @@ const Transacoes = () => {
   
   const [quantidadeMeses, setQuantidadeMeses] = useState([]);
   const [selectedOptionAno, setSelectedOptionAno] = useState([]);
-  const [optionAno, setOptionAno] = useState(12);
+  const [optionAno, setOptionAno] = useState(1);
   const SelectChangeAno = (selectedOptionAno) => {
     fetchResultados(selectedOptionAno.value, optionCategoria);
     setSelectedOptionAno(selectedOptionAno)
@@ -38,6 +38,10 @@ const Transacoes = () => {
     setOptionCategoria(selectedOptionCategoria.value)
   };
 
+  useEffect(()=> {
+    setSelectedOptionCategoria({ value: '', label: 'Selecionar...' })
+    setSelectedOptionAno({ value: '', label: 'Selecionar...' })
+  },[])
 
   const [valorTotal, setValorTotal] = useState(0);
   let total: number;

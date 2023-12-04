@@ -399,7 +399,7 @@ const Transacoes = () => {
               </div>
             </div>
           </div>
-          <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 gap-6 mb-8 xl:col-span-3 pt-5 zi-3">
+          <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 gap-6 mb-8 xl:col-span-3 pt-5 zi-3 custom-select">
             <div></div>
             <Select
               className='text-sm'

@@ -243,7 +243,7 @@ const Previsao = () => {
 
     return (
         <div><div className='titulo-page'>PREVISÃO</div>
-
+        
         <div className="panel" id="limit_tagging">
         <div className="flex items-center justify-between mb-5">
         <h5 className="font-semibold text-lg dark:text-white-light">Multiple select</h5>
@@ -253,7 +253,6 @@ const Previsao = () => {
             </span>
         </button>
     </div>
-    
     <div className="mb-5">
         <Select placeholder="Select an option" isMulti isSearchable={false} />
         </div></div>

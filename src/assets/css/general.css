@@ -480,10 +480,21 @@
 .text-rightkit {
     text-align: -webkit-right;
 }
+.text-small {
+    font-size: small;
+}
 
 .h-18 {
     height: 18px;
 }
 .ft-white{
     color: #FFF;
+}
+
+.ft-green{
+    color: #02B105;
+}
+
+.ft-blue{
+    color: #4361EE;
 }

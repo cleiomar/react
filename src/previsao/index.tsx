@@ -9,6 +9,7 @@ import { removerFormatacaoNumero, formatoRealSemCifrao, calcularJurosCompostos, 
 import { Tab } from '@headlessui/react';
 import { Fragment } from 'react';
 import { DataTable } from 'mantine-datatable';
+import Select from 'react-select';
 
 const Previsao = () => {
 
@@ -22,13 +23,11 @@ const Previsao = () => {
     const [periodoTotal, setPeriodoTotal] = useState('0');
     const [taxaJuros, setTaxaJuros] = useState('Anual');
     const ChangeTaxaJuros = (val) => {
-        console.log(val)
         setTaxaJuros(val);
     }
 
     const [periodo, setPeriodo] = useState('Anos');
     const ChangePeriodo = (val) => {
-        console.log(val)
         setPeriodo(val);
     }
 
@@ -66,6 +65,7 @@ const Previsao = () => {
     const [resultadoValorTotal, setResultadoValorTotal] = useState(0);
     const [resultadoValorTotalJuros, setResultadoValorTotalJuros] = useState(0);
     const [resultadoValorTotalInvestido, setResultadoValorTotalInvestido] = useState(0);
+    const [graficoTotalJuros, setGraficoTotalJuros] = useState();
 
     const [graficoMes, setGraficoMes] = useState();
     const [graficoTotalInvestido, setGraficoTotalInvestido] = useState();
@@ -86,15 +86,14 @@ const Previsao = () => {
         setResultadoValorTotalInvestido(resultado.valorTotalInvestido);
 
         const graficoMesArray = data.map(item => item.mes);
+        const graficoJurosArray = data.map(item => item.totalJuros);
         const graficoTotalInvestidoArray = data.map(item => item.totalInvestido);
         const graficoTotalAcumuladoArray = data.map(item => item.totalAcumulado);
         setGraficoMes(graficoMesArray);
         setGraficoTotalInvestido(graficoTotalInvestidoArray);
         setGraficoTotalAcumulado(graficoTotalAcumuladoArray);
+        setGraficoTotalJuros(graficoJurosArray)
     }
-    useEffect(() => {
-        console.log(graficoMes);
-    }, [graficoMes]);
 
     const [page, setPage] = useState(1);
     const PAGE_SIZES = [10, 20, 30, 50, 100, 1000];
@@ -119,31 +118,34 @@ const Previsao = () => {
     const lineChart: any = {
         series: [
             {
-                name: 'Sales',
+                name: 'Valor Acumulado',
                 data: graficoTotalAcumulado,
+            }, {
+                name: 'Valor Investido',
+                data: graficoTotalInvestido,
             },
         ],
         options: {
             chart: {
-                height: 300,
+                height: 600,
                 type: 'line',
                 toolbar: false,
             },
-            colors: ['#4361EE'],
+            colors: ['#4361EE', '#02B105'],
             tooltip: {
                 marker: false,
                 y: {
                     formatter(number: number) {
-                        return '$' + number;
+                        return formatCurrency(number.toFixed(2));
                     },
                 },
             },
             stroke: {
                 width: 2,
-                curve: 'smooth',
             },
             xaxis: {
                 categories: graficoMes,
+                tickAmount: 20,
                 axisBorder: {
                     color: isDark ? '#191e3a' : '#e0e6ed',
                 },
@@ -151,6 +153,9 @@ const Previsao = () => {
             yaxis: {
                 opposite: isRtl ? true : false,
                 labels: {
+                    formatter: (value: number) => {
+                        return formatCurrency(value.toFixed(2));
+                    },
                     offsetX: isRtl ? -20 : 0,
                 },
             },
@@ -160,10 +165,100 @@ const Previsao = () => {
         },
     };
 
-    
+    const simpleColumnStacked: any = {
+        series: [
+            {
+                name: 'Valor Investido',
+                data: graficoTotalInvestido,
+            }, {
+                name: 'Juros Acumulado',
+                data: graficoTotalJuros,
+            },
+        ],
+        options: {
+            chart: {
+                height: 500,
+                type: 'bar',
+                stacked: true,
+                zoom: {
+                    enabled: false,
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            colors: ['#02B105', '#4361EE'],
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        legend: {
+                            position: 'bottom',
+                            offsetX: -10,
+                            offsetY: 5,
+                        },
+                    },
+                },
+            ],
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                },
+            },
+            xaxis: {
+                type: 'number',
+                categories: graficoMes,
+                tickAmount: 20,
+                axisBorder: {
+                    color: isDark ? '#191e3a' : '#e0e6ed',
+                },
+            },
+            yaxis: {
+                opposite: isRtl ? true : false,
+                labels: {
+                    formatter: (value: number) => {
+                        return formatCurrency(value.toFixed(2));
+                    },
+                    offsetX: isRtl ? -20 : 0,
+                },
+            },
+            grid: {
+                borderColor: isDark ? '#191e3a' : '#e0e6ed',
+            },
+            legend: {
+                position: 'right',
+                offsetY: 40,
+            },
+            tooltip: {
+                theme: isDark ? 'dark' : 'light',
+            },
+            fill: {
+                opacity: 0.8,
+            },
+        },
+    };
 
     return (
         <div><div className='titulo-page'>PREVISÃO</div>
+
+        <div className="panel" id="limit_tagging">
+        <div className="flex items-center justify-between mb-5">
+        <h5 className="font-semibold text-lg dark:text-white-light">Multiple select</h5>
+        <button type="button" className="font-semibold hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-600" onClick={() => toggleCode('code6')}>
+            <span className="flex items-center">
+                Code
+            </span>
+        </button>
+    </div>
+    
+    <div className="mb-5">
+        <Select placeholder="Select an option" isMulti isSearchable={false} />
+        </div></div>
+
+
             <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
                 <li>
                     <Link to="/components/tabs" className="text-primary hover:underline">
@@ -263,8 +358,8 @@ const Previsao = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-                    <div className="panel"><center><div className='subtitulo-valor3'>VALOR TOTAL INVESTIDO</div><div className='titulo-page pt-6 pb-3'>{formatCurrency(resultadoValorTotalInvestido)}</div></center></div>
-                    <div className="panel"><center><div className='subtitulo-valor3'>VALOR TOTAL JUROS</div><div className='titulo-page pt-6 pb-3'>{formatCurrency(resultadoValorTotalJuros)}</div></center></div>
+                    <div className="panel"><center><div className='subtitulo-valor3 ft-green'>VALOR TOTAL INVESTIDO</div><div className='titulo-page pt-6 pb-3'>{formatCurrency(resultadoValorTotalInvestido)}</div></center></div>
+                    <div className="panel"><center><div className='subtitulo-valor3 ft-blue'>VALOR TOTAL JUROS</div><div className='titulo-page pt-6 pb-3'>{formatCurrency(resultadoValorTotalJuros)}</div></center></div>
                     <div className="panel"><center><div className='subtitulo-valor3'>VALOR TOTAL FINAL</div><div className='titulo-page pt-6 pb-3'>{formatCurrency(resultadoValorTotal)}</div></center></div>
                 </div>
                 <div className="mb-5 mt-20">
@@ -276,7 +371,17 @@ const Previsao = () => {
                                         className={`${selected ? 'border-b !border-secondary text-secondary !outline-none' : ''}
                                                     before:inline-block' -mb-[1px] flex items-center border-transparent p-5 py-3 hover:border-b hover:!border-secondary hover:text-secondary`}
                                     >
-                                        <div className='subtitulo-valor3'>GRÁFICO</div>
+                                        <div className='subtitulo-valor3'>GRÁFICO LINHA</div>
+                                    </button>
+                                )}
+                            </Tab>
+                            <Tab as={Fragment}>
+                                {({ selected }) => (
+                                    <button
+                                        className={`${selected ? 'border-b !border-secondary text-secondary !outline-none' : ''}
+                                                    before:inline-block' -mb-[1px] flex items-center border-transparent p-5 py-3 hover:border-b hover:!border-secondary hover:text-secondary`}
+                                    >
+                                        <div className='subtitulo-valor3'>GRÁFICO COLUNA</div>
                                     </button>
                                 )}
                             </Tab>
@@ -293,53 +398,58 @@ const Previsao = () => {
                         </Tab.List>
                         <Tab.Panels>
                             <Tab.Panel>
-                                <ReactApexChart key={graficoMes} series={lineChart.series} options={lineChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="line" height={300} />
+                                <ReactApexChart key={graficoMes} series={lineChart.series} options={lineChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="line" height={600} />
                             </Tab.Panel>
                             <Tab.Panel>
-                                <DataTable
-                                    noRecordsText="No results match your search query"
-                                    highlightOnHover
-                                    className="whitespace-nowrap table-hover"
-                                    records={recordsData}
-                                    columns={[
-                                        {
-                                            accessor: 'mes', title: <center>Mês</center>,
-                                            render: ({ mes }) => <div ><center>{mes}</center></div>
-                                        },
-                                        {
-                                            accessor: 'juros', title: <center>Juros</center>,
-                                            render: ({ juros }) => <div ><center>{
-                                                formatCurrency(juros, 1)
-                                            }</center></div>
-                                        },
-                                        {
-                                            accessor: 'totalInvestido', title: <center>Total Investido</center>,
-                                            render: ({ totalInvestido }) => <div ><center>{
-                                                formatCurrency(totalInvestido, 1)
-                                            }</center></div>
-                                        },
-                                        {
-                                            accessor: 'totalJuros', title: <center>Total Juros</center>,
-                                            render: ({ totalJuros }) => <div ><center>{
-                                                formatCurrency(totalJuros, 1)
-                                            }</center></div>
-                                        },
-                                        {
-                                            accessor: 'totalAcumulado', title: <center>Total Acumulado</center>,
-                                            render: ({ totalAcumulado }) => <div ><center>{
-                                                formatCurrency(totalAcumulado, 1)
-                                            }</center></div>
-                                        },
-                                    ]}
-                                    totalRecords={rowData.length}
-                                    recordsPerPage={pageSize}
-                                    page={page}
-                                    onPageChange={(p) => setPage(p)}
-                                    recordsPerPageOptions={PAGE_SIZES}
-                                    onRecordsPerPageChange={setPageSize}
-                                    minHeight={200}
-                                    paginationText={({ from, to, totalRecords }) => `Showing  ${from} to ${to} of ${totalRecords} entries`}
-                                />
+                                <ReactApexChart series={simpleColumnStacked.series} options={simpleColumnStacked.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="bar" height={600} />
+                            </Tab.Panel>
+                            <Tab.Panel>
+                                <div className="datatables">
+                                    <DataTable
+                                        noRecordsText="No results match your search query"
+                                        highlightOnHover
+                                        className="whitespace-nowrap table-hover"
+                                        records={recordsData}
+                                        columns={[
+                                            {
+                                                accessor: 'mes', title: <center>Mês</center>,
+                                                render: ({ mes }) => <div className='text-small'><center>{mes}</center></div>
+                                            },
+                                            {
+                                                accessor: 'juros', title: <center>Juros</center>,
+                                                render: ({ juros }) => <div className='text-small'><center>{
+                                                    formatCurrency(juros, 1)
+                                                }</center></div>
+                                            },
+                                            {
+                                                accessor: 'totalInvestido', title: <center>Total Investido</center>,
+                                                render: ({ totalInvestido }) => <div className='text-small'><center>{
+                                                    formatCurrency(totalInvestido, 1)
+                                                }</center></div>
+                                            },
+                                            {
+                                                accessor: 'totalJuros', title: <center>Total Juros</center>,
+                                                render: ({ totalJuros }) => <div className='text-small'><center>{
+                                                    formatCurrency(totalJuros, 1)
+                                                }</center></div>
+                                            },
+                                            {
+                                                accessor: 'totalAcumulado', title: <center>Total Acumulado</center>,
+                                                render: ({ totalAcumulado }) => <div className='text-small'><center>{
+                                                    formatCurrency(totalAcumulado, 1)
+                                                }</center></div>
+                                            },
+                                        ]}
+                                        totalRecords={rowData.length}
+                                        recordsPerPage={pageSize}
+                                        page={page}
+                                        onPageChange={(p) => setPage(p)}
+                                        recordsPerPageOptions={PAGE_SIZES}
+                                        onRecordsPerPageChange={setPageSize}
+                                        minHeight={200}
+                                        paginationText={({ from, to, totalRecords }) => `Showing  ${from} to ${to} of ${totalRecords} entries`}
+                                    />
+                                </div>
                             </Tab.Panel>
                         </Tab.Panels>
                     </Tab.Group>

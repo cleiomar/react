@@ -264,27 +264,31 @@ const formatoRealSemCifrao = (value: string): string => {
 function converterBRLParaNumero(valorBRL) {
   return parseFloat(valorBRL.replace(/\./g, '').replace(',', '.'));
 }
-
 function calcularJurosCompostos(aporteInicialBRL, aporteMensalBRL, taxaJuros, tempoMeses) {
   // Convertendo os valores BRL para números
   const aporteInicial = converterBRLParaNumero(aporteInicialBRL);
   const aporteMensal = converterBRLParaNumero(aporteMensalBRL);
 
-  const taxaJurosDecimal = (taxaJuros / 100); // Convertendo a taxa de porcentagem para decimal
+  const taxaJurosDecimal = taxaJuros / 100; // Convertendo a taxa de porcentagem para decimal
   let valorTotal = aporteInicial;
   let aporteMeses;
-  for (let i = 0; i < tempoMeses; i++) {
 
-      valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
+  for (let i = 0; i < tempoMeses; i++) {
+    valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
   }
 
   const valorJuros = valorTotal - (aporteInicial + aporteMensal * tempoMeses);
   const valorTotalInvestido = aporteInicial + aporteMensal * tempoMeses;
 
+  // Adicionando Math.pow para calcular juros compostos
+  const valorTotalComJurosCompostos = aporteInicial * Math.pow(1 + taxaJurosDecimal, tempoMeses) +
+    aporteMensal * ((Math.pow(1 + taxaJurosDecimal, tempoMeses) - 1) / taxaJurosDecimal);
+
   return {
-      valorTotal: valorTotal.toFixed(2),
-      valorJuros: valorJuros.toFixed(2),
-      valorTotalInvestido: valorTotalInvestido.toFixed(2),
+    valorTotal: valorTotal.toFixed(2),
+    valorJuros: valorJuros.toFixed(2),
+    valorTotalInvestido: valorTotalInvestido.toFixed(2),
+    valorTotalComJurosCompostos: valorTotalComJurosCompostos.toFixed(2),
   };
 }
 
@@ -325,7 +329,6 @@ function calcularJurosCompostosTabela(aporteInicialBRL, aporteMensalBRL, taxaJur
 }
 
 function imprimirTabela(resultados) {
-  console.log("Mês\tJuros\tTotal Investido\tTotal Juros\tTotal Acumulado");
   resultados.forEach((resultado) => {
       
           `${resultado.mes}\tR$${resultado.juros}\tR$${resultado.totalInvestido}\tR$${resultado.totalJuros}\tR$${resultado.totalAcumulado}`

@@ -428,7 +428,6 @@ const ModelsGetRelatorio = async (period: number, months: Array<any>, mode: any)
         {
             var2 = " 'Ações' AS categoria_nome, ";
         }
-        console.log(months)
         connection.query(`SELECT 
         ${var1} ${var2} 
         historico_clientes.historico_clientes_data,

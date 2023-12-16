@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+const Tesouro = lazy(() => import('../tesouro'));
 const Previsao = lazy(() => import('../previsao'));
 const Dashboard = lazy(() => import('../dashboard'));
 const Nexus = lazy(() => import('../dashboard/'));
@@ -38,10 +39,14 @@ const routes = [
     {
         path: '/metas',
         element: <Metas />
-    },,
+    },
     {
         path: '/previsao',
         element: <Previsao />
+    },
+    {
+        path: '/tesouro',
+        element: <Tesouro />
     },
 ];
 

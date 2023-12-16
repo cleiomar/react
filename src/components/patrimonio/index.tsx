@@ -150,13 +150,13 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 <div className='subtitulo-valor3 text-left'>{totalAtivos} ATIVOS</div>
                             </div>
                         </div>
-                        <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-6 w-50p">
+                        <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-6 w-60">
                             <div>
                                 <div className='subtitulo-valor3 text-end'>
                                     <div>HOJE</div>
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
-                                    <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
+                                    <div className='text-rightkit pr-3 w-60'><IconCaretDown /></div>
                                     <div className='subtitulo-valor3 w--50p'>{
                                     renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros((parseFloat(valorTotalHoje) - parseFloat(valorTotalOntem))),1))}</div>
                                     <div className={`pl-5 ${calcularPorcentagem(valorTotalHoje,valorTotal) >= 0 ? 'percentual-positivo' : 'percentual-negativo'}`}>{calcularPorcentagem(valorTotalHoje,valorTotal)}%</div>
@@ -167,7 +167,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                     <div>TOTAL</div>
                                 </div>
                                 <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3">
-                                    <div className='text-rightkit pr-3 w-50p'><IconCaretDown /></div>
+                                    <div className='text-rightkit pr-3 w-60'><IconCaretDown /></div>
                                     <div className='subtitulo-valor3 w--50p'>{
                                     renderizarConteudo('sensitivy-field',formatCurrency2(removeTrailingZeros((parseFloat(valorTotal) - parseFloat(custoTotal))),1))}</div>
                                     <div className={`pl-5 ${difference(custoTotal, valorTotal) >= 0 ? 'percentual-positivo' : 'percentual-negativo'}`}>{difference(custoTotal, valorTotal)}%</div>
@@ -286,8 +286,22 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                             title: 'Total',
                                             render: ({ total, ativo_moeda, type }) => (
                                                 <><div className='sensitivy-field'>{
-                                                    (type === 8 || type === 5) ?
+                                                    (type === 8 || type === 5 || type === 6) ?
                                                 renderizarConteudo('sensitivy-field', caixa(removeTrailingZeros(total), ativo_moeda)):renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
+                                            ),
+                                        },
+                                        {
+                                            accessor: 'total',
+                                            title: '% em '+categoria_nome ,
+                                            render: ({ total }) => (
+                                                <><div className='sensitivy-field'><center>{calcularPorcentagem(+total, +valorTotal)}%</center></div></>
+                                            ),
+                                        },
+                                        {
+                                            accessor: 'total',
+                                            title: '% na Carteira',
+                                            render: ({ total }) => (
+                                                <><div className='sensitivy-field'><center>{calcularPorcentagem(+total, +valor_total_patrimonio)}%</center></div></>
                                             ),
                                         },
                                     ]}

@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetTreasure,
+    serviceInsertHistoricoTreasure,
+    serviceInsertTreasure,
+    serviceCurrencyUpdate,
     serviceGetRelatorio,
     serviceConfigPercentual,
     serviceGetPercentualCategoria,
@@ -305,8 +309,63 @@ const ControllerGetRelatorio = async (req: Request, res: Response): Promise<void
     }
 };
 
+const ControllerCurrencyUpdate = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const currency : any = req.body.currency;
+        const valor : any = req.body.valor;
+
+        const data = await serviceCurrencyUpdate(currency, valor);
+       res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertTreasure = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const codigo : any = req.body.codigo;
+        const nome : any = req.body.nome;
+        console.log('teste');
+        const data = await serviceInsertTreasure(codigo, nome);
+       res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertHistoricoTreasure = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const codigo : any = req.body.codigo;
+        const dataTime : any = req.body.dataTime;
+        const valor : any = req.body.valor;
+        console.log('teste');
+        const data = await serviceInsertHistoricoTreasure(codigo, dataTime, valor);
+       res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerGetTreasure = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.params;
+    const { periodo } = req.params;
+    try {
+        const data = await serviceGetTreasure(codigo, periodo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
 
 export {
+    ControllerGetTreasure,
+    ControllerInsertHistoricoTreasure,
+    ControllerInsertTreasure,
+    ControllerCurrencyUpdate,
     ControllerGetRelatorio,
     ControllerConfigPercentual,
     ControllerGetPercentualCategorias,

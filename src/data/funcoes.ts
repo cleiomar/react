@@ -33,6 +33,16 @@ function converterDataParaAmericano(dataBrasileira: string): string {
   return format(databr, 'yyyy-MM-dd');
 }
 
+function converterDataParaBrasil(dataBrasileira: string): string {
+  const partesDataHora = dataBrasileira.split('T');
+  const data = partesDataHora[0].split('-');
+  const hora = partesDataHora[1].split(':');
+
+  const dataNovo = `${data[2]}/${data[1]}/${data[0]}`;
+
+  return `${dataNovo}`;
+}
+
 function removeCurrency(value: string | undefined | null): number {
   if (typeof value === 'string' && value.trim() !== '') {
     let withoutCurrencySymbol = value.replace('R$', '');
@@ -340,4 +350,45 @@ function removerFormatacaoNumero(valorFormatado) {
   return parseFloat(valorFormatado.replace(/\./g, '').replace(',', '.'));
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero}
+function calcularVariaveis(media, valorMaximo, valorMinimo) {
+  if (media <= 0 || valorMaximo <= 0 || valorMinimo <= 0) {
+    throw new Error('Os valores devem ser maiores que zero.');
+  }
+
+  const doisTercoMedia = (2 / 3) * media;
+  const umTercoMedia = (1 / 3) * media;
+
+  if (doisTercoMedia > valorMaximo || umTercoMedia > valorMaximo) {
+    throw new Error('Os valores calculados excedem o valor máximo permitido.');
+  }
+
+  if (umTercoMedia < valorMinimo || doisTercoMedia < valorMinimo) {
+    throw new Error('Os valores calculados são menores que o valor mínimo permitido.');
+  }
+
+  return { variavel1: doisTercoMedia, variavel2: umTercoMedia };
+}
+
+function dividirEmTresPartes(media, maiorValor) {
+  if (media <= 0 || maiorValor <= 0) {
+    throw new Error('Os valores devem ser maiores que zero.');
+  }
+
+  const parte = media / 3;
+
+  if (parte > maiorValor) {
+    throw new Error('A parte calculada excede o maior valor permitido.');
+  }
+
+  const variavel1 = media;
+  const variavel2 = media + parte;
+  const variavel3 = media + 2 * parte;
+
+  if (variavel2 > maiorValor || variavel3 > maiorValor) {
+    throw new Error('Os valores calculados excedem o maior valor permitido.');
+  }
+
+  return { variavel1, variavel2, variavel3 };
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes}

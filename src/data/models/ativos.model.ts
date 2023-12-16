@@ -67,7 +67,7 @@ const modelGetCategorias = async () => {
 
 const modelGetPercentualCategorias = async (soma: string) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT categorias.categoria_id as value, categorias.categoria_prefixo, categorias.categoria_nome as label, COALESCE(SUM(ativos.amount * lista_ativos.ativo_valor * cotacao.valor), 0) as total FROM categorias LEFT JOIN lista_ativos ON categorias.categoria_id = lista_ativos.ativo_categoria LEFT JOIN ativos ON lista_ativos.lista_ativos_id = ativos.ticker LEFT JOIN cotacao ON cotacao.cotacao_id = lista_ativos.ativo_moeda GROUP BY categorias.categoria_id, categorias.categoria_nome`, (err, results) => {
+        connection.query(`SELECT categorias.categoria_id as value, categorias.categoria_prefixo, categorias.categoria_nome as label, COALESCE(SUM(ativos.amount * lista_ativos.ativo_valor * cotacao.valor), 0) as total, COUNT(ativos.type) as quantidade_ativos FROM categorias LEFT JOIN lista_ativos ON categorias.categoria_id = lista_ativos.ativo_categoria LEFT JOIN ativos ON lista_ativos.lista_ativos_id = ativos.ticker LEFT JOIN cotacao ON cotacao.cotacao_id = lista_ativos.ativo_moeda GROUP BY categorias.categoria_id, categorias.categoria_nome, categorias.categoria_prefixo;`, (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -117,7 +117,13 @@ const modelGetTransacoes = async () => {
 const modelGetListaAtivos = async (id: string, b3: string) => {
     let values = '';
     if (b3 == 's') {
-        values = `AND ativo_categoria IN (1, 2, 3, 4)`; // Converte o array em uma string separada por vírgulas
+        values = `AND ativo_categoria IN (1, 2, 3, 4, 6) AND ativo_codigo!='ADA' `; // Converte o array em uma string separada por vírgulas
+    }
+    else if (b3 == 'i') {
+        values = `AND ativo_categoria IN (5)`; // Converte o array em uma string separada por vírgulas
+    }
+    else if (b3 == 'c') {
+        values = `AND ativo_categoria IN (6)  AND ativo_codigo='ADA' `; // Converte o array em uma string separada por vírgulas
     }
     else {
         values = '';
@@ -418,14 +424,12 @@ const modelConfigPercentual = async (porcentagemAcao: number, porcentagemFII: nu
 
 const ModelsGetRelatorio = async (period: number, months: Array<any>, mode: any) => {
     return new Promise((resolve, reject) => {
-        let var1='';
-        let var2='';
-        if(mode==1)
-        {
+        let var1 = '';
+        let var2 = '';
+        if (mode == 1) {
             var1 = ' categorias.categoria_nome, ';
         }
-        else
-        {
+        else {
             var2 = " 'Ações' AS categoria_nome, ";
         }
         connection.query(`SELECT 
@@ -442,7 +446,60 @@ const ModelsGetRelatorio = async (period: number, months: Array<any>, mode: any)
         historico_clientes.historico_clientes_data IN (${months})
     GROUP BY 
         ${var1} historico_clientes.historico_clientes_data
-    ORDER BY historico_clientes.historico_clientes_data ASC`,[months], (err, results) => {
+    ORDER BY historico_clientes.historico_clientes_data ASC`, [months], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsCurrencyUpdate = async (currency: string, valor: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE cotacao SET valor=? WHERE currency=?`, [valor, currency], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsInsertTreasure = async (codigo: any, nome: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT tesouro (codigo_tesouro, nome, ativo)VALUES(? ,? , ?)`, [codigo, nome, 'S'], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsInsertHistoricoTreasure = async (codigo: any, dataTime: any, valor: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT tesouro_valores ( tesouro_codigo , tesouro_data, tesouro_valor) VALUES (? ,? , ?)`, [codigo, dataTime, valor], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsInsertGetTreasure = async (codigo: any, periodo: any) => {
+    let values: any;
+    if (periodo != 0) {
+        values = ` AND YEAR(tesouro_data) = YEAR(CURRENT_DATE) - ${periodo}`; // Converte o array em uma string separada por vírgulas
+    }
+
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM tesouro_valores WHERE tesouro_codigo=? ${values} ORDER BY tesouro_data ASC`, [codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -453,6 +510,10 @@ const ModelsGetRelatorio = async (period: number, months: Array<any>, mode: any)
 }
 
 export {
+    ModelsInsertGetTreasure,
+    ModelsInsertHistoricoTreasure,
+    ModelsInsertTreasure,
+    ModelsCurrencyUpdate,
     ModelsGetRelatorio,
     modelConfigPercentual,
     modelGetPercentualCategorias,

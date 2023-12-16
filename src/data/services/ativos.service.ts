@@ -1,6 +1,10 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsInsertGetTreasure,
+    ModelsInsertHistoricoTreasure,
+    ModelsInsertTreasure,
+    ModelsCurrencyUpdate,
     ModelsGetRelatorio,
     modelConfigPercentual,
     modelGetPercentualCategorias,
@@ -371,7 +375,47 @@ const serviceGetRelatorio = async (period: number, mode: any) => {
     }
 };
 
+const serviceCurrencyUpdate = async (currency: string, valor: number) => {
+    try {
+        const data = await ModelsCurrencyUpdate(currency, valor);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceInsertTreasure = async (codigo: any, nome: any) => {
+    try {
+        const data = await ModelsInsertTreasure(codigo, nome);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceInsertHistoricoTreasure = async (codigo: any, dataTime: any, valor: any) => {
+    try {
+        const data = await ModelsInsertHistoricoTreasure(codigo, dataTime, valor);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetTreasure = async (codigo: any, periodo: any) => {
+    try {
+        const data = await ModelsInsertGetTreasure(codigo, periodo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetTreasure,
+    serviceInsertHistoricoTreasure,
+    serviceInsertTreasure,
+    serviceCurrencyUpdate,
     serviceGetRelatorio,
     serviceConfigPercentual,
     serviceGetPercentualCategoria,

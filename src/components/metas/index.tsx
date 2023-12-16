@@ -64,7 +64,7 @@ const Metas = ({ categoria, categoria_id, percentual, onDataReceived, dataFromPa
                                 <input
                                     type="number"
                                     placeholder="55"
-                                    className="form-input rounded-none mpl-8 text-center"
+                                    className="form-input rounded-none mpl-2 text-center form-input-sm p-0"
                                     min={0}
                                     max={100}
                                     readOnly
@@ -82,11 +82,11 @@ const Metas = ({ categoria, categoria_id, percentual, onDataReceived, dataFromPa
                         </div>
                     </div>
                     <center>
-                        <div className='subtitulo-valor pt-2'><b>Atual:</b> {percentual + '%'}
+                        <div className='text-small pt-2'><b>Atual:</b> {percentual + '%'}
                         {(difference(percentual,value) >= limit)?
                         <IconArrowUp width='20' className='float-right mr-5 mt-1' />
                         :(difference(percentual,value) <= (-1 * limit))?<IconArrowDown width='20' className='float-right mr-5 mt-1' />:<IconSquare width='20' className='float-right mr-5 mt-1' />}</div>
-                        <div className='subtitulo-valor pt-2'><b>Limite:</b> {value + '%'}</div></center>
+                        <div className='text-small pt-2'><b>Limite:</b> {value + '%'}</div></center>
                 </div>
             </div>
         </>

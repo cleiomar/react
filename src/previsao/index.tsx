@@ -242,22 +242,7 @@ const Previsao = () => {
     };
 
     return (
-        <div><div className='titulo-page'>PREVISÃO</div>
-        
-        <div className="panel" id="limit_tagging">
-        <div className="flex items-center justify-between mb-5">
-        <h5 className="font-semibold text-lg dark:text-white-light">Multiple select</h5>
-        <button type="button" className="font-semibold hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-600" onClick={() => toggleCode('code6')}>
-            <span className="flex items-center">
-                Code
-            </span>
-        </button>
-    </div>
-    <div className="mb-5">
-        <Select placeholder="Select an option" isMulti isSearchable={false} />
-        </div></div>
-
-
+        <div><div className='titulo-page'>PREVISÃO</div>  
             <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
                 <li>
                     <Link to="/components/tabs" className="text-primary hover:underline">

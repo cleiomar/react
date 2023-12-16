@@ -230,6 +230,7 @@ const Transacoes = () => {
                     show: false,
                 },
                 events: {
+                    click: undefined,
                     dataPointSelection: (event, chartContext, config) => {
                         if (config.w.config.labels[config.dataPointIndex] == 'Ações') {
                         }
@@ -306,9 +307,6 @@ const Transacoes = () => {
         let somaPercentual = porcentagemAcao + porcentagemFII + porcentagemFIAgro + porcentagemETFN + porcentagemETFI + porcentagemCriptomoedas + porcentagemFixa + porcentagemCaixa;
         setPorcentagemDisponivel(calcularResto(100, somaPercentual));
         handleButtonClick(calcularResto(100, somaPercentual));
-        setTimeout(() => {
-            salvar_configs();
-        }, 0);
     }, [porcentagemAcao, porcentagemFII, porcentagemFIAgro, porcentagemETFN, porcentagemETFI, porcentagemCriptomoedas, porcentagemFixa, porcentagemCaixa, limit])
 
 
@@ -332,38 +330,44 @@ const Transacoes = () => {
                     <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 xl:col-span-5 gap-6">
                         <div className="panel w-full xl:col-span-4 sm:col-span-2 ">
                             <div>
-                                <div><div className='mb-5 ft-total w-200'>PORCENTAGEM LIMITE<Tippy trigger="mouseenter focus" content="Porcentagem limite para mais ou para menos dos ativos.">
-                                    <button type="button" data-trigger="mouseenter" className="btn btn-primary rounded-full h-18 p-1 float-right">
-                                        ?
-                                    </button>
-                                </Tippy></div>
-                                    <div className="relative">
-                                        <div className="flex">
-                                            <button
-                                                type="button"
-                                                className="bg-primary text-white flex justify-center items-center ltr:rounded-l-md rtl:rounded-r-md px-3 font-semibold border border-r-0 border-primary"
-                                                onClick={() => setLimit(limit > 0 ? limit - 1 : 0)}
-                                            >
-                                                <IconMinus className="w-5 h-5" />
-                                            </button>
-                                            <input
-                                                type="string"
-                                                className="form-input rounded-none pl-8 text-center"
-                                                min={0}
-                                                max={100}
-                                                readOnly
-                                                value={limit+'%'}
-                                                onWheel={() => setLimit(limit > 0 ? limit - 1 : 0)}
-                                            />
-                                            <button
-                                                type="button"
-                                                className="bg-primary text-white flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border border-l-0 border-primary"
-                                                onClick={() => { setLimit(limit < 100 ? limit + 1 : 100) }}
-                                            >
-                                                <IconPlus />
-                                            </button>
+                                <div><div className='mb-5 ft-total w-200'>PORCENTAGEM LIMITE
+                                    <Tippy trigger="mouseenter focus" content="Porcentagem limite para mais ou para menos dos ativos.">
+                                        <button type="button" data-trigger="mouseenter" className="btn btn-primary rounded-full h-18 p-1 float-right">
+                                            ?
+                                        </button>
+                                    </Tippy>
+                                </div>
+                                    <div className="grid 1xl:grid-cols-9 lg:grid-cols-9 sm:grid-cols-2 grid-cols-1 gap-6">
+                                        <div className="relative xl:col-span-8  col-span-8">
+                                            <div className="flex">
+                                                <button
+                                                    type="button"
+                                                    className="bg-primary text-white flex justify-center items-center ltr:rounded-l-md rtl:rounded-r-md px-3 font-semibold border border-r-0 border-primary"
+                                                    onClick={() => setLimit(limit > 0 ? limit - 1 : 0)}
+                                                >
+                                                    <IconMinus className="w-5 h-5" />
+                                                </button>
+                                                <input
+                                                    type="string"
+                                                    className="form-input rounded-none pl-8 text-center"
+                                                    min={0}
+                                                    max={100}
+                                                    readOnly
+                                                    value={limit + '%'}
+                                                    onWheel={() => setLimit(limit > 0 ? limit - 1 : 0)}
+                                                />
+                                                <button
+                                                    type="button"
+                                                    className="bg-primary text-white flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border border-l-0 border-primary"
+                                                    onClick={() => { setLimit(limit < 100 ? limit + 1 : 100) }}
+                                                >
+                                                    <IconPlus />
+                                                </button>
+                                            </div>
                                         </div>
+                                        <div><button type="button" className="btn btn-primary" onClick={salvar_configs}>Salvar</button></div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>

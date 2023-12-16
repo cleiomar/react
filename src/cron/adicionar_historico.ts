@@ -23,7 +23,7 @@ async function fetchAdicionarHistorico(lista_ativo_id: any, ticker: any, valor: 
 
 const fetchApiOptionAtivo = async () => {
     try {
-        const data = await fetch('http://localhost:3000/lista_ativos?b3=s');
+        const data = await fetch('http://localhost:3000/lista_ativos');
         const response = await data.json();
         response.map(async (item: any) => {
             await fetchAdicionarHistorico( item.id, item.ativo_codigo,item.ativo_valor)

@@ -2,8 +2,8 @@
     height: 720px;
 }
 
-.mpl-8 {
-    padding-left: 30px;
+.mpl-2   {
+    padding-left: 10px;
 }
 
 @media (min-width: 1250px) {
@@ -467,6 +467,10 @@
 
 .zi-3 {
     z-index: 3;
+}
+
+.w-60 {
+    width: 60%;
 }
 
 .w-50p {

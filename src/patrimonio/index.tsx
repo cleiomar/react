@@ -19,7 +19,6 @@ const Transacoes = () => {
   const location = useLocation();
   const params = location.state;
   const userid = params.userid;
-
   
   const [quantidadeMeses, setQuantidadeMeses] = useState([]);
   const [selectedOptionAno, setSelectedOptionAno] = useState([]);
@@ -219,6 +218,7 @@ const Transacoes = () => {
     fetchResultados(1,0);
   }, []);
 
+ 
   const organizarResultados = (): { categoria_nome: string; total_valor: number[] }[] => {
     const resultadoPorCategoria: { [key: string]: number[] } = {};
 
@@ -309,7 +309,8 @@ const Transacoes = () => {
         },
         labels: {
           formatter: (value: number) => {
-            return formatCurrency(value.toFixed(2));
+            return (ocultarDados != true) ?
+             formatCurrency(value.toFixed(2)) : 'R$ ********'
           },
           offsetX: isRtl ? -30 : -10,
           offsetY: 0,

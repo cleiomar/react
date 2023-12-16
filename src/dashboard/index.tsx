@@ -1,7 +1,9 @@
 import React, { useEffect, useState, ChangeEvent } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Link } from 'react-router-dom';
-import globalVars from '../data/global'
+import globalVars from '../data/global';
+import Categorias from '../components/Dashboard/categorias';
+import https from 'https';
 
 const Dashboard = () => {
 
@@ -85,6 +87,7 @@ const Dashboard = () => {
         }
         get_group_ativos();
     }, []);
+
 
 
     const tickers = data.map(item => item.ativo_codigo);
@@ -322,13 +325,22 @@ const Dashboard = () => {
                     <span>Instagram</span>
                 </li>
             </ul>
-
-
-
             <div className="panel">
 
                 {data.length > 0 ? (
-                    <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 mb-10 gap-6">
+                    <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1 mb-10 gap-6">
+                        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-2">
+                            {dataGroup.map((item, index) => {
+                                return (
+                                    <center key={index}>
+                                    <Categorias
+                                        quantidade={item.quantidade_ativos}
+                                        nome={item.categoria_prefixo}
+                                        valor={item.total}
+                                    /></center>
+                                )
+                            })}
+                        </div>
                         <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
                         <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
                     </div>

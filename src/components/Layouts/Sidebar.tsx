@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import { toggleSidebar } from '../../store/themeConfigSlice';
 import { IRootState } from '../../store';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import IconCaretsDown from '../Icon/IconCaretsDown';
 import IconMenuDashboard from '../Icon/Menu/IconMenuDashboard';
-import IconMinus from '../Icon/IconMinus';
-import IconMenuDocumentation from '../Icon/Menu/IconMenuDocumentation';
-import IconMenuInstaUsers from '../Icon/Menu/IconMenuInstaUsers';
-import IconMenuInstaLogs from '../Icon/Menu/IconMenuInstaLogs';
-import IconMenuAutoActivity from '../Icon/Menu/IconMenuAutoActivity';
-import IconMenuAutoPost from '../Icon/Menu/IconMenuAutoPost';
+import IconMenuTransaction from '../Icon/Menu/IconMenuTransaction';
+import IconMenuPatrimonio from '../Icon/Menu/IconMenuPatrimonio';
+import IconMenuMetas from '../Icon/Menu/IconMenuMetas';
+import IconMenuPrevisao from '../Icon/Menu/IconMenuPrevisao';
 import IconMenuAutoDirect from '../Icon/Menu/IconMenuAutoDirect';
+import IconMenuTesouro from '../Icon/Menu/IconMenuTesouro';
+
 
 const Sidebar = () => {
     const userid = 1;
@@ -55,8 +55,8 @@ const Sidebar = () => {
                 <div className="bg-white dark:bg-black h-full">
                     <div className="flex justify-between items-center px-3 py-3">
                         <NavLink to="/" className="main-logo flex items-center shrink-0">
-                            <img className="w-8 ml-[5px] flex-none" src="/assets/images/logo.svg" alt="logo" />
-                            <span className="text-2xl ltr:ml-1.5 rtl:mr-1.5 font-semibold align-middle lg:inline dark:text-white-light">{t('VRISTO')}</span>
+                            <img className="w-8 ml-[5px] flex-none" src="/assets/images/nexus.svg" alt="logo" />
+                            <span className="text-3xl ltr:ml-1.5 rtl:mr-1.5 font-semibold align-middle lg:inline dark:text-white-light">nexus</span>
                         </NavLink>
 
                         <button
@@ -82,7 +82,7 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <Link to={"/transacoes"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
-                                        <IconMenuInstaUsers
+                                        <IconMenuTransaction
                                             opValor="0.5"
                                             className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Transações</span>
@@ -91,9 +91,9 @@ const Sidebar = () => {
                             </li>
 
                             <li className="nav-item">
-                            <Link to={"/patrimonio"} state={{ userid: userid }} className="group">
+                                <Link to={"/patrimonio"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
-                                        <IconMenuInstaLogs className="group-hover:!text-primary shrink-0" />
+                                        <IconMenuPatrimonio className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Patrimônio</span>
                                     </div>
                                 </Link>
@@ -102,7 +102,7 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <Link to={"/metas"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
-                                        <IconMenuAutoActivity
+                                        <IconMenuMetas
                                             opValor="0.5"
                                             className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Metas</span>
@@ -113,8 +113,18 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <NavLink to="/previsao" className="group">
                                     <div className="flex items-center">
-                                        <IconMenuAutoPost className="group-hover:!text-primary shrink-0" />
+                                        <IconMenuPrevisao
+                                            opValor="0.5" className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Previsão</span>
+                                    </div>
+                                </NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink to="/tesouro" className="group">
+                                    <div className="flex items-center">
+                                        <IconMenuTesouro opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Tesouro</span>
                                     </div>
                                 </NavLink>
                             </li>
@@ -124,20 +134,6 @@ const Sidebar = () => {
                                     <div className="flex items-center">
                                         <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />
                                         <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_direct')}</span>
-                                    </div>
-                                </NavLink>
-                            </li>
-
-                            <h2 className="py-3 px-7 flex items-center uppercase font-extrabold bg-white-light/30 dark:bg-dark dark:bg-opacity-[0.08] -mx-4 mb-1">
-                                <IconMinus className="w-4 h-5 flex-none hidden" />
-                                <span>{t('supports')}</span>
-                            </h2>
-
-                            <li className="menu nav-item">
-                                <NavLink to="https://vristo.sbthemes.com" target="_blank" className="nav-link group">
-                                    <div className="flex items-center">
-                                        <IconMenuDocumentation className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('documentation')}</span>
                                     </div>
                                 </NavLink>
                             </li>

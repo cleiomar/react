@@ -13,9 +13,11 @@ import Posicao from '../components/patrimonio';
 import ReactApexChart from 'react-apexcharts';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { useTranslation } from 'react-i18next';
 
 const Transacoes = () => {
-
+    
+  const { t } = useTranslation();
   const location = useLocation();
   const params = location.state;
   const userid = params.userid;
@@ -380,12 +382,12 @@ const Transacoes = () => {
     <div><div className='titulo-page'>PATRIMÔNIO</div>
       <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
         <li>
-          <Link to="/components/Patromonio" className="text-primary hover:underline">
-            Accounts
+          <Link to="/" className="text-primary hover:underline">
+          {t('Site')}
           </Link>
         </li>
         <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-          <span>Instagram</span>
+          <span>Patrimônio</span>
         </li>
       </ul>
       
@@ -458,11 +460,11 @@ const Transacoes = () => {
           {categoriaOptions.map((option, index) => {
             return (
               <Posicao
-                key={index}
                 hide={ocultarDados}
                 categoria={option.value}
                 categoria_nome={option.label}
                 valor_total_patrimonio={valorTotal}
+                key={index}
               />
             );
           })}

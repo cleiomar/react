@@ -1,6 +1,8 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsUpdateTreasure,
+    ModelsInsertGetTreasureNames,
     ModelsInsertGetTreasure,
     ModelsInsertHistoricoTreasure,
     ModelsInsertTreasure,
@@ -384,9 +386,9 @@ const serviceCurrencyUpdate = async (currency: string, valor: number) => {
     }
 };
 
-const serviceInsertTreasure = async (codigo: any, nome: any) => {
+const serviceInsertTreasure = async (codigo: any, nome: any, ativo: any) => {
     try {
-        const data = await ModelsInsertTreasure(codigo, nome);
+        const data = await ModelsInsertTreasure(codigo, nome, ativo);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador
@@ -411,7 +413,28 @@ const serviceGetTreasure = async (codigo: any, periodo: any) => {
     }
 };
 
+
+const serviceGetTreasureNames = async () => {
+    try {
+        const data = await ModelsInsertGetTreasureNames();
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceUpdateTreasure = async (codigo: any) => {
+    try {
+        const data = await ModelsUpdateTreasure(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceUpdateTreasure,
+    serviceGetTreasureNames,
     serviceGetTreasure,
     serviceInsertHistoricoTreasure,
     serviceInsertTreasure,

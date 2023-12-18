@@ -191,6 +191,7 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                 <DataTable
                                     className="whitespace-nowrap table-hover"
                                     records={recordsData}
+                                    key={categoria}
                                     columns={[
                                         {
                                             accessor: 'categoria_prefixo', title: 'Categoria',
@@ -291,14 +292,14 @@ function Posicao({ categoria, categoria_nome, hide, valor_total_patrimonio }: Po
                                             ),
                                         },
                                         {
-                                            accessor: 'total',
+                                            accessor: 'perc_total',
                                             title: '% em '+categoria_nome ,
                                             render: ({ total }) => (
                                                 <><div className='sensitivy-field'><center>{calcularPorcentagem(+total, +valorTotal)}%</center></div></>
                                             ),
                                         },
                                         {
-                                            accessor: 'total',
+                                            accessor: 'perc_carteira',
                                             title: '% na Carteira',
                                             render: ({ total }) => (
                                                 <><div className='sensitivy-field'><center>{calcularPorcentagem(+total, +valor_total_patrimonio)}%</center></div></>

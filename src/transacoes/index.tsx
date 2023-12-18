@@ -12,20 +12,19 @@ import IconX from '../components/Icon/IconX';
 import Select from 'react-select';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
-import IconSettings from '../components/Icon/IconSettings';
 import IconEdit from '../components/Icon/IconEdit';
 import IconXCircle from '../components/Icon/IconXCircle';
-import IconCashBanknotes from '../components/Icon/IconCashBanknotes';
 import { useLocation } from 'react-router-dom';
 import { caixa, removeCurrency, removeTrailingZeros } from '../data/funcoes';
 import globalVars from '../data/global'
-caixa
 import { log } from 'console';
+import { useTranslation } from 'react-i18next';
 
 const Transacoes = () => {
-
+    
+  const { t } = useTranslation();
   const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
 
   const renderizarConteudo = (className: string, texto: string) => {
@@ -644,12 +643,12 @@ const Transacoes = () => {
     <div><div className='titulo-page'>TRANSAÇÕES</div>
       <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
         <li>
-          <Link to="/components/Patromonio" className="text-primary hover:underline">
-            Accounts
+          <Link to="/" className="text-primary hover:underline">
+          {t('Site')}
           </Link>
         </li>
         <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-          <span>Instagram</span>
+          <span>Transações</span>
         </li>
       </ul>
 

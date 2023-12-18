@@ -3,10 +3,28 @@ import ReactApexChart from 'react-apexcharts';
 import { Link } from 'react-router-dom';
 import globalVars from '../data/global';
 import Categorias from '../components/Dashboard/categorias';
-import https from 'https';
+import { difference } from '../data/funcoes';
+import { useTranslation } from 'react-i18next';
+
+type User = {
+    id: number;
+    ativo: string;
+    categoria_prefixo: string;
+    tipo_ordem_nome: string;
+    broker_nome: string;
+    negociacao: string;
+    amount: any;
+    price: number;
+    total: number;
+    ativo_codigo: string;
+    ativo_moeda: any;
+    historico_ativos_valor: number;
+    ativo_valor: number;
+};
 
 const Dashboard = () => {
 
+    const { t } = useTranslation();
     const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
     const [tooltipConfig, setTooltipConfig] = useState(null);
 
@@ -312,44 +330,123 @@ const Dashboard = () => {
     //     fetchData();
     // }, []);
 
+    const [acoes, setAcoes] = useState([]);
+
+    const getAtivos = async () => {
+        try {
+            const data = await fetch('http://localhost:3000/get_total_ativos/0');
+            const response = await data.json();
+            const dados = response.data;
+            const acoes = dados.map(row => ({"name":row.ativo_codigo, "categoria": row.categoria_prefixo, "additionalInfo": difference(row.historico_ativos_valor,row.price)+'%', color:difference(row.historico_ativos_valor,row.price), "data":row.total}));
+            setAcoes(acoes);
+        } catch (error) {
+            console.error('Erro ao obter a lista de usuários:', error);
+        }
+    }
+
+    useEffect(() =>{
+        getAtivos()
+   },[])
+
+   const series = [{
+    data: acoes.map(item => ({
+      x: item.name,
+      y: Math.abs(item.data),
+      fillColor: item.color > 0 ? '#00AB55' : '#E7515A',
+      categoria: item.categoria,
+      additionalInfo: item.additionalInfo, // Adicionando informação adicional
+    })),
+  }];
+
+    // Opções do treemap
+    const options = {
+        chart: {
+          type: 'treemap',
+        },
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontSize: '12px',
+          },
+          formatter: function (val: number, opts: any) {
+            const { seriesIndex, dataPointIndex } = opts;
+            const { additionalInfo, name } = acoes[dataPointIndex];
+            return [name, additionalInfo];
+          },
+          offsetY: -4
+        },
+        plotOptions: {
+          treemap: {
+            distributed: true,
+            enableShades: false,
+          },
+        },
+        title: {
+          text: 'Treemap de Ações',
+        },
+        tooltip: {
+          custom: ({ series, seriesIndex, dataPointIndex, w }) => {
+            const { name, categoria, additionalInfo } = acoes[dataPointIndex];
+            return (
+              `<div>
+                <strong>${name}</strong><br/>
+                Categoria: ${categoria}<br/>
+                Hoje: ${additionalInfo}
+              </div>`
+            );
+          },
+        },
+      };
 
     return (
         <div><div className='titulo-page'>DASHBOARD</div>
             <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
                 <li>
-                    <Link to="/components/tabs" className="text-primary hover:underline">
-                        Accounts
+                    <Link to="/dashboard" className="text-primary hover:underline">
+                        {t('Site')}
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Instagram</span>
+                    <span>Dashboard</span>
                 </li>
             </ul>
             <div className="panel">
 
                 {data.length > 0 ? (
+                    <div>
                     <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1 mb-10 gap-6">
                         <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-2">
                             {dataGroup.map((item, index) => {
                                 return (
                                     <center key={index}>
-                                    <Categorias
-                                        quantidade={item.quantidade_ativos}
-                                        nome={item.categoria_prefixo}
-                                        valor={item.total}
-                                    /></center>
+                                        <Categorias
+                                            key={index}
+                                            quantidade={item.quantidade_ativos}
+                                            nome={item.categoria_prefixo}
+                                            valor={item.total}
+                                        /></center>
                                 )
                             })}
                         </div>
                         <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
                         <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                        
                     </div>
-                ) : (
-                    // Se os dados ainda não foram carregados, pode exibir um indicador de carregamento ou uma mensagem.
-                    <div>Carregando...</div>
+                    <ReactApexChart
+                    key={acoes}
+                            options={options}
+                            series={series}
+                            type="treemap"
+                            height={850}
+                        />
+                    </div>
+    
+            ) : (
+            // Se os dados ainda não foram carregados, pode exibir um indicador de carregamento ou uma mensagem.
+            <div>Carregando...</div>
                 )}
-            </div>
         </div>
+        </div >
     )
 
 };

@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import {
+    serviceUpdateTreasure,
+    serviceGetTreasureNames,
     serviceGetTreasure,
     serviceInsertHistoricoTreasure,
     serviceInsertTreasure,
@@ -326,8 +328,9 @@ const ControllerInsertTreasure = async (req: Request, res: Response): Promise<vo
     try {
         const codigo : any = req.body.codigo;
         const nome : any = req.body.nome;
+        const ativo : any = req.body.ativo;
         console.log('teste');
-        const data = await serviceInsertTreasure(codigo, nome);
+        const data = await serviceInsertTreasure(codigo, nome, ativo);
        res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);
@@ -361,7 +364,30 @@ const ControllerGetTreasure = async (req: Request, res: Response): Promise<void>
     }
 };
 
+const ControllerGetTreasureNames = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const data = await serviceGetTreasureNames();
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerUpdateTreasure = async (req: Request, res: Response): Promise<void> => {    
+    const codigo : any = req.body.codigo;
+    try {
+        const data = await serviceUpdateTreasure(codigo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerUpdateTreasure,
+    ControllerGetTreasureNames,
     ControllerGetTreasure,
     ControllerInsertHistoricoTreasure,
     ControllerInsertTreasure,

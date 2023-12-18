@@ -31,7691 +31,301 @@ const dados = {
     "statusInfo": "OK",
     "response": {
         "TrsrBd": {
-            "cd": 160,
-            "nm": "Tesouro IPCA+ 2045",
-            "mtrtyDt": "2045-05-15T00:00:00",
-            "featrs": "Título pós-fixado, uma vez que parte do seu rendimento acompanha a variação da taxa de inflação (IPCA).",
-            "invstmtStbl": "Aumenta o poder de compra do seu dinheiro, pois seu rendimento é composto por uma taxa de juros + a variação da inflação (IPCA). É mais interessante para quem pode deixar o dinheiro render até o vencimento do investimento, pois não paga juros semestrais. Em caso de resgate antecipado, o Tesouro Nacional garante sua recompra pelo seu valor de mercado.",
-            "rcvgIncm": "Indicado para aqueles que querem realizar investimentos de longo prazo.",
+            "cd": 169,
+            "nm": "Tesouro IPCA+ com Juros Semestrais 2055",
+            "mtrtyDt": "2055-05-15T00:00:00",
+            "featrs": "Título pós-fixado, uma vez que parte do seu rendimento acompanha a variação da taxa de inflação (IPCA).\r\n",
+            "invstmtStbl": "Aumenta o poder de compra do seu dinheiro, pois seu rendimento é composto por uma taxa de juros + a variação da inflação (IPCA). É mais interessante para quem precisa do seu rendimento para complementar sua renda, pois paga juros a cada semestre (cupons de juros). Em caso de resgate antecipado, o Tesouro Nacional garante sua recompra pelo seu valor de mercado. \r\n",
+            "rcvgIncm": "Indicado para aqueles que querem realizar investimentos de longo prazo.\r\n",
             "PrcgLst": [
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-08T09:25:00",
-                        "clsgDtTm": "2017-02-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 689.450000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 667.700000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-09T09:25:00",
-                        "clsgDtTm": "2017-02-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 702.710000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 680.520000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-10T09:25:00",
-                        "clsgDtTm": "2017-02-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.770000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 686.390000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-13T09:25:00",
-                        "clsgDtTm": "2017-02-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 707.110000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 684.790000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-14T09:25:00",
-                        "clsgDtTm": "2017-02-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.570000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 681.360000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-15T09:25:00",
-                        "clsgDtTm": "2017-02-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 709.490000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 687.100000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-16T09:25:00",
-                        "clsgDtTm": "2017-02-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 709.760000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 687.360000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-17T09:25:00",
-                        "clsgDtTm": "2017-02-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.360000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 686.010000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-20T09:25:00",
-                        "clsgDtTm": "2017-02-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 699.220000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 677.170000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-21T09:25:00",
-                        "clsgDtTm": "2017-02-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.880000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 686.530000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-22T09:25:00",
-                        "clsgDtTm": "2017-02-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.690000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 696.010000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-23T09:25:00",
-                        "clsgDtTm": "2017-02-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.460000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 709.340000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-02-24T09:25:00",
-                        "clsgDtTm": "2017-03-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.180000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 710.040000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-01T14:00:00",
-                        "clsgDtTm": "2017-03-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.400000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 712.190000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-02T09:25:00",
-                        "clsgDtTm": "2017-03-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.670000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 712.450000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-03T09:25:00",
-                        "clsgDtTm": "2017-03-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 736.160000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 712.930000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-06T09:25:00",
-                        "clsgDtTm": "2017-03-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 734.450000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 711.290000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-07T09:25:00",
-                        "clsgDtTm": "2017-03-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.750000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 709.640000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-08T09:25:00",
-                        "clsgDtTm": "2017-03-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 731.060000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 708.010000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-09T09:25:00",
-                        "clsgDtTm": "2017-03-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.420000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 704.490000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-10T09:25:00",
-                        "clsgDtTm": "2017-03-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.020000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 709.910000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-13T09:25:00",
-                        "clsgDtTm": "2017-03-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 737.180000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 713.940000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-14T09:25:00",
-                        "clsgDtTm": "2017-03-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 731.530000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 708.470000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-15T09:25:00",
-                        "clsgDtTm": "2017-03-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 714.360000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 691.870000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-16T09:25:00",
-                        "clsgDtTm": "2017-03-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 728.020000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 705.090000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-17T09:25:00",
-                        "clsgDtTm": "2017-03-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 734.180000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 711.050000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-20T09:25:00",
-                        "clsgDtTm": "2017-03-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.420000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 709.350000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-21T09:25:00",
-                        "clsgDtTm": "2017-03-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 740.480000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 717.150000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-22T09:25:00",
-                        "clsgDtTm": "2017-03-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 730.860000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 707.850000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-23T09:25:00",
-                        "clsgDtTm": "2017-03-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.420000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 698.720000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-24T09:25:00",
-                        "clsgDtTm": "2017-03-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 725.590000,
-                    "anulInvstmtRate": 5.1700,
-                    "untrRedVal": 702.760000,
-                    "anulRedRate": 5.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-27T09:25:00",
-                        "clsgDtTm": "2017-03-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.730000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 704.830000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-28T09:25:00",
-                        "clsgDtTm": "2017-03-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.930000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 705.030000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-29T09:25:00",
-                        "clsgDtTm": "2017-03-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 722.330000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 699.620000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-30T09:25:00",
-                        "clsgDtTm": "2017-03-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 730.280000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 707.300000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-03-31T09:25:00",
-                        "clsgDtTm": "2017-04-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 728.650000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 705.730000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-03T09:25:00",
-                        "clsgDtTm": "2017-04-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 730.790000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 707.810000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-04T09:25:00",
-                        "clsgDtTm": "2017-04-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.940000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 709.900000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-05T09:25:00",
-                        "clsgDtTm": "2017-04-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 731.200000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 708.210000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-06T09:25:00",
-                        "clsgDtTm": "2017-04-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 712.190000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 689.820000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-07T09:25:00",
-                        "clsgDtTm": "2017-04-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 716.360000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 693.860000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-10T09:25:00",
-                        "clsgDtTm": "2017-04-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.470000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 695.910000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-11T09:25:00",
-                        "clsgDtTm": "2017-04-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 716.760000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 694.260000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-12T09:25:00",
-                        "clsgDtTm": "2017-04-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.870000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 696.310000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-13T09:25:00",
-                        "clsgDtTm": "2017-04-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 719.240000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 696.670000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-17T09:25:00",
-                        "clsgDtTm": "2017-04-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 709.940000,
-                    "anulInvstmtRate": 5.2700,
-                    "untrRedVal": 687.670000,
-                    "anulRedRate": 5.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-18T09:25:00",
-                        "clsgDtTm": "2017-04-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 710.140000,
-                    "anulInvstmtRate": 5.2700,
-                    "untrRedVal": 687.860000,
-                    "anulRedRate": 5.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-19T09:25:00",
-                        "clsgDtTm": "2017-04-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 714.120000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 691.720000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-20T09:25:00",
-                        "clsgDtTm": "2017-04-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.050000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 682.940000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-24T09:25:00",
-                        "clsgDtTm": "2017-04-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.100000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 683.000000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-25T09:25:00",
-                        "clsgDtTm": "2017-04-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 688.640000,
-                    "anulInvstmtRate": 5.3900,
-                    "untrRedVal": 667.070000,
-                    "anulRedRate": 5.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-26T09:25:00",
-                        "clsgDtTm": "2017-04-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.180000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 663.730000,
-                    "anulRedRate": 5.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-27T09:25:00",
-                        "clsgDtTm": "2017-04-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.360000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 663.910000,
-                    "anulRedRate": 5.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-04-28T09:25:00",
-                        "clsgDtTm": "2017-05-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 687.470000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 665.950000,
-                    "anulRedRate": 5.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-02T09:25:00",
-                        "clsgDtTm": "2017-05-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 696.820000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 675.000000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-03T09:25:00",
-                        "clsgDtTm": "2017-05-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 700.710000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 678.770000,
-                    "anulRedRate": 5.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-04T09:25:00",
-                        "clsgDtTm": "2017-05-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 697.180000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 675.360000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-05T09:25:00",
-                        "clsgDtTm": "2017-05-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 701.150000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 679.200000,
-                    "anulRedRate": 5.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-08T09:25:00",
-                        "clsgDtTm": "2017-05-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 697.620000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 675.790000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-09T09:25:00",
-                        "clsgDtTm": "2017-05-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 699.650000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 677.770000,
-                    "anulRedRate": 5.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-10T09:25:00",
-                        "clsgDtTm": "2017-05-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.440000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 681.420000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-11T09:25:00",
-                        "clsgDtTm": "2017-05-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.690000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 696.190000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-12T09:25:00",
-                        "clsgDtTm": "2017-05-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 734.360000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 711.360000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-15T09:25:00",
-                        "clsgDtTm": "2017-05-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 742.470000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 719.200000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-16T09:25:00",
-                        "clsgDtTm": "2017-05-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 768.830000,
-                    "anulInvstmtRate": 4.9900,
-                    "untrRedVal": 744.710000,
-                    "anulRedRate": 5.1100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-17T09:25:00",
-                        "clsgDtTm": "2017-05-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.200000,
-                    "anulInvstmtRate": 4.9700,
-                    "untrRedVal": 748.940000,
-                    "anulRedRate": 5.0900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-18T09:25:00",
-                        "clsgDtTm": "2017-05-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 593.730000,
-                    "anulInvstmtRate": 5.9700,
-                    "untrRedVal": 575.280000,
-                    "anulRedRate": 6.0900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-19T09:25:00",
-                        "clsgDtTm": "2017-05-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 639.650000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 619.720000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-22T09:25:00",
-                        "clsgDtTm": "2017-05-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 628.190000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 608.630000,
-                    "anulRedRate": 5.8800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-23T09:25:00",
-                        "clsgDtTm": "2017-05-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 648.640000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 628.430000,
-                    "anulRedRate": 5.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-24T09:25:00",
-                        "clsgDtTm": "2017-05-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 678.640000,
-                    "anulInvstmtRate": 5.4700,
-                    "untrRedVal": 657.460000,
-                    "anulRedRate": 5.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-25T09:25:00",
-                        "clsgDtTm": "2017-05-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 657.710000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 637.210000,
-                    "anulRedRate": 5.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-26T09:25:00",
-                        "clsgDtTm": "2017-05-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 673.980000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 652.960000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-29T09:25:00",
-                        "clsgDtTm": "2017-05-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 676.010000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 654.930000,
-                    "anulRedRate": 5.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-30T09:25:00",
-                        "clsgDtTm": "2017-05-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 667.390000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 646.590000,
-                    "anulRedRate": 5.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-05-31T09:25:00",
-                        "clsgDtTm": "2017-06-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 669.400000,
-                    "anulInvstmtRate": 5.5300,
-                    "untrRedVal": 648.540000,
-                    "anulRedRate": 5.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-01T09:25:00",
-                        "clsgDtTm": "2017-06-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 660.870000,
-                    "anulInvstmtRate": 5.5800,
-                    "untrRedVal": 640.290000,
-                    "anulRedRate": 5.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-02T09:25:00",
-                        "clsgDtTm": "2017-06-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 647.510000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 627.370000,
-                    "anulRedRate": 5.7800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-05T09:25:00",
-                        "clsgDtTm": "2017-06-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 635.920000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 616.150000,
-                    "anulRedRate": 5.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-06T09:25:00",
-                        "clsgDtTm": "2017-06-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 634.490000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 614.760000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-07T09:25:00",
-                        "clsgDtTm": "2017-06-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 634.730000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 615.000000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-08T09:25:00",
-                        "clsgDtTm": "2017-06-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 634.960000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 615.230000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-09T09:25:00",
-                        "clsgDtTm": "2017-06-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 646.230000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 626.130000,
-                    "anulRedRate": 5.7900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-12T09:25:00",
-                        "clsgDtTm": "2017-06-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 644.730000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 624.690000,
-                    "anulRedRate": 5.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-13T09:25:00",
-                        "clsgDtTm": "2017-06-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 643.240000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 623.250000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-14T09:25:00",
-                        "clsgDtTm": "2017-06-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 651.950000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 631.680000,
-                    "anulRedRate": 5.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-16T09:25:00",
-                        "clsgDtTm": "2017-06-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 667.650000,
-                    "anulInvstmtRate": 5.5500,
-                    "untrRedVal": 646.880000,
-                    "anulRedRate": 5.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-19T09:25:00",
-                        "clsgDtTm": "2017-06-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 666.010000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 645.300000,
-                    "anulRedRate": 5.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-20T09:25:00",
-                        "clsgDtTm": "2017-06-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 666.130000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 645.420000,
-                    "anulRedRate": 5.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-21T09:25:00",
-                        "clsgDtTm": "2017-06-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 664.490000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 643.830000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-22T09:25:00",
-                        "clsgDtTm": "2017-06-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 664.610000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 643.950000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-23T09:25:00",
-                        "clsgDtTm": "2017-06-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 664.670000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 644.020000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-26T09:25:00",
-                        "clsgDtTm": "2017-06-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 659.430000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 638.940000,
-                    "anulRedRate": 5.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-27T09:25:00",
-                        "clsgDtTm": "2017-06-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 650.920000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 630.700000,
-                    "anulRedRate": 5.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-28T09:25:00",
-                        "clsgDtTm": "2017-06-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 656.180000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 635.800000,
-                    "anulRedRate": 5.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-29T09:25:00",
-                        "clsgDtTm": "2017-06-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 664.970000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 644.310000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-06-30T09:25:00",
-                        "clsgDtTm": "2017-07-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 665.000000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 644.350000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-03T09:25:00",
-                        "clsgDtTm": "2017-07-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 665.110000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 644.450000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-04T09:25:00",
-                        "clsgDtTm": "2017-07-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 663.470000,
-                    "anulInvstmtRate": 5.5800,
-                    "untrRedVal": 642.870000,
-                    "anulRedRate": 5.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-05T09:25:00",
-                        "clsgDtTm": "2017-07-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 661.830000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 641.290000,
-                    "anulRedRate": 5.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-06T09:25:00",
-                        "clsgDtTm": "2017-07-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 661.930000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 641.390000,
-                    "anulRedRate": 5.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-07T09:25:00",
-                        "clsgDtTm": "2017-07-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 661.630000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 641.100000,
-                    "anulRedRate": 5.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-10T09:25:00",
-                        "clsgDtTm": "2017-07-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 659.990000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 639.510000,
-                    "anulRedRate": 5.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-11T09:25:00",
-                        "clsgDtTm": "2017-07-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 660.080000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 639.600000,
-                    "anulRedRate": 5.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-12T09:25:00",
-                        "clsgDtTm": "2017-07-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 665.400000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 644.750000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-13T09:25:00",
-                        "clsgDtTm": "2017-07-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 667.240000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 646.540000,
-                    "anulRedRate": 5.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-14T09:25:00",
-                        "clsgDtTm": "2017-07-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 670.930000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 650.110000,
-                    "anulRedRate": 5.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-17T09:25:00",
-                        "clsgDtTm": "2017-07-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 681.770000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 660.610000,
-                    "anulRedRate": 5.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-18T09:25:00",
-                        "clsgDtTm": "2017-07-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 692.800000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 671.290000,
-                    "anulRedRate": 5.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-19T09:25:00",
-                        "clsgDtTm": "2017-07-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.870000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 683.940000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-20T09:25:00",
-                        "clsgDtTm": "2017-07-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 717.290000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 695.000000,
-                    "anulRedRate": 5.4100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-21T09:25:00",
-                        "clsgDtTm": "2017-07-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.180000,
-                    "anulInvstmtRate": 5.2700,
-                    "untrRedVal": 698.770000,
-                    "anulRedRate": 5.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-24T09:25:00",
-                        "clsgDtTm": "2017-07-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 719.460000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 697.100000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-25T09:25:00",
-                        "clsgDtTm": "2017-07-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 715.850000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 693.610000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-26T09:25:00",
-                        "clsgDtTm": "2017-07-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.530000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 686.530000,
-                    "anulRedRate": 5.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-27T09:25:00",
-                        "clsgDtTm": "2017-07-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 725.680000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 703.130000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-28T09:25:00",
-                        "clsgDtTm": "2017-07-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 722.080000,
-                    "anulInvstmtRate": 5.2700,
-                    "untrRedVal": 699.660000,
-                    "anulRedRate": 5.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-07-31T09:25:00",
-                        "clsgDtTm": "2017-08-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 720.350000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 697.990000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-01T09:25:00",
-                        "clsgDtTm": "2017-08-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 728.150000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 705.530000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-02T09:25:00",
-                        "clsgDtTm": "2017-08-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 724.500000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 702.000000,
-                    "anulRedRate": 5.3800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-03T09:25:00",
-                        "clsgDtTm": "2017-08-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 738.140000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 715.200000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-04T09:25:00",
-                        "clsgDtTm": "2017-08-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 746.170000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 722.980000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-07T09:25:00",
-                        "clsgDtTm": "2017-08-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 748.310000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 725.060000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-08T09:25:00",
-                        "clsgDtTm": "2017-08-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 744.550000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 721.420000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-09T09:25:00",
-                        "clsgDtTm": "2017-08-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 739.740000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 716.770000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-10T09:25:00",
-                        "clsgDtTm": "2017-08-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 739.940000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 716.970000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-11T09:25:00",
-                        "clsgDtTm": "2017-08-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.520000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 709.790000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-14T09:25:00",
-                        "clsgDtTm": "2017-08-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 730.800000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 708.130000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-15T09:25:00",
-                        "clsgDtTm": "2017-08-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 734.930000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 712.130000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-16T09:25:00",
-                        "clsgDtTm": "2017-08-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 737.130000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 714.270000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-17T09:25:00",
-                        "clsgDtTm": "2017-08-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.540000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 710.800000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-18T09:25:00",
-                        "clsgDtTm": "2017-08-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 734.070000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 711.310000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-21T09:25:00",
-                        "clsgDtTm": "2017-08-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 738.210000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 715.320000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-22T09:25:00",
-                        "clsgDtTm": "2017-08-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.690000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 709.980000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-23T09:25:00",
-                        "clsgDtTm": "2017-08-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.960000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 710.250000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-24T09:25:00",
-                        "clsgDtTm": "2017-08-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.910000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 710.200000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-25T09:25:00",
-                        "clsgDtTm": "2017-08-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.260000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 712.480000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-28T09:25:00",
-                        "clsgDtTm": "2017-08-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.500000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 712.720000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-29T09:25:00",
-                        "clsgDtTm": "2017-08-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.740000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 712.950000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-30T09:25:00",
-                        "clsgDtTm": "2017-08-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 735.980000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 713.190000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-08-31T09:25:00",
-                        "clsgDtTm": "2017-09-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 738.160000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 715.300000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-01T09:25:00",
-                        "clsgDtTm": "2017-09-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 740.530000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 717.590000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-04T09:25:00",
-                        "clsgDtTm": "2017-09-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 744.660000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 721.600000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-05T09:25:00",
-                        "clsgDtTm": "2017-09-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 754.740000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 731.360000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-06T09:25:00",
-                        "clsgDtTm": "2017-09-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 769.910000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 746.050000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-08T09:25:00",
-                        "clsgDtTm": "2017-09-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 780.380000,
-                    "anulInvstmtRate": 5.0100,
-                    "untrRedVal": 756.190000,
-                    "anulRedRate": 5.1300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-11T09:25:00",
-                        "clsgDtTm": "2017-09-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 780.580000,
-                    "anulInvstmtRate": 5.0100,
-                    "untrRedVal": 756.380000,
-                    "anulRedRate": 5.1300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-12T09:25:00",
-                        "clsgDtTm": "2017-09-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 780.780000,
-                    "anulInvstmtRate": 5.0100,
-                    "untrRedVal": 756.580000,
-                    "anulRedRate": 5.1300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-13T09:25:00",
-                        "clsgDtTm": "2017-09-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 780.980000,
-                    "anulInvstmtRate": 5.0100,
-                    "untrRedVal": 756.780000,
-                    "anulRedRate": 5.1300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-14T09:25:00",
-                        "clsgDtTm": "2017-09-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 777.090000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 753.010000,
-                    "anulRedRate": 5.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-15T09:25:00",
-                        "clsgDtTm": "2017-09-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.360000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 749.410000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-18T09:25:00",
-                        "clsgDtTm": "2017-09-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.570000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 749.620000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-19T09:25:00",
-                        "clsgDtTm": "2017-09-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.760000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 747.860000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-20T09:25:00",
-                        "clsgDtTm": "2017-09-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 774.000000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 750.030000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-21T09:25:00",
-                        "clsgDtTm": "2017-09-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 778.280000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 754.180000,
-                    "anulRedRate": 5.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-22T09:25:00",
-                        "clsgDtTm": "2017-09-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 778.230000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 754.140000,
-                    "anulRedRate": 5.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-25T09:25:00",
-                        "clsgDtTm": "2017-09-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 774.340000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 750.370000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-26T09:25:00",
-                        "clsgDtTm": "2017-09-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 774.510000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 750.550000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-27T09:25:00",
-                        "clsgDtTm": "2017-09-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 768.620000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 744.850000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-28T09:25:00",
-                        "clsgDtTm": "2017-09-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.830000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 748.930000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-09-29T09:25:00",
-                        "clsgDtTm": "2017-10-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.050000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 749.150000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-02T09:25:00",
-                        "clsgDtTm": "2017-10-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 775.260000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 751.280000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-03T09:25:00",
-                        "clsgDtTm": "2017-10-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.380000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 747.530000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-04T09:25:00",
-                        "clsgDtTm": "2017-10-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.580000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 749.660000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-05T09:25:00",
-                        "clsgDtTm": "2017-10-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.730000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 747.880000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-06T09:25:00",
-                        "clsgDtTm": "2017-10-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.380000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 748.520000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-09T09:25:00",
-                        "clsgDtTm": "2017-10-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 776.630000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 752.630000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-10T09:25:00",
-                        "clsgDtTm": "2017-10-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 782.950000,
-                    "anulInvstmtRate": 5.0200,
-                    "untrRedVal": 758.750000,
-                    "anulRedRate": 5.1400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-11T09:25:00",
-                        "clsgDtTm": "2017-10-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 781.140000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 757.000000,
-                    "anulRedRate": 5.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-13T09:25:00",
-                        "clsgDtTm": "2017-10-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 777.410000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 753.390000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-16T09:25:00",
-                        "clsgDtTm": "2017-10-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.590000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 747.770000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-17T09:25:00",
-                        "clsgDtTm": "2017-10-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.880000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 749.980000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-18T09:25:00",
-                        "clsgDtTm": "2017-10-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.120000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 748.280000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-19T09:25:00",
-                        "clsgDtTm": "2017-10-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.380000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 748.540000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-20T09:25:00",
-                        "clsgDtTm": "2017-10-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 776.920000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 752.940000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-23T09:25:00",
-                        "clsgDtTm": "2017-10-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 777.250000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 753.270000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-24T09:25:00",
-                        "clsgDtTm": "2017-10-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 765.430000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 741.820000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-25T09:25:00",
-                        "clsgDtTm": "2017-10-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 761.710000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 738.230000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-26T09:25:00",
-                        "clsgDtTm": "2017-10-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 742.360000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 719.490000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-27T09:25:00",
-                        "clsgDtTm": "2017-10-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 752.600000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 729.420000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-30T09:25:00",
-                        "clsgDtTm": "2017-10-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 750.910000,
-                    "anulInvstmtRate": 5.2000,
-                    "untrRedVal": 727.780000,
-                    "anulRedRate": 5.3200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-10-31T09:25:00",
-                        "clsgDtTm": "2017-11-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 747.270000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 724.260000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-01T09:25:00",
-                        "clsgDtTm": "2017-11-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 736.050000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 713.400000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-03T09:25:00",
-                        "clsgDtTm": "2017-11-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 725.120000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 702.830000,
-                    "anulRedRate": 5.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-06T09:25:00",
-                        "clsgDtTm": "2017-11-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 729.170000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 706.750000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-07T09:25:00",
-                        "clsgDtTm": "2017-11-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 723.760000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 701.510000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-08T09:25:00",
-                        "clsgDtTm": "2017-11-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.800000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 705.430000,
-                    "anulRedRate": 5.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-09T09:25:00",
-                        "clsgDtTm": "2017-11-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 728.060000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 705.680000,
-                    "anulRedRate": 5.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-10T09:25:00",
-                        "clsgDtTm": "2017-11-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 720.600000,
-                    "anulInvstmtRate": 5.3700,
-                    "untrRedVal": 698.470000,
-                    "anulRedRate": 5.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-13T09:25:00",
-                        "clsgDtTm": "2017-11-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 711.540000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 689.690000,
-                    "anulRedRate": 5.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-14T09:25:00",
-                        "clsgDtTm": "2017-11-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.210000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 686.480000,
-                    "anulRedRate": 5.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-16T09:25:00",
-                        "clsgDtTm": "2017-11-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.470000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 686.740000,
-                    "anulRedRate": 5.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-17T09:25:00",
-                        "clsgDtTm": "2017-11-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 720.380000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 698.270000,
-                    "anulRedRate": 5.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-21T09:25:00",
-                        "clsgDtTm": "2017-11-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 724.400000,
-                    "anulInvstmtRate": 5.3600,
-                    "untrRedVal": 702.170000,
-                    "anulRedRate": 5.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-22T09:25:00",
-                        "clsgDtTm": "2017-11-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 722.790000,
-                    "anulInvstmtRate": 5.3700,
-                    "untrRedVal": 700.610000,
-                    "anulRedRate": 5.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-23T09:25:00",
-                        "clsgDtTm": "2017-11-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 724.940000,
-                    "anulInvstmtRate": 5.3600,
-                    "untrRedVal": 702.690000,
-                    "anulRedRate": 5.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-24T09:25:00",
-                        "clsgDtTm": "2017-11-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 725.090000,
-                    "anulInvstmtRate": 5.3600,
-                    "untrRedVal": 702.850000,
-                    "anulRedRate": 5.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-27T09:25:00",
-                        "clsgDtTm": "2017-11-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.580000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 699.440000,
-                    "anulRedRate": 5.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-28T09:25:00",
-                        "clsgDtTm": "2017-11-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.810000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 699.680000,
-                    "anulRedRate": 5.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-29T09:25:00",
-                        "clsgDtTm": "2017-11-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 720.180000,
-                    "anulInvstmtRate": 5.3900,
-                    "untrRedVal": 698.100000,
-                    "anulRedRate": 5.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-11-30T09:25:00",
-                        "clsgDtTm": "2017-12-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 707.450000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 685.780000,
-                    "anulRedRate": 5.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-01T09:25:00",
-                        "clsgDtTm": "2017-12-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.200000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 682.630000,
-                    "anulRedRate": 5.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-04T09:25:00",
-                        "clsgDtTm": "2017-12-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 709.940000,
-                    "anulInvstmtRate": 5.4500,
-                    "untrRedVal": 688.190000,
-                    "anulRedRate": 5.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-05T09:25:00",
-                        "clsgDtTm": "2017-12-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 713.870000,
-                    "anulInvstmtRate": 5.4300,
-                    "untrRedVal": 692.000000,
-                    "anulRedRate": 5.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-06T09:25:00",
-                        "clsgDtTm": "2017-12-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.570000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 686.880000,
-                    "anulRedRate": 5.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-07T09:25:00",
-                        "clsgDtTm": "2017-12-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 696.070000,
-                    "anulInvstmtRate": 5.5300,
-                    "untrRedVal": 674.770000,
-                    "anulRedRate": 5.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-08T09:25:00",
-                        "clsgDtTm": "2017-12-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 701.360000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 679.900000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-11T09:25:00",
-                        "clsgDtTm": "2017-12-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.880000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 687.190000,
-                    "anulRedRate": 5.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-12T09:25:00",
-                        "clsgDtTm": "2017-12-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 701.790000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 680.320000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-13T09:25:00",
-                        "clsgDtTm": "2017-12-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.650000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 684.070000,
-                    "anulRedRate": 5.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-14T09:25:00",
-                        "clsgDtTm": "2017-12-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.040000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 682.510000,
-                    "anulRedRate": 5.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-15T09:25:00",
-                        "clsgDtTm": "2017-12-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.370000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 682.840000,
-                    "anulRedRate": 5.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-18T09:25:00",
-                        "clsgDtTm": "2017-12-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.580000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 683.050000,
-                    "anulRedRate": 5.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-19T09:25:00",
-                        "clsgDtTm": "2017-12-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.800000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 683.250000,
-                    "anulRedRate": 5.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-20T09:25:00",
-                        "clsgDtTm": "2017-12-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.180000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 681.700000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-21T09:25:00",
-                        "clsgDtTm": "2017-12-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.880000,
-                    "anulInvstmtRate": 5.4700,
-                    "untrRedVal": 687.210000,
-                    "anulRedRate": 5.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-22T09:25:00",
-                        "clsgDtTm": "2017-12-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 712.930000,
-                    "anulInvstmtRate": 5.4500,
-                    "untrRedVal": 691.140000,
-                    "anulRedRate": 5.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-26T09:25:00",
-                        "clsgDtTm": "2017-12-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 711.290000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 689.560000,
-                    "anulRedRate": 5.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-27T09:25:00",
-                        "clsgDtTm": "2017-12-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 713.350000,
-                    "anulInvstmtRate": 5.4500,
-                    "untrRedVal": 691.550000,
-                    "anulRedRate": 5.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2017-12-28T09:25:00",
-                        "clsgDtTm": "2018-01-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 715.800000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 0.0,
-                    "anulRedRate": 0.0
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-02T09:25:00",
-                        "clsgDtTm": "2018-01-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 717.860000,
-                    "anulInvstmtRate": 5.4300,
-                    "untrRedVal": 695.930000,
-                    "anulRedRate": 5.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-03T09:25:00",
-                        "clsgDtTm": "2018-01-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 723.670000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 701.560000,
-                    "anulRedRate": 5.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-04T09:25:00",
-                        "clsgDtTm": "2018-01-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.310000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 710.890000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-05T09:25:00",
-                        "clsgDtTm": "2018-01-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.640000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 711.220000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-08T09:25:00",
-                        "clsgDtTm": "2018-01-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 733.860000,
-                    "anulInvstmtRate": 5.3500,
-                    "untrRedVal": 711.430000,
-                    "anulRedRate": 5.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-09T09:25:00",
-                        "clsgDtTm": "2018-01-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 732.170000,
-                    "anulInvstmtRate": 5.3600,
-                    "untrRedVal": 709.810000,
-                    "anulRedRate": 5.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-10T09:25:00",
-                        "clsgDtTm": "2018-01-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 737.340000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 714.810000,
-                    "anulRedRate": 5.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-11T09:25:00",
-                        "clsgDtTm": "2018-01-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 741.420000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 718.770000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-12T09:25:00",
-                        "clsgDtTm": "2018-01-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 757.400000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 734.250000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-15T09:25:00",
-                        "clsgDtTm": "2018-01-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 759.600000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 736.390000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-16T09:25:00",
-                        "clsgDtTm": "2018-01-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 757.880000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 734.720000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-17T09:25:00",
-                        "clsgDtTm": "2018-01-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 764.030000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 740.680000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-18T09:25:00",
-                        "clsgDtTm": "2018-01-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 768.240000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 744.750000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-19T09:25:00",
-                        "clsgDtTm": "2018-01-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.640000,
-                    "anulInvstmtRate": 5.1700,
-                    "untrRedVal": 749.020000,
-                    "anulRedRate": 5.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-22T09:25:00",
-                        "clsgDtTm": "2018-01-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 770.880000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 747.320000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-23T09:25:00",
-                        "clsgDtTm": "2018-01-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 767.140000,
-                    "anulInvstmtRate": 5.2000,
-                    "untrRedVal": 743.710000,
-                    "anulRedRate": 5.3200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-24T09:25:00",
-                        "clsgDtTm": "2018-01-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 779.740000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 755.920000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-26T09:25:00",
-                        "clsgDtTm": "2018-01-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 811.090000,
-                    "anulInvstmtRate": 4.9900,
-                    "untrRedVal": 786.270000,
-                    "anulRedRate": 5.1100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-29T09:25:00",
-                        "clsgDtTm": "2018-01-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 809.250000,
-                    "anulInvstmtRate": 5.0000,
-                    "untrRedVal": 784.490000,
-                    "anulRedRate": 5.1200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-30T09:25:00",
-                        "clsgDtTm": "2018-01-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 801.160000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 776.670000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-01-31T09:25:00",
-                        "clsgDtTm": "2018-02-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 801.420000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 776.920000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-01T09:25:00",
-                        "clsgDtTm": "2018-02-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 802.140000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 777.620000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-05T09:25:00",
-                        "clsgDtTm": "2018-02-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 790.040000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 765.910000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-06T09:25:00",
-                        "clsgDtTm": "2018-02-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 784.180000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 760.250000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-07T09:25:00",
-                        "clsgDtTm": "2018-02-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 784.440000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 760.500000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-08T09:25:00",
-                        "clsgDtTm": "2018-02-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 784.060000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 760.140000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-09T09:25:00",
-                        "clsgDtTm": "2018-02-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 774.520000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 750.900000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-14T14:00:00",
-                        "clsgDtTm": "2018-02-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 778.760000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 755.010000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-15T09:25:00",
-                        "clsgDtTm": "2018-02-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 781.040000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 757.220000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-16T09:25:00",
-                        "clsgDtTm": "2018-02-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 793.740000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 769.520000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-19T09:25:00",
-                        "clsgDtTm": "2018-02-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 796.060000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 771.770000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-20T09:25:00",
-                        "clsgDtTm": "2018-02-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.390000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 774.030000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-21T09:25:00",
-                        "clsgDtTm": "2018-02-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 792.490000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 768.330000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-22T09:25:00",
-                        "clsgDtTm": "2018-02-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 792.760000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 768.590000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-23T09:25:00",
-                        "clsgDtTm": "2018-02-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 797.370000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 773.050000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-26T09:25:00",
-                        "clsgDtTm": "2018-02-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 803.840000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 779.320000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-27T09:25:00",
-                        "clsgDtTm": "2018-02-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 801.780000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 777.330000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-02-28T09:25:00",
-                        "clsgDtTm": "2018-03-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 799.960000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 775.580000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-01T09:25:00",
-                        "clsgDtTm": "2018-03-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.150000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 773.830000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-02T09:25:00",
-                        "clsgDtTm": "2018-03-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.590000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 774.260000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-05T09:25:00",
-                        "clsgDtTm": "2018-03-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 796.780000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 772.510000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-06T09:25:00",
-                        "clsgDtTm": "2018-03-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 797.030000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 772.760000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-07T09:25:00",
-                        "clsgDtTm": "2018-03-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 793.180000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 769.030000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-08T09:25:00",
-                        "clsgDtTm": "2018-03-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 795.480000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 771.260000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-09T09:25:00",
-                        "clsgDtTm": "2018-03-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 797.900000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 773.610000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-12T09:25:00",
-                        "clsgDtTm": "2018-03-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.150000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 773.860000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-13T09:25:00",
-                        "clsgDtTm": "2018-03-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 802.520000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 778.100000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-14T09:25:00",
-                        "clsgDtTm": "2018-03-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 800.710000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 776.340000,
-                    "anulRedRate": 5.2000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-15T09:25:00",
-                        "clsgDtTm": "2018-03-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.840000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 774.530000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-16T09:25:00",
-                        "clsgDtTm": "2018-03-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 799.110000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 774.800000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-19T09:25:00",
-                        "clsgDtTm": "2018-03-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 803.430000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 778.990000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-20T09:25:00",
-                        "clsgDtTm": "2018-03-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 791.300000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 767.240000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-21T09:25:00",
-                        "clsgDtTm": "2018-03-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 787.430000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 763.500000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-22T09:25:00",
-                        "clsgDtTm": "2018-03-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 797.830000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 773.570000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-23T09:25:00",
-                        "clsgDtTm": "2018-03-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 798.090000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 773.830000,
-                    "anulRedRate": 5.2200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-26T09:25:00",
-                        "clsgDtTm": "2018-03-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 794.160000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 770.020000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-27T09:25:00",
-                        "clsgDtTm": "2018-03-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 796.390000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 772.190000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-28T09:25:00",
-                        "clsgDtTm": "2018-03-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 780.360000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 756.670000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-03-29T09:25:00",
-                        "clsgDtTm": "2018-04-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 784.670000,
-                    "anulInvstmtRate": 5.1700,
-                    "untrRedVal": 760.850000,
-                    "anulRedRate": 5.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-02T09:25:00",
-                        "clsgDtTm": "2018-04-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 782.850000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 759.090000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-03T09:25:00",
-                        "clsgDtTm": "2018-04-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 779.020000,
-                    "anulInvstmtRate": 5.2000,
-                    "untrRedVal": 755.390000,
-                    "anulRedRate": 5.3200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-04T09:25:00",
-                        "clsgDtTm": "2018-04-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 759.460000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 736.440000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-05T09:25:00",
-                        "clsgDtTm": "2018-04-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 773.420000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 749.970000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-06T09:25:00",
-                        "clsgDtTm": "2018-04-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 759.900000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 736.870000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-09T09:25:00",
-                        "clsgDtTm": "2018-04-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 756.200000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 733.290000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-10T09:25:00",
-                        "clsgDtTm": "2018-04-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 752.260000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 729.480000,
-                    "anulRedRate": 5.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-11T09:25:00",
-                        "clsgDtTm": "2018-04-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 758.240000,
-                    "anulInvstmtRate": 5.3100,
-                    "untrRedVal": 735.280000,
-                    "anulRedRate": 5.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-12T09:25:00",
-                        "clsgDtTm": "2018-04-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 762.320000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 739.230000,
-                    "anulRedRate": 5.4100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-13T09:25:00",
-                        "clsgDtTm": "2018-04-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 766.520000,
-                    "anulInvstmtRate": 5.2700,
-                    "untrRedVal": 743.310000,
-                    "anulRedRate": 5.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-16T09:25:00",
-                        "clsgDtTm": "2018-04-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 764.800000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 741.640000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-17T09:25:00",
-                        "clsgDtTm": "2018-04-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 772.920000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 749.510000,
-                    "anulRedRate": 5.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-18T09:25:00",
-                        "clsgDtTm": "2018-04-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 775.150000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 751.670000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-19T09:25:00",
-                        "clsgDtTm": "2018-04-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 775.380000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 751.900000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-20T09:25:00",
-                        "clsgDtTm": "2018-04-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.820000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 748.460000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-23T09:25:00",
-                        "clsgDtTm": "2018-04-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 766.060000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 742.880000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-24T09:25:00",
-                        "clsgDtTm": "2018-04-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 762.370000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 739.310000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-25T09:25:00",
-                        "clsgDtTm": "2018-04-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 758.700000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 735.760000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-26T09:25:00",
-                        "clsgDtTm": "2018-04-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 764.780000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 741.650000,
-                    "anulRedRate": 5.4100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-27T09:25:00",
-                        "clsgDtTm": "2018-04-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.050000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 747.730000,
-                    "anulRedRate": 5.3800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-04-30T09:25:00",
-                        "clsgDtTm": "2018-05-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 767.410000,
-                    "anulInvstmtRate": 5.2800,
-                    "untrRedVal": 744.210000,
-                    "anulRedRate": 5.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-02T09:25:00",
-                        "clsgDtTm": "2018-05-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 761.770000,
-                    "anulInvstmtRate": 5.3100,
-                    "untrRedVal": 738.740000,
-                    "anulRedRate": 5.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-03T09:25:00",
-                        "clsgDtTm": "2018-05-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 760.050000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 737.080000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-04T09:25:00",
-                        "clsgDtTm": "2018-05-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 760.420000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 737.440000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-07T09:25:00",
-                        "clsgDtTm": "2018-05-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 760.640000,
-                    "anulInvstmtRate": 5.3200,
-                    "untrRedVal": 737.670000,
-                    "anulRedRate": 5.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-08T09:25:00",
-                        "clsgDtTm": "2018-05-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 749.290000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 726.670000,
-                    "anulRedRate": 5.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-09T09:25:00",
-                        "clsgDtTm": "2018-05-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 738.120000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 715.850000,
-                    "anulRedRate": 5.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-10T09:25:00",
-                        "clsgDtTm": "2018-05-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 745.530000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 723.040000,
-                    "anulRedRate": 5.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-11T09:25:00",
-                        "clsgDtTm": "2018-05-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 751.590000,
-                    "anulInvstmtRate": 5.3700,
-                    "untrRedVal": 728.910000,
-                    "anulRedRate": 5.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-14T09:25:00",
-                        "clsgDtTm": "2018-05-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 738.480000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 716.210000,
-                    "anulRedRate": 5.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-15T09:25:00",
-                        "clsgDtTm": "2018-05-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.500000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 705.580000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-16T09:25:00",
-                        "clsgDtTm": "2018-05-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 742.750000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 720.360000,
-                    "anulRedRate": 5.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-17T09:25:00",
-                        "clsgDtTm": "2018-05-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 744.890000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 722.440000,
-                    "anulRedRate": 5.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-18T09:25:00",
-                        "clsgDtTm": "2018-05-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.010000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 699.300000,
-                    "anulRedRate": 5.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-21T09:25:00",
-                        "clsgDtTm": "2018-05-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 715.760000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 694.220000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-22T09:25:00",
-                        "clsgDtTm": "2018-05-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 728.880000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 706.940000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-23T09:25:00",
-                        "clsgDtTm": "2018-05-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 727.270000,
-                    "anulInvstmtRate": 5.5100,
-                    "untrRedVal": 705.380000,
-                    "anulRedRate": 5.6300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-24T09:25:00",
-                        "clsgDtTm": "2018-05-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.300000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 696.690000,
-                    "anulRedRate": 5.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-25T09:25:00",
-                        "clsgDtTm": "2018-05-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 714.640000,
-                    "anulInvstmtRate": 5.5800,
-                    "untrRedVal": 693.150000,
-                    "anulRedRate": 5.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-28T09:25:00",
-                        "clsgDtTm": "2018-05-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 711.220000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 689.840000,
-                    "anulRedRate": 5.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-29T09:25:00",
-                        "clsgDtTm": "2018-05-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.220000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 683.060000,
-                    "anulRedRate": 5.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-05-30T09:25:00",
-                        "clsgDtTm": "2018-06-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 678.130000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 657.780000,
-                    "anulRedRate": 5.9100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-01T09:25:00",
-                        "clsgDtTm": "2018-06-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 697.660000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 676.710000,
-                    "anulRedRate": 5.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-04T09:25:00",
-                        "clsgDtTm": "2018-06-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 694.330000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 673.480000,
-                    "anulRedRate": 5.8200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-05T09:25:00",
-                        "clsgDtTm": "2018-06-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 675.400000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 655.150000,
-                    "anulRedRate": 5.9300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-06T09:25:00",
-                        "clsgDtTm": "2018-06-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 662.030000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 642.190000,
-                    "anulRedRate": 6.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-07T09:25:00",
-                        "clsgDtTm": "2018-06-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 670.680000,
-                    "anulInvstmtRate": 5.8400,
-                    "untrRedVal": 650.580000,
-                    "anulRedRate": 5.9600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-08T09:25:00",
-                        "clsgDtTm": "2018-06-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 671.970000,
-                    "anulInvstmtRate": 5.8400,
-                    "untrRedVal": 651.830000,
-                    "anulRedRate": 5.9600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-11T09:25:00",
-                        "clsgDtTm": "2018-06-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 677.340000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 657.040000,
-                    "anulRedRate": 5.9300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-12T09:25:00",
-                        "clsgDtTm": "2018-06-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 662.290000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 642.460000,
-                    "anulRedRate": 6.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-13T09:25:00",
-                        "clsgDtTm": "2018-06-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 662.530000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 642.700000,
-                    "anulRedRate": 6.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-14T09:25:00",
-                        "clsgDtTm": "2018-06-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 659.410000,
-                    "anulInvstmtRate": 5.9200,
-                    "untrRedVal": 639.680000,
-                    "anulRedRate": 6.0400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-15T09:25:00",
-                        "clsgDtTm": "2018-06-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 658.470000,
-                    "anulInvstmtRate": 5.9300,
-                    "untrRedVal": 638.780000,
-                    "anulRedRate": 6.0500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-18T09:25:00",
-                        "clsgDtTm": "2018-06-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 657.150000,
-                    "anulInvstmtRate": 5.9400,
-                    "untrRedVal": 637.500000,
-                    "anulRedRate": 6.0600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-19T09:25:00",
-                        "clsgDtTm": "2018-06-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 659.160000,
-                    "anulInvstmtRate": 5.9300,
-                    "untrRedVal": 639.450000,
-                    "anulRedRate": 6.0500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-20T09:25:00",
-                        "clsgDtTm": "2018-06-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 681.580000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 661.170000,
-                    "anulRedRate": 5.9200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-21T09:25:00",
-                        "clsgDtTm": "2018-06-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 668.250000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 648.260000,
-                    "anulRedRate": 6.0000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-22T09:25:00",
-                        "clsgDtTm": "2018-06-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 666.400000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 646.470000,
-                    "anulRedRate": 6.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-25T09:25:00",
-                        "clsgDtTm": "2018-06-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 666.830000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 646.890000,
-                    "anulRedRate": 6.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-26T09:25:00",
-                        "clsgDtTm": "2018-06-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 674.040000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 653.890000,
-                    "anulRedRate": 5.9800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-27T09:25:00",
-                        "clsgDtTm": "2018-06-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 665.990000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 646.090000,
-                    "anulRedRate": 6.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-28T09:25:00",
-                        "clsgDtTm": "2018-06-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 673.190000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 653.070000,
-                    "anulRedRate": 5.9900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-06-29T09:25:00",
-                        "clsgDtTm": "2018-07-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 674.180000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 654.030000,
-                    "anulRedRate": 5.9900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-02T09:25:00",
-                        "clsgDtTm": "2018-07-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 681.470000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 661.100000,
-                    "anulRedRate": 5.9500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-03T09:25:00",
-                        "clsgDtTm": "2018-07-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 681.900000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 661.520000,
-                    "anulRedRate": 5.9500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-04T09:25:00",
-                        "clsgDtTm": "2018-07-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 689.280000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 668.670000,
-                    "anulRedRate": 5.9100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-05T09:25:00",
-                        "clsgDtTm": "2018-07-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 687.970000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 667.410000,
-                    "anulRedRate": 5.9200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-06T09:25:00",
-                        "clsgDtTm": "2018-07-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 693.030000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 672.310000,
-                    "anulRedRate": 5.9000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-10T09:25:00",
-                        "clsgDtTm": "2018-07-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.860000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 684.750000,
-                    "anulRedRate": 5.8300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-11T09:25:00",
-                        "clsgDtTm": "2018-07-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 700.970000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 680.020000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-12T09:25:00",
-                        "clsgDtTm": "2018-07-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 697.880000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 677.020000,
-                    "anulRedRate": 5.8800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-13T09:25:00",
-                        "clsgDtTm": "2018-07-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 696.930000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 676.110000,
-                    "anulRedRate": 5.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-16T09:25:00",
-                        "clsgDtTm": "2018-07-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 690.160000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 669.550000,
-                    "anulRedRate": 5.9300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-17T09:25:00",
-                        "clsgDtTm": "2018-07-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 688.650000,
-                    "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 668.100000,
-                    "anulRedRate": 5.9400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-18T09:25:00",
-                        "clsgDtTm": "2018-07-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 688.890000,
-                    "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 668.330000,
-                    "anulRedRate": 5.9400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-19T09:25:00",
-                        "clsgDtTm": "2018-07-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 687.390000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 666.880000,
-                    "anulRedRate": 5.9500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-20T09:25:00",
-                        "clsgDtTm": "2018-07-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.610000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 682.600000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-23T09:25:00",
-                        "clsgDtTm": "2018-07-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 698.390000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 677.540000,
-                    "anulRedRate": 5.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-24T09:25:00",
-                        "clsgDtTm": "2018-07-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 698.610000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 677.770000,
-                    "anulRedRate": 5.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-25T09:25:00",
-                        "clsgDtTm": "2018-07-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.930000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 684.860000,
-                    "anulRedRate": 5.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-26T09:25:00",
-                        "clsgDtTm": "2018-07-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.370000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 683.360000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-27T09:25:00",
-                        "clsgDtTm": "2018-07-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.310000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 687.170000,
-                    "anulRedRate": 5.8400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-30T09:25:00",
-                        "clsgDtTm": "2018-07-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 706.740000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 685.660000,
-                    "anulRedRate": 5.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-07-31T09:25:00",
-                        "clsgDtTm": "2018-08-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.410000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 682.430000,
-                    "anulRedRate": 5.8700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-01T09:25:00",
-                        "clsgDtTm": "2018-08-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.630000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 682.650000,
-                    "anulRedRate": 5.8700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-02T09:25:00",
-                        "clsgDtTm": "2018-08-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.860000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 682.870000,
-                    "anulRedRate": 5.8700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-03T09:25:00",
-                        "clsgDtTm": "2018-08-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 707.780000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 686.670000,
-                    "anulRedRate": 5.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-06T09:25:00",
-                        "clsgDtTm": "2018-08-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 715.190000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 693.860000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-07T09:25:00",
-                        "clsgDtTm": "2018-08-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 713.610000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 692.330000,
-                    "anulRedRate": 5.8200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-08T09:25:00",
-                        "clsgDtTm": "2018-08-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.630000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 687.500000,
-                    "anulRedRate": 5.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-09T09:25:00",
-                        "clsgDtTm": "2018-08-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 701.740000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 680.840000,
-                    "anulRedRate": 5.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-10T09:25:00",
-                        "clsgDtTm": "2018-08-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 693.330000,
-                    "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 672.690000,
-                    "anulRedRate": 5.9400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-13T09:25:00",
-                        "clsgDtTm": "2018-08-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 691.810000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 671.220000,
-                    "anulRedRate": 5.9500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-14T09:25:00",
-                        "clsgDtTm": "2018-08-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 713.290000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 692.040000,
-                    "anulRedRate": 5.8300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-15T09:25:00",
-                        "clsgDtTm": "2018-08-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.870000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 697.460000,
-                    "anulRedRate": 5.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-16T09:25:00",
-                        "clsgDtTm": "2018-08-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 739.270000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 717.230000,
-                    "anulRedRate": 5.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-17T09:25:00",
-                        "clsgDtTm": "2018-08-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 730.180000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 708.420000,
-                    "anulRedRate": 5.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-20T09:25:00",
-                        "clsgDtTm": "2018-08-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 724.850000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 703.250000,
-                    "anulRedRate": 5.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-21T09:25:00",
-                        "clsgDtTm": "2018-08-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 705.190000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 684.200000,
-                    "anulRedRate": 5.8800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-22T09:25:00",
-                        "clsgDtTm": "2018-08-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 708.910000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 687.820000,
-                    "anulRedRate": 5.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-23T09:25:00",
-                        "clsgDtTm": "2018-08-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.060000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 696.690000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-24T09:25:00",
-                        "clsgDtTm": "2018-08-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.160000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 696.780000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-27T09:25:00",
-                        "clsgDtTm": "2018-08-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 725.590000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 703.990000,
-                    "anulRedRate": 5.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-28T09:25:00",
-                        "clsgDtTm": "2018-08-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 718.480000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 697.100000,
-                    "anulRedRate": 5.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-29T09:25:00",
-                        "clsgDtTm": "2018-08-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 715.020000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 693.760000,
-                    "anulRedRate": 5.8300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-30T09:25:00",
-                        "clsgDtTm": "2018-08-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 700.930000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 680.100000,
-                    "anulRedRate": 5.9100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-08-31T09:25:00",
-                        "clsgDtTm": "2018-09-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 702.850000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 681.960000,
-                    "anulRedRate": 5.9000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-03T09:25:00",
-                        "clsgDtTm": "2018-09-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 697.720000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 677.000000,
-                    "anulRedRate": 5.9300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-04T09:25:00",
-                        "clsgDtTm": "2018-09-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 689.160000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 668.700000,
-                    "anulRedRate": 5.9800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-05T09:25:00",
-                        "clsgDtTm": "2018-09-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 689.320000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 668.860000,
-                    "anulRedRate": 5.9800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-06T09:25:00",
-                        "clsgDtTm": "2018-09-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.500000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 665.160000,
-                    "anulRedRate": 6.0000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-10T09:25:00",
-                        "clsgDtTm": "2018-09-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 687.360000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 666.970000,
-                    "anulRedRate": 5.9900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-11T09:25:00",
-                        "clsgDtTm": "2018-09-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 682.340000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 662.100000,
-                    "anulRedRate": 6.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-12T09:25:00",
-                        "clsgDtTm": "2018-09-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 698.070000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 677.360000,
-                    "anulRedRate": 5.9300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-13T09:25:00",
-                        "clsgDtTm": "2018-09-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 689.500000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 669.050000,
-                    "anulRedRate": 5.9800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-14T09:25:00",
-                        "clsgDtTm": "2018-09-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 686.330000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 665.980000,
-                    "anulRedRate": 6.0000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-17T09:25:00",
-                        "clsgDtTm": "2018-09-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 686.560000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 666.200000,
-                    "anulRedRate": 6.0000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-18T09:25:00",
-                        "clsgDtTm": "2018-09-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 686.790000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 666.430000,
-                    "anulRedRate": 6.0000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-19T09:25:00",
-                        "clsgDtTm": "2018-09-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.290000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 664.980000,
-                    "anulRedRate": 6.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-20T09:25:00",
-                        "clsgDtTm": "2018-09-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.520000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 665.210000,
-                    "anulRedRate": 6.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-21T09:25:00",
-                        "clsgDtTm": "2018-09-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 685.900000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 665.580000,
-                    "anulRedRate": 6.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-24T09:25:00",
-                        "clsgDtTm": "2018-09-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 682.880000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 662.650000,
-                    "anulRedRate": 6.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-25T09:25:00",
-                        "clsgDtTm": "2018-09-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 672.930000,
-                    "anulInvstmtRate": 5.9700,
-                    "untrRedVal": 653.010000,
-                    "anulRedRate": 6.0900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-26T09:25:00",
-                        "clsgDtTm": "2018-09-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 678.250000,
-                    "anulInvstmtRate": 5.9400,
-                    "untrRedVal": 658.180000,
-                    "anulRedRate": 6.0600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-27T09:25:00",
-                        "clsgDtTm": "2018-09-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 678.500000,
-                    "anulInvstmtRate": 5.9400,
-                    "untrRedVal": 658.420000,
-                    "anulRedRate": 6.0600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-09-28T09:25:00",
-                        "clsgDtTm": "2018-10-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 678.920000,
-                    "anulInvstmtRate": 5.9400,
-                    "untrRedVal": 658.830000,
-                    "anulRedRate": 6.0600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-01T09:25:00",
-                        "clsgDtTm": "2018-10-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 680.870000,
-                    "anulInvstmtRate": 5.9300,
-                    "untrRedVal": 660.730000,
-                    "anulRedRate": 6.0500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-02T09:25:00",
-                        "clsgDtTm": "2018-10-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 684.540000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 664.280000,
-                    "anulRedRate": 6.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-03T09:25:00",
-                        "clsgDtTm": "2018-10-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 703.920000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 683.070000,
-                    "anulRedRate": 5.9200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-04T09:25:00",
-                        "clsgDtTm": "2018-10-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 704.170000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 683.320000,
-                    "anulRedRate": 5.9200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-05T09:25:00",
-                        "clsgDtTm": "2018-10-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 721.130000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 699.760000,
-                    "anulRedRate": 5.8300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-08T09:25:00",
-                        "clsgDtTm": "2018-10-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 754.740000,
-                    "anulInvstmtRate": 5.5300,
-                    "untrRedVal": 732.340000,
-                    "anulRedRate": 5.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-09T09:25:00",
-                        "clsgDtTm": "2018-10-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 760.730000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 738.150000,
-                    "anulRedRate": 5.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-10T09:25:00",
-                        "clsgDtTm": "2018-10-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 768.700000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 745.880000,
-                    "anulRedRate": 5.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-11T09:25:00",
-                        "clsgDtTm": "2018-10-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 771.290000,
-                    "anulInvstmtRate": 5.4500,
-                    "untrRedVal": 748.390000,
-                    "anulRedRate": 5.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-15T09:25:00",
-                        "clsgDtTm": "2018-10-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 781.330000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 758.130000,
-                    "anulRedRate": 5.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-16T09:25:00",
-                        "clsgDtTm": "2018-10-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 795.490000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 771.860000,
-                    "anulRedRate": 5.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-17T09:25:00",
-                        "clsgDtTm": "2018-10-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 803.830000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 779.940000,
-                    "anulRedRate": 5.4100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-18T09:25:00",
-                        "clsgDtTm": "2018-10-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 810.210000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 786.130000,
-                    "anulRedRate": 5.3800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-19T09:25:00",
-                        "clsgDtTm": "2018-10-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 804.660000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 780.760000,
-                    "anulRedRate": 5.4100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-22T09:25:00",
-                        "clsgDtTm": "2018-10-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 817.190000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 792.910000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-23T09:25:00",
-                        "clsgDtTm": "2018-10-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 811.340000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 787.240000,
-                    "anulRedRate": 5.3800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-24T09:25:00",
-                        "clsgDtTm": "2018-10-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 813.810000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 789.640000,
-                    "anulRedRate": 5.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-25T09:25:00",
-                        "clsgDtTm": "2018-10-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 803.950000,
-                    "anulInvstmtRate": 5.3000,
-                    "untrRedVal": 780.080000,
-                    "anulRedRate": 5.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-26T09:25:00",
-                        "clsgDtTm": "2018-10-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 825.010000,
-                    "anulInvstmtRate": 5.2000,
-                    "untrRedVal": 800.500000,
-                    "anulRedRate": 5.3200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-29T09:25:00",
-                        "clsgDtTm": "2018-10-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 844.220000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 819.120000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-30T09:25:00",
-                        "clsgDtTm": "2018-10-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 827.710000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 803.120000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-10-31T09:25:00",
-                        "clsgDtTm": "2018-11-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 823.870000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 799.400000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-01T09:25:00",
-                        "clsgDtTm": "2018-11-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 828.760000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 804.150000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-05T09:25:00",
-                        "clsgDtTm": "2018-11-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 829.070000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 804.460000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-06T09:25:00",
-                        "clsgDtTm": "2018-11-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 829.380000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 804.760000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-07T09:25:00",
-                        "clsgDtTm": "2018-11-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 831.210000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 806.530000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-08T09:25:00",
-                        "clsgDtTm": "2018-11-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 829.410000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 804.790000,
-                    "anulRedRate": 5.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-09T09:25:00",
-                        "clsgDtTm": "2018-11-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 823.700000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 799.270000,
-                    "anulRedRate": 5.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-12T09:25:00",
-                        "clsgDtTm": "2018-11-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 821.920000,
-                    "anulInvstmtRate": 5.2300,
-                    "untrRedVal": 797.550000,
-                    "anulRedRate": 5.3500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-13T09:25:00",
-                        "clsgDtTm": "2018-11-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 826.350000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 801.840000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-14T09:25:00",
-                        "clsgDtTm": "2018-11-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 826.620000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 802.100000,
-                    "anulRedRate": 5.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-16T09:25:00",
-                        "clsgDtTm": "2018-11-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 841.400000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 816.440000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-19T09:25:00",
-                        "clsgDtTm": "2018-11-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 845.950000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 820.850000,
-                    "anulRedRate": 5.2400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-21T09:25:00",
-                        "clsgDtTm": "2018-11-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 848.230000,
-                    "anulInvstmtRate": 5.1100,
-                    "untrRedVal": 823.060000,
-                    "anulRedRate": 5.2300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-22T09:25:00",
-                        "clsgDtTm": "2018-11-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 856.950000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 831.520000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-23T09:25:00",
-                        "clsgDtTm": "2018-11-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 863.550000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 837.930000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-26T09:25:00",
-                        "clsgDtTm": "2018-11-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 857.120000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 831.700000,
-                    "anulRedRate": 5.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-27T09:25:00",
-                        "clsgDtTm": "2018-11-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 838.120000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 813.280000,
-                    "anulRedRate": 5.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-28T09:25:00",
-                        "clsgDtTm": "2018-11-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 844.600000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 819.570000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-29T09:25:00",
-                        "clsgDtTm": "2018-11-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 844.750000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 819.710000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-11-30T09:25:00",
-                        "clsgDtTm": "2018-12-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 853.360000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 828.070000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-03T09:25:00",
-                        "clsgDtTm": "2018-12-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 853.510000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 828.210000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-04T09:25:00",
-                        "clsgDtTm": "2018-12-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 845.140000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 820.100000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-05T09:25:00",
-                        "clsgDtTm": "2018-12-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 841.050000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 816.150000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-06T09:25:00",
-                        "clsgDtTm": "2018-12-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 836.990000,
-                    "anulInvstmtRate": 5.1700,
-                    "untrRedVal": 812.220000,
-                    "anulRedRate": 5.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-07T09:25:00",
-                        "clsgDtTm": "2018-12-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 842.490000,
-                    "anulInvstmtRate": 5.1400,
-                    "untrRedVal": 817.550000,
-                    "anulRedRate": 5.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-10T09:25:00",
-                        "clsgDtTm": "2018-12-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 834.200000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 809.520000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-11T09:25:00",
-                        "clsgDtTm": "2018-12-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 834.310000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 809.630000,
-                    "anulRedRate": 5.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-12T09:25:00",
-                        "clsgDtTm": "2018-12-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 840.710000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 815.840000,
-                    "anulRedRate": 5.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-13T09:25:00",
-                        "clsgDtTm": "2018-12-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 845.040000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 820.040000,
-                    "anulRedRate": 5.2500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-14T09:25:00",
-                        "clsgDtTm": "2018-12-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 853.720000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 828.450000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-17T09:25:00",
-                        "clsgDtTm": "2018-12-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 853.910000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 828.640000,
-                    "anulRedRate": 5.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-18T09:25:00",
-                        "clsgDtTm": "2018-12-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 860.550000,
-                    "anulInvstmtRate": 5.0600,
-                    "untrRedVal": 835.080000,
-                    "anulRedRate": 5.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-19T09:25:00",
-                        "clsgDtTm": "2018-12-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 869.410000,
-                    "anulInvstmtRate": 5.0200,
-                    "untrRedVal": 843.680000,
-                    "anulRedRate": 5.1400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-20T09:25:00",
-                        "clsgDtTm": "2018-12-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 867.440000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 841.760000,
-                    "anulRedRate": 5.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-21T09:25:00",
-                        "clsgDtTm": "2018-12-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 865.740000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 840.130000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-26T09:25:00",
-                        "clsgDtTm": "2018-12-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 865.940000,
-                    "anulInvstmtRate": 5.0400,
-                    "untrRedVal": 840.320000,
-                    "anulRedRate": 5.1600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-27T09:25:00",
-                        "clsgDtTm": "2018-12-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 863.970000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 838.420000,
-                    "anulRedRate": 5.1700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2018-12-28T09:25:00",
-                        "clsgDtTm": "2019-01-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 868.790000,
-                    "anulInvstmtRate": 5.0300,
-                    "untrRedVal": 0.0,
-                    "anulRedRate": 0.0
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-02T09:25:00",
-                        "clsgDtTm": "2019-01-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 879.930000,
-                    "anulInvstmtRate": 4.9800,
-                    "untrRedVal": 853.900000,
-                    "anulRedRate": 5.1000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-03T09:25:00",
-                        "clsgDtTm": "2019-01-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 884.540000,
-                    "anulInvstmtRate": 4.9600,
-                    "untrRedVal": 858.380000,
-                    "anulRedRate": 5.0800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-04T09:25:00",
-                        "clsgDtTm": "2019-01-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 891.470000,
-                    "anulInvstmtRate": 4.9300,
-                    "untrRedVal": 865.100000,
-                    "anulRedRate": 5.0500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-07T09:25:00",
-                        "clsgDtTm": "2019-01-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 912.000000,
-                    "anulInvstmtRate": 4.8400,
-                    "untrRedVal": 885.000000,
-                    "anulRedRate": 4.9600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-08T09:25:00",
-                        "clsgDtTm": "2019-01-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 914.480000,
-                    "anulInvstmtRate": 4.8300,
-                    "untrRedVal": 887.410000,
-                    "anulRedRate": 4.9500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-09T09:25:00",
-                        "clsgDtTm": "2019-01-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 928.540000,
-                    "anulInvstmtRate": 4.7700,
-                    "untrRedVal": 901.040000,
-                    "anulRedRate": 4.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-10T09:25:00",
-                        "clsgDtTm": "2019-01-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 938.100000,
-                    "anulInvstmtRate": 4.7300,
-                    "untrRedVal": 910.310000,
-                    "anulRedRate": 4.8500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-11T09:25:00",
-                        "clsgDtTm": "2019-01-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 950.660000,
-                    "anulInvstmtRate": 4.6800,
-                    "untrRedVal": 922.490000,
-                    "anulRedRate": 4.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-14T09:25:00",
-                        "clsgDtTm": "2019-01-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 953.270000,
-                    "anulInvstmtRate": 4.6700,
-                    "untrRedVal": 925.020000,
-                    "anulRedRate": 4.7900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-15T09:25:00",
-                        "clsgDtTm": "2019-01-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 968.020000,
-                    "anulInvstmtRate": 4.6100,
-                    "untrRedVal": 939.330000,
-                    "anulRedRate": 4.7300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-16T09:25:00",
-                        "clsgDtTm": "2019-01-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 968.320000,
-                    "anulInvstmtRate": 4.6100,
-                    "untrRedVal": 939.620000,
-                    "anulRedRate": 4.7300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-17T09:25:00",
-                        "clsgDtTm": "2019-01-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 966.190000,
-                    "anulInvstmtRate": 4.6200,
-                    "untrRedVal": 937.560000,
-                    "anulRedRate": 4.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-18T09:25:00",
-                        "clsgDtTm": "2019-01-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 974.040000,
-                    "anulInvstmtRate": 4.5900,
-                    "untrRedVal": 945.180000,
-                    "anulRedRate": 4.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-21T09:25:00",
-                        "clsgDtTm": "2019-01-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 974.340000,
-                    "anulInvstmtRate": 4.5900,
-                    "untrRedVal": 945.470000,
-                    "anulRedRate": 4.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-22T09:25:00",
-                        "clsgDtTm": "2019-01-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 974.640000,
-                    "anulInvstmtRate": 4.5900,
-                    "untrRedVal": 945.760000,
-                    "anulRedRate": 4.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-23T09:25:00",
-                        "clsgDtTm": "2019-01-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 977.390000,
-                    "anulInvstmtRate": 4.5800,
-                    "untrRedVal": 948.430000,
-                    "anulRedRate": 4.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-24T09:25:00",
-                        "clsgDtTm": "2019-01-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 983.110000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 953.990000,
-                    "anulRedRate": 4.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-28T09:25:00",
-                        "clsgDtTm": "2019-01-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 978.490000,
-                    "anulInvstmtRate": 4.5800,
-                    "untrRedVal": 949.520000,
-                    "anulRedRate": 4.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-29T09:25:00",
-                        "clsgDtTm": "2019-01-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 978.790000,
-                    "anulInvstmtRate": 4.5800,
-                    "untrRedVal": 949.810000,
-                    "anulRedRate": 4.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-30T09:25:00",
-                        "clsgDtTm": "2019-01-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 984.000000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 954.870000,
-                    "anulRedRate": 4.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-01-31T09:25:00",
-                        "clsgDtTm": "2019-02-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1001.730000,
-                    "anulInvstmtRate": 4.4900,
-                    "untrRedVal": 972.050000,
-                    "anulRedRate": 4.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-01T09:25:00",
-                        "clsgDtTm": "2019-02-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1012.380000,
-                    "anulInvstmtRate": 4.4500,
-                    "untrRedVal": 982.380000,
-                    "anulRedRate": 4.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-04T09:25:00",
-                        "clsgDtTm": "2019-02-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1017.770000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 987.620000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-05T09:25:00",
-                        "clsgDtTm": "2019-02-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1020.630000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 990.390000,
-                    "anulRedRate": 4.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-06T09:25:00",
-                        "clsgDtTm": "2019-02-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1005.700000,
-                    "anulInvstmtRate": 4.4800,
-                    "untrRedVal": 975.920000,
-                    "anulRedRate": 4.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-07T09:25:00",
-                        "clsgDtTm": "2019-02-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1000.970000,
-                    "anulInvstmtRate": 4.5000,
-                    "untrRedVal": 971.340000,
-                    "anulRedRate": 4.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-08T09:25:00",
-                        "clsgDtTm": "2019-02-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 981.060000,
-                    "anulInvstmtRate": 4.5800,
-                    "untrRedVal": 952.050000,
-                    "anulRedRate": 4.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-11T09:25:00",
-                        "clsgDtTm": "2019-02-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 966.720000,
-                    "anulInvstmtRate": 4.6400,
-                    "untrRedVal": 938.150000,
-                    "anulRedRate": 4.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-12T09:25:00",
-                        "clsgDtTm": "2019-02-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 976.710000,
-                    "anulInvstmtRate": 4.6000,
-                    "untrRedVal": 947.850000,
-                    "anulRedRate": 4.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-13T09:25:00",
-                        "clsgDtTm": "2019-02-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 989.290000,
-                    "anulInvstmtRate": 4.5500,
-                    "untrRedVal": 960.040000,
-                    "anulRedRate": 4.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-14T09:25:00",
-                        "clsgDtTm": "2019-02-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 994.530000,
-                    "anulInvstmtRate": 4.5300,
-                    "untrRedVal": 965.120000,
-                    "anulRedRate": 4.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-15T09:25:00",
-                        "clsgDtTm": "2019-02-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1020.290000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 990.100000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-18T09:25:00",
-                        "clsgDtTm": "2019-02-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1015.490000,
-                    "anulInvstmtRate": 4.4500,
-                    "untrRedVal": 985.450000,
-                    "anulRedRate": 4.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-19T09:25:00",
-                        "clsgDtTm": "2019-02-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1018.330000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 988.210000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-20T09:25:00",
-                        "clsgDtTm": "2019-02-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1018.640000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 988.510000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-21T09:25:00",
-                        "clsgDtTm": "2019-02-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1003.750000,
-                    "anulInvstmtRate": 4.5000,
-                    "untrRedVal": 974.090000,
-                    "anulRedRate": 4.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-22T09:25:00",
-                        "clsgDtTm": "2019-02-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1009.330000,
-                    "anulInvstmtRate": 4.4800,
-                    "untrRedVal": 979.500000,
-                    "anulRedRate": 4.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-25T09:25:00",
-                        "clsgDtTm": "2019-02-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1009.630000,
-                    "anulInvstmtRate": 4.4800,
-                    "untrRedVal": 979.790000,
-                    "anulRedRate": 4.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-26T09:25:00",
-                        "clsgDtTm": "2019-02-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1007.400000,
-                    "anulInvstmtRate": 4.4900,
-                    "untrRedVal": 977.640000,
-                    "anulRedRate": 4.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-27T09:25:00",
-                        "clsgDtTm": "2019-02-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1010.220000,
-                    "anulInvstmtRate": 4.4800,
-                    "untrRedVal": 980.380000,
-                    "anulRedRate": 4.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-02-28T09:25:00",
-                        "clsgDtTm": "2019-03-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1018.130000,
-                    "anulInvstmtRate": 4.4500,
-                    "untrRedVal": 988.050000,
-                    "anulRedRate": 4.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-01T09:25:00",
-                        "clsgDtTm": "2019-03-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1016.380000,
-                    "anulInvstmtRate": 4.4600,
-                    "untrRedVal": 986.360000,
-                    "anulRedRate": 4.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-06T13:50:00",
-                        "clsgDtTm": "2019-03-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1021.770000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 991.590000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-07T09:25:00",
-                        "clsgDtTm": "2019-03-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1024.630000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 994.370000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-08T09:25:00",
-                        "clsgDtTm": "2019-03-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1027.750000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 997.390000,
-                    "anulRedRate": 4.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-11T09:25:00",
-                        "clsgDtTm": "2019-03-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1043.590000,
-                    "anulInvstmtRate": 4.3600,
-                    "untrRedVal": 1012.750000,
-                    "anulRedRate": 4.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-12T09:25:00",
-                        "clsgDtTm": "2019-03-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1042.150000,
-                    "anulInvstmtRate": 4.3700,
-                    "untrRedVal": 1011.360000,
-                    "anulRedRate": 4.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-13T09:25:00",
-                        "clsgDtTm": "2019-03-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1050.340000,
-                    "anulInvstmtRate": 4.3400,
-                    "untrRedVal": 1019.300000,
-                    "anulRedRate": 4.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-14T09:25:00",
-                        "clsgDtTm": "2019-03-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1048.050000,
-                    "anulInvstmtRate": 4.3500,
-                    "untrRedVal": 1017.090000,
-                    "anulRedRate": 4.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-15T09:25:00",
-                        "clsgDtTm": "2019-03-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1051.330000,
-                    "anulInvstmtRate": 4.3400,
-                    "untrRedVal": 1020.270000,
-                    "anulRedRate": 4.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-18T09:25:00",
-                        "clsgDtTm": "2019-03-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1054.290000,
-                    "anulInvstmtRate": 4.3300,
-                    "untrRedVal": 1023.160000,
-                    "anulRedRate": 4.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-19T09:25:00",
-                        "clsgDtTm": "2019-03-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1067.900000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1036.350000,
-                    "anulRedRate": 4.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-20T09:25:00",
-                        "clsgDtTm": "2019-03-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1060.260000,
-                    "anulInvstmtRate": 4.3100,
-                    "untrRedVal": 1028.940000,
-                    "anulRedRate": 4.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-21T09:25:00",
-                        "clsgDtTm": "2019-03-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1057.950000,
-                    "anulInvstmtRate": 4.3200,
-                    "untrRedVal": 1026.710000,
-                    "anulRedRate": 4.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-22T09:25:00",
-                        "clsgDtTm": "2019-03-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1040.260000,
-                    "anulInvstmtRate": 4.3900,
-                    "untrRedVal": 1009.570000,
-                    "anulRedRate": 4.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-25T09:25:00",
-                        "clsgDtTm": "2019-03-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1032.830000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 1002.370000,
-                    "anulRedRate": 4.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-26T09:25:00",
-                        "clsgDtTm": "2019-03-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1030.590000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 1000.210000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-27T09:25:00",
-                        "clsgDtTm": "2019-03-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1008.500000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 978.800000,
-                    "anulRedRate": 4.6400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-28T09:25:00",
-                        "clsgDtTm": "2019-03-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1001.360000,
-                    "anulInvstmtRate": 4.5500,
-                    "untrRedVal": 971.880000,
-                    "anulRedRate": 4.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-03-29T09:25:00",
-                        "clsgDtTm": "2019-04-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1022.270000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 992.160000,
-                    "anulRedRate": 4.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-01T09:25:00",
-                        "clsgDtTm": "2019-04-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1032.890000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 1002.460000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-02T09:25:00",
-                        "clsgDtTm": "2019-04-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1033.260000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 1002.820000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-03T09:25:00",
-                        "clsgDtTm": "2019-04-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1031.060000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 1000.690000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-04T09:25:00",
-                        "clsgDtTm": "2019-04-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1023.740000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 993.610000,
-                    "anulRedRate": 4.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-05T09:25:00",
-                        "clsgDtTm": "2019-04-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1024.500000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 994.340000,
-                    "anulRedRate": 4.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-08T09:25:00",
-                        "clsgDtTm": "2019-04-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1024.870000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 994.700000,
-                    "anulRedRate": 4.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-09T09:25:00",
-                        "clsgDtTm": "2019-04-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1012.550000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 982.770000,
-                    "anulRedRate": 4.6400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-10T09:25:00",
-                        "clsgDtTm": "2019-04-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1016.940000,
-                    "anulInvstmtRate": 4.5100,
-                    "untrRedVal": 987.030000,
-                    "anulRedRate": 4.6300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-11T09:25:00",
-                        "clsgDtTm": "2019-04-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1012.310000,
-                    "anulInvstmtRate": 4.5300,
-                    "untrRedVal": 982.550000,
-                    "anulRedRate": 4.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-12T09:25:00",
-                        "clsgDtTm": "2019-04-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1010.700000,
-                    "anulInvstmtRate": 4.5400,
-                    "untrRedVal": 981.000000,
-                    "anulRedRate": 4.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-15T09:25:00",
-                        "clsgDtTm": "2019-04-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1006.040000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 976.490000,
-                    "anulRedRate": 4.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-16T09:25:00",
-                        "clsgDtTm": "2019-04-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1003.910000,
-                    "anulInvstmtRate": 4.5700,
-                    "untrRedVal": 974.420000,
-                    "anulRedRate": 4.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-17T09:25:00",
-                        "clsgDtTm": "2019-04-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1006.760000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 977.190000,
-                    "anulRedRate": 4.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-18T09:25:00",
-                        "clsgDtTm": "2019-04-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1010.170000,
-                    "anulInvstmtRate": 4.5500,
-                    "untrRedVal": 980.500000,
-                    "anulRedRate": 4.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-22T09:25:00",
-                        "clsgDtTm": "2019-04-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1013.050000,
-                    "anulInvstmtRate": 4.5400,
-                    "untrRedVal": 983.290000,
-                    "anulRedRate": 4.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-23T09:25:00",
-                        "clsgDtTm": "2019-04-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1015.930000,
-                    "anulInvstmtRate": 4.5300,
-                    "untrRedVal": 986.090000,
-                    "anulRedRate": 4.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-24T09:25:00",
-                        "clsgDtTm": "2019-04-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1026.440000,
-                    "anulInvstmtRate": 4.4900,
-                    "untrRedVal": 996.290000,
-                    "anulRedRate": 4.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-25T09:25:00",
-                        "clsgDtTm": "2019-04-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1031.930000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 1001.610000,
-                    "anulRedRate": 4.5900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-26T09:15:00",
-                        "clsgDtTm": "2019-04-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1043.320000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 1012.660000,
-                    "anulRedRate": 4.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-29T09:15:00",
-                        "clsgDtTm": "2019-04-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1046.310000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 1015.570000,
-                    "anulRedRate": 4.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-04-30T09:15:00",
-                        "clsgDtTm": "2019-05-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1041.720000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 1011.120000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-02T09:15:00",
-                        "clsgDtTm": "2019-05-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1042.110000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 1011.510000,
-                    "anulRedRate": 4.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-03T09:15:00",
-                        "clsgDtTm": "2019-05-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1055.970000,
-                    "anulInvstmtRate": 4.3900,
-                    "untrRedVal": 1024.950000,
-                    "anulRedRate": 4.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-06T09:15:00",
-                        "clsgDtTm": "2019-05-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1058.990000,
-                    "anulInvstmtRate": 4.3800,
-                    "untrRedVal": 1027.880000,
-                    "anulRedRate": 4.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-07T09:15:00",
-                        "clsgDtTm": "2019-05-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1054.130000,
-                    "anulInvstmtRate": 4.4000,
-                    "untrRedVal": 1023.180000,
-                    "anulRedRate": 4.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-08T09:15:00",
-                        "clsgDtTm": "2019-05-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1062.420000,
-                    "anulInvstmtRate": 4.3700,
-                    "untrRedVal": 1031.220000,
-                    "anulRedRate": 4.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-09T09:15:00",
-                        "clsgDtTm": "2019-05-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1065.460000,
-                    "anulInvstmtRate": 4.3600,
-                    "untrRedVal": 1034.170000,
-                    "anulRedRate": 4.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-10T09:15:00",
-                        "clsgDtTm": "2019-05-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1081.910000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1050.120000,
-                    "anulRedRate": 4.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-13T09:15:00",
-                        "clsgDtTm": "2019-05-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1082.290000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1050.500000,
-                    "anulRedRate": 4.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-14T09:15:00",
-                        "clsgDtTm": "2019-05-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1088.070000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1056.110000,
-                    "anulRedRate": 4.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-15T09:15:00",
-                        "clsgDtTm": "2019-05-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1096.500000,
-                    "anulInvstmtRate": 4.2500,
-                    "untrRedVal": 1064.290000,
-                    "anulRedRate": 4.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-16T09:15:00",
-                        "clsgDtTm": "2019-05-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1083.240000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1051.440000,
-                    "anulRedRate": 4.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-17T09:15:00",
-                        "clsgDtTm": "2019-05-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1070.350000,
-                    "anulInvstmtRate": 4.3500,
-                    "untrRedVal": 1038.940000,
-                    "anulRedRate": 4.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-20T09:15:00",
-                        "clsgDtTm": "2019-05-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1081.320000,
-                    "anulInvstmtRate": 4.3100,
-                    "untrRedVal": 1049.580000,
-                    "anulRedRate": 4.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-21T09:15:00",
-                        "clsgDtTm": "2019-05-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1089.690000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1057.710000,
-                    "anulRedRate": 4.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-22T09:15:00",
-                        "clsgDtTm": "2019-05-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1100.860000,
-                    "anulInvstmtRate": 4.2400,
-                    "untrRedVal": 1068.540000,
-                    "anulRedRate": 4.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-23T09:15:00",
-                        "clsgDtTm": "2019-05-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1101.140000,
-                    "anulInvstmtRate": 4.2400,
-                    "untrRedVal": 1068.820000,
-                    "anulRedRate": 4.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-24T09:15:00",
-                        "clsgDtTm": "2019-05-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1107.120000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1074.620000,
-                    "anulRedRate": 4.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-27T09:15:00",
-                        "clsgDtTm": "2019-05-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1109.930000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1077.350000,
-                    "anulRedRate": 4.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-28T09:15:00",
-                        "clsgDtTm": "2019-05-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1121.290000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1088.360000,
-                    "anulRedRate": 4.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-29T09:15:00",
-                        "clsgDtTm": "2019-05-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1149.780000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1115.990000,
-                    "anulRedRate": 4.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-30T09:15:00",
-                        "clsgDtTm": "2019-05-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 1161.550000,
-                    "anulInvstmtRate": 4.0300,
-                    "untrRedVal": 1127.410000,
-                    "anulRedRate": 4.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-05-31T09:15:00",
-                        "clsgDtTm": "2019-06-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1176.550000,
-                    "anulInvstmtRate": 3.9800,
-                    "untrRedVal": 1141.950000,
-                    "anulRedRate": 4.1000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-03T09:15:00",
-                        "clsgDtTm": "2019-06-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1185.630000,
-                    "anulInvstmtRate": 3.9500,
-                    "untrRedVal": 1150.770000,
-                    "anulRedRate": 4.0700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-04T09:15:00",
-                        "clsgDtTm": "2019-06-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1185.910000,
-                    "anulInvstmtRate": 3.9500,
-                    "untrRedVal": 1151.040000,
-                    "anulRedRate": 4.0700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-05T09:15:00",
-                        "clsgDtTm": "2019-06-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1195.070000,
-                    "anulInvstmtRate": 3.9200,
-                    "untrRedVal": 1159.930000,
-                    "anulRedRate": 4.0400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-06T09:15:00",
-                        "clsgDtTm": "2019-06-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1186.460000,
-                    "anulInvstmtRate": 3.9500,
-                    "untrRedVal": 1151.580000,
-                    "anulRedRate": 4.0700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-07T09:15:00",
-                        "clsgDtTm": "2019-06-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1197.680000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1162.470000,
-                    "anulRedRate": 4.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-10T09:15:00",
-                        "clsgDtTm": "2019-06-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1200.900000,
-                    "anulInvstmtRate": 3.9000,
-                    "untrRedVal": 1165.590000,
-                    "anulRedRate": 4.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-11T09:15:00",
-                        "clsgDtTm": "2019-06-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1204.120000,
-                    "anulInvstmtRate": 3.8900,
-                    "untrRedVal": 1168.730000,
-                    "anulRedRate": 4.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-12T09:15:00",
-                        "clsgDtTm": "2019-06-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1204.350000,
-                    "anulInvstmtRate": 3.8900,
-                    "untrRedVal": 1168.960000,
-                    "anulRedRate": 4.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-13T09:15:00",
-                        "clsgDtTm": "2019-06-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1195.630000,
-                    "anulInvstmtRate": 3.9200,
-                    "untrRedVal": 1160.510000,
-                    "anulRedRate": 4.0400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-14T09:15:00",
-                        "clsgDtTm": "2019-06-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1198.850000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1163.630000,
-                    "anulRedRate": 4.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-17T09:15:00",
-                        "clsgDtTm": "2019-06-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1199.040000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1163.820000,
-                    "anulRedRate": 4.0300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-18T09:15:00",
-                        "clsgDtTm": "2019-06-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1202.210000,
-                    "anulInvstmtRate": 3.9000,
-                    "untrRedVal": 1166.900000,
-                    "anulRedRate": 4.0200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-19T09:15:00",
-                        "clsgDtTm": "2019-06-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1205.390000,
-                    "anulInvstmtRate": 3.8900,
-                    "untrRedVal": 1169.990000,
-                    "anulRedRate": 4.0100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-21T09:15:00",
-                        "clsgDtTm": "2019-06-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1232.870000,
-                    "anulInvstmtRate": 3.8000,
-                    "untrRedVal": 1196.630000,
-                    "anulRedRate": 3.9200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-24T09:15:00",
-                        "clsgDtTm": "2019-06-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1242.290000,
-                    "anulInvstmtRate": 3.7700,
-                    "untrRedVal": 1205.770000,
-                    "anulRedRate": 3.8900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-25T09:15:00",
-                        "clsgDtTm": "2019-06-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1251.780000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1214.980000,
-                    "anulRedRate": 3.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-26T09:15:00",
-                        "clsgDtTm": "2019-06-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1258.010000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1221.030000,
-                    "anulRedRate": 3.8400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-27T09:15:00",
-                        "clsgDtTm": "2019-06-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1261.320000,
-                    "anulInvstmtRate": 3.7100,
-                    "untrRedVal": 1224.240000,
-                    "anulRedRate": 3.8300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-06-28T09:15:00",
-                        "clsgDtTm": "2019-07-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1280.430000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1242.780000,
-                    "anulRedRate": 3.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-01T09:15:00",
-                        "clsgDtTm": "2019-07-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1303.110000,
-                    "anulInvstmtRate": 3.5800,
-                    "untrRedVal": 1264.770000,
-                    "anulRedRate": 3.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-02T09:15:00",
-                        "clsgDtTm": "2019-07-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1303.280000,
-                    "anulInvstmtRate": 3.5800,
-                    "untrRedVal": 1264.940000,
-                    "anulRedRate": 3.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-03T09:15:00",
-                        "clsgDtTm": "2019-07-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1287.330000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1249.480000,
-                    "anulRedRate": 3.7500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-04T09:15:00",
-                        "clsgDtTm": "2019-07-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1300.380000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1262.140000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-05T09:15:00",
-                        "clsgDtTm": "2019-07-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1287.640000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1249.800000,
-                    "anulRedRate": 3.7500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-08T09:15:00",
-                        "clsgDtTm": "2019-07-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1291.190000,
-                    "anulInvstmtRate": 3.6200,
-                    "untrRedVal": 1253.250000,
-                    "anulRedRate": 3.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-10T09:15:00",
-                        "clsgDtTm": "2019-07-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1301.480000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1263.230000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-11T09:15:00",
-                        "clsgDtTm": "2019-07-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1298.430000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1260.280000,
-                    "anulRedRate": 3.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-12T09:15:00",
-                        "clsgDtTm": "2019-07-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1301.860000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1263.610000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-15T09:15:00",
-                        "clsgDtTm": "2019-07-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1292.470000,
-                    "anulInvstmtRate": 3.6200,
-                    "untrRedVal": 1254.510000,
-                    "anulRedRate": 3.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-16T09:15:00",
-                        "clsgDtTm": "2019-07-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1289.540000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1251.670000,
-                    "anulRedRate": 3.7500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-17T09:15:00",
-                        "clsgDtTm": "2019-07-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1277.060000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1239.590000,
-                    "anulRedRate": 3.7900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-18T09:15:00",
-                        "clsgDtTm": "2019-07-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1277.340000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1239.860000,
-                    "anulRedRate": 3.7900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-19T09:15:00",
-                        "clsgDtTm": "2019-07-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1277.810000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1240.320000,
-                    "anulRedRate": 3.7900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-22T09:15:00",
-                        "clsgDtTm": "2019-07-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1274.920000,
-                    "anulInvstmtRate": 3.6800,
-                    "untrRedVal": 1237.520000,
-                    "anulRedRate": 3.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-23T09:15:00",
-                        "clsgDtTm": "2019-07-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1284.720000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1247.040000,
-                    "anulRedRate": 3.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-24T09:15:00",
-                        "clsgDtTm": "2019-07-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1301.010000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1262.840000,
-                    "anulRedRate": 3.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-25T09:15:00",
-                        "clsgDtTm": "2019-07-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1301.290000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1263.110000,
-                    "anulRedRate": 3.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-26T09:15:00",
-                        "clsgDtTm": "2019-07-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1298.520000,
-                    "anulInvstmtRate": 3.6100,
-                    "untrRedVal": 1260.430000,
-                    "anulRedRate": 3.7300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-29T09:15:00",
-                        "clsgDtTm": "2019-07-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1308.500000,
-                    "anulInvstmtRate": 3.5800,
-                    "untrRedVal": 1270.120000,
-                    "anulRedRate": 3.7000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-30T09:15:00",
-                        "clsgDtTm": "2019-07-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 1305.530000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1267.240000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-07-31T09:15:00",
-                        "clsgDtTm": "2019-08-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1305.810000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1267.510000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-01T09:15:00",
-                        "clsgDtTm": "2019-08-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1302.840000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1264.650000,
-                    "anulRedRate": 3.7200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-02T09:15:00",
-                        "clsgDtTm": "2019-08-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1290.440000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1252.630000,
-                    "anulRedRate": 3.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-05T09:15:00",
-                        "clsgDtTm": "2019-08-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1284.330000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1246.710000,
-                    "anulRedRate": 3.7800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-06T09:15:00",
-                        "clsgDtTm": "2019-08-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1294.190000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1256.280000,
-                    "anulRedRate": 3.7500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-07T09:15:00",
-                        "clsgDtTm": "2019-08-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1297.680000,
-                    "anulInvstmtRate": 3.6200,
-                    "untrRedVal": 1259.670000,
-                    "anulRedRate": 3.7400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-08T09:15:00",
-                        "clsgDtTm": "2019-08-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1326.930000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1288.030000,
-                    "anulRedRate": 3.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-09T09:15:00",
-                        "clsgDtTm": "2019-08-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1327.350000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1288.450000,
-                    "anulRedRate": 3.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-12T09:15:00",
-                        "clsgDtTm": "2019-08-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1327.620000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1288.710000,
-                    "anulRedRate": 3.6500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-13T09:15:00",
-                        "clsgDtTm": "2019-08-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1334.490000,
-                    "anulInvstmtRate": 3.5100,
-                    "untrRedVal": 1295.380000,
-                    "anulRedRate": 3.6300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-14T09:15:00",
-                        "clsgDtTm": "2019-08-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1318.310000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1279.700000,
-                    "anulRedRate": 3.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-15T09:15:00",
-                        "clsgDtTm": "2019-08-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1318.560000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1279.950000,
-                    "anulRedRate": 3.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-16T09:15:00",
-                        "clsgDtTm": "2019-08-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1325.510000,
-                    "anulInvstmtRate": 3.5400,
-                    "untrRedVal": 1286.700000,
-                    "anulRedRate": 3.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-19T09:15:00",
-                        "clsgDtTm": "2019-08-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1322.490000,
-                    "anulInvstmtRate": 3.5500,
-                    "untrRedVal": 1283.770000,
-                    "anulRedRate": 3.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-20T09:15:00",
-                        "clsgDtTm": "2019-08-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1316.210000,
-                    "anulInvstmtRate": 3.5700,
-                    "untrRedVal": 1277.690000,
-                    "anulRedRate": 3.6900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-21T09:15:00",
-                        "clsgDtTm": "2019-08-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1326.280000,
-                    "anulInvstmtRate": 3.5400,
-                    "untrRedVal": 1287.460000,
-                    "anulRedRate": 3.6600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-22T09:15:00",
-                        "clsgDtTm": "2019-08-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1323.260000,
-                    "anulInvstmtRate": 3.5500,
-                    "untrRedVal": 1284.530000,
-                    "anulRedRate": 3.6700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-23T09:15:00",
-                        "clsgDtTm": "2019-08-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1320.200000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1281.570000,
-                    "anulRedRate": 3.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-26T09:15:00",
-                        "clsgDtTm": "2019-08-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1310.670000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1272.340000,
-                    "anulRedRate": 3.7100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-27T09:15:00",
-                        "clsgDtTm": "2019-08-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1291.590000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1253.850000,
-                    "anulRedRate": 3.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-28T09:15:00",
-                        "clsgDtTm": "2019-08-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1279.120000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1241.760000,
-                    "anulRedRate": 3.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-29T09:15:00",
-                        "clsgDtTm": "2019-08-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1263.650000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1226.770000,
-                    "anulRedRate": 3.8600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-08-30T09:15:00",
-                        "clsgDtTm": "2019-09-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1270.250000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1233.180000,
-                    "anulRedRate": 3.8400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-02T09:15:00",
-                        "clsgDtTm": "2019-09-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1279.940000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1242.580000,
-                    "anulRedRate": 3.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-03T09:15:00",
-                        "clsgDtTm": "2019-09-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1283.340000,
-                    "anulInvstmtRate": 3.6800,
-                    "untrRedVal": 1245.880000,
-                    "anulRedRate": 3.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-04T09:15:00",
-                        "clsgDtTm": "2019-09-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1289.940000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1252.280000,
-                    "anulRedRate": 3.7800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-05T09:15:00",
-                        "clsgDtTm": "2019-09-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1296.570000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1258.720000,
-                    "anulRedRate": 3.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-06T09:15:00",
-                        "clsgDtTm": "2019-09-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1296.710000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1258.860000,
-                    "anulRedRate": 3.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-09T09:15:00",
-                        "clsgDtTm": "2019-09-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1296.940000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1259.080000,
-                    "anulRedRate": 3.7600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-10T09:15:00",
-                        "clsgDtTm": "2019-09-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1281.250000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1243.880000,
-                    "anulRedRate": 3.8100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-11T09:15:00",
-                        "clsgDtTm": "2019-09-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1291.000000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1253.350000,
-                    "anulRedRate": 3.7800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-12T09:15:00",
-                        "clsgDtTm": "2019-09-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1300.830000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1262.880000,
-                    "anulRedRate": 3.7500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-13T09:15:00",
-                        "clsgDtTm": "2019-09-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1294.750000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1256.990000,
-                    "anulRedRate": 3.7700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-16T09:15:00",
-                        "clsgDtTm": "2019-09-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1285.420000,
-                    "anulInvstmtRate": 3.6800,
-                    "untrRedVal": 1247.950000,
-                    "anulRedRate": 3.8000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-17T09:15:00",
-                        "clsgDtTm": "2019-09-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1308.050000,
-                    "anulInvstmtRate": 3.6100,
-                    "untrRedVal": 1269.900000,
-                    "anulRedRate": 3.7300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-18T09:15:00",
-                        "clsgDtTm": "2019-09-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1324.520000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1285.880000,
-                    "anulRedRate": 3.6800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-19T09:15:00",
-                        "clsgDtTm": "2019-09-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1351.180000,
-                    "anulInvstmtRate": 3.4800,
-                    "untrRedVal": 1311.740000,
-                    "anulRedRate": 3.6000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-20T09:15:00",
-                        "clsgDtTm": "2019-09-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1348.170000,
-                    "anulInvstmtRate": 3.4900,
-                    "untrRedVal": 1308.820000,
-                    "anulRedRate": 3.6100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-23T09:15:00",
-                        "clsgDtTm": "2019-09-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1345.070000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1305.820000,
-                    "anulRedRate": 3.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-24T09:15:00",
-                        "clsgDtTm": "2019-09-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1341.980000,
-                    "anulInvstmtRate": 3.5100,
-                    "untrRedVal": 1302.830000,
-                    "anulRedRate": 3.6300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-25T09:15:00",
-                        "clsgDtTm": "2019-09-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1345.180000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1305.940000,
-                    "anulRedRate": 3.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-26T09:15:00",
-                        "clsgDtTm": "2019-09-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1365.460000,
-                    "anulInvstmtRate": 3.4400,
-                    "untrRedVal": 1325.610000,
-                    "anulRedRate": 3.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-27T09:15:00",
-                        "clsgDtTm": "2019-09-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1369.050000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1329.110000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-09-30T09:15:00",
-                        "clsgDtTm": "2019-10-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1369.250000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1329.300000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-01T09:15:00",
-                        "clsgDtTm": "2019-10-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1369.450000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1329.500000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-02T09:15:00",
-                        "clsgDtTm": "2019-10-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1369.650000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1329.700000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-03T09:15:00",
-                        "clsgDtTm": "2019-10-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1383.440000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1343.070000,
-                    "anulRedRate": 3.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-04T09:15:00",
-                        "clsgDtTm": "2019-10-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1387.080000,
-                    "anulInvstmtRate": 3.3800,
-                    "untrRedVal": 1346.610000,
-                    "anulRedRate": 3.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-07T09:15:00",
-                        "clsgDtTm": "2019-10-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1383.860000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1343.500000,
-                    "anulRedRate": 3.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-08T09:15:00",
-                        "clsgDtTm": "2019-10-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1377.240000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1337.090000,
-                    "anulRedRate": 3.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-09T09:15:00",
-                        "clsgDtTm": "2019-10-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1366.490000,
-                    "anulInvstmtRate": 3.4400,
-                    "untrRedVal": 1326.660000,
-                    "anulRedRate": 3.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-10T09:15:00",
-                        "clsgDtTm": "2019-10-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1380.200000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1339.970000,
-                    "anulRedRate": 3.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-11T09:15:00",
-                        "clsgDtTm": "2019-10-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1404.370000,
-                    "anulInvstmtRate": 3.3300,
-                    "untrRedVal": 1363.410000,
-                    "anulRedRate": 3.4500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-14T09:15:00",
-                        "clsgDtTm": "2019-10-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1414.970000,
-                    "anulInvstmtRate": 3.3000,
-                    "untrRedVal": 1373.700000,
-                    "anulRedRate": 3.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-15T09:15:00",
-                        "clsgDtTm": "2019-10-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1411.690000,
-                    "anulInvstmtRate": 3.3100,
-                    "untrRedVal": 1370.530000,
-                    "anulRedRate": 3.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-16T09:15:00",
-                        "clsgDtTm": "2019-10-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1408.420000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1367.360000,
-                    "anulRedRate": 3.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-17T09:15:00",
-                        "clsgDtTm": "2019-10-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1443.830000,
-                    "anulInvstmtRate": 3.2200,
-                    "untrRedVal": 1401.700000,
-                    "anulRedRate": 3.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-18T09:15:00",
-                        "clsgDtTm": "2019-10-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1451.240000,
-                    "anulInvstmtRate": 3.2000,
-                    "untrRedVal": 1408.900000,
-                    "anulRedRate": 3.3200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-21T09:15:00",
-                        "clsgDtTm": "2019-10-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1458.630000,
-                    "anulInvstmtRate": 3.1800,
-                    "untrRedVal": 1416.080000,
-                    "anulRedRate": 3.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-22T09:15:00",
-                        "clsgDtTm": "2019-10-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1462.450000,
-                    "anulInvstmtRate": 3.1700,
-                    "untrRedVal": 1419.780000,
-                    "anulRedRate": 3.2900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-23T09:15:00",
-                        "clsgDtTm": "2019-10-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1466.360000,
-                    "anulInvstmtRate": 3.1600,
-                    "untrRedVal": 1423.580000,
-                    "anulRedRate": 3.2800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-24T09:15:00",
-                        "clsgDtTm": "2019-10-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1473.840000,
-                    "anulInvstmtRate": 3.1400,
-                    "untrRedVal": 1430.840000,
-                    "anulRedRate": 3.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-25T09:15:00",
-                        "clsgDtTm": "2019-10-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1474.130000,
-                    "anulInvstmtRate": 3.1400,
-                    "untrRedVal": 1431.130000,
-                    "anulRedRate": 3.2600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-28T09:15:00",
-                        "clsgDtTm": "2019-10-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1492.660000,
-                    "anulInvstmtRate": 3.0900,
-                    "untrRedVal": 1449.110000,
-                    "anulRedRate": 3.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-29T09:15:00",
-                        "clsgDtTm": "2019-10-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1503.980000,
-                    "anulInvstmtRate": 3.0600,
-                    "untrRedVal": 1460.090000,
-                    "anulRedRate": 3.1800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-30T09:15:00",
-                        "clsgDtTm": "2019-10-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 1500.490000,
-                    "anulInvstmtRate": 3.0700,
-                    "untrRedVal": 1456.710000,
-                    "anulRedRate": 3.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-10-31T09:15:00",
-                        "clsgDtTm": "2019-11-01T05:00:00"
-                    },
-                    "untrInvstmtVal": 1534.440000,
-                    "anulInvstmtRate": 2.9800,
-                    "untrRedVal": 1489.640000,
-                    "anulRedRate": 3.1000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-01T09:15:00",
-                        "clsgDtTm": "2019-11-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1557.670000,
-                    "anulInvstmtRate": 2.9200,
-                    "untrRedVal": 1512.160000,
-                    "anulRedRate": 3.0400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-04T09:15:00",
-                        "clsgDtTm": "2019-11-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1577.260000,
-                    "anulInvstmtRate": 2.8700,
-                    "untrRedVal": 1531.170000,
-                    "anulRedRate": 2.9900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-05T09:15:00",
-                        "clsgDtTm": "2019-11-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1558.100000,
-                    "anulInvstmtRate": 2.9200,
-                    "untrRedVal": 1512.600000,
-                    "anulRedRate": 3.0400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-06T09:15:00",
-                        "clsgDtTm": "2019-11-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1543.000000,
-                    "anulInvstmtRate": 2.9600,
-                    "untrRedVal": 1497.960000,
-                    "anulRedRate": 3.0800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-07T09:15:00",
-                        "clsgDtTm": "2019-11-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1517.010000,
-                    "anulInvstmtRate": 3.0300,
-                    "untrRedVal": 1472.770000,
-                    "anulRedRate": 3.1500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-08T09:15:00",
-                        "clsgDtTm": "2019-11-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1502.440000,
-                    "anulInvstmtRate": 3.0700,
-                    "untrRedVal": 1458.650000,
-                    "anulRedRate": 3.1900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-11T09:15:00",
-                        "clsgDtTm": "2019-11-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1495.280000,
-                    "anulInvstmtRate": 3.0900,
-                    "untrRedVal": 1451.710000,
-                    "anulRedRate": 3.2100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-12T09:15:00",
-                        "clsgDtTm": "2019-11-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1473.550000,
-                    "anulInvstmtRate": 3.1500,
-                    "untrRedVal": 1430.650000,
-                    "anulRedRate": 3.2700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-13T09:15:00",
-                        "clsgDtTm": "2019-11-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1462.940000,
-                    "anulInvstmtRate": 3.1800,
-                    "untrRedVal": 1420.360000,
-                    "anulRedRate": 3.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-14T09:15:00",
-                        "clsgDtTm": "2019-11-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1460.150000,
-                    "anulInvstmtRate": 3.1900,
-                    "untrRedVal": 1417.670000,
-                    "anulRedRate": 3.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-18T09:15:00",
-                        "clsgDtTm": "2019-11-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1464.130000,
-                    "anulInvstmtRate": 3.1800,
-                    "untrRedVal": 1421.530000,
-                    "anulRedRate": 3.3000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-19T09:15:00",
-                        "clsgDtTm": "2019-11-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1450.530000,
-                    "anulInvstmtRate": 3.2200,
-                    "untrRedVal": 1408.360000,
-                    "anulRedRate": 3.3400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-21T09:15:00",
-                        "clsgDtTm": "2019-11-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1436.700000,
-                    "anulInvstmtRate": 3.2600,
-                    "untrRedVal": 1394.960000,
-                    "anulRedRate": 3.3800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-22T09:15:00",
-                        "clsgDtTm": "2019-11-25T05:00:00"
-                    },
-                    "untrInvstmtVal": 1444.550000,
-                    "anulInvstmtRate": 3.2400,
-                    "untrRedVal": 1402.570000,
-                    "anulRedRate": 3.3600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-25T09:15:00",
-                        "clsgDtTm": "2019-11-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1434.410000,
-                    "anulInvstmtRate": 3.2700,
-                    "untrRedVal": 1392.750000,
-                    "anulRedRate": 3.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-26T09:15:00",
-                        "clsgDtTm": "2019-11-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1424.260000,
-                    "anulInvstmtRate": 3.3000,
-                    "untrRedVal": 1382.910000,
-                    "anulRedRate": 3.4200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-27T09:15:00",
-                        "clsgDtTm": "2019-11-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1400.360000,
-                    "anulInvstmtRate": 3.3700,
-                    "untrRedVal": 1359.740000,
-                    "anulRedRate": 3.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-28T09:15:00",
-                        "clsgDtTm": "2019-11-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1393.890000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1353.460000,
-                    "anulRedRate": 3.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-11-29T09:15:00",
-                        "clsgDtTm": "2019-12-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1411.870000,
-                    "anulInvstmtRate": 3.3400,
-                    "untrRedVal": 1370.920000,
-                    "anulRedRate": 3.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-02T09:15:00",
-                        "clsgDtTm": "2019-12-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1405.340000,
-                    "anulInvstmtRate": 3.3600,
-                    "untrRedVal": 1364.590000,
-                    "anulRedRate": 3.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-03T09:15:00",
-                        "clsgDtTm": "2019-12-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1402.280000,
-                    "anulInvstmtRate": 3.3700,
-                    "untrRedVal": 1361.620000,
-                    "anulRedRate": 3.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-04T09:15:00",
-                        "clsgDtTm": "2019-12-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1409.550000,
-                    "anulInvstmtRate": 3.3500,
-                    "untrRedVal": 1368.690000,
-                    "anulRedRate": 3.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-05T09:15:00",
-                        "clsgDtTm": "2019-12-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1413.400000,
-                    "anulInvstmtRate": 3.3400,
-                    "untrRedVal": 1372.420000,
-                    "anulRedRate": 3.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-06T09:15:00",
-                        "clsgDtTm": "2019-12-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1415.190000,
-                    "anulInvstmtRate": 3.3400,
-                    "untrRedVal": 1374.170000,
-                    "anulRedRate": 3.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-09T09:15:00",
-                        "clsgDtTm": "2019-12-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1425.760000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1384.430000,
-                    "anulRedRate": 3.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-10T09:15:00",
-                        "clsgDtTm": "2019-12-11T05:00:00"
-                    },
-                    "untrInvstmtVal": 1426.310000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1384.970000,
-                    "anulRedRate": 3.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-11T09:15:00",
-                        "clsgDtTm": "2019-12-12T05:00:00"
-                    },
-                    "untrInvstmtVal": 1440.930000,
-                    "anulInvstmtRate": 3.2800,
-                    "untrRedVal": 1399.160000,
-                    "anulRedRate": 3.4000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-12T09:15:00",
-                        "clsgDtTm": "2019-12-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1462.790000,
-                    "anulInvstmtRate": 3.2100,
-                    "untrRedVal": 1420.360000,
-                    "anulRedRate": 3.3300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-13T09:15:00",
-                        "clsgDtTm": "2019-12-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1471.040000,
-                    "anulInvstmtRate": 3.1900,
-                    "untrRedVal": 1428.370000,
-                    "anulRedRate": 3.3100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-16T09:15:00",
-                        "clsgDtTm": "2019-12-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1450.090000,
-                    "anulInvstmtRate": 3.2500,
-                    "untrRedVal": 1408.060000,
-                    "anulRedRate": 3.3700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-17T09:15:00",
-                        "clsgDtTm": "2019-12-18T05:00:00"
-                    },
-                    "untrInvstmtVal": 1429.460000,
-                    "anulInvstmtRate": 3.3100,
-                    "untrRedVal": 1388.060000,
-                    "anulRedRate": 3.4300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-18T09:15:00",
-                        "clsgDtTm": "2019-12-19T05:00:00"
-                    },
-                    "untrInvstmtVal": 1416.060000,
-                    "anulInvstmtRate": 3.3500,
-                    "untrRedVal": 1375.070000,
-                    "anulRedRate": 3.4700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-19T09:15:00",
-                        "clsgDtTm": "2019-12-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1399.360000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1358.880000,
-                    "anulRedRate": 3.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-20T09:15:00",
-                        "clsgDtTm": "2019-12-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1366.750000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1327.260000,
-                    "anulRedRate": 3.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-23T09:15:00",
-                        "clsgDtTm": "2019-12-26T05:00:00"
-                    },
-                    "untrInvstmtVal": 1382.910000,
-                    "anulInvstmtRate": 3.4600,
-                    "untrRedVal": 1342.950000,
-                    "anulRedRate": 3.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-26T09:15:00",
-                        "clsgDtTm": "2019-12-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1393.750000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1353.470000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-27T09:15:00",
-                        "clsgDtTm": "2019-12-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1395.350000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1355.020000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2019-12-30T09:15:00",
-                        "clsgDtTm": "2020-01-02T05:00:00"
-                    },
-                    "untrInvstmtVal": 1414.320000,
-                    "anulInvstmtRate": 3.3800,
-                    "untrRedVal": 1373.440000,
-                    "anulRedRate": 3.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-02T09:15:00",
-                        "clsgDtTm": "2020-01-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1418.440000,
-                    "anulInvstmtRate": 3.3700,
-                    "untrRedVal": 1377.450000,
-                    "anulRedRate": 3.4900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-03T09:15:00",
-                        "clsgDtTm": "2020-01-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1423.540000,
-                    "anulInvstmtRate": 3.3600,
-                    "untrRedVal": 1382.400000,
-                    "anulRedRate": 3.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-06T09:15:00",
-                        "clsgDtTm": "2020-01-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1410.350000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1369.620000,
-                    "anulRedRate": 3.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-07T09:15:00",
-                        "clsgDtTm": "2020-01-08T05:00:00"
-                    },
-                    "untrInvstmtVal": 1393.880000,
-                    "anulInvstmtRate": 3.4500,
-                    "untrRedVal": 1353.650000,
-                    "anulRedRate": 3.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-08T09:15:00",
-                        "clsgDtTm": "2020-01-09T05:00:00"
-                    },
-                    "untrInvstmtVal": 1411.680000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1370.910000,
-                    "anulRedRate": 3.5200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-09T09:15:00",
-                        "clsgDtTm": "2020-01-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1408.890000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1368.220000,
-                    "anulRedRate": 3.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-10T09:15:00",
-                        "clsgDtTm": "2020-01-13T05:00:00"
-                    },
-                    "untrInvstmtVal": 1418.730000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1377.770000,
-                    "anulRedRate": 3.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-13T09:15:00",
-                        "clsgDtTm": "2020-01-14T05:00:00"
-                    },
-                    "untrInvstmtVal": 1412.520000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1371.760000,
-                    "anulRedRate": 3.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-14T09:15:00",
-                        "clsgDtTm": "2020-01-15T05:00:00"
-                    },
-                    "untrInvstmtVal": 1413.230000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1372.450000,
-                    "anulRedRate": 3.5300
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-15T09:15:00",
-                        "clsgDtTm": "2020-01-16T05:00:00"
-                    },
-                    "untrInvstmtVal": 1420.490000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1379.500000,
-                    "anulRedRate": 3.5100
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-16T09:15:00",
-                        "clsgDtTm": "2020-01-17T05:00:00"
-                    },
-                    "untrInvstmtVal": 1407.030000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1366.450000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-17T09:15:00",
-                        "clsgDtTm": "2020-01-20T05:00:00"
-                    },
-                    "untrInvstmtVal": 1400.830000,
-                    "anulInvstmtRate": 3.4500,
-                    "untrRedVal": 1360.440000,
-                    "anulRedRate": 3.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-20T09:15:00",
-                        "clsgDtTm": "2020-01-21T05:00:00"
-                    },
-                    "untrInvstmtVal": 1404.590000,
-                    "anulInvstmtRate": 3.4400,
-                    "untrRedVal": 1364.100000,
-                    "anulRedRate": 3.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-21T09:15:00",
-                        "clsgDtTm": "2020-01-22T05:00:00"
-                    },
-                    "untrInvstmtVal": 1384.540000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1344.650000,
-                    "anulRedRate": 3.6200
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-22T09:15:00",
-                        "clsgDtTm": "2020-01-23T05:00:00"
-                    },
-                    "untrInvstmtVal": 1398.440000,
-                    "anulInvstmtRate": 3.4600,
-                    "untrRedVal": 1358.150000,
-                    "anulRedRate": 3.5800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-23T09:15:00",
-                        "clsgDtTm": "2020-01-24T05:00:00"
-                    },
-                    "untrInvstmtVal": 1402.200000,
-                    "anulInvstmtRate": 3.4500,
-                    "untrRedVal": 1361.800000,
-                    "anulRedRate": 3.5700
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-24T09:15:00",
-                        "clsgDtTm": "2020-01-27T05:00:00"
-                    },
-                    "untrInvstmtVal": 1406.160000,
-                    "anulInvstmtRate": 3.4400,
-                    "untrRedVal": 1365.650000,
-                    "anulRedRate": 3.5600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-27T09:15:00",
-                        "clsgDtTm": "2020-01-28T05:00:00"
-                    },
-                    "untrInvstmtVal": 1413.370000,
-                    "anulInvstmtRate": 3.4200,
-                    "untrRedVal": 1372.650000,
-                    "anulRedRate": 3.5400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-28T09:15:00",
-                        "clsgDtTm": "2020-01-29T05:00:00"
-                    },
-                    "untrInvstmtVal": 1410.270000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1369.640000,
-                    "anulRedRate": 3.5500
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-29T09:15:00",
-                        "clsgDtTm": "2020-01-30T05:00:00"
-                    },
-                    "untrInvstmtVal": 1434.880000,
-                    "anulInvstmtRate": 3.3600,
-                    "untrRedVal": 1393.520000,
-                    "anulRedRate": 3.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-30T09:15:00",
-                        "clsgDtTm": "2020-01-31T05:00:00"
-                    },
-                    "untrInvstmtVal": 1428.230000,
-                    "anulInvstmtRate": 3.3800,
-                    "untrRedVal": 1387.080000,
-                    "anulRedRate": 3.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-01-31T09:15:00",
-                        "clsgDtTm": "2020-02-03T05:00:00"
-                    },
-                    "untrInvstmtVal": 1428.860000,
-                    "anulInvstmtRate": 3.3800,
-                    "untrRedVal": 1387.700000,
-                    "anulRedRate": 3.5000
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-02-03T09:15:00",
-                        "clsgDtTm": "2020-02-04T05:00:00"
-                    },
-                    "untrInvstmtVal": 1436.180000,
-                    "anulInvstmtRate": 3.3600,
-                    "untrRedVal": 1394.810000,
-                    "anulRedRate": 3.4800
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-02-04T09:15:00",
-                        "clsgDtTm": "2020-02-05T05:00:00"
-                    },
-                    "untrInvstmtVal": 1443.530000,
-                    "anulInvstmtRate": 3.3400,
-                    "untrRedVal": 1401.950000,
-                    "anulRedRate": 3.4600
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-02-05T09:15:00",
-                        "clsgDtTm": "2020-02-06T05:00:00"
-                    },
-                    "untrInvstmtVal": 1450.930000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1409.130000,
-                    "anulRedRate": 3.4400
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-02-06T09:15:00",
-                        "clsgDtTm": "2020-02-07T05:00:00"
-                    },
-                    "untrInvstmtVal": 1469.060000,
-                    "anulInvstmtRate": 3.2700,
-                    "untrRedVal": 1426.720000,
-                    "anulRedRate": 3.3900
-                },
-                {
-                    "TrsrBdMkt": {
-                        "opngDtTm": "2020-02-07T09:15:00",
-                        "clsgDtTm": "2020-02-10T05:00:00"
-                    },
-                    "untrInvstmtVal": 1450.560000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1408.790000,
-                    "anulRedRate": 3.4400
-                },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-10T09:15:00",
                         "clsgDtTm": "2020-02-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1454.390000,
-                    "anulInvstmtRate": 3.3100,
-                    "untrRedVal": 1412.510000,
-                    "anulRedRate": 3.4300
+                    "untrInvstmtVal": 5063.370000,
+                    "anulInvstmtRate": 3.4200,
+                    "untrRedVal": 4956.730000,
+                    "anulRedRate": 3.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-11T09:15:00",
                         "clsgDtTm": "2020-02-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1472.510000,
-                    "anulInvstmtRate": 3.2600,
-                    "untrRedVal": 1430.090000,
-                    "anulRedRate": 3.3800
+                    "untrInvstmtVal": 5091.590000,
+                    "anulInvstmtRate": 3.3900,
+                    "untrRedVal": 4984.090000,
+                    "anulRedRate": 3.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-12T09:15:00",
                         "clsgDtTm": "2020-02-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1469.210000,
-                    "anulInvstmtRate": 3.2700,
-                    "untrRedVal": 1426.900000,
-                    "anulRedRate": 3.3900
+                    "untrInvstmtVal": 5110.860000,
+                    "anulInvstmtRate": 3.3700,
+                    "untrRedVal": 5002.790000,
+                    "anulRedRate": 3.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-13T09:15:00",
                         "clsgDtTm": "2020-02-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1473.080000,
-                    "anulInvstmtRate": 3.2600,
-                    "untrRedVal": 1430.660000,
-                    "anulRedRate": 3.3800
+                    "untrInvstmtVal": 5102.740000,
+                    "anulInvstmtRate": 3.3800,
+                    "untrRedVal": 4994.960000,
+                    "anulRedRate": 3.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-14T09:15:00",
                         "clsgDtTm": "2020-02-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1487.940000,
-                    "anulInvstmtRate": 3.2200,
-                    "untrRedVal": 1445.080000,
-                    "anulRedRate": 3.3400
+                    "untrInvstmtVal": 5131.740000,
+                    "anulInvstmtRate": 3.3500,
+                    "untrRedVal": 5023.080000,
+                    "anulRedRate": 3.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-17T09:15:00",
                         "clsgDtTm": "2020-02-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1499.120000,
-                    "anulInvstmtRate": 3.1900,
-                    "untrRedVal": 1455.930000,
-                    "anulRedRate": 3.3100
+                    "untrInvstmtVal": 5160.360000,
+                    "anulInvstmtRate": 3.3200,
+                    "untrRedVal": 5050.840000,
+                    "anulRedRate": 3.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-18T09:15:00",
                         "clsgDtTm": "2020-02-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1484.840000,
-                    "anulInvstmtRate": 3.2300,
-                    "untrRedVal": 1442.090000,
-                    "anulRedRate": 3.3500
+                    "untrInvstmtVal": 5124.390000,
+                    "anulInvstmtRate": 3.3600,
+                    "untrRedVal": 5016.030000,
+                    "anulRedRate": 3.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-19T09:15:00",
                         "clsgDtTm": "2020-02-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1485.100000,
-                    "anulInvstmtRate": 3.2300,
-                    "untrRedVal": 1442.340000,
-                    "anulRedRate": 3.3500
+                    "untrInvstmtVal": 5125.300000,
+                    "anulInvstmtRate": 3.3600,
+                    "untrRedVal": 5016.950000,
+                    "anulRedRate": 3.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-20T09:15:00",
                         "clsgDtTm": "2020-02-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1488.980000,
-                    "anulInvstmtRate": 3.2200,
-                    "untrRedVal": 1446.120000,
-                    "anulRedRate": 3.3400
+                    "untrInvstmtVal": 5107.930000,
+                    "anulInvstmtRate": 3.3800,
+                    "untrRedVal": 5000.150000,
+                    "anulRedRate": 3.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-21T09:15:00",
                         "clsgDtTm": "2020-02-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1482.340000,
-                    "anulInvstmtRate": 3.2400,
-                    "untrRedVal": 1439.690000,
-                    "anulRedRate": 3.3600
+                    "untrInvstmtVal": 5091.820000,
+                    "anulInvstmtRate": 3.4000,
+                    "untrRedVal": 4984.590000,
+                    "anulRedRate": 3.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-26T09:15:00",
                         "clsgDtTm": "2020-02-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1454.030000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1412.220000,
-                    "anulRedRate": 3.4400
+                    "untrInvstmtVal": 5012.020000,
+                    "anulInvstmtRate": 3.4900,
+                    "untrRedVal": 4907.320000,
+                    "anulRedRate": 3.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-27T09:15:00",
                         "clsgDtTm": "2020-02-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1440.210000,
-                    "anulInvstmtRate": 3.3600,
-                    "untrRedVal": 1398.830000,
-                    "anulRedRate": 3.4800
+                    "untrInvstmtVal": 4977.700000,
+                    "anulInvstmtRate": 3.5300,
+                    "untrRedVal": 4874.090000,
+                    "anulRedRate": 3.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-02-28T09:15:00",
                         "clsgDtTm": "2020-03-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1416.330000,
-                    "anulInvstmtRate": 3.4300,
-                    "untrRedVal": 1375.670000,
-                    "anulRedRate": 3.5500
+                    "untrInvstmtVal": 4909.720000,
+                    "anulInvstmtRate": 3.6100,
+                    "untrRedVal": 4808.260000,
+                    "anulRedRate": 3.7300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-02T09:15:00",
                         "clsgDtTm": "2020-03-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1454.970000,
-                    "anulInvstmtRate": 3.3200,
-                    "untrRedVal": 1413.160000,
-                    "anulRedRate": 3.4400
+                    "untrInvstmtVal": 5006.510000,
+                    "anulInvstmtRate": 3.5000,
+                    "untrRedVal": 4902.080000,
+                    "anulRedRate": 3.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-03T09:15:00",
                         "clsgDtTm": "2020-03-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1469.460000,
-                    "anulInvstmtRate": 3.2800,
-                    "untrRedVal": 1427.220000,
-                    "anulRedRate": 3.4000
+                    "untrInvstmtVal": 5043.010000,
+                    "anulInvstmtRate": 3.4600,
+                    "untrRedVal": 4937.470000,
+                    "anulRedRate": 3.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-04T09:15:00",
                         "clsgDtTm": "2020-03-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1476.880000,
-                    "anulInvstmtRate": 3.2600,
-                    "untrRedVal": 1434.430000,
-                    "anulRedRate": 3.3800
+                    "untrInvstmtVal": 5061.860000,
+                    "anulInvstmtRate": 3.4400,
+                    "untrRedVal": 4955.770000,
+                    "anulRedRate": 3.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-05T09:15:00",
                         "clsgDtTm": "2020-03-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1448.700000,
-                    "anulInvstmtRate": 3.3400,
-                    "untrRedVal": 1407.100000,
-                    "anulRedRate": 3.4600
+                    "untrInvstmtVal": 4982.930000,
+                    "anulInvstmtRate": 3.5300,
+                    "untrRedVal": 4879.330000,
+                    "anulRedRate": 3.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-06T09:15:00",
                         "clsgDtTm": "2020-03-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1438.590000,
-                    "anulInvstmtRate": 3.3700,
-                    "untrRedVal": 1397.300000,
-                    "anulRedRate": 3.4900
+                    "untrInvstmtVal": 4966.890000,
+                    "anulInvstmtRate": 3.5500,
+                    "untrRedVal": 4863.820000,
+                    "anulRedRate": 3.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-09T09:15:00",
                         "clsgDtTm": "2020-03-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1344.410000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1305.930000,
-                    "anulRedRate": 3.7700
+                    "untrInvstmtVal": 4748.560000,
+                    "anulInvstmtRate": 3.8100,
+                    "untrRedVal": 4652.270000,
+                    "anulRedRate": 3.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-10T09:15:00",
                         "clsgDtTm": "2020-03-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1334.940000,
-                    "anulInvstmtRate": 3.6800,
-                    "untrRedVal": 1296.750000,
-                    "anulRedRate": 3.8000
+                    "untrInvstmtVal": 4733.250000,
+                    "anulInvstmtRate": 3.8300,
+                    "untrRedVal": 4637.460000,
+                    "anulRedRate": 3.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-11T09:15:00",
                         "clsgDtTm": "2020-03-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1255.000000,
-                    "anulInvstmtRate": 3.9400,
-                    "untrRedVal": 1219.190000,
-                    "anulRedRate": 4.0600
+                    "untrInvstmtVal": 4519.270000,
+                    "anulInvstmtRate": 4.1100,
+                    "untrRedVal": 4430.080000,
+                    "anulRedRate": 4.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-12T09:15:00",
                         "clsgDtTm": "2020-03-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1025.770000,
-                    "anulInvstmtRate": 4.7800,
-                    "untrRedVal": 996.730000,
-                    "anulRedRate": 4.9000
+                    "untrInvstmtVal": 3818.570000,
+                    "anulInvstmtRate": 5.1700,
+                    "untrRedVal": 3750.140000,
+                    "anulRedRate": 5.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-13T09:15:00",
                         "clsgDtTm": "2020-03-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1199.520000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1165.370000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4290.100000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4207.860000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-16T09:15:00",
                         "clsgDtTm": "2020-03-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1223.110000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1188.260000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4354.320000,
+                    "anulInvstmtRate": 4.3400,
+                    "untrRedVal": 4270.190000,
+                    "anulRedRate": 4.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-17T09:15:00",
                         "clsgDtTm": "2020-03-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1235.200000,
-                    "anulInvstmtRate": 4.0100,
-                    "untrRedVal": 1200.000000,
-                    "anulRedRate": 4.1300
+                    "untrInvstmtVal": 4341.010000,
+                    "anulInvstmtRate": 4.3600,
+                    "untrRedVal": 4257.310000,
+                    "anulRedRate": 4.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-18T09:15:00",
                         "clsgDtTm": "2020-03-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1077.240000,
-                    "anulInvstmtRate": 4.5800,
-                    "untrRedVal": 1046.700000,
-                    "anulRedRate": 4.7000
+                    "untrInvstmtVal": 3947.540000,
+                    "anulInvstmtRate": 4.9600,
+                    "untrRedVal": 3875.490000,
+                    "anulRedRate": 5.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-19T09:15:00",
                         "clsgDtTm": "2020-03-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1133.150000,
-                    "anulInvstmtRate": 4.3700,
-                    "untrRedVal": 1100.970000,
-                    "anulRedRate": 4.4900
+                    "untrInvstmtVal": 4138.210000,
+                    "anulInvstmtRate": 4.6600,
+                    "untrRedVal": 4060.600000,
+                    "anulRedRate": 4.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-20T09:15:00",
                         "clsgDtTm": "2020-03-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1062.390000,
-                    "anulInvstmtRate": 4.6400,
-                    "untrRedVal": 1032.310000,
-                    "anulRedRate": 4.7600
+                    "untrInvstmtVal": 4126.300000,
+                    "anulInvstmtRate": 4.6800,
+                    "untrRedVal": 4049.070000,
+                    "anulRedRate": 4.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-23T09:15:00",
                         "clsgDtTm": "2020-03-24T05:00:00"
                     },
-                    "untrInvstmtVal": 986.690000,
+                    "untrInvstmtVal": 3956.610000,
                     "anulInvstmtRate": 4.9500,
-                    "untrRedVal": 958.840000,
+                    "untrRedVal": 3884.380000,
                     "anulRedRate": 5.0700
                 },
                 {
@@ -7723,79 +333,79 @@ const dados = {
                         "opngDtTm": "2020-03-24T09:15:00",
                         "clsgDtTm": "2020-03-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1022.930000,
-                    "anulInvstmtRate": 4.8000,
-                    "untrRedVal": 994.010000,
-                    "anulRedRate": 4.9200
+                    "untrInvstmtVal": 4057.210000,
+                    "anulInvstmtRate": 4.7900,
+                    "untrRedVal": 3982.070000,
+                    "anulRedRate": 4.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-25T09:15:00",
                         "clsgDtTm": "2020-03-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1094.080000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 1063.080000,
-                    "anulRedRate": 4.6400
+                    "untrInvstmtVal": 4181.770000,
+                    "anulInvstmtRate": 4.6000,
+                    "untrRedVal": 4102.990000,
+                    "anulRedRate": 4.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-26T09:15:00",
                         "clsgDtTm": "2020-03-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1123.560000,
-                    "anulInvstmtRate": 4.4100,
-                    "untrRedVal": 1091.690000,
-                    "anulRedRate": 4.5300
+                    "untrInvstmtVal": 4305.380000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4222.950000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-27T09:15:00",
                         "clsgDtTm": "2020-03-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1123.870000,
-                    "anulInvstmtRate": 4.4100,
-                    "untrRedVal": 1092.000000,
-                    "anulRedRate": 4.5300
+                    "untrInvstmtVal": 4265.050000,
+                    "anulInvstmtRate": 4.4800,
+                    "untrRedVal": 4183.850000,
+                    "anulRedRate": 4.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-30T09:15:00",
                         "clsgDtTm": "2020-03-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.500000,
-                    "anulInvstmtRate": 4.3900,
-                    "untrRedVal": 1097.480000,
-                    "anulRedRate": 4.5100
+                    "untrInvstmtVal": 4272.820000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4191.420000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-03-31T09:15:00",
                         "clsgDtTm": "2020-04-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.280000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 1084.640000,
-                    "anulRedRate": 4.5600
+                    "untrInvstmtVal": 4266.840000,
+                    "anulInvstmtRate": 4.4800,
+                    "untrRedVal": 4185.640000,
+                    "anulRedRate": 4.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-01T09:15:00",
                         "clsgDtTm": "2020-04-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1084.870000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 1054.160000,
-                    "anulRedRate": 4.6800
+                    "untrInvstmtVal": 4179.890000,
+                    "anulInvstmtRate": 4.6100,
+                    "untrRedVal": 4101.300000,
+                    "anulRedRate": 4.7300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-02T09:15:00",
                         "clsgDtTm": "2020-04-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1072.190000,
+                    "untrInvstmtVal": 4180.780000,
                     "anulInvstmtRate": 4.6100,
-                    "untrRedVal": 1041.870000,
+                    "untrRedVal": 4102.200000,
                     "anulRedRate": 4.7300
                 },
                 {
@@ -7803,459 +413,459 @@ const dados = {
                         "opngDtTm": "2020-04-03T09:15:00",
                         "clsgDtTm": "2020-04-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1047.160000,
-                    "anulInvstmtRate": 4.7100,
-                    "untrRedVal": 1017.570000,
-                    "anulRedRate": 4.8300
+                    "untrInvstmtVal": 4077.710000,
+                    "anulInvstmtRate": 4.7700,
+                    "untrRedVal": 4002.200000,
+                    "anulRedRate": 4.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-06T09:15:00",
                         "clsgDtTm": "2020-04-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1054.930000,
-                    "anulInvstmtRate": 4.6800,
-                    "untrRedVal": 1025.120000,
-                    "anulRedRate": 4.8000
+                    "untrInvstmtVal": 4104.290000,
+                    "anulInvstmtRate": 4.7300,
+                    "untrRedVal": 4028.020000,
+                    "anulRedRate": 4.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-07T09:15:00",
                         "clsgDtTm": "2020-04-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1060.210000,
-                    "anulInvstmtRate": 4.6600,
-                    "untrRedVal": 1030.250000,
-                    "anulRedRate": 4.7800
+                    "untrInvstmtVal": 4124.610000,
+                    "anulInvstmtRate": 4.7000,
+                    "untrRedVal": 4047.770000,
+                    "anulRedRate": 4.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-08T09:15:00",
                         "clsgDtTm": "2020-04-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1050.350000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1020.690000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4086.800000,
+                    "anulInvstmtRate": 4.7600,
+                    "untrRedVal": 4011.110000,
+                    "anulRedRate": 4.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-09T09:15:00",
                         "clsgDtTm": "2020-04-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1086.040000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 1055.330000,
-                    "anulRedRate": 4.6800
+                    "untrInvstmtVal": 4157.990000,
+                    "anulInvstmtRate": 4.6500,
+                    "untrRedVal": 4080.220000,
+                    "anulRedRate": 4.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-13T09:15:00",
                         "clsgDtTm": "2020-04-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1078.490000,
-                    "anulInvstmtRate": 4.5900,
-                    "untrRedVal": 1048.010000,
-                    "anulRedRate": 4.7100
+                    "untrInvstmtVal": 4145.710000,
+                    "anulInvstmtRate": 4.6700,
+                    "untrRedVal": 4068.330000,
+                    "anulRedRate": 4.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-14T09:15:00",
                         "clsgDtTm": "2020-04-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1096.920000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 1065.900000,
-                    "anulRedRate": 4.6400
+                    "untrInvstmtVal": 4192.780000,
+                    "anulInvstmtRate": 4.6000,
+                    "untrRedVal": 4114.030000,
+                    "anulRedRate": 4.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-15T09:15:00",
                         "clsgDtTm": "2020-04-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1123.660000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 1091.860000,
-                    "anulRedRate": 4.5400
+                    "untrInvstmtVal": 4260.930000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4180.180000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-16T09:15:00",
                         "clsgDtTm": "2020-04-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1156.600000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1123.840000,
-                    "anulRedRate": 4.4200
+                    "untrInvstmtVal": 4380.250000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4295.980000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-17T09:15:00",
                         "clsgDtTm": "2020-04-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1162.310000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1129.380000,
-                    "anulRedRate": 4.4000
+                    "untrInvstmtVal": 4387.950000,
+                    "anulInvstmtRate": 4.3200,
+                    "untrRedVal": 4303.470000,
+                    "anulRedRate": 4.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-20T09:15:00",
                         "clsgDtTm": "2020-04-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1193.530000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1159.690000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4483.040000,
+                    "anulInvstmtRate": 4.1900,
+                    "untrRedVal": 4395.730000,
+                    "anulRedRate": 4.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-22T09:15:00",
                         "clsgDtTm": "2020-04-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1222.690000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1188.000000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4535.880000,
+                    "anulInvstmtRate": 4.1200,
+                    "untrRedVal": 4447.010000,
+                    "anulRedRate": 4.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-23T09:15:00",
                         "clsgDtTm": "2020-04-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1202.500000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1168.410000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4462.300000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4375.670000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-24T09:15:00",
                         "clsgDtTm": "2020-04-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1046.900000,
-                    "anulInvstmtRate": 4.7200,
-                    "untrRedVal": 1017.380000,
-                    "anulRedRate": 4.8400
+                    "untrInvstmtVal": 4073.810000,
+                    "anulInvstmtRate": 4.7900,
+                    "untrRedVal": 3998.740000,
+                    "anulRedRate": 4.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-27T09:15:00",
                         "clsgDtTm": "2020-04-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1059.630000,
-                    "anulInvstmtRate": 4.6700,
-                    "untrRedVal": 1029.750000,
-                    "anulRedRate": 4.7900
+                    "untrInvstmtVal": 4112.890000,
+                    "anulInvstmtRate": 4.7300,
+                    "untrRedVal": 4036.700000,
+                    "anulRedRate": 4.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-28T09:15:00",
                         "clsgDtTm": "2020-04-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.970000,
-                    "anulInvstmtRate": 4.4500,
-                    "untrRedVal": 1085.410000,
-                    "anulRedRate": 4.5700
+                    "untrInvstmtVal": 4272.980000,
+                    "anulInvstmtRate": 4.4900,
+                    "untrRedVal": 4192.090000,
+                    "anulRedRate": 4.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-29T09:15:00",
                         "clsgDtTm": "2020-04-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1162.520000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1129.620000,
-                    "anulRedRate": 4.4000
+                    "untrInvstmtVal": 4346.290000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4263.200000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-04-30T09:15:00",
                         "clsgDtTm": "2020-05-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1156.830000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1124.110000,
-                    "anulRedRate": 4.4200
+                    "untrInvstmtVal": 4338.790000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4255.940000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-04T09:15:00",
                         "clsgDtTm": "2020-05-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.310000,
-                    "anulInvstmtRate": 4.3900,
-                    "untrRedVal": 1100.310000,
-                    "anulRedRate": 4.5100
+                    "untrInvstmtVal": 4290.600000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4209.210000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-05T09:15:00",
                         "clsgDtTm": "2020-05-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1157.060000,
-                    "anulInvstmtRate": 4.3000,
-                    "untrRedVal": 1124.340000,
-                    "anulRedRate": 4.4200
+                    "untrInvstmtVal": 4360.770000,
+                    "anulInvstmtRate": 4.3600,
+                    "untrRedVal": 4277.310000,
+                    "anulRedRate": 4.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-06T09:15:00",
                         "clsgDtTm": "2020-05-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1151.650000,
-                    "anulInvstmtRate": 4.3200,
-                    "untrRedVal": 1119.090000,
-                    "anulRedRate": 4.4400
+                    "untrInvstmtVal": 4354.150000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4270.910000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-07T09:15:00",
                         "clsgDtTm": "2020-05-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.650000,
-                    "anulInvstmtRate": 4.3900,
-                    "untrRedVal": 1100.660000,
-                    "anulRedRate": 4.5100
+                    "untrInvstmtVal": 4298.820000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4217.260000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-08T09:15:00",
                         "clsgDtTm": "2020-05-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.190000,
-                    "anulInvstmtRate": 4.4400,
-                    "untrRedVal": 1086.620000,
-                    "anulRedRate": 4.5600
+                    "untrInvstmtVal": 4288.040000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4206.780000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-11T09:15:00",
                         "clsgDtTm": "2020-05-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.290000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 1078.960000,
-                    "anulRedRate": 4.5900
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4207.090000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-12T09:15:00",
                         "clsgDtTm": "2020-05-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1097.200000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 1066.260000,
-                    "anulRedRate": 4.6400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4187.470000,
+                    "anulRedRate": 4.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-13T09:15:00",
                         "clsgDtTm": "2020-05-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.230000,
-                    "anulInvstmtRate": 4.6800,
-                    "untrRedVal": 1026.500000,
-                    "anulRedRate": 4.8000
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-14T09:15:00",
                         "clsgDtTm": "2020-05-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1043.820000,
-                    "anulInvstmtRate": 4.7300,
-                    "untrRedVal": 1014.450000,
-                    "anulRedRate": 4.8500
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-15T09:15:00",
                         "clsgDtTm": "2020-05-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1086.750000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 1056.130000,
-                    "anulRedRate": 4.6800
+                    "untrInvstmtVal": 4170.310000,
+                    "anulInvstmtRate": 4.4900,
+                    "untrRedVal": 4089.740000,
+                    "anulRedRate": 4.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-18T09:15:00",
                         "clsgDtTm": "2020-05-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1105.090000,
-                    "anulInvstmtRate": 4.4900,
-                    "untrRedVal": 1073.940000,
-                    "anulRedRate": 4.6100
+                    "untrInvstmtVal": 4191.060000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4109.900000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-19T09:15:00",
                         "clsgDtTm": "2020-05-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1121.080000,
-                    "anulInvstmtRate": 4.4300,
-                    "untrRedVal": 1089.470000,
-                    "anulRedRate": 4.5500
+                    "untrInvstmtVal": 4198.160000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4116.800000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-20T09:15:00",
                         "clsgDtTm": "2020-05-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1123.820000,
-                    "anulInvstmtRate": 4.4200,
-                    "untrRedVal": 1092.120000,
-                    "anulRedRate": 4.5400
+                    "untrInvstmtVal": 4198.380000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4117.040000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-21T09:15:00",
                         "clsgDtTm": "2020-05-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1153.760000,
-                    "anulInvstmtRate": 4.3100,
-                    "untrRedVal": 1121.200000,
-                    "anulRedRate": 4.4300
+                    "untrInvstmtVal": 4254.200000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4171.220000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-22T09:15:00",
                         "clsgDtTm": "2020-05-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1153.540000,
-                    "anulInvstmtRate": 4.3100,
-                    "untrRedVal": 1120.990000,
-                    "anulRedRate": 4.4300
+                    "untrInvstmtVal": 4246.390000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4163.650000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-25T09:15:00",
                         "clsgDtTm": "2020-05-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.820000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1159.110000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4303.160000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4218.750000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-26T09:15:00",
                         "clsgDtTm": "2020-05-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.860000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1159.170000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4317.680000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4232.860000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-27T09:15:00",
                         "clsgDtTm": "2020-05-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1164.380000,
-                    "anulInvstmtRate": 4.2700,
-                    "untrRedVal": 1131.520000,
-                    "anulRedRate": 4.3900
+                    "untrInvstmtVal": 4245.600000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4162.940000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-28T09:15:00",
                         "clsgDtTm": "2020-05-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1172.770000,
-                    "anulInvstmtRate": 4.2400,
-                    "untrRedVal": 1139.670000,
-                    "anulRedRate": 4.3600
+                    "untrInvstmtVal": 4280.890000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4197.190000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-05-29T09:15:00",
                         "clsgDtTm": "2020-06-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1166.870000,
-                    "anulInvstmtRate": 4.2600,
-                    "untrRedVal": 1133.950000,
-                    "anulRedRate": 4.3800
+                    "untrInvstmtVal": 4258.590000,
+                    "anulInvstmtRate": 4.3600,
+                    "untrRedVal": 4175.570000,
+                    "anulRedRate": 4.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-01T09:15:00",
                         "clsgDtTm": "2020-06-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1164.110000,
-                    "anulInvstmtRate": 4.2700,
-                    "untrRedVal": 1131.280000,
-                    "anulRedRate": 4.3900
+                    "untrInvstmtVal": 4244.680000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4162.090000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-02T09:15:00",
                         "clsgDtTm": "2020-06-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1183.740000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1150.340000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 4322.710000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4237.810000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-03T09:15:00",
                         "clsgDtTm": "2020-06-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1206.590000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1172.520000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4373.520000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4287.110000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-04T09:15:00",
                         "clsgDtTm": "2020-06-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1197.990000,
-                    "anulInvstmtRate": 4.1500,
-                    "untrRedVal": 1164.180000,
-                    "anulRedRate": 4.2700
+                    "untrInvstmtVal": 4380.910000,
+                    "anulInvstmtRate": 4.1900,
+                    "untrRedVal": 4294.310000,
+                    "anulRedRate": 4.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-05T09:15:00",
                         "clsgDtTm": "2020-06-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1209.150000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1175.020000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4401.770000,
+                    "anulInvstmtRate": 4.1600,
+                    "untrRedVal": 4314.540000,
+                    "anulRedRate": 4.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-08T09:15:00",
                         "clsgDtTm": "2020-06-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1217.860000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1183.480000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4431.510000,
+                    "anulInvstmtRate": 4.1200,
+                    "untrRedVal": 4343.410000,
+                    "anulRedRate": 4.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-09T09:15:00",
                         "clsgDtTm": "2020-06-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.790000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1186.330000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4461.540000,
+                    "anulInvstmtRate": 4.0800,
+                    "untrRedVal": 4372.560000,
+                    "anulRedRate": 4.2000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-10T09:15:00",
                         "clsgDtTm": "2020-06-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1218.490000,
+                    "untrInvstmtVal": 4463.780000,
                     "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1184.100000,
+                    "untrRedVal": 4374.770000,
                     "anulRedRate": 4.2000
                 },
                 {
@@ -8263,1388 +873,1388 @@ const dados = {
                         "opngDtTm": "2020-06-12T09:15:00",
                         "clsgDtTm": "2020-06-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1229.920000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1195.200000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4462.840000,
+                    "anulInvstmtRate": 4.0800,
+                    "untrRedVal": 4373.880000,
+                    "anulRedRate": 4.2000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-15T09:15:00",
                         "clsgDtTm": "2020-06-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1221.430000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1186.960000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4411.650000,
+                    "anulInvstmtRate": 4.1500,
+                    "untrRedVal": 4324.260000,
+                    "anulRedRate": 4.2700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-16T09:15:00",
                         "clsgDtTm": "2020-06-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.380000,
-                    "anulInvstmtRate": 4.0200,
-                    "untrRedVal": 1201.480000,
-                    "anulRedRate": 4.1400
+                    "untrInvstmtVal": 4405.300000,
+                    "anulInvstmtRate": 4.1600,
+                    "untrRedVal": 4318.120000,
+                    "anulRedRate": 4.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-17T09:15:00",
                         "clsgDtTm": "2020-06-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1242.580000,
-                    "anulInvstmtRate": 4.0000,
-                    "untrRedVal": 1207.510000,
-                    "anulRedRate": 4.1200
+                    "untrInvstmtVal": 4391.620000,
+                    "anulInvstmtRate": 4.1800,
+                    "untrRedVal": 4304.890000,
+                    "anulRedRate": 4.3000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-18T09:15:00",
                         "clsgDtTm": "2020-06-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1231.060000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1196.330000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4378.020000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4291.720000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-19T09:15:00",
                         "clsgDtTm": "2020-06-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1222.740000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1188.260000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4379.690000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4293.380000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-22T09:15:00",
                         "clsgDtTm": "2020-06-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1208.530000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1174.470000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4337.250000,
+                    "anulInvstmtRate": 4.2600,
+                    "untrRedVal": 4252.240000,
+                    "anulRedRate": 4.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-23T09:15:00",
                         "clsgDtTm": "2020-06-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1208.810000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1174.750000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4331.100000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4246.310000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-24T09:15:00",
                         "clsgDtTm": "2020-06-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1197.630000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1163.900000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4317.820000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4233.460000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-25T09:15:00",
                         "clsgDtTm": "2020-06-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1206.500000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1172.520000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4347.550000,
+                    "anulInvstmtRate": 4.2500,
+                    "untrRedVal": 4262.330000,
+                    "anulRedRate": 4.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-26T09:15:00",
                         "clsgDtTm": "2020-06-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1210.120000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1176.040000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4328.680000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4244.070000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-29T09:15:00",
                         "clsgDtTm": "2020-06-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1201.810000,
-                    "anulInvstmtRate": 4.1500,
-                    "untrRedVal": 1167.970000,
-                    "anulRedRate": 4.2700
+                    "untrInvstmtVal": 4344.150000,
+                    "anulInvstmtRate": 4.2600,
+                    "untrRedVal": 4259.100000,
+                    "anulRedRate": 4.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-06-30T09:15:00",
                         "clsgDtTm": "2020-07-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1222.310000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1187.890000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4403.410000,
+                    "anulInvstmtRate": 4.1800,
+                    "untrRedVal": 4316.620000,
+                    "anulRedRate": 4.3000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-01T09:15:00",
                         "clsgDtTm": "2020-07-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1240.220000,
-                    "anulInvstmtRate": 4.0200,
-                    "untrRedVal": 1205.270000,
-                    "anulRedRate": 4.1400
+                    "untrInvstmtVal": 4456.390000,
+                    "anulInvstmtRate": 4.1100,
+                    "untrRedVal": 4368.040000,
+                    "anulRedRate": 4.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-02T09:15:00",
                         "clsgDtTm": "2020-07-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1261.400000,
-                    "anulInvstmtRate": 3.9500,
-                    "untrRedVal": 1225.840000,
-                    "anulRedRate": 4.0700
+                    "untrInvstmtVal": 4495.120000,
+                    "anulInvstmtRate": 4.0600,
+                    "untrRedVal": 4405.630000,
+                    "anulRedRate": 4.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-03T09:15:00",
                         "clsgDtTm": "2020-07-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1264.950000,
-                    "anulInvstmtRate": 3.9400,
-                    "untrRedVal": 1229.290000,
-                    "anulRedRate": 4.0600
+                    "untrInvstmtVal": 4519.850000,
+                    "anulInvstmtRate": 4.0300,
+                    "untrRedVal": 4429.660000,
+                    "anulRedRate": 4.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-06T09:15:00",
                         "clsgDtTm": "2020-07-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1283.490000,
-                    "anulInvstmtRate": 3.8800,
-                    "untrRedVal": 1247.290000,
-                    "anulRedRate": 4.0000
+                    "untrInvstmtVal": 4551.650000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4460.530000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-07T09:15:00",
                         "clsgDtTm": "2020-07-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1274.640000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1238.710000,
-                    "anulRedRate": 4.0300
+                    "untrInvstmtVal": 4545.060000,
+                    "anulInvstmtRate": 4.0000,
+                    "untrRedVal": 4454.170000,
+                    "anulRedRate": 4.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-08T09:15:00",
                         "clsgDtTm": "2020-07-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1274.950000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1239.020000,
-                    "anulRedRate": 4.0300
+                    "untrInvstmtVal": 4553.880000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4462.760000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-09T09:15:00",
                         "clsgDtTm": "2020-07-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1296.720000,
-                    "anulInvstmtRate": 3.8400,
-                    "untrRedVal": 1260.160000,
-                    "anulRedRate": 3.9600
+                    "untrInvstmtVal": 4601.630000,
+                    "anulInvstmtRate": 3.9300,
+                    "untrRedVal": 4509.090000,
+                    "anulRedRate": 4.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-10T09:15:00",
                         "clsgDtTm": "2020-07-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1322.140000,
-                    "anulInvstmtRate": 3.7600,
-                    "untrRedVal": 1284.830000,
-                    "anulRedRate": 3.8800
+                    "untrInvstmtVal": 4618.850000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4525.820000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-13T09:15:00",
                         "clsgDtTm": "2020-07-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1306.770000,
-                    "anulInvstmtRate": 3.8100,
-                    "untrRedVal": 1269.920000,
-                    "anulRedRate": 3.9300
+                    "untrInvstmtVal": 4580.840000,
+                    "anulInvstmtRate": 3.9600,
+                    "untrRedVal": 4489.000000,
+                    "anulRedRate": 4.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-14T09:15:00",
                         "clsgDtTm": "2020-07-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1303.960000,
-                    "anulInvstmtRate": 3.8200,
-                    "untrRedVal": 1267.200000,
-                    "anulRedRate": 3.9400
+                    "untrInvstmtVal": 4589.730000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4497.640000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-15T09:15:00",
                         "clsgDtTm": "2020-07-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1316.870000,
-                    "anulInvstmtRate": 3.7800,
-                    "untrRedVal": 1279.740000,
-                    "anulRedRate": 3.9000
+                    "untrInvstmtVal": 4614.650000,
+                    "anulInvstmtRate": 3.9200,
+                    "untrRedVal": 4521.850000,
+                    "anulRedRate": 4.0400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-16T09:15:00",
                         "clsgDtTm": "2020-07-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1311.010000,
-                    "anulInvstmtRate": 3.8000,
-                    "untrRedVal": 1274.060000,
-                    "anulRedRate": 3.9200
+                    "untrInvstmtVal": 4592.640000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4500.550000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-17T09:15:00",
                         "clsgDtTm": "2020-07-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1353.170000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1314.980000,
-                    "anulRedRate": 3.7900
+                    "untrInvstmtVal": 4674.590000,
+                    "anulInvstmtRate": 3.8500,
+                    "untrRedVal": 4580.060000,
+                    "anulRedRate": 3.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-20T09:15:00",
                         "clsgDtTm": "2020-07-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1366.560000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1328.000000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4700.160000,
+                    "anulInvstmtRate": 3.8200,
+                    "untrRedVal": 4604.880000,
+                    "anulRedRate": 3.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-21T09:15:00",
                         "clsgDtTm": "2020-07-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.230000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1318.940000,
-                    "anulRedRate": 3.7800
+                    "untrInvstmtVal": 4685.540000,
+                    "anulInvstmtRate": 3.8400,
+                    "untrRedVal": 4590.740000,
+                    "anulRedRate": 3.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-22T09:15:00",
                         "clsgDtTm": "2020-07-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1367.400000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1328.820000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4703.100000,
+                    "anulInvstmtRate": 3.8200,
+                    "untrRedVal": 4607.800000,
+                    "anulRedRate": 3.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-23T09:15:00",
                         "clsgDtTm": "2020-07-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1367.820000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1329.230000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4688.480000,
+                    "anulInvstmtRate": 3.8400,
+                    "untrRedVal": 4593.670000,
+                    "anulRedRate": 3.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-24T09:15:00",
                         "clsgDtTm": "2020-07-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1375.230000,
-                    "anulInvstmtRate": 3.6100,
-                    "untrRedVal": 1336.440000,
-                    "anulRedRate": 3.7300
+                    "untrInvstmtVal": 4691.490000,
+                    "anulInvstmtRate": 3.8400,
+                    "untrRedVal": 4596.640000,
+                    "anulRedRate": 3.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-27T09:15:00",
                         "clsgDtTm": "2020-07-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1401.350000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1361.790000,
-                    "anulRedRate": 3.6500
+                    "untrInvstmtVal": 4755.070000,
+                    "anulInvstmtRate": 3.7600,
+                    "untrRedVal": 4658.290000,
+                    "anulRedRate": 3.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-28T09:15:00",
                         "clsgDtTm": "2020-07-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1401.710000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1362.150000,
-                    "anulRedRate": 3.6500
+                    "untrInvstmtVal": 4731.860000,
+                    "anulInvstmtRate": 3.7900,
+                    "untrRedVal": 4635.820000,
+                    "anulRedRate": 3.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-29T09:15:00",
                         "clsgDtTm": "2020-07-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1402.070000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1362.500000,
-                    "anulRedRate": 3.6500
+                    "untrInvstmtVal": 4741.260000,
+                    "anulInvstmtRate": 3.7800,
+                    "untrRedVal": 4644.970000,
+                    "anulRedRate": 3.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-30T09:15:00",
                         "clsgDtTm": "2020-07-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1415.880000,
-                    "anulInvstmtRate": 3.4900,
-                    "untrRedVal": 1375.920000,
-                    "anulRedRate": 3.6100
+                    "untrInvstmtVal": 4783.540000,
+                    "anulInvstmtRate": 3.7300,
+                    "untrRedVal": 4685.990000,
+                    "anulRedRate": 3.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-07-31T09:15:00",
                         "clsgDtTm": "2020-08-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1450.820000,
-                    "anulInvstmtRate": 3.3900,
-                    "untrRedVal": 1409.840000,
-                    "anulRedRate": 3.5100
+                    "untrInvstmtVal": 4844.280000,
+                    "anulInvstmtRate": 3.6600,
+                    "untrRedVal": 4744.920000,
+                    "anulRedRate": 3.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-03T09:15:00",
                         "clsgDtTm": "2020-08-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1447.720000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1406.840000,
-                    "anulRedRate": 3.5200
+                    "untrInvstmtVal": 4837.150000,
+                    "anulInvstmtRate": 3.6700,
+                    "untrRedVal": 4738.040000,
+                    "anulRedRate": 3.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-04T09:15:00",
                         "clsgDtTm": "2020-08-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1448.090000,
-                    "anulInvstmtRate": 3.4000,
-                    "untrRedVal": 1407.200000,
-                    "anulRedRate": 3.5200
+                    "untrInvstmtVal": 4830.040000,
+                    "anulInvstmtRate": 3.6800,
+                    "untrRedVal": 4731.180000,
+                    "anulRedRate": 3.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-05T09:15:00",
                         "clsgDtTm": "2020-08-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1441.550000,
-                    "anulInvstmtRate": 3.4200,
-                    "untrRedVal": 1400.860000,
-                    "anulRedRate": 3.5400
+                    "untrInvstmtVal": 4806.300000,
+                    "anulInvstmtRate": 3.7100,
+                    "untrRedVal": 4708.210000,
+                    "anulRedRate": 3.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-06T09:15:00",
                         "clsgDtTm": "2020-08-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1418.030000,
-                    "anulInvstmtRate": 3.4900,
-                    "untrRedVal": 1378.040000,
-                    "anulRedRate": 3.6100
+                    "untrInvstmtVal": 4774.530000,
+                    "anulInvstmtRate": 3.7500,
+                    "untrRedVal": 4677.440000,
+                    "anulRedRate": 3.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-07T09:15:00",
                         "clsgDtTm": "2020-08-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1408.500000,
-                    "anulInvstmtRate": 3.5200,
-                    "untrRedVal": 1368.790000,
-                    "anulRedRate": 3.6400
+                    "untrInvstmtVal": 4743.830000,
+                    "anulInvstmtRate": 3.7900,
+                    "untrRedVal": 4647.720000,
+                    "anulRedRate": 3.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-10T09:15:00",
                         "clsgDtTm": "2020-08-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1402.160000,
-                    "anulInvstmtRate": 3.5400,
-                    "untrRedVal": 1362.640000,
-                    "anulRedRate": 3.6600
+                    "untrInvstmtVal": 4688.650000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4594.250000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-11T09:15:00",
                         "clsgDtTm": "2020-08-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1359.750000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1321.490000,
-                    "anulRedRate": 3.7900
+                    "untrInvstmtVal": 4603.250000,
+                    "anulInvstmtRate": 3.9700,
+                    "untrRedVal": 4511.470000,
+                    "anulRedRate": 4.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-12T09:15:00",
                         "clsgDtTm": "2020-08-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1363.350000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1324.980000,
-                    "anulRedRate": 3.7800
+                    "untrInvstmtVal": 4620.070000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4527.820000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-13T09:15:00",
                         "clsgDtTm": "2020-08-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1337.990000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1300.380000,
-                    "anulRedRate": 3.8600
+                    "untrInvstmtVal": 4590.250000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4498.930000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-14T09:15:00",
                         "clsgDtTm": "2020-08-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1328.940000,
-                    "anulInvstmtRate": 3.7700,
-                    "untrRedVal": 1291.590000,
-                    "anulRedRate": 3.8900
+                    "untrInvstmtVal": 4576.430000,
+                    "anulInvstmtRate": 4.0100,
+                    "untrRedVal": 4485.570000,
+                    "anulRedRate": 4.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-17T09:15:00",
                         "clsgDtTm": "2020-08-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1310.370000,
-                    "anulInvstmtRate": 3.8300,
-                    "untrRedVal": 1273.580000,
-                    "anulRedRate": 3.9500
+                    "untrInvstmtVal": 4554.340000,
+                    "anulInvstmtRate": 4.0400,
+                    "untrRedVal": 4464.170000,
+                    "anulRedRate": 4.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-18T09:15:00",
                         "clsgDtTm": "2020-08-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1351.730000,
-                    "anulInvstmtRate": 3.7000,
-                    "untrRedVal": 1313.730000,
-                    "anulRedRate": 3.8200
+                    "untrInvstmtVal": 4656.090000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4562.880000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-19T09:15:00",
                         "clsgDtTm": "2020-08-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1374.670000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1336.010000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4696.670000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4602.260000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-20T09:15:00",
                         "clsgDtTm": "2020-08-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1355.440000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1317.350000,
-                    "anulRedRate": 3.8100
+                    "untrInvstmtVal": 4665.760000,
+                    "anulInvstmtRate": 3.9000,
+                    "untrRedVal": 4572.320000,
+                    "anulRedRate": 4.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-21T09:15:00",
                         "clsgDtTm": "2020-08-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1362.260000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1323.970000,
-                    "anulRedRate": 3.7900
+                    "untrInvstmtVal": 4682.870000,
+                    "anulInvstmtRate": 3.8800,
+                    "untrRedVal": 4588.940000,
+                    "anulRedRate": 4.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-24T09:15:00",
                         "clsgDtTm": "2020-08-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1372.260000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1333.680000,
-                    "anulRedRate": 3.7600
+                    "untrInvstmtVal": 4699.700000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4605.290000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-25T09:15:00",
                         "clsgDtTm": "2020-08-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1359.520000,
-                    "anulInvstmtRate": 3.6800,
-                    "untrRedVal": 1321.330000,
-                    "anulRedRate": 3.8000
+                    "untrInvstmtVal": 4676.710000,
+                    "anulInvstmtRate": 3.8900,
+                    "untrRedVal": 4583.030000,
+                    "anulRedRate": 4.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-26T09:15:00",
                         "clsgDtTm": "2020-08-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1328.320000,
-                    "anulInvstmtRate": 3.7800,
-                    "untrRedVal": 1291.040000,
-                    "anulRedRate": 3.9000
+                    "untrInvstmtVal": 4585.510000,
+                    "anulInvstmtRate": 4.0100,
+                    "untrRedVal": 4494.630000,
+                    "anulRedRate": 4.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-27T09:15:00",
                         "clsgDtTm": "2020-08-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1341.280000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1303.630000,
-                    "anulRedRate": 3.8600
+                    "untrInvstmtVal": 4594.240000,
+                    "anulInvstmtRate": 4.0000,
+                    "untrRedVal": 4503.130000,
+                    "anulRedRate": 4.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-28T09:15:00",
                         "clsgDtTm": "2020-08-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.770000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1319.650000,
-                    "anulRedRate": 3.8100
+                    "untrInvstmtVal": 4634.690000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4542.390000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-08-31T09:15:00",
                         "clsgDtTm": "2020-09-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1345.220000,
-                    "anulInvstmtRate": 3.7300,
-                    "untrRedVal": 1307.470000,
-                    "anulRedRate": 3.8500
+                    "untrInvstmtVal": 4604.630000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4513.280000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-01T09:15:00",
                         "clsgDtTm": "2020-09-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1351.910000,
-                    "anulInvstmtRate": 3.7100,
-                    "untrRedVal": 1313.970000,
-                    "anulRedRate": 3.8300
+                    "untrInvstmtVal": 4613.400000,
+                    "anulInvstmtRate": 3.9800,
+                    "untrRedVal": 4521.810000,
+                    "anulRedRate": 4.1000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-02T09:15:00",
                         "clsgDtTm": "2020-09-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1355.410000,
-                    "anulInvstmtRate": 3.7000,
-                    "untrRedVal": 1317.380000,
-                    "anulRedRate": 3.8200
+                    "untrInvstmtVal": 4598.970000,
+                    "anulInvstmtRate": 4.0000,
+                    "untrRedVal": 4507.840000,
+                    "anulRedRate": 4.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-03T09:15:00",
                         "clsgDtTm": "2020-09-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1358.920000,
-                    "anulInvstmtRate": 3.6900,
-                    "untrRedVal": 1320.790000,
-                    "anulRedRate": 3.8100
+                    "untrInvstmtVal": 4615.460000,
+                    "anulInvstmtRate": 3.9800,
+                    "untrRedVal": 4523.870000,
+                    "anulRedRate": 4.1000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-04T09:15:00",
                         "clsgDtTm": "2020-09-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1365.950000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1327.620000,
-                    "anulRedRate": 3.7900
+                    "untrInvstmtVal": 4625.180000,
+                    "anulInvstmtRate": 3.9700,
+                    "untrRedVal": 4533.340000,
+                    "anulRedRate": 4.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-08T09:15:00",
                         "clsgDtTm": "2020-09-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1340.560000,
-                    "anulInvstmtRate": 3.7500,
-                    "untrRedVal": 1302.970000,
-                    "anulRedRate": 3.8700
+                    "untrInvstmtVal": 4587.600000,
+                    "anulInvstmtRate": 4.0200,
+                    "untrRedVal": 4496.920000,
+                    "anulRedRate": 4.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-09T09:15:00",
                         "clsgDtTm": "2020-09-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1350.750000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1312.880000,
-                    "anulRedRate": 3.8400
+                    "untrInvstmtVal": 4612.890000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4521.490000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-10T09:15:00",
                         "clsgDtTm": "2020-09-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1338.300000,
-                    "anulInvstmtRate": 3.7600,
-                    "untrRedVal": 1300.800000,
-                    "anulRedRate": 3.8800
+                    "untrInvstmtVal": 4583.190000,
+                    "anulInvstmtRate": 4.0300,
+                    "untrRedVal": 4492.710000,
+                    "anulRedRate": 4.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-11T09:15:00",
                         "clsgDtTm": "2020-09-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1326.180000,
-                    "anulInvstmtRate": 3.8000,
-                    "untrRedVal": 1289.040000,
-                    "anulRedRate": 3.9200
+                    "untrInvstmtVal": 4577.320000,
+                    "anulInvstmtRate": 4.0400,
+                    "untrRedVal": 4487.070000,
+                    "anulRedRate": 4.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-14T09:15:00",
                         "clsgDtTm": "2020-09-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1329.630000,
-                    "anulInvstmtRate": 3.7900,
-                    "untrRedVal": 1292.390000,
-                    "anulRedRate": 3.9100
+                    "untrInvstmtVal": 4586.040000,
+                    "anulInvstmtRate": 4.0300,
+                    "untrRedVal": 4495.560000,
+                    "anulRedRate": 4.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-15T09:15:00",
                         "clsgDtTm": "2020-09-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1320.520000,
-                    "anulInvstmtRate": 3.8200,
-                    "untrRedVal": 1283.550000,
-                    "anulRedRate": 3.9400
+                    "untrInvstmtVal": 4564.260000,
+                    "anulInvstmtRate": 4.0600,
+                    "untrRedVal": 4474.460000,
+                    "anulRedRate": 4.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-16T09:15:00",
                         "clsgDtTm": "2020-09-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1302.210000,
-                    "anulInvstmtRate": 3.8800,
-                    "untrRedVal": 1265.780000,
-                    "anulRedRate": 4.0000
+                    "untrInvstmtVal": 4527.610000,
+                    "anulInvstmtRate": 4.1100,
+                    "untrRedVal": 4438.950000,
+                    "anulRedRate": 4.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-17T09:15:00",
                         "clsgDtTm": "2020-09-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1314.900000,
-                    "anulInvstmtRate": 3.8400,
-                    "untrRedVal": 1278.110000,
-                    "anulRedRate": 3.9600
+                    "untrInvstmtVal": 4543.760000,
+                    "anulInvstmtRate": 4.0900,
+                    "untrRedVal": 4454.640000,
+                    "anulRedRate": 4.2100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-18T09:15:00",
                         "clsgDtTm": "2020-09-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1278.620000,
-                    "anulInvstmtRate": 3.9600,
-                    "untrRedVal": 1242.890000,
-                    "anulRedRate": 4.0800
+                    "untrInvstmtVal": 4441.880000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4355.850000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-21T09:15:00",
                         "clsgDtTm": "2020-09-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1228.610000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1194.340000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4371.110000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4287.220000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-22T09:15:00",
                         "clsgDtTm": "2020-09-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1255.290000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1220.250000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4422.330000,
+                    "anulInvstmtRate": 4.2600,
+                    "untrRedVal": 4336.950000,
+                    "anulRedRate": 4.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-23T09:15:00",
                         "clsgDtTm": "2020-09-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1264.510000,
-                    "anulInvstmtRate": 4.0100,
-                    "untrRedVal": 1229.210000,
-                    "anulRedRate": 4.1300
+                    "untrInvstmtVal": 4467.110000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4380.420000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-24T09:15:00",
                         "clsgDtTm": "2020-09-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1262.840000,
-                    "anulInvstmtRate": 4.0200,
-                    "untrRedVal": 1227.590000,
-                    "anulRedRate": 4.1400
+                    "untrInvstmtVal": 4457.130000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4370.810000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-25T09:15:00",
                         "clsgDtTm": "2020-09-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1290.790000,
-                    "anulInvstmtRate": 3.9300,
-                    "untrRedVal": 1254.740000,
-                    "anulRedRate": 4.0500
+                    "untrInvstmtVal": 4519.080000,
+                    "anulInvstmtRate": 4.1400,
+                    "untrRedVal": 4430.960000,
+                    "anulRedRate": 4.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-28T09:15:00",
                         "clsgDtTm": "2020-09-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1246.290000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1211.540000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4417.990000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4332.910000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-29T09:15:00",
                         "clsgDtTm": "2020-09-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.530000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1186.530000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4369.500000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4285.900000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-09-30T09:15:00",
                         "clsgDtTm": "2020-10-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.310000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1203.800000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4428.100000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4342.800000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-01T09:15:00",
                         "clsgDtTm": "2020-10-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1229.980000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1195.720000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4400.830000,
+                    "anulInvstmtRate": 4.3100,
+                    "untrRedVal": 4316.380000,
+                    "anulRedRate": 4.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-02T09:15:00",
                         "clsgDtTm": "2020-10-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1190.890000,
-                    "anulInvstmtRate": 4.2800,
-                    "untrRedVal": 1157.760000,
-                    "anulRedRate": 4.4000
+                    "untrInvstmtVal": 4298.500000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4217.120000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-05T09:15:00",
                         "clsgDtTm": "2020-10-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1234.080000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1199.710000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4433.920000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4348.560000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-06T09:15:00",
                         "clsgDtTm": "2020-10-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1208.610000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1174.980000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4385.270000,
+                    "anulInvstmtRate": 4.3400,
+                    "untrRedVal": 4301.390000,
+                    "anulRedRate": 4.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-07T09:15:00",
                         "clsgDtTm": "2020-10-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1197.680000,
-                    "anulInvstmtRate": 4.2600,
-                    "untrRedVal": 1164.380000,
-                    "anulRedRate": 4.3800
+                    "untrInvstmtVal": 4386.720000,
+                    "anulInvstmtRate": 4.3400,
+                    "untrRedVal": 4302.840000,
+                    "anulRedRate": 4.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-08T09:15:00",
                         "clsgDtTm": "2020-10-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.830000,
-                    "anulInvstmtRate": 4.1800,
-                    "untrRedVal": 1186.860000,
-                    "anulRedRate": 4.3000
+                    "untrInvstmtVal": 4423.880000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4338.930000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-09T09:15:00",
                         "clsgDtTm": "2020-10-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.010000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1203.550000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4469.910000,
+                    "anulInvstmtRate": 4.2400,
+                    "untrRedVal": 4383.710000,
+                    "anulRedRate": 4.3600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-13T09:15:00",
                         "clsgDtTm": "2020-10-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.050000,
-                    "anulInvstmtRate": 4.0600,
-                    "untrRedVal": 1223.990000,
-                    "anulRedRate": 4.1800
+                    "untrInvstmtVal": 4493.560000,
+                    "anulInvstmtRate": 4.2100,
+                    "untrRedVal": 4406.700000,
+                    "anulRedRate": 4.3300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-14T09:15:00",
                         "clsgDtTm": "2020-10-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.520000,
-                    "anulInvstmtRate": 4.0600,
-                    "untrRedVal": 1224.450000,
-                    "anulRedRate": 4.1800
+                    "untrInvstmtVal": 4487.910000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4401.250000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-15T09:15:00",
                         "clsgDtTm": "2020-10-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1245.230000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1210.590000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4453.140000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4367.550000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-16T09:15:00",
                         "clsgDtTm": "2020-10-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1252.080000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1217.240000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4478.450000,
+                    "anulInvstmtRate": 4.2400,
+                    "untrRedVal": 4392.160000,
+                    "anulRedRate": 4.3600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-19T09:15:00",
                         "clsgDtTm": "2020-10-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1264.380000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1229.190000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4509.460000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4422.290000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-20T09:15:00",
                         "clsgDtTm": "2020-10-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1282.830000,
-                    "anulInvstmtRate": 3.9900,
-                    "untrRedVal": 1247.110000,
-                    "anulRedRate": 4.1100
+                    "untrInvstmtVal": 4525.910000,
+                    "anulInvstmtRate": 4.1800,
+                    "untrRedVal": 4438.290000,
+                    "anulRedRate": 4.3000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-21T09:15:00",
                         "clsgDtTm": "2020-10-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1271.270000,
-                    "anulInvstmtRate": 4.0300,
-                    "untrRedVal": 1235.890000,
-                    "anulRedRate": 4.1500
+                    "untrInvstmtVal": 4505.420000,
+                    "anulInvstmtRate": 4.2100,
+                    "untrRedVal": 4418.440000,
+                    "anulRedRate": 4.3300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-22T09:15:00",
                         "clsgDtTm": "2020-10-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1271.730000,
-                    "anulInvstmtRate": 4.0300,
-                    "untrRedVal": 1236.350000,
-                    "anulRedRate": 4.1500
+                    "untrInvstmtVal": 4499.730000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4412.970000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-23T09:15:00",
                         "clsgDtTm": "2020-10-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1254.880000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1219.990000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4466.760000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4381.030000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-26T09:15:00",
                         "clsgDtTm": "2020-10-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1244.410000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1209.830000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4464.090000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4378.510000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-27T09:15:00",
                         "clsgDtTm": "2020-10-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1233.290000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1199.040000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4451.550000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4366.380000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-28T09:15:00",
                         "clsgDtTm": "2020-10-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1242.530000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1208.020000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4467.900000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4382.290000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-29T09:15:00",
                         "clsgDtTm": "2020-10-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1240.140000,
-                    "anulInvstmtRate": 4.1500,
-                    "untrRedVal": 1205.700000,
-                    "anulRedRate": 4.2700
+                    "untrInvstmtVal": 4462.570000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4377.160000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-10-30T09:15:00",
                         "clsgDtTm": "2020-11-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1230.030000,
-                    "anulInvstmtRate": 4.1900,
-                    "untrRedVal": 1195.890000,
-                    "anulRedRate": 4.3100
+                    "untrInvstmtVal": 4439.180000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4354.530000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-03T09:15:00",
                         "clsgDtTm": "2020-11-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1230.550000,
-                    "anulInvstmtRate": 4.1900,
-                    "untrRedVal": 1196.400000,
-                    "anulRedRate": 4.3100
+                    "untrInvstmtVal": 4441.080000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4356.420000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-04T09:15:00",
                         "clsgDtTm": "2020-11-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.860000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1202.540000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4450.150000,
+                    "anulInvstmtRate": 4.3200,
+                    "untrRedVal": 4365.260000,
+                    "anulRedRate": 4.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-05T09:15:00",
                         "clsgDtTm": "2020-11-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1260.840000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1225.830000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4488.200000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4402.220000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-06T09:15:00",
                         "clsgDtTm": "2020-11-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1298.620000,
-                    "anulInvstmtRate": 3.9700,
-                    "untrRedVal": 1262.530000,
-                    "anulRedRate": 4.0900
+                    "untrInvstmtVal": 4575.470000,
+                    "anulInvstmtRate": 4.1600,
+                    "untrRedVal": 4486.970000,
+                    "anulRedRate": 4.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-09T09:15:00",
                         "clsgDtTm": "2020-11-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1320.740000,
-                    "anulInvstmtRate": 3.9000,
-                    "untrRedVal": 1284.010000,
-                    "anulRedRate": 4.0200
+                    "untrInvstmtVal": 4607.580000,
+                    "anulInvstmtRate": 4.1200,
+                    "untrRedVal": 4518.170000,
+                    "anulRedRate": 4.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-10T09:15:00",
                         "clsgDtTm": "2020-11-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1308.940000,
-                    "anulInvstmtRate": 3.9400,
-                    "untrRedVal": 1272.560000,
-                    "anulRedRate": 4.0600
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4490.950000,
+                    "anulRedRate": 4.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-11T09:15:00",
                         "clsgDtTm": "2020-11-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1270.120000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1234.870000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4407.020000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-12T09:15:00",
                         "clsgDtTm": "2020-11-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1270.680000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1235.420000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-13T09:15:00",
                         "clsgDtTm": "2020-11-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.900000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1224.960000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-16T09:15:00",
                         "clsgDtTm": "2020-11-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1257.350000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1222.480000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4386.180000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4300.620000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-17T09:15:00",
                         "clsgDtTm": "2020-11-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1263.660000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1228.620000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4424.020000,
+                    "anulInvstmtRate": 4.2500,
+                    "untrRedVal": 4337.370000,
+                    "anulRedRate": 4.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-18T09:15:00",
                         "clsgDtTm": "2020-11-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1249.330000,
-                    "anulInvstmtRate": 4.1500,
-                    "untrRedVal": 1214.710000,
-                    "anulRedRate": 4.2700
+                    "untrInvstmtVal": 4389.020000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4303.440000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-19T09:15:00",
                         "clsgDtTm": "2020-11-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1240.980000,
-                    "anulInvstmtRate": 4.1800,
-                    "untrRedVal": 1206.600000,
-                    "anulRedRate": 4.3000
+                    "untrInvstmtVal": 4397.690000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4311.890000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-20T09:15:00",
                         "clsgDtTm": "2020-11-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1230.180000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1196.130000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4364.410000,
+                    "anulInvstmtRate": 4.3400,
+                    "untrRedVal": 4279.640000,
+                    "anulRedRate": 4.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-23T09:15:00",
                         "clsgDtTm": "2020-11-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1219.110000,
-                    "anulInvstmtRate": 4.2600,
-                    "untrRedVal": 1185.380000,
-                    "anulRedRate": 4.3800
+                    "untrInvstmtVal": 4358.660000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4274.100000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-24T09:15:00",
                         "clsgDtTm": "2020-11-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1233.860000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1199.710000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4374.420000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4289.420000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-25T09:15:00",
                         "clsgDtTm": "2020-11-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1250.150000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1215.530000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4395.060000,
+                    "anulInvstmtRate": 4.3100,
+                    "untrRedVal": 4309.540000,
+                    "anulRedRate": 4.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-26T09:15:00",
                         "clsgDtTm": "2020-11-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1262.440000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1227.480000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4426.020000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4339.610000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-27T09:15:00",
                         "clsgDtTm": "2020-11-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1284.490000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1248.900000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4459.550000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4372.210000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-11-30T09:15:00",
                         "clsgDtTm": "2020-12-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1270.060000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1234.900000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4417.420000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4331.370000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-01T09:15:00",
                         "clsgDtTm": "2020-12-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1306.810000,
-                    "anulInvstmtRate": 3.9800,
-                    "untrRedVal": 1270.590000,
-                    "anulRedRate": 4.1000
+                    "untrInvstmtVal": 4523.030000,
+                    "anulInvstmtRate": 4.1500,
+                    "untrRedVal": 4433.880000,
+                    "anulRedRate": 4.2700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-02T09:15:00",
                         "clsgDtTm": "2020-12-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1319.660000,
-                    "anulInvstmtRate": 3.9400,
-                    "untrRedVal": 1283.080000,
-                    "anulRedRate": 4.0600
+                    "untrInvstmtVal": 4601.320000,
+                    "anulInvstmtRate": 4.0500,
+                    "untrRedVal": 4509.870000,
+                    "anulRedRate": 4.1700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-03T09:15:00",
                         "clsgDtTm": "2020-12-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1361.070000,
-                    "anulInvstmtRate": 3.8100,
-                    "untrRedVal": 1323.300000,
-                    "anulRedRate": 3.9300
+                    "untrInvstmtVal": 4705.510000,
+                    "anulInvstmtRate": 3.9200,
+                    "untrRedVal": 4610.970000,
+                    "anulRedRate": 4.0400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-04T09:15:00",
                         "clsgDtTm": "2020-12-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1349.590000,
-                    "anulInvstmtRate": 3.8500,
-                    "untrRedVal": 1312.160000,
-                    "anulRedRate": 3.9700
+                    "untrInvstmtVal": 4662.170000,
+                    "anulInvstmtRate": 3.9800,
+                    "untrRedVal": 4569.000000,
+                    "anulRedRate": 4.1000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-07T09:15:00",
                         "clsgDtTm": "2020-12-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1362.870000,
-                    "anulInvstmtRate": 3.8100,
-                    "untrRedVal": 1325.060000,
-                    "anulRedRate": 3.9300
+                    "untrInvstmtVal": 4671.980000,
+                    "anulInvstmtRate": 3.9700,
+                    "untrRedVal": 4578.560000,
+                    "anulRedRate": 4.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-08T09:15:00",
                         "clsgDtTm": "2020-12-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1358.330000,
-                    "anulInvstmtRate": 3.8300,
-                    "untrRedVal": 1320.660000,
-                    "anulRedRate": 3.9500
+                    "untrInvstmtVal": 4646.850000,
+                    "anulInvstmtRate": 4.0100,
+                    "untrRedVal": 4554.270000,
+                    "anulRedRate": 4.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-09T09:15:00",
                         "clsgDtTm": "2020-12-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1355.750000,
-                    "anulInvstmtRate": 3.8400,
-                    "untrRedVal": 1318.170000,
-                    "anulRedRate": 3.9600
+                    "untrInvstmtVal": 4656.800000,
+                    "anulInvstmtRate": 4.0000,
+                    "untrRedVal": 4563.960000,
+                    "anulRedRate": 4.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-10T09:15:00",
                         "clsgDtTm": "2020-12-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1382.040000,
-                    "anulInvstmtRate": 3.7600,
-                    "untrRedVal": 1343.700000,
-                    "anulRedRate": 3.8800
+                    "untrInvstmtVal": 4706.400000,
+                    "anulInvstmtRate": 3.9400,
+                    "untrRedVal": 4612.120000,
+                    "anulRedRate": 4.0600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-11T09:15:00",
                         "clsgDtTm": "2020-12-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1403.080000,
-                    "anulInvstmtRate": 3.7000,
-                    "untrRedVal": 1364.140000,
-                    "anulRedRate": 3.8200
+                    "untrInvstmtVal": 4759.580000,
+                    "anulInvstmtRate": 3.8800,
+                    "untrRedVal": 4663.760000,
+                    "anulRedRate": 4.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-14T09:15:00",
                         "clsgDtTm": "2020-12-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1420.270000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1380.840000,
-                    "anulRedRate": 3.7700
+                    "untrInvstmtVal": 4761.700000,
+                    "anulInvstmtRate": 3.8800,
+                    "untrRedVal": 4665.860000,
+                    "anulRedRate": 4.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-15T09:15:00",
                         "clsgDtTm": "2020-12-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1451.400000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1411.080000,
-                    "anulRedRate": 3.6800
+                    "untrInvstmtVal": 4796.960000,
+                    "anulInvstmtRate": 3.8400,
+                    "untrRedVal": 4700.100000,
+                    "anulRedRate": 3.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-16T09:15:00",
                         "clsgDtTm": "2020-12-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1455.600000,
-                    "anulInvstmtRate": 3.5500,
-                    "untrRedVal": 1415.170000,
-                    "anulRedRate": 3.6700
+                    "untrInvstmtVal": 4758.880000,
+                    "anulInvstmtRate": 3.8900,
+                    "untrRedVal": 4663.220000,
+                    "anulRedRate": 4.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-17T09:15:00",
                         "clsgDtTm": "2020-12-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1473.600000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1432.650000,
-                    "anulRedRate": 3.6200
+                    "untrInvstmtVal": 4769.630000,
+                    "anulInvstmtRate": 3.8800,
+                    "untrRedVal": 4673.700000,
+                    "anulRedRate": 4.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-18T09:15:00",
                         "clsgDtTm": "2020-12-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1479.060000,
-                    "anulInvstmtRate": 3.4900,
-                    "untrRedVal": 1437.960000,
-                    "anulRedRate": 3.6100
+                    "untrInvstmtVal": 4792.430000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4695.900000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-21T09:15:00",
                         "clsgDtTm": "2020-12-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1490.330000,
-                    "anulInvstmtRate": 3.4600,
-                    "untrRedVal": 1448.910000,
-                    "anulRedRate": 3.5800
+                    "untrInvstmtVal": 4811.480000,
+                    "anulInvstmtRate": 3.8400,
+                    "untrRedVal": 4714.410000,
+                    "anulRedRate": 3.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-22T09:15:00",
                         "clsgDtTm": "2020-12-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1477.190000,
-                    "anulInvstmtRate": 3.5000,
-                    "untrRedVal": 1436.160000,
-                    "anulRedRate": 3.6200
+                    "untrInvstmtVal": 4797.750000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4701.150000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-23T09:15:00",
                         "clsgDtTm": "2020-12-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1487.240000,
-                    "anulInvstmtRate": 3.4800,
-                    "untrRedVal": 1445.940000,
-                    "anulRedRate": 3.6000
+                    "untrInvstmtVal": 4807.900000,
+                    "anulInvstmtRate": 3.8600,
+                    "untrRedVal": 4711.140000,
+                    "anulRedRate": 3.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-28T09:15:00",
                         "clsgDtTm": "2020-12-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1484.530000,
-                    "anulInvstmtRate": 3.4900,
-                    "untrRedVal": 1443.310000,
-                    "anulRedRate": 3.6100
+                    "untrInvstmtVal": 4802.310000,
+                    "anulInvstmtRate": 3.8700,
+                    "untrRedVal": 4705.760000,
+                    "anulRedRate": 3.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-29T09:15:00",
                         "clsgDtTm": "2020-12-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1513.470000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1471.430000,
-                    "anulRedRate": 3.5300
+                    "untrInvstmtVal": 4862.610000,
+                    "anulInvstmtRate": 3.8000,
+                    "untrRedVal": 4764.300000,
+                    "anulRedRate": 3.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2020-12-30T09:15:00",
                         "clsgDtTm": "2021-01-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1527.540000,
-                    "anulInvstmtRate": 3.3800,
+                    "untrInvstmtVal": 4898.600000,
+                    "anulInvstmtRate": 3.7700,
                     "untrRedVal": 0.0,
                     "anulRedRate": 0.0
                 },
@@ -9653,2468 +2263,2468 @@ const dados = {
                         "opngDtTm": "2021-01-04T09:15:00",
                         "clsgDtTm": "2021-01-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1517.610000,
-                    "anulInvstmtRate": 3.4100,
-                    "untrRedVal": 1475.470000,
-                    "anulRedRate": 3.5300
+                    "untrInvstmtVal": 4909.630000,
+                    "anulInvstmtRate": 3.7600,
+                    "untrRedVal": 4810.090000,
+                    "anulRedRate": 3.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-05T09:15:00",
                         "clsgDtTm": "2021-01-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1497.160000,
-                    "anulInvstmtRate": 3.4700,
-                    "untrRedVal": 1455.620000,
-                    "anulRedRate": 3.5900
+                    "untrInvstmtVal": 4887.080000,
+                    "anulInvstmtRate": 3.7900,
+                    "untrRedVal": 4788.270000,
+                    "anulRedRate": 3.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-06T09:15:00",
                         "clsgDtTm": "2021-01-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1480.490000,
-                    "anulInvstmtRate": 3.5200,
-                    "untrRedVal": 1439.430000,
-                    "anulRedRate": 3.6400
+                    "untrInvstmtVal": 4823.460000,
+                    "anulInvstmtRate": 3.8700,
+                    "untrRedVal": 4726.620000,
+                    "anulRedRate": 3.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-07T09:15:00",
                         "clsgDtTm": "2021-01-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1477.800000,
-                    "anulInvstmtRate": 3.5300,
-                    "untrRedVal": 1436.830000,
-                    "anulRedRate": 3.6500
+                    "untrInvstmtVal": 4793.440000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4697.550000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-08T09:15:00",
                         "clsgDtTm": "2021-01-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1472.800000,
-                    "anulInvstmtRate": 3.5500,
-                    "untrRedVal": 1431.980000,
-                    "anulRedRate": 3.6700
+                    "untrInvstmtVal": 4807.890000,
+                    "anulInvstmtRate": 3.9000,
+                    "untrRedVal": 4711.650000,
+                    "anulRedRate": 4.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-11T09:15:00",
                         "clsgDtTm": "2021-01-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1436.100000,
-                    "anulInvstmtRate": 3.6600,
-                    "untrRedVal": 1396.350000,
-                    "anulRedRate": 3.7800
+                    "untrInvstmtVal": 4738.010000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4643.910000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-12T09:15:00",
                         "clsgDtTm": "2021-01-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1452.260000,
-                    "anulInvstmtRate": 3.6200,
-                    "untrRedVal": 1412.050000,
-                    "anulRedRate": 3.7400
+                    "untrInvstmtVal": 4770.730000,
+                    "anulInvstmtRate": 3.9600,
+                    "untrRedVal": 4675.760000,
+                    "anulRedRate": 4.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-13T09:15:00",
                         "clsgDtTm": "2021-01-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1470.200000,
-                    "anulInvstmtRate": 3.5700,
-                    "untrRedVal": 1429.480000,
-                    "anulRedRate": 3.6900
+                    "untrInvstmtVal": 4773.530000,
+                    "anulInvstmtRate": 3.9600,
+                    "untrRedVal": 4678.530000,
+                    "anulRedRate": 4.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-14T09:15:00",
                         "clsgDtTm": "2021-01-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1488.370000,
-                    "anulInvstmtRate": 3.5200,
-                    "untrRedVal": 1447.140000,
-                    "anulRedRate": 3.6400
+                    "untrInvstmtVal": 4816.790000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4720.540000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-15T09:15:00",
                         "clsgDtTm": "2021-01-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1461.330000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1420.880000,
-                    "anulRedRate": 3.7200
+                    "untrInvstmtVal": 4746.310000,
+                    "anulInvstmtRate": 4.0000,
+                    "untrRedVal": 4652.210000,
+                    "anulRedRate": 4.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-18T09:15:00",
                         "clsgDtTm": "2021-01-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1471.960000,
-                    "anulInvstmtRate": 3.5700,
-                    "untrRedVal": 1431.220000,
-                    "anulRedRate": 3.6900
+                    "untrInvstmtVal": 4779.470000,
+                    "anulInvstmtRate": 3.9600,
+                    "untrRedVal": 4684.410000,
+                    "anulRedRate": 4.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-19T09:15:00",
                         "clsgDtTm": "2021-01-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1451.770000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1411.620000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4732.730000,
+                    "anulInvstmtRate": 4.0200,
+                    "untrRedVal": 4639.110000,
+                    "anulRedRate": 4.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-20T09:15:00",
                         "clsgDtTm": "2021-01-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1438.590000,
-                    "anulInvstmtRate": 3.6700,
-                    "untrRedVal": 1398.810000,
-                    "anulRedRate": 3.7900
+                    "untrInvstmtVal": 4710.210000,
+                    "anulInvstmtRate": 4.0500,
+                    "untrRedVal": 4617.290000,
+                    "anulRedRate": 4.1700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-21T09:15:00",
                         "clsgDtTm": "2021-01-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1418.880000,
-                    "anulInvstmtRate": 3.7300,
-                    "untrRedVal": 1379.690000,
-                    "anulRedRate": 3.8500
+                    "untrInvstmtVal": 4695.680000,
+                    "anulInvstmtRate": 4.0700,
+                    "untrRedVal": 4603.230000,
+                    "anulRedRate": 4.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-22T09:15:00",
                         "clsgDtTm": "2021-01-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1403.310000,
-                    "anulInvstmtRate": 3.7800,
-                    "untrRedVal": 1364.580000,
-                    "anulRedRate": 3.9000
+                    "untrInvstmtVal": 4659.930000,
+                    "anulInvstmtRate": 4.1200,
+                    "untrRedVal": 4568.620000,
+                    "anulRedRate": 4.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-26T09:15:00",
                         "clsgDtTm": "2021-01-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1416.810000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1377.690000,
-                    "anulRedRate": 3.8600
+                    "untrInvstmtVal": 4699.950000,
+                    "anulInvstmtRate": 4.0700,
+                    "untrRedVal": 4607.480000,
+                    "anulRedRate": 4.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-27T09:15:00",
                         "clsgDtTm": "2021-01-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1423.950000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1384.630000,
-                    "anulRedRate": 3.8400
+                    "untrInvstmtVal": 4701.690000,
+                    "anulInvstmtRate": 4.0700,
+                    "untrRedVal": 4609.210000,
+                    "anulRedRate": 4.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-28T09:15:00",
                         "clsgDtTm": "2021-01-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1454.550000,
-                    "anulInvstmtRate": 3.6300,
-                    "untrRedVal": 1414.360000,
-                    "anulRedRate": 3.7500
+                    "untrInvstmtVal": 4742.260000,
+                    "anulInvstmtRate": 4.0200,
+                    "untrRedVal": 4648.600000,
+                    "anulRedRate": 4.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-01-29T09:15:00",
                         "clsgDtTm": "2021-02-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1465.410000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1424.910000,
-                    "anulRedRate": 3.7200
+                    "untrInvstmtVal": 4728.570000,
+                    "anulInvstmtRate": 4.0400,
+                    "untrRedVal": 4635.360000,
+                    "anulRedRate": 4.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-01T09:15:00",
                         "clsgDtTm": "2021-02-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1479.520000,
-                    "anulInvstmtRate": 3.5600,
-                    "untrRedVal": 1438.630000,
-                    "anulRedRate": 3.6800
+                    "untrInvstmtVal": 4745.580000,
+                    "anulInvstmtRate": 4.0200,
+                    "untrRedVal": 4651.900000,
+                    "anulRedRate": 4.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-02T09:15:00",
                         "clsgDtTm": "2021-02-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1472.970000,
-                    "anulInvstmtRate": 3.5800,
-                    "untrRedVal": 1432.270000,
-                    "anulRedRate": 3.7000
+                    "untrInvstmtVal": 4746.780000,
+                    "anulInvstmtRate": 4.0200,
+                    "untrRedVal": 4653.100000,
+                    "anulRedRate": 4.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-03T09:15:00",
                         "clsgDtTm": "2021-02-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1511.680000,
-                    "anulInvstmtRate": 3.4700,
-                    "untrRedVal": 1469.880000,
-                    "anulRedRate": 3.5900
+                    "untrInvstmtVal": 4844.570000,
+                    "anulInvstmtRate": 3.9000,
+                    "untrRedVal": 4747.990000,
+                    "anulRedRate": 4.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-04T09:15:00",
                         "clsgDtTm": "2021-02-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1497.960000,
-                    "anulInvstmtRate": 3.5100,
-                    "untrRedVal": 1456.560000,
-                    "anulRedRate": 3.6300
+                    "untrInvstmtVal": 4837.610000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4741.270000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-05T09:15:00",
                         "clsgDtTm": "2021-02-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1488.140000,
-                    "anulInvstmtRate": 3.5400,
-                    "untrRedVal": 1447.020000,
-                    "anulRedRate": 3.6600
+                    "untrInvstmtVal": 4847.910000,
+                    "anulInvstmtRate": 3.9000,
+                    "untrRedVal": 4751.310000,
+                    "anulRedRate": 4.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-08T09:15:00",
                         "clsgDtTm": "2021-02-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1485.010000,
-                    "anulInvstmtRate": 3.5500,
-                    "untrRedVal": 1444.000000,
-                    "anulRedRate": 3.6700
+                    "untrInvstmtVal": 4840.950000,
+                    "anulInvstmtRate": 3.9100,
+                    "untrRedVal": 4744.590000,
+                    "anulRedRate": 4.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-09T09:15:00",
                         "clsgDtTm": "2021-02-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1467.510000,
-                    "anulInvstmtRate": 3.6000,
-                    "untrRedVal": 1427.010000,
-                    "anulRedRate": 3.7200
+                    "untrInvstmtVal": 4807.700000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4712.340000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-10T09:15:00",
                         "clsgDtTm": "2021-02-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1471.260000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1430.660000,
-                    "anulRedRate": 3.7100
+                    "untrInvstmtVal": 4800.760000,
+                    "anulInvstmtRate": 3.9600,
+                    "untrRedVal": 4705.650000,
+                    "anulRedRate": 4.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-11T09:15:00",
                         "clsgDtTm": "2021-02-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1475.030000,
-                    "anulInvstmtRate": 3.5800,
-                    "untrRedVal": 1434.320000,
-                    "anulRedRate": 3.7000
+                    "untrInvstmtVal": 4809.950000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4714.600000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-12T09:15:00",
                         "clsgDtTm": "2021-02-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1472.840000,
-                    "anulInvstmtRate": 3.5900,
-                    "untrRedVal": 1432.200000,
-                    "anulRedRate": 3.7100
+                    "untrInvstmtVal": 4814.110000,
+                    "anulInvstmtRate": 3.9500,
+                    "untrRedVal": 4718.700000,
+                    "anulRedRate": 4.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-17T09:15:00",
                         "clsgDtTm": "2021-02-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1456.310000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1416.160000,
-                    "anulRedRate": 3.7600
+                    "untrInvstmtVal": 4783.850000,
+                    "anulInvstmtRate": 3.9900,
+                    "untrRedVal": 4689.380000,
+                    "anulRedRate": 4.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-18T09:15:00",
                         "clsgDtTm": "2021-02-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1456.860000,
-                    "anulInvstmtRate": 3.6400,
-                    "untrRedVal": 1416.700000,
-                    "anulRedRate": 3.7600
+                    "untrInvstmtVal": 4793.720000,
+                    "anulInvstmtRate": 3.9800,
+                    "untrRedVal": 4699.000000,
+                    "anulRedRate": 4.1000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-19T09:15:00",
                         "clsgDtTm": "2021-02-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1454.700000,
-                    "anulInvstmtRate": 3.6500,
-                    "untrRedVal": 1414.610000,
-                    "anulRedRate": 3.7700
+                    "untrInvstmtVal": 4773.880000,
+                    "anulInvstmtRate": 4.0100,
+                    "untrRedVal": 4679.810000,
+                    "anulRedRate": 4.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-22T09:15:00",
                         "clsgDtTm": "2021-02-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1431.710000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1392.290000,
-                    "anulRedRate": 3.8400
+                    "untrInvstmtVal": 4720.520000,
+                    "anulInvstmtRate": 4.0800,
+                    "untrRedVal": 4628.080000,
+                    "anulRedRate": 4.2000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-23T09:15:00",
                         "clsgDtTm": "2021-02-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1415.690000,
-                    "anulInvstmtRate": 3.7700,
-                    "untrRedVal": 1376.730000,
-                    "anulRedRate": 3.8900
+                    "untrInvstmtVal": 4668.110000,
+                    "anulInvstmtRate": 4.1500,
+                    "untrRedVal": 4577.270000,
+                    "anulRedRate": 4.2700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-24T09:15:00",
                         "clsgDtTm": "2021-02-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1393.360000,
-                    "anulInvstmtRate": 3.8400,
-                    "untrRedVal": 1355.040000,
-                    "anulRedRate": 3.9600
+                    "untrInvstmtVal": 4631.770000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4542.050000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-25T09:15:00",
                         "clsgDtTm": "2021-02-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1349.290000,
-                    "anulInvstmtRate": 3.9800,
-                    "untrRedVal": 1312.240000,
-                    "anulRedRate": 4.1000
+                    "untrInvstmtVal": 4536.520000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4449.650000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-02-26T09:15:00",
                         "clsgDtTm": "2021-03-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1391.850000,
-                    "anulInvstmtRate": 3.8500,
-                    "untrRedVal": 1353.590000,
-                    "anulRedRate": 3.9700
+                    "untrInvstmtVal": 4622.490000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4533.140000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-01T09:15:00",
                         "clsgDtTm": "2021-03-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1376.300000,
-                    "anulInvstmtRate": 3.9000,
-                    "untrRedVal": 1338.500000,
-                    "anulRedRate": 4.0200
+                    "untrInvstmtVal": 4616.780000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4527.640000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-02T09:15:00",
                         "clsgDtTm": "2021-03-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.790000,
-                    "anulInvstmtRate": 3.9600,
-                    "untrRedVal": 1320.520000,
-                    "anulRedRate": 4.0800
+                    "untrInvstmtVal": 4588.610000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4500.350000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-03T09:15:00",
                         "clsgDtTm": "2021-03-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1374.170000,
-                    "anulInvstmtRate": 3.9100,
-                    "untrRedVal": 1336.440000,
-                    "anulRedRate": 4.0300
+                    "untrInvstmtVal": 4628.020000,
+                    "anulInvstmtRate": 4.2200,
+                    "untrRedVal": 4538.630000,
+                    "anulRedRate": 4.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-04T09:15:00",
                         "clsgDtTm": "2021-03-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1407.010000,
-                    "anulInvstmtRate": 3.8100,
-                    "untrRedVal": 1368.340000,
-                    "anulRedRate": 3.9300
+                    "untrInvstmtVal": 4675.590000,
+                    "anulInvstmtRate": 4.1600,
+                    "untrRedVal": 4584.830000,
+                    "anulRedRate": 4.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-05T09:15:00",
                         "clsgDtTm": "2021-03-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1431.300000,
-                    "anulInvstmtRate": 3.7400,
-                    "untrRedVal": 1391.950000,
-                    "anulRedRate": 3.8600
+                    "untrInvstmtVal": 4710.530000,
+                    "anulInvstmtRate": 4.1200,
+                    "untrRedVal": 4618.800000,
+                    "anulRedRate": 4.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-08T09:15:00",
                         "clsgDtTm": "2021-03-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1441.860000,
-                    "anulInvstmtRate": 3.7100,
-                    "untrRedVal": 1402.220000,
-                    "anulRedRate": 3.8300
+                    "untrInvstmtVal": 4650.920000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4560.990000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-09T09:15:00",
                         "clsgDtTm": "2021-03-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1389.790000,
-                    "anulInvstmtRate": 3.8700,
-                    "untrRedVal": 1351.640000,
-                    "anulRedRate": 3.9900
+                    "untrInvstmtVal": 4555.460000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4468.390000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-10T09:15:00",
                         "clsgDtTm": "2021-03-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1409.830000,
-                    "anulInvstmtRate": 3.8100,
-                    "untrRedVal": 1371.110000,
-                    "anulRedRate": 3.9300
+                    "untrInvstmtVal": 4601.820000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4513.430000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-11T09:15:00",
                         "clsgDtTm": "2021-03-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1429.370000,
-                    "anulInvstmtRate": 3.7600,
-                    "untrRedVal": 1390.100000,
-                    "anulRedRate": 3.8800
+                    "untrInvstmtVal": 4634.390000,
+                    "anulInvstmtRate": 4.2400,
+                    "untrRedVal": 4545.160000,
+                    "anulRedRate": 4.3600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-12T09:15:00",
                         "clsgDtTm": "2021-03-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1411.100000,
-                    "anulInvstmtRate": 3.8200,
-                    "untrRedVal": 1372.360000,
-                    "anulRedRate": 3.9400
+                    "untrInvstmtVal": 4594.420000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4506.440000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-15T09:15:00",
                         "clsgDtTm": "2021-03-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1424.870000,
-                    "anulInvstmtRate": 3.7800,
-                    "untrRedVal": 1385.750000,
-                    "anulRedRate": 3.9000
+                    "untrInvstmtVal": 4626.410000,
+                    "anulInvstmtRate": 4.2600,
+                    "untrRedVal": 4537.530000,
+                    "anulRedRate": 4.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-16T09:15:00",
                         "clsgDtTm": "2021-03-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1422.180000,
-                    "anulInvstmtRate": 3.7900,
-                    "untrRedVal": 1383.140000,
-                    "anulRedRate": 3.9100
+                    "untrInvstmtVal": 4628.480000,
+                    "anulInvstmtRate": 4.2600,
+                    "untrRedVal": 4539.590000,
+                    "anulRedRate": 4.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-17T09:15:00",
                         "clsgDtTm": "2021-03-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1422.790000,
-                    "anulInvstmtRate": 3.7900,
-                    "untrRedVal": 1383.740000,
-                    "anulRedRate": 3.9100
+                    "untrInvstmtVal": 4615.560000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4527.080000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-18T09:15:00",
                         "clsgDtTm": "2021-03-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1446.720000,
-                    "anulInvstmtRate": 3.7200,
-                    "untrRedVal": 1406.990000,
-                    "anulRedRate": 3.8400
+                    "untrInvstmtVal": 4655.290000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4565.680000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-19T09:15:00",
                         "clsgDtTm": "2021-03-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1401.880000,
-                    "anulInvstmtRate": 3.8600,
-                    "untrRedVal": 1363.440000,
-                    "anulRedRate": 3.9800
+                    "untrInvstmtVal": 4592.500000,
+                    "anulInvstmtRate": 4.3200,
+                    "untrRedVal": 4504.810000,
+                    "anulRedRate": 4.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-22T09:15:00",
                         "clsgDtTm": "2021-03-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1348.350000,
-                    "anulInvstmtRate": 4.0300,
-                    "untrRedVal": 1311.440000,
-                    "anulRedRate": 4.1500
+                    "untrInvstmtVal": 4514.070000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4428.720000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-23T09:15:00",
                         "clsgDtTm": "2021-03-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1318.100000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1282.070000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4430.760000,
+                    "anulInvstmtRate": 4.5500,
+                    "untrRedVal": 4347.890000,
+                    "anulRedRate": 4.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-24T09:15:00",
                         "clsgDtTm": "2021-03-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1324.800000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1288.580000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4475.170000,
+                    "anulInvstmtRate": 4.4900,
+                    "untrRedVal": 4391.040000,
+                    "anulRedRate": 4.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-25T09:15:00",
                         "clsgDtTm": "2021-03-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1328.450000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1292.130000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4491.480000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4406.920000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-26T09:15:00",
                         "clsgDtTm": "2021-03-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1343.100000,
-                    "anulInvstmtRate": 4.0600,
-                    "untrRedVal": 1306.380000,
-                    "anulRedRate": 4.1800
+                    "untrInvstmtVal": 4528.080000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4442.550000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-29T09:15:00",
                         "clsgDtTm": "2021-03-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1337.560000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1301.000000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4501.570000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4416.860000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-30T09:15:00",
                         "clsgDtTm": "2021-03-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1347.530000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1310.690000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4518.220000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4433.070000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-03-31T09:15:00",
                         "clsgDtTm": "2021-04-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1338.880000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1302.300000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4513.320000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4428.350000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-01T09:15:00",
                         "clsgDtTm": "2021-04-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1353.330000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1316.340000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4549.050000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4463.130000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-05T09:15:00",
                         "clsgDtTm": "2021-04-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1347.760000,
-                    "anulInvstmtRate": 4.0600,
-                    "untrRedVal": 1310.930000,
-                    "anulRedRate": 4.1800
+                    "untrInvstmtVal": 4544.090000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4458.370000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-06T09:15:00",
                         "clsgDtTm": "2021-04-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1332.940000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1296.550000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4496.060000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4411.780000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-07T09:15:00",
                         "clsgDtTm": "2021-04-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1330.530000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1294.210000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4498.350000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4414.040000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-08T09:15:00",
                         "clsgDtTm": "2021-04-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1352.870000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1315.920000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4550.990000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4465.190000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-09T09:15:00",
                         "clsgDtTm": "2021-04-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1353.100000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1316.160000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4537.380000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4452.010000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-12T09:15:00",
                         "clsgDtTm": "2021-04-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1347.490000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1310.700000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4539.520000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4454.130000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-13T09:15:00",
                         "clsgDtTm": "2021-04-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1320.410000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1284.400000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4512.910000,
+                    "anulInvstmtRate": 4.4900,
+                    "untrRedVal": 4428.340000,
+                    "anulRedRate": 4.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-14T09:15:00",
                         "clsgDtTm": "2021-04-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1311.920000,
-                    "anulInvstmtRate": 4.1900,
-                    "untrRedVal": 1276.160000,
-                    "anulRedRate": 4.3100
+                    "untrInvstmtVal": 4529.390000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4444.370000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-15T09:15:00",
                         "clsgDtTm": "2021-04-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1327.510000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1291.310000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4566.930000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4480.860000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-16T09:15:00",
                         "clsgDtTm": "2021-04-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1346.740000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1310.000000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4591.420000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4504.680000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-19T09:15:00",
                         "clsgDtTm": "2021-04-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1353.350000,
-                    "anulInvstmtRate": 4.0600,
-                    "untrRedVal": 1316.440000,
-                    "anulRedRate": 4.1800
+                    "untrInvstmtVal": 4607.510000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4520.340000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-20T09:15:00",
                         "clsgDtTm": "2021-04-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1316.990000,
-                    "anulInvstmtRate": 4.1800,
-                    "untrRedVal": 1281.110000,
-                    "anulRedRate": 4.3000
+                    "untrInvstmtVal": 4551.070000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4465.590000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-22T09:15:00",
                         "clsgDtTm": "2021-04-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1329.570000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1293.340000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4574.220000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4488.100000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-23T09:15:00",
                         "clsgDtTm": "2021-04-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1345.710000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1309.030000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4598.730000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4511.930000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-26T09:15:00",
                         "clsgDtTm": "2021-04-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1361.700000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1324.570000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4585.460000,
+                    "anulInvstmtRate": 4.4100,
+                    "untrRedVal": 4499.090000,
+                    "anulRedRate": 4.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-27T09:15:00",
                         "clsgDtTm": "2021-04-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1393.860000,
-                    "anulInvstmtRate": 3.9400,
-                    "untrRedVal": 1355.830000,
-                    "anulRedRate": 4.0600
+                    "untrInvstmtVal": 4594.160000,
+                    "anulInvstmtRate": 4.4000,
+                    "untrRedVal": 4507.560000,
+                    "anulRedRate": 4.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-28T09:15:00",
                         "clsgDtTm": "2021-04-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1384.000000,
-                    "anulInvstmtRate": 3.9700,
-                    "untrRedVal": 1346.250000,
-                    "anulRedRate": 4.0900
+                    "untrInvstmtVal": 4578.800000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4492.670000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-29T09:15:00",
                         "clsgDtTm": "2021-04-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1384.340000,
-                    "anulInvstmtRate": 3.9700,
-                    "untrRedVal": 1346.600000,
-                    "anulRedRate": 4.0900
+                    "untrInvstmtVal": 4580.030000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4493.890000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-04-30T09:15:00",
                         "clsgDtTm": "2021-05-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1372.250000,
-                    "anulInvstmtRate": 4.0100,
-                    "untrRedVal": 1334.850000,
-                    "anulRedRate": 4.1300
+                    "untrInvstmtVal": 4560.360000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4474.840000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-03T09:15:00",
                         "clsgDtTm": "2021-05-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1326.010000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1289.930000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4525.650000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4441.170000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-04T09:15:00",
                         "clsgDtTm": "2021-05-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1329.410000,
-                    "anulInvstmtRate": 4.1500,
-                    "untrRedVal": 1293.230000,
-                    "anulRedRate": 4.2700
+                    "untrInvstmtVal": 4526.880000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4442.400000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-05T09:15:00",
                         "clsgDtTm": "2021-05-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1317.580000,
-                    "anulInvstmtRate": 4.1900,
-                    "untrRedVal": 1281.750000,
-                    "anulRedRate": 4.3100
+                    "untrInvstmtVal": 4513.850000,
+                    "anulInvstmtRate": 4.5200,
+                    "untrRedVal": 4429.790000,
+                    "anulRedRate": 4.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-06T09:15:00",
                         "clsgDtTm": "2021-05-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1308.870000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1273.290000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4472.730000,
+                    "anulInvstmtRate": 4.5800,
+                    "untrRedVal": 4389.900000,
+                    "anulRedRate": 4.7000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-07T09:15:00",
                         "clsgDtTm": "2021-05-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1315.490000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1279.730000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 4510.080000,
+                    "anulInvstmtRate": 4.5300,
+                    "untrRedVal": 4426.200000,
+                    "anulRedRate": 4.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-10T09:15:00",
                         "clsgDtTm": "2021-05-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1315.830000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1280.070000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 4554.180000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4469.050000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-11T09:15:00",
                         "clsgDtTm": "2021-05-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1325.510000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1289.480000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4513.340000,
+                    "anulRedRate": 4.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-12T09:15:00",
                         "clsgDtTm": "2021-05-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1310.730000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1275.120000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4472.340000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-13T09:15:00",
                         "clsgDtTm": "2021-05-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1317.110000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1281.330000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-14T09:15:00",
                         "clsgDtTm": "2021-05-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1327.170000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1291.110000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-17T09:15:00",
                         "clsgDtTm": "2021-05-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1315.540000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1279.820000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4510.460000,
+                    "anulInvstmtRate": 4.4000,
+                    "untrRedVal": 4423.760000,
+                    "anulRedRate": 4.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-18T09:15:00",
                         "clsgDtTm": "2021-05-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1313.040000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1277.390000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4475.800000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4390.160000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-19T09:15:00",
                         "clsgDtTm": "2021-05-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1298.570000,
-                    "anulInvstmtRate": 4.2700,
-                    "untrRedVal": 1263.340000,
-                    "anulRedRate": 4.3900
+                    "untrInvstmtVal": 4455.930000,
+                    "anulInvstmtRate": 4.4800,
+                    "untrRedVal": 4370.900000,
+                    "anulRedRate": 4.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-20T09:15:00",
                         "clsgDtTm": "2021-05-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1314.060000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1278.400000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4493.890000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4407.790000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-21T09:15:00",
                         "clsgDtTm": "2021-05-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1321.210000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1285.360000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 4497.700000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4411.550000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-24T09:15:00",
                         "clsgDtTm": "2021-05-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1318.700000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1282.920000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4484.950000,
+                    "anulInvstmtRate": 4.4500,
+                    "untrRedVal": 4399.210000,
+                    "anulRedRate": 4.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-25T09:15:00",
                         "clsgDtTm": "2021-05-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1307.160000,
-                    "anulInvstmtRate": 4.2500,
-                    "untrRedVal": 1271.720000,
-                    "anulRedRate": 4.3700
+                    "untrInvstmtVal": 4479.490000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4393.950000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-26T09:15:00",
                         "clsgDtTm": "2021-05-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1316.750000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1281.040000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4495.950000,
+                    "anulInvstmtRate": 4.4400,
+                    "untrRedVal": 4409.970000,
+                    "anulRedRate": 4.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-27T09:15:00",
                         "clsgDtTm": "2021-05-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1329.400000,
-                    "anulInvstmtRate": 4.1800,
-                    "untrRedVal": 1293.340000,
-                    "anulRedRate": 4.3000
+                    "untrInvstmtVal": 4512.330000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4425.910000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-28T09:15:00",
                         "clsgDtTm": "2021-05-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1348.960000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1312.350000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4545.600000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4458.260000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-05-31T09:15:00",
                         "clsgDtTm": "2021-06-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1334.100000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1297.920000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4532.670000,
+                    "anulInvstmtRate": 4.4000,
+                    "untrRedVal": 4445.750000,
+                    "anulRedRate": 4.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-01T09:15:00",
                         "clsgDtTm": "2021-06-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1337.690000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1301.410000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4549.220000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4461.860000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-02T09:15:00",
                         "clsgDtTm": "2021-06-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.050000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1320.240000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4596.750000,
+                    "anulInvstmtRate": 4.3200,
+                    "untrRedVal": 4508.050000,
+                    "anulRedRate": 4.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-04T09:15:00",
                         "clsgDtTm": "2021-06-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1380.180000,
-                    "anulInvstmtRate": 4.0300,
-                    "untrRedVal": 1342.720000,
-                    "anulRedRate": 4.1500
+                    "untrInvstmtVal": 4692.130000,
+                    "anulInvstmtRate": 4.2000,
+                    "untrRedVal": 4600.680000,
+                    "anulRedRate": 4.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-07T09:15:00",
                         "clsgDtTm": "2021-06-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1368.100000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1330.990000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4655.520000,
+                    "anulInvstmtRate": 4.2500,
+                    "untrRedVal": 4565.190000,
+                    "anulRedRate": 4.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-08T09:15:00",
                         "clsgDtTm": "2021-06-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1374.920000,
-                    "anulInvstmtRate": 4.0500,
-                    "untrRedVal": 1337.620000,
-                    "anulRedRate": 4.1700
+                    "untrInvstmtVal": 4672.670000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4581.880000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-09T09:15:00",
                         "clsgDtTm": "2021-06-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1379.990000,
-                    "anulInvstmtRate": 4.0400,
-                    "untrRedVal": 1342.550000,
-                    "anulRedRate": 4.1600
+                    "untrInvstmtVal": 4679.180000,
+                    "anulInvstmtRate": 4.2300,
+                    "untrRedVal": 4588.280000,
+                    "anulRedRate": 4.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-10T09:15:00",
                         "clsgDtTm": "2021-06-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1367.970000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1330.880000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4665.850000,
+                    "anulInvstmtRate": 4.2500,
+                    "untrRedVal": 4575.390000,
+                    "anulRedRate": 4.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-11T09:15:00",
                         "clsgDtTm": "2021-06-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1353.690000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1317.010000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4639.880000,
+                    "anulInvstmtRate": 4.2900,
+                    "untrRedVal": 4550.240000,
+                    "anulRedRate": 4.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-14T09:15:00",
                         "clsgDtTm": "2021-06-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1360.490000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1323.630000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4649.490000,
+                    "anulInvstmtRate": 4.2800,
+                    "untrRedVal": 4559.600000,
+                    "anulRedRate": 4.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-15T09:15:00",
                         "clsgDtTm": "2021-06-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.850000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1321.060000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4635.960000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4546.510000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-16T09:15:00",
                         "clsgDtTm": "2021-06-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1370.810000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1333.670000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4660.380000,
+                    "anulInvstmtRate": 4.2700,
+                    "untrRedVal": 4570.250000,
+                    "anulRedRate": 4.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-17T09:15:00",
                         "clsgDtTm": "2021-06-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1365.020000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1328.050000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4631.670000,
+                    "anulInvstmtRate": 4.3100,
+                    "untrRedVal": 4542.430000,
+                    "anulRedRate": 4.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-18T09:15:00",
                         "clsgDtTm": "2021-06-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1332.050000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1296.020000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4575.220000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4487.670000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-21T09:15:00",
                         "clsgDtTm": "2021-06-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1329.480000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1293.520000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4599.150000,
+                    "anulInvstmtRate": 4.3600,
+                    "untrRedVal": 4510.940000,
+                    "anulRedRate": 4.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-22T09:15:00",
                         "clsgDtTm": "2021-06-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1332.980000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1296.940000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4585.900000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4498.110000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-23T09:15:00",
                         "clsgDtTm": "2021-06-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1330.410000,
-                    "anulInvstmtRate": 4.2200,
-                    "untrRedVal": 1294.440000,
-                    "anulRedRate": 4.3400
+                    "untrInvstmtVal": 4594.970000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4506.960000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-24T09:15:00",
                         "clsgDtTm": "2021-06-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1346.170000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1309.760000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4611.530000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4523.070000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-25T09:15:00",
                         "clsgDtTm": "2021-06-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1365.750000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1328.800000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4614.880000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4526.380000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-28T09:15:00",
                         "clsgDtTm": "2021-06-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1357.010000,
-                    "anulInvstmtRate": 4.1400,
-                    "untrRedVal": 1320.310000,
-                    "anulRedRate": 4.2600
+                    "untrInvstmtVal": 4572.360000,
+                    "anulInvstmtRate": 4.4100,
+                    "untrRedVal": 4485.150000,
+                    "anulRedRate": 4.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-29T09:15:00",
                         "clsgDtTm": "2021-06-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1373.090000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1335.950000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4588.810000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4501.160000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-06-30T09:15:00",
                         "clsgDtTm": "2021-07-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1361.070000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1324.280000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4553.640000,
+                    "anulInvstmtRate": 4.4400,
+                    "untrRedVal": 4467.040000,
+                    "anulRedRate": 4.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-01T09:15:00",
                         "clsgDtTm": "2021-07-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1361.550000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1324.750000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4569.990000,
+                    "anulInvstmtRate": 4.4200,
+                    "untrRedVal": 4482.950000,
+                    "anulRedRate": 4.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-02T09:15:00",
                         "clsgDtTm": "2021-07-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1371.930000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1334.840000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4603.020000,
+                    "anulInvstmtRate": 4.3800,
+                    "untrRedVal": 4515.080000,
+                    "anulRedRate": 4.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-05T09:15:00",
                         "clsgDtTm": "2021-07-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1375.560000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1338.370000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4619.610000,
+                    "anulInvstmtRate": 4.3600,
+                    "untrRedVal": 4531.220000,
+                    "anulRedRate": 4.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-06T09:15:00",
                         "clsgDtTm": "2021-07-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1363.520000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1326.680000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4591.520000,
+                    "anulInvstmtRate": 4.4000,
+                    "untrRedVal": 4503.990000,
+                    "anulRedRate": 4.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-07T09:15:00",
                         "clsgDtTm": "2021-07-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1364.010000,
-                    "anulInvstmtRate": 4.1300,
-                    "untrRedVal": 1327.160000,
-                    "anulRedRate": 4.2500
+                    "untrInvstmtVal": 4600.600000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4512.840000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-08T09:15:00",
                         "clsgDtTm": "2021-07-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1368.010000,
-                    "anulInvstmtRate": 4.1200,
-                    "untrRedVal": 1331.060000,
-                    "anulRedRate": 4.2400
+                    "untrInvstmtVal": 4618.550000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4530.330000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-12T09:15:00",
                         "clsgDtTm": "2021-07-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1356.030000,
-                    "anulInvstmtRate": 4.1600,
-                    "untrRedVal": 1319.430000,
-                    "anulRedRate": 4.2800
+                    "untrInvstmtVal": 4635.100000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4546.440000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-13T09:15:00",
                         "clsgDtTm": "2021-07-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1335.010000,
-                    "anulInvstmtRate": 4.2300,
-                    "untrRedVal": 1299.000000,
-                    "anulRedRate": 4.3500
+                    "untrInvstmtVal": 4606.850000,
+                    "anulInvstmtRate": 4.3900,
+                    "untrRedVal": 4519.060000,
+                    "anulRedRate": 4.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-14T09:15:00",
                         "clsgDtTm": "2021-07-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1350.770000,
-                    "anulInvstmtRate": 4.1800,
-                    "untrRedVal": 1314.330000,
-                    "anulRedRate": 4.3000
+                    "untrInvstmtVal": 4623.340000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4535.100000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-15T09:15:00",
                         "clsgDtTm": "2021-07-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1354.420000,
-                    "anulInvstmtRate": 4.1700,
-                    "untrRedVal": 1317.880000,
-                    "anulRedRate": 4.2900
+                    "untrInvstmtVal": 4625.290000,
+                    "anulInvstmtRate": 4.3700,
+                    "untrRedVal": 4537.030000,
+                    "anulRedRate": 4.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-16T09:15:00",
                         "clsgDtTm": "2021-07-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1374.330000,
-                    "anulInvstmtRate": 4.1100,
-                    "untrRedVal": 1337.240000,
-                    "anulRedRate": 4.2300
+                    "untrInvstmtVal": 4659.580000,
+                    "anulInvstmtRate": 4.3300,
+                    "untrRedVal": 4570.380000,
+                    "anulRedRate": 4.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-19T09:15:00",
                         "clsgDtTm": "2021-07-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1378.040000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1340.850000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4669.080000,
+                    "anulInvstmtRate": 4.3200,
+                    "untrRedVal": 4579.650000,
+                    "anulRedRate": 4.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-20T09:15:00",
                         "clsgDtTm": "2021-07-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1381.750000,
-                    "anulInvstmtRate": 4.0900,
-                    "untrRedVal": 1344.460000,
-                    "anulRedRate": 4.2100
+                    "untrInvstmtVal": 4686.210000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4596.310000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-21T09:15:00",
                         "clsgDtTm": "2021-07-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1385.470000,
-                    "anulInvstmtRate": 4.0800,
-                    "untrRedVal": 1348.090000,
-                    "anulRedRate": 4.2000
+                    "untrInvstmtVal": 4688.160000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4598.250000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-22T09:15:00",
                         "clsgDtTm": "2021-07-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1389.200000,
-                    "anulInvstmtRate": 4.0700,
-                    "untrRedVal": 1351.720000,
-                    "anulRedRate": 4.1900
+                    "untrInvstmtVal": 4690.120000,
+                    "anulInvstmtRate": 4.3000,
+                    "untrRedVal": 4600.200000,
+                    "anulRedRate": 4.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-23T09:15:00",
                         "clsgDtTm": "2021-07-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1380.990000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1343.750000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4664.140000,
+                    "anulInvstmtRate": 4.3400,
+                    "untrRedVal": 4575.040000,
+                    "anulRedRate": 4.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-26T09:15:00",
                         "clsgDtTm": "2021-07-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1382.350000,
-                    "anulInvstmtRate": 4.1000,
-                    "untrRedVal": 1345.080000,
-                    "anulRedRate": 4.2200
+                    "untrInvstmtVal": 4661.250000,
+                    "anulInvstmtRate": 4.3500,
+                    "untrRedVal": 4572.300000,
+                    "anulRedRate": 4.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-27T09:15:00",
                         "clsgDtTm": "2021-07-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1351.840000,
-                    "anulInvstmtRate": 4.2000,
-                    "untrRedVal": 1315.430000,
-                    "anulRedRate": 4.3200
+                    "untrInvstmtVal": 4574.460000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4488.080000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-28T09:15:00",
                         "clsgDtTm": "2021-07-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1343.260000,
-                    "anulInvstmtRate": 4.2300,
-                    "untrRedVal": 1307.100000,
-                    "anulRedRate": 4.3500
+                    "untrInvstmtVal": 4583.940000,
+                    "anulInvstmtRate": 4.4600,
+                    "untrRedVal": 4497.320000,
+                    "anulRedRate": 4.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-29T09:15:00",
                         "clsgDtTm": "2021-07-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1350.010000,
-                    "anulInvstmtRate": 4.2100,
-                    "untrRedVal": 1313.670000,
-                    "anulRedRate": 4.3300
+                    "untrInvstmtVal": 4608.160000,
+                    "anulInvstmtRate": 4.4300,
+                    "untrRedVal": 4520.890000,
+                    "anulRedRate": 4.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-07-30T09:15:00",
                         "clsgDtTm": "2021-08-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1327.080000,
-                    "anulInvstmtRate": 4.2900,
-                    "untrRedVal": 1291.380000,
-                    "anulRedRate": 4.4100
+                    "untrInvstmtVal": 4561.820000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4475.960000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-02T09:15:00",
                         "clsgDtTm": "2021-08-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1318.670000,
-                    "anulInvstmtRate": 4.3200,
-                    "untrRedVal": 1283.220000,
-                    "anulRedRate": 4.4400
+                    "untrInvstmtVal": 4549.490000,
+                    "anulInvstmtRate": 4.5200,
+                    "untrRedVal": 4464.030000,
+                    "anulRedRate": 4.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-03T09:15:00",
                         "clsgDtTm": "2021-08-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1316.300000,
-                    "anulInvstmtRate": 4.3300,
-                    "untrRedVal": 1280.920000,
-                    "anulRedRate": 4.4500
+                    "untrInvstmtVal": 4566.140000,
+                    "anulInvstmtRate": 4.5000,
+                    "untrRedVal": 4480.240000,
+                    "anulRedRate": 4.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-04T09:15:00",
                         "clsgDtTm": "2021-08-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1338.030000,
-                    "anulInvstmtRate": 4.2600,
-                    "untrRedVal": 1302.040000,
-                    "anulRedRate": 4.3800
+                    "untrInvstmtVal": 4590.180000,
+                    "anulInvstmtRate": 4.4700,
+                    "untrRedVal": 4503.620000,
+                    "anulRedRate": 4.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-05T09:15:00",
                         "clsgDtTm": "2021-08-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1302.650000,
-                    "anulInvstmtRate": 4.3800,
-                    "untrRedVal": 1267.670000,
-                    "anulRedRate": 4.5000
+                    "untrInvstmtVal": 4534.350000,
+                    "anulInvstmtRate": 4.5500,
+                    "untrRedVal": 4449.450000,
+                    "anulRedRate": 4.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-06T09:15:00",
                         "clsgDtTm": "2021-08-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1295.190000,
-                    "anulInvstmtRate": 4.4100,
-                    "untrRedVal": 1260.420000,
-                    "anulRedRate": 4.5300
+                    "untrInvstmtVal": 4539.210000,
+                    "anulInvstmtRate": 4.5500,
+                    "untrRedVal": 4454.240000,
+                    "anulRedRate": 4.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-09T09:15:00",
                         "clsgDtTm": "2021-08-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1298.750000,
-                    "anulInvstmtRate": 4.4000,
-                    "untrRedVal": 1263.880000,
-                    "anulRedRate": 4.5200
+                    "untrInvstmtVal": 4527.030000,
+                    "anulInvstmtRate": 4.5700,
+                    "untrRedVal": 4442.460000,
+                    "anulRedRate": 4.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-10T09:15:00",
                         "clsgDtTm": "2021-08-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1273.440000,
-                    "anulInvstmtRate": 4.4900,
-                    "untrRedVal": 1239.290000,
-                    "anulRedRate": 4.6100
+                    "untrInvstmtVal": 4445.740000,
+                    "anulInvstmtRate": 4.6900,
+                    "untrRedVal": 4363.570000,
+                    "anulRedRate": 4.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-11T09:15:00",
                         "clsgDtTm": "2021-08-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1279.840000,
-                    "anulInvstmtRate": 4.4700,
-                    "untrRedVal": 1245.520000,
-                    "anulRedRate": 4.5900
+                    "untrInvstmtVal": 4454.880000,
+                    "anulInvstmtRate": 4.6800,
+                    "untrRedVal": 4372.480000,
+                    "anulRedRate": 4.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-12T09:15:00",
                         "clsgDtTm": "2021-08-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1266.030000,
-                    "anulInvstmtRate": 4.5200,
-                    "untrRedVal": 1232.100000,
-                    "anulRedRate": 4.6400
+                    "untrInvstmtVal": 4436.230000,
+                    "anulInvstmtRate": 4.7100,
+                    "untrRedVal": 4354.410000,
+                    "anulRedRate": 4.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-13T09:15:00",
                         "clsgDtTm": "2021-08-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1233.300000,
-                    "anulInvstmtRate": 4.6400,
-                    "untrRedVal": 1200.290000,
-                    "anulRedRate": 4.7600
+                    "untrInvstmtVal": 4358.680000,
+                    "anulInvstmtRate": 4.8300,
+                    "untrRedVal": 4279.150000,
+                    "anulRedRate": 4.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-16T09:15:00",
                         "clsgDtTm": "2021-08-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1228.180000,
-                    "anulInvstmtRate": 4.6600,
-                    "untrRedVal": 1195.310000,
-                    "anulRedRate": 4.7800
+                    "untrInvstmtVal": 4306.980000,
+                    "anulInvstmtRate": 4.9100,
+                    "untrRedVal": 4228.950000,
+                    "anulRedRate": 5.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-17T09:15:00",
                         "clsgDtTm": "2021-08-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1193.050000,
-                    "anulInvstmtRate": 4.7900,
-                    "untrRedVal": 1161.180000,
-                    "anulRedRate": 4.9100
+                    "untrInvstmtVal": 4321.790000,
+                    "anulInvstmtRate": 4.8900,
+                    "untrRedVal": 4243.380000,
+                    "anulRedRate": 5.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-18T09:10:00",
                         "clsgDtTm": "2021-08-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1158.980000,
-                    "anulInvstmtRate": 4.9200,
-                    "untrRedVal": 1128.060000,
-                    "anulRedRate": 5.0400
+                    "untrInvstmtVal": 4270.840000,
+                    "anulInvstmtRate": 4.9700,
+                    "untrRedVal": 4193.910000,
+                    "anulRedRate": 5.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-19T09:15:00",
                         "clsgDtTm": "2021-08-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1162.030000,
-                    "anulInvstmtRate": 4.9100,
-                    "untrRedVal": 1131.030000,
-                    "anulRedRate": 5.0300
+                    "untrInvstmtVal": 4305.140000,
+                    "anulInvstmtRate": 4.9200,
+                    "untrRedVal": 4227.270000,
+                    "anulRedRate": 5.0400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-20T09:15:00",
                         "clsgDtTm": "2021-08-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.080000,
-                    "anulInvstmtRate": 4.8000,
-                    "untrRedVal": 1160.250000,
-                    "anulRedRate": 4.9200
+                    "untrInvstmtVal": 4374.910000,
+                    "anulInvstmtRate": 4.8200,
+                    "untrRedVal": 4295.100000,
+                    "anulRedRate": 4.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-23T09:15:00",
                         "clsgDtTm": "2021-08-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1181.800000,
-                    "anulInvstmtRate": 4.8400,
-                    "untrRedVal": 1150.260000,
-                    "anulRedRate": 4.9600
+                    "untrInvstmtVal": 4296.690000,
+                    "anulInvstmtRate": 4.9400,
+                    "untrRedVal": 4219.140000,
+                    "anulRedRate": 5.0600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-24T09:15:00",
                         "clsgDtTm": "2021-08-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.180000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1187.570000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4364.630000,
+                    "anulInvstmtRate": 4.8400,
+                    "untrRedVal": 4285.190000,
+                    "anulRedRate": 4.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-25T09:25:00",
                         "clsgDtTm": "2021-08-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1234.480000,
-                    "anulInvstmtRate": 4.6500,
-                    "untrRedVal": 1201.480000,
-                    "anulRedRate": 4.7700
+                    "untrInvstmtVal": 4427.340000,
+                    "anulInvstmtRate": 4.7500,
+                    "untrRedVal": 4346.140000,
+                    "anulRedRate": 4.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-26T09:25:00",
                         "clsgDtTm": "2021-08-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1249.470000,
-                    "anulInvstmtRate": 4.6000,
-                    "untrRedVal": 1216.070000,
-                    "anulRedRate": 4.7200
+                    "untrInvstmtVal": 4444.580000,
+                    "anulInvstmtRate": 4.7300,
+                    "untrRedVal": 4362.950000,
+                    "anulRedRate": 4.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-27T09:25:00",
                         "clsgDtTm": "2021-08-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.000000,
-                    "anulInvstmtRate": 4.5700,
-                    "untrRedVal": 1225.330000,
-                    "anulRedRate": 4.6900
+                    "untrInvstmtVal": 4455.140000,
+                    "anulInvstmtRate": 4.7200,
+                    "untrRedVal": 4373.260000,
+                    "anulRedRate": 4.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-30T09:25:00",
                         "clsgDtTm": "2021-08-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1262.340000,
-                    "anulInvstmtRate": 4.5600,
-                    "untrRedVal": 1228.590000,
-                    "anulRedRate": 4.6800
+                    "untrInvstmtVal": 4463.840000,
+                    "anulInvstmtRate": 4.7100,
+                    "untrRedVal": 4381.750000,
+                    "anulRedRate": 4.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-08-31T09:20:00",
                         "clsgDtTm": "2021-09-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1243.020000,
-                    "anulInvstmtRate": 4.6300,
-                    "untrRedVal": 1209.810000,
-                    "anulRedRate": 4.7500
+                    "untrInvstmtVal": 4417.410000,
+                    "anulInvstmtRate": 4.7800,
+                    "untrRedVal": 4336.690000,
+                    "anulRedRate": 4.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-01T09:25:00",
                         "clsgDtTm": "2021-09-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1243.510000,
-                    "anulInvstmtRate": 4.6300,
-                    "untrRedVal": 1210.290000,
-                    "anulRedRate": 4.7500
+                    "untrInvstmtVal": 4398.770000,
+                    "anulInvstmtRate": 4.8100,
+                    "untrRedVal": 4318.610000,
+                    "anulRedRate": 4.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-02T09:25:00",
                         "clsgDtTm": "2021-09-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1246.800000,
-                    "anulInvstmtRate": 4.6200,
-                    "untrRedVal": 1213.510000,
-                    "anulRedRate": 4.7400
+                    "untrInvstmtVal": 4393.750000,
+                    "anulInvstmtRate": 4.8200,
+                    "untrRedVal": 4313.780000,
+                    "anulRedRate": 4.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-03T09:25:00",
                         "clsgDtTm": "2021-09-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1222.740000,
-                    "anulInvstmtRate": 4.7100,
-                    "untrRedVal": 1190.120000,
-                    "anulRedRate": 4.8300
+                    "untrInvstmtVal": 4370.440000,
+                    "anulInvstmtRate": 4.8600,
+                    "untrRedVal": 4291.190000,
+                    "anulRedRate": 4.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-06T09:25:00",
                         "clsgDtTm": "2021-09-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1226.250000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1193.530000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4373.120000,
+                    "anulInvstmtRate": 4.8600,
+                    "untrRedVal": 4293.840000,
+                    "anulRedRate": 4.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-08T09:25:00",
                         "clsgDtTm": "2021-09-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1196.700000,
-                    "anulInvstmtRate": 4.8100,
-                    "untrRedVal": 1164.810000,
-                    "anulRedRate": 4.9300
+                    "untrInvstmtVal": 4348.190000,
+                    "anulInvstmtRate": 4.9000,
+                    "untrRedVal": 4269.650000,
+                    "anulRedRate": 5.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-09T09:20:00",
                         "clsgDtTm": "2021-09-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1221.080000,
-                    "anulInvstmtRate": 4.7300,
-                    "untrRedVal": 1188.520000,
-                    "anulRedRate": 4.8500
+                    "untrInvstmtVal": 4397.740000,
+                    "anulInvstmtRate": 4.8400,
+                    "untrRedVal": 4317.920000,
+                    "anulRedRate": 4.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-10T09:20:00",
                         "clsgDtTm": "2021-09-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1208.640000,
-                    "anulInvstmtRate": 4.7800,
-                    "untrRedVal": 1176.430000,
-                    "anulRedRate": 4.9000
+                    "untrInvstmtVal": 4395.510000,
+                    "anulInvstmtRate": 4.8500,
+                    "untrRedVal": 4315.810000,
+                    "anulRedRate": 4.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-13T09:25:00",
                         "clsgDtTm": "2021-09-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1233.970000,
-                    "anulInvstmtRate": 4.6900,
-                    "untrRedVal": 1201.060000,
-                    "anulRedRate": 4.8100
+                    "untrInvstmtVal": 4431.470000,
+                    "anulInvstmtRate": 4.8000,
+                    "untrRedVal": 4350.790000,
+                    "anulRedRate": 4.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-14T09:25:00",
                         "clsgDtTm": "2021-09-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1231.760000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1198.920000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4440.360000,
+                    "anulInvstmtRate": 4.7900,
+                    "untrRedVal": 4359.470000,
+                    "anulRedRate": 4.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-15T09:25:00",
                         "clsgDtTm": "2021-09-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1224.090000,
-                    "anulInvstmtRate": 4.7300,
-                    "untrRedVal": 1191.470000,
-                    "anulRedRate": 4.8500
+                    "untrInvstmtVal": 4429.000000,
+                    "anulInvstmtRate": 4.8100,
+                    "untrRedVal": 4348.470000,
+                    "anulRedRate": 4.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-16T09:25:00",
                         "clsgDtTm": "2021-09-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1233.010000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1200.160000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4431.280000,
+                    "anulInvstmtRate": 4.8100,
+                    "untrRedVal": 4350.730000,
+                    "anulRedRate": 4.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-17T09:25:00",
                         "clsgDtTm": "2021-09-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1212.430000,
-                    "anulInvstmtRate": 4.7800,
-                    "untrRedVal": 1180.140000,
-                    "anulRedRate": 4.9000
+                    "untrInvstmtVal": 4389.160000,
+                    "anulInvstmtRate": 4.8800,
+                    "untrRedVal": 4309.880000,
+                    "anulRedRate": 5.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-20T09:25:00",
                         "clsgDtTm": "2021-09-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1218.520000,
-                    "anulInvstmtRate": 4.7600,
-                    "untrRedVal": 1186.070000,
-                    "anulRedRate": 4.8800
+                    "untrInvstmtVal": 4391.430000,
+                    "anulInvstmtRate": 4.8800,
+                    "untrRedVal": 4312.130000,
+                    "anulRedRate": 5.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-21T09:25:00",
                         "clsgDtTm": "2021-09-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1227.400000,
-                    "anulInvstmtRate": 4.7300,
-                    "untrRedVal": 1194.720000,
-                    "anulRedRate": 4.8500
+                    "untrInvstmtVal": 4400.420000,
+                    "anulInvstmtRate": 4.8700,
+                    "untrRedVal": 4320.910000,
+                    "anulRedRate": 4.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-22T09:25:00",
                         "clsgDtTm": "2021-09-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.350000,
-                    "anulInvstmtRate": 4.7000,
-                    "untrRedVal": 1203.420000,
-                    "anulRedRate": 4.8200
+                    "untrInvstmtVal": 4409.430000,
+                    "anulInvstmtRate": 4.8600,
+                    "untrRedVal": 4329.700000,
+                    "anulRedRate": 4.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-23T09:25:00",
                         "clsgDtTm": "2021-09-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.390000,
-                    "anulInvstmtRate": 4.7600,
-                    "untrRedVal": 1187.920000,
-                    "anulRedRate": 4.8800
+                    "untrInvstmtVal": 4384.870000,
+                    "anulInvstmtRate": 4.9000,
+                    "untrRedVal": 4305.880000,
+                    "anulRedRate": 5.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-24T09:25:00",
                         "clsgDtTm": "2021-09-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1202.750000,
-                    "anulInvstmtRate": 4.8300,
-                    "untrRedVal": 1170.770000,
-                    "anulRedRate": 4.9500
+                    "untrInvstmtVal": 4370.040000,
+                    "anulInvstmtRate": 4.9300,
+                    "untrRedVal": 4291.560000,
+                    "anulRedRate": 5.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-27T09:25:00",
                         "clsgDtTm": "2021-09-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1193.830000,
-                    "anulInvstmtRate": 4.8700,
-                    "untrRedVal": 1162.110000,
-                    "anulRedRate": 4.9900
+                    "untrInvstmtVal": 4350.360000,
+                    "anulInvstmtRate": 4.9700,
+                    "untrRedVal": 4272.520000,
+                    "anulRedRate": 5.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-28T09:25:00",
                         "clsgDtTm": "2021-09-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1194.550000,
-                    "anulInvstmtRate": 4.8700,
-                    "untrRedVal": 1162.800000,
-                    "anulRedRate": 4.9900
+                    "untrInvstmtVal": 4346.400000,
+                    "anulInvstmtRate": 4.9800,
+                    "untrRedVal": 4268.720000,
+                    "anulRedRate": 5.1000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-29T09:25:00",
                         "clsgDtTm": "2021-09-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1195.260000,
-                    "anulInvstmtRate": 4.8700,
-                    "untrRedVal": 1163.500000,
-                    "anulRedRate": 4.9900
+                    "untrInvstmtVal": 4355.590000,
+                    "anulInvstmtRate": 4.9700,
+                    "untrRedVal": 4277.690000,
+                    "anulRedRate": 5.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-09-30T09:25:00",
                         "clsgDtTm": "2021-10-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1190.610000,
-                    "anulInvstmtRate": 4.8900,
-                    "untrRedVal": 1158.990000,
-                    "anulRedRate": 5.0100
+                    "untrInvstmtVal": 4345.060000,
+                    "anulInvstmtRate": 4.9900,
+                    "untrRedVal": 4267.510000,
+                    "anulRedRate": 5.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-01T09:25:00",
                         "clsgDtTm": "2021-10-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1181.640000,
-                    "anulInvstmtRate": 4.9300,
-                    "untrRedVal": 1150.280000,
-                    "anulRedRate": 5.0500
+                    "untrInvstmtVal": 4338.120000,
+                    "anulInvstmtRate": 5.0100,
+                    "untrRedVal": 4260.850000,
+                    "anulRedRate": 5.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-04T09:25:00",
                         "clsgDtTm": "2021-10-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1187.670000,
-                    "anulInvstmtRate": 4.9100,
-                    "untrRedVal": 1156.140000,
-                    "anulRedRate": 5.0300
+                    "untrInvstmtVal": 4347.270000,
+                    "anulInvstmtRate": 5.0000,
+                    "untrRedVal": 4269.790000,
+                    "anulRedRate": 5.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-05T09:25:00",
                         "clsgDtTm": "2021-10-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1177.770000,
-                    "anulInvstmtRate": 4.9500,
-                    "untrRedVal": 1146.520000,
-                    "anulRedRate": 5.0700
+                    "untrInvstmtVal": 4336.810000,
+                    "anulInvstmtRate": 5.0200,
+                    "untrRedVal": 4259.670000,
+                    "anulRedRate": 5.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-06T09:25:00",
                         "clsgDtTm": "2021-10-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1183.770000,
-                    "anulInvstmtRate": 4.9300,
-                    "untrRedVal": 1152.360000,
-                    "anulRedRate": 5.0500
+                    "untrInvstmtVal": 4339.430000,
+                    "anulInvstmtRate": 5.0200,
+                    "untrRedVal": 4262.250000,
+                    "anulRedRate": 5.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-07T09:25:00",
                         "clsgDtTm": "2021-10-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1173.910000,
-                    "anulInvstmtRate": 4.9700,
-                    "untrRedVal": 1142.780000,
-                    "anulRedRate": 5.0900
+                    "untrInvstmtVal": 4316.060000,
+                    "anulInvstmtRate": 5.0600,
+                    "untrRedVal": 4239.590000,
+                    "anulRedRate": 5.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-08T09:25:00",
                         "clsgDtTm": "2021-10-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1188.100000,
-                    "anulInvstmtRate": 4.9200,
-                    "untrRedVal": 1156.590000,
-                    "anulRedRate": 5.0400
+                    "untrInvstmtVal": 4345.590000,
+                    "anulInvstmtRate": 5.0200,
+                    "untrRedVal": 4268.350000,
+                    "anulRedRate": 5.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-11T09:25:00",
                         "clsgDtTm": "2021-10-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1170.740000,
-                    "anulInvstmtRate": 4.9900,
-                    "untrRedVal": 1139.710000,
-                    "anulRedRate": 5.1100
+                    "untrInvstmtVal": 4323.760000,
+                    "anulInvstmtRate": 5.0600,
+                    "untrRedVal": 4247.200000,
+                    "anulRedRate": 5.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-13T09:25:00",
                         "clsgDtTm": "2021-10-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1171.410000,
-                    "anulInvstmtRate": 4.9900,
-                    "untrRedVal": 1140.370000,
-                    "anulRedRate": 5.1100
+                    "untrInvstmtVal": 4319.810000,
+                    "anulInvstmtRate": 5.0700,
+                    "untrRedVal": 4243.400000,
+                    "anulRedRate": 5.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-14T09:25:00",
                         "clsgDtTm": "2021-10-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1172.090000,
-                    "anulInvstmtRate": 4.9900,
-                    "untrRedVal": 1141.040000,
-                    "anulRedRate": 5.1100
+                    "untrInvstmtVal": 4315.860000,
+                    "anulInvstmtRate": 5.0800,
+                    "untrRedVal": 4239.610000,
+                    "anulRedRate": 5.2000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-15T09:25:00",
                         "clsgDtTm": "2021-10-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1157.460000,
-                    "anulInvstmtRate": 5.0500,
-                    "untrRedVal": 1126.820000,
-                    "anulRedRate": 5.1700
+                    "untrInvstmtVal": 4300.350000,
+                    "anulInvstmtRate": 5.1100,
+                    "untrRedVal": 4224.590000,
+                    "anulRedRate": 5.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-18T09:25:00",
                         "clsgDtTm": "2021-10-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1152.780000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 1122.280000,
-                    "anulRedRate": 5.1900
+                    "untrInvstmtVal": 4276.670000,
+                    "anulInvstmtRate": 5.1500,
+                    "untrRedVal": 4201.620000,
+                    "anulRedRate": 5.2700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-19T09:25:00",
                         "clsgDtTm": "2021-10-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1093.080000,
-                    "anulInvstmtRate": 5.3100,
-                    "untrRedVal": 1064.220000,
-                    "anulRedRate": 5.4300
+                    "untrInvstmtVal": 4124.470000,
+                    "anulInvstmtRate": 5.4000,
+                    "untrRedVal": 4053.700000,
+                    "anulRedRate": 5.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-20T09:25:00",
                         "clsgDtTm": "2021-10-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1133.310000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1103.350000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 4217.590000,
+                    "anulInvstmtRate": 5.2500,
+                    "untrRedVal": 4144.270000,
+                    "anulRedRate": 5.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-21T09:25:00",
                         "clsgDtTm": "2021-10-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1067.530000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1039.380000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4080.630000,
+                    "anulInvstmtRate": 5.4800,
+                    "untrRedVal": 4011.150000,
+                    "anulRedRate": 5.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-22T09:25:00",
                         "clsgDtTm": "2021-10-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1107.260000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 1078.030000,
-                    "anulRedRate": 5.3800
+                    "untrInvstmtVal": 4167.870000,
+                    "anulInvstmtRate": 5.3400,
+                    "untrRedVal": 4096.030000,
+                    "anulRedRate": 5.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-25T09:25:00",
                         "clsgDtTm": "2021-10-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1090.580000,
-                    "anulInvstmtRate": 5.3300,
-                    "untrRedVal": 1061.820000,
-                    "anulRedRate": 5.4500
+                    "untrInvstmtVal": 4127.510000,
+                    "anulInvstmtRate": 5.4100,
+                    "untrRedVal": 4056.830000,
+                    "anulRedRate": 5.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-26T09:25:00",
                         "clsgDtTm": "2021-10-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1067.020000,
-                    "anulInvstmtRate": 5.4300,
-                    "untrRedVal": 1038.910000,
-                    "anulRedRate": 5.5500
+                    "untrInvstmtVal": 4081.950000,
+                    "anulInvstmtRate": 5.4900,
+                    "untrRedVal": 4012.560000,
+                    "anulRedRate": 5.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-27T09:25:00",
                         "clsgDtTm": "2021-10-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1071.330000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1043.110000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4095.220000,
+                    "anulInvstmtRate": 5.4800,
+                    "untrRedVal": 4025.570000,
+                    "anulRedRate": 5.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-28T09:25:00",
                         "clsgDtTm": "2021-10-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1057.700000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 1029.850000,
-                    "anulRedRate": 5.6000
+                    "untrInvstmtVal": 4079.840000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4010.650000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-10-29T09:25:00",
                         "clsgDtTm": "2021-11-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.620000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 1028.810000,
-                    "anulRedRate": 5.6100
+                    "untrInvstmtVal": 4073.080000,
+                    "anulInvstmtRate": 5.5300,
+                    "untrRedVal": 4004.140000,
+                    "anulRedRate": 5.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-01T09:25:00",
                         "clsgDtTm": "2021-11-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1045.850000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1018.340000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4059.220000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 3990.720000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-03T09:25:00",
                         "clsgDtTm": "2021-11-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1113.690000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 1084.320000,
-                    "anulRedRate": 5.3800
+                    "untrInvstmtVal": 4222.800000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4149.820000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-04T09:25:00",
                         "clsgDtTm": "2021-11-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1131.800000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 1101.940000,
-                    "anulRedRate": 5.3100
+                    "untrInvstmtVal": 4237.430000,
+                    "anulInvstmtRate": 5.2700,
+                    "untrRedVal": 4164.080000,
+                    "anulRedRate": 5.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-05T09:25:00",
                         "clsgDtTm": "2021-11-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.610000,
-                    "anulInvstmtRate": 5.2600,
-                    "untrRedVal": 1086.210000,
-                    "anulRedRate": 5.3800
+                    "untrInvstmtVal": 4187.240000,
+                    "anulInvstmtRate": 5.3600,
+                    "untrRedVal": 4115.360000,
+                    "anulRedRate": 5.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-08T09:25:00",
                         "clsgDtTm": "2021-11-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.700000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 1089.220000,
-                    "anulRedRate": 5.3700
+                    "untrInvstmtVal": 4201.680000,
+                    "anulInvstmtRate": 5.3400,
+                    "untrRedVal": 4129.440000,
+                    "anulRedRate": 5.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-09T09:25:00",
                         "clsgDtTm": "2021-11-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1126.800000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 1097.100000,
-                    "anulRedRate": 5.3400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4155.540000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-10T09:25:00",
                         "clsgDtTm": "2021-11-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1147.290000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1117.030000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4189.800000,
+                    "anulRedRate": 5.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-11T09:25:00",
                         "clsgDtTm": "2021-11-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1140.330000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 1110.270000,
-                    "anulRedRate": 5.3000
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-12T09:25:00",
                         "clsgDtTm": "2021-11-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1139.770000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 1109.730000,
-                    "anulRedRate": 5.3100
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-16T09:25:00",
                         "clsgDtTm": "2021-11-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1135.300000,
-                    "anulInvstmtRate": 5.2100,
-                    "untrRedVal": 1105.390000,
-                    "anulRedRate": 5.3300
+                    "untrInvstmtVal": 4140.670000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4067.420000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-17T09:25:00",
                         "clsgDtTm": "2021-11-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1128.350000,
-                    "anulInvstmtRate": 5.2400,
-                    "untrRedVal": 1098.630000,
-                    "anulRedRate": 5.3600
+                    "untrInvstmtVal": 4130.530000,
+                    "anulInvstmtRate": 5.3200,
+                    "untrRedVal": 4057.600000,
+                    "anulRedRate": 5.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-18T09:25:00",
                         "clsgDtTm": "2021-11-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1133.980000,
-                    "anulInvstmtRate": 5.2200,
-                    "untrRedVal": 1104.120000,
-                    "anulRedRate": 5.3400
+                    "untrInvstmtVal": 4126.580000,
+                    "anulInvstmtRate": 5.3300,
+                    "untrRedVal": 4053.790000,
+                    "anulRedRate": 5.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-19T09:25:00",
                         "clsgDtTm": "2021-11-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1140.390000,
-                    "anulInvstmtRate": 5.2000,
-                    "untrRedVal": 1110.360000,
-                    "anulRedRate": 5.3200
+                    "untrInvstmtVal": 4150.030000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4076.660000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-22T09:25:00",
                         "clsgDtTm": "2021-11-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1143.540000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 1113.430000,
-                    "anulRedRate": 5.3100
+                    "untrInvstmtVal": 4152.240000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4078.860000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-23T09:25:00",
                         "clsgDtTm": "2021-11-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1146.690000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 1116.500000,
-                    "anulRedRate": 5.3000
+                    "untrInvstmtVal": 4185.660000,
+                    "anulInvstmtRate": 5.2500,
+                    "untrRedVal": 4111.380000,
+                    "anulRedRate": 5.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-24T09:25:00",
                         "clsgDtTm": "2021-11-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1154.980000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1124.570000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 4150.470000,
+                    "anulInvstmtRate": 5.3100,
+                    "untrRedVal": 4077.220000,
+                    "anulRedRate": 5.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-25T09:25:00",
                         "clsgDtTm": "2021-11-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1155.590000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1125.160000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 4158.890000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4085.440000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-26T09:25:00",
                         "clsgDtTm": "2021-11-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1152.300000,
-                    "anulInvstmtRate": 5.1700,
-                    "untrRedVal": 1121.980000,
-                    "anulRedRate": 5.2900
+                    "untrInvstmtVal": 4165.580000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4092.030000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-29T09:25:00",
                         "clsgDtTm": "2021-11-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1150.390000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 1120.120000,
-                    "anulRedRate": 5.3000
+                    "untrInvstmtVal": 4155.510000,
+                    "anulInvstmtRate": 5.3200,
+                    "untrRedVal": 4082.290000,
+                    "anulRedRate": 5.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-11-30T09:25:00",
                         "clsgDtTm": "2021-12-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1163.900000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 1133.260000,
-                    "anulRedRate": 5.2500
+                    "untrInvstmtVal": 4176.490000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4102.730000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-01T09:25:00",
                         "clsgDtTm": "2021-12-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1167.130000,
-                    "anulInvstmtRate": 5.1200,
-                    "untrRedVal": 1136.420000,
-                    "anulRedRate": 5.2400
+                    "untrInvstmtVal": 4191.350000,
+                    "anulInvstmtRate": 5.2700,
+                    "untrRedVal": 4117.210000,
+                    "anulRedRate": 5.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-02T09:25:00",
                         "clsgDtTm": "2021-12-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1157.450000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 1127.000000,
-                    "anulRedRate": 5.2800
+                    "untrInvstmtVal": 4181.200000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4107.390000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-03T09:25:00",
                         "clsgDtTm": "2021-12-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1177.100000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 1146.120000,
-                    "anulRedRate": 5.2100
+                    "untrInvstmtVal": 4230.620000,
+                    "anulInvstmtRate": 5.2200,
+                    "untrRedVal": 4155.510000,
+                    "anulRedRate": 5.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-06T09:25:00",
                         "clsgDtTm": "2021-12-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1175.140000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 1144.220000,
-                    "anulRedRate": 5.2200
+                    "untrInvstmtVal": 4258.510000,
+                    "anulInvstmtRate": 5.1800,
+                    "untrRedVal": 4182.660000,
+                    "anulRedRate": 5.3000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-07T09:25:00",
                         "clsgDtTm": "2021-12-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1162.800000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1132.220000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 4267.310000,
+                    "anulInvstmtRate": 5.1700,
+                    "untrRedVal": 4191.260000,
+                    "anulRedRate": 5.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-08T09:25:00",
                         "clsgDtTm": "2021-12-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1179.060000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 1148.050000,
-                    "anulRedRate": 5.2100
+                    "untrInvstmtVal": 4295.540000,
+                    "anulInvstmtRate": 5.1300,
+                    "untrRedVal": 4218.740000,
+                    "anulRedRate": 5.2500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-09T09:25:00",
                         "clsgDtTm": "2021-12-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1179.720000,
-                    "anulInvstmtRate": 5.0900,
-                    "untrRedVal": 1148.690000,
-                    "anulRedRate": 5.2100
+                    "untrInvstmtVal": 4304.430000,
+                    "anulInvstmtRate": 5.1200,
+                    "untrRedVal": 4227.430000,
+                    "anulRedRate": 5.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-10T09:25:00",
                         "clsgDtTm": "2021-12-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1198.300000,
-                    "anulInvstmtRate": 5.0200,
-                    "untrRedVal": 1166.770000,
-                    "anulRedRate": 5.1400
+                    "untrInvstmtVal": 4344.060000,
+                    "anulInvstmtRate": 5.0600,
+                    "untrRedVal": 4265.970000,
+                    "anulRedRate": 5.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-13T09:25:00",
                         "clsgDtTm": "2021-12-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1209.620000,
-                    "anulInvstmtRate": 4.9800,
-                    "untrRedVal": 1177.780000,
-                    "anulRedRate": 5.1000
+                    "untrInvstmtVal": 4352.890000,
+                    "anulInvstmtRate": 5.0500,
+                    "untrRedVal": 4274.590000,
+                    "anulRedRate": 5.1700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-14T09:25:00",
                         "clsgDtTm": "2021-12-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1204.860000,
-                    "anulInvstmtRate": 5.0000,
-                    "untrRedVal": 1173.170000,
-                    "anulRedRate": 5.1200
+                    "untrInvstmtVal": 4341.910000,
+                    "anulInvstmtRate": 5.0700,
+                    "untrRedVal": 4263.960000,
+                    "anulRedRate": 5.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-15T09:25:00",
                         "clsgDtTm": "2021-12-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1184.130000,
-                    "anulInvstmtRate": 5.0800,
-                    "untrRedVal": 1153.000000,
-                    "anulRedRate": 5.2000
+                    "untrInvstmtVal": 4297.980000,
+                    "anulInvstmtRate": 5.1400,
+                    "untrRedVal": 4221.300000,
+                    "anulRedRate": 5.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-16T09:25:00",
                         "clsgDtTm": "2021-12-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1187.260000,
-                    "anulInvstmtRate": 5.0700,
-                    "untrRedVal": 1156.050000,
-                    "anulRedRate": 5.1900
+                    "untrInvstmtVal": 4261.170000,
+                    "anulInvstmtRate": 5.2000,
+                    "untrRedVal": 4185.550000,
+                    "anulRedRate": 5.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-17T09:25:00",
                         "clsgDtTm": "2021-12-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1159.620000,
-                    "anulInvstmtRate": 5.1800,
-                    "untrRedVal": 1129.180000,
-                    "anulRedRate": 5.3000
+                    "untrInvstmtVal": 4214.180000,
+                    "anulInvstmtRate": 5.2800,
+                    "untrRedVal": 4139.930000,
+                    "anulRedRate": 5.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-20T09:25:00",
                         "clsgDtTm": "2021-12-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1165.270000,
-                    "anulInvstmtRate": 5.1600,
-                    "untrRedVal": 1134.680000,
-                    "anulRedRate": 5.2800
+                    "untrInvstmtVal": 4215.980000,
+                    "anulInvstmtRate": 5.2800,
+                    "untrRedVal": 4141.720000,
+                    "anulRedRate": 5.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-21T09:25:00",
                         "clsgDtTm": "2021-12-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1173.540000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 1142.740000,
-                    "anulRedRate": 5.2500
+                    "untrInvstmtVal": 4217.780000,
+                    "anulInvstmtRate": 5.2800,
+                    "untrRedVal": 4143.500000,
+                    "anulRedRate": 5.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-22T09:25:00",
                         "clsgDtTm": "2021-12-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1174.040000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 1143.220000,
-                    "anulRedRate": 5.2500
+                    "untrInvstmtVal": 4219.570000,
+                    "anulInvstmtRate": 5.2800,
+                    "untrRedVal": 4145.280000,
+                    "anulRedRate": 5.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-23T09:25:00",
                         "clsgDtTm": "2021-12-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1183.400000,
-                    "anulInvstmtRate": 5.1000,
-                    "untrRedVal": 1152.330000,
-                    "anulRedRate": 5.2200
+                    "untrInvstmtVal": 4218.770000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4144.590000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-27T09:25:00",
                         "clsgDtTm": "2021-12-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1170.500000,
-                    "anulInvstmtRate": 5.1500,
-                    "untrRedVal": 1139.800000,
-                    "anulRedRate": 5.2700
+                    "untrInvstmtVal": 4188.180000,
+                    "anulInvstmtRate": 5.3400,
+                    "untrRedVal": 4114.880000,
+                    "anulRedRate": 5.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-28T09:25:00",
                         "clsgDtTm": "2021-12-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1176.170000,
-                    "anulInvstmtRate": 5.1300,
-                    "untrRedVal": 1145.310000,
-                    "anulRedRate": 5.2500
+                    "untrInvstmtVal": 4189.880000,
+                    "anulInvstmtRate": 5.3400,
+                    "untrRedVal": 4116.570000,
+                    "anulRedRate": 5.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-29T09:25:00",
                         "clsgDtTm": "2021-12-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1161.100000,
-                    "anulInvstmtRate": 5.1900,
-                    "untrRedVal": 1130.660000,
-                    "anulRedRate": 5.3100
+                    "untrInvstmtVal": 4173.050000,
+                    "anulInvstmtRate": 5.3700,
+                    "untrRedVal": 4100.240000,
+                    "anulRedRate": 5.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2021-12-30T09:25:00",
                         "clsgDtTm": "2022-01-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.530000,
-                    "anulInvstmtRate": 5.3200,
+                    "untrInvstmtVal": 4093.310000,
+                    "anulInvstmtRate": 5.5100,
                     "untrRedVal": 0.0,
                     "anulRedRate": 0.0
                 },
@@ -12123,239 +4733,239 @@ const dados = {
                         "opngDtTm": "2022-01-03T09:25:00",
                         "clsgDtTm": "2022-01-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1147.620000,
-                    "anulInvstmtRate": 5.2500,
-                    "untrRedVal": 1117.570000,
-                    "anulRedRate": 5.3700
+                    "untrInvstmtVal": 4155.300000,
+                    "anulInvstmtRate": 5.4100,
+                    "untrRedVal": 4083.110000,
+                    "anulRedRate": 5.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-04T09:25:00",
                         "clsgDtTm": "2022-01-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1137.970000,
-                    "anulInvstmtRate": 5.2900,
-                    "untrRedVal": 1108.190000,
-                    "anulRedRate": 5.4100
+                    "untrInvstmtVal": 4138.760000,
+                    "anulInvstmtRate": 5.4400,
+                    "untrRedVal": 4067.050000,
+                    "anulRedRate": 5.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-05T09:25:00",
                         "clsgDtTm": "2022-01-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.010000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 1086.830000,
-                    "anulRedRate": 5.5000
+                    "untrInvstmtVal": 4098.370000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4027.820000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-06T09:25:00",
                         "clsgDtTm": "2022-01-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.930000,
-                    "anulInvstmtRate": 5.3700,
-                    "untrRedVal": 1089.680000,
-                    "anulRedRate": 5.4900
+                    "untrInvstmtVal": 4106.030000,
+                    "anulInvstmtRate": 5.5000,
+                    "untrRedVal": 4035.300000,
+                    "anulRedRate": 5.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-07T09:25:00",
                         "clsgDtTm": "2022-01-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1080.990000,
-                    "anulInvstmtRate": 5.5300,
-                    "untrRedVal": 1052.770000,
-                    "anulRedRate": 5.6500
+                    "untrInvstmtVal": 4050.250000,
+                    "anulInvstmtRate": 5.6000,
+                    "untrRedVal": 3981.100000,
+                    "anulRedRate": 5.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-10T09:25:00",
                         "clsgDtTm": "2022-01-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1064.870000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1037.100000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4022.890000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 3954.520000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-11T09:25:00",
                         "clsgDtTm": "2022-01-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1050.060000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1022.700000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 3994.080000,
+                    "anulInvstmtRate": 5.7100,
+                    "untrRedVal": 3926.570000,
+                    "anulRedRate": 5.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-12T09:25:00",
                         "clsgDtTm": "2022-01-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1055.170000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1027.680000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 3995.900000,
+                    "anulInvstmtRate": 5.7100,
+                    "untrRedVal": 3928.380000,
+                    "anulRedRate": 5.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-13T09:25:00",
                         "clsgDtTm": "2022-01-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1057.970000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 1030.410000,
-                    "anulRedRate": 5.7600
+                    "untrInvstmtVal": 4020.650000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 3952.490000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-14T09:25:00",
                         "clsgDtTm": "2022-01-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1068.120000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1040.290000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4029.400000,
+                    "anulInvstmtRate": 5.6600,
+                    "untrRedVal": 3961.050000,
+                    "anulRedRate": 5.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-17T09:25:00",
                         "clsgDtTm": "2022-01-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1042.960000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1015.810000,
-                    "anulRedRate": 5.8300
+                    "untrInvstmtVal": 3985.090000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 3917.980000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-18T09:25:00",
                         "clsgDtTm": "2022-01-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1043.340000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1016.190000,
-                    "anulRedRate": 5.8300
+                    "untrInvstmtVal": 3986.550000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 3919.430000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-19T09:25:00",
                         "clsgDtTm": "2022-01-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1059.910000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 1032.310000,
-                    "anulRedRate": 5.7600
+                    "untrInvstmtVal": 4028.020000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 3959.810000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-20T09:25:00",
                         "clsgDtTm": "2022-01-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1072.020000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1044.100000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4052.650000,
+                    "anulInvstmtRate": 5.6300,
+                    "untrRedVal": 3983.800000,
+                    "anulRedRate": 5.7500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-21T09:25:00",
                         "clsgDtTm": "2022-01-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1065.660000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1037.920000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4032.120000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 3963.880000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-24T09:25:00",
                         "clsgDtTm": "2022-01-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1073.110000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1045.170000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4050.950000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 3982.230000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-25T09:25:00",
                         "clsgDtTm": "2022-01-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1071.140000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1043.260000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4052.420000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 3983.690000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-26T09:25:00",
                         "clsgDtTm": "2022-01-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1062.140000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 1034.510000,
-                    "anulRedRate": 5.7600
+                    "untrInvstmtVal": 4030.760000,
+                    "anulInvstmtRate": 5.6800,
+                    "untrRedVal": 3962.660000,
+                    "anulRedRate": 5.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-27T09:25:00",
                         "clsgDtTm": "2022-01-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1070.000000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1042.160000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4051.250000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 3982.630000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-28T09:25:00",
                         "clsgDtTm": "2022-01-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1068.450000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1040.660000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4060.090000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 3991.280000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-01-31T09:25:00",
                         "clsgDtTm": "2022-02-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1071.220000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1043.360000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4061.690000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 3992.870000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-01T09:25:00",
                         "clsgDtTm": "2022-02-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1076.360000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1048.370000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4080.800000,
+                    "anulInvstmtRate": 5.6100,
+                    "untrRedVal": 4011.500000,
+                    "anulRedRate": 5.7300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-02T09:25:00",
                         "clsgDtTm": "2022-02-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1088.690000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1060.360000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4105.940000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4035.990000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-03T09:25:00",
                         "clsgDtTm": "2022-02-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1103.570000,
+                    "untrInvstmtVal": 4161.320000,
                     "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 1074.850000,
+                    "untrRedVal": 4089.880000,
                     "anulRedRate": 5.6000
                 },
                 {
@@ -12363,49 +4973,49 @@ const dados = {
                         "opngDtTm": "2022-02-04T09:25:00",
                         "clsgDtTm": "2022-02-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1085.140000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 1056.920000,
-                    "anulRedRate": 5.6800
+                    "untrInvstmtVal": 4104.710000,
+                    "anulInvstmtRate": 5.5800,
+                    "untrRedVal": 4034.870000,
+                    "anulRedRate": 5.7000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-07T09:25:00",
                         "clsgDtTm": "2022-02-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1090.350000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1062.000000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4141.980000,
+                    "anulInvstmtRate": 5.5200,
+                    "untrRedVal": 4071.160000,
+                    "anulRedRate": 5.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-08T09:25:00",
                         "clsgDtTm": "2022-02-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1083.610000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 1055.440000,
-                    "anulRedRate": 5.6900
+                    "untrInvstmtVal": 4119.760000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4049.580000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-09T09:25:00",
                         "clsgDtTm": "2022-02-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1074.470000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1046.560000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4097.420000,
+                    "anulInvstmtRate": 5.6000,
+                    "untrRedVal": 4027.880000,
+                    "anulRedRate": 5.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-10T09:25:00",
                         "clsgDtTm": "2022-02-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1065.500000,
+                    "untrInvstmtVal": 4069.810000,
                     "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1037.830000,
+                    "untrRedVal": 4001.060000,
                     "anulRedRate": 5.7700
                 },
                 {
@@ -12413,69 +5023,69 @@ const dados = {
                         "opngDtTm": "2022-02-11T09:25:00",
                         "clsgDtTm": "2022-02-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.970000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1029.540000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4055.450000,
+                    "anulInvstmtRate": 5.6800,
+                    "untrRedVal": 3987.140000,
+                    "anulRedRate": 5.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-14T09:25:00",
                         "clsgDtTm": "2022-02-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1066.700000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1039.010000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4068.610000,
+                    "anulInvstmtRate": 5.6600,
+                    "untrRedVal": 3999.980000,
+                    "anulRedRate": 5.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-15T09:25:00",
                         "clsgDtTm": "2022-02-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1081.410000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1053.330000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4082.420000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 4013.450000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-16T09:25:00",
                         "clsgDtTm": "2022-02-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1084.360000,
-                    "anulInvstmtRate": 5.5800,
-                    "untrRedVal": 1056.210000,
-                    "anulRedRate": 5.7000
+                    "untrInvstmtVal": 4072.970000,
+                    "anulInvstmtRate": 5.6600,
+                    "untrRedVal": 4004.300000,
+                    "anulRedRate": 5.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-17T09:25:00",
                         "clsgDtTm": "2022-02-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1080.190000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1052.150000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4075.140000,
+                    "anulInvstmtRate": 5.6600,
+                    "untrRedVal": 4006.460000,
+                    "anulRedRate": 5.7800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-18T09:25:00",
                         "clsgDtTm": "2022-02-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1074.360000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1046.490000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4068.320000,
+                    "anulInvstmtRate": 5.6800,
+                    "untrRedVal": 3999.880000,
+                    "anulRedRate": 5.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-21T09:25:00",
                         "clsgDtTm": "2022-02-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1063.230000,
+                    "untrInvstmtVal": 4070.500000,
                     "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1035.660000,
+                    "untrRedVal": 4002.040000,
                     "anulRedRate": 5.8000
                 },
                 {
@@ -12483,9 +5093,9 @@ const dados = {
                         "opngDtTm": "2022-02-22T09:25:00",
                         "clsgDtTm": "2022-02-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.830000,
+                    "untrInvstmtVal": 4055.380000,
                     "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1029.440000,
+                    "untrRedVal": 3987.380000,
                     "anulRedRate": 5.8300
                 },
                 {
@@ -12493,69 +5103,69 @@ const dados = {
                         "opngDtTm": "2022-02-23T09:25:00",
                         "clsgDtTm": "2022-02-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1062.040000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1034.510000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4063.310000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 3995.130000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-24T09:25:00",
                         "clsgDtTm": "2022-02-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1046.640000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1019.540000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4043.260000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 3975.680000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-02-25T09:25:00",
                         "clsgDtTm": "2022-03-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1057.840000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1030.440000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4056.650000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 3988.800000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-02T09:25:00",
                         "clsgDtTm": "2022-03-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1051.500000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1024.280000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4058.900000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 3991.030000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-03T09:25:00",
                         "clsgDtTm": "2022-03-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1045.210000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1018.160000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4049.710000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 3982.130000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-04T09:25:00",
                         "clsgDtTm": "2022-03-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1048.780000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1021.640000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4048.960000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 3981.470000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-07T09:25:00",
                         "clsgDtTm": "2022-03-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1037.960000,
+                    "untrInvstmtVal": 4017.230000,
                     "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 1011.120000,
+                    "untrRedVal": 3950.640000,
                     "anulRedRate": 5.9400
                 },
                 {
@@ -12563,9 +5173,9 @@ const dados = {
                         "opngDtTm": "2022-03-08T09:25:00",
                         "clsgDtTm": "2022-03-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1025.020000,
+                    "untrInvstmtVal": 3985.940000,
                     "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 998.540000,
+                    "untrRedVal": 3920.240000,
                     "anulRedRate": 6.0000
                 },
                 {
@@ -12573,1599 +5183,1599 @@ const dados = {
                         "opngDtTm": "2022-03-09T09:25:00",
                         "clsgDtTm": "2022-03-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1036.860000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1010.060000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4010.490000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 3944.160000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-10T09:25:00",
                         "clsgDtTm": "2022-03-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1030.670000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1004.040000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 3990.420000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 3924.670000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-11T09:25:00",
                         "clsgDtTm": "2022-03-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1039.400000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1012.550000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4014.740000,
+                    "anulInvstmtRate": 5.8500,
+                    "untrRedVal": 3948.440000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-14T09:25:00",
                         "clsgDtTm": "2022-03-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1033.230000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1006.540000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 3994.780000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 3929.060000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-15T09:25:00",
                         "clsgDtTm": "2022-03-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1024.790000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 998.340000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 3980.290000,
+                    "anulInvstmtRate": 5.9200,
+                    "untrRedVal": 3915.000000,
+                    "anulRedRate": 6.0400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-16T09:25:00",
                         "clsgDtTm": "2022-03-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1041.110000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1014.220000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4010.150000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 3944.090000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-17T09:25:00",
                         "clsgDtTm": "2022-03-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1037.130000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1010.350000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4001.130000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 3935.350000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-18T09:25:00",
                         "clsgDtTm": "2022-03-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1058.880000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1031.530000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4033.630000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 3967.040000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-21T09:25:00",
                         "clsgDtTm": "2022-03-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1061.750000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1034.330000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4052.690000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 3985.630000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-22T09:25:00",
                         "clsgDtTm": "2022-03-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1062.310000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1034.870000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4043.510000,
+                    "anulInvstmtRate": 5.8300,
+                    "untrRedVal": 3976.740000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-23T09:25:00",
                         "clsgDtTm": "2022-03-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1083.940000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1055.930000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4091.200000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4023.180000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-24T09:25:00",
                         "clsgDtTm": "2022-03-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1106.040000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 1077.430000,
-                    "anulRedRate": 5.6900
+                    "untrInvstmtVal": 4151.490000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 4081.870000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-25T09:25:00",
                         "clsgDtTm": "2022-03-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1154.240000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 1124.340000,
-                    "anulRedRate": 5.5000
+                    "untrInvstmtVal": 4239.910000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4167.950000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-28T09:25:00",
                         "clsgDtTm": "2022-03-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1156.580000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 1126.630000,
-                    "anulRedRate": 5.5000
+                    "untrInvstmtVal": 4248.540000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4176.450000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-29T09:25:00",
                         "clsgDtTm": "2022-03-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.270000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 1102.980000,
-                    "anulRedRate": 5.6000
+                    "untrInvstmtVal": 4220.900000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4149.610000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-30T09:25:00",
                         "clsgDtTm": "2022-03-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1130.500000,
-                    "anulInvstmtRate": 5.4900,
-                    "untrRedVal": 1101.260000,
-                    "anulRedRate": 5.6100
+                    "untrInvstmtVal": 4205.520000,
+                    "anulInvstmtRate": 5.5900,
+                    "untrRedVal": 4134.710000,
+                    "anulRedRate": 5.7100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-03-31T09:25:00",
                         "clsgDtTm": "2022-04-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1133.680000,
-                    "anulInvstmtRate": 5.4800,
-                    "untrRedVal": 1104.360000,
-                    "anulRedRate": 5.6000
+                    "untrInvstmtVal": 4202.180000,
+                    "anulInvstmtRate": 5.6000,
+                    "untrRedVal": 4131.500000,
+                    "anulRedRate": 5.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-01T09:25:00",
                         "clsgDtTm": "2022-04-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1152.810000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 1122.990000,
-                    "anulRedRate": 5.5300
+                    "untrInvstmtVal": 4244.390000,
+                    "anulInvstmtRate": 5.5400,
+                    "untrRedVal": 4172.640000,
+                    "anulRedRate": 5.6600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-04T09:25:00",
                         "clsgDtTm": "2022-04-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1171.320000,
-                    "anulInvstmtRate": 5.3400,
-                    "untrRedVal": 1141.000000,
-                    "anulRedRate": 5.4600
+                    "untrInvstmtVal": 4283.680000,
+                    "anulInvstmtRate": 5.4800,
+                    "untrRedVal": 4210.900000,
+                    "anulRedRate": 5.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-05T09:25:00",
                         "clsgDtTm": "2022-04-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1151.720000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1121.940000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4249.690000,
+                    "anulInvstmtRate": 5.5400,
+                    "untrRedVal": 4177.890000,
+                    "anulRedRate": 5.6600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-06T09:25:00",
                         "clsgDtTm": "2022-04-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1142.410000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 1112.880000,
-                    "anulRedRate": 5.5800
+                    "untrInvstmtVal": 4228.180000,
+                    "anulInvstmtRate": 5.5800,
+                    "untrRedVal": 4157.010000,
+                    "anulRedRate": 5.7000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-07T09:25:00",
                         "clsgDtTm": "2022-04-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1153.150000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1123.340000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4242.890000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4171.360000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-08T09:25:00",
                         "clsgDtTm": "2022-04-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1155.660000,
-                    "anulInvstmtRate": 5.4300,
-                    "untrRedVal": 1125.790000,
-                    "anulRedRate": 5.5500
+                    "untrInvstmtVal": 4255.380000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4183.730000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-11T09:25:00",
                         "clsgDtTm": "2022-04-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.080000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1099.930000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4198.630000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 4128.570000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-12T09:25:00",
                         "clsgDtTm": "2022-04-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.790000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1084.090000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4160.610000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 4091.630000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-13T09:25:00",
                         "clsgDtTm": "2022-04-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.040000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1087.260000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4187.110000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 4117.470000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-14T09:25:00",
                         "clsgDtTm": "2022-04-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.430000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1081.800000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4175.770000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 4106.520000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-18T09:25:00",
                         "clsgDtTm": "2022-04-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.950000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1082.320000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4183.600000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4114.180000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-19T09:25:00",
                         "clsgDtTm": "2022-04-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.760000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1089.920000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4185.580000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4116.150000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-20T09:25:00",
                         "clsgDtTm": "2022-04-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1119.560000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1090.710000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4188.620000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4119.150000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-22T09:25:00",
                         "clsgDtTm": "2022-04-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.220000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1089.400000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4175.160000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4106.120000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-25T09:25:00",
                         "clsgDtTm": "2022-04-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1109.050000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1080.490000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4159.700000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4091.110000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-26T09:25:00",
                         "clsgDtTm": "2022-04-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1107.160000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1078.650000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4155.890000,
+                    "anulInvstmtRate": 5.7900,
+                    "untrRedVal": 4087.440000,
+                    "anulRedRate": 5.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-27T09:25:00",
                         "clsgDtTm": "2022-04-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.510000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 1083.860000,
-                    "anulRedRate": 5.7600
+                    "untrInvstmtVal": 4163.660000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4095.040000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-28T09:25:00",
                         "clsgDtTm": "2022-04-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1111.540000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1082.930000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4157.530000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4089.150000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-04-29T09:25:00",
                         "clsgDtTm": "2022-05-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1120.110000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1091.270000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4191.420000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4122.200000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-02T09:25:00",
                         "clsgDtTm": "2022-05-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1106.180000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1077.720000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4158.810000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4090.500000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-03T09:25:00",
                         "clsgDtTm": "2022-05-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1106.770000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1078.300000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4166.810000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4098.340000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-04T09:25:00",
                         "clsgDtTm": "2022-05-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1097.770000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1069.560000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4163.270000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4094.930000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-05T09:25:00",
                         "clsgDtTm": "2022-05-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1105.540000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1077.110000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4188.700000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4119.720000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-06T09:25:00",
                         "clsgDtTm": "2022-05-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1099.630000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1071.370000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4176.120000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4107.540000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-09T09:25:00",
                         "clsgDtTm": "2022-05-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1100.220000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1071.950000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4172.570000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4104.130000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-10T09:25:00",
                         "clsgDtTm": "2022-05-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1084.210000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1056.380000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4083.950000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-11T09:25:00",
                         "clsgDtTm": "2022-05-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1076.580000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1048.950000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4062.770000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-12T09:25:00",
                         "clsgDtTm": "2022-05-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1086.580000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1058.690000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-13T09:25:00",
                         "clsgDtTm": "2022-05-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.380000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1076.020000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-16T09:25:00",
                         "clsgDtTm": "2022-05-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.830000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1088.150000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 4102.200000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 4032.790000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-17T09:25:00",
                         "clsgDtTm": "2022-05-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.430000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1100.420000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4109.590000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4040.010000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-18T09:25:00",
                         "clsgDtTm": "2022-05-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1120.080000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1091.320000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4099.380000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4030.110000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-19T09:25:00",
                         "clsgDtTm": "2022-05-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.710000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1103.620000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4118.520000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 4048.770000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-20T09:25:00",
                         "clsgDtTm": "2022-05-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1135.920000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1106.750000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4127.160000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 4057.220000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-23T09:25:00",
                         "clsgDtTm": "2022-05-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1131.410000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1102.370000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4134.600000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4064.490000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-24T09:25:00",
                         "clsgDtTm": "2022-05-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1100.390000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1072.180000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4083.360000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4014.670000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-25T09:25:00",
                         "clsgDtTm": "2022-05-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1098.920000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1070.760000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4063.640000,
+                    "anulInvstmtRate": 5.8500,
+                    "untrRedVal": 3995.530000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-26T09:25:00",
                         "clsgDtTm": "2022-05-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.160000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1087.540000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4111.780000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4042.410000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-27T09:25:00",
                         "clsgDtTm": "2022-05-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1126.770000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1097.870000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4120.910000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 4051.350000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-30T09:25:00",
                         "clsgDtTm": "2022-05-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.080000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1086.500000,
-                    "anulRedRate": 5.8200
+                    "untrInvstmtVal": 4087.580000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4018.950000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-05-31T09:25:00",
                         "clsgDtTm": "2022-06-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.720000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1082.260000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4089.280000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4020.630000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-01T09:25:00",
                         "clsgDtTm": "2022-06-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1111.180000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1082.710000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4096.780000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4027.970000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-02T09:25:00",
                         "clsgDtTm": "2022-06-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.440000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1076.160000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4075.320000,
+                    "anulInvstmtRate": 5.8500,
+                    "untrRedVal": 4007.130000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-03T09:25:00",
                         "clsgDtTm": "2022-06-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1107.710000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1079.350000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4090.120000,
+                    "anulInvstmtRate": 5.8300,
+                    "untrRedVal": 4021.580000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-06T09:25:00",
                         "clsgDtTm": "2022-06-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.170000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1079.800000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4086.030000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4017.630000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-07T09:25:00",
                         "clsgDtTm": "2022-06-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1101.460000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1073.270000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4070.450000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 4002.500000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-08T09:25:00",
                         "clsgDtTm": "2022-06-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1106.680000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1078.370000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4083.650000,
+                    "anulInvstmtRate": 5.8500,
+                    "untrRedVal": 4015.390000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-09T09:25:00",
                         "clsgDtTm": "2022-06-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.050000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1089.430000,
-                    "anulRedRate": 5.8200
+                    "untrInvstmtVal": 4098.600000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4029.930000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-10T09:25:00",
                         "clsgDtTm": "2022-06-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.810000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1090.170000,
-                    "anulRedRate": 5.8200
+                    "untrInvstmtVal": 4095.590000,
+                    "anulInvstmtRate": 5.8300,
+                    "untrRedVal": 4027.040000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-13T09:25:00",
                         "clsgDtTm": "2022-06-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1111.990000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1083.540000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4079.810000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4011.730000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-14T09:25:00",
                         "clsgDtTm": "2022-06-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1095.710000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 1067.710000,
-                    "anulRedRate": 5.9200
+                    "untrInvstmtVal": 4047.070000,
+                    "anulInvstmtRate": 5.9200,
+                    "untrRedVal": 3979.900000,
+                    "anulRedRate": 6.0400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-15T09:25:00",
                         "clsgDtTm": "2022-06-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.530000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1087.000000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4136.340000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4066.810000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-17T09:25:00",
                         "clsgDtTm": "2022-06-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1126.180000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1097.370000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4110.680000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4041.900000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-20T09:25:00",
                         "clsgDtTm": "2022-06-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.100000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1100.220000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 4118.300000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4049.340000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-21T09:25:00",
                         "clsgDtTm": "2022-06-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.040000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1086.540000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4079.640000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 4011.760000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-22T09:25:00",
                         "clsgDtTm": "2022-06-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.330000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1080.010000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4075.700000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 4007.960000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-23T09:25:00",
                         "clsgDtTm": "2022-06-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.420000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1089.840000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4071.780000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4004.190000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-24T09:25:00",
                         "clsgDtTm": "2022-06-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1109.760000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1081.430000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4058.220000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 3991.040000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-27T09:25:00",
                         "clsgDtTm": "2022-06-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1103.520000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1075.340000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4061.590000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 3994.370000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-28T09:25:00",
                         "clsgDtTm": "2022-06-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1082.830000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1055.210000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4029.660000,
+                    "anulInvstmtRate": 5.9900,
+                    "untrRedVal": 3963.330000,
+                    "anulRedRate": 6.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-29T09:25:00",
                         "clsgDtTm": "2022-06-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1081.000000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1053.440000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4020.380000,
+                    "anulInvstmtRate": 6.0100,
+                    "untrRedVal": 3954.340000,
+                    "anulRedRate": 6.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-06-30T09:25:00",
                         "clsgDtTm": "2022-07-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1081.510000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1053.940000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4027.880000,
+                    "anulInvstmtRate": 6.0000,
+                    "untrRedVal": 3961.670000,
+                    "anulRedRate": 6.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-01T09:25:00",
                         "clsgDtTm": "2022-07-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1082.540000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1054.950000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4026.150000,
+                    "anulInvstmtRate": 6.0100,
+                    "untrRedVal": 3960.050000,
+                    "anulRedRate": 6.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-04T09:25:00",
                         "clsgDtTm": "2022-07-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1073.770000,
-                    "anulInvstmtRate": 5.9300,
-                    "untrRedVal": 1046.420000,
-                    "anulRedRate": 6.0500
+                    "untrInvstmtVal": 4011.360000,
+                    "anulInvstmtRate": 6.0400,
+                    "untrRedVal": 3945.690000,
+                    "anulRedRate": 6.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-05T09:25:00",
                         "clsgDtTm": "2022-07-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1058.230000,
-                    "anulInvstmtRate": 6.0000,
-                    "untrRedVal": 1031.290000,
-                    "anulRedRate": 6.1200
+                    "untrInvstmtVal": 3985.680000,
+                    "anulInvstmtRate": 6.0900,
+                    "untrRedVal": 3920.730000,
+                    "anulRedRate": 6.2100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-06T09:25:00",
                         "clsgDtTm": "2022-07-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.450000,
-                    "anulInvstmtRate": 6.0100,
-                    "untrRedVal": 1029.570000,
-                    "anulRedRate": 6.1300
+                    "untrInvstmtVal": 3982.110000,
+                    "anulInvstmtRate": 6.1000,
+                    "untrRedVal": 3917.280000,
+                    "anulRedRate": 6.2200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-07T09:25:00",
                         "clsgDtTm": "2022-07-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1056.950000,
-                    "anulInvstmtRate": 6.0100,
-                    "untrRedVal": 1030.070000,
-                    "anulRedRate": 6.1300
+                    "untrInvstmtVal": 3967.630000,
+                    "anulInvstmtRate": 6.1300,
+                    "untrRedVal": 3903.240000,
+                    "anulRedRate": 6.2500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-08T09:25:00",
                         "clsgDtTm": "2022-07-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1043.890000,
-                    "anulInvstmtRate": 6.0700,
-                    "untrRedVal": 1017.350000,
-                    "anulRedRate": 6.1900
+                    "untrInvstmtVal": 3936.990000,
+                    "anulInvstmtRate": 6.1900,
+                    "untrRedVal": 3873.430000,
+                    "anulRedRate": 6.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-11T09:25:00",
                         "clsgDtTm": "2022-07-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1013.460000,
-                    "anulInvstmtRate": 6.2100,
-                    "untrRedVal": 987.740000,
-                    "anulRedRate": 6.3300
+                    "untrInvstmtVal": 3880.470000,
+                    "anulInvstmtRate": 6.3000,
+                    "untrRedVal": 3818.440000,
+                    "anulRedRate": 6.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-12T09:25:00",
                         "clsgDtTm": "2022-07-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1013.930000,
-                    "anulInvstmtRate": 6.2100,
-                    "untrRedVal": 988.200000,
-                    "anulRedRate": 6.3300
+                    "untrInvstmtVal": 3871.820000,
+                    "anulInvstmtRate": 6.3200,
+                    "untrRedVal": 3810.050000,
+                    "anulRedRate": 6.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-13T09:25:00",
                         "clsgDtTm": "2022-07-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1018.760000,
-                    "anulInvstmtRate": 6.1900,
-                    "untrRedVal": 992.900000,
-                    "anulRedRate": 6.3100
+                    "untrInvstmtVal": 3889.330000,
+                    "anulInvstmtRate": 6.2900,
+                    "untrRedVal": 3827.130000,
+                    "anulRedRate": 6.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-14T09:25:00",
                         "clsgDtTm": "2022-07-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.610000,
-                    "anulInvstmtRate": 6.1700,
-                    "untrRedVal": 997.620000,
-                    "anulRedRate": 6.2900
+                    "untrInvstmtVal": 3912.240000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3849.480000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-15T09:25:00",
                         "clsgDtTm": "2022-07-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1043.160000,
-                    "anulInvstmtRate": 6.0800,
-                    "untrRedVal": 1016.670000,
-                    "anulRedRate": 6.2000
+                    "untrInvstmtVal": 3953.540000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 3889.700000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-18T09:25:00",
                         "clsgDtTm": "2022-07-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1036.500000,
-                    "anulInvstmtRate": 6.1100,
-                    "untrRedVal": 1010.190000,
-                    "anulRedRate": 6.2300
+                    "untrInvstmtVal": 3937.560000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 3874.150000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-19T09:25:00",
                         "clsgDtTm": "2022-07-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1003.760000,
-                    "anulInvstmtRate": 6.2600,
-                    "untrRedVal": 978.310000,
-                    "anulRedRate": 6.3800
+                    "untrInvstmtVal": 3863.900000,
+                    "anulInvstmtRate": 6.3400,
+                    "untrRedVal": 3802.450000,
+                    "anulRedRate": 6.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-20T09:25:00",
                         "clsgDtTm": "2022-07-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1010.260000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 984.650000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3890.140000,
+                    "anulInvstmtRate": 6.2900,
+                    "untrRedVal": 3828.020000,
+                    "anulRedRate": 6.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-21T09:25:00",
                         "clsgDtTm": "2022-07-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1010.300000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 984.690000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3900.800000,
+                    "anulInvstmtRate": 6.2700,
+                    "untrRedVal": 3838.420000,
+                    "anulRedRate": 6.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-22T09:25:00",
                         "clsgDtTm": "2022-07-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1007.760000,
-                    "anulInvstmtRate": 6.2400,
-                    "untrRedVal": 982.230000,
-                    "anulRedRate": 6.3600
+                    "untrInvstmtVal": 3899.360000,
+                    "anulInvstmtRate": 6.2700,
+                    "untrRedVal": 3837.020000,
+                    "anulRedRate": 6.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-25T09:25:00",
                         "clsgDtTm": "2022-07-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1020.820000,
-                    "anulInvstmtRate": 6.1800,
-                    "untrRedVal": 994.950000,
-                    "anulRedRate": 6.3000
+                    "untrInvstmtVal": 3925.970000,
+                    "anulInvstmtRate": 6.2200,
+                    "untrRedVal": 3862.950000,
+                    "anulRedRate": 6.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-26T09:25:00",
                         "clsgDtTm": "2022-07-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1001.390000,
-                    "anulInvstmtRate": 6.2700,
-                    "untrRedVal": 976.030000,
-                    "anulRedRate": 6.3900
+                    "untrInvstmtVal": 3889.150000,
+                    "anulInvstmtRate": 6.2900,
+                    "untrRedVal": 3827.110000,
+                    "anulRedRate": 6.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-27T09:25:00",
                         "clsgDtTm": "2022-07-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1009.900000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 984.320000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3909.850000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3847.280000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-28T09:25:00",
                         "clsgDtTm": "2022-07-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1016.430000,
-                    "anulInvstmtRate": 6.2000,
-                    "untrRedVal": 990.690000,
-                    "anulRedRate": 6.3200
+                    "untrInvstmtVal": 3915.240000,
+                    "anulInvstmtRate": 6.2400,
+                    "untrRedVal": 3852.550000,
+                    "anulRedRate": 6.3600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-07-29T09:25:00",
                         "clsgDtTm": "2022-08-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1013.850000,
-                    "anulInvstmtRate": 6.2100,
-                    "untrRedVal": 988.180000,
-                    "anulRedRate": 6.3300
+                    "untrInvstmtVal": 3913.670000,
+                    "anulInvstmtRate": 6.2400,
+                    "untrRedVal": 3851.030000,
+                    "anulRedRate": 6.3600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-01T09:25:00",
                         "clsgDtTm": "2022-08-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1024.780000,
-                    "anulInvstmtRate": 6.1600,
-                    "untrRedVal": 998.820000,
-                    "anulRedRate": 6.2800
+                    "untrInvstmtVal": 3935.030000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 3871.840000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-02T09:25:00",
                         "clsgDtTm": "2022-08-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1009.580000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 984.030000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3903.330000,
+                    "anulInvstmtRate": 6.2600,
+                    "untrRedVal": 3840.990000,
+                    "anulRedRate": 6.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-03T09:25:00",
                         "clsgDtTm": "2022-08-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1020.450000,
-                    "anulInvstmtRate": 6.1800,
-                    "untrRedVal": 994.620000,
-                    "anulRedRate": 6.3000
+                    "untrInvstmtVal": 3919.280000,
+                    "anulInvstmtRate": 6.2300,
+                    "untrRedVal": 3856.540000,
+                    "anulRedRate": 6.3500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-04T09:25:00",
                         "clsgDtTm": "2022-08-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1058.280000,
-                    "anulInvstmtRate": 6.0100,
-                    "untrRedVal": 1031.450000,
-                    "anulRedRate": 6.1300
+                    "untrInvstmtVal": 4027.720000,
+                    "anulInvstmtRate": 6.0300,
+                    "untrRedVal": 3962.140000,
+                    "anulRedRate": 6.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-05T09:25:00",
                         "clsgDtTm": "2022-08-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1064.660000,
-                    "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1037.660000,
-                    "anulRedRate": 6.1000
+                    "untrInvstmtVal": 4037.180000,
+                    "anulInvstmtRate": 6.0100,
+                    "untrRedVal": 3971.340000,
+                    "anulRedRate": 6.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-08T09:25:00",
                         "clsgDtTm": "2022-08-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1099.450000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1071.540000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4110.590000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 4042.810000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-09T09:25:00",
                         "clsgDtTm": "2022-08-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1087.560000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1059.970000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4081.500000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4014.510000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-10T09:25:00",
                         "clsgDtTm": "2022-08-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1085.240000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1057.720000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4064.620000,
+                    "anulInvstmtRate": 5.9600,
+                    "untrRedVal": 3998.100000,
+                    "anulRedRate": 6.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-11T09:25:00",
                         "clsgDtTm": "2022-08-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1087.570000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1059.990000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4070.280000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 4003.630000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-12T09:25:00",
                         "clsgDtTm": "2022-08-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1096.460000,
-                    "anulInvstmtRate": 5.8400,
-                    "untrRedVal": 1068.640000,
-                    "anulRedRate": 5.9600
+                    "untrInvstmtVal": 4096.820000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4029.460000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-15T09:25:00",
                         "clsgDtTm": "2022-08-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.460000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1103.700000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4184.250000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4114.570000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-16T09:25:00",
                         "clsgDtTm": "2022-08-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.980000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1082.790000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4138.210000,
+                    "anulInvstmtRate": 5.8300,
+                    "untrRedVal": 4069.790000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-17T09:25:00",
                         "clsgDtTm": "2022-08-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.020000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1076.020000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4115.820000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 4048.030000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-18T09:25:00",
                         "clsgDtTm": "2022-08-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.930000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1080.810000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4133.680000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4065.440000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-19T09:25:00",
                         "clsgDtTm": "2022-08-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1094.780000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1067.030000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4099.350000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4032.040000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-22T09:25:00",
                         "clsgDtTm": "2022-08-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1092.600000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1064.920000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 4099.980000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4032.670000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-23T09:25:00",
                         "clsgDtTm": "2022-08-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1102.160000,
-                    "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 1074.230000,
-                    "anulRedRate": 5.9400
+                    "untrInvstmtVal": 4117.710000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 4049.960000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-24T09:25:00",
                         "clsgDtTm": "2022-08-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.690000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1076.700000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4118.340000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 4050.600000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-25T09:25:00",
                         "clsgDtTm": "2022-08-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1099.750000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1071.890000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4100.400000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4033.150000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-26T09:25:00",
                         "clsgDtTm": "2022-08-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1092.610000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1064.940000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 4083.040000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4016.270000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-29T09:25:00",
                         "clsgDtTm": "2022-08-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1102.120000,
-                    "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 1074.220000,
-                    "anulRedRate": 5.9400
+                    "untrInvstmtVal": 4083.540000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4016.770000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-30T09:25:00",
                         "clsgDtTm": "2022-08-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1085.880000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1058.410000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4050.440000,
+                    "anulInvstmtRate": 5.9900,
+                    "untrRedVal": 3984.570000,
+                    "anulRedRate": 6.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-08-31T09:25:00",
                         "clsgDtTm": "2022-09-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1088.340000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1060.800000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4084.540000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4017.790000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-01T09:25:00",
                         "clsgDtTm": "2022-09-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1100.160000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1072.320000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4107.690000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 4040.340000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-02T09:25:00",
                         "clsgDtTm": "2022-09-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.640000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1088.370000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4147.430000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4079.040000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-05T09:25:00",
                         "clsgDtTm": "2022-09-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1116.770000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1088.500000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4147.910000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4079.530000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-06T09:25:00",
                         "clsgDtTm": "2022-09-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.910000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1076.960000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4113.550000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 4046.100000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-08T09:25:00",
                         "clsgDtTm": "2022-09-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1109.770000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1081.690000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4125.460000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4057.720000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-09T09:25:00",
                         "clsgDtTm": "2022-09-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1123.680000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1095.240000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4152.700000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4084.240000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-12T09:25:00",
                         "clsgDtTm": "2022-09-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1104.750000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1076.820000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4112.990000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 4045.610000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-13T09:25:00",
                         "clsgDtTm": "2022-09-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1083.850000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1056.470000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4073.930000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 4007.620000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-14T09:25:00",
                         "clsgDtTm": "2022-09-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1095.600000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1067.920000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4102.550000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4035.490000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-15T09:25:00",
                         "clsgDtTm": "2022-09-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1081.870000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 1054.550000,
-                    "anulRedRate": 6.0300
+                    "untrInvstmtVal": 4086.390000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4019.790000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-16T09:25:00",
                         "clsgDtTm": "2022-09-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1084.290000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1056.920000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4081.210000,
+                    "anulInvstmtRate": 5.9400,
+                    "untrRedVal": 4014.770000,
+                    "anulRedRate": 6.0600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-19T09:25:00",
                         "clsgDtTm": "2022-09-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1110.240000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1082.190000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4133.000000,
+                    "anulInvstmtRate": 5.8500,
+                    "untrRedVal": 4065.210000,
+                    "anulRedRate": 5.9700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-20T09:25:00",
                         "clsgDtTm": "2022-09-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.820000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1084.700000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4139.500000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4071.560000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-21T09:25:00",
                         "clsgDtTm": "2022-09-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1117.780000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1089.540000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4151.770000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4083.530000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-22T09:25:00",
                         "clsgDtTm": "2022-09-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1149.440000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1120.370000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4252.430000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 4181.520000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-23T09:25:00",
                         "clsgDtTm": "2022-09-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1130.090000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1101.530000,
-                    "anulRedRate": 5.8300
+                    "untrInvstmtVal": 4176.120000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4107.280000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-26T09:25:00",
                         "clsgDtTm": "2022-09-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.920000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1087.740000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4142.240000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4074.320000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-27T09:25:00",
                         "clsgDtTm": "2022-09-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1111.370000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1083.320000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4143.000000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4075.100000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-28T09:25:00",
                         "clsgDtTm": "2022-09-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1115.280000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1087.130000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4145.630000,
+                    "anulInvstmtRate": 5.8300,
+                    "untrRedVal": 4077.640000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-29T09:25:00",
                         "clsgDtTm": "2022-09-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1120.180000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1091.900000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4151.870000,
+                    "anulInvstmtRate": 5.8200,
+                    "untrRedVal": 4083.740000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-09-30T09:25:00",
                         "clsgDtTm": "2022-10-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1136.910000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1108.200000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4192.060000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4122.870000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-03T09:25:00",
                         "clsgDtTm": "2022-10-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1166.520000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 1137.030000,
-                    "anulRedRate": 5.6800
+                    "untrInvstmtVal": 4269.650000,
+                    "anulInvstmtRate": 5.6200,
+                    "untrRedVal": 4198.400000,
+                    "anulRedRate": 5.7400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-04T09:25:00",
                         "clsgDtTm": "2022-10-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1142.020000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1113.190000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4222.410000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 4152.450000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-05T09:25:00",
                         "clsgDtTm": "2022-10-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1142.150000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1113.320000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4222.890000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 4152.940000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-06T09:25:00",
                         "clsgDtTm": "2022-10-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1144.720000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1115.820000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4229.280000,
+                    "anulInvstmtRate": 5.6900,
+                    "untrRedVal": 4159.180000,
+                    "anulRedRate": 5.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-07T09:25:00",
                         "clsgDtTm": "2022-10-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1132.470000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1103.900000,
-                    "anulRedRate": 5.8200
+                    "untrInvstmtVal": 4211.150000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4141.560000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-10T09:25:00",
                         "clsgDtTm": "2022-10-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.220000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1090.030000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4182.410000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4113.610000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-11T09:25:00",
                         "clsgDtTm": "2022-10-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1113.790000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1085.720000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4172.020000,
+                    "anulInvstmtRate": 5.7900,
+                    "untrRedVal": 4103.530000,
+                    "anulRedRate": 5.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-13T09:25:00",
                         "clsgDtTm": "2022-10-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1113.930000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1085.860000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4172.550000,
+                    "anulInvstmtRate": 5.7900,
+                    "untrRedVal": 4104.070000,
+                    "anulRedRate": 5.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-14T09:25:00",
                         "clsgDtTm": "2022-10-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1107.220000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1079.330000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4168.190000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4099.850000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-17T09:25:00",
                         "clsgDtTm": "2022-10-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1119.430000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1091.230000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4169.560000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4101.220000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-18T09:25:00",
                         "clsgDtTm": "2022-10-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1126.960000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1098.570000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4182.510000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4113.860000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-19T09:25:00",
                         "clsgDtTm": "2022-10-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1124.940000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1096.600000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4172.310000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4103.970000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-20T09:25:00",
                         "clsgDtTm": "2022-10-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1120.530000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1092.320000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4173.690000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4105.340000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-21T09:25:00",
                         "clsgDtTm": "2022-10-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1121.140000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1092.910000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4175.960000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4107.590000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-24T09:25:00",
                         "clsgDtTm": "2022-10-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1114.380000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1086.330000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4177.340000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4108.960000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-25T09:25:00",
                         "clsgDtTm": "2022-10-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.380000,
+                    "untrInvstmtVal": 4178.720000,
                     "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 1084.400000,
+                    "untrRedVal": 4110.340000,
                     "anulRedRate": 5.9200
                 },
                 {
@@ -14173,9 +6783,9 @@ const dados = {
                         "opngDtTm": "2022-10-26T09:25:00",
                         "clsgDtTm": "2022-10-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.500000,
+                    "untrInvstmtVal": 4170.340000,
                     "anulInvstmtRate": 5.8200,
-                    "untrRedVal": 1080.620000,
+                    "untrRedVal": 4102.230000,
                     "anulRedRate": 5.9400
                 },
                 {
@@ -14183,9 +6793,9 @@ const dados = {
                         "opngDtTm": "2022-10-27T09:25:00",
                         "clsgDtTm": "2022-10-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1111.260000,
+                    "untrInvstmtVal": 4177.620000,
                     "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1083.320000,
+                    "untrRedVal": 4109.360000,
                     "anulRedRate": 5.9300
                 },
                 {
@@ -14193,428 +6803,428 @@ const dados = {
                         "opngDtTm": "2022-10-28T09:25:00",
                         "clsgDtTm": "2022-10-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1107.270000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1079.440000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4163.090000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4095.260000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-10-31T09:25:00",
                         "clsgDtTm": "2022-11-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.390000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1084.430000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 4199.230000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4130.470000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-01T09:25:00",
                         "clsgDtTm": "2022-11-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1129.620000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1101.210000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4236.450000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4166.740000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-03T09:25:00",
                         "clsgDtTm": "2022-11-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.100000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1090.000000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4220.380000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4151.130000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-04T09:25:00",
                         "clsgDtTm": "2022-11-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.820000,
-                    "anulInvstmtRate": 5.7900,
-                    "untrRedVal": 1090.710000,
-                    "anulRedRate": 5.9100
+                    "untrInvstmtVal": 4217.260000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 4148.140000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-07T09:25:00",
                         "clsgDtTm": "2022-11-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1095.750000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1068.240000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4172.510000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4104.620000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-08T09:25:00",
                         "clsgDtTm": "2022-11-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1082.310000,
-                    "anulInvstmtRate": 5.9500,
-                    "untrRedVal": 1055.160000,
-                    "anulRedRate": 6.0700
+                    "untrInvstmtVal": 4139.860000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4072.870000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-09T09:25:00",
                         "clsgDtTm": "2022-11-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1089.610000,
-                    "anulInvstmtRate": 5.9200,
-                    "untrRedVal": 1062.280000,
-                    "anulRedRate": 6.0400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4096.520000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-10T09:25:00",
                         "clsgDtTm": "2022-11-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1055.090000,
-                    "anulInvstmtRate": 6.0800,
-                    "untrRedVal": 1028.670000,
-                    "anulRedRate": 6.2000
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 3994.530000,
+                    "anulRedRate": 6.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-11T09:25:00",
                         "clsgDtTm": "2022-11-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1047.050000,
-                    "anulInvstmtRate": 6.1200,
-                    "untrRedVal": 1020.840000,
-                    "anulRedRate": 6.2400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-14T09:25:00",
                         "clsgDtTm": "2022-11-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1065.520000,
-                    "anulInvstmtRate": 6.0400,
-                    "untrRedVal": 1038.830000,
-                    "anulRedRate": 6.1600
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-16T09:25:00",
                         "clsgDtTm": "2022-11-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1061.430000,
-                    "anulInvstmtRate": 6.0600,
-                    "untrRedVal": 1034.860000,
-                    "anulRedRate": 6.1800
+                    "untrInvstmtVal": 3965.480000,
+                    "anulInvstmtRate": 6.0300,
+                    "untrRedVal": 3900.260000,
+                    "anulRedRate": 6.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-17T09:25:00",
                         "clsgDtTm": "2022-11-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1052.900000,
-                    "anulInvstmtRate": 6.1000,
-                    "untrRedVal": 1026.550000,
-                    "anulRedRate": 6.2200
+                    "untrInvstmtVal": 3956.010000,
+                    "anulInvstmtRate": 6.0500,
+                    "untrRedVal": 3891.060000,
+                    "anulRedRate": 6.1700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-18T09:25:00",
                         "clsgDtTm": "2022-11-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1038.160000,
-                    "anulInvstmtRate": 6.1700,
-                    "untrRedVal": 1012.210000,
-                    "anulRedRate": 6.2900
+                    "untrInvstmtVal": 3909.820000,
+                    "anulInvstmtRate": 6.1400,
+                    "untrRedVal": 3846.140000,
+                    "anulRedRate": 6.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-21T09:25:00",
                         "clsgDtTm": "2022-11-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1042.960000,
-                    "anulInvstmtRate": 6.1500,
-                    "untrRedVal": 1016.880000,
-                    "anulRedRate": 6.2700
+                    "untrInvstmtVal": 3927.510000,
+                    "anulInvstmtRate": 6.1100,
+                    "untrRedVal": 3863.400000,
+                    "anulRedRate": 6.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-22T09:25:00",
                         "clsgDtTm": "2022-11-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.730000,
-                    "anulInvstmtRate": 6.2400,
-                    "untrRedVal": 998.160000,
-                    "anulRedRate": 6.3600
+                    "untrInvstmtVal": 3891.420000,
+                    "anulInvstmtRate": 6.1800,
+                    "untrRedVal": 3828.280000,
+                    "anulRedRate": 6.3000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-23T09:25:00",
                         "clsgDtTm": "2022-11-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1015.530000,
-                    "anulInvstmtRate": 6.2800,
-                    "untrRedVal": 990.180000,
-                    "anulRedRate": 6.4000
+                    "untrInvstmtVal": 3855.890000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3793.720000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-24T09:25:00",
                         "clsgDtTm": "2022-11-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1028.860000,
-                    "anulInvstmtRate": 6.2200,
-                    "untrRedVal": 1003.170000,
-                    "anulRedRate": 6.3400
+                    "untrInvstmtVal": 3899.770000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 3836.490000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-25T09:25:00",
                         "clsgDtTm": "2022-11-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1034.370000,
-                    "anulInvstmtRate": 6.2000,
-                    "untrRedVal": 1008.540000,
-                    "anulRedRate": 6.3200
+                    "untrInvstmtVal": 3893.460000,
+                    "anulInvstmtRate": 6.1900,
+                    "untrRedVal": 3830.400000,
+                    "anulRedRate": 6.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-28T09:25:00",
                         "clsgDtTm": "2022-11-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1039.170000,
-                    "anulInvstmtRate": 6.1800,
-                    "untrRedVal": 1013.220000,
-                    "anulRedRate": 6.3000
+                    "untrInvstmtVal": 3895.100000,
+                    "anulInvstmtRate": 6.1900,
+                    "untrRedVal": 3832.030000,
+                    "anulRedRate": 6.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-29T09:25:00",
                         "clsgDtTm": "2022-11-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1059.530000,
-                    "anulInvstmtRate": 6.0900,
-                    "untrRedVal": 1033.060000,
-                    "anulRedRate": 6.2100
+                    "untrInvstmtVal": 3961.520000,
+                    "anulInvstmtRate": 6.0700,
+                    "untrRedVal": 3896.740000,
+                    "anulRedRate": 6.1900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-11-30T09:25:00",
                         "clsgDtTm": "2022-12-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1068.960000,
-                    "anulInvstmtRate": 6.0500,
-                    "untrRedVal": 1042.250000,
-                    "anulRedRate": 6.1700
+                    "untrInvstmtVal": 3996.220000,
+                    "anulInvstmtRate": 6.0100,
+                    "untrRedVal": 3930.560000,
+                    "anulRedRate": 6.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-01T09:25:00",
                         "clsgDtTm": "2022-12-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1083.030000,
-                    "anulInvstmtRate": 5.9900,
-                    "untrRedVal": 1055.960000,
-                    "anulRedRate": 6.1100
+                    "untrInvstmtVal": 4031.390000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 3964.830000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-02T09:25:00",
                         "clsgDtTm": "2022-12-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1079.320000,
-                    "anulInvstmtRate": 6.0100,
-                    "untrRedVal": 1052.340000,
-                    "anulRedRate": 6.1300
+                    "untrInvstmtVal": 4034.520000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 3967.930000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-05T09:25:00",
                         "clsgDtTm": "2022-12-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1068.430000,
-                    "anulInvstmtRate": 6.0600,
-                    "untrRedVal": 1041.740000,
-                    "anulRedRate": 6.1800
+                    "untrInvstmtVal": 3986.070000,
+                    "anulInvstmtRate": 6.0400,
+                    "untrRedVal": 3920.790000,
+                    "anulRedRate": 6.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-06T09:25:00",
                         "clsgDtTm": "2022-12-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1035.620000,
-                    "anulInvstmtRate": 6.2100,
-                    "untrRedVal": 1009.790000,
-                    "anulRedRate": 6.3300
+                    "untrInvstmtVal": 3933.200000,
+                    "anulInvstmtRate": 6.1400,
+                    "untrRedVal": 3869.340000,
+                    "anulRedRate": 6.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-07T09:25:00",
                         "clsgDtTm": "2022-12-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1038.240000,
-                    "anulInvstmtRate": 6.2000,
-                    "untrRedVal": 1012.350000,
-                    "anulRedRate": 6.3200
+                    "untrInvstmtVal": 3945.660000,
+                    "anulInvstmtRate": 6.1200,
+                    "untrRedVal": 3881.510000,
+                    "anulRedRate": 6.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-08T09:25:00",
                         "clsgDtTm": "2022-12-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1029.970000,
-                    "anulInvstmtRate": 6.2400,
-                    "untrRedVal": 1004.300000,
-                    "anulRedRate": 6.3600
+                    "untrInvstmtVal": 3920.370000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 3856.920000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-09T09:25:00",
                         "clsgDtTm": "2022-12-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.010000,
-                    "anulInvstmtRate": 6.2700,
-                    "untrRedVal": 997.530000,
-                    "anulRedRate": 6.3900
+                    "untrInvstmtVal": 3907.850000,
+                    "anulInvstmtRate": 6.1900,
+                    "untrRedVal": 3844.730000,
+                    "anulRedRate": 6.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-12T09:25:00",
                         "clsgDtTm": "2022-12-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1012.700000,
-                    "anulInvstmtRate": 6.3200,
-                    "untrRedVal": 987.490000,
-                    "anulRedRate": 6.4400
+                    "untrInvstmtVal": 3872.290000,
+                    "anulInvstmtRate": 6.2600,
+                    "untrRedVal": 3810.130000,
+                    "anulRedRate": 6.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-13T09:25:00",
                         "clsgDtTm": "2022-12-14T05:00:00"
                     },
-                    "untrInvstmtVal": 992.020000,
-                    "anulInvstmtRate": 6.4200,
-                    "untrRedVal": 967.350000,
-                    "anulRedRate": 6.5400
+                    "untrInvstmtVal": 3811.580000,
+                    "anulInvstmtRate": 6.3800,
+                    "untrRedVal": 3751.040000,
+                    "anulRedRate": 6.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-14T09:25:00",
                         "clsgDtTm": "2022-12-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1007.100000,
-                    "anulInvstmtRate": 6.3500,
-                    "untrRedVal": 982.040000,
-                    "anulRedRate": 6.4700
+                    "untrInvstmtVal": 3833.580000,
+                    "anulInvstmtRate": 6.3400,
+                    "untrRedVal": 3772.490000,
+                    "anulRedRate": 6.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-15T09:25:00",
                         "clsgDtTm": "2022-12-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1018.160000,
-                    "anulInvstmtRate": 6.3000,
-                    "untrRedVal": 992.820000,
-                    "anulRedRate": 6.4200
+                    "untrInvstmtVal": 3866.350000,
+                    "anulInvstmtRate": 6.2800,
+                    "untrRedVal": 3804.440000,
+                    "anulRedRate": 6.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-16T09:25:00",
                         "clsgDtTm": "2022-12-19T05:00:00"
                     },
-                    "untrInvstmtVal": 999.870000,
-                    "anulInvstmtRate": 6.3900,
-                    "untrRedVal": 975.010000,
-                    "anulRedRate": 6.5100
+                    "untrInvstmtVal": 3807.400000,
+                    "anulInvstmtRate": 6.4000,
+                    "untrRedVal": 3747.070000,
+                    "anulRedRate": 6.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-19T09:25:00",
                         "clsgDtTm": "2022-12-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1004.500000,
-                    "anulInvstmtRate": 6.3700,
-                    "untrRedVal": 979.530000,
-                    "anulRedRate": 6.4900
+                    "untrInvstmtVal": 3829.480000,
+                    "anulInvstmtRate": 6.3600,
+                    "untrRedVal": 3768.610000,
+                    "anulRedRate": 6.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-20T09:25:00",
                         "clsgDtTm": "2022-12-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1000.720000,
-                    "anulInvstmtRate": 6.3900,
-                    "untrRedVal": 975.840000,
-                    "anulRedRate": 6.5100
+                    "untrInvstmtVal": 3831.090000,
+                    "anulInvstmtRate": 6.3600,
+                    "untrRedVal": 3770.220000,
+                    "anulRedRate": 6.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-21T09:25:00",
                         "clsgDtTm": "2022-12-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1001.140000,
-                    "anulInvstmtRate": 6.3900,
-                    "untrRedVal": 976.260000,
-                    "anulRedRate": 6.5100
+                    "untrInvstmtVal": 3837.860000,
+                    "anulInvstmtRate": 6.3500,
+                    "untrRedVal": 3776.840000,
+                    "anulRedRate": 6.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-22T09:25:00",
                         "clsgDtTm": "2022-12-23T05:00:00"
                     },
-                    "untrInvstmtVal": 999.460000,
-                    "anulInvstmtRate": 6.4000,
-                    "untrRedVal": 974.640000,
-                    "anulRedRate": 6.5200
+                    "untrInvstmtVal": 3834.330000,
+                    "anulInvstmtRate": 6.3600,
+                    "untrRedVal": 3773.430000,
+                    "anulRedRate": 6.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-23T09:25:00",
                         "clsgDtTm": "2022-12-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1008.670000,
-                    "anulInvstmtRate": 6.3600,
-                    "untrRedVal": 983.610000,
-                    "anulRedRate": 6.4800
+                    "untrInvstmtVal": 3868.370000,
+                    "anulInvstmtRate": 6.3000,
+                    "untrRedVal": 3806.640000,
+                    "anulRedRate": 6.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-26T09:25:00",
                         "clsgDtTm": "2022-12-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1017.130000,
-                    "anulInvstmtRate": 6.3200,
-                    "untrRedVal": 991.850000,
-                    "anulRedRate": 6.4400
+                    "untrInvstmtVal": 3889.140000,
+                    "anulInvstmtRate": 6.2600,
+                    "untrRedVal": 3826.880000,
+                    "anulRedRate": 6.3800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-27T09:25:00",
                         "clsgDtTm": "2022-12-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1019.650000,
-                    "anulInvstmtRate": 6.3100,
-                    "untrRedVal": 994.310000,
-                    "anulRedRate": 6.4300
+                    "untrInvstmtVal": 3885.360000,
+                    "anulInvstmtRate": 6.2700,
+                    "untrRedVal": 3823.230000,
+                    "anulRedRate": 6.3900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-28T09:25:00",
                         "clsgDtTm": "2022-12-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1048.260000,
-                    "anulInvstmtRate": 6.1800,
-                    "untrRedVal": 1022.180000,
-                    "anulRedRate": 6.3000
+                    "untrInvstmtVal": 3956.030000,
+                    "anulInvstmtRate": 6.1400,
+                    "untrRedVal": 3892.090000,
+                    "anulRedRate": 6.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2022-12-29T09:25:00",
                         "clsgDtTm": "2023-01-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1042.750000,
-                    "anulInvstmtRate": 6.2100,
+                    "untrInvstmtVal": 3949.320000,
+                    "anulInvstmtRate": 6.1600,
                     "untrRedVal": 0.0,
                     "anulRedRate": 0.0
                 },
@@ -14623,2019 +7233,2019 @@ const dados = {
                         "opngDtTm": "2023-01-02T09:25:00",
                         "clsgDtTm": "2023-01-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1036.600000,
-                    "anulInvstmtRate": 6.2400,
-                    "untrRedVal": 1010.840000,
-                    "anulRedRate": 6.3600
+                    "untrInvstmtVal": 3924.060000,
+                    "anulInvstmtRate": 6.2100,
+                    "untrRedVal": 3861.060000,
+                    "anulRedRate": 6.3300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-03T09:25:00",
                         "clsgDtTm": "2023-01-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1021.880000,
-                    "anulInvstmtRate": 6.3100,
-                    "untrRedVal": 996.510000,
-                    "anulRedRate": 6.4300
+                    "untrInvstmtVal": 3883.350000,
+                    "anulInvstmtRate": 6.2900,
+                    "untrRedVal": 3821.440000,
+                    "anulRedRate": 6.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-04T09:25:00",
                         "clsgDtTm": "2023-01-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1001.080000,
-                    "anulInvstmtRate": 6.4100,
-                    "untrRedVal": 976.250000,
-                    "anulRedRate": 6.5300
+                    "untrInvstmtVal": 3838.240000,
+                    "anulInvstmtRate": 6.3800,
+                    "untrRedVal": 3777.540000,
+                    "anulRedRate": 6.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-05T09:25:00",
                         "clsgDtTm": "2023-01-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1009.890000,
-                    "anulInvstmtRate": 6.3700,
-                    "untrRedVal": 984.840000,
-                    "anulRedRate": 6.4900
+                    "untrInvstmtVal": 3855.140000,
+                    "anulInvstmtRate": 6.3500,
+                    "untrRedVal": 3794.030000,
+                    "anulRedRate": 6.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-06T09:25:00",
                         "clsgDtTm": "2023-01-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1008.440000,
-                    "anulInvstmtRate": 6.3800,
-                    "untrRedVal": 983.430000,
-                    "anulRedRate": 6.5000
+                    "untrInvstmtVal": 3857.690000,
+                    "anulInvstmtRate": 6.3500,
+                    "untrRedVal": 3796.560000,
+                    "anulRedRate": 6.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-09T09:25:00",
                         "clsgDtTm": "2023-01-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1017.310000,
-                    "anulInvstmtRate": 6.3400,
-                    "untrRedVal": 992.080000,
-                    "anulRedRate": 6.4600
+                    "untrInvstmtVal": 3869.510000,
+                    "anulInvstmtRate": 6.3300,
+                    "untrRedVal": 3808.100000,
+                    "anulRedRate": 6.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-10T09:25:00",
                         "clsgDtTm": "2023-01-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1025.800000,
-                    "anulInvstmtRate": 6.3100,
-                    "untrRedVal": 1000.360000,
-                    "anulRedRate": 6.4300
+                    "untrInvstmtVal": 3893.000000,
+                    "anulInvstmtRate": 6.3000,
+                    "untrRedVal": 3831.080000,
+                    "anulRedRate": 6.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-11T09:25:00",
                         "clsgDtTm": "2023-01-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1037.060000,
-                    "anulInvstmtRate": 6.2600,
-                    "untrRedVal": 1011.330000,
-                    "anulRedRate": 6.3800
+                    "untrInvstmtVal": 3936.920000,
+                    "anulInvstmtRate": 6.2200,
+                    "untrRedVal": 3873.890000,
+                    "anulRedRate": 6.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-12T09:25:00",
                         "clsgDtTm": "2023-01-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1066.170000,
-                    "anulInvstmtRate": 6.1300,
-                    "untrRedVal": 1039.690000,
-                    "anulRedRate": 6.2500
+                    "untrInvstmtVal": 4008.860000,
+                    "anulInvstmtRate": 6.0900,
+                    "untrRedVal": 3943.980000,
+                    "anulRedRate": 6.2100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-13T09:25:00",
                         "clsgDtTm": "2023-01-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1060.340000,
-                    "anulInvstmtRate": 6.1600,
-                    "untrRedVal": 1034.010000,
-                    "anulRedRate": 6.2800
+                    "untrInvstmtVal": 3995.680000,
+                    "anulInvstmtRate": 6.1200,
+                    "untrRedVal": 3931.190000,
+                    "anulRedRate": 6.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-16T09:25:00",
                         "clsgDtTm": "2023-01-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1045.320000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 1019.390000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3970.210000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 3906.430000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-17T09:25:00",
                         "clsgDtTm": "2023-01-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1045.750000,
-                    "anulInvstmtRate": 6.2300,
-                    "untrRedVal": 1019.810000,
-                    "anulRedRate": 6.3500
+                    "untrInvstmtVal": 3961.070000,
+                    "anulInvstmtRate": 6.1900,
+                    "untrRedVal": 3897.560000,
+                    "anulRedRate": 6.3100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-18T09:25:00",
                         "clsgDtTm": "2023-01-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1037.450000,
-                    "anulInvstmtRate": 6.2700,
-                    "untrRedVal": 1011.730000,
-                    "anulRedRate": 6.3900
+                    "untrInvstmtVal": 3957.320000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 3893.940000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-19T09:25:00",
                         "clsgDtTm": "2023-01-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1033.540000,
-                    "anulInvstmtRate": 6.2900,
-                    "untrRedVal": 1007.930000,
-                    "anulRedRate": 6.4100
+                    "untrInvstmtVal": 3948.240000,
+                    "anulInvstmtRate": 6.2200,
+                    "untrRedVal": 3885.140000,
+                    "anulRedRate": 6.3400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-20T09:25:00",
                         "clsgDtTm": "2023-01-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1004.480000,
-                    "anulInvstmtRate": 6.4300,
-                    "untrRedVal": 979.620000,
-                    "anulRedRate": 6.5500
+                    "untrInvstmtVal": 3888.030000,
+                    "anulInvstmtRate": 6.3400,
+                    "untrRedVal": 3826.540000,
+                    "anulRedRate": 6.4600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-23T09:25:00",
                         "clsgDtTm": "2023-01-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1002.800000,
-                    "anulInvstmtRate": 6.4400,
-                    "untrRedVal": 977.990000,
-                    "anulRedRate": 6.5600
+                    "untrInvstmtVal": 3874.110000,
+                    "anulInvstmtRate": 6.3700,
+                    "untrRedVal": 3813.010000,
+                    "anulRedRate": 6.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-24T09:25:00",
                         "clsgDtTm": "2023-01-25T05:00:00"
                     },
-                    "untrInvstmtVal": 992.800000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 968.260000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3855.160000,
+                    "anulInvstmtRate": 6.4100,
+                    "untrRedVal": 3794.580000,
+                    "anulRedRate": 6.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-25T09:25:00",
                         "clsgDtTm": "2023-01-26T05:00:00"
                     },
-                    "untrInvstmtVal": 999.590000,
-                    "anulInvstmtRate": 6.4600,
-                    "untrRedVal": 974.880000,
-                    "anulRedRate": 6.5800
+                    "untrInvstmtVal": 3883.020000,
+                    "anulInvstmtRate": 6.3600,
+                    "untrRedVal": 3821.760000,
+                    "anulRedRate": 6.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-26T09:25:00",
                         "clsgDtTm": "2023-01-27T05:00:00"
                     },
-                    "untrInvstmtVal": 995.850000,
-                    "anulInvstmtRate": 6.4800,
-                    "untrRedVal": 971.240000,
-                    "anulRedRate": 6.6000
+                    "untrInvstmtVal": 3864.070000,
+                    "anulInvstmtRate": 6.4000,
+                    "untrRedVal": 3803.330000,
+                    "anulRedRate": 6.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-27T09:25:00",
                         "clsgDtTm": "2023-01-30T05:00:00"
                     },
-                    "untrInvstmtVal": 990.430000,
-                    "anulInvstmtRate": 6.5100,
-                    "untrRedVal": 965.960000,
-                    "anulRedRate": 6.6300
+                    "untrInvstmtVal": 3851.770000,
+                    "anulInvstmtRate": 6.4300,
+                    "untrRedVal": 3791.400000,
+                    "anulRedRate": 6.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-30T09:25:00",
                         "clsgDtTm": "2023-01-31T05:00:00"
                     },
-                    "untrInvstmtVal": 992.920000,
-                    "anulInvstmtRate": 6.5000,
-                    "untrRedVal": 968.390000,
-                    "anulRedRate": 6.6200
+                    "untrInvstmtVal": 3853.410000,
+                    "anulInvstmtRate": 6.4300,
+                    "untrRedVal": 3793.040000,
+                    "anulRedRate": 6.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-01-31T09:25:00",
                         "clsgDtTm": "2023-02-01T05:00:00"
                     },
-                    "untrInvstmtVal": 993.340000,
-                    "anulInvstmtRate": 6.5000,
-                    "untrRedVal": 968.810000,
-                    "anulRedRate": 6.6200
+                    "untrInvstmtVal": 3860.170000,
+                    "anulInvstmtRate": 6.4200,
+                    "untrRedVal": 3799.650000,
+                    "anulRedRate": 6.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-01T09:25:00",
                         "clsgDtTm": "2023-02-02T05:00:00"
                     },
-                    "untrInvstmtVal": 995.850000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 971.250000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3856.710000,
+                    "anulInvstmtRate": 6.4300,
+                    "untrRedVal": 3796.320000,
+                    "anulRedRate": 6.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-02T09:25:00",
                         "clsgDtTm": "2023-02-03T05:00:00"
                     },
-                    "untrInvstmtVal": 996.270000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 971.680000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3853.260000,
+                    "anulInvstmtRate": 6.4400,
+                    "untrRedVal": 3792.990000,
+                    "anulRedRate": 6.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-03T09:25:00",
                         "clsgDtTm": "2023-02-06T05:00:00"
                     },
-                    "untrInvstmtVal": 997.060000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 972.450000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3851.220000,
+                    "anulInvstmtRate": 6.4500,
+                    "untrRedVal": 3791.050000,
+                    "anulRedRate": 6.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-06T09:25:00",
                         "clsgDtTm": "2023-02-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1007.940000,
-                    "anulInvstmtRate": 6.4400,
-                    "untrRedVal": 983.050000,
-                    "anulRedRate": 6.5600
+                    "untrInvstmtVal": 3868.160000,
+                    "anulInvstmtRate": 6.4200,
+                    "untrRedVal": 3807.580000,
+                    "anulRedRate": 6.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-07T09:25:00",
                         "clsgDtTm": "2023-02-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1008.370000,
-                    "anulInvstmtRate": 6.4400,
-                    "untrRedVal": 983.470000,
-                    "anulRedRate": 6.5600
+                    "untrInvstmtVal": 3890.360000,
+                    "anulInvstmtRate": 6.3800,
+                    "untrRedVal": 3829.250000,
+                    "anulRedRate": 6.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-08T09:25:00",
                         "clsgDtTm": "2023-02-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1010.910000,
-                    "anulInvstmtRate": 6.4300,
-                    "untrRedVal": 985.950000,
-                    "anulRedRate": 6.5500
+                    "untrInvstmtVal": 3886.860000,
+                    "anulInvstmtRate": 6.3900,
+                    "untrRedVal": 3825.870000,
+                    "anulRedRate": 6.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-09T09:25:00",
                         "clsgDtTm": "2023-02-10T05:00:00"
                     },
-                    "untrInvstmtVal": 992.310000,
-                    "anulInvstmtRate": 6.5200,
-                    "untrRedVal": 967.840000,
-                    "anulRedRate": 6.6400
+                    "untrInvstmtVal": 3856.850000,
+                    "anulInvstmtRate": 6.4500,
+                    "untrRedVal": 3796.660000,
+                    "anulRedRate": 6.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-10T09:25:00",
                         "clsgDtTm": "2023-02-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1003.460000,
-                    "anulInvstmtRate": 6.4700,
-                    "untrRedVal": 978.700000,
-                    "anulRedRate": 6.5900
+                    "untrInvstmtVal": 3880.210000,
+                    "anulInvstmtRate": 6.4100,
+                    "untrRedVal": 3819.460000,
+                    "anulRedRate": 6.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-13T09:25:00",
                         "clsgDtTm": "2023-02-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1005.970000,
-                    "anulInvstmtRate": 6.4600,
-                    "untrRedVal": 981.160000,
-                    "anulRedRate": 6.5800
+                    "untrInvstmtVal": 3892.110000,
+                    "anulInvstmtRate": 6.3900,
+                    "untrRedVal": 3831.090000,
+                    "anulRedRate": 6.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-14T09:25:00",
                         "clsgDtTm": "2023-02-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1000.130000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 975.470000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3883.450000,
+                    "anulInvstmtRate": 6.4100,
+                    "untrRedVal": 3822.680000,
+                    "anulRedRate": 6.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-15T09:25:00",
                         "clsgDtTm": "2023-02-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1017.470000,
-                    "anulInvstmtRate": 6.4100,
-                    "untrRedVal": 992.370000,
-                    "anulRedRate": 6.5300
+                    "untrInvstmtVal": 3932.160000,
+                    "anulInvstmtRate": 6.3200,
+                    "untrRedVal": 3870.180000,
+                    "anulRedRate": 6.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-16T09:25:00",
                         "clsgDtTm": "2023-02-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1015.900000,
-                    "anulInvstmtRate": 6.4200,
-                    "untrRedVal": 990.840000,
-                    "anulRedRate": 6.5400
+                    "untrInvstmtVal": 3934.250000,
+                    "anulInvstmtRate": 6.3200,
+                    "untrRedVal": 3872.250000,
+                    "anulRedRate": 6.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-17T09:25:00",
                         "clsgDtTm": "2023-02-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1030.410000,
-                    "anulInvstmtRate": 6.3600,
-                    "untrRedVal": 1004.980000,
-                    "anulRedRate": 6.4800
+                    "untrInvstmtVal": 3977.860000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3914.810000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-22T09:25:00",
                         "clsgDtTm": "2023-02-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1035.260000,
-                    "anulInvstmtRate": 6.3400,
-                    "untrRedVal": 1009.720000,
-                    "anulRedRate": 6.4600
+                    "untrInvstmtVal": 3979.970000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3916.900000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-23T09:25:00",
                         "clsgDtTm": "2023-02-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1025.080000,
-                    "anulInvstmtRate": 6.3900,
-                    "untrRedVal": 999.810000,
-                    "anulRedRate": 6.5100
+                    "untrInvstmtVal": 3955.580000,
+                    "anulInvstmtRate": 6.3000,
+                    "untrRedVal": 3893.190000,
+                    "anulRedRate": 6.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-24T09:25:00",
                         "clsgDtTm": "2023-02-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1011.380000,
-                    "anulInvstmtRate": 6.4600,
-                    "untrRedVal": 986.470000,
-                    "anulRedRate": 6.5800
+                    "untrInvstmtVal": 3923.340000,
+                    "anulInvstmtRate": 6.3700,
+                    "untrRedVal": 3861.850000,
+                    "anulRedRate": 6.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-27T09:25:00",
                         "clsgDtTm": "2023-02-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1026.580000,
-                    "anulInvstmtRate": 6.3900,
-                    "untrRedVal": 1001.280000,
-                    "anulRedRate": 6.5100
+                    "untrInvstmtVal": 3966.620000,
+                    "anulInvstmtRate": 6.2900,
+                    "untrRedVal": 3904.030000,
+                    "anulRedRate": 6.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-02-28T09:25:00",
                         "clsgDtTm": "2023-03-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1001.800000,
-                    "anulInvstmtRate": 6.5100,
-                    "untrRedVal": 977.140000,
-                    "anulRedRate": 6.6300
+                    "untrInvstmtVal": 3906.060000,
+                    "anulInvstmtRate": 6.4100,
+                    "untrRedVal": 3845.080000,
+                    "anulRedRate": 6.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-01T09:25:00",
                         "clsgDtTm": "2023-03-02T05:00:00"
                     },
-                    "untrInvstmtVal": 998.170000,
-                    "anulInvstmtRate": 6.5300,
-                    "untrRedVal": 973.610000,
-                    "anulRedRate": 6.6500
+                    "untrInvstmtVal": 3892.700000,
+                    "anulInvstmtRate": 6.4400,
+                    "untrRedVal": 3832.110000,
+                    "anulRedRate": 6.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-02T09:25:00",
                         "clsgDtTm": "2023-03-03T05:00:00"
                     },
-                    "untrInvstmtVal": 994.560000,
-                    "anulInvstmtRate": 6.5500,
-                    "untrRedVal": 970.090000,
-                    "anulRedRate": 6.6700
+                    "untrInvstmtVal": 3884.520000,
+                    "anulInvstmtRate": 6.4600,
+                    "untrRedVal": 3824.170000,
+                    "anulRedRate": 6.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-03T09:25:00",
                         "clsgDtTm": "2023-03-06T05:00:00"
                     },
-                    "untrInvstmtVal": 991.500000,
-                    "anulInvstmtRate": 6.5700,
-                    "untrRedVal": 967.120000,
-                    "anulRedRate": 6.6900
+                    "untrInvstmtVal": 3888.680000,
+                    "anulInvstmtRate": 6.4600,
+                    "untrRedVal": 3828.280000,
+                    "anulRedRate": 6.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-06T09:25:00",
                         "clsgDtTm": "2023-03-07T05:00:00"
                     },
-                    "untrInvstmtVal": 992.020000,
-                    "anulInvstmtRate": 6.5700,
-                    "untrRedVal": 967.630000,
-                    "anulRedRate": 6.6900
+                    "untrInvstmtVal": 3880.530000,
+                    "anulInvstmtRate": 6.4800,
+                    "untrRedVal": 3820.380000,
+                    "anulRedRate": 6.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-07T09:25:00",
                         "clsgDtTm": "2023-03-08T05:00:00"
                     },
-                    "untrInvstmtVal": 998.740000,
-                    "anulInvstmtRate": 6.5400,
-                    "untrRedVal": 974.180000,
-                    "anulRedRate": 6.6600
+                    "untrInvstmtVal": 3892.740000,
+                    "anulInvstmtRate": 6.4600,
+                    "untrRedVal": 3832.320000,
+                    "anulRedRate": 6.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-08T09:25:00",
                         "clsgDtTm": "2023-03-09T05:00:00"
                     },
-                    "untrInvstmtVal": 999.270000,
-                    "anulInvstmtRate": 6.5400,
-                    "untrRedVal": 974.700000,
-                    "anulRedRate": 6.6600
+                    "untrInvstmtVal": 3910.130000,
+                    "anulInvstmtRate": 6.4300,
+                    "untrRedVal": 3849.300000,
+                    "anulRedRate": 6.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-09T09:25:00",
                         "clsgDtTm": "2023-03-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1010.220000,
-                    "anulInvstmtRate": 6.4900,
-                    "untrRedVal": 985.380000,
-                    "anulRedRate": 6.6100
+                    "untrInvstmtVal": 3964.110000,
+                    "anulInvstmtRate": 6.3300,
+                    "untrRedVal": 3901.920000,
+                    "anulRedRate": 6.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-10T09:25:00",
                         "clsgDtTm": "2023-03-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1009.860000,
-                    "anulInvstmtRate": 6.5000,
-                    "untrRedVal": 985.030000,
-                    "anulRedRate": 6.6200
+                    "untrInvstmtVal": 3939.550000,
+                    "anulInvstmtRate": 6.3900,
+                    "untrRedVal": 3878.080000,
+                    "anulRedRate": 6.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-13T09:25:00",
                         "clsgDtTm": "2023-03-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.070000,
-                    "anulInvstmtRate": 6.4400,
-                    "untrRedVal": 997.920000,
-                    "anulRedRate": 6.5600
+                    "untrInvstmtVal": 3973.050000,
+                    "anulInvstmtRate": 6.3300,
+                    "untrRedVal": 3910.760000,
+                    "anulRedRate": 6.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-14T09:25:00",
                         "clsgDtTm": "2023-03-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1010.970000,
-                    "anulInvstmtRate": 6.5000,
-                    "untrRedVal": 986.120000,
-                    "anulRedRate": 6.6200
+                    "untrInvstmtVal": 3943.840000,
+                    "anulInvstmtRate": 6.3900,
+                    "untrRedVal": 3882.340000,
+                    "anulRedRate": 6.5100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-15T09:25:00",
                         "clsgDtTm": "2023-03-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1005.190000,
-                    "anulInvstmtRate": 6.5300,
-                    "untrRedVal": 980.500000,
-                    "anulRedRate": 6.6500
+                    "untrInvstmtVal": 3940.570000,
+                    "anulInvstmtRate": 6.4000,
+                    "untrRedVal": 3879.190000,
+                    "anulRedRate": 6.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-16T09:25:00",
                         "clsgDtTm": "2023-03-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1009.860000,
-                    "anulInvstmtRate": 6.5100,
-                    "untrRedVal": 985.050000,
-                    "anulRedRate": 6.6300
+                    "untrInvstmtVal": 3958.070000,
+                    "anulInvstmtRate": 6.3700,
+                    "untrRedVal": 3896.280000,
+                    "anulRedRate": 6.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-17T09:25:00",
                         "clsgDtTm": "2023-03-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.490000,
-                    "anulInvstmtRate": 6.4500,
-                    "untrRedVal": 998.340000,
-                    "anulRedRate": 6.5700
+                    "untrInvstmtVal": 3988.120000,
+                    "anulInvstmtRate": 6.3200,
+                    "untrRedVal": 3925.600000,
+                    "anulRedRate": 6.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-20T09:25:00",
                         "clsgDtTm": "2023-03-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1023.990000,
-                    "anulInvstmtRate": 6.4500,
-                    "untrRedVal": 998.830000,
-                    "anulRedRate": 6.5700
+                    "untrInvstmtVal": 3995.320000,
+                    "anulInvstmtRate": 6.3100,
+                    "untrRedVal": 3932.660000,
+                    "anulRedRate": 6.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-21T09:25:00",
                         "clsgDtTm": "2023-03-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1020.240000,
-                    "anulInvstmtRate": 6.4700,
-                    "untrRedVal": 995.190000,
-                    "anulRedRate": 6.5900
+                    "untrInvstmtVal": 3986.680000,
+                    "anulInvstmtRate": 6.3300,
+                    "untrRedVal": 3924.280000,
+                    "anulRedRate": 6.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-22T09:25:00",
                         "clsgDtTm": "2023-03-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1018.630000,
-                    "anulInvstmtRate": 6.4800,
-                    "untrRedVal": 993.620000,
-                    "anulRedRate": 6.6000
+                    "untrInvstmtVal": 3999.160000,
+                    "anulInvstmtRate": 6.3100,
+                    "untrRedVal": 3936.470000,
+                    "anulRedRate": 6.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-23T09:25:00",
                         "clsgDtTm": "2023-03-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1021.240000,
-                    "anulInvstmtRate": 6.4700,
-                    "untrRedVal": 996.170000,
-                    "anulRedRate": 6.5900
+                    "untrInvstmtVal": 3990.520000,
+                    "anulInvstmtRate": 6.3300,
+                    "untrRedVal": 3928.090000,
+                    "anulRedRate": 6.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-24T09:25:00",
                         "clsgDtTm": "2023-03-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1035.020000,
-                    "anulInvstmtRate": 6.4100,
-                    "untrRedVal": 1009.590000,
-                    "anulRedRate": 6.5300
+                    "untrInvstmtVal": 4036.910000,
+                    "anulInvstmtRate": 6.2500,
+                    "untrRedVal": 3973.340000,
+                    "anulRedRate": 6.3700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-27T09:25:00",
                         "clsgDtTm": "2023-03-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1050.750000,
-                    "anulInvstmtRate": 6.3400,
-                    "untrRedVal": 1024.930000,
-                    "anulRedRate": 6.4600
+                    "untrInvstmtVal": 4066.170000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 4001.880000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-28T09:25:00",
                         "clsgDtTm": "2023-03-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1051.260000,
-                    "anulInvstmtRate": 6.3400,
-                    "untrRedVal": 1025.430000,
-                    "anulRedRate": 6.4600
+                    "untrInvstmtVal": 4068.140000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 4003.830000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-29T09:25:00",
                         "clsgDtTm": "2023-03-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1060.530000,
-                    "anulInvstmtRate": 6.3000,
-                    "untrRedVal": 1034.470000,
-                    "anulRedRate": 6.4200
+                    "untrInvstmtVal": 4064.680000,
+                    "anulInvstmtRate": 6.2100,
+                    "untrRedVal": 4000.500000,
+                    "anulRedRate": 6.3300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-30T09:25:00",
                         "clsgDtTm": "2023-03-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1061.050000,
-                    "anulInvstmtRate": 6.3000,
-                    "untrRedVal": 1034.980000,
-                    "anulRedRate": 6.4200
+                    "untrInvstmtVal": 4093.900000,
+                    "anulInvstmtRate": 6.1600,
+                    "untrRedVal": 4028.990000,
+                    "anulRedRate": 6.2800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-03-31T09:25:00",
                         "clsgDtTm": "2023-04-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1055.500000,
-                    "anulInvstmtRate": 6.3300,
-                    "untrRedVal": 1029.580000,
-                    "anulRedRate": 6.4500
+                    "untrInvstmtVal": 4076.030000,
+                    "anulInvstmtRate": 6.2000,
+                    "untrRedVal": 4011.650000,
+                    "anulRedRate": 6.3200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-03T09:25:00",
                         "clsgDtTm": "2023-04-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1060.400000,
-                    "anulInvstmtRate": 6.3100,
-                    "untrRedVal": 1034.360000,
-                    "anulRedRate": 6.4300
+                    "untrInvstmtVal": 4094.360000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 4029.540000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-04T09:25:00",
                         "clsgDtTm": "2023-04-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1069.750000,
-                    "anulInvstmtRate": 6.2700,
-                    "untrRedVal": 1043.480000,
-                    "anulRedRate": 6.3900
+                    "untrInvstmtVal": 4112.810000,
+                    "anulInvstmtRate": 6.1400,
+                    "untrRedVal": 4047.550000,
+                    "anulRedRate": 6.2600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-05T09:25:00",
                         "clsgDtTm": "2023-04-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1076.950000,
-                    "anulInvstmtRate": 6.2400,
-                    "untrRedVal": 1050.500000,
-                    "anulRedRate": 6.3600
+                    "untrInvstmtVal": 4131.380000,
+                    "anulInvstmtRate": 6.1100,
+                    "untrRedVal": 4065.670000,
+                    "anulRedRate": 6.2300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-06T09:25:00",
                         "clsgDtTm": "2023-04-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1073.800000,
-                    "anulInvstmtRate": 6.2600,
-                    "untrRedVal": 1047.430000,
-                    "anulRedRate": 6.3800
+                    "untrInvstmtVal": 4114.280000,
+                    "anulInvstmtRate": 6.1500,
+                    "untrRedVal": 4049.080000,
+                    "anulRedRate": 6.2700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-10T09:25:00",
                         "clsgDtTm": "2023-04-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1069.880000,
-                    "anulInvstmtRate": 6.2800,
-                    "untrRedVal": 1043.620000,
-                    "anulRedRate": 6.4000
+                    "untrInvstmtVal": 4105.270000,
+                    "anulInvstmtRate": 6.1700,
+                    "untrRedVal": 4040.350000,
+                    "anulRedRate": 6.2900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-11T09:25:00",
                         "clsgDtTm": "2023-04-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1076.590000,
-                    "anulInvstmtRate": 6.2500,
-                    "untrRedVal": 1050.160000,
-                    "anulRedRate": 6.3700
+                    "untrInvstmtVal": 4127.430000,
+                    "anulInvstmtRate": 6.1300,
+                    "untrRedVal": 4061.950000,
+                    "anulRedRate": 6.2500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-12T09:25:00",
                         "clsgDtTm": "2023-04-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1083.810000,
-                    "anulInvstmtRate": 6.2200,
-                    "untrRedVal": 1057.200000,
-                    "anulRedRate": 6.3400
+                    "untrInvstmtVal": 4134.880000,
+                    "anulInvstmtRate": 6.1200,
+                    "untrRedVal": 4069.240000,
+                    "anulRedRate": 6.2400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-13T09:25:00",
                         "clsgDtTm": "2023-04-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1100.170000,
-                    "anulInvstmtRate": 6.1500,
-                    "untrRedVal": 1073.140000,
-                    "anulRedRate": 6.2700
+                    "untrInvstmtVal": 4187.190000,
+                    "anulInvstmtRate": 6.0300,
+                    "untrRedVal": 4120.220000,
+                    "anulRedRate": 6.1500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-14T09:25:00",
                         "clsgDtTm": "2023-04-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1105.630000,
-                    "anulInvstmtRate": 6.1300,
-                    "untrRedVal": 1078.480000,
-                    "anulRedRate": 6.2500
+                    "untrInvstmtVal": 4184.910000,
+                    "anulInvstmtRate": 6.0400,
+                    "untrRedVal": 4118.060000,
+                    "anulRedRate": 6.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-17T09:25:00",
                         "clsgDtTm": "2023-04-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1112.990000,
-                    "anulInvstmtRate": 6.1000,
-                    "untrRedVal": 1085.650000,
-                    "anulRedRate": 6.2200
+                    "untrInvstmtVal": 4209.300000,
+                    "anulInvstmtRate": 6.0000,
+                    "untrRedVal": 4141.840000,
+                    "anulRedRate": 6.1200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-18T09:25:00",
                         "clsgDtTm": "2023-04-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.840000,
-                    "anulInvstmtRate": 6.1200,
-                    "untrRedVal": 1081.610000,
-                    "anulRedRate": 6.2400
+                    "untrInvstmtVal": 4199.630000,
+                    "anulInvstmtRate": 6.0200,
+                    "untrRedVal": 4132.460000,
+                    "anulRedRate": 6.1400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-19T09:25:00",
                         "clsgDtTm": "2023-04-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1102.410000,
-                    "anulInvstmtRate": 6.1500,
-                    "untrRedVal": 1075.360000,
-                    "anulRedRate": 6.2700
+                    "untrInvstmtVal": 4178.740000,
+                    "anulInvstmtRate": 6.0600,
+                    "untrRedVal": 4112.160000,
+                    "anulRedRate": 6.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-20T09:25:00",
                         "clsgDtTm": "2023-04-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1103.440000,
-                    "anulInvstmtRate": 6.1500,
-                    "untrRedVal": 1076.360000,
-                    "anulRedRate": 6.2700
+                    "untrInvstmtVal": 4182.610000,
+                    "anulInvstmtRate": 6.0600,
+                    "untrRedVal": 4115.980000,
+                    "anulRedRate": 6.1800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-24T09:25:00",
                         "clsgDtTm": "2023-04-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1108.470000,
-                    "anulInvstmtRate": 6.1300,
-                    "untrRedVal": 1081.270000,
-                    "anulRedRate": 6.2500
+                    "untrInvstmtVal": 4195.590000,
+                    "anulInvstmtRate": 6.0400,
+                    "untrRedVal": 4128.650000,
+                    "anulRedRate": 6.1600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-25T09:25:00",
                         "clsgDtTm": "2023-04-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1118.160000,
-                    "anulInvstmtRate": 6.0900,
-                    "untrRedVal": 1090.710000,
-                    "anulRedRate": 6.2100
+                    "untrInvstmtVal": 4214.300000,
+                    "anulInvstmtRate": 6.0100,
+                    "untrRedVal": 4146.920000,
+                    "anulRedRate": 6.1300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-26T09:25:00",
                         "clsgDtTm": "2023-04-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1130.260000,
-                    "anulInvstmtRate": 6.0400,
-                    "untrRedVal": 1102.510000,
-                    "anulRedRate": 6.1600
+                    "untrInvstmtVal": 4244.620000,
+                    "anulInvstmtRate": 5.9600,
+                    "untrRedVal": 4176.480000,
+                    "anulRedRate": 6.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-27T09:25:00",
                         "clsgDtTm": "2023-04-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1135.560000,
-                    "anulInvstmtRate": 6.0200,
-                    "untrRedVal": 1107.680000,
-                    "anulRedRate": 6.1400
+                    "untrInvstmtVal": 4258.420000,
+                    "anulInvstmtRate": 5.9400,
+                    "untrRedVal": 4189.950000,
+                    "anulRedRate": 6.0600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-04-28T09:25:00",
                         "clsgDtTm": "2023-05-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1134.300000,
-                    "anulInvstmtRate": 6.0300,
-                    "untrRedVal": 1106.460000,
-                    "anulRedRate": 6.1500
+                    "untrInvstmtVal": 4245.210000,
+                    "anulInvstmtRate": 5.9700,
+                    "untrRedVal": 4177.150000,
+                    "anulRedRate": 6.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-02T09:25:00",
                         "clsgDtTm": "2023-05-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1134.780000,
-                    "anulInvstmtRate": 6.0300,
-                    "untrRedVal": 1106.920000,
-                    "anulRedRate": 6.1500
+                    "untrInvstmtVal": 4246.960000,
+                    "anulInvstmtRate": 5.9700,
+                    "untrRedVal": 4178.900000,
+                    "anulRedRate": 6.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-03T09:25:00",
                         "clsgDtTm": "2023-05-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1135.250000,
-                    "anulInvstmtRate": 6.0300,
-                    "untrRedVal": 1107.390000,
-                    "anulRedRate": 6.1500
+                    "untrInvstmtVal": 4260.240000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 4191.860000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-04T09:25:00",
                         "clsgDtTm": "2023-05-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1149.920000,
-                    "anulInvstmtRate": 5.9700,
-                    "untrRedVal": 1121.700000,
-                    "anulRedRate": 6.0900
+                    "untrInvstmtVal": 4291.040000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4221.880000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-05T09:25:00",
                         "clsgDtTm": "2023-05-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1148.440000,
-                    "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1120.260000,
-                    "anulRedRate": 6.1000
+                    "untrInvstmtVal": 4288.530000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4219.500000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-08T09:25:00",
                         "clsgDtTm": "2023-05-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1144.170000,
-                    "anulInvstmtRate": 6.0000,
-                    "untrRedVal": 1116.100000,
-                    "anulRedRate": 6.1200
+                    "untrInvstmtVal": 4290.290000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4221.250000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-09T09:25:00",
                         "clsgDtTm": "2023-05-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1137.550000,
-                    "anulInvstmtRate": 6.0300,
-                    "untrRedVal": 1109.660000,
-                    "anulRedRate": 6.1500
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4206.020000,
+                    "anulRedRate": 6.0600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-10T09:25:00",
                         "clsgDtTm": "2023-05-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1140.380000,
-                    "anulInvstmtRate": 6.0200,
-                    "untrRedVal": 1112.420000,
-                    "anulRedRate": 6.1400
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4213.420000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-11T09:25:00",
                         "clsgDtTm": "2023-05-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1150.340000,
-                    "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1122.130000,
-                    "anulRedRate": 6.1000
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-12T09:25:00",
                         "clsgDtTm": "2023-05-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1168.740000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 1140.060000,
-                    "anulRedRate": 6.0300
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-15T09:25:00",
                         "clsgDtTm": "2023-05-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1176.480000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1147.610000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4258.370000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4187.190000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-16T09:25:00",
                         "clsgDtTm": "2023-05-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1172.070000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1143.320000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4266.020000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4194.660000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-17T09:25:00",
                         "clsgDtTm": "2023-05-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1172.520000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1143.760000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4249.620000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4178.730000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-18T09:25:00",
                         "clsgDtTm": "2023-05-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1175.400000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1146.580000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4263.240000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4192.030000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-19T09:25:00",
                         "clsgDtTm": "2023-05-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1173.790000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1145.020000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4254.200000,
+                    "anulInvstmtRate": 5.8000,
+                    "untrRedVal": 4183.270000,
+                    "anulRedRate": 5.9200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-22T09:25:00",
                         "clsgDtTm": "2023-05-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1184.010000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1154.970000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 4267.830000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4196.580000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-23T09:25:00",
                         "clsgDtTm": "2023-05-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1182.010000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 1153.040000,
-                    "anulRedRate": 5.9900
+                    "untrInvstmtVal": 4269.460000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4198.200000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-24T09:25:00",
                         "clsgDtTm": "2023-05-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1187.370000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1158.260000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4283.150000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 4211.560000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-25T09:25:00",
                         "clsgDtTm": "2023-05-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.750000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1163.510000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4302.980000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 4230.900000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-26T09:25:00",
                         "clsgDtTm": "2023-05-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1200.310000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 1170.890000,
-                    "anulRedRate": 5.9200
+                    "untrInvstmtVal": 4309.540000,
+                    "anulInvstmtRate": 5.7200,
+                    "untrRedVal": 4237.310000,
+                    "anulRedRate": 5.8400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-29T09:25:00",
                         "clsgDtTm": "2023-05-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1205.700000,
-                    "anulInvstmtRate": 5.7800,
-                    "untrRedVal": 1176.140000,
-                    "anulRedRate": 5.9000
+                    "untrInvstmtVal": 4329.360000,
+                    "anulInvstmtRate": 5.6900,
+                    "untrRedVal": 4256.630000,
+                    "anulRedRate": 5.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-30T09:25:00",
                         "clsgDtTm": "2023-05-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1211.110000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1181.420000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4343.130000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 4270.070000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-05-31T09:25:00",
                         "clsgDtTm": "2023-06-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1211.520000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1181.830000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4344.580000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 4271.520000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-01T09:25:00",
                         "clsgDtTm": "2023-06-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1209.430000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1179.790000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4339.870000,
+                    "anulInvstmtRate": 5.6800,
+                    "untrRedVal": 4266.970000,
+                    "anulRedRate": 5.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-02T09:25:00",
                         "clsgDtTm": "2023-06-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1215.130000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1185.350000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4367.080000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 4293.500000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-05T09:25:00",
                         "clsgDtTm": "2023-06-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1223.110000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1193.140000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4387.250000,
+                    "anulInvstmtRate": 5.6100,
+                    "untrRedVal": 4313.160000,
+                    "anulRedRate": 5.7300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-06T09:25:00",
                         "clsgDtTm": "2023-06-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.250000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1205.940000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 4420.180000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4345.240000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-07T09:25:00",
                         "clsgDtTm": "2023-06-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.070000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1207.720000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4411.210000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4336.520000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-09T09:25:00",
                         "clsgDtTm": "2023-06-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.060000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1205.770000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 4413.140000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4338.430000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-12T09:25:00",
                         "clsgDtTm": "2023-06-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.980000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1208.620000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4408.120000,
+                    "anulInvstmtRate": 5.5800,
+                    "untrRedVal": 4333.570000,
+                    "anulRedRate": 5.7000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-13T09:25:00",
                         "clsgDtTm": "2023-06-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1231.680000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1201.510000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4384.320000,
+                    "anulInvstmtRate": 5.6200,
+                    "untrRedVal": 4310.440000,
+                    "anulRedRate": 5.7400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-14T09:25:00",
                         "clsgDtTm": "2023-06-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1232.040000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1201.860000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4416.970000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4342.250000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-15T09:25:00",
                         "clsgDtTm": "2023-06-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1239.980000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1209.610000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4411.650000,
+                    "anulInvstmtRate": 5.5800,
+                    "untrRedVal": 4337.100000,
+                    "anulRedRate": 5.7000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-16T09:25:00",
                         "clsgDtTm": "2023-06-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1235.160000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1204.920000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4400.120000,
+                    "anulInvstmtRate": 5.6000,
+                    "untrRedVal": 4325.910000,
+                    "anulRedRate": 5.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-19T09:25:00",
                         "clsgDtTm": "2023-06-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1245.700000,
-                    "anulInvstmtRate": 5.6400,
-                    "untrRedVal": 1215.190000,
-                    "anulRedRate": 5.7600
+                    "untrInvstmtVal": 4419.970000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4345.260000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-20T09:25:00",
                         "clsgDtTm": "2023-06-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1248.550000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1217.980000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4433.600000,
+                    "anulInvstmtRate": 5.5500,
+                    "untrRedVal": 4358.550000,
+                    "anulRedRate": 5.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-21T09:25:00",
                         "clsgDtTm": "2023-06-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1254.010000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1223.300000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4434.580000,
+                    "anulInvstmtRate": 5.5500,
+                    "untrRedVal": 4359.540000,
+                    "anulRedRate": 5.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-22T09:25:00",
                         "clsgDtTm": "2023-06-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1254.290000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1223.580000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4448.260000,
+                    "anulInvstmtRate": 5.5300,
+                    "untrRedVal": 4372.880000,
+                    "anulRedRate": 5.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-23T09:25:00",
                         "clsgDtTm": "2023-06-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1254.580000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1223.870000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4462.060000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4386.350000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-26T09:25:00",
                         "clsgDtTm": "2023-06-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1252.270000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1221.630000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4456.650000,
+                    "anulInvstmtRate": 5.5200,
+                    "untrRedVal": 4381.110000,
+                    "anulRedRate": 5.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-27T09:25:00",
                         "clsgDtTm": "2023-06-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1242.250000,
-                    "anulInvstmtRate": 5.6600,
-                    "untrRedVal": 1211.870000,
-                    "anulRedRate": 5.7800
+                    "untrInvstmtVal": 4432.230000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4357.370000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-28T09:25:00",
                         "clsgDtTm": "2023-06-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1239.330000,
-                    "anulInvstmtRate": 5.6700,
-                    "untrRedVal": 1209.030000,
-                    "anulRedRate": 5.7900
+                    "untrInvstmtVal": 4424.620000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4349.970000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-29T09:25:00",
                         "clsgDtTm": "2023-06-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1237.010000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1206.770000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4425.440000,
+                    "anulInvstmtRate": 5.5700,
+                    "untrRedVal": 4350.790000,
+                    "anulRedRate": 5.6900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-06-30T09:25:00",
                         "clsgDtTm": "2023-07-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1265.580000,
-                    "anulInvstmtRate": 5.5700,
-                    "untrRedVal": 1234.620000,
-                    "anulRedRate": 5.6900
+                    "untrInvstmtVal": 4496.210000,
+                    "anulInvstmtRate": 5.4600,
+                    "untrRedVal": 4419.700000,
+                    "anulRedRate": 5.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-03T09:25:00",
                         "clsgDtTm": "2023-07-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1281.600000,
-                    "anulInvstmtRate": 5.5100,
-                    "untrRedVal": 1250.230000,
-                    "anulRedRate": 5.6300
+                    "untrInvstmtVal": 4529.520000,
+                    "anulInvstmtRate": 5.4100,
+                    "untrRedVal": 4452.140000,
+                    "anulRedRate": 5.5300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-04T09:25:00",
                         "clsgDtTm": "2023-07-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1260.830000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1230.010000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4504.300000,
+                    "anulInvstmtRate": 5.4500,
+                    "untrRedVal": 4427.630000,
+                    "anulRedRate": 5.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-05T09:25:00",
                         "clsgDtTm": "2023-07-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1261.070000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1230.240000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4485.760000,
+                    "anulInvstmtRate": 5.4800,
+                    "untrRedVal": 4409.610000,
+                    "anulRedRate": 5.6000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-06T09:25:00",
                         "clsgDtTm": "2023-07-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1245.790000,
-                    "anulInvstmtRate": 5.6500,
-                    "untrRedVal": 1215.360000,
-                    "anulRedRate": 5.7700
+                    "untrInvstmtVal": 4448.240000,
+                    "anulInvstmtRate": 5.5400,
+                    "untrRedVal": 4373.120000,
+                    "anulRedRate": 5.6600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-07T09:25:00",
                         "clsgDtTm": "2023-07-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1261.460000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1230.630000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4480.690000,
+                    "anulInvstmtRate": 5.4900,
+                    "untrRedVal": 4404.730000,
+                    "anulRedRate": 5.6100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-10T09:25:00",
                         "clsgDtTm": "2023-07-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1256.500000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1225.810000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4475.100000,
+                    "anulInvstmtRate": 5.5000,
+                    "untrRedVal": 4399.320000,
+                    "anulRedRate": 5.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-11T09:25:00",
                         "clsgDtTm": "2023-07-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1254.260000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1223.630000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4457.180000,
+                    "anulInvstmtRate": 5.5300,
+                    "untrRedVal": 4381.910000,
+                    "anulRedRate": 5.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-12T09:25:00",
                         "clsgDtTm": "2023-07-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1257.090000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1226.390000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4470.760000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4395.150000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-13T09:25:00",
                         "clsgDtTm": "2023-07-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.920000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1229.160000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4471.590000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4395.990000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-14T09:25:00",
                         "clsgDtTm": "2023-07-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1255.060000,
-                    "anulInvstmtRate": 5.6200,
-                    "untrRedVal": 1224.430000,
-                    "anulRedRate": 5.7400
+                    "untrInvstmtVal": 4459.970000,
+                    "anulInvstmtRate": 5.5300,
+                    "untrRedVal": 4384.710000,
+                    "anulRedRate": 5.6500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-17T09:25:00",
                         "clsgDtTm": "2023-07-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1263.160000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1232.320000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4448.380000,
+                    "anulInvstmtRate": 5.5500,
+                    "untrRedVal": 4373.460000,
+                    "anulRedRate": 5.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-18T09:25:00",
                         "clsgDtTm": "2023-07-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1263.470000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1232.630000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4474.910000,
+                    "anulInvstmtRate": 5.5100,
+                    "untrRedVal": 4399.310000,
+                    "anulRedRate": 5.6300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-19T09:25:00",
                         "clsgDtTm": "2023-07-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1263.780000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1232.950000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4469.620000,
+                    "anulInvstmtRate": 5.5200,
+                    "untrRedVal": 4394.200000,
+                    "anulRedRate": 5.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-20T09:25:00",
                         "clsgDtTm": "2023-07-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1264.100000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1233.260000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4470.720000,
+                    "anulInvstmtRate": 5.5200,
+                    "untrRedVal": 4395.300000,
+                    "anulRedRate": 5.6400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-21T09:25:00",
                         "clsgDtTm": "2023-07-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1277.580000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1246.400000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4510.590000,
+                    "anulInvstmtRate": 5.4600,
+                    "untrRedVal": 4434.140000,
+                    "anulRedRate": 5.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-24T09:25:00",
                         "clsgDtTm": "2023-07-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1285.820000,
-                    "anulInvstmtRate": 5.5100,
-                    "untrRedVal": 1254.440000,
-                    "anulRedRate": 5.6300
+                    "untrInvstmtVal": 4518.160000,
+                    "anulInvstmtRate": 5.4500,
+                    "untrRedVal": 4441.530000,
+                    "anulRedRate": 5.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-25T09:25:00",
                         "clsgDtTm": "2023-07-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1288.790000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 1257.330000,
-                    "anulRedRate": 5.6200
+                    "untrInvstmtVal": 4532.230000,
+                    "anulInvstmtRate": 5.4300,
+                    "untrRedVal": 4455.260000,
+                    "anulRedRate": 5.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-26T09:25:00",
                         "clsgDtTm": "2023-07-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1283.700000,
-                    "anulInvstmtRate": 5.5200,
-                    "untrRedVal": 1252.380000,
-                    "anulRedRate": 5.6400
+                    "untrInvstmtVal": 4526.480000,
+                    "anulInvstmtRate": 5.4400,
+                    "untrRedVal": 4449.690000,
+                    "anulRedRate": 5.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-27T09:25:00",
                         "clsgDtTm": "2023-07-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1278.730000,
-                    "anulInvstmtRate": 5.5400,
-                    "untrRedVal": 1247.550000,
-                    "anulRedRate": 5.6600
+                    "untrInvstmtVal": 4514.610000,
+                    "anulInvstmtRate": 5.4600,
+                    "untrRedVal": 4438.170000,
+                    "anulRedRate": 5.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-28T09:25:00",
                         "clsgDtTm": "2023-07-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1289.680000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 1258.230000,
-                    "anulRedRate": 5.6200
+                    "untrInvstmtVal": 4528.850000,
+                    "anulInvstmtRate": 5.4400,
+                    "untrRedVal": 4452.060000,
+                    "anulRedRate": 5.5600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-07-31T09:25:00",
                         "clsgDtTm": "2023-08-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1297.980000,
-                    "anulInvstmtRate": 5.4700,
-                    "untrRedVal": 1266.320000,
-                    "anulRedRate": 5.5900
+                    "untrInvstmtVal": 4555.980000,
+                    "anulInvstmtRate": 5.4000,
+                    "untrRedVal": 4478.500000,
+                    "anulRedRate": 5.5200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-01T09:25:00",
                         "clsgDtTm": "2023-08-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1300.960000,
-                    "anulInvstmtRate": 5.4600,
-                    "untrRedVal": 1269.230000,
-                    "anulRedRate": 5.5800
+                    "untrInvstmtVal": 4570.170000,
+                    "anulInvstmtRate": 5.3800,
+                    "untrRedVal": 4492.340000,
+                    "anulRedRate": 5.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-02T09:25:00",
                         "clsgDtTm": "2023-08-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1306.640000,
-                    "anulInvstmtRate": 5.4400,
-                    "untrRedVal": 1274.770000,
-                    "anulRedRate": 5.5600
+                    "untrInvstmtVal": 4577.830000,
+                    "anulInvstmtRate": 5.3700,
+                    "untrRedVal": 4499.810000,
+                    "anulRedRate": 5.4900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-03T09:25:00",
                         "clsgDtTm": "2023-08-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1304.260000,
-                    "anulInvstmtRate": 5.4500,
-                    "untrRedVal": 1272.460000,
-                    "anulRedRate": 5.5700
+                    "untrInvstmtVal": 4585.490000,
+                    "anulInvstmtRate": 5.3600,
+                    "untrRedVal": 4507.300000,
+                    "anulRedRate": 5.4800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-04T09:25:00",
                         "clsgDtTm": "2023-08-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1312.720000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1280.710000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4593.410000,
+                    "anulInvstmtRate": 5.3500,
+                    "untrRedVal": 4515.040000,
+                    "anulRedRate": 5.4700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-07T09:25:00",
                         "clsgDtTm": "2023-08-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1299.590000,
-                    "anulInvstmtRate": 5.4700,
-                    "untrRedVal": 1267.920000,
-                    "anulRedRate": 5.5900
+                    "untrInvstmtVal": 4574.690000,
+                    "anulInvstmtRate": 5.3800,
+                    "untrRedVal": 4496.850000,
+                    "anulRedRate": 5.5000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-08T09:25:00",
                         "clsgDtTm": "2023-08-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1310.640000,
-                    "anulInvstmtRate": 5.4300,
-                    "untrRedVal": 1278.690000,
-                    "anulRedRate": 5.5500
+                    "untrInvstmtVal": 4608.810000,
+                    "anulInvstmtRate": 5.3300,
+                    "untrRedVal": 4530.100000,
+                    "anulRedRate": 5.4500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-09T09:25:00",
                         "clsgDtTm": "2023-08-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1319.060000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 1286.910000,
-                    "anulRedRate": 5.5200
+                    "untrInvstmtVal": 4623.210000,
+                    "anulInvstmtRate": 5.3100,
+                    "untrRedVal": 4544.140000,
+                    "anulRedRate": 5.4300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-10T09:25:00",
                         "clsgDtTm": "2023-08-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1319.370000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 1287.220000,
-                    "anulRedRate": 5.5200
+                    "untrInvstmtVal": 4637.670000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4558.240000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-11T09:25:00",
                         "clsgDtTm": "2023-08-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1322.980000,
-                    "anulInvstmtRate": 5.3900,
-                    "untrRedVal": 1290.740000,
-                    "anulRedRate": 5.5100
+                    "untrInvstmtVal": 4640.770000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4561.310000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-14T09:25:00",
                         "clsgDtTm": "2023-08-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1317.870000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 1285.760000,
-                    "anulRedRate": 5.5300
+                    "untrInvstmtVal": 4635.200000,
+                    "anulInvstmtRate": 5.3000,
+                    "untrRedVal": 4555.910000,
+                    "anulRedRate": 5.4200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-15T09:25:00",
                         "clsgDtTm": "2023-08-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1320.930000,
-                    "anulInvstmtRate": 5.4000,
-                    "untrRedVal": 1288.750000,
-                    "anulRedRate": 5.5200
+                    "untrInvstmtVal": 4643.070000,
+                    "anulInvstmtRate": 5.2900,
+                    "untrRedVal": 4563.610000,
+                    "anulRedRate": 5.4100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-16T09:25:00",
                         "clsgDtTm": "2023-08-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1326.710000,
-                    "anulInvstmtRate": 5.3800,
-                    "untrRedVal": 1294.390000,
-                    "anulRedRate": 5.5000
+                    "untrInvstmtVal": 4650.970000,
+                    "anulInvstmtRate": 5.2800,
+                    "untrRedVal": 4571.330000,
+                    "anulRedRate": 5.4000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-17T09:25:00",
                         "clsgDtTm": "2023-08-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1318.890000,
-                    "anulInvstmtRate": 5.4100,
-                    "untrRedVal": 1286.780000,
-                    "anulRedRate": 5.5300
+                    "untrInvstmtVal": 4625.350000,
+                    "anulInvstmtRate": 5.3200,
+                    "untrRedVal": 4546.430000,
+                    "anulRedRate": 5.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-18T09:25:00",
                         "clsgDtTm": "2023-08-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1316.650000,
-                    "anulInvstmtRate": 5.4200,
-                    "untrRedVal": 1284.600000,
-                    "anulRedRate": 5.5400
+                    "untrInvstmtVal": 4626.980000,
+                    "anulInvstmtRate": 5.3200,
+                    "untrRedVal": 4548.050000,
+                    "anulRedRate": 5.4400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-21T09:25:00",
                         "clsgDtTm": "2023-08-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1295.530000,
-                    "anulInvstmtRate": 5.5000,
-                    "untrRedVal": 1264.020000,
-                    "anulRedRate": 5.6200
+                    "untrInvstmtVal": 4562.230000,
+                    "anulInvstmtRate": 5.4200,
+                    "untrRedVal": 4485.070000,
+                    "anulRedRate": 5.5400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-22T09:25:00",
                         "clsgDtTm": "2023-08-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1282.640000,
-                    "anulInvstmtRate": 5.5500,
-                    "untrRedVal": 1251.460000,
-                    "anulRedRate": 5.6700
+                    "untrInvstmtVal": 4543.920000,
+                    "anulInvstmtRate": 5.4500,
+                    "untrRedVal": 4467.280000,
+                    "anulRedRate": 5.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-23T09:25:00",
                         "clsgDtTm": "2023-08-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1280.350000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 1249.240000,
-                    "anulRedRate": 5.6800
+                    "untrInvstmtVal": 4558.070000,
+                    "anulInvstmtRate": 5.4300,
+                    "untrRedVal": 4481.080000,
+                    "anulRedRate": 5.5500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-24T09:25:00",
                         "clsgDtTm": "2023-08-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1272.830000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1241.920000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4546.270000,
+                    "anulInvstmtRate": 5.4500,
+                    "untrRedVal": 4469.630000,
+                    "anulRedRate": 5.5700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-25T09:25:00",
                         "clsgDtTm": "2023-08-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1273.290000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1242.370000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4534.970000,
+                    "anulInvstmtRate": 5.4700,
+                    "untrRedVal": 4458.670000,
+                    "anulRedRate": 5.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-28T09:25:00",
                         "clsgDtTm": "2023-08-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1269.040000,
-                    "anulInvstmtRate": 5.6100,
-                    "untrRedVal": 1238.240000,
-                    "anulRedRate": 5.7300
+                    "untrInvstmtVal": 4519.120000,
+                    "anulInvstmtRate": 5.5000,
+                    "untrRedVal": 4443.290000,
+                    "anulRedRate": 5.6200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-29T09:25:00",
                         "clsgDtTm": "2023-08-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1272.030000,
-                    "anulInvstmtRate": 5.6000,
-                    "untrRedVal": 1241.160000,
-                    "anulRedRate": 5.7200
+                    "untrInvstmtVal": 4539.740000,
+                    "anulInvstmtRate": 5.4700,
+                    "untrRedVal": 4463.400000,
+                    "anulRedRate": 5.5900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-30T09:25:00",
                         "clsgDtTm": "2023-08-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1282.880000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 1251.740000,
-                    "anulRedRate": 5.6800
+                    "untrInvstmtVal": 4547.530000,
+                    "anulInvstmtRate": 5.4600,
+                    "untrRedVal": 4471.020000,
+                    "anulRedRate": 5.5800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-08-31T09:25:00",
                         "clsgDtTm": "2023-09-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1265.000000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1234.310000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4491.290000,
+                    "anulInvstmtRate": 5.5500,
+                    "untrRedVal": 4416.310000,
+                    "anulRedRate": 5.6700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-01T09:25:00",
                         "clsgDtTm": "2023-09-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1250.150000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1219.840000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4468.160000,
+                    "anulInvstmtRate": 5.5900,
+                    "untrRedVal": 4393.830000,
+                    "anulRedRate": 5.7100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-04T09:25:00",
                         "clsgDtTm": "2023-09-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1253.090000,
-                    "anulInvstmtRate": 5.6800,
-                    "untrRedVal": 1222.720000,
-                    "anulRedRate": 5.8000
+                    "untrInvstmtVal": 4469.500000,
+                    "anulInvstmtRate": 5.5900,
+                    "untrRedVal": 4395.160000,
+                    "anulRedRate": 5.7100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-05T09:25:00",
                         "clsgDtTm": "2023-09-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1243.250000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1213.140000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4439.620000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 4366.110000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-06T09:25:00",
                         "clsgDtTm": "2023-09-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.660000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1208.670000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4435.130000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 4361.780000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-08T09:25:00",
                         "clsgDtTm": "2023-09-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1241.780000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1211.720000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4437.210000,
+                    "anulInvstmtRate": 5.6500,
+                    "untrRedVal": 4363.840000,
+                    "anulRedRate": 5.7700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-11T09:25:00",
                         "clsgDtTm": "2023-09-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1242.160000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1212.090000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4444.760000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 4371.220000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-12T09:25:00",
                         "clsgDtTm": "2023-09-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1244.740000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1214.610000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4451.060000,
+                    "anulInvstmtRate": 5.6300,
+                    "untrRedVal": 4377.380000,
+                    "anulRedRate": 5.7500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-13T09:25:00",
                         "clsgDtTm": "2023-09-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1245.100000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1214.970000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4458.590000,
+                    "anulInvstmtRate": 5.6200,
+                    "untrRedVal": 4384.740000,
+                    "anulRedRate": 5.7400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-14T09:25:00",
                         "clsgDtTm": "2023-09-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1248.020000,
-                    "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1217.820000,
-                    "anulRedRate": 5.8300
+                    "untrInvstmtVal": 4466.140000,
+                    "anulInvstmtRate": 5.6100,
+                    "untrRedVal": 4392.130000,
+                    "anulRedRate": 5.7300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-15T09:25:00",
                         "clsgDtTm": "2023-09-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1238.610000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1208.650000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4450.100000,
+                    "anulInvstmtRate": 5.6400,
+                    "untrRedVal": 4376.560000,
+                    "anulRedRate": 5.7600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-18T09:25:00",
                         "clsgDtTm": "2023-09-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.510000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1206.610000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4433.060000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 4360.000000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-19T09:25:00",
                         "clsgDtTm": "2023-09-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1236.940000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1207.040000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4422.280000,
+                    "anulInvstmtRate": 5.6900,
+                    "untrRedVal": 4349.540000,
+                    "anulRedRate": 5.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-20T09:25:00",
                         "clsgDtTm": "2023-09-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1239.900000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1209.930000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4436.120000,
+                    "anulInvstmtRate": 5.6700,
+                    "untrRedVal": 4363.060000,
+                    "anulRedRate": 5.7900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-21T09:25:00",
                         "clsgDtTm": "2023-09-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1240.340000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1210.360000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4419.210000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 4346.620000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-22T09:25:00",
                         "clsgDtTm": "2023-09-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1241.080000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1211.090000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4427.990000,
+                    "anulInvstmtRate": 5.6900,
+                    "untrRedVal": 4355.220000,
+                    "anulRedRate": 5.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-25T09:25:00",
                         "clsgDtTm": "2023-09-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1228.920000,
-                    "anulInvstmtRate": 5.8000,
-                    "untrRedVal": 1199.250000,
-                    "anulRedRate": 5.9200
+                    "untrInvstmtVal": 4392.890000,
+                    "anulInvstmtRate": 5.7500,
+                    "untrRedVal": 4321.080000,
+                    "anulRedRate": 5.8700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-26T09:25:00",
                         "clsgDtTm": "2023-09-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1211.950000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 1182.710000,
-                    "anulRedRate": 5.9900
+                    "untrInvstmtVal": 4358.270000,
+                    "anulInvstmtRate": 5.8100,
+                    "untrRedVal": 4287.400000,
+                    "anulRedRate": 5.9300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-27T09:25:00",
                         "clsgDtTm": "2023-09-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1202.230000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 1173.240000,
-                    "anulRedRate": 6.0300
+                    "untrInvstmtVal": 4317.110000,
+                    "anulInvstmtRate": 5.8800,
+                    "untrRedVal": 4247.350000,
+                    "anulRedRate": 6.0000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-28T09:25:00",
                         "clsgDtTm": "2023-09-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1197.750000,
-                    "anulInvstmtRate": 5.9300,
-                    "untrRedVal": 1168.880000,
-                    "anulRedRate": 6.0500
+                    "untrInvstmtVal": 4300.930000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4231.620000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-09-29T09:25:00",
                         "clsgDtTm": "2023-10-02T05:00:00"
                     },
-                    "untrInvstmtVal": 1218.080000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1188.700000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4344.590000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4274.180000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-02T09:25:00",
                         "clsgDtTm": "2023-10-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1206.150000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1177.070000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4334.160000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4264.060000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-03T09:25:00",
                         "clsgDtTm": "2023-10-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1187.080000,
-                    "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1158.490000,
-                    "anulRedRate": 6.1000
+                    "untrInvstmtVal": 4277.050000,
+                    "anulInvstmtRate": 5.9600,
+                    "untrRedVal": 4208.480000,
+                    "anulRedRate": 6.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-04T09:25:00",
                         "clsgDtTm": "2023-10-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.320000,
-                    "anulInvstmtRate": 5.9600,
-                    "untrRedVal": 1163.610000,
-                    "anulRedRate": 6.0800
+                    "untrInvstmtVal": 4284.290000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 4215.560000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-05T09:25:00",
                         "clsgDtTm": "2023-10-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1185.470000,
-                    "anulInvstmtRate": 5.9900,
-                    "untrRedVal": 1156.940000,
-                    "anulRedRate": 6.1100
+                    "untrInvstmtVal": 4274.140000,
+                    "anulInvstmtRate": 5.9700,
+                    "untrRedVal": 4205.710000,
+                    "anulRedRate": 6.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-06T09:25:00",
                         "clsgDtTm": "2023-10-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1181.320000,
-                    "anulInvstmtRate": 6.0100,
-                    "untrRedVal": 1152.890000,
-                    "anulRedRate": 6.1300
+                    "untrInvstmtVal": 4282.280000,
+                    "anulInvstmtRate": 5.9600,
+                    "untrRedVal": 4213.680000,
+                    "anulRedRate": 6.0800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-09T09:25:00",
                         "clsgDtTm": "2023-10-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1198.640000,
-                    "anulInvstmtRate": 5.9400,
-                    "untrRedVal": 1169.780000,
-                    "anulRedRate": 6.0600
+                    "untrInvstmtVal": 4324.590000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 4254.910000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-10T09:25:00",
                         "clsgDtTm": "2023-10-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1211.280000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1182.120000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4355.620000,
+                    "anulInvstmtRate": 5.8400,
+                    "untrRedVal": 4285.160000,
+                    "anulRedRate": 5.9600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-11T09:25:00",
                         "clsgDtTm": "2023-10-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1206.230000,
-                    "anulInvstmtRate": 5.9100,
-                    "untrRedVal": 1177.190000,
-                    "anulRedRate": 6.0300
+                    "untrInvstmtVal": 4343.220000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4273.110000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-13T09:25:00",
                         "clsgDtTm": "2023-10-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1211.740000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1182.580000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4345.400000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4275.260000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-16T09:25:00",
                         "clsgDtTm": "2023-10-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1212.140000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1182.970000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4346.810000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4276.680000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-17T09:25:00",
                         "clsgDtTm": "2023-10-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1195.430000,
-                    "anulInvstmtRate": 5.9600,
-                    "untrRedVal": 1166.680000,
-                    "anulRedRate": 6.0800
+                    "untrInvstmtVal": 4295.450000,
+                    "anulInvstmtRate": 5.9500,
+                    "untrRedVal": 4226.690000,
+                    "anulRedRate": 6.0700
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-18T09:25:00",
                         "clsgDtTm": "2023-10-19T05:00:00"
                     },
-                    "untrInvstmtVal": 1210.470000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1181.360000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4331.930000,
+                    "anulInvstmtRate": 5.8900,
+                    "untrRedVal": 4262.250000,
+                    "anulRedRate": 6.0100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-19T09:25:00",
                         "clsgDtTm": "2023-10-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1205.960000,
-                    "anulInvstmtRate": 5.9200,
-                    "untrRedVal": 1176.960000,
-                    "anulRedRate": 6.0400
+                    "untrInvstmtVal": 4321.610000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4252.230000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-20T09:25:00",
                         "clsgDtTm": "2023-10-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.000000,
+                    "untrInvstmtVal": 4283.190000,
                     "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1163.360000,
+                    "untrRedVal": 4214.860000,
                     "anulRedRate": 6.1000
                 },
                 {
@@ -16643,9 +9253,9 @@ const dados = {
                         "opngDtTm": "2023-10-23T09:25:00",
                         "clsgDtTm": "2023-10-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1197.240000,
+                    "untrInvstmtVal": 4296.170000,
                     "anulInvstmtRate": 5.9600,
-                    "untrRedVal": 1168.470000,
+                    "untrRedVal": 4227.530000,
                     "anulRedRate": 6.0800
                 },
                 {
@@ -16653,159 +9263,159 @@ const dados = {
                         "opngDtTm": "2023-10-24T09:25:00",
                         "clsgDtTm": "2023-10-25T05:00:00"
                     },
-                    "untrInvstmtVal": 1192.790000,
-                    "anulInvstmtRate": 5.9800,
-                    "untrRedVal": 1164.140000,
-                    "anulRedRate": 6.1000
+                    "untrInvstmtVal": 4280.250000,
+                    "anulInvstmtRate": 5.9900,
+                    "untrRedVal": 4212.060000,
+                    "anulRedRate": 6.1100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-25T09:25:00",
                         "clsgDtTm": "2023-10-26T05:00:00"
                     },
-                    "untrInvstmtVal": 1198.030000,
-                    "anulInvstmtRate": 5.9600,
-                    "untrRedVal": 1169.260000,
-                    "anulRedRate": 6.0800
+                    "untrInvstmtVal": 4293.210000,
+                    "anulInvstmtRate": 5.9700,
+                    "untrRedVal": 4224.720000,
+                    "anulRedRate": 6.0900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-26T09:25:00",
                         "clsgDtTm": "2023-10-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1215.560000,
-                    "anulInvstmtRate": 5.8900,
-                    "untrRedVal": 1186.350000,
-                    "anulRedRate": 6.0100
+                    "untrInvstmtVal": 4329.560000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4260.150000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-27T09:25:00",
                         "clsgDtTm": "2023-10-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1218.430000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1189.150000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4336.880000,
+                    "anulInvstmtRate": 5.9000,
+                    "untrRedVal": 4267.310000,
+                    "anulRedRate": 6.0200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-30T09:25:00",
                         "clsgDtTm": "2023-10-31T05:00:00"
                     },
-                    "untrInvstmtVal": 1213.880000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1184.720000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4320.680000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4251.570000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-10-31T09:25:00",
                         "clsgDtTm": "2023-11-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1214.260000,
-                    "anulInvstmtRate": 5.9000,
-                    "untrRedVal": 1185.100000,
-                    "anulRedRate": 6.0200
+                    "untrInvstmtVal": 4322.040000,
+                    "anulInvstmtRate": 5.9300,
+                    "untrRedVal": 4252.920000,
+                    "anulRedRate": 6.0500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-01T09:25:00",
                         "clsgDtTm": "2023-11-03T05:00:00"
                     },
-                    "untrInvstmtVal": 1222.160000,
-                    "anulInvstmtRate": 5.8700,
-                    "untrRedVal": 1192.800000,
-                    "anulRedRate": 5.9900
+                    "untrInvstmtVal": 4335.480000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4266.050000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-03T09:25:00",
                         "clsgDtTm": "2023-11-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1232.710000,
-                    "anulInvstmtRate": 5.8300,
-                    "untrRedVal": 1203.100000,
-                    "anulRedRate": 5.9500
+                    "untrInvstmtVal": 4367.080000,
+                    "anulInvstmtRate": 5.8600,
+                    "untrRedVal": 4296.870000,
+                    "anulRedRate": 5.9800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-06T09:25:00",
                         "clsgDtTm": "2023-11-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1220.660000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1191.360000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4338.960000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4269.520000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-07T09:25:00",
                         "clsgDtTm": "2023-11-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1221.050000,
-                    "anulInvstmtRate": 5.8800,
-                    "untrRedVal": 1191.740000,
-                    "anulRedRate": 6.0000
+                    "untrInvstmtVal": 4340.330000,
+                    "anulInvstmtRate": 5.9100,
+                    "untrRedVal": 4270.880000,
+                    "anulRedRate": 6.0300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-08T09:25:00",
                         "clsgDtTm": "2023-11-09T05:00:00"
                     },
-                    "untrInvstmtVal": 1228.870000,
-                    "anulInvstmtRate": 5.8500,
-                    "untrRedVal": 1199.370000,
-                    "anulRedRate": 5.9700
+                    "untrInvstmtVal": 4365.250000,
+                    "anulInvstmtRate": 5.8700,
+                    "untrRedVal": 4295.190000,
+                    "anulRedRate": 5.9900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-09T09:25:00",
                         "clsgDtTm": "2023-11-10T05:00:00"
                     },
-                    "untrInvstmtVal": 1239.260000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1209.510000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4325.530000,
+                    "anulRedRate": 5.9400
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-10T09:25:00",
                         "clsgDtTm": "2023-11-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1239.510000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1209.760000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 4320.620000,
+                    "anulRedRate": 5.9500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-13T09:25:00",
                         "clsgDtTm": "2023-11-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1227.400000,
-                    "anulInvstmtRate": 5.8600,
-                    "untrRedVal": 1197.950000,
-                    "anulRedRate": 5.9800
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-14T09:25:00",
                         "clsgDtTm": "2023-11-16T05:00:00"
                     },
-                    "untrInvstmtVal": 1240.380000,
-                    "anulInvstmtRate": 5.8100,
-                    "untrRedVal": 1210.620000,
-                    "anulRedRate": 5.9300
+                    "untrInvstmtVal": 0.0,
+                    "anulInvstmtRate": 0.0,
+                    "untrRedVal": 0.0,
+                    "anulRedRate": 0.0
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-16T09:25:00",
                         "clsgDtTm": "2023-11-17T05:00:00"
                     },
-                    "untrInvstmtVal": 1253.410000,
+                    "untrInvstmtVal": 4314.870000,
                     "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1223.320000,
+                    "untrRedVal": 4243.070000,
                     "anulRedRate": 5.8800
                 },
                 {
@@ -16813,9 +9423,9 @@ const dados = {
                         "opngDtTm": "2023-11-17T09:25:00",
                         "clsgDtTm": "2023-11-20T05:00:00"
                     },
-                    "untrInvstmtVal": 1266.820000,
+                    "untrInvstmtVal": 4347.570000,
                     "anulInvstmtRate": 5.7100,
-                    "untrRedVal": 1236.400000,
+                    "untrRedVal": 4274.960000,
                     "anulRedRate": 5.8300
                 },
                 {
@@ -16823,49 +9433,49 @@ const dados = {
                         "opngDtTm": "2023-11-20T09:25:00",
                         "clsgDtTm": "2023-11-21T05:00:00"
                     },
-                    "untrInvstmtVal": 1264.650000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1234.300000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4330.620000,
+                    "anulInvstmtRate": 5.7400,
+                    "untrRedVal": 4258.470000,
+                    "anulRedRate": 5.8600
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-21T09:25:00",
                         "clsgDtTm": "2023-11-22T05:00:00"
                     },
-                    "untrInvstmtVal": 1252.310000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1222.270000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4301.700000,
+                    "anulInvstmtRate": 5.7900,
+                    "untrRedVal": 4230.350000,
+                    "anulRedRate": 5.9100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-22T09:25:00",
                         "clsgDtTm": "2023-11-23T05:00:00"
                     },
-                    "untrInvstmtVal": 1255.250000,
-                    "anulInvstmtRate": 5.7600,
-                    "untrRedVal": 1225.140000,
-                    "anulRedRate": 5.8800
+                    "untrInvstmtVal": 4315.150000,
+                    "anulInvstmtRate": 5.7700,
+                    "untrRedVal": 4243.480000,
+                    "anulRedRate": 5.8900
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-23T09:25:00",
                         "clsgDtTm": "2023-11-24T05:00:00"
                     },
-                    "untrInvstmtVal": 1253.110000,
-                    "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1223.060000,
-                    "anulRedRate": 5.8900
+                    "untrInvstmtVal": 4310.490000,
+                    "anulInvstmtRate": 5.7800,
+                    "untrRedVal": 4238.970000,
+                    "anulRedRate": 5.9000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-24T09:25:00",
                         "clsgDtTm": "2023-11-27T05:00:00"
                     },
-                    "untrInvstmtVal": 1253.750000,
+                    "untrInvstmtVal": 4318.740000,
                     "anulInvstmtRate": 5.7700,
-                    "untrRedVal": 1223.700000,
+                    "untrRedVal": 4247.050000,
                     "anulRedRate": 5.8900
                 },
                 {
@@ -16873,39 +9483,39 @@ const dados = {
                         "opngDtTm": "2023-11-27T09:25:00",
                         "clsgDtTm": "2023-11-28T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.240000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1229.050000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4326.180000,
+                    "anulInvstmtRate": 5.7600,
+                    "untrRedVal": 4254.320000,
+                    "anulRedRate": 5.8800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-28T09:25:00",
                         "clsgDtTm": "2023-11-29T05:00:00"
                     },
-                    "untrInvstmtVal": 1259.640000,
-                    "anulInvstmtRate": 5.7500,
-                    "untrRedVal": 1229.440000,
-                    "anulRedRate": 5.8700
+                    "untrInvstmtVal": 4345.820000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 4273.490000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-29T09:25:00",
                         "clsgDtTm": "2023-11-30T05:00:00"
                     },
-                    "untrInvstmtVal": 1267.770000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1237.380000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4359.670000,
+                    "anulInvstmtRate": 5.7100,
+                    "untrRedVal": 4287.000000,
+                    "anulRedRate": 5.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-11-30T09:25:00",
                         "clsgDtTm": "2023-12-01T05:00:00"
                     },
-                    "untrInvstmtVal": 1268.180000,
+                    "untrInvstmtVal": 4354.940000,
                     "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1237.780000,
+                    "untrRedVal": 4282.420000,
                     "anulRedRate": 5.8400
                 },
                 {
@@ -16913,9 +9523,9 @@ const dados = {
                         "opngDtTm": "2023-12-01T09:25:00",
                         "clsgDtTm": "2023-12-04T05:00:00"
                     },
-                    "untrInvstmtVal": 1273.980000,
+                    "untrInvstmtVal": 4369.480000,
                     "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1243.450000,
+                    "untrRedVal": 4296.630000,
                     "anulRedRate": 5.8200
                 },
                 {
@@ -16923,19 +9533,19 @@ const dados = {
                         "opngDtTm": "2023-12-04T09:25:00",
                         "clsgDtTm": "2023-12-05T05:00:00"
                     },
-                    "untrInvstmtVal": 1274.390000,
-                    "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1243.850000,
-                    "anulRedRate": 5.8200
+                    "untrInvstmtVal": 4377.040000,
+                    "anulInvstmtRate": 5.6900,
+                    "untrRedVal": 4304.020000,
+                    "anulRedRate": 5.8100
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-05T09:25:00",
                         "clsgDtTm": "2023-12-06T05:00:00"
                     },
-                    "untrInvstmtVal": 1274.800000,
+                    "untrInvstmtVal": 4372.280000,
                     "anulInvstmtRate": 5.7000,
-                    "untrRedVal": 1244.260000,
+                    "untrRedVal": 4299.420000,
                     "anulRedRate": 5.8200
                 },
                 {
@@ -16943,39 +9553,39 @@ const dados = {
                         "opngDtTm": "2023-12-06T09:25:00",
                         "clsgDtTm": "2023-12-07T05:00:00"
                     },
-                    "untrInvstmtVal": 1277.790000,
-                    "anulInvstmtRate": 5.6900,
-                    "untrRedVal": 1247.170000,
-                    "anulRedRate": 5.8100
+                    "untrInvstmtVal": 4386.010000,
+                    "anulInvstmtRate": 5.6800,
+                    "untrRedVal": 4312.820000,
+                    "anulRedRate": 5.8000
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-07T09:25:00",
                         "clsgDtTm": "2023-12-08T05:00:00"
                     },
-                    "untrInvstmtVal": 1270.470000,
-                    "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1240.050000,
-                    "anulRedRate": 5.8400
+                    "untrInvstmtVal": 4375.070000,
+                    "anulInvstmtRate": 5.7000,
+                    "untrRedVal": 4302.210000,
+                    "anulRedRate": 5.8200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-08T09:25:00",
                         "clsgDtTm": "2023-12-11T05:00:00"
                     },
-                    "untrInvstmtVal": 1266.000000,
-                    "anulInvstmtRate": 5.7400,
-                    "untrRedVal": 1235.700000,
-                    "anulRedRate": 5.8600
+                    "untrInvstmtVal": 4358.940000,
+                    "anulInvstmtRate": 5.7300,
+                    "untrRedVal": 4286.540000,
+                    "anulRedRate": 5.8500
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-11T09:25:00",
                         "clsgDtTm": "2023-12-12T05:00:00"
                     },
-                    "untrInvstmtVal": 1271.540000,
+                    "untrInvstmtVal": 4366.460000,
                     "anulInvstmtRate": 5.7200,
-                    "untrRedVal": 1241.100000,
+                    "untrRedVal": 4293.900000,
                     "anulRedRate": 5.8400
                 },
                 {
@@ -16983,46 +9593,46 @@ const dados = {
                         "opngDtTm": "2023-12-12T09:25:00",
                         "clsgDtTm": "2023-12-13T05:00:00"
                     },
-                    "untrInvstmtVal": 1269.140000,
-                    "anulInvstmtRate": 5.7300,
-                    "untrRedVal": 1238.770000,
-                    "anulRedRate": 5.8500
+                    "untrInvstmtVal": 4373.180000,
+                    "anulInvstmtRate": 5.7100,
+                    "untrRedVal": 4300.470000,
+                    "anulRedRate": 5.8300
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-13T09:25:00",
                         "clsgDtTm": "2023-12-14T05:00:00"
                     },
-                    "untrInvstmtVal": 1295.450000,
-                    "anulInvstmtRate": 5.6300,
-                    "untrRedVal": 1264.430000,
-                    "anulRedRate": 5.7500
+                    "untrInvstmtVal": 4442.940000,
+                    "anulInvstmtRate": 5.6000,
+                    "untrRedVal": 4368.420000,
+                    "anulRedRate": 5.7200
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-14T09:25:00",
                         "clsgDtTm": "2023-12-15T05:00:00"
                     },
-                    "untrInvstmtVal": 1306.370000,
-                    "anulInvstmtRate": 5.5900,
-                    "untrRedVal": 1275.080000,
-                    "anulRedRate": 5.7100
+                    "untrInvstmtVal": 4469.610000,
+                    "anulInvstmtRate": 5.5600,
+                    "untrRedVal": 4394.410000,
+                    "anulRedRate": 5.6800
                 },
                 {
                     "TrsrBdMkt": {
                         "opngDtTm": "2023-12-15T09:25:00",
                         "clsgDtTm": "2023-12-18T05:00:00"
                     },
-                    "untrInvstmtVal": 1315.080000,
-                    "anulInvstmtRate": 5.5600,
-                    "untrRedVal": 1283.580000,
-                    "anulRedRate": 5.6800
+                    "untrInvstmtVal": 4497.730000,
+                    "anulInvstmtRate": 5.5200,
+                    "untrRedVal": 4421.840000,
+                    "anulRedRate": 5.6400
                 }
             ]
         },
         "BizSts": {
             "cd": "0",
-            "dtTm": "2023-12-16T14:03:53"
+            "dtTm": "2023-12-17T06:40:10"
         }
     }
 };

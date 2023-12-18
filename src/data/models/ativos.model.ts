@@ -215,6 +215,10 @@ const modelUpdateTransacao = async (categoria: string, corretora: string, ativo:
 }
 
 const ModelsTotalAtivos = async (type: string) => {
+    if(type === '0')
+    {
+        type='';
+    }
     return new Promise(async (resolve, reject) => {
         let values = '';
         const results = await Promise.all([
@@ -468,9 +472,9 @@ const ModelsCurrencyUpdate = async (currency: string, valor: number) => {
     });
 }
 
-const ModelsInsertTreasure = async (codigo: any, nome: any) => {
+const ModelsInsertTreasure = async (codigo: any, nome: any, ativo:any) => {
     return new Promise((resolve, reject) => {
-        connection.query(`INSERT tesouro (codigo_tesouro, nome, ativo)VALUES(? ,? , ?)`, [codigo, nome, 'S'], (err, results) => {
+        connection.query(`INSERT tesouro (codigo_tesouro, nome, ativo, last_update)VALUES(? ,? , ?, '1111-11-11')`, [codigo, nome, ativo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -482,7 +486,7 @@ const ModelsInsertTreasure = async (codigo: any, nome: any) => {
 
 const ModelsInsertHistoricoTreasure = async (codigo: any, dataTime: any, valor: any) => {
     return new Promise((resolve, reject) => {
-        connection.query(`INSERT tesouro_valores ( tesouro_codigo , tesouro_data, tesouro_valor) VALUES (? ,? , ?)`, [codigo, dataTime, valor], (err, results) => {
+        connection.query(`INSERT IGNORE tesouro_valores ( tesouro_codigo , tesouro_data, tesouro_valor) VALUES (? ,? ,?)`, [codigo, dataTime, valor], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -493,9 +497,9 @@ const ModelsInsertHistoricoTreasure = async (codigo: any, dataTime: any, valor: 
 }
 
 const ModelsInsertGetTreasure = async (codigo: any, periodo: any) => {
-    let values: any;
+    let values: any = '';
     if (periodo != 0) {
-        values = ` AND YEAR(tesouro_data) = YEAR(CURRENT_DATE) - ${periodo}`; // Converte o array em uma string separada por vírgulas
+        values = ` AND tesouro_data >= DATE_SUB(CURRENT_DATE, INTERVAL ${periodo} YEAR) AND tesouro_data <= CURRENT_DATE`; // Converte o array em uma string separada por vírgulas
     }
 
     return new Promise((resolve, reject) => {
@@ -509,7 +513,34 @@ const ModelsInsertGetTreasure = async (codigo: any, periodo: any) => {
     });
 }
 
+const ModelsInsertGetTreasureNames = async () => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM tesouro ORDER BY nome ASC`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsUpdateTreasure = async (codigo: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE tesouro SET last_update=NOW() WHERE codigo_tesouro=?`,[codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsUpdateTreasure,
+    ModelsInsertGetTreasureNames,
     ModelsInsertGetTreasure,
     ModelsInsertHistoricoTreasure,
     ModelsInsertTreasure,

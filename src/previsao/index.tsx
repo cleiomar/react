@@ -9,11 +9,13 @@ import { removerFormatacaoNumero, formatoRealSemCifrao, calcularJurosCompostos, 
 import { Tab } from '@headlessui/react';
 import { Fragment } from 'react';
 import { DataTable } from 'mantine-datatable';
-import Select from 'react-select';
+import Select from 'react-select';    
+import { useTranslation } from 'react-i18next';
 
 const Previsao = () => {
 
-
+    
+    const { t } = useTranslation();
     const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
     const isDark = useSelector((state: IRootState) => state.themeConfig.theme === 'dark' || state.themeConfig.isDarkMode);
 
@@ -245,12 +247,12 @@ const Previsao = () => {
         <div><div className='titulo-page'>PREVISÃO</div>  
             <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
                 <li>
-                    <Link to="/components/tabs" className="text-primary hover:underline">
-                        Accounts
+                    <Link to="/" className="text-primary hover:underline">
+                    {t('Site')}
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Instagram</span>
+                    <span>Previsão</span>
                 </li>
             </ul>
 

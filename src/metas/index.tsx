@@ -2,23 +2,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, Fragment, useState } from 'react';
 import 'flatpickr/dist/flatpickr.css';
 import 'nouislider/distribute/nouislider.css';
-import Select from 'react-select';
 import 'flatpickr/dist/flatpickr.css';
-import { useLocation } from 'react-router-dom';
 import { removeCurrency, removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, calcularPorcentagem, calcularResto } from '../data/funcoes';
 import globalVars from '../data/global'
 import 'flatpickr/dist/flatpickr.css';
 import 'nouislider/distribute/nouislider.css';
 import ReactApexChart from 'react-apexcharts';
 import Metas from '../components/metas';
-import { parseJSON } from 'date-fns';
 import IconPlus from '../components/Icon/IconPlus';
 import IconMinus from '../components/Icon/IconMinus';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { useTranslation } from 'react-i18next';
 
 const Transacoes = () => {
-
+    
+    const { t } = useTranslation();
     const [value, setValue] = useState<any>(0);
     const [dataToSend, setDataToSend] = useState(100);
     const [porcentagemDisponivel, setPorcentagemDisponivel] = useState<any>(100);
@@ -315,12 +314,12 @@ const Transacoes = () => {
             <div className='titulo-page'>METAS</div>
             <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
                 <li>
-                    <Link to="/components/Patromonio" className="text-primary hover:underline">
-                        Accounts
+                    <Link to="/" className="text-primary hover:underline">
+                    {t('Site')}
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Instagram</span>
+                    <span>Metas</span>
                 </li>
             </ul>
 

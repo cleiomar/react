@@ -1,6 +1,6 @@
 
 
-async function fetchTreasure(codigo: any, nome: any): Promise<any> {
+async function fetchTreasure(codigo: any, nome: any, ativo: any): Promise<any> {
     console.log(codigo + '-' + nome)
     try {
         const response = await fetch('http://localhost:3000/insert_treasure', {
@@ -9,7 +9,7 @@ async function fetchTreasure(codigo: any, nome: any): Promise<any> {
                 'Content-Type': 'application/json', // Certifique-se de ajustar o tipo de conteúdo conforme necessário
                 // Adicione outros cabeçalhos conforme necessário
             },
-            body: JSON.stringify({ "codigo": codigo, "nome": nome }), // Converte os dados para o formato JSON
+            body: JSON.stringify({ "codigo": codigo, "nome": nome , "ativo": ativo }), // Converte os dados para o formato JSON
         });
 
         if (!response.ok) {
@@ -1929,6 +1929,7 @@ const nmValues = [];
 let index = 0;
 while (index < treasurybonds.response.TrsrBdTradgList.length) {
     const variavel = treasurybonds.response.TrsrBdTradgList[index];
-    fetchTreasure(variavel.TrsrBd.cd, variavel.TrsrBd.nm);
+        fetchTreasure(variavel.TrsrBd.cd, variavel.TrsrBd.nm, variavel.TrsrBd.semiAnulIntrstInd);
+
     index++;
 }

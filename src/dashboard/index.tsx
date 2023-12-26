@@ -22,6 +22,21 @@ type User = {
     ativo_valor: number;
 };
 
+interface Ativo {
+    setor: number;
+    subsetor: number;
+    segmento: number;
+    setor_nome: string;
+    subsetor_nome: string;
+    segmento_nome: string;
+    total: string;
+    valor_custo: string;
+  }
+  
+  interface MapaSoma {
+    [key: number]: { total: number; valor_custo: number; nome: string };
+  }
+
 const Dashboard = () => {
 
     const { t } = useTranslation();
@@ -107,7 +122,6 @@ const Dashboard = () => {
     }, []);
 
 
-
     const tickers = data.map(item => item.ativo_codigo);
     const multipliedValues = data.map(item => parseFloat((item.amount * item.price).toFixed(2)));
 
@@ -157,6 +171,19 @@ const Dashboard = () => {
                 type: 'donut',
                 zoom: {
                     enabled: false,
+                },
+                animations: {
+                    enabled: false,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
                 },
                 toolbar: {
                     show: false,
@@ -228,6 +255,19 @@ const Dashboard = () => {
                 type: 'donut',
                 zoom: {
                     enabled: false,
+                },
+                animations: {
+                    enabled: false,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
                 },
                 toolbar: {
                     show: false,
@@ -331,91 +371,108 @@ const Dashboard = () => {
     // }, []);
 
     const [acoes, setAcoes] = useState([]);
+    const [setores, setSetores] = useState([]);
 
     const getAtivos = async () => {
         try {
             const data = await fetch('http://localhost:3000/get_total_ativos/0');
             const response = await data.json();
             const dados = response.data;
-            const acoes = dados.map(row => ({"name":row.ativo_codigo, "categoria": row.categoria_prefixo, "additionalInfo": difference(row.historico_ativos_valor,row.price)+'%', color:difference(row.historico_ativos_valor,row.price), "data":row.total}));
+            const acoes = dados.map(row => ({ "name": row.ativo_codigo, "categoria": row.categoria_prefixo, "additionalInfo": difference(row.historico_ativos_valor, row.price) + '%', color: difference(row.historico_ativos_valor, row.price), "data": row.total }));
+            setSetores(dados);
             setAcoes(acoes);
         } catch (error) {
             console.error('Erro ao obter a lista de usuários:', error);
         }
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         getAtivos()
-   },[])
+    }, [])
 
-   const series = [{
-    data: acoes.map(item => ({
-      x: item.name,
-      y: Math.abs(item.data),
-      fillColor: item.color > 0 ? '#00AB55' : '#E7515A',
-      categoria: item.categoria,
-      additionalInfo: item.additionalInfo, // Adicionando informação adicional
-    })),
-  }];
+    const mapaSoma: MapaSoma = {};
+    setores.forEach((ativo: Ativo) => {
+        const { setor, subsetor, segmento, total, valor_custo, setor_nome, subsetor_nome, segmento_nome } = ativo;
+    
+        // Soma por setor
+        if (!mapaSoma[setor_nome]) {
+          mapaSoma[setor] = { total: 0, valor_custo: 0, nome: setor_nome };
+        }
+        mapaSoma[setor].total += parseFloat(total);
+    
+        // Soma por subsetor
+        if (!mapaSoma[subsetor]) {
+          mapaSoma[subsetor] = { total: 0, valor_custo: 0, nome: subsetor_nome };
+        }
+        mapaSoma[subsetor].total += parseFloat(total);
+    
+        // Soma por segmento
+        if (!mapaSoma[segmento]) {
+          mapaSoma[segmento] = { total: 0, valor_custo: 0, nome: segmento_nome  };
+        }
+        mapaSoma[segmento].total += parseFloat(total);
+      });
+      
+      console.log(mapaSoma)
+    const series = [{
+        data: acoes.map(item => ({
+            x: item.name,
+            y: Math.abs(item.data),
+            fillColor: item.color >= 0 ? '#00AB55' : '#E7515A',
+            categoria: item.categoria,
+            additionalInfo: item.additionalInfo, // Adicionando informação adicional
+        })),
+    }];
 
     // Opções do treemap
     const options = {
         chart: {
-          type: 'treemap',
+            type: 'treemap',
         },
         dataLabels: {
-          enabled: true,
-          style: {
-            fontSize: '12px',
-          },
-          formatter: function (val: number, opts: any) {
-            const { seriesIndex, dataPointIndex } = opts;
-            const { additionalInfo, name } = acoes[dataPointIndex];
-            return [name, additionalInfo];
-          },
-          offsetY: -4
+            enabled: true,
+            style: {
+                fontSize: '12px',
+            },
+            formatter: function (val: number, opts: any) {
+                const { seriesIndex, dataPointIndex } = opts;
+                const { additionalInfo, name } = acoes[dataPointIndex];
+                return [name, additionalInfo];
+            },
+            offsetY: -4
         },
         plotOptions: {
-          treemap: {
-            distributed: true,
-            enableShades: false,
-          },
+            treemap: {
+                distributed: true,
+                enableShades: false,
+            },
         },
-        title: {
-          text: 'Treemap de Ações',
+        // title: {
+        //     text: 'Treemap de Ações',
+        // },
+        toolbar: {
+            show: false,
         },
         tooltip: {
-          custom: ({ series, seriesIndex, dataPointIndex, w }) => {
-            const { name, categoria, additionalInfo } = acoes[dataPointIndex];
-            return (
-              `<div>
+            custom: ({ series, seriesIndex, dataPointIndex, w }) => {
+                const { name, categoria, additionalInfo } = acoes[dataPointIndex];
+                return (
+                    `<div>
                 <strong>${name}</strong><br/>
                 Categoria: ${categoria}<br/>
                 Hoje: ${additionalInfo}
               </div>`
-            );
-          },
+                );
+            },
         },
-      };
+    };
 
     return (
-        <div><div className='titulo-page'>DASHBOARD</div>
-            <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
-                <li>
-                    <Link to="/dashboard" className="text-primary hover:underline">
-                        {t('Site')}
-                    </Link>
-                </li>
-                <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Dashboard</span>
-                </li>
-            </ul>
-            <div className="panel">
-
-                {data.length > 0 ? (
-                    <div>
-                    <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1 mb-10 gap-6">
-                        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-2">
+        <div>
+            {data.length > 0 ? (
+                <div>
+                    <div className="grid 1xl:grid-cols-8 lg:grid-cols-8 sm:grid-cols-1 grid-cols-1 gap-6">
+                        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 xl:col-span-8">
                             {dataGroup.map((item, index) => {
                                 return (
                                     <center key={index}>
@@ -428,25 +485,47 @@ const Dashboard = () => {
                                 )
                             })}
                         </div>
-                        <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
-                        <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
-                        
+                        <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-8">
+                            <div className='panel'>
+                                <div className='subtitulo-page  '><center>CATEGORIAS</center></div>
+                                <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                            </div>
+                            <div className='panel'>
+                                <div className='subtitulo-page  '><center>ATIVOS</center></div>
+                                <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                            </div>
+                        </div>
+                        <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-8">
+                            <div className='panel'>
+                                <div className='subtitulo-page  '><center>SETOR</center></div>
+                                <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                            </div>
+                            <div className='panel'>
+                                <div className='subtitulo-page  '><center>SUBSETOR</center></div>
+                                <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                            </div>
+                            <div className='panel'>
+                                <div className='subtitulo-page  '><center>SEGMENTO</center></div>
+                                <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                            </div>
+                        </div>
+                        <div className='panel xl:col-span-8'>
+                            <ReactApexChart
+                                key={acoes}
+                                options={options}
+                                series={series}
+                                type="treemap"
+                                height={500}
+                            />
+                        </div>
                     </div>
-                    <ReactApexChart
-                    key={acoes}
-                            options={options}
-                            series={series}
-                            type="treemap"
-                            height={850}
-                        />
-                    </div>
-    
+                </div>
+
             ) : (
-            // Se os dados ainda não foram carregados, pode exibir um indicador de carregamento ou uma mensagem.
-            <div>Carregando...</div>
-                )}
+                // Se os dados ainda não foram carregados, pode exibir um indicador de carregamento ou uma mensagem.
+                <div>Carregando...</div>
+            )}
         </div>
-        </div >
     )
 
 };

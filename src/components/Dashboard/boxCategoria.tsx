@@ -32,9 +32,9 @@ const BoxCategoria = ({ css, nome, quantidade, valor }: BoxCategoriaProps) => {
 
     return (
         <>
-            <div className={`${css} float-left`} style={{ height: '80px' }}></div><div className='ml-5 subtitulo-valor3'>{capitalizeLetters(nome)}</div>
-            <div className='text-left pl-5 pt-1'>Quantidade de Ativos: <b>{quantidade}</b></div>
-            <div className='text-left pl-5 pt-1'>Valor Investido: <b>{renderizarConteudo('sensitivy-field', formatCurrency2(valor,1))}</b></div>
+            <div className={`${css} float-left`} style={{ height: '65px' }}></div><div className='ml-5 subtitulo-valor3'>{capitalizeLetters(nome)}</div>
+            <div className='text-left pl-3 pt-1'>Quantidade de Ativos: <b>{quantidade}</b></div>
+            <div className='text-left pl-3 pt-1'>Valor Investido: <b>{renderizarConteudo('sensitivy-field', formatCurrency2(valor,1))}</b></div>
         </>
     )
 }

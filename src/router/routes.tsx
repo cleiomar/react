@@ -6,7 +6,8 @@ const Nexus = lazy(() => import('../dashboard/'));
 const Transacoes = lazy(() => import('../transacoes'));
 const Patrimonio = lazy(() => import('../patrimonio'));
 const Metas = lazy(() => import('../metas'));
-
+const Acoes = lazy(() => import('../acoes'));
+const Acao = lazy(() => import('../acao'));
 const Error = lazy(() => import('../components/Error'));
 
 const routes = [
@@ -47,6 +48,14 @@ const routes = [
     {
         path: '/tesouro',
         element: <Tesouro />
+    },
+    {
+        path: '/acoes/',
+        element: <Acoes />
+    },
+    {
+        path: '/acoes   /:acao',
+        element: <Acao />
     },
 ];
 

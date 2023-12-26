@@ -44,7 +44,7 @@ const Categorias = ({ nome, quantidade, valor }: DashboardProps) => {
         return classeCss;
       }
     return (
-        <div className='panel h-100'>
+        <div className='panel p-2 h-50'>
             <BoxCategoria
                 nome={nome}
                 quantidade={quantidade}

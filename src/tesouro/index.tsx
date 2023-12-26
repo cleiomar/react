@@ -361,7 +361,7 @@ const Tesouro = () => {
             </ul>
 
             <div className="panel">
-                <div className="grid 1xl:grid-cols-7 lg:grid-cols-7 sm:grid-cols-7 grid-cols-1 gap-6 ">
+                <div className="grid 1xl:grid-cols-7 lg:grid-cols-7 sm:grid-cols-7 grid-cols-1 gap-6  custom-select">
                     <div className='text-sm xl:col-span-4 col-span-4 sm:col-span-4'></div>
                     <Select
                         className='text-sm xl:col-span-2 col-span-2 sm:col-span-2'

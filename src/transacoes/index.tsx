@@ -677,21 +677,21 @@ const Transacoes = () => {
               {
                 accessor: 'categoria_prefixo', title: 'Categoria',
                 render: ({ categoria_prefixo }) => ((categoria_prefixo == 'Ações') ?
-                  <><div className={`categoria-color-acoes float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                  <><div className={`categoria-color-acoes float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                   : (categoria_prefixo == 'FII') ?
-                    <><div className={`categoria-color-fii float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                    <><div className={`categoria-color-fii float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                     : (categoria_prefixo == 'FIAgro') ?
-                      <><div className={`categoria-color-fiagro float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                      <><div className={`categoria-color-fiagro float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                       : (categoria_prefixo == 'ETF Nacionais') ?
-                        <><div className={`categoria-color-etfn float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                        <><div className={`categoria-color-etfn float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                         : (categoria_prefixo == 'ETF Internacionais') ?
-                          <><div className={`categoria-color-etfi float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                          <><div className={`categoria-color-etfi float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                           : (categoria_prefixo == 'Criptomoedas') ?
-                            <><div className={`categoria-color-criptomoedas float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                            <><div className={`categoria-color-criptomoedas float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                             : (categoria_prefixo == 'Renda Fixa') ?
-                              <><div className={`categoria-color-fixa float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                              <><div className={`categoria-color-fixa float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                               : (categoria_prefixo == 'Caixa') ?
-                                <><div className={`categoria-color-caixa float-left`}></div><div className='ml-5'>{categoria_prefixo}</div></>
+                                <><div className={`categoria-color-caixa float-left`}></div><div className='ml-5 text-normal'>{categoria_prefixo}</div></>
                                 : <>Outro...</>
                 )
               },
@@ -701,7 +701,7 @@ const Transacoes = () => {
                 render: ({ ativo_codigo, id }) => (
                   <div className="flex items-center w-max">
                     {/* <img className="w-9 h-9 rounded-full ltr:mr-2 rtl:ml-2 object-cover" src={`/assets/images/profile-${id}.jpeg`} alt="" /> */}
-                    <div>{capitalizeLetters(ativo_codigo)}</div>
+                    <div className='text-normal'>{capitalizeLetters(ativo_codigo)}</div>
                   </div>
                 ),
               },
@@ -709,18 +709,19 @@ const Transacoes = () => {
                 accessor: 'tipo_ordem', title: 'Ordem',
                 render: ({ tipo_ordem_nome }) => (
                   tipo_ordem_nome === 'Compra' ? (
-                    <span className={`badge bg-success`}>Compra</span>
+                    <span className={`badge bg-success text-normal`}>Compra</span>
                   ) :
                     tipo_ordem_nome === 'Venda' ? (
-                      <span className={`badge bg-danger`}>Venda</span>
-                    ) : <span className={`badge bg-dark`}>Outro</span>
+                      <span className={`badge bg-danger text-normal`}>Venda</span>
+                    ) : <span className={`badge bg-dark text-normal`}>Outro</span>
                 )
               },
-              { accessor: 'broker_nome', title: 'Broker' },
+              { accessor: 'broker_nome', title: 'Broker',
+              render: ({ broker_nome }) => <div className='text-normal'>{broker_nome}</div> },
               {
                 accessor: 'negociacao',
                 title: 'Negociação',
-                render: ({ negociacao }) => <div>{formatDate(negociacao)}</div>,
+                render: ({ negociacao }) => <div className='text-normal'>{formatDate(negociacao)}</div>,
               },
               // {
               //   accessor: 'vencimento',
@@ -730,18 +731,18 @@ const Transacoes = () => {
               // },
               {
                 accessor: 'quantidade', title: 'Quantidade',
-                render: ({ quantidade }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', removeTrailingZeros(quantidade))}</div>,
+                render: ({ quantidade }) => <div className='sensitivy-field text-normal'>{renderizarConteudo('sensitivy-field', removeTrailingZeros(quantidade))}</div>,
               },
               {
                 accessor: 'preco', title: 'Preço',
-                render: ({ preco, ativo_moeda }) => <div className='sensitivy-field'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(preco), ativo_moeda))}</div>,
+                render: ({ preco, ativo_moeda }) => <div className='sensitivy-field text-normal'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(preco), ativo_moeda))}</div>,
               },
               {
                 accessor: 'total',
                 title: 'Total',
                 render: ({ total, ativo_moeda, tipo_ordem }) => (
 
-                  <><div className='sensitivy-field'>{(tipo_ordem === 8 || tipo_ordem === 5) ?
+                  <><div className='sensitivy-field text-normal'>{(tipo_ordem === 8 || tipo_ordem === 5) ?
                     renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda)) : renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(total), ativo_moeda))}</div></>
                 ),
               },

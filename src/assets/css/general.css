@@ -244,6 +244,10 @@
     font-size: 11px;
 }
 
+.text-normal {
+    font-size: 12px;
+}
+
 .w-100 {
     width: 100px;
 }
@@ -491,6 +495,11 @@
 .h-18 {
     height: 18px;
 }
+
+.h-50 {
+    height: 80px;
+}
+
 .ft-white{
     color: #FFF;
 }
@@ -501,4 +510,40 @@
 
 .ft-blue{
     color: #4361EE;
+}
+
+.ver_lista {
+    background-color: #e2a03f;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+}
+
+.text-gray {
+    color: #6d6d6d;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ft-xlarge {
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ft-large {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ft-micro {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ft-mini {
+    font-size: 9px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

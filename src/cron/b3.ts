@@ -1,4 +1,4 @@
-async function fetchUpdateDadosB3(ticker: any, valor: number): Promise<any> {
+async function fetchUpdateDadosB3(ticker: any, valor: number, logo: any): Promise<any> {
     try {
         const response = await fetch('http://localhost:3000/atualizar_dados_b3', {
             method: 'PUT',
@@ -6,7 +6,7 @@ async function fetchUpdateDadosB3(ticker: any, valor: number): Promise<any> {
                 'Content-Type': 'application/json', // Certifique-se de ajustar o tipo de conteúdo conforme necessário
                 // Adicione outros cabeçalhos conforme necessário
             },
-            body: JSON.stringify({ ticker: ticker, valor: valor }), // Converte os dados para o formato JSON
+            body: JSON.stringify({ ticker: ticker, valor: valor, logo: logo }), // Converte os dados para o formato JSON
         });
 
         if (!response.ok) {
@@ -27,7 +27,8 @@ const fetchDadosB3 = async (ticker) => {
         const data = await fetch('https://brapi.dev/api/quote/'+ticker+'?token=7fRjckesBySAepeEseSBg5');
         const responseArray = await data.json();
         const valor = responseArray.results[0].regularMarketPrice;
-        fetchUpdateDadosB3(ticker, valor)
+        const logo = responseArray.results[0].logourl;
+        fetchUpdateDadosB3(ticker, valor, logo)
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }

@@ -129,7 +129,7 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
         values = '';
     }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
+        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values} `, [id], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -215,24 +215,23 @@ const modelUpdateTransacao = async (categoria: string, corretora: string, ativo:
 }
 
 const ModelsTotalAtivos = async (type: string) => {
-    if(type === '0')
-    {
-        type='';
+    if (type === '0') {
+        type = '';
     }
     return new Promise(async (resolve, reject) => {
         let values = '';
         const results = await Promise.all([
             new Promise((resolve, reject) => {
-                connection.query(`SELECT ativos.*, ativos.ativos_id as id, lista_ativos.* FROM ativos, lista_ativos, cotacao WHERE lista_ativos.ativo_moeda=cotacao.cotacao_id AND ativos.ticker=lista_ativos.lista_ativos_id AND ativos.type LIKE CONCAT('%', ?, '%') ${values}`, [type], (err, results) => {
+                connection.query(`SELECT ativos.*, ativos.ativos_id as id, lista_ativos.*, setores.nome as setor_nome, subsetores.nome as subsetor_nome, segmentos.nome as segmentos_nome FROM ativos, lista_ativos, cotacao, setores, subsetores, segmentos WHERE setores.setores_id=lista_ativos.setor AND subsetores.subsetores_id=lista_ativos.subsetor AND segmentos.segmentos_id=lista_ativos.segmento AND lista_ativos.ativo_moeda=cotacao.cotacao_id AND ativos.ticker=lista_ativos.lista_ativos_id AND ativos.type LIKE CONCAT('%', ?, '%') ${values}`, [type], (err, results) => {
                     if (err) reject(err);
                     resolve(results);
                 });
             }),
             new Promise((resolve, reject) => {
-                connection.query(`SELECT lista_ativos.*, ativos.ativos_id as id, ativos.amount, ativos.*, categorias.categoria_prefixo, brokers.broker_nome, SUM(lista_ativos.ativo_valor * ativos.amount * cotacao.valor) AS total, SUM(ativos.preco_medio * ativos.amount * cotacao.valor) AS valor_custo,(SELECT historico_ativos_valor 
-                    FROM historico_ativos 
+                connection.query(`SELECT lista_ativos.*, ativos.ativos_id as id, setores.nome as setor_nome, subsetores.nome as subsetor_nome, segmentos.nome as segmento_nome, ativos.amount, ativos.*, categorias.categoria_prefixo, brokers.broker_nome, SUM(lista_ativos.ativo_valor * ativos.amount * cotacao.valor) AS total, SUM(ativos.preco_medio * ativos.amount * cotacao.valor) AS valor_custo,(SELECT historico_ativos_valor 
+                    FROM historico_ativos
                     WHERE historico_ativos.lista_ativos_id = lista_ativos.lista_ativos_id                
-               ORDER BY historico_ativos.historico_ativos_id DESC LIMIT 1) as historico_ativos_valor FROM lista_ativos, ativos, transacoes, categorias, cotacao, brokers WHERE lista_ativos.ativo_moeda = cotacao.cotacao_id AND ativos.ticker = lista_ativos.lista_ativos_id AND categorias.categoria_id = ativos.type AND transacoes.ativo = ativos.ticker AND brokers.broker_id = transacoes.broker AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY lista_ativos.lista_ativos_id, ativos.ativos_id, categorias.categoria_prefixo, brokers.broker_nome ORDER BY lista_ativos.lista_ativos_id ASC;`, [type], (err, results) => {
+               ORDER BY historico_ativos.historico_ativos_id DESC LIMIT 1) as historico_ativos_valor FROM lista_ativos, setores, subsetores, segmentos, ativos, transacoes, categorias, cotacao, brokers WHERE setores.setores_id=lista_ativos.setor AND subsetores.subsetores_id=lista_ativos.subsetor AND segmentos.segmentos_id=lista_ativos.segmento AND lista_ativos.ativo_moeda = cotacao.cotacao_id AND ativos.ticker = lista_ativos.lista_ativos_id AND categorias.categoria_id = ativos.type AND transacoes.ativo = ativos.ticker AND brokers.broker_id = transacoes.broker AND ativos.type LIKE CONCAT('%', ?, '%') GROUP BY lista_ativos.lista_ativos_id, ativos.ativos_id, categorias.categoria_prefixo, brokers.broker_nome ORDER BY lista_ativos.lista_ativos_id ASC;`, [type], (err, results) => {
                     if (err) reject(err);
                     resolve(results);
                 });
@@ -320,7 +319,7 @@ const ModelsDadosB3 = async (id: any) => {
     });
 }
 
-const modelUpdateDadosB3 = async (ticker: string, valor: number) => {
+const modelUpdateDadosB3 = async (ticker: string, valor: number, logo: any) => {
     return new Promise((resolve, reject) => {
         connection.beginTransaction((err) => {
             if (err) {
@@ -330,8 +329,8 @@ const modelUpdateDadosB3 = async (ticker: string, valor: number) => {
 
             // Primeiro UPDATE
             connection.query(
-                'UPDATE lista_ativos SET ativo_valor = ? WHERE ativo_codigo = ?',
-                [valor, ticker],
+                'UPDATE lista_ativos SET ativo_valor = ?, logo = ? WHERE ativo_codigo = ?',
+                [valor, logo, ticker],
                 (err, results) => {
                     if (err) {
                         connection.rollback(() => {
@@ -472,7 +471,7 @@ const ModelsCurrencyUpdate = async (currency: string, valor: number) => {
     });
 }
 
-const ModelsInsertTreasure = async (codigo: any, nome: any, ativo:any) => {
+const ModelsInsertTreasure = async (codigo: any, nome: any, ativo: any) => {
     return new Promise((resolve, reject) => {
         connection.query(`INSERT tesouro (codigo_tesouro, nome, ativo, last_update)VALUES(? ,? , ?, '1111-11-11')`, [codigo, nome, ativo], (err, results) => {
             if (err) {
@@ -525,10 +524,141 @@ const ModelsInsertGetTreasureNames = async () => {
     });
 }
 
-
 const ModelsUpdateTreasure = async (codigo: any) => {
     return new Promise((resolve, reject) => {
-        connection.query(`UPDATE tesouro SET last_update=NOW() WHERE codigo_tesouro=?`,[codigo], (err, results) => {
+        connection.query(`UPDATE tesouro SET last_update=NOW() WHERE codigo_tesouro=?`, [codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsGetListaIndicesB3 = async () => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM indices_b3 ORDER BY nome ASC`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsGetRankingIndicesB3 = async (indice: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT
+        lista_ativos.ativo_nome,
+        lista_ativos.logo,
+        indices_b3.indices_b3_id,
+        lista_ativos.ativo_valor,
+        ativos_indice_b3.ativo_codigo_b3,
+        (SELECT ((lista_ativos.ativo_valor - historico_ativos.historico_ativos_valor) / historico_ativos.historico_ativos_valor) * 100 AS diferenca_percentual FROM historico_ativos
+            WHERE historico_ativos.lista_ativos_id = lista_ativos.lista_ativos_id  GROUP BY historico_ativos.lista_ativos_id ORDER BY historico_ativos.historico_ativos_data DESC LIMIT 1) AS percentual,
+        (SELECT historico_ativos.historico_ativos_valor
+            FROM historico_ativos
+            WHERE historico_ativos.lista_ativos_id = lista_ativos.lista_ativos_id  GROUP BY historico_ativos.lista_ativos_id ORDER BY historico_ativos.historico_ativos_data DESC LIMIT 1) as historico_ativos_valor
+    FROM
+        indices_b3,
+        ativos_indice_b3,
+        lista_ativos
+    WHERE
+        indices_b3.indices_b3_id = ativos_indice_b3.indice_b3_id
+        AND lista_ativos.ativo_codigo = ativos_indice_b3.ativo_codigo_b3
+        AND ativos_indice_b3.indice_b3_id = ?
+        GROUP BY lista_ativos.ativo_codigo
+    ORDER BY
+        percentual ASC;`, [indice], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsUpdateEstatistica = async (codigo: any, min: any, max: any, atual: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE estatisticas SET minima=?, maxima=?, atual=? WHERE codigo=?`, [min, max, atual, codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsGetEstatisticas = async (codigo: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM estatisticas WHERE codigo=?`, [codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsSummaryProfile = async (ativo: string, address1: string, address2: string, city: string, state: string, zip: string, country: string, phone: string, website: string, industry: string, industryKey: string, industryDisp: string, sector: string, sectorKey: string, sectorDisp: string, longBusinessSummary: string, fullTimeEmployees: number, companyOfficers: any) => {
+    console.log(ativo)
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT INTO summaryprofile (
+            lista_ativos_id, 
+            address1, 
+            address2, 
+            city, 
+            state, 
+            zip, 
+            country, 
+            phone, 
+            website, 
+            industry, 
+            industryKey, 
+            industryDisp, 
+            sector, 
+            sectorKey, 
+            sectorDisp, 
+            longBusinessSummary, 
+            fullTimeEmployees, 
+            companyOfficers
+        )
+        VALUES (
+            (SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo = ?),
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+        )`, [ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertSetores = async (companyName: string, ticker: string, sectorName: string, subSectorName: string, segmentName: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT INTO db_setores (ativo_codigo, empresa, setor, subsetor, segmento)
+        VALUES (?, ?, ?, ?, ?)`, [ticker, companyName, sectorName, subSectorName, segmentName], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsUpdateFii = async ( sectorName: string, subSectorName: string, segmentName: string, ticker: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE lista_ativos SET setor=(SELECT setores_id FROM setores WHERE nome='${sectorName}'), subsetor=(SELECT subsetores_id FROM subsetores WHERE nome='${subSectorName}'), segmento=(SELECT segmentos_id FROM segmentos WHERE nome='${segmentName}') WHERE ativo_codigo='${ticker}'`, (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -539,6 +669,13 @@ const ModelsUpdateTreasure = async (codigo: any) => {
 }
 
 export {
+    ModelsUpdateFii,
+    ModelsInsertSetores,
+    ModelsSummaryProfile,
+    ModelsGetEstatisticas,
+    ModelsUpdateEstatistica,
+    ModelsGetRankingIndicesB3,
+    ModelsGetListaIndicesB3,
     ModelsUpdateTreasure,
     ModelsInsertGetTreasureNames,
     ModelsInsertGetTreasure,

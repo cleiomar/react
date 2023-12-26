@@ -1,5 +1,12 @@
 import express from 'express';
 import {
+  ControllerUpdateFii,
+  ControllerInsertSetores,
+  ControllerSummaryProfile,
+  ControllerGetEstatisticas,
+  ControllerUpdateEstatistica,
+  ControllerGetRankingIndicesB3,
+  ControllerGetListaIndicesB3,
   ControllerUpdateTreasure,
   ControllerGetTreasureNames,
   ControllerGetTreasure,
@@ -53,6 +60,10 @@ router.get('/transacao_id', ControllerGetTransacaoId);
 router.get('/ativo_moeda', ControllerGetAtivoMoeda);
 router.get('/treasure/:codigo/:periodo', ControllerGetTreasure);
 router.get('/treasure_names', ControllerGetTreasureNames);
+router.get('/lista_indices_b3', ControllerGetListaIndicesB3);
+router.get('/get_estatisticas/:codigo', ControllerGetEstatisticas);
+router.get('/get_lista_indice/:indice', ControllerGetRankingIndicesB3);
+router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
 router.delete('/delete_transacao', ControllerDeleteTransacao);
 router.put('/update_config', ControllerUpdateConfigs);
@@ -66,5 +77,8 @@ router.put('/currency_update', upload.none(), ControllerCurrencyUpdate);
 router.post('/insert_treasure', upload.none(), ControllerInsertTreasure);
 router.post('/insert_historico_treasure', upload.none(), ControllerInsertHistoricoTreasure);
 router.put('/update_treasure', ControllerUpdateTreasure);
+router.put('/update_estatistica', ControllerUpdateEstatistica);
+router.post('/summaryProfile', upload.none(), ControllerSummaryProfile);
+router.post('/update_fii', upload.none(), ControllerUpdateFii);
 
 export default router;

@@ -391,4 +391,5 @@ function dividirEmTresPartes(media, maiorValor) {
   return { variavel1, variavel2, variavel3 };
 }
 
+
 export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes}

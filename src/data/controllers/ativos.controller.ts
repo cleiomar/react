@@ -1,5 +1,12 @@
 import { Request, Response } from 'express';
 import {
+    serviceUpdateFii,
+    serviceInsertSetores,
+    serviceSummaryProfile,
+    serviceGetEstatisticas,
+    serviceUpdateEstatistica,
+    serviceGetRankingIndicesB3,
+    serviceGetListaIndicesB3,
     serviceUpdateTreasure,
     serviceGetTreasureNames,
     serviceGetTreasure,
@@ -30,6 +37,7 @@ import {
     serviceGetGroup,
     serviceGetAll,
   } from '../services/ativos.service';
+import { Console } from 'console';
 
 const getAllAtivos = async (req: Request, res: Response): Promise<void> => {
     const { type, graph } = req.params;
@@ -228,8 +236,9 @@ const ControllerUpdateDadosB3 = async (req: Request, res: Response): Promise<voi
     try {
         const ticker : any = req.body.ticker;
         const valor : any = req.body.valor;
+        const logo : any = req.body.logo;
         
-        const data = await serviceUpdateDadosB3(ticker, valor);
+        const data = await serviceUpdateDadosB3(ticker, valor, logo);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);
@@ -329,7 +338,6 @@ const ControllerInsertTreasure = async (req: Request, res: Response): Promise<vo
         const codigo : any = req.body.codigo;
         const nome : any = req.body.nome;
         const ativo : any = req.body.ativo;
-        console.log('teste');
         const data = await serviceInsertTreasure(codigo, nome, ativo);
        res.json(data);
     } catch (error) {
@@ -343,7 +351,6 @@ const ControllerInsertHistoricoTreasure = async (req: Request, res: Response): P
         const codigo : any = req.body.codigo;
         const dataTime : any = req.body.dataTime;
         const valor : any = req.body.valor;
-        console.log('teste');
         const data = await serviceInsertHistoricoTreasure(codigo, dataTime, valor);
        res.json(data);
     } catch (error) {
@@ -385,7 +392,97 @@ const ControllerUpdateTreasure = async (req: Request, res: Response): Promise<vo
     }
 };
 
+const ControllerGetListaIndicesB3 = async (req: Request, res: Response): Promise<void> => {
+    
+    try {
+        const data = await serviceGetListaIndicesB3();
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerGetRankingIndicesB3 = async (req: Request, res: Response): Promise<void> => {
+    const { indice } = req.params;
+    try {
+        const data = await serviceGetRankingIndicesB3(indice);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerUpdateEstatistica = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const codigo : any = req.body.codigo;
+        const min: any = req.body.min;
+        const max : any = req.body.max;
+        const atual : any = req.body.atual;
+        const data = await serviceUpdateEstatistica(codigo, min, max, atual);
+       res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerGetEstatisticas = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.params;
+    try {
+        const data = await serviceGetEstatisticas(codigo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerSummaryProfile = async (req: Request, res: Response): Promise<void> => {
+    const { ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers } = req.body;
+    console.log(ativo)
+    try {
+        const data = await serviceSummaryProfile(ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertSetores = async (req: Request, res: Response): Promise<void> => {
+    const { companyName, ticker, sectorName, subSectorName, segmentName} = req.body;
+    console.log(ticker)
+    try {
+        const data = await serviceInsertSetores(companyName, ticker, sectorName, subSectorName, segmentName);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerUpdateFii = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, sectorName, subSectorName, segmentName} = req.body;
+    try {
+        const data = await serviceUpdateFii(ticker, sectorName, subSectorName, segmentName);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerUpdateFii,
+    ControllerInsertSetores,
+    ControllerSummaryProfile,
+    ControllerGetEstatisticas,
+    ControllerUpdateEstatistica,
+    ControllerGetRankingIndicesB3,
+    ControllerGetListaIndicesB3,
     ControllerUpdateTreasure,
     ControllerGetTreasureNames,
     ControllerGetTreasure,

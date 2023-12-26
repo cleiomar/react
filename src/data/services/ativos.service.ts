@@ -1,6 +1,13 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsUpdateFii,
+    ModelsInsertSetores,
+    ModelsSummaryProfile,
+    ModelsGetEstatisticas,
+    ModelsUpdateEstatistica,
+    ModelsGetRankingIndicesB3,
+    ModelsGetListaIndicesB3,
     ModelsUpdateTreasure,
     ModelsInsertGetTreasureNames,
     ModelsInsertGetTreasure,
@@ -277,9 +284,9 @@ const serviceDadosB3 = async (id: string) => {
     }
 };
 
-const serviceUpdateDadosB3 = async (ticker: string, valor: number) => {
+const serviceUpdateDadosB3 = async (ticker: string, valor: number, logo: any) => {
      try {
-        const data: any = await modelUpdateDadosB3(ticker, valor);
+        const data: any = await modelUpdateDadosB3(ticker, valor, logo);
         if(data.affectedRows === 1){
             return {success: true, message:'Transação inserida com sucesso!' };                    
         }
@@ -432,7 +439,81 @@ const serviceUpdateTreasure = async (codigo: any) => {
     }
 };
 
+const serviceGetListaIndicesB3 = async () => {
+    try {
+        const data = await ModelsGetListaIndicesB3();
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetRankingIndicesB3 = async (indice: number) => {
+    try {
+        const data = await ModelsGetRankingIndicesB3(indice);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceUpdateEstatistica = async (codigo: any, min: any, max: any, atual: any) => {
+    try {
+        const data = await ModelsUpdateEstatistica(codigo, min, max, atual);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetEstatisticas = async (codigo: any) => {
+    try {
+        const data = await ModelsGetEstatisticas(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceSummaryProfile = async (ativo: string, address1: string, address2: string, city: string, state: string, zip: string, country: string, phone: string, website: string, industry: string, industryKey: string, industryDisp: string, sector: string, sectorKey: string, sectorDisp: string, longBusinessSummary: string, fullTimeEmployees: number, companyOfficers: any) => {
+    console.log(ativo)
+    try {
+        const data = await ModelsSummaryProfile(ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertSetores = async (companyName: string, ticker: string, sectorName: string, subSectorName: string, segmentName: string) => {
+    try {
+        const data = await ModelsInsertSetores(companyName, ticker, sectorName, subSectorName, segmentName);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceUpdateFii = async (ticker: string, sectorName: string, subSectorName: string, segmentName: string) => {
+    try {
+        const data = await ModelsUpdateFii(sectorName, subSectorName, segmentName, tickerf);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceUpdateFii,
+    serviceInsertSetores,
+    serviceSummaryProfile,
+    serviceGetEstatisticas,
+    serviceUpdateEstatistica,
+    serviceGetRankingIndicesB3,
+    serviceGetListaIndicesB3,
     serviceUpdateTreasure,
     serviceGetTreasureNames,
     serviceGetTreasure,

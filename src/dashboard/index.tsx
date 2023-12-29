@@ -31,11 +31,11 @@ interface Ativo {
     segmento_nome: string;
     total: string;
     valor_custo: string;
-  }
-  
-  interface MapaSoma {
-    [key: number]: { total: number; valor_custo: number; nome: string };
-  }
+}
+
+interface MapaSoma {
+    [key: number]: { total: number; nome: string };
+}
 
 const Dashboard = () => {
 
@@ -390,30 +390,290 @@ const Dashboard = () => {
         getAtivos()
     }, [])
 
-    const mapaSoma: MapaSoma = {};
+    const mapaSomaSetor: MapaSoma = {};
+    const mapaSomaSubsetor: MapaSoma = {};
+    const mapaSomaSegmento: MapaSoma = {};
     setores.forEach((ativo: Ativo) => {
-        const { setor, subsetor, segmento, total, valor_custo, setor_nome, subsetor_nome, segmento_nome } = ativo;
-    
+        const { setor, subsetor, segmento, total, setor_nome, subsetor_nome, segmento_nome } = ativo;
+
         // Soma por setor
-        if (!mapaSoma[setor_nome]) {
-          mapaSoma[setor] = { total: 0, valor_custo: 0, nome: setor_nome };
+        if (!mapaSomaSetor[setor]) {
+            mapaSomaSetor[setor] = { total: 0, nome: setor_nome };
         }
-        mapaSoma[setor].total += parseFloat(total);
-    
+        mapaSomaSetor[setor].total += parseFloat(total);
+
         // Soma por subsetor
-        if (!mapaSoma[subsetor]) {
-          mapaSoma[subsetor] = { total: 0, valor_custo: 0, nome: subsetor_nome };
+        if (!mapaSomaSubsetor[subsetor]) {
+            mapaSomaSubsetor[subsetor] = { total: 0, nome: subsetor_nome };
         }
-        mapaSoma[subsetor].total += parseFloat(total);
-    
+        mapaSomaSubsetor[subsetor].total += parseFloat(total);
+
         // Soma por segmento
-        if (!mapaSoma[segmento]) {
-          mapaSoma[segmento] = { total: 0, valor_custo: 0, nome: segmento_nome  };
+        if (!mapaSomaSegmento[segmento]) {
+            mapaSomaSegmento[segmento] = { total: 0, nome: segmento_nome };
         }
-        mapaSoma[segmento].total += parseFloat(total);
-      });
-      
-      console.log(mapaSoma)
+        mapaSomaSegmento[segmento].total += parseFloat(total);
+    });
+
+    const totalSetor = Object.values(mapaSomaSetor).map(item => item.total);
+    const nomeSetor = Object.values(mapaSomaSetor).map(item => item.nome);
+    const totalSubSetor = Object.values(mapaSomaSubsetor).map(item => item.total);
+    const nomeSubSetor = Object.values(mapaSomaSubsetor).map(item => item.nome);
+    const totalSegmento = Object.values(mapaSomaSegmento).map(item => item.total);
+    const nomeSegmento = Object.values(mapaSomaSegmento).map(item => item.nome);
+    console.log(totalSetor)
+    console.log(nomeSetor)
+
+    const donutChartSetor: any = {
+        series: totalSetor,
+        options: {
+            chart: {
+                height: 300,
+                type: 'donut',
+                zoom: {
+                    enabled: false,
+                },
+                animations: {
+                    enabled: false,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                show: true,
+            },
+            labels: nomeSetor,
+            dataLabels: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                textAnchor: 'middle',
+                distributed: false,
+                offsetX: 0,
+                offsetY: 0,
+            },
+            tooltip: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                shared: true,
+                followCursor: false,
+                intersect: false,
+                inverseOrder: false,
+                custom: undefined,
+                fillSeriesColor: true,
+                theme: true,
+                style: {
+                    fontSize: '12px',
+                    fontFamily: undefined
+                },
+                onDatasetHover: {
+                    highlightDataSeries: true,
+                },
+                y: tooltipConfig,
+                marker: {
+                    show: true,
+                },
+                fixed: {
+                    enabled: false,
+                    position: 'topRight',
+                    offsetX: 0,
+                    offsetY: 0,
+                },
+            },
+            colors: colorArray,
+            responsive: [
+                {
+                    breakpoint: 380,
+                    options: {
+                        chart: {
+                            width: 500,
+                        },
+                    },
+                },
+            ],
+            legend: {
+                position: 'bottom',
+            },
+        },
+    };
+
+
+    const donutChartSubSetor: any = {
+        series: totalSubSetor,
+        options: {
+            chart: {
+                height: 300,
+                type: 'donut',
+                zoom: {
+                    enabled: false,
+                },
+                animations: {
+                    enabled: false,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                show: true,
+            },
+            labels: nomeSubSetor,
+            dataLabels: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                textAnchor: 'middle',
+                distributed: false,
+                offsetX: 0,
+                offsetY: 0,
+            },
+            tooltip: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                shared: true,
+                followCursor: false,
+                intersect: false,
+                inverseOrder: false,
+                custom: undefined,
+                fillSeriesColor: true,
+                theme: true,
+                style: {
+                    fontSize: '12px',
+                    fontFamily: undefined
+                },
+                onDatasetHover: {
+                    highlightDataSeries: true,
+                },
+                y: tooltipConfig,
+                marker: {
+                    show: true,
+                },
+                fixed: {
+                    enabled: false,
+                    position: 'topRight',
+                    offsetX: 0,
+                    offsetY: 0,
+                },
+            },
+            colors: colorArray,
+            responsive: [
+                {
+                    breakpoint: 380,
+                    options: {
+                        chart: {
+                            width: 500,
+                        },
+                    },
+                },
+            ],
+            legend: {
+                position: 'bottom',
+            },
+        },
+    };
+
+    const donutChartSegmento: any = {
+        series: totalSegmento,
+        options: {
+            chart: {
+                height: 300,
+                type: 'donut',
+                zoom: {
+                    enabled: false,
+                },
+                animations: {
+                    enabled: false,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                show: true,
+            },
+            labels: nomeSegmento,
+            dataLabels: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                textAnchor: 'middle',
+                distributed: false,
+                offsetX: 0,
+                offsetY: 0,
+            },
+            tooltip: {
+                enabled: true,
+                enabledOnSeries: undefined,
+                shared: true,
+                followCursor: false,
+                intersect: false,
+                inverseOrder: false,
+                custom: undefined,
+                fillSeriesColor: true,
+                theme: true,
+                style: {
+                    fontSize: '12px',
+                    fontFamily: undefined
+                },
+                onDatasetHover: {
+                    highlightDataSeries: true,
+                },
+                y: tooltipConfig,
+                marker: {
+                    show: true,
+                },
+                fixed: {
+                    enabled: false,
+                    position: 'topRight',
+                    offsetX: 0,
+                    offsetY: 0,
+                },
+            },
+            colors: colorArray,
+            responsive: [
+                {
+                    breakpoint: 380,
+                    options: {
+                        chart: {
+                            width: 500,
+                        },
+                    },
+                },
+            ],
+            legend: {
+                position: 'bottom',
+            },
+        },
+    };
+
     const series = [{
         data: acoes.map(item => ({
             x: item.name,
@@ -485,7 +745,7 @@ const Dashboard = () => {
                                 )
                             })}
                         </div>
-                        <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-8">
+                        <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 xl:col-span-8">
                             <div className='panel'>
                                 <div className='subtitulo-page  '><center>CATEGORIAS</center></div>
                                 <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
@@ -498,15 +758,15 @@ const Dashboard = () => {
                         <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mb-10 gap-6 xl:col-span-8">
                             <div className='panel'>
                                 <div className='subtitulo-page  '><center>SETOR</center></div>
-                                <ReactApexChart key={ocultarDados + '1'} series={donutGroupChart.series} options={donutGroupChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                                <ReactApexChart key={ocultarDados + '1'} series={donutChartSetor.series} options={donutChartSetor.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="pie" height={700} />
                             </div>
                             <div className='panel'>
                                 <div className='subtitulo-page  '><center>SUBSETOR</center></div>
-                                <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                                <ReactApexChart key={ocultarDados + '2'} series={donutChartSubSetor.series} options={donutChartSubSetor.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="pie" height={700} />
                             </div>
                             <div className='panel'>
                                 <div className='subtitulo-page  '><center>SEGMENTO</center></div>
-                                <ReactApexChart key={ocultarDados + '2'} series={donutChart.series} options={donutChart.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="donut" height={700} />
+                                <ReactApexChart key={ocultarDados + '2'} series={donutChartSegmento.series} options={donutChartSegmento.options} className="rounded-lg bg-white dark:bg-black overflow-hidden" type="pie" height={700} />
                             </div>
                         </div>
                         <div className='panel xl:col-span-8'>

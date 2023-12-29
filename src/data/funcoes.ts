@@ -391,5 +391,27 @@ function dividirEmTresPartes(media, maiorValor) {
   return { variavel1, variavel2, variavel3 };
 }
 
+function obterDatasEmTimestamp() {
+  // Obter a data de hoje
+  const hoje = new Date();
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes}
+  // Obter a data de uma semana atrás
+  const umaSemanaAtras = new Date();
+  umaSemanaAtras.setDate(hoje.getDate() - 7);
+
+  // Converter as datas para timestamp
+  const timestampHoje = Math.floor(hoje.getTime() / 1000); // dividido por 1000 para converter para segundos
+  const timestampUmaSemanaAtras = Math.floor(umaSemanaAtras.getTime() / 1000);
+
+  return {
+      hoje: timestampHoje,
+      umaSemanaAtras: timestampUmaSemanaAtras
+  };
+}
+
+function timestampToDate(timestamp) {
+  const date = new Date(timestamp);
+  let data = date.toLocaleDateString('pt-BR')
+  return data;
+}
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate}

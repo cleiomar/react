@@ -54,7 +54,7 @@ const routes = [
         element: <Acoes />
     },
     {
-        path: '/acoes   /:acao',
+        path: '/acoes/:acao',
         element: <Acao />
     },
 ];

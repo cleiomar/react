@@ -1,5 +1,14 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetCotacao,
+    serviceInsertHistoricalDataPrice,
+    serviceInsertSubscriptions,
+    serviceInsertStockDividends,
+    serviceInsertCashDividends,
+    serviceInsertFinancialData,
+    serviceInsertDefaultKeyStatistics,
+    serviceInsertBalanceSheetHistory,
+    serviceInsertBalanceSheet,
     serviceUpdateFii,
     serviceInsertSetores,
     serviceSummaryProfile,
@@ -475,7 +484,124 @@ const ControllerUpdateFii = async (req: Request, res: Response): Promise<void> =
     }
 };
 
+
+const ControllerInsertBalanceSheet = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+    } = req.body;
+    try {
+        const data = await serviceInsertBalanceSheet(ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+            );
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertBalanceSheetHistory = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+    } = req.body;
+    try {
+        const data = await serviceInsertBalanceSheetHistory(ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+            );
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerInsertDefaultKeyStatistics = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, priceHint, enterpriseValue, forwardPE, profitMargins, floatShares, sharesOutstanding, heldPercentInsiders, heldPercentInstitutions, beta, impliedSharesOutstanding, category, bookValue, priceToBook, fundFamily, legalType, lastFiscalYearEnd, nextFiscalYearEnd, mostRecentQuarter, earningsQuarterlyGrowth, netIncomeToCommon, trailingEps, forwardEps, pegRatio, lastSplitFactor, lastSplitDate, enterpriseToRevenue, enterpriseToEbitda, FiftyTwoWeekChange, SandP52WeekChange, lastDividendValue, lastDividendDate} = req.body;
+    try {
+        const data = await serviceInsertDefaultKeyStatistics(ticker, priceHint, enterpriseValue, forwardPE, profitMargins, floatShares, sharesOutstanding, heldPercentInsiders, heldPercentInstitutions, beta, impliedSharesOutstanding, category, bookValue, priceToBook, fundFamily, legalType, lastFiscalYearEnd, nextFiscalYearEnd, mostRecentQuarter, earningsQuarterlyGrowth, netIncomeToCommon, trailingEps, forwardEps, pegRatio, lastSplitFactor, lastSplitDate, enterpriseToRevenue, enterpriseToEbitda, FiftyTwoWeekChange, SandP52WeekChange, lastDividendValue, lastDividendDate);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertFinancialData = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, currentPrice, targetHighPrice, targetLowPrice, targetMeanPrice, targetMedianPrice, recommendationMean, recommendationKey, numberOfAnalystOpinions, totalCash, totalCashPerShare, ebitda, totalDebt, quickRatio, currentRatio, totalRevenue, debtToEquity, revenuePerShare, returnOnAssets, returnOnEquity, grossProfits, freeCashflow, operatingCashflow, earningsGrowth, revenueGrowth, grossMargins, ebitdaMargins, operatingMargins, profitMargins, financialCurrency} = req.body;
+    try {
+        const data = await serviceInsertFinancialData(ticker, currentPrice, targetHighPrice, targetLowPrice, targetMeanPrice, targetMedianPrice, recommendationMean, recommendationKey, numberOfAnalystOpinions, totalCash, totalCashPerShare, ebitda, totalDebt, quickRatio, currentRatio, totalRevenue, debtToEquity, revenuePerShare, returnOnAssets, returnOnEquity, grossProfits, freeCashflow, operatingCashflow, earningsGrowth, revenueGrowth, grossMargins, ebitdaMargins, operatingMargins, profitMargins, financialCurrency);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerInsertCashDividends = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks} = req.body;
+    try {
+        const data = await serviceInsertCashDividends(ticker, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerInsertStockDividends = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, assetIssued, factor, approvedOn, isinCode, label, lastDatePrior, remarks} = req.body;
+    try {
+        const data = await serviceInsertStockDividends(ticker, assetIssued, factor, approvedOn, isinCode, label, lastDatePrior, remarks);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerInsertSubscriptions = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, assetIssued, percentage, priceUnit, tradingPeriod, subscriptionDate, approvedOn, isinCode, label, lastDatePrior, remarks} = req.body;
+    try {
+        const data = await serviceInsertSubscriptions(ticker, assetIssued, percentage, priceUnit, tradingPeriod, subscriptionDate, approvedOn, isinCode, label, lastDatePrior, remarks);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerInsertHistoricalDataPrice = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, date, open, high, low, close, volume, adjustedClose } = req.body;
+    try {
+        const data = await serviceInsertHistoricalDataPrice(ticker, date, open, high, low, close, volume, adjustedClose);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+const ControllerGetCotacao = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, periodo } = req.params;
+    try {
+        const data = await serviceGetCotacao(ticker, periodo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerGetCotacao,
+    ControllerInsertHistoricalDataPrice,
+    ControllerInsertSubscriptions,
+    ControllerInsertStockDividends,
+    ControllerInsertCashDividends,
+    ControllerInsertFinancialData,
+    ControllerInsertDefaultKeyStatistics,
+    ControllerInsertBalanceSheetHistory,
+    ControllerInsertBalanceSheet,
     ControllerUpdateFii,
     ControllerInsertSetores,
     ControllerSummaryProfile,

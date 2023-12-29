@@ -606,9 +606,8 @@ const ModelsGetEstatisticas = async (codigo: any) => {
 }
 
 const ModelsSummaryProfile = async (ativo: string, address1: string, address2: string, city: string, state: string, zip: string, country: string, phone: string, website: string, industry: string, industryKey: string, industryDisp: string, sector: string, sectorKey: string, sectorDisp: string, longBusinessSummary: string, fullTimeEmployees: number, companyOfficers: any) => {
-    console.log(ativo)
     return new Promise((resolve, reject) => {
-        connection.query(`INSERT INTO summaryprofile (
+        connection.query(`INSERT IGNORE INTO summaryprofile (
             lista_ativos_id, 
             address1, 
             address2, 
@@ -668,7 +667,162 @@ const ModelsUpdateFii = async ( sectorName: string, subSectorName: string, segme
     });
 }
 
+
+const ModelsInsertBalanceSheet = async (ticker: string, endDate: string, cash: number, shortTermInvestments: number, netReceivables: number, inventory: number, otherCurrentAssets: number, totalCurrentAssets: number, longTermInvestments: number, propertyPlantEquipment: number, goodWill: number, intangibleAssets: number, otherAssets: number, deferredLongTermAssetCharges: number, totalAssets: number, accountsPayable: number, shortLongTermDebt: number, otherCurrentLiab: number, longTermDebt: number, otherLiab: number, minorityInterest: number, totalCurrentLiabilities: number, totalLiab: number, commonStock: number, retainedEarnings: number, treasuryStock: number, otherStockholderEquity: number, totalStockholderEquity: number, netTangibleAssets: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO balancesheet (lista_ativos_id, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${endDate}', '${cash}', '${shortTermInvestments}', '${netReceivables}', '${inventory}', '${otherCurrentAssets}', '${totalCurrentAssets}', '${longTermInvestments}', '${propertyPlantEquipment}', '${goodWill}', '${intangibleAssets}', '${otherAssets}', '${deferredLongTermAssetCharges}', '${totalAssets}', '${accountsPayable}', '${shortLongTermDebt}', '${otherCurrentLiab}', '${longTermDebt}', '${otherLiab}', '${minorityInterest}', '${totalCurrentLiabilities}', '${totalLiab}', '${commonStock}', '${retainedEarnings}', '${treasuryStock}', '${otherStockholderEquity}', '${totalStockholderEquity}', '${netTangibleAssets}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertBalanceSheetHistory = async (ticker: string, endDate: string, cash: number, shortTermInvestments: number, netReceivables: number, inventory: number, otherCurrentAssets: number, totalCurrentAssets: number, longTermInvestments: number, propertyPlantEquipment: number, goodWill: number, intangibleAssets: number, otherAssets: number, deferredLongTermAssetCharges: number, totalAssets: number, accountsPayable: number, shortLongTermDebt: number, otherCurrentLiab: number, longTermDebt: number, otherLiab: number, minorityInterest: number, totalCurrentLiabilities: number, totalLiab: number, commonStock: number, retainedEarnings: number, treasuryStock: number, otherStockholderEquity: number, totalStockholderEquity: number, netTangibleAssets: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO balancesheethistory (lista_ativos_id, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${endDate}', '${cash}', '${shortTermInvestments}', '${netReceivables}', '${inventory}', '${otherCurrentAssets}', '${totalCurrentAssets}', '${longTermInvestments}', '${propertyPlantEquipment}', '${goodWill}', '${intangibleAssets}', '${otherAssets}', '${deferredLongTermAssetCharges}', '${totalAssets}', '${accountsPayable}', '${shortLongTermDebt}', '${otherCurrentLiab}', '${longTermDebt}', '${otherLiab}', '${minorityInterest}', '${totalCurrentLiabilities}', '${totalLiab}', '${commonStock}', '${retainedEarnings}', '${treasuryStock}', '${otherStockholderEquity}', '${totalStockholderEquity}', '${netTangibleAssets}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertDefaultKeyStatistics = async (ticker: string, priceHint: number, enterpriseValue: number, forwardPE: number, profitMargins: number, floatShares: number, sharesOutstanding: number, heldPercentInsiders: number, heldPercentInstitutions: number, beta: number, impliedSharesOutstanding: number, category: number, bookValue: number, priceToBook: number, fundFamily: number, legalType: number, lastFiscalYearEnd: string, nextFiscalYearEnd: string, mostRecentQuarter: string, earningsQuarterlyGrowth: number, netIncomeToCommon: number, trailingEps: number, forwardEps: number, pegRatio: number, lastSplitFactor: string, lastSplitDate: number, enterpriseToRevenue: number, enterpriseToEbitda: number, FiftyTwoWeekChange: number, SandPFiftyTwoWeekChange: number, lastDividendValue: number, lastDividendDate: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO defaultkeystatistics (lista_ativos_id, priceHint, enterpriseValue, forwardPE, profitMargins, floatShares, sharesOutstanding, heldPercentInsiders, heldPercentInstitutions, beta, impliedSharesOutstanding, category, bookValue, priceToBook, fundFamily, legalType, lastFiscalYearEnd, nextFiscalYearEnd, mostRecentQuarter, earningsQuarterlyGrowth, netIncomeToCommon, trailingEps, forwardEps, pegRatio, lastSplitFactor, lastSplitDate, enterpriseToRevenue, enterpriseToEbitda, FiftyTwoWeekChange, SandP52WeekChange, lastDividendValue, lastDividendDate) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${priceHint}', '${enterpriseValue}', '${forwardPE}', '${profitMargins}', '${floatShares}', '${sharesOutstanding}', '${heldPercentInsiders}', '${heldPercentInstitutions}', '${beta}', '${impliedSharesOutstanding}', '${category}', '${bookValue}', '${priceToBook}', '${fundFamily}', '${legalType}', '${lastFiscalYearEnd}', '${nextFiscalYearEnd}', '${mostRecentQuarter}', '${earningsQuarterlyGrowth}', '${netIncomeToCommon}', '${trailingEps}', '${forwardEps}', '${pegRatio}', '${lastSplitFactor}', '${lastSplitDate}', '${enterpriseToRevenue}', '${enterpriseToEbitda}', '${FiftyTwoWeekChange}', '${SandPFiftyTwoWeekChange}', '${lastDividendValue}', '${lastDividendDate}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertFinancialData = async (ticker: string, currentPrice: number, targetHighPrice: number, targetLowPrice: number, targetMeanPrice: number, targetMedianPrice: number, recommendationMean: number, recommendationKey: string, numberOfAnalystOpinions: number, totalCash: number, totalCashPerShare: number, ebitda: number, totalDebt: number, quickRatio: number, currentRatio: number, totalRevenue: number, debtToEquity: number, revenuePerShare: number, returnOnAssets: number, returnOnEquity: number, grossProfits: number, freeCashflow: number, operatingCashflow: number, earningsGrowth: number, revenueGrowth: number, grossMargins: number, ebitdaMargins: number, operatingMargins: number, profitMargins: number, financialCurrency: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO financialdata (lista_ativos_id, currentPrice, targetHighPrice, targetLowPrice, targetMeanPrice, targetMedianPrice, recommendationMean, recommendationKey, numberOfAnalystOpinions, totalCash, totalCashPerShare, ebitda, totalDebt, quickRatio, currentRatio, totalRevenue, debtToEquity, revenuePerShare, returnOnAssets, returnOnEquity, grossProfits, freeCashflow, operatingCashflow, earningsGrowth, revenueGrowth, grossMargins, ebitdaMargins, operatingMargins, profitMargins, financialCurrency) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${currentPrice}', '${targetHighPrice}', '${targetLowPrice}', '${targetMeanPrice}', '${targetMedianPrice}', '${recommendationMean}', '${recommendationKey}', '${numberOfAnalystOpinions}', '${totalCash}', '${totalCashPerShare}', '${ebitda}', '${totalDebt}', '${quickRatio}', '${currentRatio}', '${totalRevenue}', '${debtToEquity}', '${revenuePerShare}', '${returnOnAssets}', '${returnOnEquity}', '${grossProfits}', '${freeCashflow}', '${operatingCashflow}', '${earningsGrowth}', '${revenueGrowth}', '${grossMargins}', '${ebitdaMargins}', '${operatingMargins}', '${profitMargins}', '${financialCurrency}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertCashDividends = async (ticker: string, assetIssued: string, paymentDate: string, rate: number, relatedTo: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO cashdividends (lista_ativos_id, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${paymentDate}', '${rate}', '${relatedTo}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsInsertStockDividends = async (ticker: string, assetIssued: string, factor: number, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO stockdividends (lista_ativos_id, assetIssued, factor, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${factor}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertSubscriptions = async (ticker: string, assetIssued: string, percentage: number, priceUnit: number, tradingPeriod: string, subscriptionDate: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO subscriptions (lista_ativos_id, assetIssued, percentage, priceUnit, tradingPeriod, subscriptionDate, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${percentage}', '${priceUnit}', '${tradingPeriod}', '${subscriptionDate}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertHistoricalDataPrice = async (ticker: string, date: number, open: number, high: number, low: number, close: number, volume: number, adjustedClose: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO historicaldataprice (lista_ativos_id, date, open, high, low, close, volume, adjustedClose) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${date}', '${open}', '${high}', '${low}', '${close}', '${volume}', '${adjustedClose}')`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsGetCotacao = async (ticker: string, periodo: number) => {
+    let period: any;
+    if(periodo == 1)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)`;
+    }
+    else if(periodo == 2)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)`;
+    }
+    else if(periodo == 3)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)`;
+    }
+    else if(periodo == 4)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)`;
+    }
+    else if(periodo == 5)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR)`;
+    }
+    else if(periodo == 6)
+    {
+        period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 10 YEAR)`;
+    }
+    else
+    {
+        period = ``;
+    }
+
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT *, FROM_UNIXTIME(date) AS data FROM historicaldataprice WHERE close!=0 ${period}`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsGetCotacao,
+    ModelsInsertHistoricalDataPrice,
+    ModelsInsertSubscriptions,
+    ModelsInsertStockDividends,
+    ModelsInsertCashDividends,
+    ModelsInsertFinancialData,
+    ModelsInsertDefaultKeyStatistics,
+    ModelsInsertBalanceSheetHistory,
+    ModelsInsertBalanceSheet,
     ModelsUpdateFii,
     ModelsInsertSetores,
     ModelsSummaryProfile,

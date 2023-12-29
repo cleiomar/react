@@ -1,5 +1,14 @@
 import express from 'express';
 import {
+  ControllerGetCotacao,
+  ControllerInsertHistoricalDataPrice,
+  ControllerInsertSubscriptions,
+  ControllerInsertStockDividends,
+  ControllerInsertCashDividends,
+  ControllerInsertFinancialData,
+  ControllerInsertDefaultKeyStatistics,
+  ControllerInsertBalanceSheetHistory,
+  ControllerInsertBalanceSheet,
   ControllerUpdateFii,
   ControllerInsertSetores,
   ControllerSummaryProfile,
@@ -62,6 +71,7 @@ router.get('/treasure/:codigo/:periodo', ControllerGetTreasure);
 router.get('/treasure_names', ControllerGetTreasureNames);
 router.get('/lista_indices_b3', ControllerGetListaIndicesB3);
 router.get('/get_estatisticas/:codigo', ControllerGetEstatisticas);
+router.get('/cotacao/:ativo/:periodo', ControllerGetCotacao);
 router.get('/get_lista_indice/:indice', ControllerGetRankingIndicesB3);
 router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
@@ -80,5 +90,13 @@ router.put('/update_treasure', ControllerUpdateTreasure);
 router.put('/update_estatistica', ControllerUpdateEstatistica);
 router.post('/summaryProfile', upload.none(), ControllerSummaryProfile);
 router.post('/update_fii', upload.none(), ControllerUpdateFii);
+router.post('/balance_sheet_statements', upload.none(), ControllerInsertBalanceSheet);
+router.post('/balance_sheet_history', upload.none(), ControllerInsertBalanceSheetHistory);
+router.post('/default_key_statistics', upload.none(), ControllerInsertDefaultKeyStatistics);
+router.post('/financialdata', upload.none(), ControllerInsertFinancialData);
+router.post('/cashdividends', upload.none(), ControllerInsertCashDividends);
+router.post('/stockdividends', upload.none(), ControllerInsertStockDividends);
+router.post('/subscriptions', upload.none(), ControllerInsertSubscriptions);
+router.post('/historicaldataprice', upload.none(), ControllerInsertHistoricalDataPrice);
 
 export default router;

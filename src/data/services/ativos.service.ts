@@ -1,6 +1,15 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetCotacao,
+    ModelsInsertHistoricalDataPrice,
+    ModelsInsertSubscriptions,
+    ModelsInsertStockDividends,
+    ModelsInsertCashDividends,
+    ModelsInsertFinancialData,
+    ModelsInsertDefaultKeyStatistics,
+    ModelsInsertBalanceSheetHistory,
+    ModelsInsertBalanceSheet,
     ModelsUpdateFii,
     ModelsInsertSetores,
     ModelsSummaryProfile,
@@ -499,7 +508,98 @@ const serviceInsertSetores = async (companyName: string, ticker: string, sectorN
 
 const serviceUpdateFii = async (ticker: string, sectorName: string, subSectorName: string, segmentName: string) => {
     try {
-        const data = await ModelsUpdateFii(sectorName, subSectorName, segmentName, tickerf);
+        const data = await ModelsUpdateFii(sectorName, subSectorName, segmentName, ticker);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertBalanceSheet = async (ticker: string, endDate: string, cash: number, shortTermInvestments: number, netReceivables: number, inventory: number, otherCurrentAssets: number, totalCurrentAssets: number, longTermInvestments: number, propertyPlantEquipment: number, goodWill: number, intangibleAssets: number, otherAssets: number, deferredLongTermAssetCharges: number, totalAssets: number, accountsPayable: number, shortLongTermDebt: number, otherCurrentLiab: number, longTermDebt: number, otherLiab: number, minorityInterest: number, totalCurrentLiabilities: number, totalLiab: number, commonStock: number, retainedEarnings: number, treasuryStock: number, otherStockholderEquity: number, totalStockholderEquity: number, netTangibleAssets: number) => {
+    try {
+        const data = await ModelsInsertBalanceSheet(ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+            );
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertBalanceSheetHistory = async (ticker: string, endDate: string, cash: number, shortTermInvestments: number, netReceivables: number, inventory: number, otherCurrentAssets: number, totalCurrentAssets: number, longTermInvestments: number, propertyPlantEquipment: number, goodWill: number, intangibleAssets: number, otherAssets: number, deferredLongTermAssetCharges: number, totalAssets: number, accountsPayable: number, shortLongTermDebt: number, otherCurrentLiab: number, longTermDebt: number, otherLiab: number, minorityInterest: number, totalCurrentLiabilities: number, totalLiab: number, commonStock: number, retainedEarnings: number, treasuryStock: number, otherStockholderEquity: number, totalStockholderEquity: number, netTangibleAssets: number) => {
+    try {
+        const data = await ModelsInsertBalanceSheetHistory(ticker, endDate, cash, shortTermInvestments, netReceivables, inventory, otherCurrentAssets, totalCurrentAssets, longTermInvestments, propertyPlantEquipment, goodWill, intangibleAssets, otherAssets, deferredLongTermAssetCharges, totalAssets, accountsPayable, shortLongTermDebt, otherCurrentLiab, longTermDebt, otherLiab, minorityInterest, totalCurrentLiabilities, totalLiab, commonStock, retainedEarnings, treasuryStock, otherStockholderEquity, totalStockholderEquity, netTangibleAssets
+            );
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertDefaultKeyStatistics = async (ticker: string, priceHint: number, enterpriseValue: number, forwardPE: number, profitMargins: number, floatShares: number, sharesOutstanding: number, heldPercentInsiders: number, heldPercentInstitutions: number, beta: number, impliedSharesOutstanding: number, category: number, bookValue: number, priceToBook: number, fundFamily: number, legalType: number, lastFiscalYearEnd: string, nextFiscalYearEnd: string, mostRecentQuarter: string, earningsQuarterlyGrowth: number, netIncomeToCommon: number, trailingEps: number, forwardEps: number, pegRatio: number, lastSplitFactor: string, lastSplitDate: number, enterpriseToRevenue: number, enterpriseToEbitda: number, FiftyTwoWeekChange: number, SandP52WeekChange: number, lastDividendValue: number, lastDividendDate: string) => {
+    try {
+        const data = await ModelsInsertDefaultKeyStatistics(ticker, priceHint, enterpriseValue, forwardPE, profitMargins, floatShares, sharesOutstanding, heldPercentInsiders, heldPercentInstitutions, beta, impliedSharesOutstanding, category, bookValue, priceToBook, fundFamily, legalType, lastFiscalYearEnd, nextFiscalYearEnd, mostRecentQuarter, earningsQuarterlyGrowth, netIncomeToCommon, trailingEps, forwardEps, pegRatio, lastSplitFactor, lastSplitDate, enterpriseToRevenue, enterpriseToEbitda, FiftyTwoWeekChange, SandP52WeekChange, lastDividendValue, lastDividendDate);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertFinancialData = async (ticker: string, currentPrice: number, targetHighPrice: number, targetLowPrice: number, targetMeanPrice: number, targetMedianPrice: number, recommendationMean: number, recommendationKey: string, numberOfAnalystOpinions: number, totalCash: number, totalCashPerShare: number, ebitda: number, totalDebt: number, quickRatio: number, currentRatio: number, totalRevenue: number, debtToEquity: number, revenuePerShare: number, returnOnAssets: number, returnOnEquity: number, grossProfits: number, freeCashflow: number, operatingCashflow: number, earningsGrowth: number, revenueGrowth: number, grossMargins: number, ebitdaMargins: number, operatingMargins: number, profitMargins: number, financialCurrency: string) => {
+    try {
+        const data = await ModelsInsertFinancialData(ticker, currentPrice, targetHighPrice, targetLowPrice, targetMeanPrice, targetMedianPrice, recommendationMean, recommendationKey, numberOfAnalystOpinions, totalCash, totalCashPerShare, ebitda, totalDebt, quickRatio, currentRatio, totalRevenue, debtToEquity, revenuePerShare, returnOnAssets, returnOnEquity, grossProfits, freeCashflow, operatingCashflow, earningsGrowth, revenueGrowth, grossMargins, ebitdaMargins, operatingMargins, profitMargins, financialCurrency);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertCashDividends = async (ticker: string, assetIssued: string, paymentDate: string, rate: number, relatedTo: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    try {
+        const data = await ModelsInsertCashDividends(ticker, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertStockDividends = async (ticker: string, assetIssued: string, factor: number, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    try {
+        const data = await ModelsInsertStockDividends(ticker, assetIssued, factor, approvedOn, isinCode, label, lastDatePrior, remarks);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertSubscriptions = async (ticker: string, assetIssued: string, percentage: number, priceUnit: number, tradingPeriod: string, subscriptionDate: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    try {
+        const data = await ModelsInsertSubscriptions(ticker, assetIssued, percentage, priceUnit, tradingPeriod, subscriptionDate, approvedOn, isinCode, label, lastDatePrior, remarks);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertHistoricalDataPrice = async (ticker: string, date: number, open: number, high: number, low: number, close: number, volume: number, adjustedClose: number) => {
+    try {
+        const data = await ModelsInsertHistoricalDataPrice(ticker, date, open, high, low, close, volume, adjustedClose);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetCotacao = async (ticker: string, periodo: number) => {
+    try {
+        const data = await ModelsGetCotacao(ticker, periodo);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador
@@ -507,6 +607,15 @@ const serviceUpdateFii = async (ticker: string, sectorName: string, subSectorNam
 };
 
 export {
+    serviceGetCotacao,
+    serviceInsertHistoricalDataPrice,
+    serviceInsertSubscriptions,
+    serviceInsertStockDividends,
+    serviceInsertCashDividends,
+    serviceInsertFinancialData,
+    serviceInsertDefaultKeyStatistics,
+    serviceInsertBalanceSheetHistory,
+    serviceInsertBalanceSheet,
     serviceUpdateFii,
     serviceInsertSetores,
     serviceSummaryProfile,

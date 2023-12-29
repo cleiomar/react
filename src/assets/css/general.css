@@ -248,6 +248,10 @@
     font-size: 12px;
 }
 
+.w-70px {
+    width: 70px;
+}
+
 .w-100 {
     width: 100px;
 }
@@ -436,6 +440,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.subtitulo-valor4 {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .subtitulo-valor2 {
     font-size: 20px;
     font-weight: normal;
@@ -513,6 +523,14 @@
 }
 
 .ver_lista {
+    background-color: #e2a03f;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+}
+
+.bg-orange {
     background-color: #e2a03f;
     font-size: 14px;
     font-weight: normal;

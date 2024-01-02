@@ -1,6 +1,7 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetAtivo,
     ModelsGetCotacao,
     ModelsInsertHistoricalDataPrice,
     ModelsInsertSubscriptions,
@@ -606,7 +607,18 @@ const serviceGetCotacao = async (ticker: string, periodo: number) => {
     }
 };
 
+
+const serviceGetAtivo = async (ticker: string) => {
+    try {
+        const data = await ModelsGetAtivo(ticker);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetAtivo,
     serviceGetCotacao,
     serviceInsertHistoricalDataPrice,
     serviceInsertSubscriptions,

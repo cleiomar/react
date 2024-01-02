@@ -414,4 +414,23 @@ function timestampToDate(timestamp) {
   let data = date.toLocaleDateString('pt-BR')
   return data;
 }
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate}
+
+function calcularCorPorcentagem(percentage) {
+  // Cores da gradiente
+  const cores = [
+      "#7a9a01", "#939d00", "#ac9f00", "#c5a000", "#dea000",
+      "#ea9812", "#f59021", "#ff882f", "#fd793c", "#f86a47",
+      "#f15d51", "#e7515a"
+  ];
+
+  // Garante que a porcentagem está no intervalo [0, 100]
+  const porcentagemClamp = Math.min(100, Math.max(0, percentage));
+
+  // Calcula o índice da cor na gradiente
+  const indiceCor = Math.round((porcentagemClamp / 100) * (cores.length - 1));
+
+  // Retorna a cor correspondente
+  return cores[indiceCor];
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem}

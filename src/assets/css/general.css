@@ -334,6 +334,11 @@
     overflow-y: auto;
 }
 
+.hg-60 {
+    height: 120px;
+    overflow-y: auto;
+}
+
 .totalBox {
     width: 115%;
     height: 80px;
@@ -503,7 +508,7 @@
 }
 
 .h-18 {
-    height: 18px;
+    height: 16px;
 }
 
 .h-50 {
@@ -520,6 +525,10 @@
 
 .ft-blue{
     color: #4361EE;
+}
+
+.ft-black{
+    color: #000000;
 }
 
 .ver_lista {
@@ -565,3 +574,55 @@
     font-size: 9px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.carteira{
+    background-image: linear-gradient(to right, #7a9a01, #939d00, #ac9f00, #c5a000, #dea000, #ea9812, #f59021, #ff882f, #fd793c, #f86a47, #f15d51, #e7515a);
+}
+
+.base {
+    display: inline-block;
+    height: 25px;
+    color: #fff;
+    border-radius: 0.5rem;
+    margin-top: 10px;
+    position:absolute;
+    width: 80px;
+  }
+ .base:before {
+    border-bottom: 7px solid;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    border-bottom-color: inherit;
+    height: 0;
+    left: 40%;
+    position: absolute;
+    top: -5px;
+    width: 0;
+  }
+
+  @media (max-width: 1250px) {
+
+    .base {
+        display: inline-block;
+        height: 25px;
+        color: #fff;
+        border-radius: 0.5rem;
+        left: 30px;
+        margin-top: 10px;
+        position:absolute;
+        width: 80px;
+      }
+     .base:before {
+        border-bottom: 7px solid;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        content: "";
+        height: 0;
+        left: 40%;
+        border-bottom-color: inherit;
+        position: absolute;
+        top: -5px;
+        width: 0;
+      }
+  }

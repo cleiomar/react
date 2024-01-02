@@ -1,24 +1,17 @@
-import { Link, useNavigate } from 'react-router-dom';
-import React, { KeyboardEvent, ChangeEvent } from 'react';
-import { DataTable, DataTableSortStatus } from 'mantine-datatable';
-import { useEffect, Fragment, useState } from 'react';
-import Dropdown from '../components/Dropdown';
-import IconPlus from '../components/Icon/IconPlus';
-import { Dialog, Transition } from '@headlessui/react';
-import IconX from '../components/Icon/IconX';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Select from 'react-select';
-import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
 import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
 import 'nouislider/distribute/nouislider.css';
-import { timestampToDate, formatCurrency } from '../data/funcoes';
-import globalVars from '../data/global'
+import { timestampToDate, formatCurrency, calcularCorPorcentagem } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
 import ReactApexChart from 'react-apexcharts';
-
+import Tippy from "@tippyjs/react";
+import Indicadores from '../components/acao/indicadores';
 
 const Acao = () => {
   const { t } = useTranslation();
@@ -28,35 +21,59 @@ const Acao = () => {
 
   const [selectedOptionPeriodo, setSelectedOptionPeriodo] = useState([]);
   const SelectChangePeriodo = (selectedOptionPeriodo) => {
-    get_data(acao,selectedOptionPeriodo.value);
+    get_data(acao, selectedOptionPeriodo.value);
     setSelectedOptionPeriodo(selectedOptionPeriodo)
   };
 
   const isDark = useSelector((state: IRootState) => state.themeConfig.theme === 'dark' || state.themeConfig.isDarkMode);
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
   const colorCategorias = ["#e7515a", "#00ab55", "#0c60bb", "#43efbc", "#ef7817", "#ab0000", "#008fab", "#d2d212"];
-  
+
   useEffect(() => {
     setSelectedOptionPeriodo({ value: '', label: 'Selecionar...' })
   }, [])
 
   const [data, setData] = useState([]);
   const get_data = async (stock, periodo) => {
-    const result = await fetch('http://localhost:3000/cotacao/'+stock+'/'+periodo);
+    const result = await fetch('http://localhost:3000/cotacao/' + stock + '/' + periodo);
     const data = await result.json();
     setData(data);
-}
-    useEffect(() => {
-      get_data(acao,1);
-    }, []);
+  }
+  useEffect(() => {
+    get_data(acao, 1);
+  }, []);
 
-  const cotacao = data.map(item => item.close);  
+
+  const [tamanhoTela, setTamanhoTela] = useState({
+    largura: window.innerWidth,
+    altura: window.innerHeight,
+  });
+  const [volatilidadeAcao, setVolatilidadeAcao] = useState(0);
+  const [volatilidadeIndice, setVolatilidadeIndice] = useState(0);
+  const [indiceNome, setIndiceNome] = useState('');
+  const cotacao = data.map(item => item.close);
   const cotacaoData = data.map(item => timestampToDate(item.data));
+
+  const [dados, setDados] = useState([]);
+  const get_dados = async (stock) => {
+    const result = await fetch('http://localhost:3000/ativo/' + stock);
+    const [data] = await result.json();
+    setDados(data);
+    tamanhoTela.largura <= 600 ? setVolatilidadeAcao(data.volatilidade * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeAcao(data.volatilidade * 0.85) : setVolatilidadeAcao(data.volatilidade * 0.9))
+    tamanhoTela.largura <= 600 ? setVolatilidadeIndice(data.ibov * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeIndice(data.ibov * 0.85) : setVolatilidadeIndice(data.ibov * 0.9))
+    setIndiceNome('IBOV')
+  }
+  useEffect(() => {
+    get_dados(acao);
+  }, []);
+
+
+
   const revenueChart: any = {
     series: [{
       name: acao,
       data: cotacao
-  }],
+    }],
     options: {
       chart: {
         height: 325,
@@ -89,9 +106,9 @@ const Acao = () => {
       },
       colors: isDark ? colorCategorias : colorCategorias,
       labels: cotacaoData,
-      xaxis: {        
-      tickAmount: 8,
-      tickPlacement: 'between',
+      xaxis: {
+        tickAmount: 8,
+        tickPlacement: 'between',
         axisBorder: {
           show: true,
         },
@@ -104,7 +121,7 @@ const Acao = () => {
         labels: {
           offsetX: isRtl ? 2 : 0,
           offsetY: 5,
-          
+
           style: {
             fontSize: '12px',
             rotate: -10,
@@ -196,10 +213,8 @@ const Acao = () => {
           </Link>
         </li>
         <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-          <Link to="/" className="text-primary hover:underline">
-            <Link to="/acoes" className="text-primary hover:underline">
-              {t('Acoes')}
-            </Link>
+          <Link to="/acoes" className="text-primary hover:underline">
+            {t('Acoes')}
           </Link>
         </li>
         <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
@@ -259,8 +274,7 @@ const Acao = () => {
       </div>
       <div className='panel mt-6'>
         <div className="grid 1xl:grid-cols-6 lg:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-6">
-          <div className='mt-3'>COTAÇÃO DO {acao}</div>
-          <div></div>
+          <div className='flex mt-3 xl:col-span-2'><img src={dados.logo} height={40} width={40} /><span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO DO {acao}</div></span></div>
           <div></div>
           <div></div>
           <div className='flex justify-end xl:col-span-2'>
@@ -276,7 +290,87 @@ const Acao = () => {
         </div>
         <ReactApexChart series={revenueChart.series} options={revenueChart.options} type="area" height={550} />
       </div>
-      <div className='panel mt-5'></div>
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'>VOLATILIDADE 12 MESES</div>
+        <div className='flex pt-4'>
+          <div><img src='../src/assets/images/snoring-icon.svg' width={35} className='mt-1 pr-1'></img></div>
+          <div className='carteira w-full' style={{ height: '5px', backgroundColor: '#eeeeee', marginTop: '20px' }}>
+            <div className='base pt-1 ft-micro' style={{ marginLeft: `${volatilidadeAcao}%`, marginTop: '-30px', transform: 'rotate(180deg)', backgroundColor: calcularCorPorcentagem(volatilidadeAcao), borderBottom: calcularCorPorcentagem(volatilidadeAcao) }}><center style={{ transform: 'rotate(180deg)' }}>{acao}</center></div>
+            <div className='base pt-1 ft-micro' style={{ marginLeft: `${volatilidadeIndice}%`, marginTop: '10px', backgroundColor: calcularCorPorcentagem(volatilidadeIndice), borderBottom: calcularCorPorcentagem(volatilidadeIndice) }}><center>{indiceNome}</center></div>
+          </div>
+
+          <div><img src='../src/assets/images/burning-house.svg' width={40} style={{ color: '#eeeeee' }} className='float-right pb-5'></img></div>
+        </div>
+      </div>
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'>INDICADORES {acao}</div>
+        <div className='mt-3'>INDICADORES DE VALUATION</div>
+        <ul className="ltr:md:ml-auto rtl:md:mr-auto grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 font-semibold divide-x ltr:divide-x-reverse divide-[#ebedf2] dark:divide-[#253b5c] text-white-dark mt-5 sm:mt-0">
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+        </ul>
+      </div>
     </div>
 
   );

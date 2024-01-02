@@ -813,7 +813,22 @@ const ModelsGetCotacao = async (ticker: string, periodo: number) => {
     });
 }
 
+
+const ModelsGetAtivo = async (ticker: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT *,(SELECT volatilidade FROM indices_b3 WHERE codigo='IBOV') as ibov FROM lista_ativos WHERE ativo_codigo=?`,[ticker], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
 export {
+    ModelsGetAtivo,
     ModelsGetCotacao,
     ModelsInsertHistoricalDataPrice,
     ModelsInsertSubscriptions,

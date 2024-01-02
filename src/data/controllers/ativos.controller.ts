@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetAtivo,
     serviceGetCotacao,
     serviceInsertHistoricalDataPrice,
     serviceInsertSubscriptions,
@@ -592,7 +593,20 @@ const ControllerGetCotacao = async (req: Request, res: Response): Promise<void> 
     }
 };
 
+
+const ControllerGetAtivo = async (req: Request, res: Response): Promise<void> => {
+    const { ticker } = req.params;
+    try {
+        const data = await serviceGetAtivo(ticker);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerGetAtivo,
     ControllerGetCotacao,
     ControllerInsertHistoricalDataPrice,
     ControllerInsertSubscriptions,

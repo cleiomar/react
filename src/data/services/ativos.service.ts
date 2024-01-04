@@ -1,6 +1,7 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetProventos,
     ModelsGetAtivo,
     ModelsGetCotacao,
     ModelsInsertHistoricalDataPrice,
@@ -617,7 +618,18 @@ const serviceGetAtivo = async (ticker: string) => {
     }
 };
 
+
+const serviceGetProventos = async (codigo: string) => {
+    try {
+        const data = await ModelsGetProventos(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetProventos,
     serviceGetAtivo,
     serviceGetCotacao,
     serviceInsertHistoricalDataPrice,

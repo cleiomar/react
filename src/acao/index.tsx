@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
 import ReactApexChart from 'react-apexcharts';
 import Tippy from "@tippyjs/react";
+import 'tippy.js/dist/tippy.css';
 import Indicadores from '../components/acao/indicadores';
 
 const Acao = () => {
@@ -64,10 +65,73 @@ const Acao = () => {
     setIndiceNome('IBOV')
   }
   useEffect(() => {
+    getDadosProventos(acao)
     get_dados(acao);
   }, []);
 
 
+  function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
+
+  // const generateData = (count, { min, max }) => {
+  //   // Implemente a lógica de geração de dados aqui
+  //   // Substitua esta função com a lógica específica necessária
+  //   return shuffle([5, 8, 9, 7, 5, 2, 8, 9, 7, 5, 2, 5]);
+  // };
+
+  // const seriesData = Array.from({ length: 11 }, (_, index) => ({
+  //   name: `${2014 + index}`,
+  //   data: generateData(18, { min: 0, max: 90 }),
+  // }));
+
+  // const options = {
+  //   chart: {
+  //     height: 350,
+  //     type: 'heatmap',
+  //   },
+  //   dataLabels: {
+  //     enabled: false,
+  //   },
+  //   colors: ["#008FFB"],
+  //   xaxis: {
+  //     title: {
+  //       text: 'Meses',
+  //       style: {
+  //         fontSize: '14px',
+  //         fontWeight: 'bold',
+  //         fontFamily: 'Arial, sans-serif',
+  //         color: '#333',
+  //       },
+  //     },
+  //     categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  //   },
+  //   yaxis: {
+  //     title: {
+  //       text: 'Ano',
+  //       style: {
+  //         fontSize: '14px',
+  //         fontWeight: 'bold',
+  //         fontFamily: 'Arial, sans-serif',
+  //         color: '#333',
+  //       },
+  //     },
+  //   },
+  // };
 
   const revenueChart: any = {
     series: [{
@@ -86,6 +150,29 @@ const Acao = () => {
         toolbar: {
           show: true,
         },
+        xaxis: {
+          tickAmount: 8,
+          tickPlacement: 'between',
+          axisBorder: {
+            show: true,
+          },
+          axisTicks: {
+            show: true,
+          },
+          crosshairs: {
+            show: true,
+          },
+          labels: {
+            offsetX: isRtl ? 2 : 0,
+            offsetY: 5,
+
+            style: {
+              fontSize: '12px',
+              rotate: -10,
+              cssClass: 'apexcharts-xaxis-title',
+            },
+          },
+        }
       },
 
       dataLabels: {
@@ -151,13 +238,14 @@ const Acao = () => {
       },
       grid: {
         borderColor: isDark ? '#191E3A' : '#E0E6ED',
-        strokeDashArray: 5,
+        strokeDashArray: 12,
         xaxis: {
           lines: {
             show: true,
           },
         },
         yaxis: {
+          tickAmount: 12,
           lines: {
             show: false,
           },
@@ -203,6 +291,48 @@ const Acao = () => {
       },
     },
   };
+
+
+  function getRandomBinary() {
+    return Math.round(Math.random());
+  }
+  let array = Array.from({ length: 120 }, getRandomBinary);
+
+
+
+  function dataExisteNoArray(dataProcurada, arrayDeDatas) {
+    // Verifica se a data está no array
+    return arrayDeDatas.includes(dataProcurada);
+  }
+
+  const [dadosProventos, setDadosProventos] = useState([]);
+  const getDadosProventos = async (stock) => {
+    const data = await fetch('http://localhost:3000/proventos/' + stock)
+    const response = await data.json();
+    const datas = response.map(item => item.datas);    
+    setDadosProventos(datas);
+  }
+  
+  const anoAtual = new Date().getFullYear();
+  const anos:Array<any> = [];
+  const percentual = new Array(13).fill(0);
+  // Criar o array
+  const anosEMeses = [];
+  // Loop para os últimos 10 anos
+  for (let ano = anoAtual; ano > anoAtual - 10; ano--) {
+    // Loop para os 12 meses
+    anos.push(ano);
+    for (let mes = 1; mes <= 12; mes++) {
+      let existe=0;
+      if (dataExisteNoArray(mes + '-' + ano, dadosProventos)) {
+        existe = 1;
+        percentual[mes]++;
+      } else {
+        existe = 0;
+      }
+      anosEMeses.push(existe);
+    }
+  }
 
   return (
     <div><div className='titulo-page'>AÇÕES</div>
@@ -304,8 +434,8 @@ const Acao = () => {
       </div>
       <div className='panel mt-5'>
         <div className='subtitulo-page'>INDICADORES {acao}</div>
-        <div className='mt-3'>INDICADORES DE VALUATION</div>
-        <ul className="ltr:md:ml-auto rtl:md:mr-auto grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 font-semibold divide-x ltr:divide-x-reverse divide-[#ebedf2] dark:divide-[#253b5c] text-white-dark mt-5 sm:mt-0">
+        <div className='mt-3 mb-5'><b>INDICADORES DE VALUATION</b></div>
+        <ul className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-7 font-semibold text-white-dark sm:mt-0 gap-6">
           <Indicadores
             indicador='Market Cap'
             info='$22.9B'
@@ -370,6 +500,159 @@ const Acao = () => {
             info='$22.9B'
           />
         </ul>
+      </div>
+      <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div className='panel mt-5'>
+          <div className='mt-3 mb-5'><b>INDICADORES DE EFICIÊNCIA</b></div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+          </ul>
+        </div>
+        <div className='panel mt-5'>
+          <div className='mt-3 mb-5'><b>INDICADORES DE RENTABILIDADE</b></div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+
+          </ul>
+        </div>
+        <div className='panel mt-5'>
+          <div className='mt-3 mb-5'><b>INDICADORES DE CRESCIMENTO</b></div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+            <Indicadores
+              indicador='Market Cap'
+              info='$22.9B'
+            />
+
+          </ul>
+        </div>
+      </div>
+      <div className='panel mt-5'>
+        <div className='mt-3 mb-5'><b>INDICADORES DE ENDIVIDAMENTO</b></div>
+        <ul className="grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 font-semibold text-white-dark sm:mt-0 gap-6">
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+
+          <Indicadores
+            indicador='Market Cap'
+            info='$22.9B'
+          />
+        </ul>
+      </div>
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'>MAPA DE PROVENTOS {acao}</div>
+        <div className='w-full overflow-auto'>
+          <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-12 grid-cols-12 gap-6 mt-5 w-min800 w-full">
+            <div>
+              <div><center><b><br></br></b></center></div>
+              <div><center><b>ANO</b></center></div>
+              {anos.map((item, index) => {
+                return (
+                  <div key={index} className='mt-2'><center>{item}</center></div>
+                )
+              })}
+            </div>
+            <div className='xl:col-span-11 col-span-11'>
+              <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-12 grid-cols-12 text-center">
+              <div className='xl:col-span-12  col-span-12'><b>MESES DO ANO</b></div>
+                <div><b>Janeiro</b></div>
+                <div><b>Fevereiro</b></div>
+                <div><b>Março</b></div>
+                <div><b>Abril</b></div>
+                <div><b>Maio</b></div>
+                <div><b>Junho</b></div>
+                <div><b>Julho</b></div>
+                <div><b>Agosto</b></div>
+                <div><b>Setembro</b></div>
+                <div><b>Outubro</b></div>
+                <div><b>Novembro</b></div>
+                <div className='mb-1'><b>Dezembro</b></div>
+
+                {anosEMeses.map((item, index) => {
+                  return (
+                    (item === 1) ? <div  key={index} className='bg-proventos'></div> : <div className='bg-proventos-none'></div>
+                  )
+                })}
+                <div>{percentual['1']*10}%</div>
+                <div>{percentual['2']*10}%</div>
+                <div>{percentual['3']*10}%</div>
+                <div>{percentual['4']*10}%</div>
+                <div>{percentual['5']*10}%</div>
+                <div>{percentual['6']*10}%</div>
+                <div>{percentual['7']*10}%</div>
+                <div>{percentual['8']*10}%</div>
+                <div>{percentual['9']*10}%</div>
+                <div>{percentual['10']*10}%</div>
+                <div>{percentual['11']*10}%</div>
+                <div className='mb-1'>{percentual['12']*10}%</div>
+              <div className='xl:col-span-12  col-span-12'><b>PERCENTUAL DOS MESES COM PROVENTOS</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <ReactApexChart options={options} series={seriesData} type="heatmap" height={350} /> */}
       </div>
     </div>
 

@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react";
+import 'tippy.js/dist/tippy.css';
 import Swal from 'sweetalert2';
 
 interface IndicadoresProps {
@@ -32,7 +33,7 @@ const Indicadores = ({ indicador, info }: IndicadoresProps) => {
     return (
         
             <>
-            <li className="px-4 py-1 mt-5 border dark:shadow-dark p-5"><div>
+            <li className="px-4 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
                 <div className="p-5">
                     <div><b>{indicador}</b>
                     <Tippy trigger="mouseenter focus" content="Indicador">

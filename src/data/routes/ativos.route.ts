@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  ControllerGetProventos,
   ControllerGetAtivo,
   ControllerGetCotacao,
   ControllerInsertHistoricalDataPrice,
@@ -75,6 +76,7 @@ router.get('/lista_indices_b3', ControllerGetListaIndicesB3);
 router.get('/get_estatisticas/:codigo', ControllerGetEstatisticas);
 router.get('/cotacao/:ativo/:periodo', ControllerGetCotacao);
 router.get('/get_lista_indice/:indice', ControllerGetRankingIndicesB3);
+router.get('/proventos/:codigo', ControllerGetProventos);
 router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
 router.delete('/delete_transacao', ControllerDeleteTransacao);

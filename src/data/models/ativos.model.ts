@@ -827,7 +827,21 @@ const ModelsGetAtivo = async (ticker: string) => {
 }
 
 
+const ModelsGetProventos = async (codigo: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT CONCAT(MONTH(paymentDate),'-', YEAR(paymentDate)) as datas FROM cashdividends GROUP BY MONTH(paymentDate), YEAR(paymentDate)`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
 export {
+    ModelsGetProventos,
     ModelsGetAtivo,
     ModelsGetCotacao,
     ModelsInsertHistoricalDataPrice,

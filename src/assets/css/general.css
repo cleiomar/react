@@ -325,6 +325,11 @@
     width: 800px;
 }
 
+.w-min800 {
+    min-width: 1200px;
+    overflow-x: auto;
+}
+
 .w-600 {
     width: 600px;
 }
@@ -577,6 +582,22 @@
 
 .carteira{
     background-image: linear-gradient(to right, #7a9a01, #939d00, #ac9f00, #c5a000, #dea000, #ea9812, #f59021, #ff882f, #fd793c, #f86a47, #f15d51, #e7515a);
+}
+
+.bg-proventos{
+    background-color: #60a718;
+    border-color: #FFFFFF;
+    height: 28px;
+    color: #FFFFFF;
+    border-width: 2px;
+}
+
+.bg-proventos-none{
+    background-color: #e3ffe6;
+    border-color: #FFFFFF;
+    height: 28px;
+    color: #FFFFFF;
+    border-width: 2px;
 }
 
 .base {

@@ -5,7 +5,7 @@ import 'flatpickr/dist/flatpickr.css';
 import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
 import 'nouislider/distribute/nouislider.css';
-import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimos60Meses, mesNome, getLast60Months } from '../data/funcoes';
+import { timestampToDate, formatCurrency, calcularCorPorcentagem, obterTrimestre } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
@@ -55,18 +55,6 @@ const Acao = () => {
   const cotacao = data.map(item => item.close);
   const cotacaoData = data.map(item => timestampToDate(item.data));
 
-
-
-  const [dadosProventos, setDadosProventos] = useState([]);
-  const [dadosProventosValor, setDadosProventosValor] = useState([]);
-  const getDadosProventos = async (stock) => {
-    const data = await fetch('http://localhost:3000/proventos/' + stock)
-    const response = await data.json();
-    const datas = response.map(item => item.datas);
-    setDadosProventos(datas);
-    setDadosProventosValor(response);
-  }
-
   const [dados, setDados] = useState([]);
   const get_dados = async (stock) => {
     const result = await fetch('http://localhost:3000/ativo/' + stock);
@@ -76,30 +64,9 @@ const Acao = () => {
     tamanhoTela.largura <= 600 ? setVolatilidadeIndice(data.ibov * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeIndice(data.ibov * 0.85) : setVolatilidadeIndice(data.ibov * 0.9))
     setIndiceNome('IBOV')
   }
-
-  const [ultimos5Anos, setUltimos5Anos] = useState([])
-  const [seriesData, setSeriesData] = useState([])
   useEffect(() => {
     getDadosProventos(acao)
     get_dados(acao);
-    const ultimos5Anoss = ultimos60Meses();
-    const dados = getLast60Months();
-    setSeriesData(dados);
-    setUltimos5Anos(ultimos5Anoss);
-    console.log(seriesData)
-
-  let novo = seriesData;
-  for (let i = 0; i < seriesData.length; i++) {
-    const element1 = seriesData[i];
-
-    const match = dadosProventosValor.find(element2 => element2.datas === element1.x);
-    if (match) {
-      novo[i].y = match.soma;
-    }
-  }
-    //console.log(seriesData)
-    //setSeriesData(novo)
-    //console.log(novo)
   }, []);
 
 
@@ -284,7 +251,31 @@ const Acao = () => {
   const chartData = {
     series: [{
       name: "sales",
-      data: seriesData
+      data: [{
+        x: '01-2019',
+        y: 400
+      }, {
+        x: '04-2019',
+        y: 430
+      }, {
+        x: '07-2019',
+        y: 448
+      }, {
+        x: '10-2019',
+        y: 470
+      }, {
+        x: '01-2020',
+        y: 540
+      }, {
+        x: '04-2020',
+        y: 580
+      }, {
+        x: '07-2020',
+        y: 690
+      }, {
+        x: '10-2020',
+        y: 690
+      }]
     }],
     options: {
       chart: {
@@ -295,7 +286,7 @@ const Acao = () => {
         type: 'category',
         labels: {
           formatter: function (val) {
-            return mesNome(val)
+            return obterTrimestre(val) + 'º Trimestre'
           }
         },
         group: {
@@ -303,7 +294,10 @@ const Acao = () => {
             fontSize: '10px',
             fontWeight: 700
           },
-          groups: ultimos5Anos
+          groups: [
+            { title: '2019', cols: 4 },
+            { title: '2020', cols: 4 }
+          ]
         }
       },
       title: {
@@ -312,7 +306,7 @@ const Acao = () => {
       tooltip: {
         x: {
           formatter: function (val) {
-            return mesNome(val)
+            return obterTrimestre(val) + 'º Trimestre'
           }
         }
       },
@@ -327,7 +321,16 @@ const Acao = () => {
 
 
   function dataExisteNoArray(dataProcurada, arrayDeDatas) {
+    // Verifica se a data está no array
     return arrayDeDatas.includes(dataProcurada);
+  }
+
+  const [dadosProventos, setDadosProventos] = useState([]);
+  const getDadosProventos = async (stock) => {
+    const data = await fetch('http://localhost:3000/proventos/' + stock)
+    const response = await data.json();
+    const datas = response.map(item => item.datas);
+    setDadosProventos(datas);
   }
 
   const anoAtual = new Date().getFullYear();

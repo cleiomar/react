@@ -192,26 +192,24 @@ function categoria_color(categoria) {
 }
 
 function calcularPorcentagem(parte, total) {
-  if(total === 0 || parte === 0)
-  {
+  if (total === 0 || parte === 0) {
     return '0.00';
   }
   if (typeof parte !== 'number' || typeof total !== 'number' || total === 0) {
-      return 'Entrada inválida. Certifique-se de que os valores são números e que o denominador não é zero.';
+    return 'Entrada inválida. Certifique-se de que os valores são números e que o denominador não é zero.';
   }
 
   const porcentagem = (parte / total) * 100;
-  return porcentagem.toFixed(2) ;
+  return porcentagem.toFixed(2);
 }
 
 function calcularResto(dividendo: number, divisor: number): number | string {
-   return dividendo - divisor;
+  return dividendo - divisor;
 }
 
 
 function difference(valorMenor, valorMaior) {
-  if(valorMenor === 0 || valorMaior === 0)
-  {
+  if (valorMenor === 0 || valorMaior === 0) {
     return '0.00';
   }
   const diferenca = valorMaior - valorMenor;
@@ -232,7 +230,7 @@ function getLastDayMonths(quantidade) {
     const mesFormatado = mes < 10 ? `0${mes}` : mes;
     const anoFormatado = anoAtual;
     const data = new Date(anoFormatado, mesFormatado, 0);
-  
+
     // Adiciona um dia à data
     data.setDate(data.getDate() + 1);
     // Formata a data como "YYYY-MM-DD" e remove o primeiro e último caractere
@@ -264,8 +262,8 @@ const formatoRealSemCifrao = (value: string): string => {
 
   // Converte para número e formata como número decimal com duas casas decimais
   const formattedValue = new Intl.NumberFormat('pt-BR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(Number(numericValue) / 100);
 
   return formattedValue;
@@ -314,25 +312,25 @@ function calcularJurosCompostosTabela(aporteInicialBRL, aporteMensalBRL, taxaJur
     totalInvestido: aporteInicial,
     totalJuros: 0,
     totalAcumulado: aporteInicial,
-});
+  });
   let valorTotal = aporteInicial;
   let valorTotalInvestido = aporteInicial;
   let valorTotalJuros = 0;
 
   for (let i = 1; i <= tempoMeses; i++) {
-      const valorJuros = valorTotal * taxaJurosDecimal;
-      valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
+    const valorJuros = valorTotal * taxaJurosDecimal;
+    valorTotal = valorTotal * (1 + taxaJurosDecimal) + aporteMensal;
 
-      valorTotalJuros += valorJuros;
-      valorTotalInvestido += aporteMensal;
+    valorTotalJuros += valorJuros;
+    valorTotalInvestido += aporteMensal;
 
-      resultados.push({
-          mes: i,
-          juros: valorJuros.toFixed(2),
-          totalInvestido: valorTotalInvestido.toFixed(2),
-          totalJuros: valorTotalJuros.toFixed(2),
-          totalAcumulado: valorTotal.toFixed(2),
-      });
+    resultados.push({
+      mes: i,
+      juros: valorJuros.toFixed(2),
+      totalInvestido: valorTotalInvestido.toFixed(2),
+      totalJuros: valorTotalJuros.toFixed(2),
+      totalAcumulado: valorTotal.toFixed(2),
+    });
   }
 
   return resultados;
@@ -340,9 +338,9 @@ function calcularJurosCompostosTabela(aporteInicialBRL, aporteMensalBRL, taxaJur
 
 function imprimirTabela(resultados) {
   resultados.forEach((resultado) => {
-      
-          `${resultado.mes}\tR$${resultado.juros}\tR$${resultado.totalInvestido}\tR$${resultado.totalJuros}\tR$${resultado.totalAcumulado}`
-      
+
+    `${resultado.mes}\tR$${resultado.juros}\tR$${resultado.totalInvestido}\tR$${resultado.totalJuros}\tR$${resultado.totalAcumulado}`
+
   });
 }
 
@@ -404,8 +402,8 @@ function obterDatasEmTimestamp() {
   const timestampUmaSemanaAtras = Math.floor(umaSemanaAtras.getTime() / 1000);
 
   return {
-      hoje: timestampHoje,
-      umaSemanaAtras: timestampUmaSemanaAtras
+    hoje: timestampHoje,
+    umaSemanaAtras: timestampUmaSemanaAtras
   };
 }
 
@@ -418,9 +416,9 @@ function timestampToDate(timestamp) {
 function calcularCorPorcentagem(percentage) {
   // Cores da gradiente
   const cores = [
-      "#7a9a01", "#939d00", "#ac9f00", "#c5a000", "#dea000",
-      "#ea9812", "#f59021", "#ff882f", "#fd793c", "#f86a47",
-      "#f15d51", "#e7515a"
+    "#7a9a01", "#939d00", "#ac9f00", "#c5a000", "#dea000",
+    "#ea9812", "#f59021", "#ff882f", "#fd793c", "#f86a47",
+    "#f15d51", "#e7515a"
   ];
 
   // Garante que a porcentagem está no intervalo [0, 100]
@@ -433,4 +431,123 @@ function calcularCorPorcentagem(percentage) {
   return cores[indiceCor];
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem}
+function obterTrimestre(dataString) {
+  // Validar a string de data
+  const regex = /^(\d{1,2})-(\d{4})$/;
+  const match = dataString.match(regex);
+
+  if (!match) {
+    console.error("Formato de data inválido. Por favor, forneça a data no formato 'M-YYYY'.");
+    return null;
+  }
+
+  // Extrair o mês e o ano
+  const mes = parseInt(match[1]);
+  const ano = parseInt(match[2]);
+
+  // Validar os valores extraídos
+  if (isNaN(mes) || isNaN(ano) || mes < 1 || mes > 12) {
+    console.error("Valores inválidos extraídos. Certifique-se de fornecer um mês válido (1-12) e um ano válido.");
+    return null;
+  }
+
+  // Calcular o trimestre
+  const trimestre = Math.ceil(mes / 3);
+
+  // Exibir o resultado
+  console.log(`A data ${mes}-${ano} pertence ao ${trimestre}º trimestre.`);
+  return trimestre;
+}
+
+function mesNome(num) {
+  const regex = /^(\d{1,2})-(\d{4})$/;
+  const match = num.match(regex);
+
+  if (!match) {
+    console.error("Formato de data inválido. Por favor, forneça a data no formato 'M-YYYY'.");
+    return null;
+  }
+
+  // Extrair o mês e o ano
+  const mes = parseInt(match[1]);
+  switch (mes) {
+    case 1:
+      return 'Jan';
+    case 2:
+      return 'Fev';
+    case 3:
+      return 'Mar';
+    case 4:
+      return 'Abr';
+    case 5:
+      return 'Mai';
+    case 6:
+      return 'Jun';
+    case 7:
+      return 'Jul';
+    case 8:
+      return 'Ago';
+    case 9:
+      return 'Set';
+    case 10:
+      return 'Out';
+    case 11:
+      return 'Nov';
+    case 12:
+      return 'Dez';
+    default:
+      return 'Mês inválido';
+  }
+}
+
+function ultimos60Meses(): { title: string; cols: number }[] {
+  const anos: { [key: number]: number } = {};
+
+  const dataAtual = new Date();
+  const totalMeses = 60;
+
+  for (let i = 0; i < totalMeses; i++) {
+    const dataMesAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - i, 1);
+    const ano = dataMesAtual.getFullYear();
+
+    if (anos[ano]) {
+      anos[ano]++;
+    } else {
+      anos[ano] = 1;
+    }
+  }
+
+  const resultado = Object.entries(anos).map(([ano, cols]) => ({
+    title: parseInt(ano),
+    cols
+  }));
+
+  return resultado;
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getLast60Months() {
+  const currentDate = new Date();
+  const seriesData = [];
+
+  for (let i = 0; i < 60; i++) {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const formattedMonth = month.toString().padStart(2, '');
+    
+    const x = `${formattedMonth}-${year}`;
+    const y = 0; // Substitua 400 e 800 pelos limites desejados
+
+    seriesData.push({ x, y });
+
+    // Subtrai um mês da data atual
+    currentDate.setMonth(currentDate.getMonth() - 1);
+  }
+
+  return seriesData.reverse();
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimos60Meses, getLast60Months }

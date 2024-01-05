@@ -829,7 +829,7 @@ const ModelsGetAtivo = async (ticker: string) => {
 
 const ModelsGetProventos = async (codigo: string) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT CONCAT(MONTH(paymentDate),'-', YEAR(paymentDate)) as datas FROM cashdividends GROUP BY MONTH(paymentDate), YEAR(paymentDate)`, (err, results) => {
+        connection.query(`SELECT CONCAT(MONTH(cashdividends.paymentDate),'-', YEAR(cashdividends.paymentDate)) as datas, SUM(rate) as soma FROM cashdividends, lista_ativos WHERE cashdividends.lista_ativos_id=lista_ativos.lista_ativos_id AND lista_ativos.ativo_codigo=? AND cashdividends.paymentDate <= NOW() GROUP BY MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate)`,[codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {

@@ -460,16 +460,9 @@ function obterTrimestre(dataString) {
 }
 
 function mesNome(num) {
-  const regex = /^(\d{1,2})-(\d{4})$/;
-  const match = num.match(regex);
-
-  if (!match) {
-    console.error("Formato de data inválido. Por favor, forneça a data no formato 'M-YYYY'.");
-    return null;
-  }
-
-  // Extrair o mês e o ano
-  const mes = parseInt(match[1]);
+  let numString = String(num); // Ou use num.toString() se preferir
+  let mes = numString.split('-');
+  mes = parseInt(mes[0]);
   switch (mes) {
     case 1:
       return 'Jan';
@@ -499,6 +492,40 @@ function mesNome(num) {
       return 'Mês inválido';
   }
 }
+
+function mesNomeFull(num) {
+  let mes = num.split('-');
+  mes = parseInt(mes[0]);
+  switch (mes) {
+    case 1:
+      return 'Janeiro';
+    case 2:
+      return 'Fevereiro';
+    case 3:
+      return 'Março';
+    case 4:
+      return 'Abril';
+    case 5:
+      return 'Maio';
+    case 6:
+      return 'Junho';
+    case 7:
+      return 'Julho';
+    case 8:
+      return 'Agosto';
+    case 9:
+      return 'Setembro';
+    case 10:
+      return 'Outubro';
+    case 11:
+      return 'Novembro';
+    case 12:
+      return 'Dezembro';
+    default:
+      return 'Mês inválido';
+  }
+}
+
 
 function ultimos60Meses(): { title: string; cols: number }[] {
   const anos: { [key: number]: number } = {};
@@ -550,4 +577,38 @@ function getLast60Months() {
   return seriesData.reverse();
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimos60Meses, getLast60Months }
+function separarTiposLabels(data) {
+  const dividendoArray = [];
+  const jrsCapProprioArray = [];
+  const rendimentoArray = [];
+
+  data.forEach(item => {
+    const newItem = {
+      datas: item.datas,
+      rate: item.rate,
+      label: item.label
+    };
+
+    switch (item.label) {
+      case "DIVIDENDO":
+        dividendoArray.push(newItem);
+        break;
+      case "JRS CAP PROPRIO":
+        jrsCapProprioArray.push(newItem);
+        break;
+      case "RENDIMENTO":
+        rendimentoArray.push(newItem);
+        break;
+      default:
+        break;
+    }
+  });
+
+  return {
+    DIVIDENDO: dividendoArray,
+    JCP: jrsCapProprioArray,
+    RENDIMENTO: rendimentoArray
+  };
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimos60Meses, getLast60Months, mesNomeFull, separarTiposLabels }

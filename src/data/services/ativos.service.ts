@@ -619,9 +619,9 @@ const serviceGetAtivo = async (ticker: string) => {
 };
 
 
-const serviceGetProventos = async (codigo: string) => {
+const serviceGetProventos = async (codigo: string, somar: string, periodo: number) => {
     try {
-        const data = await ModelsGetProventos(codigo);
+        const data = await ModelsGetProventos(codigo, somar, periodo);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador

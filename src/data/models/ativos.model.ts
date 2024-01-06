@@ -827,9 +827,33 @@ const ModelsGetAtivo = async (ticker: string) => {
 }
 
 
-const ModelsGetProventos = async (codigo: string) => {
+const ModelsGetProventos = async (codigo: string, somar: string, periodo: number) => {
+    let values = '';
+    let agrupar = '';
+    let period = '';
+    if (somar == 's') {
+        agrupar = ` GROUP BY MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate)`;
+        values = `, SUM(rate) as soma `;
+        period = '';
+      }
+      else
+      {
+        agrupar = ' GROUP BY  MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate), label ';
+        values = ', SUM(rate) as rate ';
+        period = '';
+      }
+
+      if (periodo == 0) {
+        period = ` cashdividends.paymentDate <= NOW() `;
+      }
+      else
+      {
+        period = ` (cashdividends.paymentDate >= CURDATE() - INTERVAL ${periodo} MONTH)`;
+      }
+
+    
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT CONCAT(MONTH(cashdividends.paymentDate),'-', YEAR(cashdividends.paymentDate)) as datas, SUM(rate) as soma FROM cashdividends, lista_ativos WHERE cashdividends.lista_ativos_id=lista_ativos.lista_ativos_id AND lista_ativos.ativo_codigo=? AND cashdividends.paymentDate <= NOW() GROUP BY MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate)`,[codigo], (err, results) => {
+        connection.query(`SELECT CONCAT(MONTH(cashdividends.paymentDate),'-', YEAR(cashdividends.paymentDate)) as datas ${values}, cashdividends.label FROM cashdividends, lista_ativos WHERE cashdividends.lista_ativos_id=lista_ativos.lista_ativos_id AND lista_ativos.ativo_codigo=? AND ${period} ${agrupar} ORDER BY paymentDate ASC`,[codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {

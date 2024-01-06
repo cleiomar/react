@@ -607,9 +607,9 @@ const ControllerGetAtivo = async (req: Request, res: Response): Promise<void> =>
 };
 
 const ControllerGetProventos = async (req: Request, res: Response): Promise<void> => {
-    const { codigo } = req.params;
+    const { codigo, somar, periodo } = req.params;
     try {
-        const data = await serviceGetProventos(codigo);
+        const data = await serviceGetProventos(codigo, somar, periodo);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);

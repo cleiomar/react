@@ -5,7 +5,7 @@ import 'flatpickr/dist/flatpickr.css';
 import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
 import 'nouislider/distribute/nouislider.css';
-import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimos60Meses, mesNome, getLast60Months } from '../data/funcoes';
+import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimos60Meses, mesNome, mesNomeFull, separarTiposLabels, getLast60Months } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
@@ -26,12 +26,30 @@ const Acao = () => {
     setSelectedOptionPeriodo(selectedOptionPeriodo)
   };
 
+
+  const [selectedOptionProventos, setSelectedOptionProventos] = useState([]);
+  const SelectChangeProventos = (selectedOptionProventos) => {
+    //get_dataProventos(acao, selectedOptionProventos.value);
+    setSelectedOptionProventos(selectedOptionProventos)
+  };
+
+
+  const [selectedOptionTempo, setSelectedOptionTempo] = useState([]);
+  const SelectChangeTempo = (selectedOptionTempo) => {
+    //get_dataTempo(acao, selectedOptionTempo.value);
+    getDadosProventos2(acao, selectedOptionTempo.value)
+    getDadosProventos(acao, selectedOptionTempo.value)
+    setSelectedOptionTempo(selectedOptionTempo)
+  };
+
   const isDark = useSelector((state: IRootState) => state.themeConfig.theme === 'dark' || state.themeConfig.isDarkMode);
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
   const colorCategorias = ["#e7515a", "#00ab55", "#0c60bb", "#43efbc", "#ef7817", "#ab0000", "#008fab", "#d2d212"];
 
   useEffect(() => {
     setSelectedOptionPeriodo({ value: '', label: 'Selecionar...' })
+    setSelectedOptionProventos({ value: '', label: 'Selecionar...' })
+    setSelectedOptionTempo({ value: '', label: 'Selecionar...' })
   }, [])
 
   const [data, setData] = useState([]);
@@ -59,13 +77,30 @@ const Acao = () => {
 
   const [dadosProventos, setDadosProventos] = useState([]);
   const [dadosProventosValor, setDadosProventosValor] = useState([]);
-  const getDadosProventos = async (stock) => {
-    const data = await fetch('http://localhost:3000/proventos/' + stock)
+  const getDadosProventos = async (stock, periodo) => {
+    const data = await fetch('http://localhost:3000/proventos/' + stock + '/s' + '/' + periodo)
     const response = await data.json();
+
+    const resultado = separarTiposLabels(response);
+
     const datas = response.map(item => item.datas);
     setDadosProventos(datas);
     setDadosProventosValor(response);
   }
+
+
+  const [dividendos, setDividendos] = useState([]);
+  const [jcp, setJcp] = useState([]);
+  const [rendimentos, setRendimentos] = useState([]);
+  const getDadosProventos2 = async (stock, periodo) => {
+    const data = await fetch('http://localhost:3000/proventos/' + stock + '/n' + '/' + periodo)
+    const response = await data.json();
+    const resultado = separarTiposLabels(response);
+    setDividendos(resultado.DIVIDENDO);
+    setJcp(resultado.JCP);
+    setRendimentos(resultado.RENDIMENTO);
+  }
+
 
   const [dados, setDados] = useState([]);
   const get_dados = async (stock) => {
@@ -78,49 +113,167 @@ const Acao = () => {
   }
 
   const [ultimos5Anos, setUltimos5Anos] = useState([])
-  const [seriesData, setSeriesData] = useState([])
+  const [seriesDataTotal, setSeriesDataTotal] = useState([])
   useEffect(() => {
-    getDadosProventos(acao)
+    getDadosProventos2('PETR4', 1)
+    getDadosProventos(acao, 1)
     get_dados(acao);
     const ultimos5Anoss = ultimos60Meses();
-    const dados = getLast60Months();
-    setSeriesData(dados);
+    // const dados = getLast60Months();
+    // setTimeout(() => {
+
+    //   setSeriesData(dados);
+    // }, 1000);
     setUltimos5Anos(ultimos5Anoss);
-    console.log(seriesData)
-
-  let novo = seriesData;
-  for (let i = 0; i < seriesData.length; i++) {
-    const element1 = seriesData[i];
-
-    const match = dadosProventosValor.find(element2 => element2.datas === element1.x);
-    if (match) {
-      novo[i].y = match.soma;
-    }
-  }
-    //console.log(seriesData)
-    //setSeriesData(novo)
-    //console.log(novo)
   }, []);
 
 
-  function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
+  const [dividendosTotal, setDividendosTotal] = useState([]);
+  const [jcpTotal, setJcpTotal] = useState([]);
+  const [rendimentosTotal, setRendimentosTotal] = useState([]);
 
-    // While there remain elements to shuffle.
-    while (currentIndex > 0) {
+  useEffect(() => {
+    const currentDate = new Date();
+    const seriesData = [];
 
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+    for (let i = 0; i < 60; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const formattedMonth = month;
 
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      const x = `${formattedMonth}-${year}`;
+      const y = 0; // Substitua 400 e 800 pelos limites desejados
+
+      seriesData.push({ x, y });
+
+      // Subtrai um mês da data atual
+      currentDate.setMonth(currentDate.getMonth() - 1);
     }
 
-    return array;
-  }
+    const updatedSeriesData = seriesData.reverse();
+    for (let i = 0; i < updatedSeriesData.length; i++) {
+      const element1 = updatedSeriesData[i];
 
+      const match = dadosProventosValor.find(element2 => element2.datas === element1.x);
+
+      if (match) {
+        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.soma).toFixed(2);
+      }
+    }
+    setSeriesDataTotal(updatedSeriesData);
+  }, [dadosProventosValor]);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const seriesData = [];
+
+    for (let i = 0; i < 60; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const formattedMonth = month;
+
+      const x = `${formattedMonth}-${year}`;
+      const y = 0; // Substitua 400 e 800 pelos limites desejados
+
+      seriesData.push({ x, y });
+
+      // Subtrai um mês da data atual
+      currentDate.setMonth(currentDate.getMonth() - 1);
+    }
+
+    const updatedSeriesData = seriesData.reverse();
+    for (let i = 0; i < updatedSeriesData.length; i++) {
+      const element1 = updatedSeriesData[i];
+
+      const match = dividendos.find(element2 => element2.datas === element1.x);
+
+      if (match) {
+        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.rate).toFixed(2);
+      }
+    }
+    setDividendosTotal(updatedSeriesData);
+  }, [dividendos]);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const seriesData = [];
+
+    for (let i = 0; i < 60; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const formattedMonth = month;
+
+      const x = `${formattedMonth}-${year}`;
+      const y = 0; // Substitua 400 e 800 pelos limites desejados
+
+      seriesData.push({ x, y });
+
+      // Subtrai um mês da data atual
+      currentDate.setMonth(currentDate.getMonth() - 1);
+    }
+
+    const updatedSeriesData = seriesData.reverse();
+    for (let i = 0; i < updatedSeriesData.length; i++) {
+      const element1 = updatedSeriesData[i];
+
+      const match = jcp.find(element2 => element2.datas === element1.x);
+
+      if (match) {
+        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.rate).toFixed(2);
+      }
+    }
+    setJcpTotal(updatedSeriesData);
+  }, [jcp]);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const seriesData = [];
+
+    for (let i = 0; i < 60; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const formattedMonth = month;
+
+      const x = `${formattedMonth}-${year}`;
+      const y = 0; // Substitua 400 e 800 pelos limites desejados
+
+      seriesData.push({ x, y });
+
+      // Subtrai um mês da data atual
+      currentDate.setMonth(currentDate.getMonth() - 1);
+    }
+
+    const updatedSeriesData = seriesData.reverse();
+    for (let i = 0; i < updatedSeriesData.length; i++) {
+      const element1 = updatedSeriesData[i];
+
+      const match = rendimentos.find(element2 => element2.datas === element1.x);
+
+      if (match) {
+        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.rate).toFixed(2);
+      }
+    }
+    setRendimentosTotal(updatedSeriesData);
+  }, [rendimentos]);
+
+  useEffect(() => {
+    montarGrafico(selectedOptionTempo.value)
+  }, [dividendosTotal, jcpTotal, rendimentosTotal, dadosProventosValor])
+
+
+  const [dadosGrafico, setDadosGrafico] = useState([]);
+
+  function montarGrafico(num) {
+    if (num === 10 || num === 0 || num === 1 || num === 2 || num === 3) {
+      setDadosGrafico([
+        { name: "Dividendos", data: dividendosTotal },
+        { name: "JCP", data: jcpTotal },
+        { name: "Rendimentos", data: rendimentosTotal }
+      ]);
+    } else {
+      setDadosGrafico([{ name: "Proventos", data: seriesDataTotal }]);
+    }
+  }
 
   const revenueChart: any = {
     series: [{
@@ -281,13 +434,17 @@ const Acao = () => {
     },
   };
 
+
+
+
   const chartData = {
-    series: [{
-      name: "sales",
-      data: seriesData
-    }],
+    series: dadosGrafico,
     options: {
+      dataLabels: {
+        enabled: false,
+      },
       chart: {
+        stacked: true,
         type: 'bar',
         height: 380
       },
@@ -312,7 +469,7 @@ const Acao = () => {
       tooltip: {
         x: {
           formatter: function (val) {
-            return mesNome(val)
+            return mesNomeFull(val)
           }
         }
       },
@@ -649,7 +806,7 @@ const Acao = () => {
 
                 {anosEMeses.map((item, index) => {
                   return (
-                    (item === 1) ? <div key={index} className='bg-proventos'></div> : <div className='bg-proventos-none'></div>
+                    (item === 1) ? <div key={index} className='bg-proventos'></div> : <div key={index} className='bg-proventos-none'></div>
                   )
                 })}
                 <div>{percentual['1'] * 10}%</div>
@@ -671,8 +828,29 @@ const Acao = () => {
         </div>
       </div>
       <div className='panel mt-5'>
-        <div className='subtitulo-page'>DIVIDENDOS ({acao})</div>
-        <ReactApexChart options={chartData.options} series={chartData.series} type="bar" height={450} />
+        <div className='flex justify-between'>
+          <div className='subtitulo-page'>DIVIDENDOS ({acao})</div>
+          <div className='flex'>
+
+            <Select
+              className='text-sm w-200 mr-10'
+              name="Tempo"
+              value={selectedOptionTempo}
+              onChange={SelectChangeTempo}
+              options={[{ value: 1, label: '1 Ano' }, { value: 2, label: '5 Anos' }, { value: 3, label: '10 Anos' }, { value: 0, label: 'Máximo' }]}
+              isSearchable={false}
+            />
+            <Select
+              className='text-sm w-200'
+              name="Proventos"
+              value={selectedOptionProventos}
+              onChange={SelectChangeProventos}
+              options={[{ value: 1, label: 'Mensal' }, { value: 2, label: 'Anual' }, { value: 3, label: 'Mensal Agrupado' }, { value: 4, label: 'Anual Agrupado' }]}
+              isSearchable={false}
+            />
+          </div>
+        </div>
+        <ReactApexChart key={dadosGrafico} options={chartData.options} series={chartData.series} type="bar" height={450} />
       </div>
     </div>
 

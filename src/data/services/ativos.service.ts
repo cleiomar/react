@@ -1,6 +1,8 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetEmpresasRelacionadas,
+    ModelsUpdateLista,
     ModelsGetProventos,
     ModelsGetAtivo,
     ModelsGetCotacao,
@@ -599,9 +601,9 @@ const serviceInsertHistoricalDataPrice = async (ticker: string, date: number, op
     }
 };
 
-const serviceGetCotacao = async (ticker: string, periodo: number) => {
+const serviceGetCotacao = async (ativo: string, periodo: number, periodicidade: number) => {
     try {
-        const data = await ModelsGetCotacao(ticker, periodo);
+        const data = await ModelsGetCotacao(ativo, periodo, periodicidade);
         return data;
     } catch (error) {
         throw error; // Propagar o erro para ser tratado no controlador
@@ -628,7 +630,29 @@ const serviceGetProventos = async (codigo: string, somar: string, periodo: numbe
     }
 };
 
+
+const serviceUpdateLista = async (codigo: string) => {
+    try {
+        const data = await ModelsUpdateLista(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceGetEmpresasRelacionadas = async (codigo: string) => {
+    try {
+        const data = await ModelsGetEmpresasRelacionadas(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetEmpresasRelacionadas,
+    serviceUpdateLista,
     serviceGetProventos,
     serviceGetAtivo,
     serviceGetCotacao,

@@ -1,5 +1,7 @@
 import express from 'express';
 import {
+  ControllerGetEmpresasRelacionadas,
+  ControllerUpdateLista,
   ControllerGetProventos,
   ControllerGetAtivo,
   ControllerGetCotacao,
@@ -74,8 +76,9 @@ router.get('/treasure/:codigo/:periodo', ControllerGetTreasure);
 router.get('/treasure_names', ControllerGetTreasureNames);
 router.get('/lista_indices_b3', ControllerGetListaIndicesB3);
 router.get('/get_estatisticas/:codigo', ControllerGetEstatisticas);
-router.get('/cotacao/:ativo/:periodo', ControllerGetCotacao);
+router.get('/cotacao/:ativo/:periodo/:periodicidade', ControllerGetCotacao);
 router.get('/get_lista_indice/:indice', ControllerGetRankingIndicesB3);
+router.get('/get_empresas_relacionadas/:codigo', ControllerGetEmpresasRelacionadas);
 router.get('/proventos/:codigo/:somar/:periodo', ControllerGetProventos);
 router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
@@ -102,5 +105,6 @@ router.post('/cashdividends', upload.none(), ControllerInsertCashDividends);
 router.post('/stockdividends', upload.none(), ControllerInsertStockDividends);
 router.post('/subscriptions', upload.none(), ControllerInsertSubscriptions);
 router.post('/historicaldataprice', upload.none(), ControllerInsertHistoricalDataPrice);
+router.put('/update_lista', ControllerUpdateLista);
 
 export default router;

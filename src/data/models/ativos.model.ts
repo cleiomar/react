@@ -129,7 +129,7 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
         values = '';
     }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values} `, [id], (err, results) => {
+        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') AND last_update IS NULL ${values} ORDER BY lista_ativos_id LIMIT 1 `, [id], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -655,7 +655,7 @@ const ModelsInsertSetores = async (companyName: string, ticker: string, sectorNa
 }
 
 
-const ModelsUpdateFii = async ( sectorName: string, subSectorName: string, segmentName: string, ticker: string) => {
+const ModelsUpdateFii = async (sectorName: string, subSectorName: string, segmentName: string, ticker: string) => {
     return new Promise((resolve, reject) => {
         connection.query(`UPDATE lista_ativos SET setor=(SELECT setores_id FROM setores WHERE nome='${sectorName}'), subsetor=(SELECT subsetores_id FROM subsetores WHERE nome='${subSectorName}'), segmento=(SELECT segmentos_id FROM segmentos WHERE nome='${segmentName}') WHERE ativo_codigo='${ticker}'`, (err, results) => {
             if (err) {
@@ -721,13 +721,18 @@ const ModelsInsertFinancialData = async (ticker: string, currentPrice: number, t
 
 
 const ModelsInsertCashDividends = async (ticker: string, assetIssued: string, paymentDate: string, rate: number, relatedTo: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
+    console.log(paymentDate);
+    const query = `INSERT IGNORE INTO cashdividends (lista_ativos_id, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${paymentDate}', '${rate}', '${relatedTo}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`;
+
+    //console.log("Query Executada:", query);  // Adicione esta linha para imprimir a consulta
+
     return new Promise((resolve, reject) => {
-        connection.query(`INSERT IGNORE INTO cashdividends (lista_ativos_id, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${paymentDate}', '${rate}', '${relatedTo}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`, (err, results) => {
+        connection.query(query, (err, results) => {
             if (err) {
                 reject(err);
             } else {
                 resolve(results);
-            };
+            }
         });
     });
 }
@@ -771,39 +776,46 @@ const ModelsInsertHistoricalDataPrice = async (ticker: string, date: number, ope
 }
 
 
-const ModelsGetCotacao = async (ticker: string, periodo: number) => {
+const ModelsGetCotacao = async (ativo: string, periodo: number, periodicidade: number) => {
     let period: any;
-    if(periodo == 1)
-    {
+    let periodicidad: any;
+    if (periodo == 1) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)`;
     }
-    else if(periodo == 2)
-    {
+    else if (periodo == 2) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)`;
     }
-    else if(periodo == 3)
-    {
+    else if (periodo == 3) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)`;
     }
-    else if(periodo == 4)
-    {
+    else if (periodo == 4) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)`;
     }
-    else if(periodo == 5)
-    {
+    else if (periodo == 5) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR)`;
     }
-    else if(periodo == 6)
-    {
+    else if (periodo == 6) {
         period = ` AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 10 YEAR)`;
     }
-    else
-    {
+    else {
         period = ``;
     }
 
+    if(periodicidade == 1){
+        periodicidad = ` GROUP BY DAY(FROM_UNIXTIME(date)), MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
+    } 
+    else if(periodicidade == 2){
+        periodicidad = ` GROUP BY WEEK(FROM_UNIXTIME(date)), MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
+    } 
+    else if(periodicidade == 3){
+        periodicidad = ` GROUP BY MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
+    } 
+    else
+    {
+        periodicidad = ` GROUP BY YEAR(FROM_UNIXTIME(date))`;
+    } 
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT *, FROM_UNIXTIME(date) AS data FROM historicaldataprice WHERE close!=0 ${period}`, (err, results) => {
+        connection.query(`SELECT historicaldataprice.*, MAX(FROM_UNIXTIME(historicaldataprice.date)) AS data FROM historicaldataprice, lista_ativos WHERE historicaldataprice.close!=0 ${period} AND lista_ativos.lista_ativos_id=historicaldataprice.lista_ativos_id AND lista_ativos.ativo_codigo=? ${periodicidad} ORDER BY date ASC`,[ativo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -816,7 +828,7 @@ const ModelsGetCotacao = async (ticker: string, periodo: number) => {
 
 const ModelsGetAtivo = async (ticker: string) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT *,(SELECT volatilidade FROM indices_b3 WHERE codigo='IBOV') as ibov FROM lista_ativos WHERE ativo_codigo=?`,[ticker], (err, results) => {
+        connection.query(`SELECT *,(SELECT volatilidade FROM indices_b3 WHERE codigo='IBOV') as ibov FROM lista_ativos WHERE ativo_codigo=?`, [ticker], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -832,28 +844,27 @@ const ModelsGetProventos = async (codigo: string, somar: string, periodo: number
     let agrupar = '';
     let period = '';
     if (somar == 's') {
-        agrupar = ` GROUP BY MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate)`;
-        values = `, SUM(rate) as soma `;
+        agrupar = ` GROUP BY MONTH(cashdividends.lastDatePrior), YEAR(cashdividends.lastDatePrior)`;
+        //values = `, SUM(rate) as rate `;
+        values = `, rate, DATE_FORMAT(cashdividends.lastDatePrior, '%d/%m/%Y') AS lastDatePrior, DATE_FORMAT(cashdividends.paymentDate, '%d/%m/%Y') AS paymentDate `;
         period = '';
-      }
-      else
-      {
-        agrupar = ' GROUP BY  MONTH(cashdividends.paymentDate), YEAR(cashdividends.paymentDate), label ';
+    }
+    else {
+        agrupar = ' GROUP BY MONTH(cashdividends.lastDatePrior), YEAR(cashdividends.lastDatePrior), label ';
         values = ', SUM(rate) as rate ';
         period = '';
-      }
+    }
 
-      if (periodo == 0) {
-        period = ` cashdividends.paymentDate <= NOW() `;
-      }
-      else
-      {
-        period = ` (cashdividends.paymentDate >= CURDATE() - INTERVAL ${periodo} MONTH)`;
-      }
+    if (periodo == 0) {
+        period = ` cashdividends.lastDatePrior <= NOW() `;
+    }
+    else {
+        period = ` (cashdividends.lastDatePrior >= CURDATE() - INTERVAL ${periodo} YEAR) AND cashdividends.lastDatePrior <= NOW()`;
+    }
 
-    
+
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT CONCAT(MONTH(cashdividends.paymentDate),'-', YEAR(cashdividends.paymentDate)) as datas ${values}, cashdividends.label FROM cashdividends, lista_ativos WHERE cashdividends.lista_ativos_id=lista_ativos.lista_ativos_id AND lista_ativos.ativo_codigo=? AND ${period} ${agrupar} ORDER BY paymentDate ASC`,[codigo], (err, results) => {
+        connection.query(`SELECT CONCAT(MONTH(cashdividends.lastDatePrior),'-', YEAR(cashdividends.lastDatePrior)) as datas ${values}, cashdividends.label FROM cashdividends, lista_ativos WHERE cashdividends.lista_ativos_id=lista_ativos.lista_ativos_id AND lista_ativos.ativo_codigo=? AND ${period} ${agrupar} ORDER BY cashdividends.lastDatePrior DESC`, [codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -864,7 +875,48 @@ const ModelsGetProventos = async (codigo: string, somar: string, periodo: number
 }
 
 
+const ModelsUpdateLista = async (codigo: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE lista_ativos SET last_update=NOW() WHERE ativo_codigo=?`, [codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT 
+        SUBSTRING(lista_ativos.ativo_codigo, 1, 4) AS prefixo, 
+        lista_ativos.*,
+        financialdata.totalRevenue
+    FROM 
+        lista_ativos,
+        financialdata
+    WHERE 
+        financialdata.lista_ativos_id = lista_ativos.lista_ativos_id
+        AND lista_ativos.setor = (SELECT lista_ativos.setor FROM lista_ativos WHERE lista_ativos.ativo_codigo =?)
+        AND lista_ativos.subsetor = (SELECT lista_ativos.subsetor FROM lista_ativos WHERE lista_ativos.ativo_codigo =?) 
+        AND lista_ativos.segmento = (SELECT lista_ativos.segmento FROM lista_ativos WHERE lista_ativos.ativo_codigo =?)  
+        AND lista_ativos.ativo_codigo NOT LIKE '%34' 
+    GROUP BY 
+        prefixo  
+    ORDER BY financialdata.totalRevenue DESC;`, [codigo,codigo,codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsGetEmpresasRelacionadas,
+    ModelsUpdateLista,
     ModelsGetProventos,
     ModelsGetAtivo,
     ModelsGetCotacao,

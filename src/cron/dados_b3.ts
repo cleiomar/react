@@ -1,3 +1,27 @@
+async function fetchUpdateLista(codigo: any): Promise<any> {
+    try {
+        const response = await fetch('http://localhost:3000/update_lista', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json', // Certifique-se de ajustar o tipo de conteúdo conforme necessário
+                // Adicione outros cabeçalhos conforme necessário
+            },
+            body: JSON.stringify({ codigo: codigo }), // Converte os dados para o formato JSON
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro ao fazer a requisição: ${response.status} - ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+        console.log(response);
+        return responseData;
+    } catch (error) {
+        console.error('Erro na requisição PUT:', error);
+        throw error; // Você pode manipular o erro ou relançá-lo conforme necessário
+    }
+}
+
 async function fetch3(ativo: any, address1: string, address2: string, city: string, state: string, zip: string, country: string, phone: string, website: string, industry: string, industryKey: string, industryDisp: string, sector: string, sectorKey: string, sectorDisp: string, longBusinessSummary: string, fullTimeEmployees: number, companyOfficers: any
     ): Promise<any> {
         console.log(ativo)
@@ -221,6 +245,7 @@ const fetchDados2 = async (ticker) => {
     try {
         const data = await fetch('https://brapi.dev/api/quote/'+ticker+'?range=10y&dividends=true&modules=summaryProfile,balanceSheetHistory,balanceSheetHistoryQuarterly,defaultKeyStatistics,incomeStatementHistory,financialData&token=7fRjckesBySAepeEseSBg5');
         const responseArray = await data.json();
+        // console.log(responseArray)
         const dados = responseArray.results[0].defaultKeyStatistics;
         const dados3 = responseArray.results[0].financialData;
         fetch6(ticker, dados3.currentPrice, dados3.targetHighPrice, dados3.targetLowPrice, dados3.targetMeanPrice, dados3.targetMedianPrice, dados3.recommendationMean, dados3.recommendationKey, dados3.numberOfAnalystOpinions, dados3.totalCash, dados3.totalCashPerShare, dados3.ebitda, dados3.totalDebt, dados3.quickRatio, dados3.currentRatio, dados3.totalRevenue, dados3.debtToEquity, dados3.revenuePerShare, dados3.returnOnAssets, dados3.returnOnEquity, dados3.grossProfits, dados3.freeCashflow, dados3.operatingCashflow, dados3.earningsGrowth, dados3.revenueGrowth, dados3.grossMargins, dados3.ebitdaMargins, dados3.operatingMargins, dados3.profitMargins, dados3.financialCurrency);
@@ -246,8 +271,25 @@ const fetchDados2 = async (ticker) => {
         dados7.map((item, index) => {
                 fetch9(ticker, item.assetIssued, item.percentage, item.priceUnit, item.tradingPeriod, item.subscriptionDate, item.approvedOn, item.isinCode, item.label, item.lastDatePrior, item.remarks);
         });
+        fetchUpdateLista(ticker);
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }
 }
-fetchDados2('PETR4');
+
+// const fetchApiOptionAtivo = async () => {
+//     try {
+//         const data = await fetch('http://localhost:3000/lista_ativos?b3=s');
+//         const response = await data.json();
+//         response.map(async (item: any) => {
+//             await fetchDados2(item.ativo_codigo);
+//         });
+//         //return response; // Adicione esta linha para retornar a resposta como uma Promise
+//     } catch (error) {
+//         console.error('Erro ao buscar dados da API:', error);
+//         throw error; // Se ocorrer um erro, propague-o para quem chama a função
+//     }
+// };
+// fetchApiOptionAtivo();
+let acao = 'SAPR11';
+fetchDados2(acao.toLowerCase());

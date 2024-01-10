@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetEmpresasRelacionadas,
+    serviceUpdateLista,
     serviceGetProventos,
     serviceGetAtivo,
     serviceGetCotacao,
@@ -584,9 +586,9 @@ const ControllerInsertHistoricalDataPrice = async (req: Request, res: Response):
 };
 
 const ControllerGetCotacao = async (req: Request, res: Response): Promise<void> => {
-    const { ticker, periodo } = req.params;
+    const { ativo, periodo, periodicidade } = req.params;
     try {
-        const data = await serviceGetCotacao(ticker, periodo);
+        const data = await serviceGetCotacao(ativo, periodo, periodicidade);
         res.json(data);
     } catch (error) {
         console.error('Erro ao obter ativos:', error);
@@ -617,7 +619,33 @@ const ControllerGetProventos = async (req: Request, res: Response): Promise<void
     }
 };
 
+
+const ControllerUpdateLista = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.body;
+    try {
+        const data = await serviceUpdateLista(codigo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerGetEmpresasRelacionadas = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.params;
+    try {
+        const data = await serviceGetEmpresasRelacionadas(codigo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerGetEmpresasRelacionadas,
+    ControllerUpdateLista,
     ControllerGetProventos,
     ControllerGetAtivo,
     ControllerGetCotacao,

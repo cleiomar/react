@@ -2,11 +2,11 @@ import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Swal from 'sweetalert2';
 
-interface IndicadoresProps {
-    indicador: string;
-    info: string;
+interface boxDadosPatrimonioProps {
+    nome: string;
+    valor: number;
 }
-const Indicadores = ({ indicador, info }: IndicadoresProps) => {
+const BoxDadosPatrimonio = ({ nome, valor }: boxDadosPatrimonioProps) => {
 
     const showIndicador = async (data: string) => {
         Swal.fire({
@@ -27,31 +27,29 @@ const Indicadores = ({ indicador, info }: IndicadoresProps) => {
             confirmButtonText: `
               OK
             `
-          });
-      }
+        });
+    }
 
     return (
-        
-            <>
-            <div className="px-4 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
-                <div className="p-5">
-                    <div><b>{indicador}</b>
+
+        <div className="px-4 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
+            <div className="p-5">
+                <div className="text-left"><b>{nome}</b>
                     <Tippy trigger="mouseenter focus" content="Indicador">
-                        <button type="button" data-trigger="mouseenter" onClick={() => showIndicador()} className="btn btn-primary rounded-full h-18 p-1 float-right">
+                        <button type="button" data-trigger="mouseenter" onClick={() => showIndicador(nome)} className="btn btn-primary rounded-full h-18 p-1 float-right">
                             ?
                         </button>
                     </Tippy></div>
-                    <div className="flex justify-between mt-3">
-                        <div>{info}</div>
-                        <Tippy trigger="mouseenter focus" content="Gráfico do Indicador">
-                            <img src="../src/assets/images/graph.svg" height={20} width={20} />
-                        </Tippy>
-                    </div>
+                <div className="flex justify-between mt-3">
+                    <div>{valor}</div>
+                    <Tippy trigger="mouseenter focus" content="Gráfico do Indicador">
+                        <img src="../src/assets/images/graph.svg" height={20} width={20} />
+                    </Tippy>
                 </div>
             </div>
-            </div>
-            </>
+        </div>
+        </div>
     )
 }
 
-export default Indicadores;
+export default BoxDadosPatrimonio;

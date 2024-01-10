@@ -2,7 +2,7 @@
     height: 720px;
 }
 
-.mpl-2   {
+.mpl-2 {
     padding-left: 10px;
 }
 
@@ -280,6 +280,11 @@
     height: 40px;
 }
 
+.wh-90 {
+    height: 70px;
+    width: 70px;
+}
+
 .ml-70p {
     margin-left: 70%;
 }
@@ -508,6 +513,7 @@
 .text-rightkit {
     text-align: -webkit-right;
 }
+
 .text-small {
     font-size: small;
 }
@@ -520,19 +526,19 @@
     height: 80px;
 }
 
-.ft-white{
+.ft-white {
     color: #FFF;
 }
 
-.ft-green{
+.ft-green {
     color: #02B105;
 }
 
-.ft-blue{
+.ft-blue {
     color: #4361EE;
 }
 
-.ft-black{
+.ft-black {
     color: #000000;
 }
 
@@ -580,11 +586,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.carteira{
+.carteira {
     background-image: linear-gradient(to right, #7a9a01, #939d00, #ac9f00, #c5a000, #dea000, #ea9812, #f59021, #ff882f, #fd793c, #f86a47, #f15d51, #e7515a);
 }
 
-.bg-proventos{
+.bg-proventos {
     background-color: #60a718;
     border-color: #FFFFFF;
     height: 28px;
@@ -592,7 +598,7 @@
     border-width: 2px;
 }
 
-.bg-proventos-none{
+.bg-proventos-none {
     background-color: #e3ffe6;
     border-color: #FFFFFF;
     height: 28px;
@@ -606,10 +612,11 @@
     color: #fff;
     border-radius: 0.5rem;
     margin-top: 10px;
-    position:absolute;
+    position: absolute;
     width: 80px;
-  }
- .base:before {
+}
+
+.base:before {
     border-bottom: 7px solid;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
@@ -620,9 +627,9 @@
     position: absolute;
     top: -5px;
     width: 0;
-  }
+}
 
-  @media (max-width: 1250px) {
+@media (max-width: 1250px) {
 
     .base {
         display: inline-block;
@@ -631,10 +638,11 @@
         border-radius: 0.5rem;
         left: 30px;
         margin-top: 10px;
-        position:absolute;
+        position: absolute;
         width: 80px;
-      }
-     .base:before {
+    }
+
+    .base:before {
         border-bottom: 7px solid;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
@@ -645,5 +653,5 @@
         position: absolute;
         top: -5px;
         width: 0;
-      }
-  }
+    }
+}

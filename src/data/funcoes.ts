@@ -455,7 +455,6 @@ function obterTrimestre(dataString) {
   const trimestre = Math.ceil(mes / 3);
 
   // Exibir o resultado
-  console.log(`A data ${mes}-${ano} pertence ao ${trimestre}º trimestre.`);
   return trimestre;
 }
 
@@ -489,7 +488,7 @@ function mesNome(num) {
     case 12:
       return 'Dez';
     default:
-      return 'Mês inválido';
+      return mes;
   }
 }
 
@@ -522,16 +521,16 @@ function mesNomeFull(num) {
     case 12:
       return 'Dezembro';
     default:
-      return 'Mês inválido';
+      return mes;
   }
 }
 
 
-function ultimos60Meses(): { title: string; cols: number }[] {
+function ultimosxMeses(qtd, anual): { title: string; cols: number }[] {
   const anos: { [key: number]: number } = {};
 
   const dataAtual = new Date();
-  const totalMeses = 60;
+  const totalMeses = qtd * 12;
 
   for (let i = 0; i < totalMeses; i++) {
     const dataMesAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - i, 1);
@@ -549,7 +548,12 @@ function ultimos60Meses(): { title: string; cols: number }[] {
     cols
   }));
 
-  return resultado;
+  if (anual) {
+    return [{ title: 'Anos', cols: resultado.length }];
+  }
+  else {
+    return resultado;
+  }
 }
 
 function getRandomInt(min, max) {
@@ -564,7 +568,7 @@ function getLast60Months() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
     const formattedMonth = month.toString().padStart(2, '');
-    
+
     const x = `${formattedMonth}-${year}`;
     const y = 0; // Substitua 400 e 800 pelos limites desejados
 
@@ -593,7 +597,7 @@ function separarTiposLabels(data) {
       case "DIVIDENDO":
         dividendoArray.push(newItem);
         break;
-      case "JRS CAP PROPRIO":
+      case "JCP":
         jrsCapProprioArray.push(newItem);
         break;
       case "RENDIMENTO":
@@ -611,4 +615,93 @@ function separarTiposLabels(data) {
   };
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimos60Meses, getLast60Months, mesNomeFull, separarTiposLabels }
+
+function somarArrays(dividendos, jcp, rendimentos) {
+  const resultado = [];
+  // Verifica se todos os arrays têm o mesmo comprimento
+  if (dividendos.length === jcp.length && jcp.length === rendimentos.length) {
+    for (let i = 0; i < dividendos.length; i++) {
+      // Verifica se as datas são iguais
+      if (
+        dividendos[i].x === jcp[i].x &&
+        jcp[i].x === rendimentos[i].x
+      ) {
+        // Soma os valores e adiciona ao resultado
+        resultado.push({
+          x: dividendos[i].x,
+          y: (parseFloat(dividendos[i].y) + parseFloat(jcp[i].y) + parseFloat(rendimentos[i].y)).toFixed(2)
+        });
+      } else {
+        console.error("Datas não correspondem nas posições:", i);
+        // Aqui você pode tratar o erro ou decidir o que fazer caso as datas não correspondam
+      }
+    }
+  } else {
+    console.error("Os arrays não têm o mesmo comprimento.");
+    // Aqui você pode tratar o erro ou decidir o que fazer caso os arrays não tenham o mesmo comprimento
+  }
+  return resultado;
+}
+
+function somarPorAno(dados) {
+  const somaPorAno = {};
+  dados.forEach((item) => {
+    const [mes, x] = item.x.split('-');
+    const chaveAno = `${x + '-' + x}`;
+
+    if (!somaPorAno[chaveAno]) {
+      somaPorAno[chaveAno] = 0;
+    }
+
+    somaPorAno[chaveAno] += parseFloat(item.y);
+  });
+
+  const resultado = Object.entries(somaPorAno).map(([x, y]) => ({
+    x,
+    y,
+  }));
+  return resultado;
+}
+
+function somarPorAnoTipo(dividendo, jcp, rendimento) {
+  // Função auxiliar para criar um objeto com os anos como chaves e valores iniciais como 0
+  const criarObjetoAno = (dados) => {
+    const objetoAno = {};
+    dados.forEach(item => {
+      const ano = item.x.split('-')[1];
+      objetoAno[ano] = 0;
+    });
+    return objetoAno;
+  };
+
+  // Função auxiliar para somar os valores do campo "y" por ano para cada array
+  const somarValoresPorAno = (dados, objetoAno) => {
+    dados.forEach(item => {
+      const ano = item.x.split('-')[1];
+      objetoAno[ano] += parseFloat(item.y);
+    });
+  };
+
+  // Criar objetos de ano para cada array
+  const objetoAnoDividendo = criarObjetoAno(dividendo);
+  const objetoAnoJcp = criarObjetoAno(jcp);
+  const objetoAnoRendimento = criarObjetoAno(rendimento);
+
+  // Somar valores para cada array separadamente
+  somarValoresPorAno(dividendo, objetoAnoDividendo);
+  somarValoresPorAno(jcp, objetoAnoJcp);
+  somarValoresPorAno(rendimento, objetoAnoRendimento);
+
+  // Formatar o resultado no formato desejado para cada array
+  const resultadoDividendo = Object.keys(objetoAnoDividendo).map(ano => ({ "x": ano, "y": objetoAnoDividendo[ano].toFixed(2) }));
+  const resultadoJcp = Object.keys(objetoAnoJcp).map(ano => ({ "x": ano, "y": objetoAnoJcp[ano].toFixed(2) }));
+  const resultadoRendimento = Object.keys(objetoAnoRendimento).map(ano => ({ "x": ano, "y": objetoAnoRendimento[ano].toFixed(2) }));
+
+  return {
+    dividendo: resultadoDividendo,
+    jcp: resultadoJcp,
+    rendimento: resultadoRendimento
+  };
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo }

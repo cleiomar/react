@@ -5,7 +5,7 @@ import 'flatpickr/dist/flatpickr.css';
 import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
 import 'nouislider/distribute/nouislider.css';
-import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimos60Meses, mesNome, mesNomeFull, separarTiposLabels, getLast60Months } from '../data/funcoes';
+import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimosxMeses, mesNome, mesNomeFull, separarTiposLabels, somarPorAnoTipo, somarArrays, somarPorAno } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
@@ -13,6 +13,9 @@ import ReactApexChart from 'react-apexcharts';
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Indicadores from '../components/acao/indicadores';
+import TabelaDividendos from '../components/transacoes/tabelaDividendos';
+import BoxDadosPatrimonio from '../components/acao/boxDadosPatrimonio';
+import BoxEmpresasRelacionadas from '../components/acao/boxEmpresasRelacionadas';
 
 const Acao = () => {
   const { t } = useTranslation();
@@ -20,48 +23,70 @@ const Acao = () => {
   const segments = location.pathname.split('/');
   const acao = segments[segments.length - 1].toUpperCase();
 
+  const [selectedOptionPeriodicidade, setSelectedOptionPeriodicidade] = useState([]);
+  const SelectChangePeriodicidade = (selectedOptionPeriodicidade) => {
+    get_data(acao, selectedOptionPeriodo.value, selectedOptionPeriodicidade.value);
+    setSelectedOptionPeriodicidade(selectedOptionPeriodicidade)
+  };
+
   const [selectedOptionPeriodo, setSelectedOptionPeriodo] = useState([]);
   const SelectChangePeriodo = (selectedOptionPeriodo) => {
-    get_data(acao, selectedOptionPeriodo.value);
+    get_data(acao, selectedOptionPeriodo.value, selectedOptionPeriodicidade.value);
     setSelectedOptionPeriodo(selectedOptionPeriodo)
   };
 
-
   const [selectedOptionProventos, setSelectedOptionProventos] = useState([]);
   const SelectChangeProventos = (selectedOptionProventos) => {
-    //get_dataProventos(acao, selectedOptionProventos.value);
+    getDadosProventos2(acao, selectedOptionTempo.value)
+    // getDadosProventos(acao, selectedOptionTempo.value)
     setSelectedOptionProventos(selectedOptionProventos)
   };
 
-
   const [selectedOptionTempo, setSelectedOptionTempo] = useState([]);
   const SelectChangeTempo = (selectedOptionTempo) => {
-    //get_dataTempo(acao, selectedOptionTempo.value);
     getDadosProventos2(acao, selectedOptionTempo.value)
-    getDadosProventos(acao, selectedOptionTempo.value)
+    // getDadosProventos(acao, selectedOptionTempo.value)
     setSelectedOptionTempo(selectedOptionTempo)
   };
+
+  useEffect(() => {
+    let anual;
+    if (selectedOptionProventos.value == 2 || selectedOptionProventos.value == 4) {
+      anual = true;
+    }
+    else {
+      anual = false;
+    }
+    const ultimosxAnoss = ultimosxMeses(selectedOptionTempo.value ? selectedOptionTempo.value : 15, anual);
+    setUltimosxAnos(ultimosxAnoss);
+  }, [selectedOptionTempo, selectedOptionProventos])
 
   const isDark = useSelector((state: IRootState) => state.themeConfig.theme === 'dark' || state.themeConfig.isDarkMode);
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
   const colorCategorias = ["#e7515a", "#00ab55", "#0c60bb", "#43efbc", "#ef7817", "#ab0000", "#008fab", "#d2d212"];
 
   useEffect(() => {
-    setSelectedOptionPeriodo({ value: '', label: 'Selecionar...' })
-    setSelectedOptionProventos({ value: '', label: 'Selecionar...' })
-    setSelectedOptionTempo({ value: '', label: 'Selecionar...' })
+    setSelectedOptionPeriodo({ value: 4, label: '1 Ano' })
+    setSelectedOptionPeriodicidade({ value: 2, label: 'Semanal' })
+    setSelectedOptionProventos({ value: 1, label: 'Mensal' })
+    setSelectedOptionTempo({ value: 1, label: '1 Ano' })
   }, [])
 
   const [data, setData] = useState([]);
-  const get_data = async (stock, periodo) => {
-    const result = await fetch('http://localhost:3000/cotacao/' + stock + '/' + periodo);
+  const get_data = async (stock, periodo, periodicidade) => {
+    const result = await fetch('http://localhost:3000/cotacao/' + stock + '/' + periodo + '/' + periodicidade);
     const data = await result.json();
     setData(data);
   }
   useEffect(() => {
-    get_data(acao, 1);
+    get_data(acao, 4, 2);
   }, []);
 
+
+  const [dataCom, setDataCom] = useState(true);
+  const provDataCom = () => {
+    setDataCom(!dataCom); // Alternando entre true e false
+  };
 
   const [tamanhoTela, setTamanhoTela] = useState({
     largura: window.innerWidth,
@@ -73,21 +98,16 @@ const Acao = () => {
   const cotacao = data.map(item => item.close);
   const cotacaoData = data.map(item => timestampToDate(item.data));
 
-
-
   const [dadosProventos, setDadosProventos] = useState([]);
   const [dadosProventosValor, setDadosProventosValor] = useState([]);
-  const getDadosProventos = async (stock, periodo) => {
-    const data = await fetch('http://localhost:3000/proventos/' + stock + '/s' + '/' + periodo)
+  const getDadosProventos = async (stock) => {
+    const data = await fetch('http://localhost:3000/proventos/' + stock + '/s' + '/0')
     const response = await data.json();
-
-    const resultado = separarTiposLabels(response);
 
     const datas = response.map(item => item.datas);
     setDadosProventos(datas);
     setDadosProventosValor(response);
   }
-
 
   const [dividendos, setDividendos] = useState([]);
   const [jcp, setJcp] = useState([]);
@@ -112,19 +132,12 @@ const Acao = () => {
     setIndiceNome('IBOV')
   }
 
-  const [ultimos5Anos, setUltimos5Anos] = useState([])
+  const [ultimosxAnos, setUltimosxAnos] = useState([])
   const [seriesDataTotal, setSeriesDataTotal] = useState([])
   useEffect(() => {
-    getDadosProventos2('PETR4', 1)
-    getDadosProventos(acao, 1)
+    getDadosProventos2(acao, 1)
+    getDadosProventos(acao)
     get_dados(acao);
-    const ultimos5Anoss = ultimos60Meses();
-    // const dados = getLast60Months();
-    // setTimeout(() => {
-
-    //   setSeriesData(dados);
-    // }, 1000);
-    setUltimos5Anos(ultimos5Anoss);
   }, []);
 
 
@@ -135,8 +148,9 @@ const Acao = () => {
   useEffect(() => {
     const currentDate = new Date();
     const seriesData = [];
-
-    for (let i = 0; i < 60; i++) {
+    let tempo;
+    tempo = selectedOptionTempo.value ? selectedOptionTempo.value * 12 : 15 * 12
+    for (let i = 0; i < tempo; i++) {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
       const formattedMonth = month;
@@ -157,7 +171,7 @@ const Acao = () => {
       const match = dadosProventosValor.find(element2 => element2.datas === element1.x);
 
       if (match) {
-        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.soma).toFixed(2);
+        updatedSeriesData[i].y = updatedSeriesData[i].y + (match.rate).toFixed(2);
       }
     }
     setSeriesDataTotal(updatedSeriesData);
@@ -167,7 +181,9 @@ const Acao = () => {
     const currentDate = new Date();
     const seriesData = [];
 
-    for (let i = 0; i < 60; i++) {
+    let tempo;
+    tempo = selectedOptionTempo.value ? selectedOptionTempo.value * 12 : 15 * 12
+    for (let i = 0; i < tempo; i++) {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
       const formattedMonth = month;
@@ -198,7 +214,9 @@ const Acao = () => {
     const currentDate = new Date();
     const seriesData = [];
 
-    for (let i = 0; i < 60; i++) {
+    let tempo;
+    tempo = selectedOptionTempo.value ? selectedOptionTempo.value * 12 : 15 * 12
+    for (let i = 0; i < tempo; i++) {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
       const formattedMonth = month;
@@ -229,7 +247,9 @@ const Acao = () => {
     const currentDate = new Date();
     const seriesData = [];
 
-    for (let i = 0; i < 60; i++) {
+    let tempo;
+    tempo = selectedOptionTempo.value ? selectedOptionTempo.value * 12 : 15 * 12
+    for (let i = 0; i < tempo; i++) {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
       const formattedMonth = month;
@@ -256,22 +276,48 @@ const Acao = () => {
     setRendimentosTotal(updatedSeriesData);
   }, [rendimentos]);
 
+  const [somaAnual, setSomaAnual] = useState([]);
+  const [dividendosAnual, setDividendosAnual] = useState([]);
+  const [jcpAnual, setJcpAnual] = useState([]);
+  const [rendimentosAnual, setRendimentosAnual] = useState([]);
+  const [resultadoMensalAgrupado, setResultadoMensalAgrupado] = useState([]);
   useEffect(() => {
-    montarGrafico(selectedOptionTempo.value)
-  }, [dividendosTotal, jcpTotal, rendimentosTotal, dadosProventosValor])
+    const resultadoPorAnoTipo = somarPorAnoTipo(dividendosTotal, jcpTotal, rendimentosTotal);
+    setDividendosAnual(resultadoPorAnoTipo.dividendo);
+    setJcpAnual(resultadoPorAnoTipo.jcp);
+    setRendimentosAnual(resultadoPorAnoTipo.rendimento);
+    const resultado = somarArrays(dividendosTotal, jcpTotal, rendimentosTotal);
+    setResultadoMensalAgrupado(resultado);
+    let dados = somarPorAno(resultado);
+    setSomaAnual(dados);
+
+    montarGrafico(selectedOptionTempo.value);
+  }, [dividendosTotal, jcpTotal, rendimentosTotal, seriesDataTotal, dadosProventosValor, selectedOptionProventos, selectedOptionTempo])
 
 
+  useEffect(() => {
+    montarGrafico(selectedOptionTempo.value);
+  }, [somaAnual])
   const [dadosGrafico, setDadosGrafico] = useState([]);
 
   function montarGrafico(num) {
-    if (num === 10 || num === 0 || num === 1 || num === 2 || num === 3) {
+    if ((num === 1 || num === 5 || num === 10 || num == 0) && (selectedOptionProventos.value == 1)) {
       setDadosGrafico([
         { name: "Dividendos", data: dividendosTotal },
         { name: "JCP", data: jcpTotal },
         { name: "Rendimentos", data: rendimentosTotal }
       ]);
-    } else {
-      setDadosGrafico([{ name: "Proventos", data: seriesDataTotal }]);
+    }
+    else if ((num === 1 || num === 5 || num === 10 || num == 0) && (selectedOptionProventos.value == 2)) {
+      setDadosGrafico([
+        { name: "Dividendos", data: dividendosAnual },
+        { name: "JCP", data: jcpAnual },
+        { name: "Rendimentos", data: rendimentosAnual }
+      ]);
+    } else if ((num === 1 || num === 5 || num === 10 || num == 0) && (selectedOptionProventos.value == 3)) {
+      setDadosGrafico([{ name: "Proventos", data: resultadoMensalAgrupado }]);
+    } else if ((num === 1 || num === 5 || num === 10 || num == 0) && (selectedOptionProventos.value == 4)) {
+      setDadosGrafico([{ name: "Proventos", data: somaAnual }]);
     }
   }
 
@@ -380,16 +426,15 @@ const Acao = () => {
       },
       grid: {
         borderColor: isDark ? '#191E3A' : '#E0E6ED',
-        strokeDashArray: 12,
         xaxis: {
           lines: {
-            show: true,
+            show: false,
           },
         },
         yaxis: {
           tickAmount: 12,
           lines: {
-            show: false,
+            show: true,
           },
         },
         padding: {
@@ -434,10 +479,7 @@ const Acao = () => {
     },
   };
 
-
-
-
-  const chartData = {
+  let chartData = {
     series: dadosGrafico,
     options: {
       dataLabels: {
@@ -448,11 +490,29 @@ const Acao = () => {
         type: 'bar',
         height: 380
       },
+      yaxis: {
+
+        labels: {
+          formatter: (value: number) => {
+            return formatCurrency(value.toFixed(2))
+          },
+          offsetX: isRtl ? -30 : -10,
+          offsetY: 0,
+          style: {
+            fontSize: '12px',
+            cssClass: 'apexcharts-yaxis-title',
+          },
+        }
+      },
       xaxis: {
         type: 'category',
         labels: {
           formatter: function (val) {
-            return mesNome(val)
+
+            let valor = mesNome(val).toString();
+            const tempo = selectedOptionTempo.value;
+            (tempo <= 1 && tempo != 0) ? (valor) : ((tempo <= 5 && tempo != 0) ? (valor = valor.substring(0, 1)) : (valor = ''))
+            return valor
           }
         },
         group: {
@@ -460,7 +520,7 @@ const Acao = () => {
             fontSize: '10px',
             fontWeight: 700
           },
-          groups: ultimos5Anos
+          groups: ultimosxAnos
         }
       },
       title: {
@@ -578,10 +638,18 @@ const Acao = () => {
       </div>
       <div className='panel mt-6'>
         <div className="grid 1xl:grid-cols-6 lg:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-6">
-          <div className='flex mt-3 xl:col-span-2'><img src={dados.logo} height={40} width={40} /><span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO ({acao})</div></span></div>
+          <div className='flex mt-3 xl:col-span-2'><img src={dados.logo} height={40} width={40} /><span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO</div></span></div>
           <div></div>
           <div></div>
           <div className='flex justify-end xl:col-span-2'>
+            <Select
+              className='text-sm w-200 mr-5'
+              name="Periodicidade"
+              value={selectedOptionPeriodicidade}
+              onChange={SelectChangePeriodicidade}
+              options={[{ value: 1, label: 'Diário' }, { value: 2, label: 'Semanal' }, { value: 3, label: 'Mensal' }, { value: 4, label: 'Anual' }]}
+              isSearchable={false}
+            />
             <Select
               className='text-sm w-200'
               name="Periodo"
@@ -607,9 +675,54 @@ const Acao = () => {
         </div>
       </div>
       <div className='panel mt-5'>
-        <div className='subtitulo-page'>INDICADORES ({acao})</div>
+        <div className='subtitulo-page text-left mb-10'>PATRIMÔNIO</div>
+        <div className="grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 text-center gap-5">
+          <BoxDadosPatrimonio
+            nome={'PATRIMÔNIO LÍQUIDO'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'ATIVOS'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'ATIVO CIRCULANTE'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'DÍVIDA BRUTA'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'DISPONIBILIDADE'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'DÍVIDA LÍQUIDA'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'VALOR DE MERCADO'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'VALOR DE FIRMA'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'QTD TOTAL DE PAPÉIS'}
+            valor={165687124000}
+          />
+          <BoxDadosPatrimonio
+            nome={'FREE FLOAT'}
+            valor={165687124000}
+          />
+        </div>
+      </div>
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'>INDICADORES</div>
         <div className='mt-3 mb-5'><b>INDICADORES DE VALUATION</b></div>
-        <ul className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-7 font-semibold text-white-dark sm:mt-0 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-6 sm:mt-0 gap-6">
           <Indicadores
             indicador='Market Cap'
             info='$22.9B'
@@ -668,12 +781,7 @@ const Acao = () => {
             indicador='Market Cap'
             info='$22.9B'
           />
-
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-        </ul>
+        </div>
       </div>
       <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         <div className='panel mt-5'>
@@ -776,7 +884,19 @@ const Acao = () => {
         </ul>
       </div>
       <div className='panel mt-5'>
-        <div className='subtitulo-page'>MAPA DE PROVENTOS ({acao})</div>
+        <div className='grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 '>
+          <div className='subtitulo-page lg:col-span-4 sm:col-span-2'>MAPA DE PROVENTOS</div>
+          <div className='grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3'>
+            <div className='ft-micro w-100'>{dataCom == true ? <b><center>DATA COM</center></b> : <center>DATA COM</center>}</div>
+            <center className='w-70'>
+              <label className="w-12 h-6 relative">
+                <input onClick={() => provDataCom()} type="checkbox" className="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer" id="custom_switch_checkbox1" />
+                <span className="bg-[#ebedf2] dark:bg-dark block h-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300 "></span>
+              </label>
+            </center>
+            <div className='ft-micro w-100'><center>{dataCom == false ? <b>PAGAMENTO</b> : 'PAGAMENTO'}</center></div>
+          </div>
+        </div>
         <div className='w-full overflow-auto'>
           <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-12 grid-cols-12 gap-6 mt-5 w-min800 w-full">
             <div>
@@ -827,9 +947,10 @@ const Acao = () => {
           </div>
         </div>
       </div>
-      <div className='panel mt-5'>
+
+      <div className='panel mt-5 xl:col-span-2'>
         <div className='flex justify-between'>
-          <div className='subtitulo-page'>DIVIDENDOS ({acao})</div>
+          <div className='subtitulo-page'>DIVIDENDOS</div>
           <div className='flex'>
 
             <Select
@@ -837,7 +958,7 @@ const Acao = () => {
               name="Tempo"
               value={selectedOptionTempo}
               onChange={SelectChangeTempo}
-              options={[{ value: 1, label: '1 Ano' }, { value: 2, label: '5 Anos' }, { value: 3, label: '10 Anos' }, { value: 0, label: 'Máximo' }]}
+              options={[{ value: 1, label: '1 Ano' }, { value: 5, label: '5 Anos' }, { value: 10, label: '10 Anos' }, { value: 0, label: 'Máximo' }]}
               isSearchable={false}
             />
             <Select
@@ -850,7 +971,36 @@ const Acao = () => {
             />
           </div>
         </div>
-        <ReactApexChart key={dadosGrafico} options={chartData.options} series={chartData.series} type="bar" height={450} />
+        <ReactApexChart key={dadosGrafico} options={chartData.options} series={chartData.series} type="bar" height={500} />
+      </div>
+
+      <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-1 grid-cols-1 text-center gap-5">
+        <div className='panel mt-5'>
+          <div className='subtitulo-page text-left mb-10'>DIVIDENDOS</div>
+          <TabelaDividendos
+            rowData={dadosProventosValor}
+          />
+        </div>
+
+        <div className='panel mt-5'>
+          <div className='subtitulo-page text-left mb-10'>BONIFICAÇÃO</div>
+          <TabelaDividendos
+            rowData={dadosProventosValor}
+          />
+        </div>
+
+        <div className='panel mt-5'>
+          <div className='subtitulo-page text-left mb-10'>DESDOBRAMENTO/GRUPAMENTO</div>
+          <TabelaDividendos
+            rowData={dadosProventosValor}
+          />
+        </div>
+      </div>
+      <div className='panel mt-5'>
+        <div className='subtitulo-page text-left mb-2'>EMPRESAS CO-RELACIONADAS</div>
+        <div className="grid 1xl:grid-cols-1 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 text-center gap-5">
+        <BoxEmpresasRelacionadas />
+        </div>
       </div>
     </div>
 

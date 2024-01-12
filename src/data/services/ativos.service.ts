@@ -1,6 +1,7 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetBuscaAtivo,
     ModelsGetEmpresasRelacionadas,
     ModelsUpdateLista,
     ModelsGetProventos,
@@ -650,7 +651,18 @@ const serviceGetEmpresasRelacionadas = async (codigo: string) => {
     }
 };
 
+
+const serviceGetBuscaAtivo = async (codigo: string, categoria: string) => {
+    try {
+        const data = await ModelsGetBuscaAtivo(codigo, categoria);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetBuscaAtivo,
     serviceGetEmpresasRelacionadas,
     serviceUpdateLista,
     serviceGetProventos,

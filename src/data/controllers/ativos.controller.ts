@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetBuscaAtivo,
     serviceGetEmpresasRelacionadas,
     serviceUpdateLista,
     serviceGetProventos,
@@ -643,7 +644,20 @@ const ControllerGetEmpresasRelacionadas = async (req: Request, res: Response): P
     }
 };
 
+
+const ControllerGetBuscaAtivo = async (req: Request, res: Response): Promise<void> => {
+    const { codigo, categoria } = req.params;
+    try {
+        const data = await serviceGetBuscaAtivo(codigo, categoria);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerGetBuscaAtivo,
     ControllerGetEmpresasRelacionadas,
     ControllerUpdateLista,
     ControllerGetProventos,

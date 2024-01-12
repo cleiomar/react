@@ -1,45 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useSpringCarousel } from 'react-spring-carousel'
 
-const BoxEmpresasRelacionadas = () => {
-    const mockItems = [
-        {
-            id: 'item-1',
-            title: 'slide 1'
-        },
-        {
-            id: 'item-2',
-            title: 'slide 2'
-        },
-        {
-            id: 'item-3',
-            title: 'slide 3'
-        },
-        {
-            id: 'item-4',
-            title: 'slide 4'
-        },
-        {
-            id: 'item-5',
-            title: 'slide 5'
-        },
-        {
-            id: 'item-6',
-            title: 'slide 6'
-        },
-        {
-            id: 'item-7',
-            title: 'slide 7'
-        },
-        {
-            id: 'item-8',
-            title: 'slide 8'
-        },
-        {
-            id: 'item-9',
-            title: 'slide 9'
-        }
-    ]
+interface BoxEmpresasRelacionadasProps {
+    empresas: Array<any>
+}
+interface mockItems {
+    lista_ativos_id: number;
+    ativo_codigo: string;
+    logo: string;
+}
+const BoxEmpresasRelacionadas = ({ empresas }: BoxEmpresasRelacionadasProps) => {
+
+    const mockItems= empresas.map((slide, index) => ({
+        id: slide.lista_ativos_id,
+        title: slide.ativo_codigo,
+        logo: slide.logo
+    }));
+
     const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
     const [itemsPerSlide, setItemsPerSlide] = useState(calculateItemsPerSlide());
 
@@ -81,13 +59,16 @@ const BoxEmpresasRelacionadas = () => {
             return {
                 ...item,
                 renderItem: (
-                    <div
-                        className={`grid w-full place-items-center text-2xl text-white transition-all duration-700 ${currentSlide === item.id
-                            ? 'z-10 scale-150 bg-yellow-600 wh-90'
-                            : 'bg-violet-500 wh-90'
-                            }`}>
-                        {item.title}
-                    </div>
+                    <Link to={'/acoes/' + item.title}>
+                        <div
+                            className={`grid w-full place-items-center text-2xl text-white transition-all duration-700 ${currentSlide === item.id
+                                ? 'z-10 scale-150  wh-90'
+                                : ' wh-90'
+                                }`}>
+                            <img src={item.logo} width={'100%'} height={'100%'} />
+                            <div className='ft-micro' style={{ position: 'absolute', marginTop: '110px', color: '#000000' }}><b>{item.title}</b></div>
+                        </div>
+                    </Link>
                 )
             }
         })
@@ -99,18 +80,24 @@ const BoxEmpresasRelacionadas = () => {
             handleResize();
         }
     })
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            slideToNextItem();
+        }, 3000); // Ajuste o intervalo conforme necessário (3000 ms = 3 segundos)
 
+        return () => clearInterval(intervalId);
+    }, [slideToNextItem]);
     return (
         <div className="relative">
-            <button onClick={slideToPrevItem} className="absolute top-1/2 -translate-y-1/2 -translate-x-full left-[10%]">
+            <button onClick={slideToPrevItem} className="absolute top-1/2 -translate-y-1/2 -translate-x-full left-[2%]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
             </button>
-            <div className="mx-auto w-[80%] overflow-x-clip py-[1%] relative">
+            <div className="mx-auto w-[95%] overflow-x-clip py-[4%] relative">
                 {carouselFragment}
             </div>
-            <button onClick={slideToNextItem} className="absolute top-1/2 -translate-y-1/2 translate-x-full right-[10%]">
+            <button onClick={slideToNextItem} className="absolute top-1/2 -translate-y-1/2 translate-x-full right-[2%]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>

@@ -281,8 +281,8 @@
 }
 
 .wh-90 {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
 }
 
 .ml-70p {
@@ -320,6 +320,10 @@
 
 .w-300 {
     width: 300px;
+}
+
+.w-400 {
+    width: 400px;
 }
 
 .w-500 {

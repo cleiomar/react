@@ -828,7 +828,7 @@ const ModelsGetCotacao = async (ativo: string, periodo: number, periodicidade: n
 
 const ModelsGetAtivo = async (ticker: string) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT *,(SELECT volatilidade FROM indices_b3 WHERE codigo='IBOV') as ibov FROM lista_ativos WHERE ativo_codigo=?`, [ticker], (err, results) => {
+        connection.query(`SELECT *,(SELECT volatilidade FROM indices_b3 WHERE codigo='IBOV') as ibov,(SELECT nome FROM setores WHERE setores_id=lista_ativos.setor) as nomeSetor,(SELECT nome FROM subsetores WHERE subsetores_id=lista_ativos.subsetor) as nomeSubsetor,(SELECT nome FROM segmentos WHERE segmentos_id=lista_ativos.segmento) as nomeSegmento FROM lista_ativos WHERE ativo_codigo=?`, [ticker], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -891,7 +891,9 @@ const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
     return new Promise((resolve, reject) => {
         connection.query(`SELECT 
         SUBSTRING(lista_ativos.ativo_codigo, 1, 4) AS prefixo, 
-        lista_ativos.*,
+        LOWER(lista_ativos.ativo_codigo) as ativo_codigo,
+        lista_ativos.lista_ativos_id,
+        lista_ativos.logo,
         financialdata.totalRevenue
     FROM 
         lista_ativos,
@@ -901,10 +903,13 @@ const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
         AND lista_ativos.setor = (SELECT lista_ativos.setor FROM lista_ativos WHERE lista_ativos.ativo_codigo =?)
         AND lista_ativos.subsetor = (SELECT lista_ativos.subsetor FROM lista_ativos WHERE lista_ativos.ativo_codigo =?) 
         AND lista_ativos.segmento = (SELECT lista_ativos.segmento FROM lista_ativos WHERE lista_ativos.ativo_codigo =?)  
-        AND lista_ativos.ativo_codigo NOT LIKE '%34' 
+        AND lista_ativos.ativo_codigo NOT LIKE '%31' 
+        AND lista_ativos.ativo_codigo NOT LIKE '%32' 
+        AND lista_ativos.ativo_codigo NOT LIKE '%34'
+        AND lista_ativos.ativo_codigo NOT LIKE CONCAT(SUBSTRING(?, 1, 4), '%')
     GROUP BY 
         prefixo  
-    ORDER BY financialdata.totalRevenue DESC;`, [codigo,codigo,codigo], (err, results) => {
+    ORDER BY financialdata.totalRevenue DESC;`, [codigo,codigo,codigo,codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -914,7 +919,22 @@ const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
     });
 }
 
+
+const ModelsGetBuscaAtivo = async (codigo: string, categoria: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT lista_ativos_id, ativo_categoria, ativo_codigo, ativo_nome as nome, logo FROM lista_ativos WHERE (ativo_codigo LIKE CONCAT('%', ? ,'%') OR ativo_nome LIKE CONCAT('%', ? ,'%')) AND ativo_categoria=?`, [codigo,codigo,categoria], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
 export {
+    ModelsGetBuscaAtivo,
     ModelsGetEmpresasRelacionadas,
     ModelsUpdateLista,
     ModelsGetProventos,

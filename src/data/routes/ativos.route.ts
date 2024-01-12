@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  ControllerGetBuscaAtivo,
   ControllerGetEmpresasRelacionadas,
   ControllerUpdateLista,
   ControllerGetProventos,
@@ -60,6 +61,7 @@ const upload = multer({ storage: storage });
 router.get('/type', getGroupAtivos);
 router.get('/ativos/:type/:graph', getAllAtivos);
 router.get('/ativo/:ticker', ControllerGetAtivo);
+router.get('/buscaativo/:codigo/:categoria', ControllerGetBuscaAtivo);
 router.get('/valor_total_patrimonio/', ControllerValorTotalPatrimonio);
 router.get('/get_relatorio/:period/:mode', ControllerGetRelatorio);
 router.get('/get_total_ativos/:type', ControllerTotalAtivos);

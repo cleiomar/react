@@ -846,7 +846,7 @@ const Transacoes = () => {
                                                     <><div className={`categoria-color-caixa float-left`}></div><div className='ml-5'>{categoriaOptions.label}</div></>
                                                     : <>Selecionar...</>
                                   )}
-                                  isSearchable={false}
+                                  isSearchable={true}
                                 />
                               </div>
 

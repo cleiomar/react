@@ -16,6 +16,14 @@ import Indicadores from '../components/acao/indicadores';
 import TabelaDividendos from '../components/transacoes/tabelaDividendos';
 import BoxDadosPatrimonio from '../components/acao/boxDadosPatrimonio';
 import BoxEmpresasRelacionadas from '../components/acao/boxEmpresasRelacionadas';
+import BoxBuscaAtivo from '../components/acao/boxBuscaAtivo';
+
+interface DadosType {
+  ativo_nome: string;
+  nomeSetor: string;
+  logo: string;
+  nomeSegmento: string;
+}
 
 const Acao = () => {
   const { t } = useTranslation();
@@ -49,6 +57,7 @@ const Acao = () => {
     setSelectedOptionTempo(selectedOptionTempo)
   };
 
+
   useEffect(() => {
     let anual;
     if (selectedOptionProventos.value == 2 || selectedOptionProventos.value == 4) {
@@ -70,7 +79,7 @@ const Acao = () => {
     setSelectedOptionPeriodicidade({ value: 2, label: 'Semanal' })
     setSelectedOptionProventos({ value: 1, label: 'Mensal' })
     setSelectedOptionTempo({ value: 1, label: '1 Ano' })
-  }, [])
+  }, [acao])
 
   const [data, setData] = useState([]);
   const get_data = async (stock, periodo, periodicidade) => {
@@ -80,7 +89,7 @@ const Acao = () => {
   }
   useEffect(() => {
     get_data(acao, 4, 2);
-  }, []);
+  }, [acao]);
 
 
   const [dataCom, setDataCom] = useState(true);
@@ -98,9 +107,64 @@ const Acao = () => {
   const cotacao = data.map(item => item.close);
   const cotacaoData = data.map(item => timestampToDate(item.data));
 
+  const [empresasRelacionadas, setEmpresasRelacionadas] = useState([
+    {
+      id: 'item-1',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-2',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-3',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-4',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-5',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-6',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-7',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-8',
+      title: '',
+      logo: ''
+    },
+    {
+      id: 'item-9',
+      title: '',
+      logo: ''
+    }
+  ]);
+  const getEmpresasRelacionadas = async (stock) => {
+    const data = await fetch('http://localhost:3000/get_empresas_relacionadas/' + stock)
+    const response = await data.json();
+
+    //const datas = response.map(item => item.datas);
+    setEmpresasRelacionadas(response);
+  }
+
   const [dadosProventos, setDadosProventos] = useState([]);
   const [dadosProventosValor, setDadosProventosValor] = useState([]);
-  const getDadosProventos = async (stock) => {
+  const getDadosProventos = async (stock: any) => {
     const data = await fetch('http://localhost:3000/proventos/' + stock + '/s' + '/0')
     const response = await data.json();
 
@@ -122,7 +186,7 @@ const Acao = () => {
   }
 
 
-  const [dados, setDados] = useState([]);
+  const [dados, setDados] = useState<DadosType>({ ativo_nome: '', nomeSegmento: '', nomeSetor: '' });
   const get_dados = async (stock) => {
     const result = await fetch('http://localhost:3000/ativo/' + stock);
     const [data] = await result.json();
@@ -138,7 +202,8 @@ const Acao = () => {
     getDadosProventos2(acao, 1)
     getDadosProventos(acao)
     get_dados(acao);
-  }, []);
+    getEmpresasRelacionadas(acao);
+  }, [acao]);
 
 
   const [dividendosTotal, setDividendosTotal] = useState([]);
@@ -510,9 +575,23 @@ const Acao = () => {
           formatter: function (val) {
 
             let valor = mesNome(val).toString();
+            let novoValor;
             const tempo = selectedOptionTempo.value;
-            (tempo <= 1 && tempo != 0) ? (valor) : ((tempo <= 5 && tempo != 0) ? (valor = valor.substring(0, 1)) : (valor = ''))
-            return valor
+            var ano = valor.split('-');
+            if ((selectedOptionProventos.value == 2 || selectedOptionProventos.value == 4)) {
+              novoValor = ano[0];
+            }
+            else if ((tempo <= 1 && tempo != 0) && (selectedOptionProventos.value == 1 || selectedOptionProventos.value == 3)) {
+              novoValor = valor;
+            }
+            else if (tempo <= 5 && tempo != 0) {
+              novoValor = valor.substring(0, 1);
+            }
+            else {
+              novoValor = '';
+            }
+
+            return novoValor
           }
         },
         group: {
@@ -585,6 +664,27 @@ const Acao = () => {
           <span>{acao}</span>
         </li>
       </ul>
+      <div className='mb-5'>
+        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-6">
+          <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-4 grid-cols-1 gap-6 sm:col-span-2 ft-micro">
+            <center><img src={dados.logo} height={120} width={120} /></center>
+            <div className='xl:col-span-3 sm:col-span-3'>
+              <div className='subtitulo-page'>{acao}</div>
+              <div className='mt-1'><b>NOME:</b> {(dados.ativo_nome).toUpperCase()}</div>
+              <div className='mt-1'><b>SETOR:</b> {dados.nomeSetor.toUpperCase()}</div>
+              <div className='mt-1'><b>SEGMENTO:</b> {dados.nomeSegmento.toUpperCase()}</div>
+              <div className='mt-1'><b>CNPJ:</b> {dados.nomeSegmento.toUpperCase()}</div>
+            </div>
+          </div>
+          <div className='xl:col-span-2'>
+            <BoxBuscaAtivo
+            acao={acao}
+            categoria={1}
+            categoriaNome={'ação'}
+            />
+          </div>
+        </div>
+      </div>
 
       <div className="grid 1xl:grid-cols-6 lg:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-6 xl:col-span-8">
         <div className="panel bg-orange">
@@ -638,7 +738,7 @@ const Acao = () => {
       </div>
       <div className='panel mt-6'>
         <div className="grid 1xl:grid-cols-6 lg:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-6">
-          <div className='flex mt-3 xl:col-span-2'><img src={dados.logo} height={40} width={40} /><span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO</div></span></div>
+          <div className='flex mt-3 xl:col-span-2'>{/*<img src={dados.logo} height={40} width={40} />*/}<span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO</div></span></div>
           <div></div>
           <div></div>
           <div className='flex justify-end xl:col-span-2'>
@@ -997,9 +1097,11 @@ const Acao = () => {
         </div>
       </div>
       <div className='panel mt-5'>
-        <div className='subtitulo-page text-left mb-2'>EMPRESAS CO-RELACIONADAS</div>
+        <div className='subtitulo-page text-left mb-2'>EMPRESAS RELACIONADAS</div>
         <div className="grid 1xl:grid-cols-1 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 text-center gap-5">
-        <BoxEmpresasRelacionadas />
+          <BoxEmpresasRelacionadas
+            empresas={empresasRelacionadas}
+          />
         </div>
       </div>
     </div>

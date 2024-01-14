@@ -9,20 +9,50 @@ interface mockItems {
     lista_ativos_id: number;
     ativo_codigo: string;
     logo: string;
+    title: string;
 }
 const BoxEmpresasRelacionadas = ({ empresas }: BoxEmpresasRelacionadasProps) => {
+    let mockItems: Array<any>;
 
-    const mockItems= empresas.map((slide, index) => ({
-        id: slide.lista_ativos_id,
-        title: slide.ativo_codigo,
-        logo: slide.logo
+    mockItems = empresas.map((slide, index) => ({
+        id: (slide.lista_ativos_id != undefined ? slide.lista_ativos_id : index ),
+        title: (slide.ativo_codigo != undefined ? slide.ativo_codigo : 'NENHUMA' ),
+        logo: (slide.logo != undefined ? slide.logo : './src/assets/images/none.jpg' )
     }));
 
-    const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
-    const [itemsPerSlide, setItemsPerSlide] = useState(calculateItemsPerSlide());
+function Upper(val:string){
+    let nova = val+"";
+        nova = nova.toString()
+        nova = nova.toUpperCase()
+    return nova;
+}
+    function calculateItemsPerSlide() {
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth >= 1024) {
+            return {
+                itemsPerSlide: 9,
+                windowWidth: windowWidth
+            };
+        } else if (windowWidth >= 600) {
+            return {
+                itemsPerSlide: 5,
+                windowWidth: windowWidth
+            };
+        } else {
+            return {
+                itemsPerSlide: 3,
+                windowWidth: windowWidth
+            };
+        }
+    }
+
+    const [currentSlide, setCurrentSlide] = useState([mockItems[0].id])
+    const [itemsPerSlide, setItemsPerSlide] = useState(calculateItemsPerSlide().itemsPerSlide);
+    const [windowWidth, setWindowWidth] = useState(calculateItemsPerSlide().windowWidth);
 
     const handleResize = () => {
-        setItemsPerSlide(calculateItemsPerSlide());
+        setItemsPerSlide(calculateItemsPerSlide().itemsPerSlide);
     };
 
     useEffect(() => {
@@ -33,60 +63,54 @@ const BoxEmpresasRelacionadas = ({ empresas }: BoxEmpresasRelacionadasProps) => 
         };
     }, [currentSlide]);
 
-    function calculateItemsPerSlide() {
-        const windowWidth = window.innerWidth;
-
-        if (windowWidth >= 1024) {
-            return 9; // Exemplo: 3 itens por slide para telas maiores que 1024px
-        } else if (windowWidth >= 768) {
-            return 7; // Exemplo: 2 itens por slide para telas maiores que 768px
-        } else {
-            return 3; // Exemplo: 1 item por slide para telas menores que 768px
-        }
-    }
-
     const {
         carouselFragment,
-        slideToPrevItem, // go back to previous slide
-        slideToNextItem, // move to next slide
-        useListenToCustomEvent //custom hook to listen event when the slide changes
+        slideToPrevItem,
+        slideToNextItem,
+        useListenToCustomEvent,
     } = useSpringCarousel({
-        itemsPerSlide: itemsPerSlide, // number of slides per view
-        withLoop: true, // will loop
-        initialStartingPosition: 'center', // the active slide will be at the center
-        gutter: 24, // to add the space between slides
-        items: mockItems.map((item) => {
-            return {
-                ...item,
-                renderItem: (
-                    <Link to={'/acoes/' + item.title}>
+        itemsPerSlide: itemsPerSlide,
+        withLoop: true,
+        initialStartingPosition: 'center',
+        gutter: 24,
+        items: mockItems.map((item) => ({
+            ...item,
+            renderItem: (
+                <Link to={'/acoes/' + item.title} key={item.id}>
+                    <div
+                        className={`grid w-full place-items-center text-2xl text-white transition-all duration-700 ${currentSlide === item.id
+                            ? 'z-10 scale-150  wh-90'
+                            : ' wh-90'
+                            }`}>
+                        <img src={item.logo} alt={`Logo ${item.title}`} width={'100%'} height={'100%'} />
                         <div
-                            className={`grid w-full place-items-center text-2xl text-white transition-all duration-700 ${currentSlide === item.id
-                                ? 'z-10 scale-150  wh-90'
-                                : ' wh-90'
-                                }`}>
-                            <img src={item.logo} width={'100%'} height={'100%'} />
-                            <div className='ft-micro' style={{ position: 'absolute', marginTop: '110px', color: '#000000' }}><b>{item.title}</b></div>
+                            className='ft-micro'
+                            style={{ position: 'absolute', marginTop: '110px', color: '#000000' }}>
+                            <b>
+                                {Upper(item.title)}
+                            </b>
                         </div>
-                    </Link>
-                )
-            }
-        })
-    })
+                    </div>
+                </Link>
+            ),
+        })),
+    });
 
     useListenToCustomEvent((event) => {
         if (event.eventName === 'onSlideStartChange') {
-            setCurrentSlide(event?.nextItem?.id)
+            setCurrentSlide(event?.nextItem?.id);
             handleResize();
         }
-    })
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            slideToNextItem();
-        }, 3000); // Ajuste o intervalo conforme necessário (3000 ms = 3 segundos)
+    });
 
+    useEffect(() => {
+        let intervalId;
+        intervalId = setInterval(() => {
+            slideToNextItem();
+        }, 3000);
         return () => clearInterval(intervalId);
     }, [slideToNextItem]);
+
     return (
         <div className="relative">
             <button onClick={slideToPrevItem} className="absolute top-1/2 -translate-y-1/2 -translate-x-full left-[2%]">
@@ -103,7 +127,7 @@ const BoxEmpresasRelacionadas = ({ empresas }: BoxEmpresasRelacionadasProps) => 
                 </svg>
             </button>
         </div>
-    )
+    );
 }
 
 export default BoxEmpresasRelacionadas;

@@ -15,7 +15,6 @@ const BoxBuscaAtivo = ({ acao, categoria, categoriaNome }: BoxBuscaAtivoProps) =
 
     const buscarAtivo = async (ativo: string, categoria: number) => {
         try {
-            setSearching(true); // Ativar estado de busca
             const data = await fetch(`http://localhost:3000/buscaativo/${ativo}/${categoria}`);
             const response = await data.json();
             const dados = response.map((item) => ({
@@ -25,7 +24,6 @@ const BoxBuscaAtivo = ({ acao, categoria, categoriaNome }: BoxBuscaAtivoProps) =
                 label: item.nome
             }));
             setOptions(dados);
-            console.log(dados);
         } catch (error) {
             console.error("Erro ao buscar ativo:", error);
         } finally {
@@ -39,21 +37,21 @@ const BoxBuscaAtivo = ({ acao, categoria, categoriaNome }: BoxBuscaAtivoProps) =
 
     const InputChangeAcao = (ativo) => {
         if (ativo.length > 1) {
-            setTimeout(() => {
-                buscarAtivo(ativo, categoria);
-            }, 1000);
+            setSearching(true); // Ativar estado de busca
+            buscarAtivo(ativo, categoria);
         }
-        // else
-        // {
-        //     setSelectedOptionAcao({ value: '', label: 'Digite aqui e digite a  ' + categoriaNome })
-        // }
+        else {
+            setSearching(false); // Ativar estado de busca
+            setOptions([])
+            setSelectedOptionAcao({ value: '', label: 'Digite aqui e digite a  ' + categoriaNome })
+        }
     };
 
     const customOptionLabel = ({ label, codigo, logo }) => (
-        <Link to={'/acoes/' + codigo}><div className="flex"><img src={logo} height={'40px'} width={'40px'} /><div><div className='ml-5'><b>{label}</b></div><div className='ml-5 ft-micro'>{codigo}</div></div></div></Link>
+        <Link to={'/acoes/' + codigo.toLowerCase()}><div className="flex"><img src={logo} height={'40px'} width={'40px'} /><div><div className='ml-5'><b>{label}</b></div><div className='ml-5 ft-micro'>{codigo}</div></div></div></Link>
     );
     const customOptionLabel2 = ({ label, codigo, logo }) => (
-        <Link to={'/acoes/' + codigo}><div className="flex"><img src={logo} height={'40px'} width={'40px'} /><div><div className='ml-5'><b>{label}</b></div><div className='ml-5 ft-micro'>{codigo}</div></div></div></Link>
+        <Link to={'/acoes/' + codigo.toLowerCase()}><div className="flex"><img src={logo} height={'40px'} width={'40px'} /><div><div className='ml-5'><b>{label}</b></div><div className='ml-5 ft-micro'>{codigo}</div></div></div></Link>
     );
 
     const formatOptionLabel = (option, { context }) => {

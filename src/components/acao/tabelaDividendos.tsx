@@ -32,10 +32,11 @@ const TabelaDividendos = ({ rowData }: TabelaDividendosProps) => {
                 <DataTable
                     noRecordsText="No results match your search query"
                     highlightOnHover
+                    striped
                     className="whitespace-nowrap table-hover"
                     records={recordsData}
                     columns={[
-                        { accessor: 'label', title: 'TIPO',
+                        { accessor: 'label', title: 'TIPO', cellsClassName:'stickyColumn',
                         render: ({ label }) => <div className='ft-micro'>{label}</div>},
                         { accessor: 'lastDatePrior', title: 'DATA COM', 
                         render: ({ lastDatePrior }) => <div className='ft-micro'>{lastDatePrior}</div>},

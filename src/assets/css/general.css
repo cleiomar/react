@@ -659,3 +659,15 @@
         width: 0;
     }
 }
+
+.stickyColumn {
+    position: sticky;
+    left: 0;
+    /* border: solid 5px; */
+
+}
+
+.mantine-Pagination-item{
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+}

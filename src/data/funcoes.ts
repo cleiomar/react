@@ -1,4 +1,5 @@
 import { differenceInCalendarDays, format, parse } from 'date-fns';
+import { number } from 'yup';
 
 function formatData(data: any) {
 
@@ -704,4 +705,10 @@ function somarPorAnoTipo(dividendo, jcp, rendimento) {
   };
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo }
+function retrocederAnos(quantidadeAnos) {
+  const anoAtual = new Date().getFullYear();
+  const anoRetrocedido = anoAtual - quantidadeAnos;
+  return anoRetrocedido;
+}
+
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo, retrocederAnos}

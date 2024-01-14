@@ -96,6 +96,10 @@
     .sidebar .nav-item > a.active {
         @apply bg-[#000]/[0.08] text-black dark:bg-[#181f32] dark:text-white-dark;
     }
+    
+    .stickyColumn{
+        @apply bg-[#f8f8f8] text-black dark:bg-[#1A2941] dark:text-white-dark;
+    }
 
     .sidebar .nav-item > button.active > div > span,
     .sidebar .nav-item > a.active > div > span {

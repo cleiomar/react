@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import 'flatpickr/dist/flatpickr.css';
-import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
-import 'nouislider/distribute/nouislider.css';
 import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimosxMeses, mesNome, mesNomeFull, separarTiposLabels, somarPorAnoTipo, somarArrays, somarPorAno } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -13,10 +11,13 @@ import ReactApexChart from 'react-apexcharts';
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Indicadores from '../components/acao/indicadores';
-import TabelaDividendos from '../components/transacoes/tabelaDividendos';
+import TabelaDividendos from '../components/acao/tabelaDividendos';
 import BoxDadosPatrimonio from '../components/acao/boxDadosPatrimonio';
 import BoxEmpresasRelacionadas from '../components/acao/boxEmpresasRelacionadas';
 import BoxBuscaAtivo from '../components/acao/boxBuscaAtivo';
+import BoxHistoricoAcao from '../components/acao/boxHistoricoAcao';
+import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
+import 'primereact/resources/primereact.min.css'; //core css
 
 interface DadosType {
   ativo_nome: string;
@@ -159,7 +160,19 @@ const Acao = () => {
     const response = await data.json();
 
     //const datas = response.map(item => item.datas);
+    if(response.length >= 1)
+    {
     setEmpresasRelacionadas(response);
+    }
+    else{
+      
+    setEmpresasRelacionadas([{
+      id: 'item-1',
+      title: '',
+      logo: ''
+    }]);
+      
+    }
   }
 
   const [dadosProventos, setDadosProventos] = useState([]);
@@ -983,22 +996,27 @@ const Acao = () => {
           />
         </ul>
       </div>
+      
+      <BoxHistoricoAcao
+            rowData={dadosProventosValor}
+       />
+
       <div className='panel mt-5'>
         <div className='grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 '>
-          <div className='subtitulo-page lg:col-span-4 sm:col-span-2'>MAPA DE PROVENTOS</div>
+          <div className='subtitulo-page lg:col-span-4 sm:col-span-2 mb-5'>MAPA DE PROVENTOS</div>
           <div className='grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3'>
-            <div className='ft-micro w-100'>{dataCom == true ? <b><center>DATA COM</center></b> : <center>DATA COM</center>}</div>
+            <div className='ft-micro'>{dataCom == true ? <b><center>DATA COM</center></b> : <center>DATA COM</center>}</div>
             <center className='w-70'>
               <label className="w-12 h-6 relative">
                 <input onClick={() => provDataCom()} type="checkbox" className="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer" id="custom_switch_checkbox1" />
                 <span className="bg-[#ebedf2] dark:bg-dark block h-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300 "></span>
               </label>
             </center>
-            <div className='ft-micro w-100'><center>{dataCom == false ? <b>PAGAMENTO</b> : 'PAGAMENTO'}</center></div>
+            <div className='ft-micro'><center>{dataCom == false ? <b>PAGAMENTO</b> : 'PAGAMENTO'}</center></div>
           </div>
         </div>
         <div className='w-full overflow-auto'>
-          <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-12 grid-cols-12 gap-6 mt-5 w-min800 w-full">
+          <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-12 grid-cols-12 gap-6 w-min800 w-full">
             <div>
               <div><center><b><br></br></b></center></div>
               <div><center><b>ANO</b></center></div>

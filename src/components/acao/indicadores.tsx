@@ -44,7 +44,7 @@ const Indicadores = ({ indicador, info }: IndicadoresProps) => {
                     <div className="flex justify-between mt-3">
                         <div>{info}</div>
                         <Tippy trigger="mouseenter focus" content="Gráfico do Indicador">
-                            <img src="../src/assets/images/graph.svg" height={20} width={20} />
+                            <img src="../src/assets/images/graph.svg" height={15} width={15} />
                         </Tippy>
                     </div>
                 </div>

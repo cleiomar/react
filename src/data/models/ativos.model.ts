@@ -129,8 +129,9 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
         values = '';
     }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') AND last_update IS NULL ${values} ORDER BY lista_ativos_id LIMIT 1 `, [id], (err, results) => {
-            if (err) {
+        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
+        //connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') AND last_update IS NULL ${values} ORDER BY lista_ativos_id LIMIT 5 `, [id], (err, results) => {
+                if (err) {
                 reject(err);
             } else {
                 resolve(results);
@@ -933,7 +934,60 @@ const ModelsGetBuscaAtivo = async (codigo: string, categoria: string) => {
 }
 
 
+const ModelsCriarIndicador = async (codigo: string) => {
+    return new Promise((resolve, reject) => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const quantidadeAnos = 15;
+        const anos = Array.from({ length: quantidadeAnos }, (_, i) => `((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${codigo}'),${year - i})`).join(", ");
+        connection.query(`INSERT IGNORE INTO historico_indicadores (lista_ativos_id, ano) VALUES ${anos}`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsUpdateIndicador = async (ticker: string, indicador: string, ano: number, valor:number ) => {
+    return new Promise((resolve, reject) => {
+        const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
+        const query = `UPDATE historico_indicadores SET lista_ativos_id=${id}, ${indicador}=${valor} WHERE ano=${ano} AND lista_ativos_id=${id}`;
+        console.log(query)
+        connection.query(query, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsGetIndicadores = async (ticker: string ) => {
+    return new Promise((resolve, reject) => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const quantidadeAnos = 15;
+        const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
+        const anos = Array.from({ length: quantidadeAnos }, (_, i) => `${year - i}`).join(", ");
+        const query = `SELECT * FROM historico_indicadores WHERE ano IN (${anos}) AND lista_ativos_id=${id}`;
+        connection.query(query, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsGetIndicadores,
+    ModelsUpdateIndicador,
+    ModelsCriarIndicador,
     ModelsGetBuscaAtivo,
     ModelsGetEmpresasRelacionadas,
     ModelsUpdateLista,

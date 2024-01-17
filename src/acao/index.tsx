@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import 'flatpickr/dist/flatpickr.css';
 import { useSelector } from 'react-redux';
-import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimosxMeses, mesNome, mesNomeFull, separarTiposLabels, somarPorAnoTipo, somarArrays, somarPorAno } from '../data/funcoes';
+import { timestampToDate, formatCurrency, calcularCorPorcentagem, ultimosxMeses, mesNome, mesNomeFull, separarTiposLabels, somarPorAnoTipo, somarArrays, somarPorAno, nomeIndicador, FormatIndicador } from '../data/funcoes';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BoxTopAcao from '../components/acao/BoxTopAcao';
@@ -18,6 +18,7 @@ import BoxBuscaAtivo from '../components/acao/boxBuscaAtivo';
 import BoxHistoricoAcao from '../components/acao/boxHistoricoAcao';
 import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
 import 'primereact/resources/primereact.min.css'; //core css
+import Swal from 'sweetalert2';
 
 interface DadosType {
   ativo_nome: string;
@@ -31,6 +32,59 @@ const Acao = () => {
   const location = useLocation();
   const segments = location.pathname.split('/');
   const acao = segments[segments.length - 1].toUpperCase();
+
+  const [pl, setPl] = useState(0);
+  const [psr, setPsr] = useState(0);
+  const [pvp, setPvp] = useState(0);
+  const [dy, setDy] = useState(0);
+  const [mLiquida, setMLiquida] = useState(0);
+  const [mBruta, setMBruta] = useState(0);
+  const [mEbit, setMEbit] = useState(0);
+  const [mEbitda, setMEbitda] = useState(0);
+  const [evEbitda, setEvEbitda] = useState(0);
+  const [evEbit, setEvEbit] = useState(0);
+  const [pEbitda, setPEbitda] = useState(0);
+  const [pEbit, setPEbit] = useState(0);
+  const [pAtivo, setPAtivo] = useState(0);
+  const [pCapGiro, setPCapGiro] = useState(0);
+  const [pAtivoCircLiq, setPAtivoCircLiq] = useState(0);
+  const [vpa, setVpa] = useState(0);
+  const [lpa, setLpa] = useState(0);
+  const [giroAtivos, setGiroAtivos] = useState(0);
+  const [roe, setRoe] = useState(0);
+  const [roic, setRoic] = useState(0);
+  const [roa, setRoa] = useState(0);
+  const [dividaLiquidaEbtda, setDividaLiquidaEbtda] = useState(0);
+  const [dividaLiquidaEbit, setDividaLiquidaEbit] = useState(0);
+  const [patrimonioAtivos, setPatrimonioAtivos] = useState(0);
+  const [passivosAtivos, setPassivosAtivos] = useState(0);
+  const [liquidezCorrente, setLiquidezCorrente] = useState(0);
+  const [cagrReceita5Anos, setCagrReceita5Anos] = useState(0);
+  const [cagrLucro5Anos, setCagrLucro5Anos] = useState(0);
+  const [pegRatio, setPegRatio] = useState(0);
+  const [dividaLiquidaPatrimonioLiquido, setDividaLiquidaPatrimonioLiquido] = useState(0);
+
+  const showGraphIndicador = async (data: string) => {
+    Swal.fire({
+        title: "<strong>Dividend Yield</u></strong>",
+        html: `
+        <div class='ft-micro ft-black text-justify' style='text-indent:25px;'>O dividend yield, ou rendimento de dividendos, é uma métrica financeira que expressa a relação entre os dividendos pagos por uma empresa e o preço de suas ações. Ele é calculado como a porcentagem do dividendo anual em relação ao preço atual da ação. Em termos simples, o dividend yield fornece aos investidores uma medida do retorno de seus investimentos em dividendos em relação ao preço atual das ações.
+
+        A fórmula básica para calcular o dividend yield é:
+        <br><br>
+        <img src='../src/assets/images/formulas/dy.png'>            
+        <br><br>
+        O dividend yield é utilizado por investidores para avaliar o potencial retorno de investimento em dividendos, sendo uma ferramenta importante para quem busca renda estável. Um dividend yield mais alto pode indicar que uma empresa está distribuindo uma proporção maior de seus lucros aos acionistas, enquanto um yield mais baixo pode sugerir o contrário.
+        
+        É importante ressaltar que o dividend yield sozinho não é uma medida completa da qualidade de um investimento, e outros fatores, como a saúde financeira da empresa e seu histórico de dividendos, devem ser considerados ao avaliar a atratividade de um investimento.</div>
+        `,
+        showCloseButton: true,
+        focusConfirm: false,
+        confirmButtonText: `
+          OK
+        `
+      });
+  }
 
   const [selectedOptionPeriodicidade, setSelectedOptionPeriodicidade] = useState([]);
   const SelectChangePeriodicidade = (selectedOptionPeriodicidade) => {
@@ -160,18 +214,17 @@ const Acao = () => {
     const response = await data.json();
 
     //const datas = response.map(item => item.datas);
-    if(response.length >= 1)
-    {
-    setEmpresasRelacionadas(response);
+    if (response.length >= 1) {
+      setEmpresasRelacionadas(response);
     }
-    else{
-      
-    setEmpresasRelacionadas([{
-      id: 'item-1',
-      title: '',
-      logo: ''
-    }]);
-      
+    else {
+
+      setEmpresasRelacionadas([{
+        id: 'item-1',
+        title: '',
+        logo: ''
+      }]);
+
     }
   }
 
@@ -208,6 +261,78 @@ const Acao = () => {
     tamanhoTela.largura <= 600 ? setVolatilidadeIndice(data.ibov * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeIndice(data.ibov * 0.85) : setVolatilidadeIndice(data.ibov * 0.9))
     setIndiceNome('IBOV')
   }
+
+
+
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+
+
+  const [rowData, setRowData] = useState([]);
+  const getIndicadores = async (stock: any) => {
+    const data = await fetch('http://localhost:3000/get_indicadores/' + stock)
+    const response = await data.json();
+
+    let dadosReestruturados: Array<any> = [];
+
+    // Obtendo todas as chaves do primeiro objeto dos dados originais
+    const chaves = Object.keys(response[0]);
+
+    // Iterando sobre cada chave
+    chaves.forEach(chave => {
+      // Se a chave não for uma das excluídas, processe-a
+      if (chave !== "historico_indicador_id" && chave !== "lista_ativos_id" && chave !== "ano" && chave !== "divida_bruta_patrimonio" && chave !== "payout") {
+        // Criando um objeto para cada chave com a propriedade 'indicador'
+        let objetoChave = { "indicador": chave };
+
+        // Adicionando os valores de cada ano como propriedades do objeto
+        response.forEach(objeto => {
+          objetoChave['ano' + objeto.ano] = objeto[chave];
+        });
+
+        // Adicionando o objeto criado à lista de dados reestruturados
+        dadosReestruturados.push(objetoChave);
+      }
+    });
+    setRowData(dadosReestruturados);
+
+    setPl(dadosReestruturados[0]['ano2024']);
+setPsr(dadosReestruturados[1]['ano2024']);
+setPvp(dadosReestruturados[2]['ano2024']);
+setDy(dadosReestruturados[3]['ano2024']);
+setMLiquida(dadosReestruturados[4]['ano2024']);
+setMBruta(dadosReestruturados[5]['ano2024']);
+setMEbit(dadosReestruturados[6]['ano2024']);
+setMEbitda(dadosReestruturados[7]['ano2024']);
+setEvEbitda(dadosReestruturados[8]['ano2024']);
+setEvEbit(dadosReestruturados[9]['ano2024']);
+setPEbitda(dadosReestruturados[10]['ano2024']);
+setPEbit(dadosReestruturados[11]['ano2024']);
+setPAtivo(dadosReestruturados[12]['ano2024']);
+setPCapGiro(dadosReestruturados[13]['ano2024']);
+setPAtivoCircLiq(dadosReestruturados[14]['ano2024']);
+setVpa(dadosReestruturados[15]['ano2024']);
+setLpa(dadosReestruturados[16]['ano2024']);
+setGiroAtivos(dadosReestruturados[17]['ano2024']);
+setRoe(dadosReestruturados[18]['ano2024']);
+setRoic(dadosReestruturados[19]['ano2024']);
+setRoa(dadosReestruturados[20]['ano2024']);
+setDividaLiquidaEbtda(dadosReestruturados[21]['ano2024']);
+setDividaLiquidaEbit(dadosReestruturados[22]['ano2024']);
+setPatrimonioAtivos(dadosReestruturados[23]['ano2024']);
+setPassivosAtivos(dadosReestruturados[24]['ano2024']);
+setLiquidezCorrente(dadosReestruturados[25]['ano2024']);
+setCagrReceita5Anos(dadosReestruturados[26]['ano2024']);
+setCagrLucro5Anos(dadosReestruturados[27]['ano2024']);
+setPegRatio(dadosReestruturados[28]['ano2024']);
+setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
+
+  }
+
+  useEffect(() => {
+    getIndicadores(acao);
+  }, [acao])
+
 
   const [ultimosxAnos, setUltimosxAnos] = useState([])
   const [seriesDataTotal, setSeriesDataTotal] = useState([])
@@ -373,10 +498,10 @@ const Acao = () => {
   }, [dividendosTotal, jcpTotal, rendimentosTotal, seriesDataTotal, dadosProventosValor, selectedOptionProventos, selectedOptionTempo])
 
 
+  const [dadosGrafico, setDadosGrafico] = useState([]);
   useEffect(() => {
     montarGrafico(selectedOptionTempo.value);
   }, [somaAnual])
-  const [dadosGrafico, setDadosGrafico] = useState([]);
 
   function montarGrafico(num) {
     if ((num === 1 || num === 5 || num === 10 || num == 0) && (selectedOptionProventos.value == 1)) {
@@ -689,11 +814,11 @@ const Acao = () => {
               <div className='mt-1'><b>CNPJ:</b> {dados.nomeSegmento.toUpperCase()}</div>
             </div>
           </div>
-          <div className='xl:col-span-2'>
+          <div className='xl:col-span-2 custom-select'>
             <BoxBuscaAtivo
-            acao={acao}
-            categoria={1}
-            categoriaNome={'ação'}
+              acao={acao}
+              categoria={1}
+              categoriaNome={'ação'}
             />
           </div>
         </div>
@@ -749,7 +874,7 @@ const Acao = () => {
           />
         </div>
       </div>
-      <div className='panel mt-6'>
+      <div className='panel mt-6 custom-select'>
         <div className="grid 1xl:grid-cols-6 lg:grid-cols-6 sm:grid-cols-2 grid-cols-1 gap-6">
           <div className='flex mt-3 xl:col-span-2'>{/*<img src={dados.logo} height={40} width={40} />*/}<span className='mt-3 ml-5'><div className='subtitulo-page'>COTAÇÃO</div></span></div>
           <div></div>
@@ -775,6 +900,7 @@ const Acao = () => {
         </div>
         <ReactApexChart series={revenueChart.series} options={revenueChart.options} type="area" height={550} />
       </div>
+
       <div className='panel mt-5'>
         <div className='subtitulo-page'>VOLATILIDADE 12 MESES</div>
         <div className='flex pt-4'>
@@ -783,10 +909,10 @@ const Acao = () => {
             <div className='base pt-1 ft-micro' style={{ marginLeft: `${volatilidadeAcao}%`, marginTop: '-30px', transform: 'rotate(180deg)', backgroundColor: calcularCorPorcentagem(volatilidadeAcao), borderBottom: calcularCorPorcentagem(volatilidadeAcao) }}><center style={{ transform: 'rotate(180deg)' }}>{acao}</center></div>
             <div className='base pt-1 ft-micro' style={{ marginLeft: `${volatilidadeIndice}%`, marginTop: '10px', backgroundColor: calcularCorPorcentagem(volatilidadeIndice), borderBottom: calcularCorPorcentagem(volatilidadeIndice) }}><center>{indiceNome}</center></div>
           </div>
-
           <div><img src='../src/assets/images/burning-house.svg' width={40} style={{ color: '#eeeeee' }} className='float-right pb-5'></img></div>
         </div>
       </div>
+
       <div className='panel mt-5'>
         <div className='subtitulo-page text-left mb-10'>PATRIMÔNIO</div>
         <div className="grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 text-center gap-5">
@@ -835,171 +961,185 @@ const Acao = () => {
       <div className='panel mt-5'>
         <div className='subtitulo-page'>INDICADORES</div>
         <div className='mt-3 mb-5'><b>INDICADORES DE VALUATION</b></div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-6 sm:mt-0 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-4 xl:grid-cols-7 sm:mt-0 gap-6">
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='D.Y'
+            info={FormatIndicador('dy',dy)}
           />
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/L'
+            info={FormatIndicador('pl',pl)}
           />
-
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/SR'
+            info={FormatIndicador('psr',psr)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/VP'
+            info={FormatIndicador('pvp',pvp)}
+          />
+
+
+          <Indicadores
+            indicador='PEG RATIO'
+            info={FormatIndicador('peg_ratio',dy)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='EV/EBITDA'
+            info={FormatIndicador('ev_ebitda',evEbitda)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='EV/EBIT'
+            info={FormatIndicador('ev_ebit',evEbit)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/EBITDA'
+            info={FormatIndicador('p_ebitda',pEbitda)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/EBIT'
+            info={FormatIndicador('p_ebit',pEbit)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/ATIVO'
+            info={FormatIndicador('p_ativo',pAtivo)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='LPA'
+            info={FormatIndicador('lpa',lpa)}
           />
 
           <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
+            indicador='P/CAP GIRO'
+            info={FormatIndicador('p_cap_giro',pCapGiro)}
+          />
+
+          <Indicadores
+            indicador='VPA'
+            info={FormatIndicador('vpa',vpa)}
+          />
+
+          <Indicadores
+            indicador='P/ATIVO CIRC LIQ'
+            info={FormatIndicador('p_ativo_circ_liq',pAtivoCircLiq)}
           />
         </div>
       </div>
       <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         <div className='panel mt-5'>
           <div className='mt-3 mb-5'><b>INDICADORES DE EFICIÊNCIA</b></div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
+          <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 sm:mt-0 gap-6">
+          <Indicadores
+            indicador='MARGEM BRUTA'
+            info={FormatIndicador('m_bruta',mBruta)}
+          />
+          <Indicadores
+            indicador='MARGEM EBIT'
+            info={FormatIndicador('m_ebit',mEbit)}
+          />
+
+          <Indicadores
+            indicador='MARGEM EBITDA'
+            info={FormatIndicador('m_ebitda',mEbitda)}
+          />
+
+          <Indicadores
+            indicador='MARGEM LÍQUIDA'
+            info={FormatIndicador('m_liquida',mLiquida)}
+          />
           </ul>
         </div>
+
         <div className='panel mt-5'>
           <div className='mt-3 mb-5'><b>INDICADORES DE RENTABILIDADE</b></div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
+          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 sm:mt-0 gap-6">
             <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
+              indicador='GIRO ATIVOS'
+              info={FormatIndicador('giro_ativos',giroAtivos)}
             />
             <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
+              indicador='ROE'
+              info={FormatIndicador('roe',roe)}
             />
             <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
+              indicador='ROIC'
+              info={FormatIndicador('roic',roic)}
             />
             <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
+              indicador='ROA'
+              info={FormatIndicador('roa',roa)}
             />
 
           </ul>
         </div>
+
         <div className='panel mt-5'>
           <div className='mt-3 mb-5'><b>INDICADORES DE CRESCIMENTO</b></div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 font-semibold text-white-dark sm:mt-0 gap-6">
+          <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 sm:mt-0 gap-6">
             <Indicadores
+              indicador='CAGR LUCRO 5A'
+              info={FormatIndicador('cagr_lucro_5_anos',cagrLucro5Anos)}
+            />
+            <Indicadores
+              indicador='CAGR REC. 5A'
+              info={FormatIndicador('cagr_receita_5_anos',cagrReceita5Anos)}
+            />
+            {/* <Indicadores
               indicador='Market Cap'
-              info='$22.9B'
+              info={FormatIndicador('dy',dy)}
             />
             <Indicadores
               indicador='Market Cap'
-              info='$22.9B'
-            />
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
-            <Indicadores
-              indicador='Market Cap'
-              info='$22.9B'
-            />
+              info={FormatIndicador('dy',dy)}
+            /> */}
 
           </ul>
         </div>
       </div>
+
       <div className='panel mt-5'>
         <div className='mt-3 mb-5'><b>INDICADORES DE ENDIVIDAMENTO</b></div>
-        <ul className="grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 font-semibold text-white-dark sm:mt-0 gap-6">
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
+        <ul className="grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 sm:mt-0 gap-6">
+        <Indicadores
+              indicador='DÍV.LÍQUIDA/PL'
+              info={FormatIndicador('dividaliquida_patrimonioliquido',dividaLiquidaPatrimonioLiquido)}
+            />
+            <Indicadores
+              indicador='DÍV.LÍQUIDA/EBITDA'
+              info={FormatIndicador('divida_liquida_ebtda',dividaLiquidaEbtda)}
+            />
+            <Indicadores
+              indicador='DÍV.LÍQUIDA/EBIT'
+              info={FormatIndicador('divida_liquida_ebit',dividaLiquidaEbit)}
+            />
+            <Indicadores
+              indicador='PL/ATIVOS'
+              info={FormatIndicador('patrimonio_ativos',patrimonioAtivos)}
+            />
 
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
-
-          <Indicadores
-            indicador='Market Cap'
-            info='$22.9B'
-          />
+            <Indicadores
+              indicador='PASSIVOS/ATIVOS'
+              info={FormatIndicador('passivos_ativos',passivosAtivos)}
+            />
+  
+            <Indicadores
+              indicador='LIQUIDEZ CORRENTE'
+              info={FormatIndicador('liquidez_corrente',liquidezCorrente)}
+            />
         </ul>
       </div>
-      
+
       <BoxHistoricoAcao
-            rowData={dadosProventosValor}
-       />
+        acao={acao}
+        tabela={rowData}
+      />
 
       <div className='panel mt-5'>
         <div className='grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 '>
@@ -1069,7 +1209,7 @@ const Acao = () => {
       <div className='panel mt-5 xl:col-span-2'>
         <div className='flex justify-between'>
           <div className='subtitulo-page'>DIVIDENDOS</div>
-          <div className='flex'>
+          <div className='flex custom-select'>
 
             <Select
               className='text-sm w-200 mr-10'
@@ -1114,6 +1254,35 @@ const Acao = () => {
           />
         </div>
       </div>
+
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'><b>RESUMO DA EMPRESA</b></div>
+        <div className='mt-5'><b>SOBRE O BANCO DO BRASIL</b></div>
+        <div className='mt-2'>O Banco do Brasil S.A, mais conhecido como BB, é uma das maiores instituições financeiras do país, sendo sua atuação ligada ao segmento de serviços bancários.
+
+          Criado no início do século XIX, ainda no Brasil Império, o Banco do Brasil se tornou uma das maiores instituições financeiras do país ao longo do tempo, figurando na lista dos cinco maiores bancos de varejo do Brasil.
+
+          O Banco do Brasil é constituído como sociedade de economia mista e suas ações são negociadas na Bolsa do Brasil, a B3, sob o código BBAS3.
+        </div>
+        <div className='mt-8 mb-2'><b>ATUAÇÃO DO BANCO DO BRASIL</b></div>
+        <div>O Banco do Brasil S.A, mais conhecido como BB, é uma das maiores instituições financeiras do país, sendo sua atuação ligada ao segmento de serviços bancários.
+
+          Criado no início do século XIX, ainda no Brasil Império, o Banco do Brasil se tornou uma das maiores instituições financeiras do país ao longo do tempo, figurando na lista dos cinco maiores bancos de varejo do Brasil.
+
+          O Banco do Brasil é constituído como sociedade de economia mista e suas ações são negociadas na Bolsa do Brasil, a B3, sob o código BBAS3.
+        </div>
+      </div>
+
+      <div className='panel mt-5'>
+        <div className='subtitulo-page'><b>POSIÇÃO ACIONÁRIA</b></div>
+        <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 text-center gap-5 mt-2">
+          <div className='panel mt-2'>
+            <div>INVESTIDORES</div>
+            <div>874.587</div>
+          </div>
+        </div>
+      </div>
+
       <div className='panel mt-5'>
         <div className='subtitulo-page text-left mb-2'>EMPRESAS RELACIONADAS</div>
         <div className="grid 1xl:grid-cols-1 lg:grid-cols-1 sm:grid-cols-1 grid-cols-1 text-center gap-5">

@@ -711,4 +711,145 @@ function retrocederAnos(quantidadeAnos) {
   return anoRetrocedido;
 }
 
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo, retrocederAnos}
+function nomeIndicador(indicador) {
+  switch (indicador) {
+    case 'pl':
+      return 'P/L';
+    case 'psr':
+      return 'P/SR';
+    case 'pvp':
+      return 'P/VP';
+    case 'dy':
+      return 'D.Y';
+    case 'peg_ratio':
+      return 'PEG RATIO';
+    case 'm_liquida':
+      return 'M. LÍQUIDA';
+    case 'm_bruta':
+      return 'M. BRUTA';
+    case 'm_ebit':
+      return 'M. EBIT';
+    case 'm_ebitda':
+      return 'M. EBITDA';
+    case 'ev_ebitda':
+      return ' EV/EBITDA';
+    case 'ev_ebit':
+      return 'EV/EBIT';
+    case 'p_ebitda':
+      return 'P/ EBITDA';
+    case 'p_ebit':
+      return 'P/ EBIT';
+    case 'p_ativo':
+      return 'P/ ATIVO';
+    case 'p_cap_giro':
+      return 'P/ CAP GIRO ';
+    case 'p_ativo_circ_liq':
+      return 'P/ ATIVO CIRC LIQ';
+    case 'vpa':
+      return 'VPA';
+    case 'lpa':
+      return 'LPA';
+    case 'giro_ativos':
+      return 'GIRO ATIVOS';
+    case 'roe':
+      return 'ROE';
+    case 'roic':
+      return 'ROIC';
+    case 'roa':
+      return 'ROA';
+    case 'divida_liquida_ebtda':
+      return 'DÍV. LIQ/EBITDA';
+    case 'divida_liquida_ebit':
+      return 'DÍV. LIQ. EBIT';
+    case '':
+      return 'divida_bruta_patrimonio';
+    case 'patrimonio_ativos':
+      return 'PATRIM. ATIVO';
+    case 'dividaliquida_patrimonioliquido':
+      return 'DÍV. LÍQ/PATRIM. LÍQ.';
+    case 'passivos_ativos':
+      return 'PASSIVOS/ATIVOS';
+    case 'liquidez_corrente':
+      return 'LIQ. CORRENTE';
+    case 'cagr_receita_5_anos':
+      return 'RECEITA CAGR 5 ANOS';
+    case 'cagr_lucro_5_anos':
+      return 'LUCRO CAGR 5 ANOS';
+    default:
+      // Lógica para um indicador desconhecido ou não listado
+      return indicador;
+  }
+}
+
+
+function FormatIndicador(indicador, valor: number) {
+
+  switch (indicador) {
+    case 'pl':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'psr':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'pvp':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'dy':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'peg_ratio':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'm_liquida':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'm_bruta':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'm_ebit':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'm_ebitda':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'ev_ebitda':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'ev_ebit':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'p_ebitda':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'p_ebit':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'p_ativo':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'p_cap_giro':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'p_ativo_circ_liq':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'vpa':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'lpa':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'giro_ativos':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'roe':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'roic':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'roa':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'divida_liquida_ebtda':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'divida_liquida_ebit':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case '':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'patrimonio_ativos':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'dividaliquida_patrimonioliquido':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'passivos_ativos':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'liquidez_corrente':
+      return parseFloat(valor).toFixed(2).replace(".", ",");
+    case 'cagr_receita_5_anos':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    case 'cagr_lucro_5_anos':
+      return parseFloat(valor).toFixed(2).replace(".", ",")+'%';
+    default:
+      // Lógica para um indicador desconhecido ou não listado
+      return indicador;
+  }
+}
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo, retrocederAnos, nomeIndicador, FormatIndicador}

@@ -1,5 +1,8 @@
 import { Request, Response } from 'express';
 import {
+    serviceGetIndicadores,
+    serviceUpdateIndicador,
+    serviceCriarIndicador,
     serviceGetBuscaAtivo,
     serviceGetEmpresasRelacionadas,
     serviceUpdateLista,
@@ -656,7 +659,47 @@ const ControllerGetBuscaAtivo = async (req: Request, res: Response): Promise<voi
     }
 };
 
+
+const ControllerCriarIndicador = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.params;
+    try {
+        const data = await serviceCriarIndicador(codigo);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerUpdateIndicador = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, indicador, ano, valor } = req.body;
+    console.log(ticker + indicador + ano + valor)
+    try {
+        const data = await serviceUpdateIndicador(ticker, indicador, ano, valor );
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerGetIndicadores = async (req: Request, res: Response): Promise<void> => {
+    const { ticker } = req.params;
+    try {
+        const data = await serviceGetIndicadores(ticker );
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerGetIndicadores,
+    ControllerUpdateIndicador,
+    ControllerCriarIndicador,
     ControllerGetBuscaAtivo,
     ControllerGetEmpresasRelacionadas,
     ControllerUpdateLista,

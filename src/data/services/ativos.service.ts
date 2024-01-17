@@ -1,6 +1,9 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsGetIndicadores,
+    ModelsUpdateIndicador,
+    ModelsCriarIndicador,
     ModelsGetBuscaAtivo,
     ModelsGetEmpresasRelacionadas,
     ModelsUpdateLista,
@@ -661,7 +664,39 @@ const serviceGetBuscaAtivo = async (codigo: string, categoria: string) => {
     }
 };
 
+
+const serviceCriarIndicador = async (codigo: string) => {
+    try {
+        const data = await ModelsCriarIndicador(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceUpdateIndicador = async (ticker: string, indicador: string, ano: number, valor:number ) => {
+    try {
+        const data = await ModelsUpdateIndicador(ticker, indicador, ano, valor);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceGetIndicadores = async (ticker: string ) => {
+    try {
+        const data = await ModelsGetIndicadores(ticker);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceGetIndicadores,
+    serviceUpdateIndicador,
+    serviceCriarIndicador,
     serviceGetBuscaAtivo,
     serviceGetEmpresasRelacionadas,
     serviceUpdateLista,

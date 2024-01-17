@@ -1,5 +1,8 @@
 import express from 'express';
 import {
+  ControllerGetIndicadores,
+  ControllerUpdateIndicador,
+  ControllerCriarIndicador,
   ControllerGetBuscaAtivo,
   ControllerGetEmpresasRelacionadas,
   ControllerUpdateLista,
@@ -82,6 +85,9 @@ router.get('/cotacao/:ativo/:periodo/:periodicidade', ControllerGetCotacao);
 router.get('/get_lista_indice/:indice', ControllerGetRankingIndicesB3);
 router.get('/get_empresas_relacionadas/:codigo', ControllerGetEmpresasRelacionadas);
 router.get('/proventos/:codigo/:somar/:periodo', ControllerGetProventos);
+router.get('/criar_indicador/:codigo', ControllerCriarIndicador);
+router.get('/get_indicadores/:ticker', ControllerGetIndicadores);
+router.put('/adicionar_indicador', ControllerUpdateIndicador);
 router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
 router.delete('/delete_transacao', ControllerDeleteTransacao);

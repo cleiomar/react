@@ -33,7 +33,7 @@ const Indicadores = ({ indicador, info }: IndicadoresProps) => {
     return (
         
             <>
-            <div className="px-4 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
+            <div className="px-1 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
                 <div className="p-5">
                     <div><b>{indicador}</b>
                     <Tippy trigger="mouseenter focus" content="Indicador">

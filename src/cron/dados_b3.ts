@@ -277,19 +277,21 @@ const fetchDados2 = async (ticker) => {
     }
 }
 
-// const fetchApiOptionAtivo = async () => {
-//     try {
-//         const data = await fetch('http://localhost:3000/lista_ativos?b3=s');
-//         const response = await data.json();
-//         response.map(async (item: any) => {
-//             await fetchDados2(item.ativo_codigo);
-//         });
-//         //return response; // Adicione esta linha para retornar a resposta como uma Promise
-//     } catch (error) {
-//         console.error('Erro ao buscar dados da API:', error);
-//         throw error; // Se ocorrer um erro, propague-o para quem chama a função
-//     }
-// };
-// fetchApiOptionAtivo();
-let acao = 'SAPR11';
-fetchDados2(acao.toLowerCase());
+const fetchApiOptionAtivo = async () => {
+    try {
+        const data = await fetch('http://localhost:3000/lista_ativos?b3=s');
+        const response = await data.json();
+        response.map(async (item: any) => {
+            await fetchDados2(item.ativo_codigo);
+        });
+        //return response; // Adicione esta linha para retornar a resposta como uma Promise
+    } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+        throw error; // Se ocorrer um erro, propague-o para quem chama a função
+    }
+};
+fetchApiOptionAtivo();
+
+
+// let acao = 'SAPR11';
+// fetchDados2(acao.toLowerCase());

@@ -1,12 +1,15 @@
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import Swal from 'sweetalert2';
+import { nomeIndicador } from "../../data/funcoes";
+
 
 interface IndicadoresProps {
     indicador: string;
     info: string;
+    grafico: any;
 }
-const Indicadores = ({ indicador, info }: IndicadoresProps) => {
+const Indicadores = ({ indicador, info, grafico }: IndicadoresProps) => {
 
     const showIndicador = async (data: string) => {
         Swal.fire({
@@ -27,30 +30,32 @@ const Indicadores = ({ indicador, info }: IndicadoresProps) => {
             confirmButtonText: `
               OK
             `
-          });
-      }
+        });
+    }
 
     return (
-        
-            <>
+
+        <>
             <div className="px-1 py-1 border border-[#dddddd] dark:border-[#1b2e4b] p-5"><div>
                 <div className="p-5">
-                    <div><b>{indicador}</b>
-                    <Tippy trigger="mouseenter focus" content="Indicador">
-                        <button type="button" data-trigger="mouseenter" onClick={() => showIndicador()} className="btn btn-primary rounded-full h-18 p-1 float-right">
-                            ?
-                        </button>
-                    </Tippy></div>
+                    <div><b>{nomeIndicador(indicador)}</b>
+                        <Tippy trigger="mouseenter focus" content="Indicador">
+                            <button type="button" data-trigger="mouseenter" onClick={() => showIndicador()} className="btn btn-primary rounded-full h-18 p-1 float-right">
+                                ?
+                            </button>
+                        </Tippy></div>
                     <div className="flex justify-between mt-3">
                         <div>{info}</div>
                         <Tippy trigger="mouseenter focus" content="Gráfico do Indicador">
-                            <img src="../src/assets/images/graph.svg" height={15} width={15} />
+                            <button>
+                                <img onClick={() => grafico(indicador)}  src="../src/assets/images/graph.svg" height={15} width={15} />
+                            </button>
                         </Tippy>
                     </div>
                 </div>
             </div>
             </div>
-            </>
+        </>
     )
 }
 

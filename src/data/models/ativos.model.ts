@@ -116,7 +116,12 @@ const modelGetTransacoes = async () => {
 
 const modelGetListaAtivos = async (id: string, b3: string) => {
     let values = '';
+    let exists = '';
     if (b3 == 's') {
+        values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND (ativo_valor = '0' or ativo_valor is null) AND ativo_codigo!='ADA' AND last_update IS NULL ORDER BY lista_ativos_id LIMIT 5 `; // Converte o array em uma string separada por vírgulas
+        exists = ' EXISTS (SELECT * FROM historicaldataprice WHERE FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) ) AND ';
+    }
+    else if (b3 == 'update') {
         values = `AND ativo_categoria IN (1, 2, 3, 4, 6) AND ativo_codigo!='ADA' `; // Converte o array em uma string separada por vírgulas
     }
     else if (b3 == 'i') {
@@ -129,8 +134,8 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
         values = '';
     }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
-        //connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') AND last_update IS NULL ${values} ORDER BY lista_ativos_id LIMIT 5 `, [id], (err, results) => {
+        //connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
+        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ${exists} ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
                 if (err) {
                 reject(err);
             } else {
@@ -722,10 +727,8 @@ const ModelsInsertFinancialData = async (ticker: string, currentPrice: number, t
 
 
 const ModelsInsertCashDividends = async (ticker: string, assetIssued: string, paymentDate: string, rate: number, relatedTo: string, approvedOn: string, isinCode: string, label: string, lastDatePrior: string, remarks: string) => {
-    console.log(paymentDate);
-    const query = `INSERT IGNORE INTO cashdividends (lista_ativos_id, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${paymentDate}', '${rate}', '${relatedTo}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`;
 
-    //console.log("Query Executada:", query);  // Adicione esta linha para imprimir a consulta
+    const query = `INSERT IGNORE INTO cashdividends (lista_ativos_id, assetIssued, paymentDate, rate, relatedTo, approvedOn, isinCode, label, lastDatePrior, remarks) VALUES ((SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}'), '${assetIssued}', '${paymentDate}', '${rate}', '${relatedTo}', '${approvedOn}', '${isinCode}', '${label}', '${lastDatePrior}', '${remarks}')`;
 
     return new Promise((resolve, reject) => {
         connection.query(query, (err, results) => {
@@ -954,7 +957,7 @@ const ModelsUpdateIndicador = async (ticker: string, indicador: string, ano: num
     return new Promise((resolve, reject) => {
         const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
         const query = `UPDATE historico_indicadores SET lista_ativos_id=${id}, ${indicador}=${valor} WHERE ano=${ano} AND lista_ativos_id=${id}`;
-        console.log(query)
+
         connection.query(query, (err, results) => {
             if (err) {
                 reject(err);
@@ -984,7 +987,59 @@ const ModelsGetIndicadores = async (ticker: string ) => {
     });
 }
 
+
+const ModelsGetGraphIndicador = async (indicador: string, ticker: number) => {
+    return new Promise((resolve, reject) => {
+        const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
+        const currentDate = new Date();
+        const atual = currentDate.getFullYear();
+        const max = currentDate.getFullYear()-10;
+        const query = `SELECT ${indicador} as valor, ano FROM historico_indicadores WHERE ano BETWEEN '${max}' AND '${atual}'  AND lista_ativos_id=${id} `;
+        connection.query(query, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsGetValoresAtivo = async (ticker: number) => {
+    return new Promise((resolve, reject) => {
+        const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
+        const currentDate = new Date();
+        const atual = currentDate.getFullYear();
+        const query = `SELECT close FROM historicaldataprice WHERE lista_ativos_id=${id} AND FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) GROUP BY MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
+
+        connection.query(query, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsUpdateDrawDown = async (ticker: string, valor: number) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE lista_ativos SET volatilidade=? WHERE ativo_codigo=?`, [valor, ticker], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsUpdateDrawDown,
+    ModelsGetValoresAtivo,
+    ModelsGetGraphIndicador,
     ModelsGetIndicadores,
     ModelsUpdateIndicador,
     ModelsCriarIndicador,

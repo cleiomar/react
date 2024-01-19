@@ -36,7 +36,7 @@ const fetchDadosB3 = async (ticker) => {
 
 const fetchApiOptionAtivo = async () => {
     try {
-        const data = await fetch('http://localhost:3000/lista_ativos?b3=s');
+        const data = await fetch('http://localhost:3000/lista_ativos?b3=update');
         const response = await data.json();
         response.map(async (item: any) => {
             await fetchDadosB3(item.ativo_codigo);

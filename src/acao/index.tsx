@@ -19,6 +19,7 @@ import BoxHistoricoAcao from '../components/acao/boxHistoricoAcao';
 import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
 import 'primereact/resources/primereact.min.css'; //core css
 import Swal from 'sweetalert2';
+import { createRoot } from 'react-dom/client';
 
 interface DadosType {
   ativo_nome: string;
@@ -64,7 +65,7 @@ const Acao = () => {
   const [pegRatio, setPegRatio] = useState(0);
   const [dividaLiquidaPatrimonioLiquido, setDividaLiquidaPatrimonioLiquido] = useState(0);
 
-  const showGraphIndicador = async (data: string) => {
+  const showInfoIndicador = async (data: string) => {
     Swal.fire({
         title: "<strong>Dividend Yield</u></strong>",
         html: `
@@ -256,10 +257,111 @@ const Acao = () => {
   const get_dados = async (stock) => {
     const result = await fetch('http://localhost:3000/ativo/' + stock);
     const [data] = await result.json();
+    console.log(data);
     setDados(data);
     tamanhoTela.largura <= 600 ? setVolatilidadeAcao(data.volatilidade * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeAcao(data.volatilidade * 0.85) : setVolatilidadeAcao(data.volatilidade * 0.9))
     tamanhoTela.largura <= 600 ? setVolatilidadeIndice(data.ibov * 0.60) : (tamanhoTela.largura <= 1000 ? setVolatilidadeIndice(data.ibov * 0.85) : setVolatilidadeIndice(data.ibov * 0.9))
     setIndiceNome('IBOV')
+  }
+
+  const getDados = async (indicador: string, stock: string) => {
+      try {
+          const response = await fetch(`http://localhost:3000/get_graph_indicador/${indicador}/${stock}`).then(res => res.json());
+          const totalSoma = Object.values(response).reduce((acc, item) => acc + parseFloat(item.valor), 0); // Considere usar parseInt se ano for um número inteiro
+          const graphValues = Object.values(response).map(item => parseFloat(item.valor).toFixed(2));
+          const graphAno = Object.values(response).map(item => item.ano);
+          return {
+              totalSomaGraph: totalSoma,
+              graphIndicador: graphValues,
+              graphAno: graphAno
+          };
+      } catch (error) {
+          console.error('Erro ao buscar dados:', error);
+          throw error; // Ou lidar com o erro de uma forma que faça sentido para sua aplicação
+      }
+  }
+
+
+  const showGraphIndicador = async (data: string) => {
+      try {
+          const { totalSomaGraph, graphIndicador, graphAno } = await getDados(data, acao);
+      
+          const media = totalSomaGraph/graphIndicador.length;
+          console.log(media)
+          // Agora você pode usar graphIndicador e graphAno para construir seu gráfico
+          const chartDataIndicador = {
+              series: [{
+                  name: nomeIndicador(data),
+                  data: graphIndicador
+              }],
+              options: {
+                  chart: {
+                      type: 'line',
+                      height: 350
+                  },
+                  stroke: {
+                      width: 2 // Ajuste este valor para controlar a espessura da linha
+                  },
+                  yaxis:{
+                      labels: {
+                        formatter: function (val) {
+                              return FormatIndicador(data,val)
+                        }
+                      }
+                  },
+                  xaxis: {
+                      categories: graphAno
+                  },
+                  annotations: {
+                      yaxis: [{
+                          y: media,
+                          borderColor: '#000',
+                          label: {
+                              borderColor: '#000',
+                              style: {
+                                  color: '#FFF',
+                                  background: '#000'
+                              },
+                              text: 'Média: '+FormatIndicador(data,media)
+                          }
+                      }]
+                  }
+              }
+          };
+  
+          const chart = (
+              <div className='p-2'><ReactApexChart
+                  options={chartDataIndicador.options}
+                  series={chartDataIndicador.series}
+                  type="line"
+                  key={graphIndicador + ''}
+                  height={300}
+                  width={650}
+              /></div>
+          );
+  
+          // Criar um elemento div para renderizar o gráfico
+          const div = document.createElement('div');
+  
+          // Usar createRoot para renderizar o componente
+          const root = createRoot(div);
+          root.render(chart);
+  
+          // Aguardar o fechamento do modal
+          await Swal.fire({
+              title: "<strong>" + nomeIndicador(data) + "</strong>",
+              html: div,
+              showCancelButton: false,
+              showConfirmButton: false,
+              customClass: 'swal',
+              width: 700
+          });
+  
+          console.log('Modal foi fechado');
+      } catch (error) {
+          console.error('Erro ao buscar ou exibir dados:', error);
+          // Você pode querer fazer algum tratamento de erro adicional aqui
+      }
   }
 
 
@@ -963,71 +1065,85 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
         <div className='mt-3 mb-5'><b>INDICADORES DE VALUATION</b></div>
         <div className="grid grid-cols-1 sm:grid-cols-4 xl:grid-cols-7 sm:mt-0 gap-6">
           <Indicadores
-            indicador='D.Y'
+              grafico={showGraphIndicador}
+              indicador='dy'
             info={FormatIndicador('dy',dy)}
           />
           <Indicadores
-            indicador='P/L'
+              grafico={showGraphIndicador}
+              indicador='pl'
             info={FormatIndicador('pl',pl)}
           />
           <Indicadores
-            indicador='P/SR'
+              grafico={showGraphIndicador}
+              indicador='psr'
             info={FormatIndicador('psr',psr)}
           />
 
           <Indicadores
-            indicador='P/VP'
+              grafico={showGraphIndicador}
+              indicador='pvp'
             info={FormatIndicador('pvp',pvp)}
           />
 
 
           <Indicadores
-            indicador='PEG RATIO'
+              grafico={showGraphIndicador}
+              indicador='peg_ratio'
             info={FormatIndicador('peg_ratio',dy)}
           />
 
           <Indicadores
-            indicador='EV/EBITDA'
+              grafico={showGraphIndicador}
+              indicador='ev_ebitda'
             info={FormatIndicador('ev_ebitda',evEbitda)}
           />
 
           <Indicadores
-            indicador='EV/EBIT'
+              grafico={showGraphIndicador}
+              indicador='ev_ebit'
             info={FormatIndicador('ev_ebit',evEbit)}
           />
 
           <Indicadores
-            indicador='P/EBITDA'
+              grafico={showGraphIndicador}
+              indicador='p_ebitda'
             info={FormatIndicador('p_ebitda',pEbitda)}
           />
 
           <Indicadores
-            indicador='P/EBIT'
+              grafico={showGraphIndicador}
+              indicador='p_ebit'
             info={FormatIndicador('p_ebit',pEbit)}
           />
 
           <Indicadores
-            indicador='P/ATIVO'
+              grafico={showGraphIndicador}
+              indicador='p_ativo'
             info={FormatIndicador('p_ativo',pAtivo)}
           />
 
           <Indicadores
-            indicador='LPA'
+              grafico={showGraphIndicador}
+              indicador='lpa'
             info={FormatIndicador('lpa',lpa)}
           />
 
           <Indicadores
-            indicador='P/CAP GIRO'
+              grafico={showGraphIndicador}
+              indicador='p_cap_giro'
             info={FormatIndicador('p_cap_giro',pCapGiro)}
           />
 
           <Indicadores
-            indicador='VPA'
+              grafico={showGraphIndicador}
+              indicador='vpa'
             info={FormatIndicador('vpa',vpa)}
           />
 
           <Indicadores
-            indicador='P/ATIVO CIRC LIQ'
+              grafico={showGraphIndicador}
+              indicador='p_ativo_circ_liq'
             info={FormatIndicador('p_ativo_circ_liq',pAtivoCircLiq)}
           />
         </div>
@@ -1037,21 +1153,25 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
           <div className='mt-3 mb-5'><b>INDICADORES DE EFICIÊNCIA</b></div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 sm:mt-0 gap-6">
           <Indicadores
-            indicador='MARGEM BRUTA'
+              grafico={showGraphIndicador}
+              indicador='m_bruta'
             info={FormatIndicador('m_bruta',mBruta)}
           />
           <Indicadores
-            indicador='MARGEM EBIT'
+              grafico={showGraphIndicador}
+              indicador='m_ebit'
             info={FormatIndicador('m_ebit',mEbit)}
           />
 
           <Indicadores
-            indicador='MARGEM EBITDA'
+              grafico={showGraphIndicador}
+              indicador='m_ebitda'
             info={FormatIndicador('m_ebitda',mEbitda)}
           />
 
           <Indicadores
-            indicador='MARGEM LÍQUIDA'
+              grafico={showGraphIndicador}
+              indicador='m_liquida'
             info={FormatIndicador('m_liquida',mLiquida)}
           />
           </ul>
@@ -1061,19 +1181,23 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
           <div className='mt-3 mb-5'><b>INDICADORES DE RENTABILIDADE</b></div>
           <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 sm:mt-0 gap-6">
             <Indicadores
-              indicador='GIRO ATIVOS'
+              grafico={showGraphIndicador}
+              indicador='giro_ativos'
               info={FormatIndicador('giro_ativos',giroAtivos)}
             />
             <Indicadores
-              indicador='ROE'
+              grafico={showGraphIndicador}
+              indicador='roe'
               info={FormatIndicador('roe',roe)}
             />
             <Indicadores
-              indicador='ROIC'
+              grafico={showGraphIndicador}
+              indicador='roic'
               info={FormatIndicador('roic',roic)}
             />
             <Indicadores
-              indicador='ROA'
+              grafico={showGraphIndicador}
+              indicador='roa'
               info={FormatIndicador('roa',roa)}
             />
 
@@ -1084,18 +1208,22 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
           <div className='mt-3 mb-5'><b>INDICADORES DE CRESCIMENTO</b></div>
           <ul className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 sm:mt-0 gap-6">
             <Indicadores
-              indicador='CAGR LUCRO 5A'
+              grafico={showGraphIndicador}
+              indicador='cagr_lucro_5_anos'
               info={FormatIndicador('cagr_lucro_5_anos',cagrLucro5Anos)}
             />
             <Indicadores
-              indicador='CAGR REC. 5A'
+              grafico={showGraphIndicador}
+              indicador='cagr_receita_5_anos'
               info={FormatIndicador('cagr_receita_5_anos',cagrReceita5Anos)}
             />
             {/* <Indicadores
+              grafico={showGraphIndicador}
               indicador='Market Cap'
               info={FormatIndicador('dy',dy)}
             />
             <Indicadores
+              grafico={showGraphIndicador}
               indicador='Market Cap'
               info={FormatIndicador('dy',dy)}
             /> */}
@@ -1108,29 +1236,35 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
         <div className='mt-3 mb-5'><b>INDICADORES DE ENDIVIDAMENTO</b></div>
         <ul className="grid grid-cols-1 sm:grid-cols-3  xl:grid-cols-7 sm:mt-0 gap-6">
         <Indicadores
-              indicador='DÍV.LÍQUIDA/PL'
+              grafico={showGraphIndicador}
+              indicador='dividaliquida_patrimonioliquido'
               info={FormatIndicador('dividaliquida_patrimonioliquido',dividaLiquidaPatrimonioLiquido)}
             />
             <Indicadores
-              indicador='DÍV.LÍQUIDA/EBITDA'
+              grafico={showGraphIndicador}
+              indicador='divida_liquida_ebtda'
               info={FormatIndicador('divida_liquida_ebtda',dividaLiquidaEbtda)}
             />
             <Indicadores
-              indicador='DÍV.LÍQUIDA/EBIT'
+              grafico={showGraphIndicador}
+              indicador='divida_liquida_ebit'
               info={FormatIndicador('divida_liquida_ebit',dividaLiquidaEbit)}
             />
             <Indicadores
-              indicador='PL/ATIVOS'
+              grafico={showGraphIndicador}
+              indicador='patrimonio_ativos'
               info={FormatIndicador('patrimonio_ativos',patrimonioAtivos)}
             />
 
             <Indicadores
-              indicador='PASSIVOS/ATIVOS'
+              grafico={showGraphIndicador}
+              indicador='passivos_ativos'
               info={FormatIndicador('passivos_ativos',passivosAtivos)}
             />
   
             <Indicadores
-              indicador='LIQUIDEZ CORRENTE'
+              grafico={showGraphIndicador}
+              indicador='liquidez_corrente'
               info={FormatIndicador('liquidez_corrente',liquidezCorrente)}
             />
         </ul>
@@ -1139,6 +1273,7 @@ setDividaLiquidaPatrimonioLiquido(dadosReestruturados[29]['ano2024']);
       <BoxHistoricoAcao
         acao={acao}
         tabela={rowData}
+        grafico={showGraphIndicador}
       />
 
       <div className='panel mt-5'>

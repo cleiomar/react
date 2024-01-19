@@ -84,6 +84,7 @@ const Dashboard = () => {
                         return '*******'; // Retorna o valor original se algo estiver indefinido
                     },
                 }) :
+
                 setTooltipConfig({
                     formatter: (value, { series, seriesIndex, dataPointIndex, w }) => {
                         // Verifica se 'w' e 'w.globals.seriesNames' estão definidos

@@ -11,9 +11,10 @@ import { createRoot } from 'react-dom/client';
 interface TabelaDividendosProps {
     acao: string;
     tabela: Array<any>;
+    grafico: any;
 }
 
-const TabelaDividendos = ({ acao, tabela }: TabelaDividendosProps) => {
+const TabelaDividendos = ({ acao, tabela, grafico }: TabelaDividendosProps) => {
 
     const [rowData, setRowData] = useState(tabela);
     const [page, setPage] = useState(1);
@@ -23,68 +24,7 @@ const TabelaDividendos = ({ acao, tabela }: TabelaDividendosProps) => {
 
     const isDark = useSelector((state: IRootState) => state.themeConfig.theme === 'dark' || state.themeConfig.isDarkMode);
     const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
-   
 
-    const chartDataIndicador = {
-        series: [{
-          name: 'Desktops',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-        }],
-        options: {
-          chart: {
-            type: 'line',
-            height: 350
-          },
-          stroke: {
-            width: 2 // Ajuste este valor para controlar a espessura da linha
-          },
-          xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
-          },
-          annotations: {
-            yaxis: [{
-              y: 80,
-              borderColor: '#000',
-              label: {
-                borderColor: '#000',
-                style: {
-                  color: '#FFF',
-                  background: '#000'
-                },
-                text: 'Média'
-              }
-            }]
-          }
-        }
-      };
-      
-      const showGraphIndicador = async (data: string) => {
-        const chart = (
-          <div className='p-2'><ReactApexChart
-            options={chartDataIndicador.options}
-            series={chartDataIndicador.series}
-            type="line"
-            height={300}
-            width={650}
-          /></div>
-        );
-    
-        // Criar um elemento div para renderizar o gráfico
-        const div = document.createElement('div');
-    
-        // Usar createRoot para renderizar o componente
-        const root = createRoot(div);
-        root.render(chart);
-    
-        await Swal.fire({
-            title: "<strong>"+nomeIndicador(data)+"</strong>",
-            html: div,
-            showCancelButton: false,
-            showConfirmButton: false,
-            customClass: 'swal',
-            width: 700
-        });
-    }
 
     useEffect(() => {
         setRowData(tabela);
@@ -147,7 +87,7 @@ const TabelaDividendos = ({ acao, tabela }: TabelaDividendosProps) => {
 
                                         <Tippy className='ml-1' trigger="mouseenter focus" content="Gráfico do Indicador">
                                             <button>
-                                                <img  onClick={() => showGraphIndicador(indicador)} src="../src/assets/images/graph.svg" height={15} width={15} />
+                                                <img onClick={() => grafico(indicador)} src="../src/assets/images/graph.svg" height={15} width={15} />
                                             </button>
                                         </Tippy></div>
                                 </div>

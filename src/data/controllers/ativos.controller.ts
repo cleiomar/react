@@ -1,5 +1,8 @@
 import { Request, Response } from 'express';
 import {
+    serviceUpdateDrawDown,
+    serviceGetValoresAtivo,
+    serviceGetGraphIndicador,
     serviceGetIndicadores,
     serviceUpdateIndicador,
     serviceCriarIndicador,
@@ -696,7 +699,46 @@ const ControllerGetIndicadores = async (req: Request, res: Response): Promise<vo
     }
 };
 
+
+const ControllerGetGraphIndicador = async (req: Request, res: Response): Promise<void> => {
+    const { indicador, ticker } = req.params;
+    try {
+        const data = await serviceGetGraphIndicador(indicador, ticker);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerGetValoresAtivo = async (req: Request, res: Response): Promise<void> => {
+    const { ticker } = req.params;
+    try {
+        const data = await serviceGetValoresAtivo(ticker);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerUpdateDrawDown = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, valor } = req.body;
+    try {
+        const data = await serviceUpdateDrawDown(ticker, valor);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export {
+    ControllerUpdateDrawDown,
+    ControllerGetValoresAtivo,
+    ControllerGetGraphIndicador,
     ControllerGetIndicadores,
     ControllerUpdateIndicador,
     ControllerCriarIndicador,

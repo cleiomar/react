@@ -1,5 +1,8 @@
 import express from 'express';
 import {
+  ControllerUpdateDrawDown,
+  ControllerGetValoresAtivo,
+  ControllerGetGraphIndicador,
   ControllerGetIndicadores,
   ControllerUpdateIndicador,
   ControllerCriarIndicador,
@@ -72,6 +75,7 @@ router.get('/categorias', ControllerGetCategorias);
 router.get('/percentual_categorias', ControllerGetPercentualCategorias);
 router.get('/brokers', ControllerGetBrokers);
 router.get('/transacoes', ControllerGetTransacoes);
+router.get('/get_graph_indicador/:indicador/:ticker', ControllerGetGraphIndicador);
 router.get('/lista_ativos', ControllerGetListaAtivos);
 router.get('/lista_ativos_cliente', ControllerGetListaAtivosCliente);
 router.get('/configs', ControllerGetConfigs);
@@ -87,7 +91,9 @@ router.get('/get_empresas_relacionadas/:codigo', ControllerGetEmpresasRelacionad
 router.get('/proventos/:codigo/:somar/:periodo', ControllerGetProventos);
 router.get('/criar_indicador/:codigo', ControllerCriarIndicador);
 router.get('/get_indicadores/:ticker', ControllerGetIndicadores);
+router.get('/get_valores_ativo/:ticker', ControllerGetValoresAtivo);
 router.put('/adicionar_indicador', ControllerUpdateIndicador);
+router.put('/update_drawdown/', ControllerUpdateDrawDown);
 router.post('/insert_setores', ControllerInsertSetores);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
 router.delete('/delete_transacao', ControllerDeleteTransacao);

@@ -273,6 +273,7 @@ const fetchDados2 = async (ticker) => {
         });
         fetchUpdateLista(ticker);
     } catch (error) {
+        fetchUpdateLista(ticker);
         console.error('Erro ao buscar dados:', error);
     }
 }

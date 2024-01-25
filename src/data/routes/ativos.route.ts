@@ -1,5 +1,14 @@
 import express from 'express';
 import {
+  ControllerUpdateCnpj,
+  ControllerGetListaFii,
+  ControllerDeleteComunicado,
+  ControllerUpdateFav,
+  ControllerUpdateListaCVM,
+  ControllerUpdateComunicadosB3,
+  ControllerGetComunicadosB3,
+  ControllerInsertComunicadosB3,
+  ControllerInsertEmpresasB3,
   ControllerUpdateDrawDown,
   ControllerGetValoresAtivo,
   ControllerGetGraphIndicador,
@@ -77,6 +86,7 @@ router.get('/brokers', ControllerGetBrokers);
 router.get('/transacoes', ControllerGetTransacoes);
 router.get('/get_graph_indicador/:indicador/:ticker', ControllerGetGraphIndicador);
 router.get('/lista_ativos', ControllerGetListaAtivos);
+router.get('/lista_fii', ControllerGetListaFii);
 router.get('/lista_ativos_cliente', ControllerGetListaAtivosCliente);
 router.get('/configs', ControllerGetConfigs);
 router.get('/transacao_id', ControllerGetTransacaoId);
@@ -95,6 +105,12 @@ router.get('/get_valores_ativo/:ticker', ControllerGetValoresAtivo);
 router.put('/adicionar_indicador', ControllerUpdateIndicador);
 router.put('/update_drawdown/', ControllerUpdateDrawDown);
 router.post('/insert_setores', ControllerInsertSetores);
+router.post('/empresas_b3', ControllerInsertEmpresasB3);
+router.post('/comunicados_b3', ControllerInsertComunicadosB3);
+router.post('/get_comunicados_b3', ControllerGetComunicadosB3);
+router.put('/update_comunicados_b3', ControllerUpdateComunicadosB3);
+router.put('/update_fav', ControllerUpdateFav);
+router.put('/update_cnpj', ControllerUpdateCnpj);
 //router.get('/atualizar_dados_b3', ControllerDadosB3);
 router.delete('/delete_transacao', ControllerDeleteTransacao);
 router.put('/update_config', ControllerUpdateConfigs);
@@ -120,5 +136,7 @@ router.post('/stockdividends', upload.none(), ControllerInsertStockDividends);
 router.post('/subscriptions', upload.none(), ControllerInsertSubscriptions);
 router.post('/historicaldataprice', upload.none(), ControllerInsertHistoricalDataPrice);
 router.put('/update_lista', ControllerUpdateLista);
+router.put('/update_lista_codigo_cvm', ControllerUpdateListaCVM);
+router.put('/delete_comunicados', ControllerDeleteComunicado);
 
 export default router;

@@ -1,5 +1,14 @@
 import { Request, Response } from 'express';
 import {
+    serviceUpdateCnpj,
+    serviceGetListaFii,
+    serviceDeleteComunicado,
+    serviceUpdateFav,
+    serviceUpdateListaCVM,
+    serviceUpdateComunicadosB3,
+    serviceGetComunicadosB3,
+    serviceInsertComunicadosB3,
+    serviceInsertEmpresasB3,
     serviceUpdateDrawDown,
     serviceGetValoresAtivo,
     serviceGetGraphIndicador,
@@ -461,7 +470,6 @@ const ControllerGetEstatisticas = async (req: Request, res: Response): Promise<v
 
 const ControllerSummaryProfile = async (req: Request, res: Response): Promise<void> => {
     const { ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers } = req.body;
-    console.log(ativo)
     try {
         const data = await serviceSummaryProfile(ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers);
         res.json(data);
@@ -735,7 +743,121 @@ const ControllerUpdateDrawDown = async (req: Request, res: Response): Promise<vo
     }
 };
 
+
+const ControllerInsertEmpresasB3 = async (req: Request, res: Response): Promise<void> => {
+    const { codeCVM, issuingCompany, companyName, tradingName, cnpj, marketIndicator, typeBDR, dateListing, status, segment, segmentEng, type, market } = req.body;
+    try {
+        const data = await serviceInsertEmpresasB3(codeCVM, issuingCompany, companyName, tradingName, cnpj, marketIndicator, typeBDR, dateListing, status, segment, segmentEng, type, market);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerInsertComunicadosB3 = async (req: Request, res: Response): Promise<void> => {
+    const { codeCVM, ticker, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime } = req.body;
+    try {
+        const data = await serviceInsertComunicadosB3(codeCVM, ticker, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime);
+        res.json(data);
+    } catch (error) {
+        console.error('Erro ao obter ativos:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
+
+const ControllerGetComunicadosB3 = async (req: Request, res: Response): Promise<void> => {
+    const { page, codigo, categoria, favorito } = req.body;
+    try {
+       const data = await serviceGetComunicadosB3(page, codigo, categoria, favorito);
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+
+const ControllerUpdateComunicadosB3 = async (req: Request, res: Response): Promise<void> => {
+    try {
+       const data = await serviceUpdateComunicadosB3();
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+
+const ControllerUpdateListaCVM = async (req: Request, res: Response): Promise<void> => {
+    const { codigo } = req.body;
+    try {
+       const data = await serviceUpdateListaCVM(codigo);
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+const ControllerUpdateFav = async (req: Request, res: Response): Promise<void> => {
+    const { id, fav } = req.body;
+    try {
+       const data = await serviceUpdateFav(id, fav);
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+
+const ControllerDeleteComunicado = async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.body;
+    try {
+       const data = await serviceDeleteComunicado(id);
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+
+const ControllerGetListaFii = async (req: Request, res: Response): Promise<void> => {
+    try {
+       const data = await serviceGetListaFii();
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
+
+const ControllerUpdateCnpj = async (req: Request, res: Response): Promise<void> => {
+    const { ticker, cnpj } = req.body;
+    try {
+       const data = await serviceUpdateCnpj(ticker, cnpj);
+       res.json(data);
+   } catch (error) {
+       console.error('Erro ao obter ativos:', error);
+       res.status(500).json({ message: 'Internal Server Error' });
+   }
+};
+
 export {
+    ControllerUpdateCnpj,
+    ControllerGetListaFii,
+    ControllerDeleteComunicado,
+    ControllerUpdateFav,
+    ControllerUpdateListaCVM,
+    ControllerUpdateComunicadosB3,
+    ControllerGetComunicadosB3,
+    ControllerInsertComunicadosB3,
+    ControllerInsertEmpresasB3,
     ControllerUpdateDrawDown,
     ControllerGetValoresAtivo,
     ControllerGetGraphIndicador,

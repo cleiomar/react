@@ -140,6 +140,15 @@ const Sidebar = () => {
                             </li>
 
                             <li className="nav-item">
+                                <NavLink to="/comunicados" className="group">
+                                    <div className="flex items-center">
+                                        <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_direct')}</span>
+                                    </div>
+                                </NavLink>
+                            </li>
+
+                            <li className="nav-item">
                                 <NavLink to="/Instagram" className="group">
                                     <div className="flex items-center">
                                         <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />

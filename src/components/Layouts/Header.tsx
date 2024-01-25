@@ -35,7 +35,11 @@ import IconMenuMore from '../Icon/Menu/IconMenuMore';
 import IconMenuViews from '../Icon/Menu/IconMenuViews';
 import IconMenuViewsClosed from '../Icon/Menu/IconMenuViewsClosed';
 import globalVars from '../../data/global'
-import { useSetState } from '@mantine/hooks';
+import { formatDataTimeBR } from '../../data/funcoes';
+import IconEye from '../Icon/IconEye';
+import IconArrowDown from '../Icon/Menu/IconArrowDown';
+import Tippy from "@tippyjs/react";
+import 'tippy.js/dist/tippy.css';
 
 const Header = () => {
 
@@ -49,7 +53,7 @@ const Header = () => {
                 },
                 body: JSON.stringify({ hide_values: !globalVars.getVariable1() }),
             });
-    
+
             if (response.ok) {
                 const data = await response.json(); // Espera a Promise ser resolvida
                 if (data.changedRows === 1) {
@@ -112,6 +116,72 @@ const Header = () => {
         }
     }, [location]);
 
+
+    async function fetchDeleteComunicados(id: number) {
+        try {
+            const response = await fetch('http://localhost:3000/delete_comunicados', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: id }), // Converte os dados para o formato JSON
+            });
+
+            fetchGetComunicados(1, '', '', '');
+            if (!response.ok) {
+                throw new Error(`Erro ao fazer a requisição: ${response.status} - ${response.statusText}`);
+            }
+        } catch (error) {
+            console.error('Erro na requisição PUT:', error);
+            throw error; // Você pode manipular o erro ou relançá-lo conforme necessário
+        }
+    }
+
+
+    const fetchGetComunicados = async (page: number, codigo: any, categoria: any, favorito: any) => {
+        try {
+            const response = await fetch('http://localhost:3000/get_comunicados_b3', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ page: page, codigo: codigo, categoria: categoria, favorito: favorito }), // Converte os dados para o formato JSON
+            });
+            const data = await response.json();
+            const dados = await Promise.all(data.data.map(async (item) => {
+                let tag;
+                if (item.ativo_categoria === 1) {
+                    tag = 'Ação';
+                }
+                else if (item.ativo_categoria === 2) {
+                    tag = 'FII';
+                }
+
+                return {
+                    id: item.documentos_b3_id,
+                    title: item.ativo_nome,
+                    image: item.logo,
+                    message: item.category,
+                    urlSearch: item.urlSearch,
+                    urlDownload: item.urlDownload,
+                    time: formatDataTimeBR(item.deliveryDateTime)
+                };
+            }));
+            setMessages(dados.slice(0, 5));
+            if (!response.ok) {
+                throw new Error(`Erro ao fazer a requisição: ${response.status} - ${response.statusText}`);
+            }
+        } catch (error) {
+            console.error('Erro na requisição PUT:', error);
+            throw error; // Você pode manipular o erro ou relançá-lo conforme necessário
+        }
+    }
+
+    useEffect(() => {
+        fetchGetComunicados(1, '', '', '');
+    }, [])
+
+
     const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl' ? true : false;
 
     const themeConfig = useSelector((state: IRootState) => state.themeConfig);
@@ -152,6 +222,7 @@ const Header = () => {
     ]);
 
     const removeMessage = (value: number) => {
+        fetchDeleteComunicados(value);
         setMessages(messages.filter((user) => user.id !== value));
     };
 
@@ -264,21 +335,21 @@ const Header = () => {
                         <div className="ltr:mr-2 rtl:ml-2 hidden sm:block">
                             <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
                                 <li>
-                                    <button onClick={() => {updateConfigHideValue(!globalVars.getVariable1()); setOcultarDados((prevState) => !prevState) }} className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
+                                    <button onClick={() => { updateConfigHideValue(!globalVars.getVariable1()); setOcultarDados((prevState) => !prevState) }} className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
                                         {
-                                        
-                                        (ocultarDados === false) ?
-                                        <IconMenuViews
-                                            height='21'
-                                            width='21'
-                                            opValor='50%'
-                                            className='iconView'
-                                        />: <IconMenuViewsClosed
-                                        height='21'
-                                        width='21'
-                                        opValor='50%'
-                                        className='iconView'
-                                    />
+
+                                            (ocultarDados === false) ?
+                                                <IconMenuViews
+                                                    height='21'
+                                                    width='21'
+                                                    opValor='50%'
+                                                    className='iconView'
+                                                /> : <IconMenuViewsClosed
+                                                    height='21'
+                                                    width='21'
+                                                    opValor='50%'
+                                                    className='iconView'
+                                                />
                                         }
                                     </button>
                                 </li>
@@ -372,7 +443,7 @@ const Header = () => {
                                                     height: '100%',
                                                 }}
                                             ></div>
-                                            <h4 className="font-semibold relative z-10 text-lg">Messages</h4>
+                                            <h4 className="font-semibold relative z-10 text-lg">Comunicados</h4>
                                         </div>
                                     </li>
                                     {messages.length > 0 ? (
@@ -381,14 +452,30 @@ const Header = () => {
                                                 {messages.map((message) => {
                                                     return (
                                                         <div key={message.id} className="flex items-center py-3 px-5">
-                                                            <div dangerouslySetInnerHTML={createMarkup(message.image)}></div>
+                                                            <img className='h-8 w-8 rounded-full object-cover' src={message.image} height='30px' width='30px' />
                                                             <span className="px-3 dark:text-gray-500">
                                                                 <div className="font-semibold text-sm dark:text-white-light/90">{message.title}</div>
                                                                 <div>{message.message}</div>
                                                             </span>
-                                                            <span className="font-semibold bg-white-dark/20 rounded text-dark/60 px-1 ltr:ml-auto rtl:mr-auto whitespace-pre dark:text-white-dark ltr:mr-2 rtl:ml-2">
-                                                                {message.time}
-                                                            </span>
+                                                            <div className='ltr:ml-auto rtl:mr-auto  ltr:mr-2 rtl:ml-2'>
+                                                                <span className="font-semibold bg-white-dark/20 rounded text-dark/60 px-1 whitespace-pre dark:text-white-dark">
+                                                                    {message.time}
+                                                                </span>
+                                                                <div className='flex justify-between ml-7' style={{ width: '50px' }}>
+                                                                    <div className='mt-1'>
+                                                                        <Tippy trigger="mouseenter focus" content="Baixar Arquivo">
+                                                                            <button  onClick={() => window.open(message.urlDownload, '_self')}>
+                                                                                <IconArrowDown fill='#CCC' width='20px' height='20px' className="shrink-0" />
+                                                                            </button>
+                                                                        </Tippy>
+                                                                    </div>
+
+
+                                                                    <Tippy trigger="mouseenter focus" content="Visualizar Arquivo">
+                                                                        <button onClick={() => window.open(message.urlSearch, '_blank')}><IconEye width='20px' height='20px' className="shrink-0" /></button>
+                                                                    </Tippy>
+                                                                </div>
+                                                            </div>
                                                             <button type="button" className="text-neutral-300 hover:text-danger" onClick={() => removeMessage(message.id)}>
                                                                 <IconXCircle />
                                                             </button>
@@ -397,10 +484,12 @@ const Header = () => {
                                                 })}
                                             </li>
                                             <li className="border-t border-white-light text-center dark:border-white/10 mt-5">
-                                                <button type="button" className="text-primary font-semibold group dark:text-gray-400 justify-center !py-4 !h-[48px]">
-                                                    <span className="group-hover:underline ltr:mr-1 rtl:ml-1">VIEW ALL ACTIVITIES</span>
+                                            <Link to="/comunicados" className="dark:hover:text-white justify-center">
+                                                <button type="button" className="flex text-primary font-semibold group dark:text-gray-400 !py-4 !h-[48px]">
+                                                    <span className="group-hover:underline ltr:mr-1 rtl:ml-1">VER TODOS</span>
                                                     <IconArrowLeft className="group-hover:translate-x-1 transition duration-300 ltr:ml-1 rtl:mr-1" />
                                                 </button>
+                                                </Link>
                                             </li>
                                         </>
                                     ) : (

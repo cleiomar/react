@@ -1,6 +1,15 @@
 import { converterDataParaAmericano, removeCurrency, getLastDayMonths } from '../funcoes';
 
 import {
+    ModelsUpdateCnpj,
+    ModelsGetListaFii,
+    ModelsDeleteComunicado,
+    ModelsUpdateFav,
+    ModelsUpdateListaCVM,
+    ModelsUpdateComunicadosB3,
+    ModelsGetComunicadosB3,
+    ModelsInsertComunicadosB3,
+    ModelsInsertEmpresasB3,
     ModelsUpdateDrawDown,
     ModelsGetValoresAtivo,
     ModelsGetGraphIndicador,
@@ -497,7 +506,6 @@ const serviceGetEstatisticas = async (codigo: any) => {
 
 
 const serviceSummaryProfile = async (ativo: string, address1: string, address2: string, city: string, state: string, zip: string, country: string, phone: string, website: string, industry: string, industryKey: string, industryDisp: string, sector: string, sectorKey: string, sectorDisp: string, longBusinessSummary: string, fullTimeEmployees: number, companyOfficers: any) => {
-    console.log(ativo)
     try {
         const data = await ModelsSummaryProfile(ativo, address1, address2, city, state, zip, country, phone, website, industry, industryKey, industryDisp, sector, sectorKey, sectorDisp, longBusinessSummary, fullTimeEmployees, companyOfficers);
         return data;
@@ -726,7 +734,104 @@ const serviceUpdateDrawDown = async (ticker: string, valor: any ) => {
     }
 };
 
+const serviceInsertEmpresasB3 = async (codeCVM: any, issuingCompany:any, companyName:any, tradingName:any, cnpj:any, marketIndicator:any, typeBDR:any, dateListing:any, status:any, segment:any, segmentEng:any, type:any, market:any ) => {
+    try {
+        const data = await ModelsInsertEmpresasB3(codeCVM, issuingCompany, companyName, tradingName, cnpj, marketIndicator, typeBDR, dateListing, status, segment, segmentEng, type, market);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceInsertComunicadosB3 = async (codeCVM:any, ticker: string, dateReference:any, delivery:any, status:any, category:any, type:any, version:any, subject:any, dateCancel:any, urlSearch:any, urlDownload:any, deliveryDateTime: any) => {
+    try {
+        const data = await ModelsInsertComunicadosB3(codeCVM, ticker, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+const serviceGetComunicadosB3 = async (page: any, codigo: any, categoria: number, favorito: any) => {
+    try {
+        const data = await ModelsGetComunicadosB3(page, codigo, categoria, favorito);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceUpdateComunicadosB3 = async () => {
+    try {
+        const data = await ModelsUpdateComunicadosB3();
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceUpdateListaCVM = async (codigo: string) => {
+    try {
+        const data = await ModelsUpdateListaCVM(codigo);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceUpdateFav = async (id: string, fav: boolean) => {
+    try {
+        const data = await ModelsUpdateFav(id, fav);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceDeleteComunicado = async (id: string) => {
+    try {
+        const data = await ModelsDeleteComunicado(id);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceGetListaFii = async () => {
+    try {
+        const data = await ModelsGetListaFii();
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
+
+const serviceUpdateCnpj = async (ticker: number, cnpj: number) => {
+    try {
+        const data = await ModelsUpdateCnpj(ticker, cnpj);
+        return data;
+    } catch (error) {
+        throw error; // Propagar o erro para ser tratado no controlador
+    }
+};
+
 export {
+    serviceUpdateCnpj,
+    serviceGetListaFii,
+    serviceDeleteComunicado,
+    serviceUpdateFav,
+    serviceUpdateListaCVM,
+    serviceUpdateComunicadosB3,
+    serviceGetComunicadosB3,
+    serviceInsertComunicadosB3,
+    serviceInsertEmpresasB3,
     serviceUpdateDrawDown,
     serviceGetValoresAtivo,
     serviceGetGraphIndicador,

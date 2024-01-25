@@ -118,7 +118,13 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
     let values = '';
     let exists = '';
     if (b3 == 's') {
-        values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND (ativo_valor = '0' or ativo_valor is null) AND ativo_codigo!='ADA' AND last_update IS NULL ORDER BY lista_ativos_id LIMIT 5 `; // Converte o array em uma string separada por vírgulas
+        values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND ativo_codigo!='ADA' AND last_update IS NULL ORDER BY lista_ativos_id LIMIT 1 `; // Converte o array em uma string separada por vírgulas
+        //values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND (ativo_valor = '0' or ativo_valor is null) AND ativo_codigo!='ADA' AND last_update IS NULL ORDER BY lista_ativos_id LIMIT 5 `; // Converte o array em uma string separada por vírgulas
+        exists = ' EXISTS (SELECT * FROM historicaldataprice WHERE FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) ) AND ';
+    }
+    if (b3 == 'comunicado') {
+        values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND ativo_codigo!='ADA' AND codigo_cvm != '0' AND last_update IS NULL  ORDER BY lista_ativos_id LIMIT 1 `; // Converte o array em uma string separada por vírgulas
+        //values = ` AND ativo_categoria IN (1, 2, 3, 4, 6) AND (ativo_valor = '0' or ativo_valor is null) AND ativo_codigo!='ADA' AND last_update IS NULL ORDER BY lista_ativos_id LIMIT 5 `; // Converte o array em uma string separada por vírgulas
         exists = ' EXISTS (SELECT * FROM historicaldataprice WHERE FROM_UNIXTIME(date) >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) ) AND ';
     }
     else if (b3 == 'update') {
@@ -135,8 +141,8 @@ const modelGetListaAtivos = async (id: string, b3: string) => {
     }
     return new Promise((resolve, reject) => {
         //connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
-        connection.query(`SELECT lista_ativos_id as value, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ${exists} ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
-                if (err) {
+        connection.query(`SELECT lista_ativos_id as value, codigo_cvm, lista_ativos_id as id, ativo_valor, lista_ativos.ativo_codigo, ativo_categoria, CONCAT (ativo_codigo, ' - ', ativo_nome) as label FROM lista_ativos WHERE ${exists} ativo_categoria LIKE CONCAT('%', ?, '%') ${values}`, [id], (err, results) => {
+            if (err) {
                 reject(err);
             } else {
                 resolve(results);
@@ -805,21 +811,20 @@ const ModelsGetCotacao = async (ativo: string, periodo: number, periodicidade: n
         period = ``;
     }
 
-    if(periodicidade == 1){
+    if (periodicidade == 1) {
         periodicidad = ` GROUP BY DAY(FROM_UNIXTIME(date)), MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
-    } 
-    else if(periodicidade == 2){
+    }
+    else if (periodicidade == 2) {
         periodicidad = ` GROUP BY WEEK(FROM_UNIXTIME(date)), MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
-    } 
-    else if(periodicidade == 3){
+    }
+    else if (periodicidade == 3) {
         periodicidad = ` GROUP BY MONTH(FROM_UNIXTIME(date)), YEAR(FROM_UNIXTIME(date))`;
-    } 
-    else
-    {
+    }
+    else {
         periodicidad = ` GROUP BY YEAR(FROM_UNIXTIME(date))`;
-    } 
+    }
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT historicaldataprice.*, MAX(FROM_UNIXTIME(historicaldataprice.date)) AS data FROM historicaldataprice, lista_ativos WHERE historicaldataprice.close!=0 ${period} AND lista_ativos.lista_ativos_id=historicaldataprice.lista_ativos_id AND lista_ativos.ativo_codigo=? ${periodicidad} ORDER BY date ASC`,[ativo], (err, results) => {
+        connection.query(`SELECT historicaldataprice.*, MAX(FROM_UNIXTIME(historicaldataprice.date)) AS data FROM historicaldataprice, lista_ativos WHERE historicaldataprice.close!=0 ${period} AND lista_ativos.lista_ativos_id=historicaldataprice.lista_ativos_id AND lista_ativos.ativo_codigo=? ${periodicidad} ORDER BY date ASC`, [ativo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -913,7 +918,7 @@ const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
         AND lista_ativos.ativo_codigo NOT LIKE CONCAT(SUBSTRING(?, 1, 4), '%')
     GROUP BY 
         prefixo  
-    ORDER BY financialdata.totalRevenue DESC;`, [codigo,codigo,codigo,codigo], (err, results) => {
+    ORDER BY financialdata.totalRevenue DESC;`, [codigo, codigo, codigo, codigo], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -926,7 +931,7 @@ const ModelsGetEmpresasRelacionadas = async (codigo: string) => {
 
 const ModelsGetBuscaAtivo = async (codigo: string, categoria: string) => {
     return new Promise((resolve, reject) => {
-        connection.query(`SELECT lista_ativos_id, ativo_categoria, ativo_codigo, ativo_nome as nome, logo FROM lista_ativos WHERE (ativo_codigo LIKE CONCAT('%', ? ,'%') OR ativo_nome LIKE CONCAT('%', ? ,'%')) AND ativo_categoria=?`, [codigo,codigo,categoria], (err, results) => {
+        connection.query(`SELECT lista_ativos_id, ativo_categoria, ativo_codigo, ativo_nome as nome, logo FROM lista_ativos WHERE (ativo_codigo LIKE CONCAT('%', ? ,'%') OR ativo_nome LIKE CONCAT('%', ? ,'%')) AND ativo_categoria=?`, [codigo, codigo, categoria], (err, results) => {
             if (err) {
                 reject(err);
             } else {
@@ -953,7 +958,7 @@ const ModelsCriarIndicador = async (codigo: string) => {
     });
 }
 
-const ModelsUpdateIndicador = async (ticker: string, indicador: string, ano: number, valor:number ) => {
+const ModelsUpdateIndicador = async (ticker: string, indicador: string, ano: number, valor: number) => {
     return new Promise((resolve, reject) => {
         const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
         const query = `UPDATE historico_indicadores SET lista_ativos_id=${id}, ${indicador}=${valor} WHERE ano=${ano} AND lista_ativos_id=${id}`;
@@ -969,7 +974,7 @@ const ModelsUpdateIndicador = async (ticker: string, indicador: string, ano: num
 }
 
 
-const ModelsGetIndicadores = async (ticker: string ) => {
+const ModelsGetIndicadores = async (ticker: string) => {
     return new Promise((resolve, reject) => {
         const currentDate = new Date();
         const year = currentDate.getFullYear();
@@ -993,7 +998,7 @@ const ModelsGetGraphIndicador = async (indicador: string, ticker: number) => {
         const id = `(SELECT lista_ativos_id FROM lista_ativos WHERE ativo_codigo='${ticker}')`;
         const currentDate = new Date();
         const atual = currentDate.getFullYear();
-        const max = currentDate.getFullYear()-10;
+        const max = currentDate.getFullYear() - 10;
         const query = `SELECT ${indicador} as valor, ano FROM historico_indicadores WHERE ano BETWEEN '${max}' AND '${atual}'  AND lista_ativos_id=${id} `;
         connection.query(query, (err, results) => {
             if (err) {
@@ -1036,7 +1041,221 @@ const ModelsUpdateDrawDown = async (ticker: string, valor: number) => {
     });
 }
 
+const ModelsInsertEmpresasB3 = async (codeCVM: any, issuingCompany: any, companyName: any, tradingName: any, cnpj: any, marketIndicator: any, typeBDR: any, dateListing: any, status: any, segment: any, segmentEng: any, type: any, market: any) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`INSERT IGNORE INTO empresas_b3 (codeCVM, issuingCompany, companyName, tradingName, cnpj, marketIndicator, typeBDR, dateListing, status, segment, segmentEng, type, market) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [codeCVM, issuingCompany, companyName, tradingName, cnpj, marketIndicator, typeBDR, dateListing, status, segment, segmentEng, type, market], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsInsertComunicadosB3 = async (codeCVM: any, ticker: string, dateReference: any, delivery: any, status: any, category: any, type: any, version: any, subject: any, dateCancel: any, urlSearch: any, urlDownload: any, deliveryDateTime: any) => {
+    return new Promise((resolve, reject) => {
+        // Subconsulta preparada para obter o ativo_codigo
+        if (ticker == 'undefined' || ticker == undefined) {
+            console.log(codeCVM.replace(/^0+/, '')+''+ticker);
+            let acaoQuery = `SELECT SUBSTRING(ativo_codigo, 1, 4) AS ativo_prefix FROM lista_ativos WHERE codigo_cvm = ?`;
+            // Executando a subconsulta primeiro
+            connection.query(acaoQuery, [codeCVM.replace(/^0+/, '')], (err, results) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                let ativoPrefix = results[0].ativo_prefix;
+                console.log(ativoPrefix+''+acaoQuery);
+
+                const mainQuery = `INSERT IGNORE INTO documentos_b3 (codigo_cvm, ativo_codigo, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+                const queryParams = [codeCVM.replace(/^0+/, ''), ativoPrefix, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime];
+                connection.query(mainQuery, queryParams, (err, results) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(results);
+                    };
+                });
+            });
+        }
+        else
+        {
+                const mainQuery = `INSERT IGNORE INTO documentos_b3 (codigo_cvm, ativo_codigo, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+                const queryParams = [null, ticker, dateReference, delivery, status, category, type, version, subject, dateCancel, urlSearch, urlDownload, deliveryDateTime];
+                connection.query(mainQuery, queryParams, (err, results) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(results);
+                    };
+                });
+        }
+    });
+}
+
+
+const ModelsGetComunicadosB3 = async (page: any, codigo: any, categoria: number, favorito: any) => {
+    return new Promise(async (resolve, reject) => {
+        let values = '';
+        const results = await Promise.all([
+            new Promise((resolve, reject) => {
+                connection.query(`SELECT 
+                documentos_b3.*,
+                lista_ativos.*
+            FROM 
+                documentos_b3,
+                lista_ativos,
+                ativos
+            WHERE  
+                SUBSTRING(lista_ativos.ativo_codigo, 1, 4) = documentos_b3.ativo_codigo
+            AND ativos.lista_ativos_id=lista_ativos.lista_ativos_id
+            AND
+                (documentos_b3.ativo_codigo LIKE '%${codigo}%' OR 
+                lista_ativos.ativo_codigo LIKE '%${codigo}%' OR 
+                lista_ativos.ativo_nome LIKE '%${codigo}%') 
+            AND 
+                documentos_b3.deleted != 1
+            AND lista_ativos.ativo_categoria LIKE '%${categoria}'
+            AND documentos_b3.favourite LIKE '%${favorito}%'
+            GROUP BY 
+                documentos_b3.urlSearch, documentos_b3.deliveryDateTime, documentos_b3.ativo_codigo
+            ORDER BY 
+                documentos_b3.deliveryDateTime DESC`, (err, results) => {
+                    if (err) reject(err);
+                    resolve(results);
+                });
+            }),
+            new Promise((resolve, reject) => {
+                connection.query(`SELECT 
+            documentos_b3.*,
+            lista_ativos.*
+        FROM 
+            documentos_b3,
+            lista_ativos,
+            ativos
+        WHERE  
+            SUBSTRING(lista_ativos.ativo_codigo, 1, 4) = documentos_b3.ativo_codigo
+        AND ativos.lista_ativos_id=lista_ativos.lista_ativos_id
+        AND
+            (documentos_b3.ativo_codigo LIKE '%${codigo}%' OR 
+            lista_ativos.ativo_codigo LIKE '%${codigo}%' OR 
+            lista_ativos.ativo_nome LIKE '%${codigo}%') 
+        AND 
+            documentos_b3.deleted != 1
+        AND lista_ativos.ativo_categoria LIKE '%${categoria}'        
+        AND documentos_b3.favourite LIKE '%${favorito}%'
+        GROUP BY 
+            documentos_b3.urlSearch, documentos_b3.deliveryDateTime, documentos_b3.ativo_codigo
+        ORDER BY 
+            documentos_b3.deliveryDateTime DESC
+         LIMIT 12 OFFSET ${(((page < 1) ? 1 : page) - 1) * 12}`, (err, results) => {
+                    if (err) reject(err);
+                    resolve(results);
+                });
+            })
+        ]);
+
+        const resultWithTotalAtivos = {
+            total_ativos: results[0].length,
+            data: results[1]
+        };
+
+        resolve(resultWithTotalAtivos);
+    });
+
+}
+
+
+const ModelsUpdateComunicadosB3 = async () => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT documentos_b3.*, (SELECT * FROM lista_ativos WHERE lista_ativos.codigo_cvm=documentos_b3.codigo_cvm LIMIT 1) FROM documentos_b3 ORDER BY documentos_b3.deliveryDateTime DESC`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsUpdateListaCVM = async (codigo: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE lista_ativos SET last_update=NOW() WHERE codigo_cvm=?`, [codigo], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsUpdateFav = async (id: string, fav: boolean) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE documentos_b3 SET favourite=? WHERE documentos_b3_id=?`, [fav, id], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsDeleteComunicado = async (id: string) => {
+    return new Promise((resolve, reject) => {
+        connection.query(`UPDATE documentos_b3 SET deleted=1 WHERE documentos_b3_id=?`, [id], (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+
+const ModelsGetListaFii = async () => {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM lista_ativos WHERE ativo_categoria=2 AND ativo_codigo LIKE '%11' AND last_update is null LIMIT 1`, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
+const ModelsUpdateCnpj = async (ticker: number, cnpj: number) => {
+    return new Promise((resolve, reject) => {
+        let query = `UPDATE lista_ativos SET cnpj='${cnpj}' WHERE ativo_codigo='${ticker}'`;
+        console.log(query)
+        connection.query(query, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            };
+        });
+    });
+}
+
 export {
+    ModelsUpdateCnpj,
+    ModelsGetListaFii,
+    ModelsDeleteComunicado,
+    ModelsUpdateFav,
+    ModelsUpdateListaCVM,
+    ModelsUpdateComunicadosB3,
+    ModelsGetComunicadosB3,
+    ModelsInsertComunicadosB3,
+    ModelsInsertEmpresasB3,
     ModelsUpdateDrawDown,
     ModelsGetValoresAtivo,
     ModelsGetGraphIndicador,

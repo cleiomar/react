@@ -29,6 +29,20 @@ function formatDataTime(data: any) {
   return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
+function formatDataTimeBR(data: any) {
+
+  var date = new Date(data);
+
+  // Extraia os componentes da data e hora
+  var year = date.getFullYear();
+  var month = (date.getMonth() + 1).toString().padStart(2, '0'); // Adicione 1 ao mês, pois os meses são baseados em zero
+  var day = date.getDate().toString().padStart(2, '0');
+  var hours = date.getHours().toString().padStart(2, '0');
+  var minutes = date.getMinutes().toString().padStart(2, '0');
+
+  return `${day}/${month}/${year} ${hours}:${minutes}`;
+}
+
 function converterDataParaAmericano(dataBrasileira: string): string {
   const databr = parse(dataBrasileira, 'dd/MM/yyyy', new Date());
   return format(databr, 'yyyy-MM-dd');
@@ -852,4 +866,4 @@ function FormatIndicador(indicador, valor: number) {
       return indicador;
   }
 }
-export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo, retrocederAnos, nomeIndicador, FormatIndicador}
+export { formatDataTime, formatData, converterDataParaAmericano, removeCurrency, removeTrailingZeros, formatCurrency2, formatCurrency, formatDate, capitalizeLetters, categoria_color, calcularPorcentagem, caixa, calcularResto, difference, getLastDayMonths, obterArrayMesesAbreviados, formatoRealSemCifrao, calcularJurosCompostos, calcularJurosCompostosTabela, imprimirTabela, removerFormatacaoNumero, converterDataParaBrasil, calcularVariaveis, dividirEmTresPartes, obterDatasEmTimestamp, timestampToDate, calcularCorPorcentagem, obterTrimestre, mesNome, ultimosxMeses, getLast60Months, mesNomeFull, separarTiposLabels, somarArrays, somarPorAno, somarPorAnoTipo, retrocederAnos, nomeIndicador, FormatIndicador, formatDataTimeBR}

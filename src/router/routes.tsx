@@ -8,6 +8,7 @@ const Patrimonio = lazy(() => import('../patrimonio'));
 const Metas = lazy(() => import('../metas'));
 const Acoes = lazy(() => import('../acoes'));
 const Acao = lazy(() => import('../acao'));
+const Comunicados = lazy(() => import('../comunicados'));
 const Error = lazy(() => import('../components/Error'));
 
 const routes = [
@@ -56,6 +57,10 @@ const routes = [
     {
         path: '/acoes/:acao',
         element: <Acao />
+    },
+    {
+        path: '/comunicados/',
+        element: <Comunicados />
     },
 ];
 

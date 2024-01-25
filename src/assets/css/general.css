@@ -379,6 +379,20 @@
     background-color: #00AB55;
 }
 
+.bg-fii {
+    background-color: #effff7;;
+}
+
+.shadow-fii {
+    --tw-shadow-color: #00AB55;
+    --tw-shadow: var(--tw-shadow-colored);
+}
+
+.fill-fii{
+    fill:#00AB55;
+    color: #00AB55;
+}
+
 .categoria-color-fiagro {
     width: 8px;
     border-radius: 0.25rem;

@@ -104,6 +104,10 @@ const Tesouro = () => {
     }, [])
 
     useEffect(() => {
+        console.log(dataTime)
+        console.log(data)
+    },[dataTime])
+    useEffect(() => {
         const jsonData = dados2.map(item => item.tesouro_valor.toString());
         setData(jsonData);
 

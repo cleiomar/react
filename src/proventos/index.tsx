@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import React, { KeyboardEvent, ChangeEvent } from 'react';
 import { useEffect, Fragment, useState } from 'react';
 import 'flatpickr/dist/flatpickr.css';
 import 'nouislider/distribute/nouislider.css';
@@ -9,19 +8,19 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { removeCurrency, removeTrailingZeros, formatCurrency, formatCurrency2, formatDate, capitalizeLetters, calcularPorcentagem, getLastDayMonths, obterArrayMesesAbreviados } from '../data/funcoes';
 import globalVars from '../data/global'
-import Posicao from '../components/patrimonio';
+import Box from '../components/proventos/box';
 import ReactApexChart from 'react-apexcharts';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { useTranslation } from 'react-i18next';
+import WaterUsageChart from './graph';
 
-const Transacoes = () => {
-    
+const Proventos = () => {
+
   const { t } = useTranslation();
   const location = useLocation();
   const params = location.state;
-  const userid = params.userid;
-  
+
   const [quantidadeMeses, setQuantidadeMeses] = useState([]);
   const [selectedOptionAno, setSelectedOptionAno] = useState([]);
   const [optionAno, setOptionAno] = useState(1);
@@ -34,15 +33,31 @@ const Transacoes = () => {
   const [selectedOptionCategoria, setSelectedOptionCategoria] = useState([]);
   const [optionCategoria, setOptionCategoria] = useState(0);
   const SelectChangeCategoria = (selectedOptionCategoria) => {
-    fetchResultados( optionAno, selectedOptionCategoria.value);
+    fetchResultados(optionAno, selectedOptionCategoria.value);
     setSelectedOptionCategoria(selectedOptionCategoria)
     setOptionCategoria(selectedOptionCategoria.value)
   };
 
-  useEffect(()=> {
-    setSelectedOptionCategoria({ value: '', label: 'Selecionar...' })
-    setSelectedOptionAno({ value: '', label: 'Selecionar...' })
-  },[])
+  const [selectedOptionPeriodicidade, setSelectedOptionPeriodicidade] = useState([]);
+  const [optionPeriodicidade, setOptionPeriodicidade] = useState(0);
+  const SelectChangePeriodicidade = (selectedOptionPeriodicidade) => {
+    setSelectedOptionPeriodicidade(selectedOptionPeriodicidade)
+    setOptionPeriodicidade(selectedOptionPeriodicidade.value)
+  };
+
+  const [selectedOptionTipo, setSelectedOptionTipo] = useState([]);
+  const [optionTipo, setOptionTipo] = useState(0);
+  const SelectChangeTipo = (selectedOptionTipo) => {
+    setSelectedOptionTipo(selectedOptionTipo)
+    setOptionTipo(selectedOptionTipo.value)
+  };
+
+  useEffect(() => {
+    setSelectedOptionCategoria({ value: '0', label: 'COMPLETO' })
+    setSelectedOptionAno({ value: '0', label: '1 ANO' })
+    setSelectedOptionPeriodicidade({ value: '0', label: 'MENSAL' })
+    setSelectedOptionTipo({ value: '0', label: 'PAGAMENTO' })
+  }, [])
 
   const [valorTotal, setValorTotal] = useState(0);
   let total: number;
@@ -65,7 +80,7 @@ const Transacoes = () => {
   }
   const [categoriaOptions, setCategoriaOptions] = useState([]);
   const catOptions = async () => {
-    const data = await fetch('http://localhost:3000/categorias/all')
+    const data = await fetch('http://localhost:3000/categorias/proventos')
     const response = await data.json()
     setCategoriaOptions(response)
   }
@@ -189,27 +204,27 @@ const Transacoes = () => {
 
   const fetchResultados = async (meses: any, modo: any) => {
     try {
-      const dadosDaAPI = await fetch('http://localhost:3000/get_relatorio/'+meses+'/'+modo);
+      const dadosDaAPI = await fetch('http://localhost:3000/get_relatorio/' + meses + '/' + modo);
       const resultadosDaAPI = await dadosDaAPI.json();
       setResultados(resultadosDaAPI);
       const mesesAbreviados = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
       ];
-      
+
       const mesesArray: string[] = [];
       let ultimoMes: string | null = null;
-      
+
       resultadosDaAPI.forEach(item => {
         const data = new Date(item.historico_clientes_data);
         const mesAbreviado = mesesAbreviados[data.getUTCMonth()];
-      
+
         // Adiciona ao array apenas se não for o mesmo mês consecutivo
         if (mesAbreviado !== ultimoMes) {
           mesesArray.push(mesAbreviado);
           ultimoMes = mesAbreviado;
         }
       });
-      
+
       setQuantidadeMeses(mesesArray)
     } catch (error) {
       console.error('Erro ao buscar resultados:', error);
@@ -217,10 +232,10 @@ const Transacoes = () => {
   };
 
   useEffect(() => {
-    fetchResultados(1,0);
+    fetchResultados(1, 0);
   }, []);
 
- 
+
   const organizarResultados = (): { categoria_nome: string; total_valor: number[] }[] => {
     const resultadoPorCategoria: { [key: string]: number[] } = {};
 
@@ -297,7 +312,7 @@ const Transacoes = () => {
         labels: {
           offsetX: isRtl ? 2 : 0,
           offsetY: 5,
-          
+
           style: {
             fontSize: '12px',
             cssClass: 'apexcharts-xaxis-title',
@@ -312,7 +327,7 @@ const Transacoes = () => {
         labels: {
           formatter: (value: number) => {
             return (ocultarDados != true) ?
-             formatCurrency(value.toFixed(2)) : 'R$ ********'
+              formatCurrency(value.toFixed(2)) : 'R$ ********'
           },
           offsetX: isRtl ? -30 : -10,
           offsetY: 0,
@@ -379,37 +394,58 @@ const Transacoes = () => {
   };
 
   return (
-    <div><div className='titulo-page'>PATRIMÔNIO</div>
+    <div><div className='titulo-page'>PROVENTOS</div>
       <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
         <li>
           <Link to="/" className="text-primary hover:underline">
-          {t('Site')}
+            {t('Site')}
           </Link>
         </li>
         <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-          <span>Patrimônio</span>
+          <span>Proventos</span>
         </li>
       </ul>
-      
+
       <div className="panel">
-        <div className="grid 1xl:grid-cols-7 lg:grid-cols-7 sm:grid-cols-1 grid-cols-1">
-          <div className="grid 1xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 mb-3 xl:col-span-4">
-            <span className="badge bg-warning p-3 text-center mrt-3"><div className='subtitulo-page'>PATRIMÔNIO</div><div className='subtitulo-valor mt-2'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(valorTotal)))}</div></span>
-            <div className="panel rounded-md items-center group xl:col-span-1 col-span-3 p-1 mrtop-3">
-              <div className='ml-4'><b>CRESCIMENTO</b></div>
-              <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-3 ml-4">
-                <div className='mt-15'>6 MESES<div className='subtitulo-valor2'>5,80%</div></div><div>12 MESES<div className='subtitulo-valor2'>16,67%</div></div><div>24 MESES<div className='subtitulo-valor2'>16,81%</div></div>
+        <div className="grid 1xl:grid-cols-12 lg:grid-cols-12 sm:grid-cols-1 grid-cols-1 gap-6">
+          <div className="grid 1xl:grid-cols-7 lg:grid-cols-7 sm:grid-cols-3 grid-cols-1 mb-3 xl:col-span-6">
+            <span style={{ height: '60px' }} className="badge bg-warning p-2 text-center mrt-3 xl:col-span-2 col-span-2 ">
+              <div className=''><b>TOTAL RECEBIDO</b></div>
+              <div className='subtitulo-valor mt-2'>{renderizarConteudo('sensitivy-field', formatCurrency2(removeTrailingZeros(valorTotal)))}</div>
+            </span>
+            <div className="panel ft-mini2 rounded-md items-center group xl:col-span-5 col-span-5 p-1 mrtop-3 mt-1" style={{ height: '60px' }} >
+              <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 col-span-5 xl:col-span-5">
+                <div className='mt-1'><center><b>TOTAL PERIODO</b></center><div className='ft-micro mt-1'><center>R$ 100.000,12</center></div></div>
+                <div className='mt-1'><center><b>TOTAL 6 MESES</b></center><div className='ft-micro mt-1'><center>R$ 100.000,12</center></div></div>
+                <div className='mt-1'><center><b>TOTAL 12 MESES</b></center><div className='ft-micro mt-1'><center>R$ 100.000,12</center></div></div>
+                <div className='mt-1'><center><b>TOTAL 24 MESES</b></center><div className='ft-micro mt-1'><center>R$ 100.000,12</center></div></div>
               </div>
             </div>
           </div>
-          <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 gap-6 mb-8 xl:col-span-3 pt-5 zi-3 custom-select">
-            <div></div>
+          <div className="grid 1xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-4 grid-cols-1 gap-6 mb-8 xl:col-span-6 pt-5 zi-3 custom-select">
+
+            <Select
+              className='text-sm'
+              name="ano"
+              value={selectedOptionPeriodicidade}
+              onChange={SelectChangePeriodicidade}
+              options={[{ 'value': 1, 'label': 'MENSAL' }, { 'value': 2, 'label': 'TRIMESTRAL' }, { 'value': 3, 'label': 'SEMESTRAL' }, { 'value': 4, 'label': 'ANUAL' }]}
+              isSearchable={false}
+            />
+            <Select
+              className='text-sm'
+              name="ano"
+              value={selectedOptionTipo}
+              onChange={SelectChangeAno}
+              options={[{ 'value': 1, 'label': 'PAGAMENTO' }, { 'value': 2, 'label': 'DATA COM' }]}
+              isSearchable={false}
+            />
             <Select
               className='text-sm'
               name="categoria"
               value={selectedOptionCategoria}
               onChange={SelectChangeCategoria}
-              options={[{'value': 0, 'label': 'Completo'},{'value': 1, 'label': 'Por Categoria'}]}
+              options={[{ 'value': 0, 'label': 'COMPLETO' }, { 'value': 1, 'label': 'POR CATEGORIA' }, { 'value': 2, 'label': 'POR SEGMENTO' }, { 'value': 1, 'label': 'POR ATIVO' }]}
               isSearchable={false}
             />
             <Select
@@ -417,7 +453,7 @@ const Transacoes = () => {
               name="ano"
               value={selectedOptionAno}
               onChange={SelectChangeAno}
-              options={[{'value': 1, 'label': '1 Ano'},{'value': 2, 'label': '2 Anos'},{'value': 3, 'label': '3 Anos'},{'value': 4, 'label': '4 Anos'},{'value': 5, 'label': '5 Anos'}]}
+              options={[{ 'value': 1, 'label': '1 ANO' }, { 'value': 2, 'label': '2 ANOS' }, { 'value': 3, 'label': '3 ANOS' }, { 'value': 4, 'label': '5 ANOS' }, { 'value': 5, 'label': 'TUDO' }]}
               isSearchable={false}
             />
           </div>
@@ -453,21 +489,26 @@ const Transacoes = () => {
           </div>
         </div>
         <div className="flex items-center justify-between mb-5">
-
-          <h5 className="font-bold text-lg dark:text-white-light mt-5">POSIÇÃO NA CARTEIRA</h5>
+          <h5 className="font-bold text-lg dark:text-white-light mt-5">ATIVOS POR CATEGORIA</h5>
         </div>
-        <div className="space-y-2 font-semibold">
-          {categoriaOptions.map((option, index) => {
-            return (
-              <Posicao
-                hide={ocultarDados}
-                categoria={option.value}
-                categoria_nome={option.label}
-                valor_total_patrimonio={valorTotal}
-                key={index}
-              />
-            );
-          })}
+
+        <div className="grid 1xl:grid-cols-5 lg:grid-cols-5 sm:grid-cols-1 grid-cols-1 gap-6">
+          <div className='xl:col-span-2 col-span-2'>
+            <WaterUsageChart />
+          </div>
+          <div className="space-y-2 font-semibold xl:col-span-3 col-span-3">
+            {categoriaOptions.map((option, index) => {
+              return (
+                <Box
+                  hide={ocultarDados}
+                  categoria={option.value}
+                  categoria_nome={option.label}
+                  valor_total_patrimonio={valorTotal}
+                  key={index}
+                />
+              );
+            })}
+          </div>
         </div>
 
 
@@ -476,4 +517,4 @@ const Transacoes = () => {
   );
 };
 
-export default Transacoes;
+export default Proventos;

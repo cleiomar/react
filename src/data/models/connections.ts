@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '12345678',
-    database: 'nexus',
+    database: 'house',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0

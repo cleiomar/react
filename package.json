@@ -12,7 +12,8 @@
         "devel": "tsx ..."
     },
     "dependencies": {
-        "@emotion/react": "^11.10.6",
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.0",
         "@fortawesome/fontawesome-svg-core": "^6.4.2",
         "@fortawesome/free-solid-svg-icons": "^6.4.2",
         "@fortawesome/react-fontawesome": "^0.2.0",
@@ -23,7 +24,9 @@
         "@fullcalendar/timegrid": "^6.0.0",
         "@mantine/core": "^5.10.5",
         "@mantine/hooks": "^5.10.5",
+        "@mui/material": "^5.15.13",
         "@popperjs/core": "^2.11.6",
+        "@react-google-maps/api": "^2.19.3",
         "@reduxjs/toolkit": "^1.8.5",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
@@ -34,6 +37,7 @@
         "@types/react-draft-wysiwyg": "^1.13.6",
         "@types/react-text-mask": "^5.4.11",
         "@x1mrdonut1x/nouislider-react": "^3.4.3",
+        "ag-charts-react": "^9.0.2",
         "apexcharts": "^3.37.1",
         "axios": "^1.5.1",
         "cors": "^2.8.5",

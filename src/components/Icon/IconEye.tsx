@@ -14,7 +14,7 @@ const IconEye: FC<IconEyeProps> = ({ width, height, className, fill = false, duo
             {!fill ? (
                 <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
                     <path
-                        opacity={duotone ? '0.5' : '1'}
+                        opacity={duotone ? '1.5' : '1'}
                         d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z"
                         stroke="currentColor"
                         strokeWidth="1.5"
@@ -24,7 +24,7 @@ const IconEye: FC<IconEyeProps> = ({ width, height, className, fill = false, duo
             ) : (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
                     <path
-                        opacity={duotone ? '0.5' : '1'}
+                        opacity={duotone ? '1.5' : '1'}
                         d="M2 12C2 13.6394 2.42496 14.1915 3.27489 15.2957C4.97196 17.5004 7.81811 20 12 20C16.1819 20 19.028 17.5004 20.7251 15.2957C21.575 14.1915 22 13.6394 22 12C22 10.3606 21.575 9.80853 20.7251 8.70433C19.028 6.49956 16.1819 4 12 4C7.81811 4 4.97196 6.49956 3.27489 8.70433C2.42496 9.80853 2 10.3606 2 12Z"
                         fill="currentColor"
                         stroke="currentColor" strokeWidth="2.5"

@@ -48,14 +48,20 @@ function converterDataParaAmericano(dataBrasileira: string): string {
   return format(databr, 'yyyy-MM-dd');
 }
 
-function converterDataParaBrasil(dataBrasileira: string): string {
-  const partesDataHora = dataBrasileira.split('T');
-  const data = partesDataHora[0].split('-');
-  const hora = partesDataHora[1].split(':');
+function converterDataParaBrasil(dataISO: string): string {
+  // Converte a string ISO para um objeto Date
+  const data = new Date(dataISO);
 
-  const dataNovo = `${data[2]}/${data[1]}/${data[0]}`;
+  // Ajusta a data para o fuso horário local adicionando a diferença do fuso horário
+  data.setMinutes(data.getMinutes() - data.getTimezoneOffset());
 
-  return `${dataNovo}`;
+  // Extrai os componentes da data
+  const dia = data.getDate().toString().padStart(2, '0');
+  const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // getMonth() retorna mês de 0 a 11
+  const ano = data.getFullYear();
+
+  // Formata a data no padrão brasileiro
+  return `${dia}/${mes}/${ano}`;
 }
 
 function removeCurrency(value: string | undefined | null): number {

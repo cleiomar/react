@@ -137,7 +137,7 @@ const Header = () => {
         }
     }
 
-
+const [alerta, setAlerta] = useState(false);
     const fetchGetComunicados = async (page: number, codigo: any, categoria: any, favorito: any) => {
         try {
             const response = await fetch('http://localhost:3000/get_comunicados_b3', {
@@ -148,6 +148,7 @@ const Header = () => {
                 body: JSON.stringify({ page: page, codigo: codigo, categoria: categoria, favorito: favorito }), // Converte os dados para o formato JSON
             });
             const data = await response.json();
+            setAlerta(data.new > 0 ? true:false);
             const dados = await Promise.all(data.data.map(async (item) => {
                 let tag;
                 if (item.ativo_categoria === 1) {
@@ -229,7 +230,7 @@ const Header = () => {
     const [notifications, setNotifications] = useState([
         {
             id: 1,
-            profile: 'user-profile.jpeg',
+            profile: 'user-profile.png',
             message: '<strong className="text-sm mr-1">John Doe</strong>invite you to <strong>Prototyping</strong>',
             time: '45 min ago',
         },
@@ -425,16 +426,20 @@ const Header = () => {
                             </Dropdown>
                         </div>
                         <div className="dropdown shrink-0">
+                            {/* <span className="flex absolute w-3 h-3 ltr:right-0.5 rtl:left-0 top-2.5">
+                                            <span className="animate-ping absolute ltr:-left-[3px] rtl:-right-[3px] -top-[3px] inline-flex h-full w-full rounded-full bg-success/50 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full w-[6px] h-[6px] bg-success"></span>
+                                        </span> */}
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
                                 btnClassName="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60"
-                                button={<IconMailDot />}
+                                button={alerta == true ? <IconMailDot fill='green' />:<IconMailDot />}
                             >
                                 <ul className="!py-0 text-dark dark:text-white-dark w-[300px] sm:w-[375px] text-xs">
                                     <li className="mb-5" onClick={(e) => e.stopPropagation()}>
-                                        <div className="hover:!bg-transparent overflow-hidden relative rounded-t-md p-5 text-white w-full !h-[68px]">
-                                            <div
+                                        <div className="hover:!bg-transparent overflow-hidden relative rounded-t-md p-5  text-gray-500 dark:text-gray-500  w-full !h-[68px]">
+                                        {/* <div
                                                 className="absolute h-full w-full bg-no-repeat bg-center bg-cover inset-0 bg-"
                                                 style={{
                                                     backgroundImage: `url('/assets/images/menu-heade.jpg')`,
@@ -442,6 +447,10 @@ const Header = () => {
                                                     width: '100%',
                                                     height: '100%',
                                                 }}
+                                            ></div>
+                                             */}
+                                             <div
+                                                className="absolute h-full w-full bg-no-repeat bg-center dark:bg-transparent border-b border-white-light bg-cover inset-0"
                                             ></div>
                                             <h4 className="font-semibold relative z-10 text-lg">Comunicados</h4>
                                         </div>
@@ -584,19 +593,19 @@ const Header = () => {
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
                                 btnClassName="relative group block"
-                                button={<img className="w-9 h-9 rounded-full object-cover saturate-50 group-hover:saturate-100" src="/assets/images/user-profile.jpeg" alt="userProfile" />}
+                                button={<img className="w-9 h-9 rounded-full object-cover saturate-50 group-hover:saturate-100" src="/assets/images/user-profile.png" alt="userProfile" />}
                             >
                                 <ul className="text-dark dark:text-white-dark !py-0 w-[230px] font-semibold dark:text-white-light/90">
                                     <li>
                                         <div className="flex items-center px-4 py-4">
-                                            <img className="rounded-md w-10 h-10 object-cover" src="/assets/images/user-profile.jpeg" alt="userProfile" />
+                                            <img className="rounded-md w-10 h-10 object-cover" src="/assets/images/user-profile.png" alt="userProfile" />
                                             <div className="ltr:pl-4 rtl:pr-4 truncate">
                                                 <h4 className="text-base">
-                                                    John Doe
+                                                    Cleiomar
                                                     <span className="text-xs bg-success-light rounded text-success px-1 ltr:ml-2 rtl:ml-2">Pro</span>
                                                 </h4>
                                                 <button type="button" className="text-black/60 hover:text-primary dark:text-dark-light/60 dark:hover:text-white">
-                                                    johndoe@gmail.com
+                                                    cleiomar@hotmail.com
                                                 </button>
                                             </div>
                                         </div>

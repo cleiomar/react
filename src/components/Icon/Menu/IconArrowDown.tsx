@@ -12,7 +12,7 @@ interface IconArrowDownProps {
 const IconArrowDown: FC<IconArrowDownProps> = ({ className, opValor, width, height, fill }) => {
     if(fill)
     {
-        fill = "#CCC"
+        fill = fill
     }
     else
     {

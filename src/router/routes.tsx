@@ -5,10 +5,10 @@ const Dashboard = lazy(() => import('../dashboard'));
 const Nexus = lazy(() => import('../dashboard/'));
 const Transacoes = lazy(() => import('../transacoes'));
 const Patrimonio = lazy(() => import('../patrimonio'));
-const Metas = lazy(() => import('../metas'));
-const Acoes = lazy(() => import('../acoes'));
+const Cadastros = lazy(() => import('../cadastros'));
+const Compras = lazy(() => import('../compras'));
 const Acao = lazy(() => import('../acao'));
-const Comunicados = lazy(() => import('../comunicados'));
+const Proventos = lazy(() => import('../proventos'));
 const Error = lazy(() => import('../components/Error'));
 
 const routes = [
@@ -31,37 +31,13 @@ const routes = [
         element: <Dashboard />
     },
     {
-        path: '/transacoes',
-        element: <Transacoes />
+        path: '/cadastros',
+        element: <Cadastros />
     },
     {
-        path: '/patrimonio',
-        element: <Patrimonio />
-    },
-    {
-        path: '/metas',
-        element: <Metas />
-    },
-    {
-        path: '/previsao',
-        element: <Previsao />
-    },
-    {
-        path: '/tesouro',
-        element: <Tesouro />
-    },
-    {
-        path: '/acoes/',
-        element: <Acoes />
-    },
-    {
-        path: '/acoes/:acao',
-        element: <Acao />
-    },
-    {
-        path: '/comunicados/',
-        element: <Comunicados />
-    },
+        path: '/compras/',
+        element: <Compras />
+    }
 ];
 
 export { routes };

@@ -56,7 +56,7 @@ const Metas = ({ categoria, categoria_id, percentual, onDataReceived, dataFromPa
                             <div className="flex">
                                 <button
                                     type="button"
-                                    className="bg-primary text-white flex justify-center items-center ltr:rounded-l-md rtl:rounded-r-md px-3 font-semibold border border-r-0 border-primary"
+                                    className="bg-primary  dark:bg-[#4a515c] dark:border-transparent text-white flex justify-center items-center ltr:rounded-l-md rtl:rounded-r-md px-3 font-semibold border border-r-0 border-primary"
                                     onClick={() => setValue(value > 0 ? value - 1 : 0)}
                                 >
                                     <IconMinus className="w-5 h-5" />
@@ -73,7 +73,7 @@ const Metas = ({ categoria, categoria_id, percentual, onDataReceived, dataFromPa
                                 />
                                 <button
                                     type="button"
-                                    className="bg-primary text-white flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border border-l-0 border-primary"
+                                    className="bg-primary dark:bg-[#4a515c] dark:border-transparent text-white flex justify-center items-center ltr:rounded-r-md rtl:rounded-l-md px-3 font-semibold border border-l-0 border-primary"
                                     onClick={() => setValue(value < 100 && (value + 1) <= (value + dataFromParent) ? value + 1 : value)}
                                 >
                                     <IconPlus />

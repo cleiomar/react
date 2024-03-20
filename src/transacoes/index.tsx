@@ -23,7 +23,7 @@ import { log } from 'console';
 import { useTranslation } from 'react-i18next';
 
 const Transacoes = () => {
-    
+
   const { t } = useTranslation();
   const [ocultarDados, setOcultarDados] = useState<boolean>(!globalVars.getVariable1());
 
@@ -276,7 +276,7 @@ const Transacoes = () => {
 
   const [categoriaOptions, setCategoriaOptions] = useState([]);
   const catOptions = async () => {
-    const data = await fetch('http://localhost:3000/categorias')
+    const data = await fetch('http://localhost:3000/categorias/all')
     const response = await data.json()
     setCategoriaOptions(response)
   }
@@ -640,35 +640,36 @@ const Transacoes = () => {
   };
 
   return (
-    <div><div className='titulo-page'>TRANSAÇÕES</div>
-      <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
-        <li>
-          <Link to="/" className="text-primary hover:underline">
-          {t('Site')}
-          </Link>
-        </li>
-        <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-          <span>Transações</span>
-        </li>
-      </ul>
+    <div>
+
+      <div className="grid 1xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div>
+          <div className='titulo-page'>TRANSAÇÕES</div>
+          <ul className="flex space-x-2 rtl:space-x-reverse mb-5 mt-4">
+            <li>
+              <Link to="/" className="text-primary hover:underline">
+                {t('Site')}
+              </Link>
+            </li>
+            <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
+              <span>Transações</span>
+            </li>
+          </ul>
+        </div>
+        <div className="grid xl:grid-cols-3 gap-6">
+          <button type="button" onClick={() => setModal4(true)} className="btn btn-outline-secondary btn-sm h-40"><IconPlus />Adicionar Ativo</button>
+          <div className="xl:col-span-2">
+            <div className="ltr:ml-auto rtl:mr-auto gap-6">
+              <input type="text" className="form-input w-100p h-40" placeholder="Search User..." value={search} onChange={(e) => setSearch(e.target.value)} />
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
 
       <div className="panel">
-
-        <div className="grid 1xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 mb-10 gap-6">
-          <div className="grid xl:grid-cols-3 gap-6">
-            <button type="button" onClick={() => setModal4(true)} className="btn btn-outline-secondary btn-sm"><IconPlus />Adicionar Ativo</button>
-            <div className="xl:col-span-2">
-              <div className="ltr:ml-auto rtl:mr-auto gap-6">
-                <input type="text" className="form-input w-100p h-40" placeholder="Search User..." value={search} onChange={(e) => setSearch(e.target.value)} />
-              </div>
-            </div>
-          </div>
-          
-        </div>
-
         <div className="datatables">
           <DataTable
             className="whitespace-nowrap table-hover"
@@ -716,8 +717,10 @@ const Transacoes = () => {
                     ) : <span className={`badge bg-dark text-normal`}>Outro</span>
                 )
               },
-              { accessor: 'broker_nome', title: 'Broker',
-              render: ({ broker_nome }) => <div className='text-normal'>{broker_nome}</div> },
+              {
+                accessor: 'broker_nome', title: 'Broker',
+                render: ({ broker_nome }) => <div className='text-normal'>{broker_nome}</div>
+              },
               {
                 accessor: 'negociacao',
                 title: 'Negociação',

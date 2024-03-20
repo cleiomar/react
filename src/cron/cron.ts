@@ -15,58 +15,30 @@ console.log('Cron Iniciado');
     console.log('Tarefa Indicadores executada');
   });
 
-  cron.schedule('5 11 * * *', () => {
-    const response2 = exec(`tsx watch ./src/cron/adicionar_historico_cliente.ts`);
-    console.log('Tarefa Adicionar Historico Clientes executada');
-  });
-
-  cron.schedule('10 11 * * *', () => {
-    const response3 = exec(`tsx watch ./src/cron/adicionar_historico.ts`);
-    console.log('Tarefa Adicionar Historico executada');
-  });
-
-  cron.schedule('15 11 * * *', () => {
-    const response4 = exec(`tsx watch ./src/cron/b3.ts`);
-    console.log('Tarefa Atualizar Preços B3 executada');
-  });
-
-  
-  cron.schedule('0 16 * * *', () => {
-    const response2 = exec(`tsx watch ./src/cron/adicionar_historico_cliente.ts`);
-    const response3 = exec(`tsx watch ./src/cron/adicionar_historico.ts`);
-    console.log('Tarefa Adicionar Historico executada');
-  });
-
-  
-  cron.schedule('0 16 * * *', () => {
-    const response4 = exec(`tsx watch ./src/cron/b3.ts`);
-    console.log('Tarefa Atualizar Preços B3 executada');
-  });
-
-  cron.schedule('20 11 * * *', () => {
+  cron.schedule('20 13-22 * * *', () => {
     const response5 = exec(`node D:/node/ibov.js`);
     console.log('Tarefa Atualizar IBOV executada');
   });
 
-  cron.schedule('21 11 * * *', () => {
+  cron.schedule('21 13-22 * * *', () => {
     const response6 = exec(`node D:/node/update_stocks.js`);
     const response7 = exec(`node D:/node/update_currency.js`);
     const response9 = exec(`node D:/node/update_cripto.js`);
     console.log('Tarefa Stocks, Currency e Cripto executada');
   });
 
-  cron.schedule('25 11 * * *', () => {
+  cron.schedule('30 13-22 * * *', () => {
     const response10 = exec(`node D:/node/tesouro.js`);
     console.log('Tarefa Tesouro executada');
   });
   
-  cron.schedule('5 23 * * *', () => {
+  cron.schedule('25 13-22 * * *', () => {
     const response2 = exec(`tsx watch ./src/cron/adicionar_historico_cliente.ts`);
     const response3 = exec(`tsx watch ./src/cron/adicionar_historico.ts`);
     console.log('Tarefa Adicionar Historico executada');
   });
   
-  cron.schedule('6 23 * * *', () => {
+  cron.schedule('26 13-22 * * *', () => {
     const response4 = exec(`tsx watch ./src/cron/b3.ts`);
     console.log('Tarefa Atualizar Preços B3 executada');
   });

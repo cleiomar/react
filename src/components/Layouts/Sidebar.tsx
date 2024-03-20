@@ -13,6 +13,10 @@ import IconMenuMetas from '../Icon/Menu/IconMenuMetas';
 import IconMenuPrevisao from '../Icon/Menu/IconMenuPrevisao';
 import IconMenuAutoDirect from '../Icon/Menu/IconMenuAutoDirect';
 import IconMenuTesouro from '../Icon/Menu/IconMenuTesouro';
+import IconNotes from '../Icon/IconNotes';
+import IconFii from '../Icon/IconFii';
+import IconAcao from '../Icon/IconAcao';
+import IconProventos from '../Icon/IconProventos';
 
 
 const Sidebar = () => {
@@ -78,14 +82,14 @@ const Sidebar = () => {
                                     </div>
                                 </NavLink>
                             </li>
-
+{/* 
                             <li className="nav-item">
                                 <Link to={"/transacoes"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
                                         <IconMenuTransaction
                                             opValor="0.5"
                                             className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Transações</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Planejamento</span>
                                     </div>
                                 </Link>
                             </li>
@@ -94,18 +98,53 @@ const Sidebar = () => {
                                 <Link to={"/patrimonio"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
                                         <IconMenuPatrimonio className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Patrimônio</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Gestão de Terrenos</span>
                                     </div>
                                 </Link>
                             </li>
 
+                            <li className="nav-item">
+                                <NavLink to="/proventos" className="group">
+                                    <div className="flex items-center">
+                                        <IconProventos opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Contratos e Licenças</span>
+                                    </div>
+                                </NavLink>
+                            </li>
+ */}
+                            <li className="nav-item">
+                                <NavLink to="/compras" className="group">
+                                    <div className="flex items-center">
+                                        <IconAcao opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Modulo Compras</span>
+                                    </div>
+                                </NavLink>
+                            </li>
+{/* 
+                            <li className="nav-item">
+                                <NavLink to="/acoes" className="group">
+                                    <div className="flex items-center">
+                                        <IconFii opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Gestão de Projetos e Cronograma </span>
+                                    </div>
+                                </NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink to="/comunicados" className="group">
+                                    <div className="flex items-center">
+                                        <IconNotes opValor="0.5" className="group-hover:!text-primary shrink-0" />
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Gestão de Mão de Obra</span>
+                                    </div>
+                                </NavLink>
+                            </li>
                             <li className="nav-item">
                                 <Link to={"/metas"} state={{ userid: userid }} className="group">
                                     <div className="flex items-center">
                                         <IconMenuMetas
                                             opValor="0.5"
                                             className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Metas</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Controle de Qualidade e Inspeções</span>
                                     </div>
                                 </Link>
                             </li>
@@ -115,47 +154,21 @@ const Sidebar = () => {
                                     <div className="flex items-center">
                                         <IconMenuPrevisao
                                             opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Previsão</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Gestão Financeira</span>
                                     </div>
                                 </NavLink>
-                            </li>
+                            </li> */}
 
                             <li className="nav-item">
-                                <NavLink to="/tesouro" className="group">
+                                <NavLink to="/cadastros" className="group">
                                     <div className="flex items-center">
                                         <IconMenuTesouro opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Tesouro</span>
+                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Cadastros</span>
                                     </div>
                                 </NavLink>
                             </li>
 
 
-                            <li className="nav-item">
-                                <NavLink to="/acoes" className="group">
-                                    <div className="flex items-center">
-                                        <IconMenuTesouro opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">Ações</span>
-                                    </div>
-                                </NavLink>
-                            </li>
-
-                            <li className="nav-item">
-                                <NavLink to="/comunicados" className="group">
-                                    <div className="flex items-center">
-                                        <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_direct')}</span>
-                                    </div>
-                                </NavLink>
-                            </li>
-
-                            <li className="nav-item">
-                                <NavLink to="/Instagram" className="group">
-                                    <div className="flex items-center">
-                                        <IconMenuAutoDirect opValor="0.5" className="group-hover:!text-primary shrink-0" />
-                                        <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('auto_direct')}</span>
-                                    </div>
-                                </NavLink>
-                            </li>
                         </ul>
                     </PerfectScrollbar>
                 </div>
